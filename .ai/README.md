@@ -24,6 +24,7 @@ Token-driven CSS architecture. W3C DTCG JSON tokens â†’ Style Dictionary build â
 | Core rules (NEVER/ALWAYS) | `.ai/rules.md` |
 | Architecture overview | `.ai/architecture.md` |
 | Git & release flow | `.ai/git-flow.md` |
+| Component pages (per-tag, LLM-friendly) | `docs/llm/components/` |
 | Token architecture (3-tier) | `docs/llm/tokens/architecture.md` |
 | Naming conventions | `docs/llm/tokens/naming.md` |
 | Theme system | `docs/llm/tokens/themes.md` |

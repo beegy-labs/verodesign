@@ -104,16 +104,55 @@ All architectural and policy decisions for verodesign. Every other doc reference
 
 조합 가능: `vds-md:vds-hover:bg-primary` (responsive prefix → state prefix → utility).
 
+### Opacity on color (`[Unreleased]` since Phase 1)
+
+색상 utility 에 alpha modifier 지원 (`vds-bg-primary/30`, `vds-text-foreground/60`).
+
+| 항목 | 값 |
+| ---- | -- |
+| 구현 | `color-mix(in oklab, var(--vds-theme-X) N%, transparent)` |
+| Steps | `0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100` (16) |
+| 적용 family | `bg`, `text`, `border` (모든 슬롯) |
+| Browser baseline | `color-mix()` Baseline · Widely Available 2026 (Chrome 111+, Safari 15.4+, Firefox 113+) |
+| 근거 | Tailwind v4 동일 패턴, OKlab 보간이 perceptually 안정적 |
+
+### Group variant (`[Unreleased]` since Phase 1)
+
+소비자 light DOM 한정 ship. vds Lit 컴포넌트 내부 사용 금지.
+
+| 항목 | 값 |
+| ---- | -- |
+| Parent class | `.vds-group` |
+| Variant prefix | `vds-group-hover:*` |
+| 적용 family | `bg`, `text`, `border`, `opacity` |
+| Selector form | `.vds-group:hover .vds-group-hover\:foo` |
+| Constraint | vds Lit shadow DOM 안에서는 선택자가 경계를 못 넘으므로 **컴포넌트 작성자는 사용 금지**. 소비자 React/Vue/Svelte 마크업의 light DOM 에서만 사용. |
+
+### Animation primitives (`[Unreleased]` since Phase 1)
+
+3종 보편 keyframe 만 ship — `dist/animations.css` opt-in import.
+
+| Class | Keyframe | Use case |
+| ----- | -------- | -------- |
+| `vds-anim-spin` | `360deg` rotation, 1s linear infinite | loading spinner |
+| `vds-anim-pulse` | opacity 1→0.5→1, 2s ease-in-out infinite | skeleton loader |
+| `vds-anim-bounce` | translateY -25% bounce, 1s infinite | attention indicator |
+
+Component-specific keyframe 은 여전히 컴포넌트 내부 정의. 위 3종은 cross-component primitive 로 간주.
+
+`prefers-reduced-motion: reduce` 시 자동 비활성.
+
 ### Out of scope (explicit, deferred or never)
 
 | Excluded | Reason | Revisit at |
 | -------- | ------ | ---------- |
-| Arbitrary values (`vds-p-[13px]`) | 토큰 SSOT 위배 — 모든 값은 토큰을 거쳐야 함 | Never (by design) |
+| Arbitrary values (`vds-p-[13px]`) | 토큰 SSOT 위배 — 모든 값은 토큰을 거쳐야 함. Tailwind 본가도 escape hatch 권고 (소비자는 inline `style={}`) | Never (by design) |
 | Container queries (`@container`) | Baseline 미달 (2026-05 기준 newly available, widely 미도달) | v1.0+ 재평가 |
-| Group / peer selectors (`group-hover:`) | Lit shadow DOM 경계와 충돌 — 컴포넌트 내부에서 처리 권장 | Never (architectural mismatch) |
-| `aspect-{video,square,...}` | YAGNI — verobase 사용 사례 없음 | 다음 소비자 요청 시 |
-| Custom keyframe animation | `animation.duration` + `animation.easing` 토큰만 제공, keyframe 자체는 컴포넌트가 정의 | Never (consumer concern) |
+| Peer selectors (`peer-*:`) | sibling 의존 → 컴포넌트화 권장 | Never (architectural) |
+| `aspect-{video,square,...}` | YAGNI — verobase/veronex 사용 사례 없음 | 다음 소비자 요청 시 |
+| Component-specific keyframe | 컴포넌트가 자신의 keyframe 정의 (3종 primitive 제외 — 위 참조) | Never (consumer concern) |
 | `dark:` 접두 (Tailwind 호환) | 우리는 `[data-mode]` 속성 기반 → `vds-dark:*` 또는 cascade 자동 처리 | Never (architectural choice) |
+| JIT extractor | AOT 발행 + responsive/state wrap 만으로 충분 (`full.css` ~30KB gzip 예상) | v0.3+ UnoCSS preset 추가 시 재평가 |
 
 ### Output structure
 
