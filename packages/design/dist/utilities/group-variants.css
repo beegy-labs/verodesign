@@ -2511,108 +2511,108 @@
   .vds-group:focus-within .vds-group-focus\:border-code\/95  { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
   .vds-group:hover .vds-group-hover\:border-code\/100  { border-color: var(--vds-theme-bg-code); }
   .vds-group:focus-within .vds-group-focus\:border-code\/100  { border-color: var(--vds-theme-bg-code); }
-  .vds-group:hover .vds-group-hover\:text-primary  { color: var(--vds-theme-text-primary); }
-  .vds-group:focus-within .vds-group-focus\:text-primary  { color: var(--vds-theme-text-primary); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary  { background-color: var(--vds-theme-text-primary); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary  { background-color: var(--vds-theme-text-primary); }
-  .vds-group:hover .vds-group-hover\:border-text-primary  { border-color: var(--vds-theme-text-primary); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary  { border-color: var(--vds-theme-text-primary); }
-  .vds-group:hover .vds-group-hover\:text-primary\/0  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/0  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/5  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/5  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/10  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/10  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/15  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/15  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/20  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/20  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/25  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/25  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/30  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/30  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/40  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/40  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/50  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/50  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/60  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/60  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/70  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/70  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/75  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/75  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/80  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/80  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/90  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/90  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/95  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/95  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-group:hover .vds-group-hover\:text-primary\/100  { color: var(--vds-theme-text-primary); }
-  .vds-group:focus-within .vds-group-focus\:text-primary\/100  { color: var(--vds-theme-text-primary); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/0  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/0  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/5  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/5  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/10  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/10  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/15  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/15  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/20  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/20  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/25  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/25  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/30  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/30  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/40  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/40  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/50  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/50  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/60  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/60  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/70  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/70  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/75  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/75  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/80  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/80  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/90  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/90  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/95  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/95  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-group:hover .vds-group-hover\:bg-text-primary\/100  { background-color: var(--vds-theme-text-primary); }
-  .vds-group:focus-within .vds-group-focus\:bg-text-primary\/100  { background-color: var(--vds-theme-text-primary); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/0  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/0  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/5  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/5  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/10  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/10  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/15  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/15  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/20  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/20  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/25  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/25  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/30  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/30  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/40  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/40  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/50  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/50  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/60  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/60  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/70  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/70  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/75  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/75  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/80  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/80  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/90  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/90  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/95  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/95  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-group:hover .vds-group-hover\:border-text-primary\/100  { border-color: var(--vds-theme-text-primary); }
-  .vds-group:focus-within .vds-group-focus\:border-text-primary\/100  { border-color: var(--vds-theme-text-primary); }
+  .vds-group:hover .vds-group-hover\:text-fg  { color: var(--vds-theme-text-primary); }
+  .vds-group:focus-within .vds-group-focus\:text-fg  { color: var(--vds-theme-text-primary); }
+  .vds-group:hover .vds-group-hover\:bg-fg  { background-color: var(--vds-theme-text-primary); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg  { background-color: var(--vds-theme-text-primary); }
+  .vds-group:hover .vds-group-hover\:border-fg  { border-color: var(--vds-theme-text-primary); }
+  .vds-group:focus-within .vds-group-focus\:border-fg  { border-color: var(--vds-theme-text-primary); }
+  .vds-group:hover .vds-group-hover\:text-fg\/0  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/0  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/5  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/5  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/10  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/10  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/15  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/15  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/20  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/20  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/25  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/25  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/30  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/30  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/40  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/40  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/50  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/50  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/60  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/60  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/70  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/70  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/75  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/75  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/80  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/80  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/90  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/90  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/95  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/95  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-group:hover .vds-group-hover\:text-fg\/100  { color: var(--vds-theme-text-primary); }
+  .vds-group:focus-within .vds-group-focus\:text-fg\/100  { color: var(--vds-theme-text-primary); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/0  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/0  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/5  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/5  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/10  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/10  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/15  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/15  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/20  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/20  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/25  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/25  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/30  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/30  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/40  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/40  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/50  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/50  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/60  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/60  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/70  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/70  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/75  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/75  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/80  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/80  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/90  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/90  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/95  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/95  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-group:hover .vds-group-hover\:bg-fg\/100  { background-color: var(--vds-theme-text-primary); }
+  .vds-group:focus-within .vds-group-focus\:bg-fg\/100  { background-color: var(--vds-theme-text-primary); }
+  .vds-group:hover .vds-group-hover\:border-fg\/0  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/0  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/5  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/5  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/10  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/10  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/15  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/15  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/20  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/20  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/25  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/25  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/30  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/30  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/40  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/40  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/50  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/50  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/60  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/60  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/70  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/70  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/75  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/75  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/80  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/80  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/90  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/90  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/95  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/95  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-group:hover .vds-group-hover\:border-fg\/100  { border-color: var(--vds-theme-text-primary); }
+  .vds-group:focus-within .vds-group-focus\:border-fg\/100  { border-color: var(--vds-theme-text-primary); }
   .vds-group:hover .vds-group-hover\:text-secondary  { color: var(--vds-theme-text-secondary); }
   .vds-group:focus-within .vds-group-focus\:text-secondary  { color: var(--vds-theme-text-secondary); }
   .vds-group:hover .vds-group-hover\:bg-text-secondary  { background-color: var(--vds-theme-text-secondary); }

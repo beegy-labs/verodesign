@@ -91,6 +91,19 @@ export function generateColor(flat) {
     }
     if (t.path[1] === 'text' && t.path.length === 3) {
       const slot = t.path[2];
+      // theme.text.primary 는 role primary (브랜드) 와 .vds-text-primary 이름 충돌.
+      // Tailwind/shadcn convention 에 맞춰 text-primary = 브랜드로 두고,
+      // foreground 텍스트 슬롯은 'fg' alias 로만 emit (vds-text-fg / vds-bg-fg / vds-border-fg).
+      if (slot === 'primary') {
+        rules.push(`.vds-text-fg { color: var(${cssVar}); }`);
+        rules.push(`.vds-bg-fg { background-color: var(${cssVar}); }`);
+        rules.push(`.vds-border-fg { border-color: var(${cssVar}); }`);
+        emitOpacityVariants(rules, `vds-text-fg`, 'color', cssVar);
+        emitOpacityVariants(rules, `vds-bg-fg`, 'background-color', cssVar);
+        emitOpacityVariants(rules, `vds-border-fg`, 'border-color', cssVar);
+        seenSlots.add(`text-primary`);
+        continue;
+      }
       rules.push(`.vds-text-${slot} { color: var(${cssVar}); }`);
       rules.push(`.vds-bg-text-${slot} { background-color: var(${cssVar}); }`);
       rules.push(`.vds-border-text-${slot} { border-color: var(${cssVar}); }`);

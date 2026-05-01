@@ -56,6 +56,8 @@ export async function emitUtilities() {
     'warning', 'warning-bg', 'warning-fg', 'error', 'error-bg', 'error-fg',
     'info', 'info-bg', 'info-fg', 'neutral', 'neutral-bg', 'neutral-fg',
     'cancelled', 'cancelled-fg',
+    // foreground text (theme.text.primary slot — 'fg' alias to avoid collision with role primary)
+    'fg',
     // text-prefixed (`bg-text-dim` etc.)
     'text-primary', 'text-secondary', 'text-dim', 'text-faint', 'text-bright', 'text-inverse',
     // chart
