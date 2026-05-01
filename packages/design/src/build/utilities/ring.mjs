@@ -17,12 +17,21 @@ export function generateRing(flat) {
 
   rules.push(`.vds-ring-inset { --vds-ring-inset: inset; }`);
 
+  // Opacity steps (mirror color.mjs convention)
+  const OPACITY_STEPS = [0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95];
+
   for (const t of flat) {
     if (t.path[0] !== 'theme') continue;
     if (t.path.length === 2) {
       const slot = t.path[1];
-      rules.push(`.vds-ring-${slot} { --vds-ring-color: var(${tokenPathToCssVar(t.path)}); }`);
-      rules.push(`.vds-ring-offset-${slot} { --vds-ring-offset-color: var(${tokenPathToCssVar(t.path)}); }`);
+      const cssVar = tokenPathToCssVar(t.path);
+      rules.push(`.vds-ring-${slot} { --vds-ring-color: var(${cssVar}); }`);
+      rules.push(`.vds-ring-offset-${slot} { --vds-ring-offset-color: var(${cssVar}); }`);
+      // Opacity variants on ring color (Tailwind/shadcn `ring-primary/50` 패턴 호환)
+      for (const step of OPACITY_STEPS) {
+        rules.push(`.vds-ring-${slot}\\/${step} { --vds-ring-color: color-mix(in oklab, var(${cssVar}) ${step}%, transparent); }`);
+      }
+      rules.push(`.vds-ring-${slot}\\/100 { --vds-ring-color: var(${cssVar}); }`);
     }
     if (t.path[1] === 'bg' && t.path.length === 3) {
       const slot = t.path[2];

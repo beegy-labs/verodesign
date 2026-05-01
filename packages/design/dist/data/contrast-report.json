@@ -316,27 +316,27 @@
     },
     "dark": {
       "theme.text.primary on theme.bg.page": {
-        "ratio": 19.88,
+        "ratio": 19.03,
         "required": "AA",
         "pass": true
       },
       "theme.text.primary on theme.bg.card": {
-        "ratio": 19.23,
+        "ratio": 18.11,
         "required": "AA",
         "pass": true
       },
       "theme.text.secondary on theme.bg.page": {
-        "ratio": 15.61,
+        "ratio": 14.95,
         "required": "AA",
         "pass": true
       },
       "theme.text.dim on theme.bg.page": {
-        "ratio": 7.88,
+        "ratio": 7.55,
         "required": "AA",
         "pass": true
       },
       "theme.text.bright on theme.bg.page": {
-        "ratio": 20.99,
+        "ratio": 20.1,
         "required": "AAA",
         "pass": true
       },

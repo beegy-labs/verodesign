@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import { rm } from 'node:fs/promises';
+import { rm, readFile, writeFile, readdir, stat } from 'node:fs/promises';
+import { join, relative } from 'node:path';
+import { transform } from 'lightningcss';
 import { emitCoreCss } from '../src/build/emit-core.mjs';
 import { emitThemeCss } from '../src/build/emit-theme.mjs';
 import { emitUtilities } from '../src/build/utilities/index.mjs';
@@ -87,6 +89,46 @@ async function main() {
     console.error(`build aborted: ${audit.failures} contrast failures`);
     process.exit(1);
   }
+
+  // ── Optimize: Lightning CSS (Rust) minify + vendor prefix + modern syntax transform ───
+  console.log('[optimize]');
+  // Browserslist baseline 2026-Q1 — Chrome/Edge 111+, Firefox 113+, Safari 15.4+
+  const TARGETS = {
+    chrome: 111 << 16,
+    firefox: 113 << 16,
+    safari: (15 << 16) | (4 << 8),
+  };
+
+  async function walkCss(dir) {
+    const out = [];
+    for (const ent of await readdir(dir)) {
+      const p = join(dir, ent);
+      const s = await stat(p);
+      if (s.isDirectory()) out.push(...(await walkCss(p)));
+      else if (ent.endsWith('.css') && !ent.endsWith('.min.css')) out.push(p);
+    }
+    return out;
+  }
+
+  done = step('lightningcss minify *.css → *.min.css');
+  const cssFiles = await walkCss(DIST);
+  let totalRaw = 0, totalMin = 0;
+  for (const file of cssFiles) {
+    const raw = await readFile(file);
+    totalRaw += raw.length;
+    const { code } = transform({
+      filename: relative(DIST, file),
+      code: raw,
+      minify: true,
+      targets: TARGETS,
+      drafts: { customMedia: true },
+    });
+    const minPath = file.replace(/\.css$/, '.min.css');
+    await writeFile(minPath, code);
+    totalMin += code.length;
+  }
+  const ratio = ((totalMin / totalRaw) * 100).toFixed(1);
+  done(`(${cssFiles.length} files, ${(totalRaw / 1024).toFixed(0)} KB → ${(totalMin / 1024).toFixed(0)} KB · ${ratio}%)`);
 
   console.log('done');
 }

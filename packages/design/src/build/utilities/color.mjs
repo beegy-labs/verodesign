@@ -29,6 +29,56 @@ export function generateColor(flat) {
   const rules = [];
   const seenSlots = new Set();
 
+  // Tailwind-static colors (no theme dependency, cascade-safe)
+  // emitted FIRST so per-slot colors (slate.X, primary, etc.) can override
+  const STATIC_COLORS = {
+    'black': '#000', 'white': '#fff', 'transparent': 'transparent',
+    'current': 'currentColor', 'inherit': 'inherit',
+  };
+  for (const [name, value] of Object.entries(STATIC_COLORS)) {
+    rules.push(`.vds-bg-${name} { background-color: ${value}; }`);
+    rules.push(`.vds-text-${name} { color: ${value}; }`);
+    if (name !== 'inherit') {
+      // alpha variants for black/white only (transparent / current / inherit 무의미)
+      if (name === 'black' || name === 'white') {
+        for (const step of OPACITY_STEPS) {
+          rules.push(`.vds-bg-${name}\\/${step} { background-color: color-mix(in oklab, ${value} ${step}%, transparent); }`);
+          rules.push(`.vds-text-${name}\\/${step} { color: color-mix(in oklab, ${value} ${step}%, transparent); }`);
+        }
+      }
+    }
+  }
+
+  // Primitive ramp utilities (color.{hue}.{1..12} → bg/text/border slot utility).
+  // verobase 마이그 시 `bg-blue-50`, `text-indigo-700` 같은 Tailwind-static 사용.
+  // Tailwind step (50/100/.../900) → verodesign step (1..12) Tailwind-호환 alias.
+  // **Bundle 최적화**: primitive ramp 는 base utility 만 emit, opacity variant 미생성.
+  // 알파 modifier 가 정말 필요하면 inline `style={{}}` 또는 semantic slot 으로 대체.
+  // (semantic slot 은 emitColorSlot 으로 alpha 변형 포함 emit 됨)
+  const TW_STEP_TO_VDS = {
+    '50': '1', '100': '2', '200': '3', '300': '4', '400': '5',
+    '500': '6', '600': '7', '700': '8', '800': '9', '900': '10', '950': '11',
+  };
+  for (const t of flat) {
+    if (t.path[0] !== 'color') continue;
+    if (t.path.length !== 3) continue;
+    const hue = t.path[1];
+    const step = t.path[2];
+    const cssVar = tokenPathToCssVar(t.path);
+    const slot = `${hue}-${step}`;
+    rules.push(`.vds-bg-${slot} { background-color: var(${cssVar}); }`);
+    rules.push(`.vds-text-${slot} { color: var(${cssVar}); }`);
+    rules.push(`.vds-border-${slot} { border-color: var(${cssVar}); }`);
+    // Tailwind-step alias (e.g. blue-50 → blue-1) — base only
+    const twStep = Object.entries(TW_STEP_TO_VDS).find(([, vds]) => vds === step)?.[0];
+    if (twStep) {
+      const aliasSlot = `${hue}-${twStep}`;
+      rules.push(`.vds-bg-${aliasSlot} { background-color: var(${cssVar}); }`);
+      rules.push(`.vds-text-${aliasSlot} { color: var(${cssVar}); }`);
+      rules.push(`.vds-border-${aliasSlot} { border-color: var(${cssVar}); }`);
+    }
+  }
+
   for (const t of flat) {
     if (t.path[0] !== 'theme') continue;
     const cssVar = tokenPathToCssVar(t.path);

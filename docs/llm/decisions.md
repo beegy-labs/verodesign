@@ -1,6 +1,6 @@
 # Locked Decisions
 
-> CDD Layer 2 — Master decision SSOT | **Last Updated**: 2026-04-30
+> CDD Layer 2 — Master decision SSOT | **Last Updated**: 2026-05-01
 
 All architectural and policy decisions for verodesign. Every other doc references this file. Changes require SDD spec.
 
@@ -71,9 +71,11 @@ All architectural and policy decisions for verodesign. Every other doc reference
 | Flexbox | `vds-flex-{row,col,wrap,nowrap}`, `vds-{items,justify,self}-{start,center,end,between,stretch}`, `vds-flex-{1,auto,none}` | static |
 | Grid | `vds-grid-cols-{1..12}`, `vds-col-span-{1..12}`, `vds-grid-rows-{1..6}` | static |
 | Sizing | `vds-{w,h,min-w,min-h,max-w,max-h}-{spacing-tokens, full, screen, fit, auto}` + named widths (`sm`, `md`, `lg`, `xl`, `2xl`, ...) | `spacing.*` + breakpoints |
+| Border default (bare) | `vds-border` + `vds-border-{t,r,b,l,x,y}` (1px solid `border-default`, `:where()` 0,0,0 specificity) | static + theme color |
 | Border width | `vds-border-{0,1,2,4,8}` + `vds-border-{t,r,b,l}-{0,1,2,4,8}` | `border.width.*` |
+| Outline | `vds-outline-none` (2px solid transparent + 2px offset, forced-colors safe) | static |
 | Border radius | `vds-rounded-{none,xs,sm,md,lg,xl,2xl,full}` | `radius.*` |
-| Effect | `vds-shadow-{0..6}`, `vds-opacity-{0,5,10,...,95,100}` | `shadow.*`, `opacity.*` |
+| Effect | `vds-shadow-{0..6}` + alias `{none,xs,sm,md,lg,xl,2xl,inner}`, `vds-opacity-{0,5,10,...,95,100}` | `shadow.*`, `opacity.*` |
 | Transition | `vds-transition`, `vds-transition-{none,colors,opacity,transform,all}`, `vds-duration-{token-names}`, `vds-ease-{token-names}` | `animation.duration.*`, `animation.easing.*` |
 | Cursor | `vds-cursor-{auto,default,pointer,wait,not-allowed}` | static |
 | Overflow | `vds-overflow-{auto,hidden,visible,scroll}` + `-x-` / `-y-` | static |
@@ -85,9 +87,10 @@ All architectural and policy decisions for verodesign. Every other doc reference
 | ------ | ------- | ------ |
 | Hover | `vds-hover:*` | `.vds-hover\:bg-primary:hover { ... }` |
 | Focus | `vds-focus:*` | `:focus` |
-| Focus-visible | `vds-focus-visible:*` | `:focus-visible` (a11y 권장) |
+| Focus-visible | `vds-focus-visible:*` | `:focus-visible` (a11y 권장; outline family 포함 — `outline-none` paired with `ring-*`) |
 | Active | `vds-active:*` | `:active` |
 | Disabled | `vds-disabled:*` | `:disabled, [aria-disabled="true"]` |
+| Placeholder | `vds-placeholder:*` | `::placeholder` (text/opacity family only) |
 | Dark mode | `vds-dark:*` | `[data-mode="dark"] .vds-dark\:bg-foo` |
 
 ### Responsive variants
@@ -196,6 +199,8 @@ Long-form markdown 용 (verodocs 사용). Tailwind `@tailwindcss/typography` 대
 | Responsive wrapping | breakpoint 토큰 7종에 대해 `@media (min-width: ...)` wrapper 생성 |
 | Prose generation | `packages/design/src/build/generate-prose.mjs` (신규) — 토큰 → prose 스타일 매핑 |
 | Cascade layer | 모든 utility 는 `@layer vds-utilities` 안에 — overrides 가능 |
+| **CSS minify (Rust)** | **`scripts/build.mjs` 의 `[optimize]` 단계 — `lightningcss` `transform()` 으로 dist/ 모든 `.css` → `.min.css` 생성. browserslist 2026-Q1 baseline (Chrome 111+/Firefox 113+/Safari 15.4+). `full.css` 7.4MB raw → 5.2MB min (gzip 403KB / brotli ~106KB).** |
+| **Bundle 최적화 정책** | **State variants 는 SEMANTIC_SLOTS 화이트리스트 (`primary/accent/destructive/...` + `text-dim/faint/bright` 등) 에만 emit. primitive ramp (`slate-1/blue-50` 등) 은 base utility 만 — opacity 변형 미생성. 알파가 필요한 ramp 색은 inline `style={{}}` 또는 semantic slot 으로 대체.** |
 
 ### Versioning
 

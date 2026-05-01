@@ -15,7 +15,7 @@ const THEME_INIT = `(function () {
 `;
 
 const RESET_CSS = `/* @verobee/design — reset.css */
-/* modern-normalize subset + minimal opinionated additions. */
+/* modern-normalize subset + Tailwind preflight core (anchor inherit, headings/list reset, replaced-element block, button bg transparent). */
 
 @layer reset {
   *, *::before, *::after { box-sizing: border-box; }
@@ -42,6 +42,21 @@ const RESET_CSS = `/* @verobee/design — reset.css */
 
   abbr[title] { text-decoration: underline dotted; }
 
+  /* Anchor: inherit color/decoration so utility classes drive styling */
+  a { color: inherit; text-decoration: inherit; }
+
+  /* Headings + paragraph: inherit font-* + reset margin (utility-driven) */
+  h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, figure { margin: 0; }
+  ol, ul, menu { list-style: none; padding: 0; }
+
+  /* Replaced elements: block default + responsive media */
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video { max-width: 100%; height: auto; }
+
   b, strong { font-weight: 600; }
 
   code, kbd, samp, pre {
@@ -64,6 +79,10 @@ const RESET_CSS = `/* @verobee/design — reset.css */
   }
   button, select { text-transform: none; }
   button, [type='button'], [type='reset'], [type='submit'] { -webkit-appearance: button; }
+  /* button bg transparent — utility-driven background */
+  button { background-color: transparent; background-image: none; }
+  button, [role="button"] { cursor: pointer; }
+  :disabled { cursor: default; }
   ::-moz-focus-inner { border-style: none; padding: 0; }
   :-moz-focusring { outline: 1px dotted ButtonText; }
   legend { padding: 0; }

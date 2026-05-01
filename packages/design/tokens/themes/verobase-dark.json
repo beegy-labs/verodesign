@@ -14,13 +14,13 @@
   },
   "theme": {
     "bg": {
-      "page": { "$value": "{color.slate.12}", "$type": "color" },
-      "card": { "$value": "{color.slate.11}", "$type": "color" },
-      "elevated": { "$value": "{color.slate.10}", "$type": "color" },
-      "hover": { "$value": "{color.slate.10}", "$type": "color" },
+      "page": { "$value": "oklch(13% 0.012 240)", "$type": "color" },
+      "card": { "$value": "oklch(17% 0.014 240)", "$type": "color" },
+      "elevated": { "$value": "oklch(23% 0.016 240)", "$type": "color" },
+      "hover": { "$value": "oklch(28% 0.018 240)", "$type": "color" },
       "muted": { "$value": "{color.slate.9}", "$type": "color" },
       "inverse": { "$value": "{color.slate.1}", "$type": "color" },
-      "code": { "$value": "{color.slate.10}", "$type": "color" }
+      "code": { "$value": "oklch(23% 0.016 240)", "$type": "color" }
     },
     "text": {
       "primary": { "$value": "{color.slate.1}", "$type": "color" },

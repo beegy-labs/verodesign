@@ -51,6 +51,35 @@ export function generateTypography(flat) {
   rules.push(`.vds-whitespace-pre-wrap { white-space: pre-wrap; }`);
   rules.push(`.vds-break-words { overflow-wrap: break-word; }`);
   rules.push(`.vds-break-all { word-break: break-all; }`);
+  rules.push(`.vds-break-keep { word-break: keep-all; }`); // CJK 권장
+
+  // Sub-12px sizes for badge/stat labels (Tailwind 기본 text-xs = 12px 보다 작은 영역).
+  // 토큰화하지 않은 직접 값 — 마이크로 인터랙션용 micro-typography.
+  rules.push(`.vds-text-2xs { font-size: 0.6875rem; line-height: 1rem; }`);   // 11px
+  rules.push(`.vds-text-3xs { font-size: 0.625rem;  line-height: 1rem; }`);   // 10px
+  rules.push(`.vds-text-4xs { font-size: 0.5625rem; line-height: 0.875rem; }`); // 9px
+
+  // Tailwind tracking 스케일 보강 (token-driven 외 표준명 widest)
+  rules.push(`.vds-tracking-tighter { letter-spacing: -0.05em; }`);
+  rules.push(`.vds-tracking-tight { letter-spacing: -0.025em; }`);
+  rules.push(`.vds-tracking-normal { letter-spacing: 0; }`);
+  rules.push(`.vds-tracking-wide { letter-spacing: 0.025em; }`);
+  rules.push(`.vds-tracking-wider { letter-spacing: 0.05em; }`);
+  rules.push(`.vds-tracking-widest { letter-spacing: 0.1em; }`);
+
+  // Fill / stroke (icon styling — currentColor inheritance)
+  rules.push(`.vds-fill-current { fill: currentColor; }`);
+  rules.push(`.vds-fill-none { fill: none; }`);
+  rules.push(`.vds-fill-transparent { fill: transparent; }`);
+  rules.push(`.vds-stroke-current { stroke: currentColor; }`);
+  rules.push(`.vds-stroke-none { stroke: none; }`);
+  rules.push(`.vds-stroke-transparent { stroke: transparent; }`);
+
+  // Line-clamp (multi-line truncate)
+  for (const n of [1, 2, 3, 4, 5, 6]) {
+    rules.push(`.vds-line-clamp-${n} { display: -webkit-box; -webkit-line-clamp: ${n}; -webkit-box-orient: vertical; overflow: hidden; }`);
+  }
+  rules.push(`.vds-line-clamp-none { -webkit-line-clamp: unset; }`);
 
   return rules;
 }

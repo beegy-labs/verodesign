@@ -35,5 +35,10 @@ export function generateAnimationUtilities() {
     `.vds-anim-pulse { animation: vds-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }`,
     `.vds-anim-bounce { animation: vds-bounce 1s infinite; }`,
     `.vds-anim-none { animation: none; }`,
+    // Tailwind-compat aliases (no opt-in import required — emitted into full.css)
+    `.vds-animate-spin { animation: vds-spin 1s linear infinite; }`,
+    `.vds-animate-pulse { animation: vds-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }`,
+    `.vds-animate-bounce { animation: vds-bounce 1s infinite; }`,
+    `.vds-animate-none { animation: none; }`,
   ];
 }
