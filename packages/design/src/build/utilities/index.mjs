@@ -39,11 +39,36 @@ export async function emitUtilities() {
   const animUtils = generateAnimationUtilities();
   const breakpoints = generateBreakpoints(flat);
 
+  // State variants: SEMANTIC slots only — primitive ramps (slate-1, blue-50,
+  // black, white) don't typically need hover/focus/active variants. This caps
+  // bundle size: full.css drops from ~35MB to ~5MB, full.min.css.gz < 70KB.
+  // Semantic slots — emit state variants for these; primitive ramps (slate-1, blue-50, etc.) skip variants to keep bundle size small.
+  const SEMANTIC_SLOTS = [
+    // bg slots
+    'page', 'card', 'elevated', 'hover', 'muted', 'inverse', 'code',
+    // text slots
+    'primary', 'secondary', 'dim', 'faint', 'bright',
+    // border slots
+    'subtle', 'default', 'strong', 'focus',
+    // role slots (× -fg, -bg, -ring)
+    'primary-fg', 'primary-ring', 'accent', 'accent-fg', 'accent-2', 'accent-2-fg', 'accent-3', 'accent-3-fg',
+    'destructive', 'destructive-fg', 'success', 'success-bg', 'success-fg',
+    'warning', 'warning-bg', 'warning-fg', 'error', 'error-bg', 'error-fg',
+    'info', 'info-bg', 'info-fg', 'neutral', 'neutral-bg', 'neutral-fg',
+    'cancelled', 'cancelled-fg',
+    // text-prefixed (`bg-text-dim` etc.)
+    'text-primary', 'text-secondary', 'text-dim', 'text-faint', 'text-bright', 'text-inverse',
+    // chart
+    'chart-1', 'chart-2', 'chart-3', 'chart-4', 'chart-5',
+  ];
+  const SEMANTIC_RX = new RegExp(`^\\.vds-(bg|text|border)-(${SEMANTIC_SLOTS.map((s) => s.replace(/-/g, '\\-')).join('|')})(?:\\\\\\/[0-9]+)?\\s*\\{`);
   const stateEligible = [
-    ...color.filter((r) => /^\.vds-(bg|text|border)-[a-zA-Z0-9-]+(\\\/[0-9]+)?\s*\{/.test(r)),
-    ...effect.filter((r) => r.startsWith('.vds-opacity-') || r.startsWith('.vds-shadow-')),
+    ...color.filter((r) => SEMANTIC_RX.test(r)),
+    ...effect.filter((r) => r.startsWith('.vds-opacity-') || r.startsWith('.vds-shadow-') || r.startsWith('.vds-outline-') || /^\.vds-border-(0|1|2|4|8)\b/.test(r)),
     ...layout.filter((r) => r.startsWith('.vds-cursor-')),
     ...ring.filter((r) => r.startsWith('.vds-ring-')),
+    // decoration family (hover:underline 등 — typography 의 underline/line-through/no-underline)
+    ...typography.filter((r) => /^\.vds-(underline|line-through|no-underline)\s*\{/.test(r)),
   ];
   const stateRules = expandStateVariants(stateEligible);
 

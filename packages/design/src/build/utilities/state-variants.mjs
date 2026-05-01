@@ -8,14 +8,25 @@ const FAMILY_PREFIX = [
   ['opacity-', 'opacity'],
   ['shadow-', 'shadow'],
   ['cursor-', 'cursor'],
+  ['outline-', 'outline'],
+  ['underline', 'decoration'], // bare (hover:underline)
+  ['line-through', 'decoration'],
+  ['no-underline', 'decoration'],
 ];
 
 const STATES = [
-  { prefix: 'hover', pseudo: ':hover', applyTo: new Set(['bg', 'text', 'border', 'ring', 'opacity', 'shadow']) },
-  { prefix: 'focus', pseudo: ':focus', applyTo: new Set(['bg', 'text', 'border', 'ring', 'opacity']) },
-  { prefix: 'focus-visible', pseudo: ':focus-visible', applyTo: new Set(['bg', 'text', 'border', 'ring']) },
-  { prefix: 'active', pseudo: ':active', applyTo: new Set(['bg', 'text', 'opacity']) },
+  { prefix: 'hover', pseudo: ':hover', applyTo: new Set(['bg', 'text', 'border', 'ring', 'opacity', 'shadow', 'decoration', 'cursor']) },
+  { prefix: 'focus', pseudo: ':focus', applyTo: new Set(['bg', 'text', 'border', 'ring', 'opacity', 'outline']) },
+  { prefix: 'focus-visible', pseudo: ':focus-visible', applyTo: new Set(['bg', 'text', 'border', 'ring', 'outline']) },
+  { prefix: 'active', pseudo: ':active', applyTo: new Set(['bg', 'text', 'opacity', 'cursor']) },
   { prefix: 'disabled', pseudo: null, applyTo: new Set(['opacity', 'cursor']) },
+  { prefix: 'placeholder', pseudo: '::placeholder', applyTo: new Set(['text', 'opacity']) },
+  // Sibling-position variants (CSS `:first-child`, `:last-child`, `:odd`, `:even`)
+  // applied to `border` family enables `vds-last:border-0` (no border on last list item)
+  { prefix: 'first', pseudo: ':first-child', applyTo: new Set(['border', 'bg', 'text', 'opacity']) },
+  { prefix: 'last', pseudo: ':last-child', applyTo: new Set(['border', 'bg', 'text', 'opacity']) },
+  { prefix: 'odd', pseudo: ':nth-child(odd)', applyTo: new Set(['bg', 'text', 'opacity']) },
+  { prefix: 'even', pseudo: ':nth-child(even)', applyTo: new Set(['bg', 'text', 'opacity']) },
 ];
 
 function detectFamily(className) {

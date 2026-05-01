@@ -4,6 +4,7 @@
 @layer vds-tokens {
   [data-theme="veronex"]:not([data-mode]),
   [data-theme="veronex"][data-mode="light"] {
+    color-scheme: light;
     --vds-theme-bg-page: #f7f9fa;
     --vds-theme-bg-page: oklch(98% 0.003 240);
     --vds-theme-bg-card: #ffffff;
@@ -113,6 +114,7 @@
   }
 
   [data-theme="veronex"][data-mode="dark"] {
+    color-scheme: dark;
     --vds-theme-bg-page: #000001;
     --vds-theme-bg-page: oklch(5% 0.005 240);
     --vds-theme-bg-card: #030609;
@@ -223,6 +225,7 @@
 
   @media (prefers-color-scheme: dark) {
     [data-theme="veronex"]:not([data-mode]) {
+      color-scheme: dark;
       --vds-theme-bg-page: #000001;
       --vds-theme-bg-page: oklch(5% 0.005 240);
       --vds-theme-bg-card: #030609;

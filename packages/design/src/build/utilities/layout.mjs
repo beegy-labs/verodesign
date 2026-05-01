@@ -1,7 +1,7 @@
 export function generateLayout() {
   const rules = [];
 
-  for (const d of ['block', 'inline-block', 'inline', 'inline-flex', 'flex', 'inline-grid', 'grid', 'contents', 'hidden']) {
+  for (const d of ['block', 'inline-block', 'inline', 'inline-flex', 'flex', 'inline-grid', 'grid', 'contents', 'hidden', 'table', 'table-row', 'table-cell', 'table-row-group', 'table-header-group', 'table-footer-group', 'table-column', 'table-column-group', 'table-caption', 'list-item', 'flow-root']) {
     const value = d === 'hidden' ? 'none' : d;
     rules.push(`.vds-${d} { display: ${value}; }`);
   }
@@ -26,6 +26,11 @@ export function generateLayout() {
   rules.push(`.vds-grow-0 { flex-grow: 0; }`);
   rules.push(`.vds-shrink { flex-shrink: 1; }`);
   rules.push(`.vds-shrink-0 { flex-shrink: 0; }`);
+  // Tailwind-compat aliases (modern Tailwind renames `flex-shrink-0` → `shrink-0`)
+  rules.push(`.vds-flex-shrink { flex-shrink: 1; }`);
+  rules.push(`.vds-flex-shrink-0 { flex-shrink: 0; }`);
+  rules.push(`.vds-flex-grow { flex-grow: 1; }`);
+  rules.push(`.vds-flex-grow-0 { flex-grow: 0; }`);
 
   const align = ['start', 'center', 'end', 'baseline', 'stretch'];
   for (const a of align) rules.push(`.vds-items-${a} { align-items: ${a === 'start' || a === 'end' ? 'flex-' + a : a}; }`);
@@ -67,7 +72,7 @@ export function generateLayout() {
     rules.push(`.vds-overflow-y-${v} { overflow-y: ${v}; }`);
   }
 
-  for (const c of ['auto', 'default', 'pointer', 'wait', 'text', 'move', 'help', 'not-allowed', 'progress', 'crosshair']) {
+  for (const c of ['auto', 'default', 'pointer', 'wait', 'text', 'move', 'help', 'not-allowed', 'progress', 'crosshair', 'grab', 'grabbing', 'zoom-in', 'zoom-out', 'col-resize', 'row-resize', 'ns-resize', 'ew-resize', 'cell']) {
     rules.push(`.vds-cursor-${c} { cursor: ${c}; }`);
   }
 

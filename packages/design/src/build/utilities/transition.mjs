@@ -32,5 +32,22 @@ export function generateTransition(flat) {
     }
   }
 
+  // Tailwind-compat numeric durations (ms) — alias for migration. Token-driven
+  // semantic (`vds-duration-medium` etc.) remains the recommended form.
+  for (const ms of [75, 100, 150, 200, 300, 500, 700, 1000]) {
+    rules.push(`.vds-duration-${ms} { transition-duration: ${ms}ms; }`);
+  }
+
+  // Tailwind-compat ease keywords (Tailwind v3 default cubic-bezier values)
+  rules.push(`.vds-ease-linear { transition-timing-function: linear; }`);
+  rules.push(`.vds-ease-in { transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }`);
+  rules.push(`.vds-ease-out { transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }`);
+  rules.push(`.vds-ease-in-out { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }`);
+
+  // Delay (Tailwind-compat ms) — duration-* counterpart.
+  for (const ms of [0, 75, 100, 150, 200, 300, 500, 700, 1000]) {
+    rules.push(`.vds-delay-${ms} { transition-delay: ${ms}ms; }`);
+  }
+
   return rules;
 }
