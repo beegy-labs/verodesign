@@ -1,0 +1,41 @@
+@import '@verobee/design/css/reset.css';
+@import '@verobee/design/css/core.css';
+@import '@verobee/design/css/themes/default.css';
+@import '@verobee/design/css/themes/veronex.css';
+@import '@verobee/design/css/themes/verobase.css';
+@import '@verobee/design/css/prose.css';
+@import '@verobee/design/utilities/full.css';
+@import '@verobee/design/animations.css';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--vds-font-family-sans);
+  background: var(--vds-theme-bg-page);
+  color: var(--vds-theme-text-primary);
+  min-height: 100vh;
+}
+
+body { transition: background-color 0.2s, color 0.2s; }
+
+a { color: var(--vds-theme-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: var(--vds-font-family-mono);
+  font-size: 0.9em;
+  padding: 2px 6px;
+  background: var(--vds-theme-bg-code);
+  color: var(--vds-theme-text-primary);
+  border-radius: var(--vds-radius-sm);
+}
+
+pre {
+  font-family: var(--vds-font-family-mono);
+  font-size: 0.875rem;
+  padding: var(--vds-spacing-3);
+  background: var(--vds-theme-bg-code);
+  border-radius: var(--vds-radius-md);
+  overflow-x: auto;
+}
+pre code { background: transparent; padding: 0; }
