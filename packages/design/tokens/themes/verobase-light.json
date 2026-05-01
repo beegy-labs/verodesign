@@ -29,6 +29,11 @@
       "3": { "$value": "{color.orange.6}", "$type": "color" },
       "4": { "$value": "{color.violet.6}", "$type": "color" },
       "5": { "$value": "{color.green.6}", "$type": "color" }
+    },
+    "logo": {
+      "start": { "$value": "oklch(32% 0.07 250)", "$type": "color" },
+      "end": { "$value": "{color.blue.5}", "$type": "color" },
+      "inner": { "$value": "{color.white}", "$type": "color" }
     }
   }
 }

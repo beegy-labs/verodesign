@@ -19,7 +19,8 @@
       "elevated": { "$value": "{color.slate.10}", "$type": "color" },
       "hover": { "$value": "{color.slate.10}", "$type": "color" },
       "muted": { "$value": "{color.slate.9}", "$type": "color" },
-      "inverse": { "$value": "{color.slate.1}", "$type": "color" }
+      "inverse": { "$value": "{color.slate.1}", "$type": "color" },
+      "code": { "$value": "{color.slate.10}", "$type": "color" }
     },
     "text": {
       "primary": { "$value": "{color.slate.1}", "$type": "color" },
@@ -62,6 +63,22 @@
       "3": { "$value": "{color.orange.5}", "$type": "color" },
       "4": { "$value": "{color.violet.5}", "$type": "color" },
       "5": { "$value": "{color.green.5}", "$type": "color" }
+    },
+    "success-bg": { "$value": "{color.green.10}", "$type": "color" },
+    "error-bg": { "$value": "{color.red.10}", "$type": "color" },
+    "warning-bg": { "$value": "{color.amber.10}", "$type": "color" },
+    "info-bg": { "$value": "oklch(20% 0.05 250)", "$type": "color" },
+    "neutral-bg": { "$value": "{color.slate.10}", "$type": "color" },
+    "cancelled": { "$value": "{color.slate.8}", "$type": "color" },
+    "cancelled-fg": { "$value": "{color.slate.1}", "$type": "color" },
+    "accent-2": { "$value": "{color.orange.5}", "$type": "color" },
+    "accent-2-fg": { "$value": "{color.slate.12}", "$type": "color" },
+    "accent-3": { "$value": "{color.cyan.5}", "$type": "color" },
+    "accent-3-fg": { "$value": "{color.slate.12}", "$type": "color" },
+    "logo": {
+      "start": { "$value": "{color.blue.6}", "$type": "color" },
+      "end": { "$value": "oklch(75% 0.14 250)", "$type": "color" },
+      "inner": { "$value": "{color.slate.12}", "$type": "color" }
     }
   }
 }

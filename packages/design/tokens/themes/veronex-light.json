@@ -29,6 +29,15 @@
       "3": { "$value": "{color.lime.6}", "$type": "color" },
       "4": { "$value": "{color.amber.6}", "$type": "color" },
       "5": { "$value": "{color.indigo.6}", "$type": "color" }
+    },
+    "accent-2": { "$value": "oklch(45% 0.16 60)", "$type": "color" },
+    "accent-2-fg": { "$value": "{color.white}", "$type": "color" },
+    "accent-3": { "$value": "oklch(50% 0.16 195)", "$type": "color" },
+    "accent-3-fg": { "$value": "{color.white}", "$type": "color" },
+    "logo": {
+      "start": { "$value": "oklch(30% 0.06 150)", "$type": "color" },
+      "end": { "$value": "{color.teal.6}", "$type": "color" },
+      "inner": { "$value": "{color.white}", "$type": "color" }
     }
   }
 }
