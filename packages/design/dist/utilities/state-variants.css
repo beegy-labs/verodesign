@@ -1,0 +1,261 @@
+/* @verobee/design — utilities/state-variants */
+@layer vds-utilities {
+  .vds-hover\:bg-page:hover { background-color: var(--vds-theme-bg-page); }
+  .vds-focus\:bg-page:focus { background-color: var(--vds-theme-bg-page); }
+  .vds-focus-visible\:bg-page:focus-visible { background-color: var(--vds-theme-bg-page); }
+  .vds-active\:bg-page:active { background-color: var(--vds-theme-bg-page); }
+  .vds-hover\:bg-card:hover { background-color: var(--vds-theme-bg-card); }
+  .vds-focus\:bg-card:focus { background-color: var(--vds-theme-bg-card); }
+  .vds-focus-visible\:bg-card:focus-visible { background-color: var(--vds-theme-bg-card); }
+  .vds-active\:bg-card:active { background-color: var(--vds-theme-bg-card); }
+  .vds-hover\:bg-elevated:hover { background-color: var(--vds-theme-bg-elevated); }
+  .vds-focus\:bg-elevated:focus { background-color: var(--vds-theme-bg-elevated); }
+  .vds-focus-visible\:bg-elevated:focus-visible { background-color: var(--vds-theme-bg-elevated); }
+  .vds-active\:bg-elevated:active { background-color: var(--vds-theme-bg-elevated); }
+  .vds-hover\:bg-hover:hover { background-color: var(--vds-theme-bg-hover); }
+  .vds-focus\:bg-hover:focus { background-color: var(--vds-theme-bg-hover); }
+  .vds-focus-visible\:bg-hover:focus-visible { background-color: var(--vds-theme-bg-hover); }
+  .vds-active\:bg-hover:active { background-color: var(--vds-theme-bg-hover); }
+  .vds-hover\:bg-muted:hover { background-color: var(--vds-theme-bg-muted); }
+  .vds-focus\:bg-muted:focus { background-color: var(--vds-theme-bg-muted); }
+  .vds-focus-visible\:bg-muted:focus-visible { background-color: var(--vds-theme-bg-muted); }
+  .vds-active\:bg-muted:active { background-color: var(--vds-theme-bg-muted); }
+  .vds-hover\:bg-inverse:hover { background-color: var(--vds-theme-bg-inverse); }
+  .vds-focus\:bg-inverse:focus { background-color: var(--vds-theme-bg-inverse); }
+  .vds-focus-visible\:bg-inverse:focus-visible { background-color: var(--vds-theme-bg-inverse); }
+  .vds-active\:bg-inverse:active { background-color: var(--vds-theme-bg-inverse); }
+  .vds-hover\:text-primary:hover { color: var(--vds-theme-text-primary); }
+  .vds-focus\:text-primary:focus { color: var(--vds-theme-text-primary); }
+  .vds-focus-visible\:text-primary:focus-visible { color: var(--vds-theme-text-primary); }
+  .vds-active\:text-primary:active { color: var(--vds-theme-text-primary); }
+  .vds-hover\:text-secondary:hover { color: var(--vds-theme-text-secondary); }
+  .vds-focus\:text-secondary:focus { color: var(--vds-theme-text-secondary); }
+  .vds-focus-visible\:text-secondary:focus-visible { color: var(--vds-theme-text-secondary); }
+  .vds-active\:text-secondary:active { color: var(--vds-theme-text-secondary); }
+  .vds-hover\:text-dim:hover { color: var(--vds-theme-text-dim); }
+  .vds-focus\:text-dim:focus { color: var(--vds-theme-text-dim); }
+  .vds-focus-visible\:text-dim:focus-visible { color: var(--vds-theme-text-dim); }
+  .vds-active\:text-dim:active { color: var(--vds-theme-text-dim); }
+  .vds-hover\:text-faint:hover { color: var(--vds-theme-text-faint); }
+  .vds-focus\:text-faint:focus { color: var(--vds-theme-text-faint); }
+  .vds-focus-visible\:text-faint:focus-visible { color: var(--vds-theme-text-faint); }
+  .vds-active\:text-faint:active { color: var(--vds-theme-text-faint); }
+  .vds-hover\:text-bright:hover { color: var(--vds-theme-text-bright); }
+  .vds-focus\:text-bright:focus { color: var(--vds-theme-text-bright); }
+  .vds-focus-visible\:text-bright:focus-visible { color: var(--vds-theme-text-bright); }
+  .vds-active\:text-bright:active { color: var(--vds-theme-text-bright); }
+  .vds-hover\:text-inverse:hover { color: var(--vds-theme-text-inverse); }
+  .vds-focus\:text-inverse:focus { color: var(--vds-theme-text-inverse); }
+  .vds-focus-visible\:text-inverse:focus-visible { color: var(--vds-theme-text-inverse); }
+  .vds-active\:text-inverse:active { color: var(--vds-theme-text-inverse); }
+  .vds-hover\:border-subtle:hover { border-color: var(--vds-theme-border-subtle); }
+  .vds-focus\:border-subtle:focus { border-color: var(--vds-theme-border-subtle); }
+  .vds-focus-visible\:border-subtle:focus-visible { border-color: var(--vds-theme-border-subtle); }
+  .vds-hover\:border-default:hover { border-color: var(--vds-theme-border-default); }
+  .vds-focus\:border-default:focus { border-color: var(--vds-theme-border-default); }
+  .vds-focus-visible\:border-default:focus-visible { border-color: var(--vds-theme-border-default); }
+  .vds-hover\:border-strong:hover { border-color: var(--vds-theme-border-strong); }
+  .vds-focus\:border-strong:focus { border-color: var(--vds-theme-border-strong); }
+  .vds-focus-visible\:border-strong:focus-visible { border-color: var(--vds-theme-border-strong); }
+  .vds-hover\:border-focus:hover { border-color: var(--vds-theme-border-focus); }
+  .vds-focus\:border-focus:focus { border-color: var(--vds-theme-border-focus); }
+  .vds-focus-visible\:border-focus:focus-visible { border-color: var(--vds-theme-border-focus); }
+  .vds-hover\:bg-primary:hover { background-color: var(--vds-theme-primary); }
+  .vds-focus\:bg-primary:focus { background-color: var(--vds-theme-primary); }
+  .vds-focus-visible\:bg-primary:focus-visible { background-color: var(--vds-theme-primary); }
+  .vds-active\:bg-primary:active { background-color: var(--vds-theme-primary); }
+  .vds-hover\:border-primary:hover { border-color: var(--vds-theme-primary); }
+  .vds-focus\:border-primary:focus { border-color: var(--vds-theme-primary); }
+  .vds-focus-visible\:border-primary:focus-visible { border-color: var(--vds-theme-primary); }
+  .vds-hover\:bg-primary-fg:hover { background-color: var(--vds-theme-primary-fg); }
+  .vds-focus\:bg-primary-fg:focus { background-color: var(--vds-theme-primary-fg); }
+  .vds-focus-visible\:bg-primary-fg:focus-visible { background-color: var(--vds-theme-primary-fg); }
+  .vds-active\:bg-primary-fg:active { background-color: var(--vds-theme-primary-fg); }
+  .vds-hover\:text-primary-fg:hover { color: var(--vds-theme-primary-fg); }
+  .vds-focus\:text-primary-fg:focus { color: var(--vds-theme-primary-fg); }
+  .vds-focus-visible\:text-primary-fg:focus-visible { color: var(--vds-theme-primary-fg); }
+  .vds-active\:text-primary-fg:active { color: var(--vds-theme-primary-fg); }
+  .vds-hover\:bg-destructive:hover { background-color: var(--vds-theme-destructive); }
+  .vds-focus\:bg-destructive:focus { background-color: var(--vds-theme-destructive); }
+  .vds-focus-visible\:bg-destructive:focus-visible { background-color: var(--vds-theme-destructive); }
+  .vds-active\:bg-destructive:active { background-color: var(--vds-theme-destructive); }
+  .vds-hover\:text-destructive:hover { color: var(--vds-theme-destructive); }
+  .vds-focus\:text-destructive:focus { color: var(--vds-theme-destructive); }
+  .vds-focus-visible\:text-destructive:focus-visible { color: var(--vds-theme-destructive); }
+  .vds-active\:text-destructive:active { color: var(--vds-theme-destructive); }
+  .vds-hover\:border-destructive:hover { border-color: var(--vds-theme-destructive); }
+  .vds-focus\:border-destructive:focus { border-color: var(--vds-theme-destructive); }
+  .vds-focus-visible\:border-destructive:focus-visible { border-color: var(--vds-theme-destructive); }
+  .vds-hover\:bg-destructive-fg:hover { background-color: var(--vds-theme-destructive-fg); }
+  .vds-focus\:bg-destructive-fg:focus { background-color: var(--vds-theme-destructive-fg); }
+  .vds-focus-visible\:bg-destructive-fg:focus-visible { background-color: var(--vds-theme-destructive-fg); }
+  .vds-active\:bg-destructive-fg:active { background-color: var(--vds-theme-destructive-fg); }
+  .vds-hover\:text-destructive-fg:hover { color: var(--vds-theme-destructive-fg); }
+  .vds-focus\:text-destructive-fg:focus { color: var(--vds-theme-destructive-fg); }
+  .vds-focus-visible\:text-destructive-fg:focus-visible { color: var(--vds-theme-destructive-fg); }
+  .vds-active\:text-destructive-fg:active { color: var(--vds-theme-destructive-fg); }
+  .vds-hover\:bg-success:hover { background-color: var(--vds-theme-success); }
+  .vds-focus\:bg-success:focus { background-color: var(--vds-theme-success); }
+  .vds-focus-visible\:bg-success:focus-visible { background-color: var(--vds-theme-success); }
+  .vds-active\:bg-success:active { background-color: var(--vds-theme-success); }
+  .vds-hover\:text-success:hover { color: var(--vds-theme-success); }
+  .vds-focus\:text-success:focus { color: var(--vds-theme-success); }
+  .vds-focus-visible\:text-success:focus-visible { color: var(--vds-theme-success); }
+  .vds-active\:text-success:active { color: var(--vds-theme-success); }
+  .vds-hover\:border-success:hover { border-color: var(--vds-theme-success); }
+  .vds-focus\:border-success:focus { border-color: var(--vds-theme-success); }
+  .vds-focus-visible\:border-success:focus-visible { border-color: var(--vds-theme-success); }
+  .vds-hover\:bg-success-fg:hover { background-color: var(--vds-theme-success-fg); }
+  .vds-focus\:bg-success-fg:focus { background-color: var(--vds-theme-success-fg); }
+  .vds-focus-visible\:bg-success-fg:focus-visible { background-color: var(--vds-theme-success-fg); }
+  .vds-active\:bg-success-fg:active { background-color: var(--vds-theme-success-fg); }
+  .vds-hover\:text-success-fg:hover { color: var(--vds-theme-success-fg); }
+  .vds-focus\:text-success-fg:focus { color: var(--vds-theme-success-fg); }
+  .vds-focus-visible\:text-success-fg:focus-visible { color: var(--vds-theme-success-fg); }
+  .vds-active\:text-success-fg:active { color: var(--vds-theme-success-fg); }
+  .vds-hover\:bg-warning:hover { background-color: var(--vds-theme-warning); }
+  .vds-focus\:bg-warning:focus { background-color: var(--vds-theme-warning); }
+  .vds-focus-visible\:bg-warning:focus-visible { background-color: var(--vds-theme-warning); }
+  .vds-active\:bg-warning:active { background-color: var(--vds-theme-warning); }
+  .vds-hover\:text-warning:hover { color: var(--vds-theme-warning); }
+  .vds-focus\:text-warning:focus { color: var(--vds-theme-warning); }
+  .vds-focus-visible\:text-warning:focus-visible { color: var(--vds-theme-warning); }
+  .vds-active\:text-warning:active { color: var(--vds-theme-warning); }
+  .vds-hover\:border-warning:hover { border-color: var(--vds-theme-warning); }
+  .vds-focus\:border-warning:focus { border-color: var(--vds-theme-warning); }
+  .vds-focus-visible\:border-warning:focus-visible { border-color: var(--vds-theme-warning); }
+  .vds-hover\:bg-warning-fg:hover { background-color: var(--vds-theme-warning-fg); }
+  .vds-focus\:bg-warning-fg:focus { background-color: var(--vds-theme-warning-fg); }
+  .vds-focus-visible\:bg-warning-fg:focus-visible { background-color: var(--vds-theme-warning-fg); }
+  .vds-active\:bg-warning-fg:active { background-color: var(--vds-theme-warning-fg); }
+  .vds-hover\:text-warning-fg:hover { color: var(--vds-theme-warning-fg); }
+  .vds-focus\:text-warning-fg:focus { color: var(--vds-theme-warning-fg); }
+  .vds-focus-visible\:text-warning-fg:focus-visible { color: var(--vds-theme-warning-fg); }
+  .vds-active\:text-warning-fg:active { color: var(--vds-theme-warning-fg); }
+  .vds-hover\:bg-error:hover { background-color: var(--vds-theme-error); }
+  .vds-focus\:bg-error:focus { background-color: var(--vds-theme-error); }
+  .vds-focus-visible\:bg-error:focus-visible { background-color: var(--vds-theme-error); }
+  .vds-active\:bg-error:active { background-color: var(--vds-theme-error); }
+  .vds-hover\:text-error:hover { color: var(--vds-theme-error); }
+  .vds-focus\:text-error:focus { color: var(--vds-theme-error); }
+  .vds-focus-visible\:text-error:focus-visible { color: var(--vds-theme-error); }
+  .vds-active\:text-error:active { color: var(--vds-theme-error); }
+  .vds-hover\:border-error:hover { border-color: var(--vds-theme-error); }
+  .vds-focus\:border-error:focus { border-color: var(--vds-theme-error); }
+  .vds-focus-visible\:border-error:focus-visible { border-color: var(--vds-theme-error); }
+  .vds-hover\:bg-error-fg:hover { background-color: var(--vds-theme-error-fg); }
+  .vds-focus\:bg-error-fg:focus { background-color: var(--vds-theme-error-fg); }
+  .vds-focus-visible\:bg-error-fg:focus-visible { background-color: var(--vds-theme-error-fg); }
+  .vds-active\:bg-error-fg:active { background-color: var(--vds-theme-error-fg); }
+  .vds-hover\:text-error-fg:hover { color: var(--vds-theme-error-fg); }
+  .vds-focus\:text-error-fg:focus { color: var(--vds-theme-error-fg); }
+  .vds-focus-visible\:text-error-fg:focus-visible { color: var(--vds-theme-error-fg); }
+  .vds-active\:text-error-fg:active { color: var(--vds-theme-error-fg); }
+  .vds-hover\:bg-info:hover { background-color: var(--vds-theme-info); }
+  .vds-focus\:bg-info:focus { background-color: var(--vds-theme-info); }
+  .vds-focus-visible\:bg-info:focus-visible { background-color: var(--vds-theme-info); }
+  .vds-active\:bg-info:active { background-color: var(--vds-theme-info); }
+  .vds-hover\:text-info:hover { color: var(--vds-theme-info); }
+  .vds-focus\:text-info:focus { color: var(--vds-theme-info); }
+  .vds-focus-visible\:text-info:focus-visible { color: var(--vds-theme-info); }
+  .vds-active\:text-info:active { color: var(--vds-theme-info); }
+  .vds-hover\:border-info:hover { border-color: var(--vds-theme-info); }
+  .vds-focus\:border-info:focus { border-color: var(--vds-theme-info); }
+  .vds-focus-visible\:border-info:focus-visible { border-color: var(--vds-theme-info); }
+  .vds-hover\:bg-info-fg:hover { background-color: var(--vds-theme-info-fg); }
+  .vds-focus\:bg-info-fg:focus { background-color: var(--vds-theme-info-fg); }
+  .vds-focus-visible\:bg-info-fg:focus-visible { background-color: var(--vds-theme-info-fg); }
+  .vds-active\:bg-info-fg:active { background-color: var(--vds-theme-info-fg); }
+  .vds-hover\:text-info-fg:hover { color: var(--vds-theme-info-fg); }
+  .vds-focus\:text-info-fg:focus { color: var(--vds-theme-info-fg); }
+  .vds-focus-visible\:text-info-fg:focus-visible { color: var(--vds-theme-info-fg); }
+  .vds-active\:text-info-fg:active { color: var(--vds-theme-info-fg); }
+  .vds-hover\:bg-neutral:hover { background-color: var(--vds-theme-neutral); }
+  .vds-focus\:bg-neutral:focus { background-color: var(--vds-theme-neutral); }
+  .vds-focus-visible\:bg-neutral:focus-visible { background-color: var(--vds-theme-neutral); }
+  .vds-active\:bg-neutral:active { background-color: var(--vds-theme-neutral); }
+  .vds-hover\:text-neutral:hover { color: var(--vds-theme-neutral); }
+  .vds-focus\:text-neutral:focus { color: var(--vds-theme-neutral); }
+  .vds-focus-visible\:text-neutral:focus-visible { color: var(--vds-theme-neutral); }
+  .vds-active\:text-neutral:active { color: var(--vds-theme-neutral); }
+  .vds-hover\:border-neutral:hover { border-color: var(--vds-theme-neutral); }
+  .vds-focus\:border-neutral:focus { border-color: var(--vds-theme-neutral); }
+  .vds-focus-visible\:border-neutral:focus-visible { border-color: var(--vds-theme-neutral); }
+  .vds-hover\:bg-neutral-fg:hover { background-color: var(--vds-theme-neutral-fg); }
+  .vds-focus\:bg-neutral-fg:focus { background-color: var(--vds-theme-neutral-fg); }
+  .vds-focus-visible\:bg-neutral-fg:focus-visible { background-color: var(--vds-theme-neutral-fg); }
+  .vds-active\:bg-neutral-fg:active { background-color: var(--vds-theme-neutral-fg); }
+  .vds-hover\:text-neutral-fg:hover { color: var(--vds-theme-neutral-fg); }
+  .vds-focus\:text-neutral-fg:focus { color: var(--vds-theme-neutral-fg); }
+  .vds-focus-visible\:text-neutral-fg:focus-visible { color: var(--vds-theme-neutral-fg); }
+  .vds-active\:text-neutral-fg:active { color: var(--vds-theme-neutral-fg); }
+  .vds-hover\:opacity-0:hover { opacity: var(--vds-opacity-0); }
+  .vds-focus\:opacity-0:focus { opacity: var(--vds-opacity-0); }
+  .vds-active\:opacity-0:active { opacity: var(--vds-opacity-0); }
+  .vds-disabled\:opacity-0:disabled, .vds-disabled\:opacity-0[aria-disabled="true"] { opacity: var(--vds-opacity-0); }
+  .vds-hover\:opacity-5:hover { opacity: var(--vds-opacity-5); }
+  .vds-focus\:opacity-5:focus { opacity: var(--vds-opacity-5); }
+  .vds-active\:opacity-5:active { opacity: var(--vds-opacity-5); }
+  .vds-disabled\:opacity-5:disabled, .vds-disabled\:opacity-5[aria-disabled="true"] { opacity: var(--vds-opacity-5); }
+  .vds-hover\:opacity-10:hover { opacity: var(--vds-opacity-10); }
+  .vds-focus\:opacity-10:focus { opacity: var(--vds-opacity-10); }
+  .vds-active\:opacity-10:active { opacity: var(--vds-opacity-10); }
+  .vds-disabled\:opacity-10:disabled, .vds-disabled\:opacity-10[aria-disabled="true"] { opacity: var(--vds-opacity-10); }
+  .vds-hover\:opacity-20:hover { opacity: var(--vds-opacity-20); }
+  .vds-focus\:opacity-20:focus { opacity: var(--vds-opacity-20); }
+  .vds-active\:opacity-20:active { opacity: var(--vds-opacity-20); }
+  .vds-disabled\:opacity-20:disabled, .vds-disabled\:opacity-20[aria-disabled="true"] { opacity: var(--vds-opacity-20); }
+  .vds-hover\:opacity-30:hover { opacity: var(--vds-opacity-30); }
+  .vds-focus\:opacity-30:focus { opacity: var(--vds-opacity-30); }
+  .vds-active\:opacity-30:active { opacity: var(--vds-opacity-30); }
+  .vds-disabled\:opacity-30:disabled, .vds-disabled\:opacity-30[aria-disabled="true"] { opacity: var(--vds-opacity-30); }
+  .vds-hover\:opacity-40:hover { opacity: var(--vds-opacity-40); }
+  .vds-focus\:opacity-40:focus { opacity: var(--vds-opacity-40); }
+  .vds-active\:opacity-40:active { opacity: var(--vds-opacity-40); }
+  .vds-disabled\:opacity-40:disabled, .vds-disabled\:opacity-40[aria-disabled="true"] { opacity: var(--vds-opacity-40); }
+  .vds-hover\:opacity-50:hover { opacity: var(--vds-opacity-50); }
+  .vds-focus\:opacity-50:focus { opacity: var(--vds-opacity-50); }
+  .vds-active\:opacity-50:active { opacity: var(--vds-opacity-50); }
+  .vds-disabled\:opacity-50:disabled, .vds-disabled\:opacity-50[aria-disabled="true"] { opacity: var(--vds-opacity-50); }
+  .vds-hover\:opacity-60:hover { opacity: var(--vds-opacity-60); }
+  .vds-focus\:opacity-60:focus { opacity: var(--vds-opacity-60); }
+  .vds-active\:opacity-60:active { opacity: var(--vds-opacity-60); }
+  .vds-disabled\:opacity-60:disabled, .vds-disabled\:opacity-60[aria-disabled="true"] { opacity: var(--vds-opacity-60); }
+  .vds-hover\:opacity-70:hover { opacity: var(--vds-opacity-70); }
+  .vds-focus\:opacity-70:focus { opacity: var(--vds-opacity-70); }
+  .vds-active\:opacity-70:active { opacity: var(--vds-opacity-70); }
+  .vds-disabled\:opacity-70:disabled, .vds-disabled\:opacity-70[aria-disabled="true"] { opacity: var(--vds-opacity-70); }
+  .vds-hover\:opacity-80:hover { opacity: var(--vds-opacity-80); }
+  .vds-focus\:opacity-80:focus { opacity: var(--vds-opacity-80); }
+  .vds-active\:opacity-80:active { opacity: var(--vds-opacity-80); }
+  .vds-disabled\:opacity-80:disabled, .vds-disabled\:opacity-80[aria-disabled="true"] { opacity: var(--vds-opacity-80); }
+  .vds-hover\:opacity-90:hover { opacity: var(--vds-opacity-90); }
+  .vds-focus\:opacity-90:focus { opacity: var(--vds-opacity-90); }
+  .vds-active\:opacity-90:active { opacity: var(--vds-opacity-90); }
+  .vds-disabled\:opacity-90:disabled, .vds-disabled\:opacity-90[aria-disabled="true"] { opacity: var(--vds-opacity-90); }
+  .vds-hover\:opacity-95:hover { opacity: var(--vds-opacity-95); }
+  .vds-focus\:opacity-95:focus { opacity: var(--vds-opacity-95); }
+  .vds-active\:opacity-95:active { opacity: var(--vds-opacity-95); }
+  .vds-disabled\:opacity-95:disabled, .vds-disabled\:opacity-95[aria-disabled="true"] { opacity: var(--vds-opacity-95); }
+  .vds-hover\:opacity-100:hover { opacity: var(--vds-opacity-100); }
+  .vds-focus\:opacity-100:focus { opacity: var(--vds-opacity-100); }
+  .vds-active\:opacity-100:active { opacity: var(--vds-opacity-100); }
+  .vds-disabled\:opacity-100:disabled, .vds-disabled\:opacity-100[aria-disabled="true"] { opacity: var(--vds-opacity-100); }
+  .vds-hover\:shadow-0:hover { box-shadow: var(--vds-shadow-0); }
+  .vds-hover\:shadow-1:hover { box-shadow: var(--vds-shadow-1); }
+  .vds-hover\:shadow-2:hover { box-shadow: var(--vds-shadow-2); }
+  .vds-hover\:shadow-3:hover { box-shadow: var(--vds-shadow-3); }
+  .vds-hover\:shadow-4:hover { box-shadow: var(--vds-shadow-4); }
+  .vds-hover\:shadow-5:hover { box-shadow: var(--vds-shadow-5); }
+  .vds-hover\:shadow-6:hover { box-shadow: var(--vds-shadow-6); }
+  .vds-disabled\:cursor-auto:disabled, .vds-disabled\:cursor-auto[aria-disabled="true"] { cursor: auto; }
+  .vds-disabled\:cursor-default:disabled, .vds-disabled\:cursor-default[aria-disabled="true"] { cursor: default; }
+  .vds-disabled\:cursor-pointer:disabled, .vds-disabled\:cursor-pointer[aria-disabled="true"] { cursor: pointer; }
+  .vds-disabled\:cursor-wait:disabled, .vds-disabled\:cursor-wait[aria-disabled="true"] { cursor: wait; }
+  .vds-disabled\:cursor-text:disabled, .vds-disabled\:cursor-text[aria-disabled="true"] { cursor: text; }
+  .vds-disabled\:cursor-move:disabled, .vds-disabled\:cursor-move[aria-disabled="true"] { cursor: move; }
+  .vds-disabled\:cursor-help:disabled, .vds-disabled\:cursor-help[aria-disabled="true"] { cursor: help; }
+  .vds-disabled\:cursor-not-allowed:disabled, .vds-disabled\:cursor-not-allowed[aria-disabled="true"] { cursor: not-allowed; }
+  .vds-disabled\:cursor-progress:disabled, .vds-disabled\:cursor-progress[aria-disabled="true"] { cursor: progress; }
+  .vds-disabled\:cursor-crosshair:disabled, .vds-disabled\:cursor-crosshair[aria-disabled="true"] { cursor: crosshair; }
+}

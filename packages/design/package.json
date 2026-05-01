@@ -1,0 +1,58 @@
+{
+  "name": "@verobee/design",
+  "version": "0.0.1",
+  "description": "Verobee Design System — token-driven CSS architecture, OKLCH-first, Tailwind-independent.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "tokens",
+    "src",
+    "scripts",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "exports": {
+    "./css/core.css": "./dist/css/core.css",
+    "./css/reset.css": "./dist/css/reset.css",
+    "./css/prose.css": "./dist/css/prose.css",
+    "./css/themes/*.css": "./dist/css/themes/*.css",
+    "./prose": "./dist/css/prose.css",
+    "./utilities/full": "./dist/utilities/full.css",
+    "./utilities/state-variants": "./dist/utilities/state-variants.css",
+    "./utilities/responsive": "./dist/utilities/responsive.css",
+    "./utilities/by-category/*": "./dist/utilities/by-category/*.css",
+    "./utilities/*.css": "./dist/utilities/*.css",
+    "./types/*": "./dist/types/*",
+    "./theme-init.js": "./dist/theme-init.js",
+    "./tokens/*": "./tokens/*",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "vds": "./dist/cli/vds.js",
+    "verodesign": "./dist/cli/vds.js"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "clean": "rm -rf dist && mkdir -p dist",
+    "rebuild": "pnpm clean && pnpm build",
+    "validate": "node scripts/validate.mjs",
+    "prepublishOnly": "pnpm rebuild && pnpm validate"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.4.0",
+    "culori": "^4.0.1",
+    "wcag-contrast": "^3.0.0"
+  }
+}

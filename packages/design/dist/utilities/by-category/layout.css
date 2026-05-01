@@ -1,0 +1,128 @@
+/* @verobee/design — utilities/layout */
+@layer vds-utilities {
+  .vds-block { display: block; }
+  .vds-inline-block { display: inline-block; }
+  .vds-inline { display: inline; }
+  .vds-inline-flex { display: inline-flex; }
+  .vds-flex { display: flex; }
+  .vds-inline-grid { display: inline-grid; }
+  .vds-grid { display: grid; }
+  .vds-contents { display: contents; }
+  .vds-hidden { display: none; }
+  .vds-static { position: static; }
+  .vds-relative { position: relative; }
+  .vds-absolute { position: absolute; }
+  .vds-fixed { position: fixed; }
+  .vds-sticky { position: sticky; }
+  .vds-flex-row { flex-direction: row; }
+  .vds-flex-row-reverse { flex-direction: row-reverse; }
+  .vds-flex-col { flex-direction: column; }
+  .vds-flex-col-reverse { flex-direction: column-reverse; }
+  .vds-flex-wrap { flex-wrap: wrap; }
+  .vds-flex-nowrap { flex-wrap: nowrap; }
+  .vds-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+  .vds-flex-1 { flex: 1 1 0%; }
+  .vds-flex-auto { flex: 1 1 auto; }
+  .vds-flex-initial { flex: 0 1 auto; }
+  .vds-flex-none { flex: none; }
+  .vds-grow { flex-grow: 1; }
+  .vds-grow-0 { flex-grow: 0; }
+  .vds-shrink { flex-shrink: 1; }
+  .vds-shrink-0 { flex-shrink: 0; }
+  .vds-items-start { align-items: flex-start; }
+  .vds-items-center { align-items: center; }
+  .vds-items-end { align-items: flex-end; }
+  .vds-items-baseline { align-items: baseline; }
+  .vds-items-stretch { align-items: stretch; }
+  .vds-justify-start { justify-content: flex-start; }
+  .vds-justify-center { justify-content: center; }
+  .vds-justify-end { justify-content: flex-end; }
+  .vds-justify-between { justify-content: space-between; }
+  .vds-justify-around { justify-content: space-around; }
+  .vds-justify-evenly { justify-content: space-evenly; }
+  .vds-self-auto { align-self: auto; }
+  .vds-self-start { align-self: flex-start; }
+  .vds-self-center { align-self: center; }
+  .vds-self-end { align-self: flex-end; }
+  .vds-self-stretch { align-self: stretch; }
+  .vds-self-baseline { align-self: baseline; }
+  .vds-content-start { align-content: flex-start; }
+  .vds-content-center { align-content: center; }
+  .vds-content-end { align-content: flex-end; }
+  .vds-content-between { align-content: space-between; }
+  .vds-content-around { align-content: space-around; }
+  .vds-content-evenly { align-content: space-evenly; }
+  .vds-content-stretch { align-content: stretch; }
+  .vds-grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .vds-col-span-1 { grid-column: span 1 / span 1; }
+  .vds-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vds-col-span-2 { grid-column: span 2 / span 2; }
+  .vds-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .vds-col-span-3 { grid-column: span 3 / span 3; }
+  .vds-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .vds-col-span-4 { grid-column: span 4 / span 4; }
+  .vds-grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .vds-col-span-5 { grid-column: span 5 / span 5; }
+  .vds-grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .vds-col-span-6 { grid-column: span 6 / span 6; }
+  .vds-grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .vds-col-span-7 { grid-column: span 7 / span 7; }
+  .vds-grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .vds-col-span-8 { grid-column: span 8 / span 8; }
+  .vds-grid-cols-9 { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+  .vds-col-span-9 { grid-column: span 9 / span 9; }
+  .vds-grid-cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+  .vds-col-span-10 { grid-column: span 10 / span 10; }
+  .vds-grid-cols-11 { grid-template-columns: repeat(11, minmax(0, 1fr)); }
+  .vds-col-span-11 { grid-column: span 11 / span 11; }
+  .vds-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .vds-col-span-12 { grid-column: span 12 / span 12; }
+  .vds-grid-cols-none { grid-template-columns: none; }
+  .vds-col-span-full { grid-column: 1 / -1; }
+  .vds-col-auto { grid-column: auto; }
+  .vds-grid-rows-1 { grid-template-rows: repeat(1, minmax(0, 1fr)); }
+  .vds-row-span-1 { grid-row: span 1 / span 1; }
+  .vds-grid-rows-2 { grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  .vds-row-span-2 { grid-row: span 2 / span 2; }
+  .vds-grid-rows-3 { grid-template-rows: repeat(3, minmax(0, 1fr)); }
+  .vds-row-span-3 { grid-row: span 3 / span 3; }
+  .vds-grid-rows-4 { grid-template-rows: repeat(4, minmax(0, 1fr)); }
+  .vds-row-span-4 { grid-row: span 4 / span 4; }
+  .vds-grid-rows-5 { grid-template-rows: repeat(5, minmax(0, 1fr)); }
+  .vds-row-span-5 { grid-row: span 5 / span 5; }
+  .vds-grid-rows-6 { grid-template-rows: repeat(6, minmax(0, 1fr)); }
+  .vds-row-span-6 { grid-row: span 6 / span 6; }
+  .vds-grid-rows-none { grid-template-rows: none; }
+  .vds-row-span-full { grid-row: 1 / -1; }
+  .vds-grid-flow-row { grid-auto-flow: row; }
+  .vds-grid-flow-col { grid-auto-flow: column; }
+  .vds-grid-flow-dense { grid-auto-flow: dense; }
+  .vds-overflow-auto { overflow: auto; }
+  .vds-overflow-x-auto { overflow-x: auto; }
+  .vds-overflow-y-auto { overflow-y: auto; }
+  .vds-overflow-hidden { overflow: hidden; }
+  .vds-overflow-x-hidden { overflow-x: hidden; }
+  .vds-overflow-y-hidden { overflow-y: hidden; }
+  .vds-overflow-visible { overflow: visible; }
+  .vds-overflow-x-visible { overflow-x: visible; }
+  .vds-overflow-y-visible { overflow-y: visible; }
+  .vds-overflow-scroll { overflow: scroll; }
+  .vds-overflow-x-scroll { overflow-x: scroll; }
+  .vds-overflow-y-scroll { overflow-y: scroll; }
+  .vds-cursor-auto { cursor: auto; }
+  .vds-cursor-default { cursor: default; }
+  .vds-cursor-pointer { cursor: pointer; }
+  .vds-cursor-wait { cursor: wait; }
+  .vds-cursor-text { cursor: text; }
+  .vds-cursor-move { cursor: move; }
+  .vds-cursor-help { cursor: help; }
+  .vds-cursor-not-allowed { cursor: not-allowed; }
+  .vds-cursor-progress { cursor: progress; }
+  .vds-cursor-crosshair { cursor: crosshair; }
+  .vds-select-auto { user-select: auto; }
+  .vds-select-none { user-select: none; }
+  .vds-select-text { user-select: text; }
+  .vds-select-all { user-select: all; }
+  .vds-pointer-events-auto { pointer-events: auto; }
+  .vds-pointer-events-none { pointer-events: none; }
+}

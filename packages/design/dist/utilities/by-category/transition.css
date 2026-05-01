@@ -1,0 +1,20 @@
+/* @verobee/design — utilities/transition */
+@layer vds-utilities {
+  .vds-transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-duration: var(--vds-duration-medium); transition-timing-function: var(--vds-easing-ease-in-out); }
+  .vds-transition-none { transition-property: none; }
+  .vds-transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-duration: var(--vds-duration-medium); transition-timing-function: var(--vds-easing-ease-in-out); }
+  .vds-transition-opacity { transition-property: opacity; transition-duration: var(--vds-duration-medium); transition-timing-function: var(--vds-easing-ease-in-out); }
+  .vds-transition-shadow { transition-property: box-shadow; transition-duration: var(--vds-duration-medium); transition-timing-function: var(--vds-easing-ease-in-out); }
+  .vds-transition-transform { transition-property: transform; transition-duration: var(--vds-duration-medium); transition-timing-function: var(--vds-easing-ease-in-out); }
+  .vds-transition-all { transition-property: all; transition-duration: var(--vds-duration-medium); transition-timing-function: var(--vds-easing-ease-in-out); }
+  .vds-duration-instant { transition-duration: var(--vds-duration-instant); }
+  .vds-duration-fast { transition-duration: var(--vds-duration-fast); }
+  .vds-duration-medium { transition-duration: var(--vds-duration-medium); }
+  .vds-duration-slow { transition-duration: var(--vds-duration-slow); }
+  .vds-duration-slower { transition-duration: var(--vds-duration-slower); }
+  .vds-ease-linear { transition-timing-function: var(--vds-easing-linear); }
+  .vds-ease-ease-out { transition-timing-function: var(--vds-easing-ease-out); }
+  .vds-ease-ease-in { transition-timing-function: var(--vds-easing-ease-in); }
+  .vds-ease-ease-in-out { transition-timing-function: var(--vds-easing-ease-in-out); }
+  .vds-ease-spring { transition-timing-function: var(--vds-easing-spring); }
+}

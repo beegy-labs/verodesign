@@ -1,0 +1,46 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "primitive",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "platform": ["web", "ios", "android"],
+      "rationale": "Donder's threshold (~100ms reaction) drives fast tier; reduced-motion sets all to 0."
+    }
+  },
+  "duration": {
+    "instant": { "$value": "0ms", "$type": "duration", "$description": "Reduced motion" },
+    "fast": { "$value": "100ms", "$type": "duration", "$description": "UI feedback (Donder)" },
+    "medium": { "$value": "200ms", "$type": "duration", "$description": "Hover/focus standard" },
+    "slow": { "$value": "400ms", "$type": "duration", "$description": "Layout shift" },
+    "slower": { "$value": "700ms", "$type": "duration", "$description": "Hero animation" }
+  },
+  "easing": {
+    "linear": {
+      "$value": [0, 0, 1, 1],
+      "$type": "cubicBezier",
+      "$description": "Constant velocity"
+    },
+    "ease-out": {
+      "$value": [0, 0, 0.2, 1],
+      "$type": "cubicBezier",
+      "$description": "Decelerating (entering element)"
+    },
+    "ease-in": {
+      "$value": [0.4, 0, 1, 1],
+      "$type": "cubicBezier",
+      "$description": "Accelerating (exiting element)"
+    },
+    "ease-in-out": {
+      "$value": [0.4, 0, 0.2, 1],
+      "$type": "cubicBezier",
+      "$description": "Standard transition"
+    },
+    "spring": {
+      "$value": [0.5, 1.25, 0.75, 1.25],
+      "$type": "cubicBezier",
+      "$description": "Bouncy / playful"
+    }
+  }
+}

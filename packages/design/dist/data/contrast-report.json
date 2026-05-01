@@ -1,0 +1,380 @@
+{
+  "default": {
+    "light": {
+      "theme.text.primary on theme.bg.page": {
+        "ratio": 19.23,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.primary on theme.bg.card": {
+        "ratio": 20.31,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.secondary on theme.bg.page": {
+        "ratio": 12.89,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.dim on theme.bg.page": {
+        "ratio": 5.66,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.bright on theme.bg.page": {
+        "ratio": 19.88,
+        "required": "AAA",
+        "pass": true
+      },
+      "theme.primary-fg on theme.primary": {
+        "ratio": 5.85,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.accent-fg on theme.accent": {
+        "ratio": 5.25,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.destructive-fg on theme.destructive": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.success-fg on theme.success": {
+        "ratio": 5.54,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.warning-fg on theme.warning": {
+        "ratio": 5.17,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.error-fg on theme.error": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.info-fg on theme.info": {
+        "ratio": 5.85,
+        "required": "AA",
+        "pass": true
+      }
+    },
+    "dark": {
+      "theme.text.primary on theme.bg.page": {
+        "ratio": 19.88,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.primary on theme.bg.card": {
+        "ratio": 19.23,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.secondary on theme.bg.page": {
+        "ratio": 15.61,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.dim on theme.bg.page": {
+        "ratio": 7.88,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.bright on theme.bg.page": {
+        "ratio": 20.99,
+        "required": "AAA",
+        "pass": true
+      },
+      "theme.primary-fg on theme.primary": {
+        "ratio": 7.85,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.accent-fg on theme.accent": {
+        "ratio": 8.38,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.destructive-fg on theme.destructive": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.success-fg on theme.success": {
+        "ratio": 5.54,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.warning-fg on theme.warning": {
+        "ratio": 7.61,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.error-fg on theme.error": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.info-fg on theme.info": {
+        "ratio": 7.85,
+        "required": "AA",
+        "pass": true
+      }
+    }
+  },
+  "veronex": {
+    "light": {
+      "theme.text.primary on theme.bg.page": {
+        "ratio": 19.23,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.primary on theme.bg.card": {
+        "ratio": 20.31,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.secondary on theme.bg.page": {
+        "ratio": 12.89,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.dim on theme.bg.page": {
+        "ratio": 5.66,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.bright on theme.bg.page": {
+        "ratio": 19.88,
+        "required": "AAA",
+        "pass": true
+      },
+      "theme.primary-fg on theme.primary": {
+        "ratio": 13.33,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.accent-fg on theme.accent": {
+        "ratio": 5.09,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.destructive-fg on theme.destructive": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.success-fg on theme.success": {
+        "ratio": 5.54,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.warning-fg on theme.warning": {
+        "ratio": 5.17,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.error-fg on theme.error": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.info-fg on theme.info": {
+        "ratio": 13.33,
+        "required": "AA",
+        "pass": true
+      }
+    },
+    "dark": {
+      "theme.text.primary on theme.bg.page": {
+        "ratio": 19.88,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.primary on theme.bg.card": {
+        "ratio": 19.23,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.secondary on theme.bg.page": {
+        "ratio": 15.61,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.dim on theme.bg.page": {
+        "ratio": 7.88,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.bright on theme.bg.page": {
+        "ratio": 20.99,
+        "required": "AAA",
+        "pass": true
+      },
+      "theme.primary-fg on theme.primary": {
+        "ratio": 8.54,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.accent-fg on theme.accent": {
+        "ratio": 8.46,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.destructive-fg on theme.destructive": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.success-fg on theme.success": {
+        "ratio": 5.54,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.warning-fg on theme.warning": {
+        "ratio": 7.61,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.error-fg on theme.error": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.info-fg on theme.info": {
+        "ratio": 8.54,
+        "required": "AA",
+        "pass": true
+      }
+    }
+  },
+  "verobase": {
+    "light": {
+      "theme.text.primary on theme.bg.page": {
+        "ratio": 19.23,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.primary on theme.bg.card": {
+        "ratio": 20.31,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.secondary on theme.bg.page": {
+        "ratio": 12.89,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.dim on theme.bg.page": {
+        "ratio": 5.66,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.bright on theme.bg.page": {
+        "ratio": 19.88,
+        "required": "AAA",
+        "pass": true
+      },
+      "theme.primary-fg on theme.primary": {
+        "ratio": 12.59,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.accent-fg on theme.accent": {
+        "ratio": 6.41,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.destructive-fg on theme.destructive": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.success-fg on theme.success": {
+        "ratio": 5.54,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.warning-fg on theme.warning": {
+        "ratio": 5.17,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.error-fg on theme.error": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.info-fg on theme.info": {
+        "ratio": 12.59,
+        "required": "AA",
+        "pass": true
+      }
+    },
+    "dark": {
+      "theme.text.primary on theme.bg.page": {
+        "ratio": 19.88,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.primary on theme.bg.card": {
+        "ratio": 19.23,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.secondary on theme.bg.page": {
+        "ratio": 15.61,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.dim on theme.bg.page": {
+        "ratio": 7.88,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.text.bright on theme.bg.page": {
+        "ratio": 20.99,
+        "required": "AAA",
+        "pass": true
+      },
+      "theme.primary-fg on theme.primary": {
+        "ratio": 9.09,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.accent-fg on theme.accent": {
+        "ratio": 7.48,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.destructive-fg on theme.destructive": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.success-fg on theme.success": {
+        "ratio": 5.54,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.warning-fg on theme.warning": {
+        "ratio": 7.61,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.error-fg on theme.error": {
+        "ratio": 6.65,
+        "required": "AA",
+        "pass": true
+      },
+      "theme.info-fg on theme.info": {
+        "ratio": 9.09,
+        "required": "AA",
+        "pass": true
+      }
+    }
+  }
+}

@@ -1,0 +1,3049 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsElement",
+          "declaration": {
+            "name": "VdsElement",
+            "module": "./base/vds-element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ZagController",
+          "declaration": {
+            "name": "ZagController",
+            "module": "./base/zag-controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setAriaProperty",
+          "declaration": {
+            "name": "setAriaProperty",
+            "module": "./utils/attribute-mirror.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setRole",
+          "declaration": {
+            "name": "setRole",
+            "module": "./utils/attribute-mirror.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FocusTrap",
+          "declaration": {
+            "name": "FocusTrap",
+            "module": "./utils/focus-trap.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsButton",
+          "declaration": {
+            "name": "VdsButton",
+            "module": "./components/button/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTextField",
+          "declaration": {
+            "name": "VdsTextField",
+            "module": "./components/text-field/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTextArea",
+          "declaration": {
+            "name": "VdsTextArea",
+            "module": "./components/text-area/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsCard",
+          "declaration": {
+            "name": "VdsCard",
+            "module": "./components/card/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsDialog",
+          "declaration": {
+            "name": "VdsDialog",
+            "module": "./components/dialog/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTabs",
+          "declaration": {
+            "name": "VdsTabs",
+            "module": "./components/tabs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTab",
+          "declaration": {
+            "name": "VdsTab",
+            "module": "./components/tabs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTabPanel",
+          "declaration": {
+            "name": "VdsTabPanel",
+            "module": "./components/tabs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsMenu",
+          "declaration": {
+            "name": "VdsMenu",
+            "module": "./components/menu/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsMenuItem",
+          "declaration": {
+            "name": "VdsMenuItem",
+            "module": "./components/menu/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsToast",
+          "declaration": {
+            "name": "VdsToast",
+            "module": "./components/toast/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsToastGroup",
+          "declaration": {
+            "name": "VdsToastGroup",
+            "module": "./components/toast/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/base/vds-element.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VdsElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "emit",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "optional": true,
+                  "type": {
+                    "text": "T"
+                  }
+                },
+                {
+                  "name": "options",
+                  "default": "{}",
+                  "type": {
+                    "text": "EventInit"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderSr",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsElement",
+          "declaration": {
+            "name": "VdsElement",
+            "module": "src/base/vds-element.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/base/zag-controller.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Bridges a Zag.js machine service into a Lit element's reactive lifecycle.\n\nUsage:\n  private machine = new ZagController(this, () => dialog.machine({ id: 'x' }));\n  render() { const api = dialog.connect(this.machine.state, this.machine.send, normalizeProps); ... }",
+          "name": "ZagController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "host",
+              "type": {
+                "text": "ReactiveControllerHost"
+              },
+              "privacy": "private",
+              "default": "host"
+            },
+            {
+              "kind": "field",
+              "name": "factory",
+              "type": {
+                "text": "() => TService"
+              },
+              "privacy": "private",
+              "default": "factory"
+            },
+            {
+              "kind": "field",
+              "name": "service",
+              "type": {
+                "text": "TService | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "unsubscribe",
+              "type": {
+                "text": "() => void | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "state",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "send",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "setContext",
+              "parameters": [
+                {
+                  "name": "ctx",
+                  "type": {
+                    "text": "Record<string, unknown>"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ZagController",
+          "declaration": {
+            "name": "ZagController",
+            "module": "src/base/zag-controller.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/styles/shared.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "focusRing",
+          "default": "css` :host(:focus-visible), :host([data-focus]) { outline: 2px solid var(--vds-theme-border-focus); outline-offset: 2px; } `"
+        },
+        {
+          "kind": "variable",
+          "name": "srOnly",
+          "default": "css` .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; } `"
+        },
+        {
+          "kind": "variable",
+          "name": "reducedMotion",
+          "default": "css` @media (prefers-reduced-motion: reduce) { :host { transition: none !important; animation: none !important; } } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "focusRing",
+          "declaration": {
+            "name": "focusRing",
+            "module": "src/styles/shared.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "srOnly",
+          "declaration": {
+            "name": "srOnly",
+            "module": "src/styles/shared.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "reducedMotion",
+          "declaration": {
+            "name": "reducedMotion",
+            "module": "src/styles/shared.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/utils/attribute-mirror.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "supportsInternalsAriaReflection",
+          "return": {
+            "type": {
+              "text": "boolean"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "setAriaProperty",
+          "return": {
+            "type": {
+              "text": "void"
+            }
+          },
+          "parameters": [
+            {
+              "name": "host",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "name": "key",
+              "type": {
+                "text": "AriaInternalsKey"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | boolean | null | Element | Element[]"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "setRole",
+          "return": {
+            "type": {
+              "text": "void"
+            }
+          },
+          "parameters": [
+            {
+              "name": "host",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "name": "role",
+              "type": {
+                "text": "string | null"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "__testing__",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ supportsInternalsAriaReflection }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "setAriaProperty",
+          "declaration": {
+            "name": "setAriaProperty",
+            "module": "src/utils/attribute-mirror.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setRole",
+          "declaration": {
+            "name": "setRole",
+            "module": "src/utils/attribute-mirror.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "__testing__",
+          "declaration": {
+            "name": "__testing__",
+            "module": "src/utils/attribute-mirror.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/utils/focus-trap.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FocusTrap",
+          "members": [
+            {
+              "kind": "field",
+              "name": "root",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "default": "root"
+            },
+            {
+              "kind": "field",
+              "name": "previousActive",
+              "type": {
+                "text": "HTMLElement | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "activate",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "initialFocus",
+                  "optional": true,
+                  "type": {
+                    "text": "HTMLElement | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "deactivate",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "handleKeydown",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleFocusIn",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "composedActiveElement",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "HTMLElement | null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "FocusTrap",
+          "declaration": {
+            "name": "FocusTrap",
+            "module": "src/utils/focus-trap.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/button/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-button",
+          "declaration": {
+            "name": "VdsButton",
+            "module": "/src/components/button/vds-button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/button/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsButton",
+          "declaration": {
+            "name": "VdsButton",
+            "module": "./vds-button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/button/vds-button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-button> — accessible button (WAI-ARIA AP 1.2 button pattern).\n\nForm-associated: when `type=\"submit\"` or `type=\"reset\"` and placed inside a `<form>`,\nthe click submits/resets the form.",
+          "name": "VdsButton",
+          "cssParts": [
+            {
+              "description": "the underlying button element",
+              "name": "button"
+            }
+          ],
+          "slots": [
+            {
+              "description": "button label",
+              "name": ""
+            },
+            {
+              "description": "leading icon",
+              "name": "start"
+            },
+            {
+              "description": "trailing icon",
+              "name": "end"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "Variant"
+              },
+              "default": "'solid'",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "tone",
+              "type": {
+                "text": "Tone"
+              },
+              "default": "'primary'",
+              "attribute": "tone",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "Size"
+              },
+              "default": "'md'",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'button' | 'submit' | 'reset'"
+              },
+              "default": "'button'",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "data-loading",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabelText",
+              "type": {
+                "text": "string | null"
+              },
+              "default": "null",
+              "attribute": "aria-label"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleKeydown",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "Variant"
+              },
+              "default": "'solid'",
+              "fieldName": "variant"
+            },
+            {
+              "name": "tone",
+              "type": {
+                "text": "Tone"
+              },
+              "default": "'primary'",
+              "fieldName": "tone"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "Size"
+              },
+              "default": "'md'",
+              "fieldName": "size"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "'button' | 'submit' | 'reset'"
+              },
+              "default": "'button'",
+              "fieldName": "type"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "data-loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "loading"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "value"
+            },
+            {
+              "name": "aria-label",
+              "type": {
+                "text": "string | null"
+              },
+              "default": "null",
+              "fieldName": "ariaLabelText"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsButton",
+          "declaration": {
+            "name": "VdsButton",
+            "module": "src/components/button/vds-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-card",
+          "declaration": {
+            "name": "VdsCard",
+            "module": "/src/components/card/vds-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsCard",
+          "declaration": {
+            "name": "VdsCard",
+            "module": "./vds-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/vds-card.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-card> — surface container with optional elevation and structured slots.",
+          "name": "VdsCard",
+          "slots": [
+            {
+              "description": "main body content",
+              "name": ""
+            },
+            {
+              "description": "top header content",
+              "name": "header"
+            },
+            {
+              "description": "bottom footer content",
+              "name": "footer"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "Variant"
+              },
+              "default": "'surface'",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "elevation",
+              "type": {
+                "text": "Elevation"
+              },
+              "default": "'1'",
+              "attribute": "elevation",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "Variant"
+              },
+              "default": "'surface'",
+              "fieldName": "variant"
+            },
+            {
+              "name": "elevation",
+              "type": {
+                "text": "Elevation"
+              },
+              "default": "'1'",
+              "fieldName": "elevation"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsCard",
+          "declaration": {
+            "name": "VdsCard",
+            "module": "src/components/card/vds-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/menu/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-menu",
+          "declaration": {
+            "name": "VdsMenu",
+            "module": "/src/components/menu/vds-menu.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-menu-item",
+          "declaration": {
+            "name": "VdsMenuItem",
+            "module": "/src/components/menu/vds-menu.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/menu/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsMenu",
+          "declaration": {
+            "name": "VdsMenu",
+            "module": "./vds-menu.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsMenuItem",
+          "declaration": {
+            "name": "VdsMenuItem",
+            "module": "./vds-menu.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/menu/vds-menu.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-menu> — Menu Button + Menu (WAI-ARIA AP 1.2 Menu Button pattern).\n\nUse <vds-menu-item> as children. The trigger is provided via slot=\"trigger\".\nArrow keys navigate items; Enter/Space activates; Esc closes; type-ahead supported.",
+          "name": "VdsMenu",
+          "members": [
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "'bottom-start' | 'bottom-end'"
+              },
+              "default": "'bottom-start'",
+              "attribute": "placement"
+            },
+            {
+              "kind": "field",
+              "name": "menuEl",
+              "type": {
+                "text": "HTMLDivElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "typeBuffer",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "typeTimer",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "method",
+              "name": "getTrigger",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "HTMLElement | null"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getItems",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "VdsMenuItem[]"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "handleClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleKeydown",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleTypeAhead",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "char",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "items",
+                  "type": {
+                    "text": "VdsMenuItem[]"
+                  }
+                },
+                {
+                  "name": "currentIdx",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "handleOutsideClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "activate",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "item",
+                  "type": {
+                    "text": "VdsMenuItem"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hide",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "vds-select",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "dispatched when an item is activated, detail { value }"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "open"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "'bottom-start' | 'bottom-end'"
+              },
+              "default": "'bottom-start'",
+              "fieldName": "placement"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-menu",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VdsMenuItem",
+          "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "tone",
+              "type": {
+                "text": "'default' | 'destructive'"
+              },
+              "default": "'default'",
+              "attribute": "data-tone",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "data-tone",
+              "type": {
+                "text": "'default' | 'destructive'"
+              },
+              "default": "'default'",
+              "fieldName": "tone"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-menu-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsMenu",
+          "declaration": {
+            "name": "VdsMenu",
+            "module": "src/components/menu/vds-menu.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsMenuItem",
+          "declaration": {
+            "name": "VdsMenuItem",
+            "module": "src/components/menu/vds-menu.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialog/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-dialog",
+          "declaration": {
+            "name": "VdsDialog",
+            "module": "/src/components/dialog/vds-dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialog/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsDialog",
+          "declaration": {
+            "name": "VdsDialog",
+            "module": "./vds-dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialog/vds-dialog.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-dialog> — modal dialog (WAI-ARIA AP 1.2 Dialog Modal pattern).\n\n- role=\"dialog\", aria-modal=\"true\"\n- Focus trapped inside while open\n- Esc closes\n- Backdrop click closes (unless modal)\n- Restores focus to trigger on close",
+          "name": "VdsDialog",
+          "slots": [
+            {
+              "description": "dialog heading",
+              "name": "title"
+            },
+            {
+              "description": "main content",
+              "name": ""
+            },
+            {
+              "description": "footer (typically buttons)",
+              "name": "footer"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'sm' | 'md' | 'lg'"
+              },
+              "default": "'md'",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "closeOnBackdrop",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "close-on-backdrop"
+            },
+            {
+              "kind": "field",
+              "name": "closeOnEscape",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "close-on-escape"
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabelText",
+              "type": {
+                "text": "string | null"
+              },
+              "default": "null",
+              "attribute": "aria-label"
+            },
+            {
+              "kind": "field",
+              "name": "panelEl",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "focusTrap",
+              "type": {
+                "text": "FocusTrap | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_titleId",
+              "privacy": "private",
+              "default": "`vds-dialog-title-${crypto.randomUUID().slice(0, 8)}`"
+            },
+            {
+              "kind": "method",
+              "name": "handleOpen",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleClose",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "handleEscape",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleBackdropClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hide",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "vds-open",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "dispatched when opened"
+            },
+            {
+              "name": "vds-close",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "dispatched when closed"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "open"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'sm' | 'md' | 'lg'"
+              },
+              "default": "'md'",
+              "fieldName": "size"
+            },
+            {
+              "name": "close-on-backdrop",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "closeOnBackdrop"
+            },
+            {
+              "name": "close-on-escape",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "closeOnEscape"
+            },
+            {
+              "name": "aria-label",
+              "type": {
+                "text": "string | null"
+              },
+              "default": "null",
+              "fieldName": "ariaLabelText"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsDialog",
+          "declaration": {
+            "name": "VdsDialog",
+            "module": "src/components/dialog/vds-dialog.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tabs/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-tabs",
+          "declaration": {
+            "name": "VdsTabs",
+            "module": "/src/components/tabs/vds-tabs.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-tab",
+          "declaration": {
+            "name": "VdsTab",
+            "module": "/src/components/tabs/vds-tabs.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-tab-panel",
+          "declaration": {
+            "name": "VdsTabPanel",
+            "module": "/src/components/tabs/vds-tabs.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tabs/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTabs",
+          "declaration": {
+            "name": "VdsTabs",
+            "module": "./vds-tabs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTab",
+          "declaration": {
+            "name": "VdsTab",
+            "module": "./vds-tabs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTabPanel",
+          "declaration": {
+            "name": "VdsTabPanel",
+            "module": "./vds-tabs.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tabs/vds-tabs.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-tabs> — WAI-ARIA AP 1.2 Tabs pattern.\n\nChildren: <vds-tab value=\"x\"> and <vds-tab-panel value=\"x\">.\nArrow keys navigate. Auto-activation by default; manual via `activation=\"manual\"`.",
+          "name": "VdsTabs",
+          "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "orientation",
+              "type": {
+                "text": "'horizontal' | 'vertical'"
+              },
+              "default": "'horizontal'",
+              "attribute": "data-orientation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "activation",
+              "type": {
+                "text": "'auto' | 'manual'"
+              },
+              "default": "'auto'",
+              "attribute": "activation"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "tabs",
+              "type": {
+                "text": "VdsTab[]"
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "panels",
+              "type": {
+                "text": "VdsTabPanel[]"
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "syncActive",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setActive",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "tab",
+                  "type": {
+                    "text": "VdsTab"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "handleClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleKeydown",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "name": "vds-change",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "dispatched on active tab change with detail { value }"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            },
+            {
+              "name": "data-orientation",
+              "type": {
+                "text": "'horizontal' | 'vertical'"
+              },
+              "default": "'horizontal'",
+              "fieldName": "orientation"
+            },
+            {
+              "name": "activation",
+              "type": {
+                "text": "'auto' | 'manual'"
+              },
+              "default": "'auto'",
+              "fieldName": "activation"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-tabs",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VdsTab",
+          "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-tab",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VdsTabPanel",
+          "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "tabIndex",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-tab-panel",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTabs",
+          "declaration": {
+            "name": "VdsTabs",
+            "module": "src/components/tabs/vds-tabs.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTab",
+          "declaration": {
+            "name": "VdsTab",
+            "module": "src/components/tabs/vds-tabs.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsTabPanel",
+          "declaration": {
+            "name": "VdsTabPanel",
+            "module": "src/components/tabs/vds-tabs.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/text-area/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-text-area",
+          "declaration": {
+            "name": "VdsTextArea",
+            "module": "/src/components/text-area/vds-text-area.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/text-area/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTextArea",
+          "declaration": {
+            "name": "VdsTextArea",
+            "module": "./vds-text-area.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/text-area/vds-text-area.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VdsTextArea",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "helper",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "helper"
+            },
+            {
+              "kind": "field",
+              "name": "errorMessage",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "errorMessage"
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "placeholder"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "readonly",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "minlength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "attribute": "minlength"
+            },
+            {
+              "kind": "field",
+              "name": "maxlength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "attribute": "maxlength"
+            },
+            {
+              "kind": "field",
+              "name": "rows",
+              "type": {
+                "text": "number"
+              },
+              "default": "4",
+              "attribute": "rows"
+            },
+            {
+              "kind": "field",
+              "name": "resize",
+              "type": {
+                "text": "Resize"
+              },
+              "default": "'vertical'",
+              "attribute": "data-resize",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showCount",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "show-count"
+            },
+            {
+              "kind": "field",
+              "name": "textareaEl",
+              "type": {
+                "text": "HTMLTextAreaElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_touched",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_labelId",
+              "privacy": "private",
+              "default": "`vds-ta-label-${crypto.randomUUID().slice(0, 8)}`"
+            },
+            {
+              "kind": "field",
+              "name": "_helperId",
+              "privacy": "private",
+              "default": "`vds-ta-helper-${crypto.randomUUID().slice(0, 8)}`"
+            },
+            {
+              "kind": "method",
+              "name": "syncValidity",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleInput",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "formResetCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "formDisabledCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "disabled",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "formStateRestoreCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "state",
+                  "type": {
+                    "text": "string | FormData | File | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "reportValidity",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "helper",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "helper"
+            },
+            {
+              "name": "errorMessage",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "errorMessage"
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "required"
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly"
+            },
+            {
+              "name": "minlength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "fieldName": "minlength"
+            },
+            {
+              "name": "maxlength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "fieldName": "maxlength"
+            },
+            {
+              "name": "rows",
+              "type": {
+                "text": "number"
+              },
+              "default": "4",
+              "fieldName": "rows"
+            },
+            {
+              "name": "data-resize",
+              "type": {
+                "text": "Resize"
+              },
+              "default": "'vertical'",
+              "fieldName": "resize"
+            },
+            {
+              "name": "show-count",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "showCount"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-text-area",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTextArea",
+          "declaration": {
+            "name": "VdsTextArea",
+            "module": "src/components/text-area/vds-text-area.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/text-field/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-text-field",
+          "declaration": {
+            "name": "VdsTextField",
+            "module": "/src/components/text-field/vds-text-field.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/text-field/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTextField",
+          "declaration": {
+            "name": "VdsTextField",
+            "module": "./vds-text-field.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/text-field/vds-text-field.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-text-field> — text input with label, helper, error states. WAI-ARIA AP 1.2 textbox pattern.\nForm-Associated Custom Element via ElementInternals.",
+          "name": "VdsTextField",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "helper",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "helper"
+            },
+            {
+              "kind": "field",
+              "name": "errorMessage",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "errorMessage"
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "placeholder"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'text' | 'email' | 'password' | 'tel' | 'url' | 'search'"
+              },
+              "default": "'text'",
+              "attribute": "type"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "Size"
+              },
+              "default": "'md'",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "readonly",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "autocomplete"
+            },
+            {
+              "kind": "field",
+              "name": "minlength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "attribute": "minlength"
+            },
+            {
+              "kind": "field",
+              "name": "maxlength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "attribute": "maxlength"
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "pattern"
+            },
+            {
+              "kind": "field",
+              "name": "inputEl",
+              "type": {
+                "text": "HTMLInputElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_touched",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_labelId",
+              "privacy": "private",
+              "default": "`vds-tf-label-${crypto.randomUUID().slice(0, 8)}`"
+            },
+            {
+              "kind": "field",
+              "name": "_helperId",
+              "privacy": "private",
+              "default": "`vds-tf-helper-${crypto.randomUUID().slice(0, 8)}`"
+            },
+            {
+              "kind": "method",
+              "name": "syncFormValue",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "syncValidity",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleInput",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "formResetCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "formDisabledCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "disabled",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "formStateRestoreCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "state",
+                  "type": {
+                    "text": "string | FormData | File | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "select",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "reportValidity",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "helper",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "helper"
+            },
+            {
+              "name": "errorMessage",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "errorMessage"
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "'text' | 'email' | 'password' | 'tel' | 'url' | 'search'"
+              },
+              "default": "'text'",
+              "fieldName": "type"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "Size"
+              },
+              "default": "'md'",
+              "fieldName": "size"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "required"
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly"
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "autocomplete"
+            },
+            {
+              "name": "minlength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "fieldName": "minlength"
+            },
+            {
+              "name": "maxlength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "fieldName": "maxlength"
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "pattern"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-text-field",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTextField",
+          "declaration": {
+            "name": "VdsTextField",
+            "module": "src/components/text-field/vds-text-field.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/toast/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-toast",
+          "declaration": {
+            "name": "VdsToast",
+            "module": "/src/components/toast/vds-toast.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-toast-group",
+          "declaration": {
+            "name": "VdsToastGroup",
+            "module": "/src/components/toast/vds-toast.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/toast/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsToast",
+          "declaration": {
+            "name": "VdsToast",
+            "module": "./vds-toast.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsToastGroup",
+          "declaration": {
+            "name": "VdsToastGroup",
+            "module": "./vds-toast.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/toast/vds-toast.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-toast> — single toast notification (live region pattern).\n\nUse programmatically via <vds-toast-group>.publish(), or place declaratively.",
+          "name": "VdsToast",
+          "members": [
+            {
+              "kind": "field",
+              "name": "toastTitle",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "toastTitle"
+            },
+            {
+              "kind": "field",
+              "name": "message",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "message"
+            },
+            {
+              "kind": "field",
+              "name": "tone",
+              "type": {
+                "text": "Tone"
+              },
+              "default": "'neutral'",
+              "attribute": "data-tone",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "5000",
+              "attribute": "duration"
+            },
+            {
+              "kind": "field",
+              "name": "dismissible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "dismissible"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_timer",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "method",
+              "name": "dismiss",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "vds-dismiss",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "dispatched when toast is dismissed"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "toastTitle",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "toastTitle"
+            },
+            {
+              "name": "message",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "message"
+            },
+            {
+              "name": "data-tone",
+              "type": {
+                "text": "Tone"
+              },
+              "default": "'neutral'",
+              "fieldName": "tone"
+            },
+            {
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "5000",
+              "fieldName": "duration"
+            },
+            {
+              "name": "dismissible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "dismissible"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-toast",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "<vds-toast-group> — toast container with positioning and queue.\n\nProgrammatic use:\n  const group = document.querySelector('vds-toast-group');\n  group.publish({ title: 'Saved', tone: 'success' });",
+          "name": "VdsToastGroup",
+          "members": [
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "| 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center'"
+              },
+              "default": "'bottom-right'",
+              "attribute": "data-placement",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "5",
+              "attribute": "max"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "return": {
+                "type": {
+                  "text": "VdsToast"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "opts",
+                  "type": {
+                    "text": "{\n    title?: string;\n    message?: string;\n    tone?: Tone;\n    duration?: number;\n    dismissible?: boolean;\n  }"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "data-placement",
+              "type": {
+                "text": "| 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center'"
+              },
+              "default": "'bottom-right'",
+              "fieldName": "placement"
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "5",
+              "fieldName": "max"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vds-toast-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsToast",
+          "declaration": {
+            "name": "VdsToast",
+            "module": "src/components/toast/vds-toast.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VdsToastGroup",
+          "declaration": {
+            "name": "VdsToastGroup",
+            "module": "src/components/toast/vds-toast.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

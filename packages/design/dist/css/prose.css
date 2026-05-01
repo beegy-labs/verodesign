@@ -1,0 +1,55 @@
+/* @verobee/design — prose.css */
+/* Long-form markdown styling. Wrap content in `.vds-prose`. Tokens drive everything; dark mode auto via [data-mode]. */
+
+@layer vds-prose {
+  .vds-prose { font-size: var(--vds-font-size-base); line-height: var(--vds-font-lineheight-relaxed); color: var(--vds-theme-text-primary); max-width: 65ch; }
+
+  /* Headings */
+  .vds-prose h1 { font-size: var(--vds-font-size-4xl); font-weight: var(--vds-font-weight-700); line-height: var(--vds-font-lineheight-tight); letter-spacing: var(--vds-font-letterspacing-tight); margin-top: var(--vds-spacing-8); margin-bottom: var(--vds-spacing-4); color: var(--vds-theme-text-primary); }
+  .vds-prose h2 { font-size: var(--vds-font-size-3xl); font-weight: var(--vds-font-weight-700); line-height: var(--vds-font-lineheight-tight); letter-spacing: var(--vds-font-letterspacing-snug); margin-top: var(--vds-spacing-8); margin-bottom: var(--vds-spacing-3); color: var(--vds-theme-text-primary); padding-bottom: var(--vds-spacing-2); border-bottom: 1px solid var(--vds-theme-border-default); }
+  .vds-prose h3 { font-size: var(--vds-font-size-2xl); font-weight: var(--vds-font-weight-600); line-height: var(--vds-font-lineheight-snug); margin-top: var(--vds-spacing-6); margin-bottom: var(--vds-spacing-3); color: var(--vds-theme-text-primary); }
+  .vds-prose h4 { font-size: var(--vds-font-size-xl); font-weight: var(--vds-font-weight-600); line-height: var(--vds-font-lineheight-snug); margin-top: var(--vds-spacing-5); margin-bottom: var(--vds-spacing-2); color: var(--vds-theme-text-primary); }
+  .vds-prose h5 { font-size: var(--vds-font-size-lg); font-weight: var(--vds-font-weight-600); line-height: var(--vds-font-lineheight-normal); margin-top: var(--vds-spacing-4); margin-bottom: var(--vds-spacing-2); color: var(--vds-theme-text-primary); }
+  .vds-prose h6 { font-size: var(--vds-font-size-base); font-weight: var(--vds-font-weight-600); line-height: var(--vds-font-lineheight-normal); margin-top: var(--vds-spacing-4); margin-bottom: var(--vds-spacing-2); color: var(--vds-theme-text-secondary); text-transform: uppercase; letter-spacing: var(--vds-font-letterspacing-wider); }
+
+  /* Paragraph + inline */
+  .vds-prose p { margin-top: 0; margin-bottom: var(--vds-spacing-4); }
+  .vds-prose strong { font-weight: var(--vds-font-weight-600); color: var(--vds-theme-text-primary); }
+  .vds-prose em { font-style: italic; }
+  .vds-prose a { color: var(--vds-theme-primary); text-decoration: underline; text-underline-offset: 0.2em; }
+  .vds-prose a:hover { text-decoration-thickness: 2px; }
+
+  /* Code */
+  .vds-prose code { font-family: var(--vds-font-family-mono); font-size: 0.9em; background-color: var(--vds-theme-bg-elevated); padding: 0.125em 0.375em; border-radius: var(--vds-radius-xs); color: var(--vds-theme-text-primary); }
+  .vds-prose pre { font-family: var(--vds-font-family-mono); font-size: var(--vds-font-size-sm); background-color: var(--vds-theme-bg-elevated); padding: var(--vds-spacing-4); border-radius: var(--vds-radius-md); overflow-x: auto; margin-top: var(--vds-spacing-4); margin-bottom: var(--vds-spacing-4); }
+  .vds-prose pre code { background: transparent; padding: 0; font-size: inherit; }
+
+  /* Lists */
+  .vds-prose ul, .vds-prose ol { margin-top: 0; margin-bottom: var(--vds-spacing-4); padding-left: var(--vds-spacing-6); }
+  .vds-prose ul { list-style-type: disc; }
+  .vds-prose ol { list-style-type: decimal; }
+  .vds-prose li { margin-bottom: var(--vds-spacing-1); }
+  .vds-prose li > ul, .vds-prose li > ol { margin-top: var(--vds-spacing-1); margin-bottom: var(--vds-spacing-1); }
+
+  /* Blockquote */
+  .vds-prose blockquote { margin: var(--vds-spacing-4) 0; padding-left: var(--vds-spacing-4); border-left: 4px solid var(--vds-theme-border-default); color: var(--vds-theme-text-secondary); font-style: italic; }
+
+  /* Tables */
+  .vds-prose table { width: 100%; border-collapse: collapse; margin-top: var(--vds-spacing-4); margin-bottom: var(--vds-spacing-4); font-size: var(--vds-font-size-sm); }
+  .vds-prose thead { border-bottom: 2px solid var(--vds-theme-border-default); }
+  .vds-prose th { text-align: left; font-weight: var(--vds-font-weight-600); padding: var(--vds-spacing-2) var(--vds-spacing-3); color: var(--vds-theme-text-primary); }
+  .vds-prose td { padding: var(--vds-spacing-2) var(--vds-spacing-3); border-bottom: 1px solid var(--vds-theme-border-default); }
+
+  /* HR */
+  .vds-prose hr { border: 0; border-top: 1px solid var(--vds-theme-border-default); margin-top: var(--vds-spacing-8); margin-bottom: var(--vds-spacing-8); }
+
+  /* Images */
+  .vds-prose img { max-width: 100%; height: auto; border-radius: var(--vds-radius-md); margin-top: var(--vds-spacing-4); margin-bottom: var(--vds-spacing-4); }
+
+  /* kbd */
+  .vds-prose kbd { font-family: var(--vds-font-family-mono); font-size: 0.85em; background-color: var(--vds-theme-bg-elevated); border: 1px solid var(--vds-theme-border-default); border-bottom-width: 2px; border-radius: var(--vds-radius-xs); padding: 0.125em 0.375em; }
+
+  /* First/last child reset */
+  .vds-prose > :first-child { margin-top: 0; }
+  .vds-prose > :last-child { margin-bottom: 0; }
+}

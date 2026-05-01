@@ -1,0 +1,59 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "primitive",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "platform": ["web", "ios", "android"],
+      "rationale": "Modular Perfect Fourth (1.333) ratio, anchor 16px. 10 steps cover micro labels through display headings."
+    }
+  },
+  "font": {
+    "family": {
+      "sans": {
+        "$value": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "$type": "fontFamily",
+        "$description": "System default sans-serif stack"
+      },
+      "mono": {
+        "$value": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+        "$type": "fontFamily",
+        "$description": "System default monospace stack"
+      }
+    },
+    "size": {
+      "xs": { "$value": "0.75rem", "$type": "dimension", "$description": "12px label/caption" },
+      "sm": { "$value": "0.875rem", "$type": "dimension", "$description": "14px supporting" },
+      "base": { "$value": "1rem", "$type": "dimension", "$description": "16px body anchor" },
+      "lg": { "$value": "1.125rem", "$type": "dimension", "$description": "18px lead body" },
+      "xl": { "$value": "1.3125rem", "$type": "dimension", "$description": "21px h6/h5" },
+      "2xl": { "$value": "1.75rem", "$type": "dimension", "$description": "28px h4" },
+      "3xl": { "$value": "2.375rem", "$type": "dimension", "$description": "38px h3" },
+      "4xl": { "$value": "3.1875rem", "$type": "dimension", "$description": "51px h2" },
+      "5xl": { "$value": "4.1875rem", "$type": "dimension", "$description": "67px h1 / hero" },
+      "6xl": { "$value": "5.625rem", "$type": "dimension", "$description": "90px display" }
+    },
+    "weight": {
+      "400": { "$value": 400, "$type": "fontWeight", "$description": "Regular" },
+      "500": { "$value": 500, "$type": "fontWeight", "$description": "Medium" },
+      "600": { "$value": 600, "$type": "fontWeight", "$description": "Semibold" },
+      "700": { "$value": 700, "$type": "fontWeight", "$description": "Bold" }
+    },
+    "lineHeight": {
+      "none": { "$value": 1, "$type": "number", "$description": "Display / icon-only" },
+      "tight": { "$value": 1.25, "$type": "number", "$description": "Headings" },
+      "snug": { "$value": 1.375, "$type": "number", "$description": "Subheadings" },
+      "normal": { "$value": 1.5, "$type": "number", "$description": "Body default" },
+      "relaxed": { "$value": 1.625, "$type": "number", "$description": "Long-form reading" },
+      "loose": { "$value": 1.75, "$type": "number", "$description": "Spacious" }
+    },
+    "letterSpacing": {
+      "tight": { "$value": "-0.02em", "$type": "dimension", "$description": "Display headings" },
+      "snug": { "$value": "-0.01em", "$type": "dimension", "$description": "Headings" },
+      "normal": { "$value": "0em", "$type": "dimension", "$description": "Body default" },
+      "wide": { "$value": "0.01em", "$type": "dimension", "$description": "Slightly wide" },
+      "wider": { "$value": "0.05em", "$type": "dimension", "$description": "All-caps labels" }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+/* @verobee/design — utilities/typography */
+@layer vds-utilities {
+  .vds-font-sans { font-family: var(--vds-font-family-sans); }
+  .vds-font-mono { font-family: var(--vds-font-family-mono); }
+  .vds-text-xs { font-size: var(--vds-font-size-xs); }
+  .vds-text-sm { font-size: var(--vds-font-size-sm); }
+  .vds-text-base { font-size: var(--vds-font-size-base); }
+  .vds-text-lg { font-size: var(--vds-font-size-lg); }
+  .vds-text-xl { font-size: var(--vds-font-size-xl); }
+  .vds-text-2xl { font-size: var(--vds-font-size-2xl); }
+  .vds-text-3xl { font-size: var(--vds-font-size-3xl); }
+  .vds-text-4xl { font-size: var(--vds-font-size-4xl); }
+  .vds-text-5xl { font-size: var(--vds-font-size-5xl); }
+  .vds-text-6xl { font-size: var(--vds-font-size-6xl); }
+  .vds-font-400 { font-weight: var(--vds-font-weight-400); }
+  .vds-font-normal { font-weight: var(--vds-font-weight-400); }
+  .vds-font-500 { font-weight: var(--vds-font-weight-500); }
+  .vds-font-medium { font-weight: var(--vds-font-weight-500); }
+  .vds-font-600 { font-weight: var(--vds-font-weight-600); }
+  .vds-font-semibold { font-weight: var(--vds-font-weight-600); }
+  .vds-font-700 { font-weight: var(--vds-font-weight-700); }
+  .vds-font-bold { font-weight: var(--vds-font-weight-700); }
+  .vds-leading-none { line-height: var(--vds-font-lineheight-none); }
+  .vds-leading-tight { line-height: var(--vds-font-lineheight-tight); }
+  .vds-leading-snug { line-height: var(--vds-font-lineheight-snug); }
+  .vds-leading-normal { line-height: var(--vds-font-lineheight-normal); }
+  .vds-leading-relaxed { line-height: var(--vds-font-lineheight-relaxed); }
+  .vds-leading-loose { line-height: var(--vds-font-lineheight-loose); }
+  .vds-tracking-tight { letter-spacing: var(--vds-font-letterspacing-tight); }
+  .vds-tracking-snug { letter-spacing: var(--vds-font-letterspacing-snug); }
+  .vds-tracking-normal { letter-spacing: var(--vds-font-letterspacing-normal); }
+  .vds-tracking-wide { letter-spacing: var(--vds-font-letterspacing-wide); }
+  .vds-tracking-wider { letter-spacing: var(--vds-font-letterspacing-wider); }
+  .vds-text-left { text-align: left; }
+  .vds-text-center { text-align: center; }
+  .vds-text-right { text-align: right; }
+  .vds-text-justify { text-align: justify; }
+  .vds-text-start { text-align: start; }
+  .vds-text-end { text-align: end; }
+  .vds-italic { font-style: italic; }
+  .vds-not-italic { font-style: normal; }
+  .vds-underline { text-decoration: underline; }
+  .vds-line-through { text-decoration: line-through; }
+  .vds-no-underline { text-decoration: none; }
+  .vds-uppercase { text-transform: uppercase; }
+  .vds-lowercase { text-transform: lowercase; }
+  .vds-capitalize { text-transform: capitalize; }
+  .vds-normal-case { text-transform: none; }
+  .vds-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .vds-whitespace-normal { white-space: normal; }
+  .vds-whitespace-nowrap { white-space: nowrap; }
+  .vds-whitespace-pre { white-space: pre; }
+  .vds-whitespace-pre-wrap { white-space: pre-wrap; }
+  .vds-break-words { overflow-wrap: break-word; }
+  .vds-break-all { word-break: break-all; }
+}

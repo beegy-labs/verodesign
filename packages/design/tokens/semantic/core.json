@@ -1,0 +1,200 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "semantic",
+      "slotGroup": "core",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "rationale": "Schema for cross-platform UI slots. Default bindings = default theme light mode. Other themes/modes override via tokens/themes/*.json."
+    }
+  },
+  "theme": {
+    "bg": {
+      "page": {
+        "$value": "{color.slate.1}",
+        "$type": "color",
+        "$description": "Page root background"
+      },
+      "card": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Card / panel surface"
+      },
+      "elevated": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Floating surface (popover, modal)"
+      },
+      "hover": {
+        "$value": "{color.slate.2}",
+        "$type": "color",
+        "$description": "Hover/highlight surface"
+      },
+      "muted": {
+        "$value": "{color.slate.3}",
+        "$type": "color",
+        "$description": "Disabled/muted surface"
+      },
+      "inverse": {
+        "$value": "{color.slate.11}",
+        "$type": "color",
+        "$description": "Inverse surface (tooltip, dark island)"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.slate.11}",
+        "$type": "color",
+        "$description": "Body text (AAA on bg.page)"
+      },
+      "secondary": {
+        "$value": "{color.slate.9}",
+        "$type": "color",
+        "$description": "Supporting text (AAA on bg.page)"
+      },
+      "dim": {
+        "$value": "{color.slate.7}",
+        "$type": "color",
+        "$description": "De-emphasized (AA on bg.page)"
+      },
+      "faint": {
+        "$value": "{color.slate.5}",
+        "$type": "color",
+        "$description": "Hint/placeholder",
+        "$extensions": {
+          "verobee": {
+            "contrast": {
+              "allow": "AA-large",
+              "rationale": "Hint text only, never body"
+            }
+          }
+        }
+      },
+      "bright": {
+        "$value": "{color.slate.12}",
+        "$type": "color",
+        "$description": "Emphasis text (AAA on bg.page)"
+      },
+      "inverse": {
+        "$value": "{color.slate.1}",
+        "$type": "color",
+        "$description": "Text on inverse surface"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$value": "{color.slate.3}",
+        "$type": "color",
+        "$description": "Hairline divider"
+      },
+      "default": {
+        "$value": "{color.slate.4}",
+        "$type": "color",
+        "$description": "Standard border"
+      },
+      "strong": {
+        "$value": "{color.slate.7}",
+        "$type": "color",
+        "$description": "Emphasis border (AA on bg.page)"
+      },
+      "focus": {
+        "$value": "{color.blue.6}",
+        "$type": "color",
+        "$description": "Focus ring outline"
+      }
+    },
+    "primary": {
+      "$value": "{color.blue.7}",
+      "$type": "color",
+      "$description": "Primary action color"
+    },
+    "primary-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on primary (AA 4.5:1)"
+    },
+    "primary-ring": {
+      "$value": "{color.blue.5}",
+      "$type": "color",
+      "$description": "Focus ring on primary"
+    },
+    "accent": {
+      "$value": "{color.cyan.7}",
+      "$type": "color",
+      "$description": "Accent action color (secondary brand)"
+    },
+    "accent-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on accent (AA 4.5:1)"
+    },
+    "destructive": {
+      "$value": "{color.red.7}",
+      "$type": "color",
+      "$description": "Destructive action (delete, irreversible)"
+    },
+    "destructive-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on destructive"
+    },
+    "success": {
+      "$value": "{color.green.7}",
+      "$type": "color",
+      "$description": "Success status"
+    },
+    "success-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on success"
+    },
+    "warning": {
+      "$value": "{color.amber.6}",
+      "$type": "color",
+      "$description": "Warning status"
+    },
+    "warning-fg": {
+      "$value": "{color.slate.12}",
+      "$type": "color",
+      "$description": "Foreground on warning (dark text on amber)"
+    },
+    "error": {
+      "$value": "{color.red.7}",
+      "$type": "color",
+      "$description": "Error status"
+    },
+    "error-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on error"
+    },
+    "info": {
+      "$value": "{color.blue.7}",
+      "$type": "color",
+      "$description": "Info status"
+    },
+    "info-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on info"
+    },
+    "neutral": {
+      "$value": "{color.slate.7}",
+      "$type": "color",
+      "$description": "Neutral status"
+    },
+    "neutral-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on neutral"
+    },
+    "chart": {
+      "1": { "$value": "{color.blue.6}", "$type": "color" },
+      "2": { "$value": "{color.green.6}", "$type": "color" },
+      "3": { "$value": "{color.amber.6}", "$type": "color" },
+      "4": { "$value": "{color.violet.6}", "$type": "color" },
+      "5": { "$value": "{color.pink.6}", "$type": "color" }
+    }
+  }
+}

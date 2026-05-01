@@ -1,0 +1,20 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "primitive",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "platform": ["web", "ios", "android"]
+    }
+  },
+  "border": {
+    "width": {
+      "0": { "$value": "0px", "$type": "dimension" },
+      "1": { "$value": "1px", "$type": "dimension", "$description": "Hairline (default)" },
+      "2": { "$value": "2px", "$type": "dimension", "$description": "Emphasis" },
+      "4": { "$value": "4px", "$type": "dimension", "$description": "Heavy / focus ring" },
+      "8": { "$value": "8px", "$type": "dimension", "$description": "Decorative" }
+    }
+  }
+}

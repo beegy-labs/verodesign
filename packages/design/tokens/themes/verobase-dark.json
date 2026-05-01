@@ -1,0 +1,67 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "theme",
+      "theme": "verobase",
+      "mode": "dark",
+      "implements": ["core", "web"],
+      "since": "v0.1.0",
+      "concept": "Vero Base — electric blue clarity",
+      "primary": "OKLCH(75% 0.14 250) Electric Blue",
+      "accent": "OKLCH(70% 0.153 50) Orange-bright"
+    }
+  },
+  "theme": {
+    "bg": {
+      "page": { "$value": "{color.slate.12}", "$type": "color" },
+      "card": { "$value": "{color.slate.11}", "$type": "color" },
+      "elevated": { "$value": "{color.slate.10}", "$type": "color" },
+      "hover": { "$value": "{color.slate.10}", "$type": "color" },
+      "muted": { "$value": "{color.slate.9}", "$type": "color" },
+      "inverse": { "$value": "{color.slate.1}", "$type": "color" }
+    },
+    "text": {
+      "primary": { "$value": "{color.slate.1}", "$type": "color" },
+      "secondary": { "$value": "{color.slate.3}", "$type": "color" },
+      "dim": { "$value": "{color.slate.5}", "$type": "color" },
+      "faint": {
+        "$value": "{color.slate.7}",
+        "$type": "color",
+        "$extensions": { "verobee": { "contrast": { "allow": "AA-large", "rationale": "Hint text only" } } }
+      },
+      "bright": { "$value": "{color.white}", "$type": "color" },
+      "inverse": { "$value": "{color.slate.11}", "$type": "color" }
+    },
+    "border": {
+      "subtle": { "$value": "{color.slate.10}", "$type": "color" },
+      "default": { "$value": "{color.slate.9}", "$type": "color" },
+      "strong": { "$value": "{color.slate.6}", "$type": "color" },
+      "focus": { "$value": "oklch(75% 0.14 250)", "$type": "color" }
+    },
+    "primary": { "$value": "oklch(75% 0.14 250)", "$type": "color" },
+    "primary-fg": { "$value": "oklch(12% 0.04 250)", "$type": "color" },
+    "primary-ring": { "$value": "oklch(85% 0.10 250)", "$type": "color" },
+    "accent": { "$value": "{color.orange.5}", "$type": "color" },
+    "accent-fg": { "$value": "{color.slate.12}", "$type": "color" },
+    "destructive": { "$value": "{color.red.7}", "$type": "color" },
+    "destructive-fg": { "$value": "{color.white}", "$type": "color" },
+    "success": { "$value": "{color.green.7}", "$type": "color" },
+    "success-fg": { "$value": "{color.white}", "$type": "color" },
+    "warning": { "$value": "{color.amber.5}", "$type": "color" },
+    "warning-fg": { "$value": "{color.slate.12}", "$type": "color" },
+    "error": { "$value": "{color.red.7}", "$type": "color" },
+    "error-fg": { "$value": "{color.white}", "$type": "color" },
+    "info": { "$value": "oklch(75% 0.14 250)", "$type": "color" },
+    "info-fg": { "$value": "oklch(12% 0.04 250)", "$type": "color" },
+    "neutral": { "$value": "{color.slate.6}", "$type": "color" },
+    "neutral-fg": { "$value": "{color.white}", "$type": "color" },
+    "chart": {
+      "1": { "$value": "oklch(75% 0.14 250)", "$type": "color" },
+      "2": { "$value": "{color.cyan.5}", "$type": "color" },
+      "3": { "$value": "{color.orange.5}", "$type": "color" },
+      "4": { "$value": "{color.violet.5}", "$type": "color" },
+      "5": { "$value": "{color.green.5}", "$type": "color" }
+    }
+  }
+}

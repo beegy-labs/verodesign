@@ -1,0 +1,85 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "primitive",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "platform": ["web", "ios", "android"],
+      "rationale": "Material elevation system, light source consistent (top-down). Opacity grows with elevation; blur scales geometrically."
+    }
+  },
+  "shadow": {
+    "0": {
+      "$value": "none",
+      "$type": "shadow",
+      "$description": "Flat / no elevation"
+    },
+    "1": {
+      "$value": {
+        "color": "oklch(0% 0 0 / 0.05)",
+        "offsetX": "0",
+        "offsetY": "1px",
+        "blur": "2px",
+        "spread": "0"
+      },
+      "$type": "shadow",
+      "$description": "Subtle (input rest)"
+    },
+    "2": {
+      "$value": {
+        "color": "oklch(0% 0 0 / 0.06)",
+        "offsetX": "0",
+        "offsetY": "2px",
+        "blur": "4px",
+        "spread": "-1px"
+      },
+      "$type": "shadow",
+      "$description": "Card rest"
+    },
+    "3": {
+      "$value": {
+        "color": "oklch(0% 0 0 / 0.08)",
+        "offsetX": "0",
+        "offsetY": "4px",
+        "blur": "8px",
+        "spread": "-2px"
+      },
+      "$type": "shadow",
+      "$description": "Card hover / dropdown"
+    },
+    "4": {
+      "$value": {
+        "color": "oklch(0% 0 0 / 0.10)",
+        "offsetX": "0",
+        "offsetY": "8px",
+        "blur": "16px",
+        "spread": "-4px"
+      },
+      "$type": "shadow",
+      "$description": "Popover"
+    },
+    "5": {
+      "$value": {
+        "color": "oklch(0% 0 0 / 0.12)",
+        "offsetX": "0",
+        "offsetY": "16px",
+        "blur": "32px",
+        "spread": "-8px"
+      },
+      "$type": "shadow",
+      "$description": "Modal"
+    },
+    "6": {
+      "$value": {
+        "color": "oklch(0% 0 0 / 0.16)",
+        "offsetX": "0",
+        "offsetY": "24px",
+        "blur": "48px",
+        "spread": "-12px"
+      },
+      "$type": "shadow",
+      "$description": "Hero / max elevation"
+    }
+  }
+}
