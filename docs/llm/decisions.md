@@ -430,6 +430,19 @@ Frameworks supported automatically (CSS layer): React, Vue, Svelte, Solid, Angul
 | code | reserved | Future: code editor (gutter, syntax, diff, terminal) |
 | chat | reserved | Future: AI chat UI (user/assistant/tool messages) |
 
+## Branch strategy
+
+| Decision | Value | Rationale |
+| -------- | ----- | --------- |
+| Workflow | **GitHub Flow** (`feat/* → main → tag`) | Library (not service); no staging environment; tag 이 곧 release |
+| Long-lived branches | `main` only | Solo maintainer; develop 이중 트리는 overhead without benefit |
+| Feature branches | `feat/{slug}`, `fix/{slug}` 등 short-lived | squash merge → 깨끗한 history |
+| Release | tag on main (`vX.Y.Z`) + `gh release create` | 소비자가 `github:beegy-labs/verodesign#vX.Y.Z` 로 pin |
+| Maintenance branches | not used pre-1.0 | 단일 major 유지. post-1.0 다중 major 유지보수가 필요해지면 `release/X.Y` 도입 재평가 |
+| 참고 사례 | Shoelace, Web Awesome, Adobe Spectrum WC, Material UI 등 대부분 design system 이 동일 패턴 | |
+
+상세: [.ai/git-flow.md](../../.ai/git-flow.md).
+
 ## Out of scope (explicit)
 
 | Item | Reason |
