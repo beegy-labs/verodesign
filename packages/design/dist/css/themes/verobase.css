@@ -23,10 +23,10 @@
     --vds-theme-text-primary: oklch(12% 0.012 240);
     --vds-theme-text-secondary: #262f36;
     --vds-theme-text-secondary: oklch(30% 0.018 240);
-    --vds-theme-text-dim: #59656e;
-    --vds-theme-text-dim: oklch(50% 0.02 240);
-    --vds-theme-text-faint: #96a0a7;
-    --vds-theme-text-faint: oklch(70% 0.015 240);
+    --vds-theme-text-dim: #3e4952;
+    --vds-theme-text-dim: oklch(40% 0.02 240);
+    --vds-theme-text-faint: #59656e;
+    --vds-theme-text-faint: oklch(50% 0.02 240);
     --vds-theme-text-bright: #000001;
     --vds-theme-text-bright: oklch(5% 0.005 240);
     --vds-theme-text-inverse: #f7f9fa;
