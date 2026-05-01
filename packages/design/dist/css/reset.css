@@ -77,10 +77,30 @@
   ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; }
   summary { display: list-item; }
 
+  /* Tailwind preflight 4px focus ring (shadcn convention) — verodesign 1차에선 2px 였으나
+     원본 Tailwind 정합 위해 4px / offset 4px / radius 2px 로 통일. */
   :focus-visible {
-    outline: 2px solid var(--vds-theme-border-focus, currentColor);
-    outline-offset: 2px;
+    outline: 4px solid var(--vds-theme-border-focus, currentColor);
+    outline-offset: 4px;
+    border-radius: 2px;
   }
+
+  /* Tailwind 의 preflight 는 추가로 다음을 적용한다 — verodesign 정합 위해 흡수 */
+  /* font-feature-settings/letter-spacing 상속 (textarea/input/select 등) */
+  button, input, optgroup, select, textarea {
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    border-radius: 0;
+  }
+  textarea { resize: vertical; }
+  ::placeholder { color: color-mix(in oklab, currentColor 50%, transparent); opacity: 1; }
+  /* 전역 borderColor 디폴트 — Tailwind 처럼 theme.border.subtle 슬롯에서 inherit */
+  *, *::before, *::after { border-color: var(--vds-theme-border-subtle, currentColor); }
+  /* 전역 outline-color 디폴트 — focus-ring 슬롯 사용 (Tailwind 의 default ring-color 와 동등) */
+  * { outline-color: color-mix(in oklab, var(--vds-theme-border-focus, currentColor) 50%, transparent); }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {

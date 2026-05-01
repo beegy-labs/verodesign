@@ -68,6 +68,30 @@ export function expandStateVariants(rules) {
   return out;
 }
 
+/**
+ * Dark-mode variants — emit `vds-dark:CLASS` rules under `[data-mode="dark"]`
+ * parent. Tailwind-compat shim so consumer code like `dark:bg-blue-900/30`
+ * (post-codemod: `vds-dark:bg-blue-900\/30`) flips on dark theme.
+ */
+export function expandDarkVariants(rules) {
+  const out = [];
+  for (const rule of rules) {
+    const m = rule.match(BASE_CLASS_RX);
+    if (!m) continue;
+    const fullClass = m[1];
+    if (!fullClass.startsWith('vds-')) continue;
+    const fam = detectFamily(fullClass);
+    if (!fam) continue;
+    const declarationStart = rule.indexOf('{');
+    if (declarationStart < 0) continue;
+    const declaration = rule.slice(declarationStart - 1);
+    const baseBody = fullClass.slice('vds-'.length);
+    const newClass = `vds-dark\\:${baseBody}`;
+    out.push(`[data-mode="dark"] .${newClass} ${declaration}`);
+  }
+  return out;
+}
+
 export function expandGroupVariants(rules) {
   const out = [];
   const FAMILIES_FOR_GROUP = new Set(['bg', 'text', 'border', 'opacity']);

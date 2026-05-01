@@ -12,7 +12,7 @@ import { generateTransform } from './transform.mjs';
 import { generateRing } from './ring.mjs';
 import { generateDecoration } from './decoration.mjs';
 import { generateBackdrop, generateAnimations, generateAnimationUtilities } from './backdrop.mjs';
-import { expandStateVariants, expandGroupVariants } from './state-variants.mjs';
+import { expandStateVariants, expandGroupVariants, expandDarkVariants } from './state-variants.mjs';
 import { generateBreakpoints, wrapResponsive } from './responsive.mjs';
 
 const DIST = new URL('../../../dist/', import.meta.url).pathname;
@@ -78,6 +78,18 @@ export async function emitUtilities() {
   const groupRules = expandGroupVariants(groupEligible);
   groupRules.unshift('.vds-group { /* parent marker for vds-group-hover/focus */ }');
 
+  // Dark-mode variants — emit `vds-dark:CLASS` rules under `[data-mode="dark"]`
+  // parent. Tailwind compat: consumer code post-codemod uses vds-dark:bg-blue-900,
+  // which only applies when ancestor has data-mode="dark". Limited to color
+  // (bg/text/border with all opacity variants) + ring + effect (border/shadow/opacity)
+  // — sufficient for shadcn dark: usage patterns.
+  const darkEligible = [
+    ...color, // all color rules (primitive ramps + semantic) — full Tailwind dark: parity
+    ...effect.filter((r) => r.startsWith('.vds-opacity-') || r.startsWith('.vds-shadow-') || /^\.vds-border-(0|1|2|4|8)\b/.test(r)),
+    ...ring.filter((r) => r.startsWith('.vds-ring-')),
+  ];
+  const darkRules = expandDarkVariants(darkEligible);
+
   const baseAll = [
     ...color, ...spacing, ...typography, ...layout, ...sizing,
     ...effect, ...transition, ...transform, ...ring, ...decoration, ...backdrop,
@@ -108,6 +120,9 @@ export async function emitUtilities() {
 
   const groupLines = ['/* @verobee/design — utilities/group-variants (consumer light DOM only) */', '@layer vds-utilities {', ...groupRules.map((l) => '  ' + l), '}', ''].join('\n');
   await writeFile(join(DIST, 'utilities', 'group-variants.css'), groupLines, 'utf8');
+
+  const darkLines = ['/* @verobee/design — utilities/dark-variants ([data-mode="dark"] parent) */', '@layer vds-utilities {', ...darkRules.map((l) => '  ' + l), '}', ''].join('\n');
+  await writeFile(join(DIST, 'utilities', 'dark-variants.css'), darkLines, 'utf8');
 
   const responsiveLines = ['/* @verobee/design — utilities/responsive */', '@layer vds-utilities {', ...responsiveBlocks.map((l) => '  ' + l), '}', ''].join('\n');
   await writeFile(join(DIST, 'utilities', 'responsive.css'), responsiveLines, 'utf8');
@@ -144,6 +159,7 @@ export async function emitUtilities() {
     ...animUtils.map((l) => '  ' + l),
     ...stateRules.map((l) => '  ' + l),
     ...groupRules.map((l) => '  ' + l),
+    ...darkRules.map((l) => '  ' + l),
     ...responsiveBlocks.map((l) => '  ' + l),
     '  @media (prefers-reduced-motion: reduce) {',
     '    .vds-anim-spin, .vds-anim-pulse, .vds-anim-bounce { animation: none; }',
@@ -169,6 +185,7 @@ export async function emitUtilities() {
       animation: animUtils.length,
       state: stateRules.length,
       group: groupRules.length,
+      dark: darkRules.length,
       responsive: responsiveBlocks.length,
     },
   };
