@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko" data-theme="default" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verobee Design System — Showcase</title>
+    <script>
+      (function () {
+        try {
+          const t = localStorage.getItem('vds:theme') || 'default';
+          const m = localStorage.getItem('vds:mode') || 'light';
+          document.documentElement.setAttribute('data-theme', t);
+          document.documentElement.setAttribute('data-mode', m);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <vds-app></vds-app>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

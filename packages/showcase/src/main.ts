@@ -1,0 +1,9 @@
+import './styles/app.css';
+import '@verobee/design-elements';
+import './components/app-shell.js';
+import './components/theme-switcher.js';
+import './pages/home.js';
+import './pages/tokens.js';
+import './pages/utilities.js';
+import './pages/components-index.js';
+import './pages/component-page.js';

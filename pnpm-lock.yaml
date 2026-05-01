@@ -80,6 +80,25 @@ importers:
         specifier: ^5.4.0
         version: 5.4.21(@types/node@25.6.0)
 
+  packages/showcase:
+    dependencies:
+      '@verobee/design':
+        specifier: workspace:*
+        version: link:../design
+      '@verobee/design-elements':
+        specifier: workspace:*
+        version: link:../design-elements
+      lit:
+        specifier: ^3.2.0
+        version: 3.3.2
+    devDependencies:
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.4.0
+        version: 5.4.21(@types/node@25.6.0)
+
 packages:
 
   '@babel/code-frame@7.29.0':

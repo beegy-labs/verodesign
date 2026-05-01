@@ -8,3 +8,6 @@ node_modules/
 .turbo/
 *.tsbuildinfo
 coverage/
+
+# Showcase is a dev tool — built artifact not consumed externally
+packages/showcase/dist/

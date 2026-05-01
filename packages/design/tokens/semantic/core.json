@@ -40,6 +40,11 @@
         "$value": "{color.slate.11}",
         "$type": "color",
         "$description": "Inverse surface (tooltip, dark island)"
+      },
+      "code": {
+        "$value": "{color.slate.2}",
+        "$type": "color",
+        "$description": "Code surface (inline + block code)"
       }
     },
     "text": {
@@ -195,6 +200,78 @@
       "3": { "$value": "{color.amber.6}", "$type": "color" },
       "4": { "$value": "{color.violet.6}", "$type": "color" },
       "5": { "$value": "{color.pink.6}", "$type": "color" }
+    },
+    "success-bg": {
+      "$value": "{color.green.2}",
+      "$type": "color",
+      "$description": "Soft tinted background for success surfaces (badges, alerts)"
+    },
+    "error-bg": {
+      "$value": "{color.red.2}",
+      "$type": "color",
+      "$description": "Soft tinted background for error surfaces"
+    },
+    "warning-bg": {
+      "$value": "{color.amber.2}",
+      "$type": "color",
+      "$description": "Soft tinted background for warning surfaces"
+    },
+    "info-bg": {
+      "$value": "{color.blue.2}",
+      "$type": "color",
+      "$description": "Soft tinted background for info surfaces"
+    },
+    "neutral-bg": {
+      "$value": "{color.slate.2}",
+      "$type": "color",
+      "$description": "Soft tinted background for neutral surfaces"
+    },
+    "cancelled": {
+      "$value": "{color.slate.7}",
+      "$type": "color",
+      "$description": "Cancelled / disabled status (verobase pattern)"
+    },
+    "cancelled-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on cancelled"
+    },
+    "accent-2": {
+      "$value": "{color.amber.7}",
+      "$type": "color",
+      "$description": "Secondary accent (consumer extension — veronex 'power' / others)"
+    },
+    "accent-2-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on accent-2"
+    },
+    "accent-3": {
+      "$value": "{color.cyan.7}",
+      "$type": "color",
+      "$description": "Tertiary accent (consumer extension — veronex 'gpu' / others)"
+    },
+    "accent-3-fg": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Foreground on accent-3"
+    },
+    "logo": {
+      "start": {
+        "$value": "{color.blue.7}",
+        "$type": "color",
+        "$description": "Logo gradient start"
+      },
+      "end": {
+        "$value": "{color.cyan.6}",
+        "$type": "color",
+        "$description": "Logo gradient end"
+      },
+      "inner": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Logo inner accent (optional)"
+      }
     }
   }
 }
