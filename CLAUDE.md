@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-> Claude Code config — derived from [AGENTS.md](AGENTS.md) | **Last Updated**: 2026-04-30
+> Claude agent config — derived from [AGENTS.md](AGENTS.md) | **Last Updated**: 2026-04-30
 
 ## Start
 

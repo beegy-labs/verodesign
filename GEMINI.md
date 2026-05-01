@@ -1,6 +1,6 @@
 # GEMINI.md
 
-> Gemini CLI config — derived from [AGENTS.md](AGENTS.md) | **Last Updated**: 2026-04-30
+> Gemini agent config — derived from [AGENTS.md](AGENTS.md) | **Last Updated**: 2026-04-30
 
 Read [.ai/README.md](.ai/README.md). Master decisions: [docs/llm/decisions.md](docs/llm/decisions.md).
 

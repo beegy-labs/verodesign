@@ -115,6 +115,6 @@ LLM agents MUST read [docs/llm/research/llm-knowledge-gaps.md](docs/llm/research
 | ADD | Pattern intake | `.add/pattern-intake.md` |
 | ADD | Pattern promote | `.add/pattern-promote.md` |
 | ADD | Pattern deprecate | `.add/pattern-deprecate.md` |
-| LLM | Claude Code | `CLAUDE.md` |
-| LLM | OpenAI Codex | `AGENTS.md` |
-| LLM | Gemini CLI | `GEMINI.md` |
+| LLM | (Claude family) | `CLAUDE.md` |
+| LLM | (Codex family) | `AGENTS.md` |
+| LLM | (Gemini family) | `GEMINI.md` |
