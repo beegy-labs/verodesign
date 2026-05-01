@@ -1,0 +1,78 @@
+/* @verobee/design — utilities/ring */
+@layer vds-utilities {
+  :root { --vds-ring-offset-width: 0px; --vds-ring-offset-color: transparent; --vds-ring-color: var(--vds-theme-border-focus); --vds-ring-inset: ; }
+  .vds-ring-0 { box-shadow: var(--vds-ring-inset, ) 0 0 0 calc(0px + var(--vds-ring-offset-width, 0px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-1 { box-shadow: var(--vds-ring-inset, ) 0 0 0 calc(1px + var(--vds-ring-offset-width, 0px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-2 { box-shadow: var(--vds-ring-inset, ) 0 0 0 calc(2px + var(--vds-ring-offset-width, 0px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-4 { box-shadow: var(--vds-ring-inset, ) 0 0 0 calc(4px + var(--vds-ring-offset-width, 0px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-8 { box-shadow: var(--vds-ring-inset, ) 0 0 0 calc(8px + var(--vds-ring-offset-width, 0px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-offset-0 { --vds-ring-offset-width: 0px; box-shadow: 0 0 0 var(--vds-ring-offset-width) var(--vds-ring-offset-color, var(--vds-theme-bg-page)), 0 0 0 calc(var(--vds-ring-offset-width) + var(--vds-ring-width, 2px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-offset-1 { --vds-ring-offset-width: 1px; box-shadow: 0 0 0 var(--vds-ring-offset-width) var(--vds-ring-offset-color, var(--vds-theme-bg-page)), 0 0 0 calc(var(--vds-ring-offset-width) + var(--vds-ring-width, 2px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-offset-2 { --vds-ring-offset-width: 2px; box-shadow: 0 0 0 var(--vds-ring-offset-width) var(--vds-ring-offset-color, var(--vds-theme-bg-page)), 0 0 0 calc(var(--vds-ring-offset-width) + var(--vds-ring-width, 2px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-offset-4 { --vds-ring-offset-width: 4px; box-shadow: 0 0 0 var(--vds-ring-offset-width) var(--vds-ring-offset-color, var(--vds-theme-bg-page)), 0 0 0 calc(var(--vds-ring-offset-width) + var(--vds-ring-width, 2px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-offset-8 { --vds-ring-offset-width: 8px; box-shadow: 0 0 0 var(--vds-ring-offset-width) var(--vds-ring-offset-color, var(--vds-theme-bg-page)), 0 0 0 calc(var(--vds-ring-offset-width) + var(--vds-ring-width, 2px)) var(--vds-ring-color, var(--vds-theme-border-focus)); }
+  .vds-ring-inset { --vds-ring-inset: inset; }
+  .vds-ring-offset-page { --vds-ring-offset-color: var(--vds-theme-bg-page); }
+  .vds-ring-offset-card { --vds-ring-offset-color: var(--vds-theme-bg-card); }
+  .vds-ring-offset-elevated { --vds-ring-offset-color: var(--vds-theme-bg-elevated); }
+  .vds-ring-offset-hover { --vds-ring-offset-color: var(--vds-theme-bg-hover); }
+  .vds-ring-offset-muted { --vds-ring-offset-color: var(--vds-theme-bg-muted); }
+  .vds-ring-offset-inverse { --vds-ring-offset-color: var(--vds-theme-bg-inverse); }
+  .vds-ring-offset-code { --vds-ring-offset-color: var(--vds-theme-bg-code); }
+  .vds-ring-primary { --vds-ring-color: var(--vds-theme-primary); }
+  .vds-ring-offset-primary { --vds-ring-offset-color: var(--vds-theme-primary); }
+  .vds-ring-primary-fg { --vds-ring-color: var(--vds-theme-primary-fg); }
+  .vds-ring-offset-primary-fg { --vds-ring-offset-color: var(--vds-theme-primary-fg); }
+  .vds-ring-primary-ring { --vds-ring-color: var(--vds-theme-primary-ring); }
+  .vds-ring-offset-primary-ring { --vds-ring-offset-color: var(--vds-theme-primary-ring); }
+  .vds-ring-accent { --vds-ring-color: var(--vds-theme-accent); }
+  .vds-ring-offset-accent { --vds-ring-offset-color: var(--vds-theme-accent); }
+  .vds-ring-accent-fg { --vds-ring-color: var(--vds-theme-accent-fg); }
+  .vds-ring-offset-accent-fg { --vds-ring-offset-color: var(--vds-theme-accent-fg); }
+  .vds-ring-destructive { --vds-ring-color: var(--vds-theme-destructive); }
+  .vds-ring-offset-destructive { --vds-ring-offset-color: var(--vds-theme-destructive); }
+  .vds-ring-destructive-fg { --vds-ring-color: var(--vds-theme-destructive-fg); }
+  .vds-ring-offset-destructive-fg { --vds-ring-offset-color: var(--vds-theme-destructive-fg); }
+  .vds-ring-success { --vds-ring-color: var(--vds-theme-success); }
+  .vds-ring-offset-success { --vds-ring-offset-color: var(--vds-theme-success); }
+  .vds-ring-success-fg { --vds-ring-color: var(--vds-theme-success-fg); }
+  .vds-ring-offset-success-fg { --vds-ring-offset-color: var(--vds-theme-success-fg); }
+  .vds-ring-warning { --vds-ring-color: var(--vds-theme-warning); }
+  .vds-ring-offset-warning { --vds-ring-offset-color: var(--vds-theme-warning); }
+  .vds-ring-warning-fg { --vds-ring-color: var(--vds-theme-warning-fg); }
+  .vds-ring-offset-warning-fg { --vds-ring-offset-color: var(--vds-theme-warning-fg); }
+  .vds-ring-error { --vds-ring-color: var(--vds-theme-error); }
+  .vds-ring-offset-error { --vds-ring-offset-color: var(--vds-theme-error); }
+  .vds-ring-error-fg { --vds-ring-color: var(--vds-theme-error-fg); }
+  .vds-ring-offset-error-fg { --vds-ring-offset-color: var(--vds-theme-error-fg); }
+  .vds-ring-info { --vds-ring-color: var(--vds-theme-info); }
+  .vds-ring-offset-info { --vds-ring-offset-color: var(--vds-theme-info); }
+  .vds-ring-info-fg { --vds-ring-color: var(--vds-theme-info-fg); }
+  .vds-ring-offset-info-fg { --vds-ring-offset-color: var(--vds-theme-info-fg); }
+  .vds-ring-neutral { --vds-ring-color: var(--vds-theme-neutral); }
+  .vds-ring-offset-neutral { --vds-ring-offset-color: var(--vds-theme-neutral); }
+  .vds-ring-neutral-fg { --vds-ring-color: var(--vds-theme-neutral-fg); }
+  .vds-ring-offset-neutral-fg { --vds-ring-offset-color: var(--vds-theme-neutral-fg); }
+  .vds-ring-success-bg { --vds-ring-color: var(--vds-theme-success-bg); }
+  .vds-ring-offset-success-bg { --vds-ring-offset-color: var(--vds-theme-success-bg); }
+  .vds-ring-error-bg { --vds-ring-color: var(--vds-theme-error-bg); }
+  .vds-ring-offset-error-bg { --vds-ring-offset-color: var(--vds-theme-error-bg); }
+  .vds-ring-warning-bg { --vds-ring-color: var(--vds-theme-warning-bg); }
+  .vds-ring-offset-warning-bg { --vds-ring-offset-color: var(--vds-theme-warning-bg); }
+  .vds-ring-info-bg { --vds-ring-color: var(--vds-theme-info-bg); }
+  .vds-ring-offset-info-bg { --vds-ring-offset-color: var(--vds-theme-info-bg); }
+  .vds-ring-neutral-bg { --vds-ring-color: var(--vds-theme-neutral-bg); }
+  .vds-ring-offset-neutral-bg { --vds-ring-offset-color: var(--vds-theme-neutral-bg); }
+  .vds-ring-cancelled { --vds-ring-color: var(--vds-theme-cancelled); }
+  .vds-ring-offset-cancelled { --vds-ring-offset-color: var(--vds-theme-cancelled); }
+  .vds-ring-cancelled-fg { --vds-ring-color: var(--vds-theme-cancelled-fg); }
+  .vds-ring-offset-cancelled-fg { --vds-ring-offset-color: var(--vds-theme-cancelled-fg); }
+  .vds-ring-accent-2 { --vds-ring-color: var(--vds-theme-accent-2); }
+  .vds-ring-offset-accent-2 { --vds-ring-offset-color: var(--vds-theme-accent-2); }
+  .vds-ring-accent-2-fg { --vds-ring-color: var(--vds-theme-accent-2-fg); }
+  .vds-ring-offset-accent-2-fg { --vds-ring-offset-color: var(--vds-theme-accent-2-fg); }
+  .vds-ring-accent-3 { --vds-ring-color: var(--vds-theme-accent-3); }
+  .vds-ring-offset-accent-3 { --vds-ring-offset-color: var(--vds-theme-accent-3); }
+  .vds-ring-accent-3-fg { --vds-ring-color: var(--vds-theme-accent-3-fg); }
+  .vds-ring-offset-accent-3-fg { --vds-ring-offset-color: var(--vds-theme-accent-3-fg); }
+}

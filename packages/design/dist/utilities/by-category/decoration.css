@@ -1,0 +1,71 @@
+/* @verobee/design — utilities/decoration */
+@layer vds-utilities {
+  .vds-underline-offset-auto { text-underline-offset: auto; }
+  .vds-underline-offset-0 { text-underline-offset: 0px; }
+  .vds-underline-offset-1 { text-underline-offset: 1px; }
+  .vds-underline-offset-2 { text-underline-offset: 2px; }
+  .vds-underline-offset-4 { text-underline-offset: 4px; }
+  .vds-underline-offset-8 { text-underline-offset: 8px; }
+  .vds-decoration-auto { text-decoration-thickness: auto; }
+  .vds-decoration-thin { text-decoration-thickness: thin; }
+  .vds-decoration-thick { text-decoration-thickness: thick; }
+  .vds-decoration-1 { text-decoration-thickness: 1px; }
+  .vds-decoration-2 { text-decoration-thickness: 2px; }
+  .vds-decoration-4 { text-decoration-thickness: 4px; }
+  .vds-decoration-8 { text-decoration-thickness: 8px; }
+  .vds-decoration-solid { text-decoration-style: solid; }
+  .vds-decoration-double { text-decoration-style: double; }
+  .vds-decoration-dotted { text-decoration-style: dotted; }
+  .vds-decoration-dashed { text-decoration-style: dashed; }
+  .vds-decoration-wavy { text-decoration-style: wavy; }
+  .vds-line-clamp-1 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; line-clamp: 1; overflow: hidden; }
+  .vds-line-clamp-2 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+  .vds-line-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
+  .vds-line-clamp-4 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden; }
+  .vds-line-clamp-5 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; line-clamp: 5; overflow: hidden; }
+  .vds-line-clamp-6 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; line-clamp: 6; overflow: hidden; }
+  .vds-line-clamp-none { -webkit-line-clamp: none; line-clamp: none; overflow: visible; }
+  .vds-tabular-nums { font-variant-numeric: tabular-nums; }
+  .vds-proportional-nums { font-variant-numeric: proportional-nums; }
+  .vds-slashed-zero { font-variant-numeric: slashed-zero; }
+  .vds-ordinal { font-variant-numeric: ordinal; }
+  .vds-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .vds-not-sr-only { position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal; }
+  .vds-divide-y > * + * { border-top-width: 1px; border-top-style: solid; border-top-color: var(--vds-theme-border-subtle); }
+  .vds-divide-x > * + * { border-left-width: 1px; border-left-style: solid; border-left-color: var(--vds-theme-border-subtle); }
+  .vds-divide-y-0 > * + * { border-top-width: 0; }
+  .vds-divide-x-0 > * + * { border-left-width: 0; }
+  .vds-divide-y-2 > * + * { border-top-width: 2px; border-top-style: solid; border-top-color: var(--vds-theme-border-default); }
+  .vds-divide-subtle > * + * { border-color: var(--vds-theme-border-subtle); }
+  .vds-divide-default > * + * { border-color: var(--vds-theme-border-default); }
+  .vds-divide-strong > * + * { border-color: var(--vds-theme-border-strong); }
+  .vds-divide-focus > * + * { border-color: var(--vds-theme-border-focus); }
+  .vds-divide-primary > * + * { border-color: var(--vds-theme-primary); }
+  .vds-divide-primary-fg > * + * { border-color: var(--vds-theme-primary-fg); }
+  .vds-divide-primary-ring > * + * { border-color: var(--vds-theme-primary-ring); }
+  .vds-divide-accent > * + * { border-color: var(--vds-theme-accent); }
+  .vds-divide-accent-fg > * + * { border-color: var(--vds-theme-accent-fg); }
+  .vds-divide-destructive > * + * { border-color: var(--vds-theme-destructive); }
+  .vds-divide-destructive-fg > * + * { border-color: var(--vds-theme-destructive-fg); }
+  .vds-divide-success > * + * { border-color: var(--vds-theme-success); }
+  .vds-divide-success-fg > * + * { border-color: var(--vds-theme-success-fg); }
+  .vds-divide-warning > * + * { border-color: var(--vds-theme-warning); }
+  .vds-divide-warning-fg > * + * { border-color: var(--vds-theme-warning-fg); }
+  .vds-divide-error > * + * { border-color: var(--vds-theme-error); }
+  .vds-divide-error-fg > * + * { border-color: var(--vds-theme-error-fg); }
+  .vds-divide-info > * + * { border-color: var(--vds-theme-info); }
+  .vds-divide-info-fg > * + * { border-color: var(--vds-theme-info-fg); }
+  .vds-divide-neutral > * + * { border-color: var(--vds-theme-neutral); }
+  .vds-divide-neutral-fg > * + * { border-color: var(--vds-theme-neutral-fg); }
+  .vds-divide-success-bg > * + * { border-color: var(--vds-theme-success-bg); }
+  .vds-divide-error-bg > * + * { border-color: var(--vds-theme-error-bg); }
+  .vds-divide-warning-bg > * + * { border-color: var(--vds-theme-warning-bg); }
+  .vds-divide-info-bg > * + * { border-color: var(--vds-theme-info-bg); }
+  .vds-divide-neutral-bg > * + * { border-color: var(--vds-theme-neutral-bg); }
+  .vds-divide-cancelled > * + * { border-color: var(--vds-theme-cancelled); }
+  .vds-divide-cancelled-fg > * + * { border-color: var(--vds-theme-cancelled-fg); }
+  .vds-divide-accent-2 > * + * { border-color: var(--vds-theme-accent-2); }
+  .vds-divide-accent-2-fg > * + * { border-color: var(--vds-theme-accent-2-fg); }
+  .vds-divide-accent-3 > * + * { border-color: var(--vds-theme-accent-3); }
+  .vds-divide-accent-3-fg > * + * { border-color: var(--vds-theme-accent-3-fg); }
+}
