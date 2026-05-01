@@ -2,7 +2,13 @@
 /* modern-normalize subset + Tailwind preflight core (anchor inherit, headings/list reset, replaced-element block, button bg transparent). */
 
 @layer reset {
-  *, *::before, *::after { box-sizing: border-box; }
+  *, *::before, *::after {
+    box-sizing: border-box;
+    /* Tailwind preflight 핵심 — 모든 요소의 기본 border 를 0 width 로 reset.
+       브라우저 기본 <button>/<input>/<fieldset> outset 보더 제거. */
+    border-width: 0;
+    border-style: solid;
+  }
 
   html {
     line-height: 1.5;
