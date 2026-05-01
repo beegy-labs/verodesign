@@ -2618,380 +2618,380 @@
   .vds-focus-visible\:border-code\/100:focus-visible  { border-color: var(--vds-theme-bg-code); }
   .vds-first\:border-code\/100:first-child  { border-color: var(--vds-theme-bg-code); }
   .vds-last\:border-code\/100:last-child  { border-color: var(--vds-theme-bg-code); }
-  .vds-hover\:text-primary:hover  { color: var(--vds-theme-text-primary); }
-  .vds-focus\:text-primary:focus  { color: var(--vds-theme-text-primary); }
-  .vds-focus-visible\:text-primary:focus-visible  { color: var(--vds-theme-text-primary); }
-  .vds-active\:text-primary:active  { color: var(--vds-theme-text-primary); }
-  .vds-placeholder\:text-primary::placeholder  { color: var(--vds-theme-text-primary); }
-  .vds-first\:text-primary:first-child  { color: var(--vds-theme-text-primary); }
-  .vds-last\:text-primary:last-child  { color: var(--vds-theme-text-primary); }
-  .vds-odd\:text-primary:nth-child(odd)  { color: var(--vds-theme-text-primary); }
-  .vds-even\:text-primary:nth-child(even)  { color: var(--vds-theme-text-primary); }
-  .vds-hover\:bg-text-primary:hover  { background-color: var(--vds-theme-text-primary); }
-  .vds-focus\:bg-text-primary:focus  { background-color: var(--vds-theme-text-primary); }
-  .vds-focus-visible\:bg-text-primary:focus-visible  { background-color: var(--vds-theme-text-primary); }
-  .vds-active\:bg-text-primary:active  { background-color: var(--vds-theme-text-primary); }
-  .vds-first\:bg-text-primary:first-child  { background-color: var(--vds-theme-text-primary); }
-  .vds-last\:bg-text-primary:last-child  { background-color: var(--vds-theme-text-primary); }
-  .vds-odd\:bg-text-primary:nth-child(odd)  { background-color: var(--vds-theme-text-primary); }
-  .vds-even\:bg-text-primary:nth-child(even)  { background-color: var(--vds-theme-text-primary); }
-  .vds-hover\:border-text-primary:hover  { border-color: var(--vds-theme-text-primary); }
-  .vds-focus\:border-text-primary:focus  { border-color: var(--vds-theme-text-primary); }
-  .vds-focus-visible\:border-text-primary:focus-visible  { border-color: var(--vds-theme-text-primary); }
-  .vds-first\:border-text-primary:first-child  { border-color: var(--vds-theme-text-primary); }
-  .vds-last\:border-text-primary:last-child  { border-color: var(--vds-theme-text-primary); }
-  .vds-hover\:text-primary\/0:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-focus\:text-primary\/0:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-focus-visible\:text-primary\/0:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-active\:text-primary\/0:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-placeholder\:text-primary\/0::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-first\:text-primary\/0:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-last\:text-primary\/0:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-odd\:text-primary\/0:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-even\:text-primary\/0:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-hover\:text-primary\/5:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-focus\:text-primary\/5:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-focus-visible\:text-primary\/5:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-active\:text-primary\/5:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-placeholder\:text-primary\/5::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-first\:text-primary\/5:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-last\:text-primary\/5:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-odd\:text-primary\/5:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-even\:text-primary\/5:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-hover\:text-primary\/10:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-focus\:text-primary\/10:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-focus-visible\:text-primary\/10:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-active\:text-primary\/10:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-placeholder\:text-primary\/10::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-first\:text-primary\/10:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-last\:text-primary\/10:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-odd\:text-primary\/10:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-even\:text-primary\/10:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-hover\:text-primary\/15:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-focus\:text-primary\/15:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-focus-visible\:text-primary\/15:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-active\:text-primary\/15:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-placeholder\:text-primary\/15::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-first\:text-primary\/15:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-last\:text-primary\/15:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-odd\:text-primary\/15:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-even\:text-primary\/15:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-hover\:text-primary\/20:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-focus\:text-primary\/20:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-focus-visible\:text-primary\/20:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-active\:text-primary\/20:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-placeholder\:text-primary\/20::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-first\:text-primary\/20:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-last\:text-primary\/20:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-odd\:text-primary\/20:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-even\:text-primary\/20:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-hover\:text-primary\/25:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-focus\:text-primary\/25:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-focus-visible\:text-primary\/25:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-active\:text-primary\/25:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-placeholder\:text-primary\/25::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-first\:text-primary\/25:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-last\:text-primary\/25:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-odd\:text-primary\/25:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-even\:text-primary\/25:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-hover\:text-primary\/30:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-focus\:text-primary\/30:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-focus-visible\:text-primary\/30:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-active\:text-primary\/30:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-placeholder\:text-primary\/30::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-first\:text-primary\/30:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-last\:text-primary\/30:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-odd\:text-primary\/30:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-even\:text-primary\/30:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-hover\:text-primary\/40:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-focus\:text-primary\/40:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-focus-visible\:text-primary\/40:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-active\:text-primary\/40:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-placeholder\:text-primary\/40::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-first\:text-primary\/40:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-last\:text-primary\/40:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-odd\:text-primary\/40:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-even\:text-primary\/40:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-hover\:text-primary\/50:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-focus\:text-primary\/50:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-focus-visible\:text-primary\/50:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-active\:text-primary\/50:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-placeholder\:text-primary\/50::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-first\:text-primary\/50:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-last\:text-primary\/50:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-odd\:text-primary\/50:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-even\:text-primary\/50:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-hover\:text-primary\/60:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-focus\:text-primary\/60:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-focus-visible\:text-primary\/60:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-active\:text-primary\/60:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-placeholder\:text-primary\/60::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-first\:text-primary\/60:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-last\:text-primary\/60:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-odd\:text-primary\/60:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-even\:text-primary\/60:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-hover\:text-primary\/70:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-focus\:text-primary\/70:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-focus-visible\:text-primary\/70:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-active\:text-primary\/70:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-placeholder\:text-primary\/70::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-first\:text-primary\/70:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-last\:text-primary\/70:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-odd\:text-primary\/70:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-even\:text-primary\/70:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-hover\:text-primary\/75:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-focus\:text-primary\/75:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-focus-visible\:text-primary\/75:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-active\:text-primary\/75:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-placeholder\:text-primary\/75::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-first\:text-primary\/75:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-last\:text-primary\/75:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-odd\:text-primary\/75:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-even\:text-primary\/75:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-hover\:text-primary\/80:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-focus\:text-primary\/80:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-focus-visible\:text-primary\/80:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-active\:text-primary\/80:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-placeholder\:text-primary\/80::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-first\:text-primary\/80:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-last\:text-primary\/80:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-odd\:text-primary\/80:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-even\:text-primary\/80:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-hover\:text-primary\/90:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-focus\:text-primary\/90:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-focus-visible\:text-primary\/90:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-active\:text-primary\/90:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-placeholder\:text-primary\/90::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-first\:text-primary\/90:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-last\:text-primary\/90:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-odd\:text-primary\/90:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-even\:text-primary\/90:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-hover\:text-primary\/95:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-focus\:text-primary\/95:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-focus-visible\:text-primary\/95:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-active\:text-primary\/95:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-placeholder\:text-primary\/95::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-first\:text-primary\/95:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-last\:text-primary\/95:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-odd\:text-primary\/95:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-even\:text-primary\/95:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-hover\:text-primary\/100:hover  { color: var(--vds-theme-text-primary); }
-  .vds-focus\:text-primary\/100:focus  { color: var(--vds-theme-text-primary); }
-  .vds-focus-visible\:text-primary\/100:focus-visible  { color: var(--vds-theme-text-primary); }
-  .vds-active\:text-primary\/100:active  { color: var(--vds-theme-text-primary); }
-  .vds-placeholder\:text-primary\/100::placeholder  { color: var(--vds-theme-text-primary); }
-  .vds-first\:text-primary\/100:first-child  { color: var(--vds-theme-text-primary); }
-  .vds-last\:text-primary\/100:last-child  { color: var(--vds-theme-text-primary); }
-  .vds-odd\:text-primary\/100:nth-child(odd)  { color: var(--vds-theme-text-primary); }
-  .vds-even\:text-primary\/100:nth-child(even)  { color: var(--vds-theme-text-primary); }
-  .vds-hover\:bg-text-primary\/0:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-focus\:bg-text-primary\/0:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/0:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-active\:bg-text-primary\/0:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-first\:bg-text-primary\/0:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-last\:bg-text-primary\/0:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-odd\:bg-text-primary\/0:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-even\:bg-text-primary\/0:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-hover\:bg-text-primary\/5:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-focus\:bg-text-primary\/5:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/5:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-active\:bg-text-primary\/5:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-first\:bg-text-primary\/5:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-last\:bg-text-primary\/5:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-odd\:bg-text-primary\/5:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-even\:bg-text-primary\/5:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-hover\:bg-text-primary\/10:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-focus\:bg-text-primary\/10:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/10:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-active\:bg-text-primary\/10:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-first\:bg-text-primary\/10:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-last\:bg-text-primary\/10:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-odd\:bg-text-primary\/10:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-even\:bg-text-primary\/10:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-hover\:bg-text-primary\/15:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-focus\:bg-text-primary\/15:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/15:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-active\:bg-text-primary\/15:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-first\:bg-text-primary\/15:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-last\:bg-text-primary\/15:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-odd\:bg-text-primary\/15:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-even\:bg-text-primary\/15:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-hover\:bg-text-primary\/20:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-focus\:bg-text-primary\/20:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/20:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-active\:bg-text-primary\/20:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-first\:bg-text-primary\/20:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-last\:bg-text-primary\/20:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-odd\:bg-text-primary\/20:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-even\:bg-text-primary\/20:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-hover\:bg-text-primary\/25:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-focus\:bg-text-primary\/25:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/25:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-active\:bg-text-primary\/25:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-first\:bg-text-primary\/25:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-last\:bg-text-primary\/25:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-odd\:bg-text-primary\/25:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-even\:bg-text-primary\/25:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-hover\:bg-text-primary\/30:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-focus\:bg-text-primary\/30:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/30:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-active\:bg-text-primary\/30:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-first\:bg-text-primary\/30:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-last\:bg-text-primary\/30:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-odd\:bg-text-primary\/30:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-even\:bg-text-primary\/30:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-hover\:bg-text-primary\/40:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-focus\:bg-text-primary\/40:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/40:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-active\:bg-text-primary\/40:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-first\:bg-text-primary\/40:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-last\:bg-text-primary\/40:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-odd\:bg-text-primary\/40:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-even\:bg-text-primary\/40:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-hover\:bg-text-primary\/50:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-focus\:bg-text-primary\/50:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/50:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-active\:bg-text-primary\/50:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-first\:bg-text-primary\/50:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-last\:bg-text-primary\/50:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-odd\:bg-text-primary\/50:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-even\:bg-text-primary\/50:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-hover\:bg-text-primary\/60:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-focus\:bg-text-primary\/60:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/60:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-active\:bg-text-primary\/60:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-first\:bg-text-primary\/60:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-last\:bg-text-primary\/60:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-odd\:bg-text-primary\/60:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-even\:bg-text-primary\/60:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-hover\:bg-text-primary\/70:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-focus\:bg-text-primary\/70:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/70:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-active\:bg-text-primary\/70:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-first\:bg-text-primary\/70:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-last\:bg-text-primary\/70:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-odd\:bg-text-primary\/70:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-even\:bg-text-primary\/70:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-hover\:bg-text-primary\/75:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-focus\:bg-text-primary\/75:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/75:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-active\:bg-text-primary\/75:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-first\:bg-text-primary\/75:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-last\:bg-text-primary\/75:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-odd\:bg-text-primary\/75:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-even\:bg-text-primary\/75:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-hover\:bg-text-primary\/80:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-focus\:bg-text-primary\/80:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/80:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-active\:bg-text-primary\/80:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-first\:bg-text-primary\/80:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-last\:bg-text-primary\/80:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-odd\:bg-text-primary\/80:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-even\:bg-text-primary\/80:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-hover\:bg-text-primary\/90:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-focus\:bg-text-primary\/90:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/90:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-active\:bg-text-primary\/90:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-first\:bg-text-primary\/90:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-last\:bg-text-primary\/90:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-odd\:bg-text-primary\/90:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-even\:bg-text-primary\/90:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-hover\:bg-text-primary\/95:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-focus\:bg-text-primary\/95:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-focus-visible\:bg-text-primary\/95:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-active\:bg-text-primary\/95:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-first\:bg-text-primary\/95:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-last\:bg-text-primary\/95:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-odd\:bg-text-primary\/95:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-even\:bg-text-primary\/95:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-hover\:bg-text-primary\/100:hover  { background-color: var(--vds-theme-text-primary); }
-  .vds-focus\:bg-text-primary\/100:focus  { background-color: var(--vds-theme-text-primary); }
-  .vds-focus-visible\:bg-text-primary\/100:focus-visible  { background-color: var(--vds-theme-text-primary); }
-  .vds-active\:bg-text-primary\/100:active  { background-color: var(--vds-theme-text-primary); }
-  .vds-first\:bg-text-primary\/100:first-child  { background-color: var(--vds-theme-text-primary); }
-  .vds-last\:bg-text-primary\/100:last-child  { background-color: var(--vds-theme-text-primary); }
-  .vds-odd\:bg-text-primary\/100:nth-child(odd)  { background-color: var(--vds-theme-text-primary); }
-  .vds-even\:bg-text-primary\/100:nth-child(even)  { background-color: var(--vds-theme-text-primary); }
-  .vds-hover\:border-text-primary\/0:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-focus\:border-text-primary\/0:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-focus-visible\:border-text-primary\/0:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-first\:border-text-primary\/0:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-last\:border-text-primary\/0:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-  .vds-hover\:border-text-primary\/5:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-focus\:border-text-primary\/5:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-focus-visible\:border-text-primary\/5:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-first\:border-text-primary\/5:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-last\:border-text-primary\/5:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-  .vds-hover\:border-text-primary\/10:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-focus\:border-text-primary\/10:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-focus-visible\:border-text-primary\/10:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-first\:border-text-primary\/10:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-last\:border-text-primary\/10:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-  .vds-hover\:border-text-primary\/15:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-focus\:border-text-primary\/15:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-focus-visible\:border-text-primary\/15:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-first\:border-text-primary\/15:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-last\:border-text-primary\/15:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-  .vds-hover\:border-text-primary\/20:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-focus\:border-text-primary\/20:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-focus-visible\:border-text-primary\/20:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-first\:border-text-primary\/20:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-last\:border-text-primary\/20:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-  .vds-hover\:border-text-primary\/25:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-focus\:border-text-primary\/25:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-focus-visible\:border-text-primary\/25:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-first\:border-text-primary\/25:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-last\:border-text-primary\/25:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-  .vds-hover\:border-text-primary\/30:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-focus\:border-text-primary\/30:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-focus-visible\:border-text-primary\/30:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-first\:border-text-primary\/30:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-last\:border-text-primary\/30:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-  .vds-hover\:border-text-primary\/40:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-focus\:border-text-primary\/40:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-focus-visible\:border-text-primary\/40:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-first\:border-text-primary\/40:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-last\:border-text-primary\/40:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-  .vds-hover\:border-text-primary\/50:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-focus\:border-text-primary\/50:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-focus-visible\:border-text-primary\/50:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-first\:border-text-primary\/50:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-last\:border-text-primary\/50:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-  .vds-hover\:border-text-primary\/60:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-focus\:border-text-primary\/60:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-focus-visible\:border-text-primary\/60:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-first\:border-text-primary\/60:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-last\:border-text-primary\/60:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-  .vds-hover\:border-text-primary\/70:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-focus\:border-text-primary\/70:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-focus-visible\:border-text-primary\/70:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-first\:border-text-primary\/70:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-last\:border-text-primary\/70:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-  .vds-hover\:border-text-primary\/75:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-focus\:border-text-primary\/75:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-focus-visible\:border-text-primary\/75:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-first\:border-text-primary\/75:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-last\:border-text-primary\/75:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-  .vds-hover\:border-text-primary\/80:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-focus\:border-text-primary\/80:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-focus-visible\:border-text-primary\/80:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-first\:border-text-primary\/80:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-last\:border-text-primary\/80:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-  .vds-hover\:border-text-primary\/90:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-focus\:border-text-primary\/90:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-focus-visible\:border-text-primary\/90:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-first\:border-text-primary\/90:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-last\:border-text-primary\/90:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-  .vds-hover\:border-text-primary\/95:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-focus\:border-text-primary\/95:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-focus-visible\:border-text-primary\/95:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-first\:border-text-primary\/95:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-last\:border-text-primary\/95:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-  .vds-hover\:border-text-primary\/100:hover  { border-color: var(--vds-theme-text-primary); }
-  .vds-focus\:border-text-primary\/100:focus  { border-color: var(--vds-theme-text-primary); }
-  .vds-focus-visible\:border-text-primary\/100:focus-visible  { border-color: var(--vds-theme-text-primary); }
-  .vds-first\:border-text-primary\/100:first-child  { border-color: var(--vds-theme-text-primary); }
-  .vds-last\:border-text-primary\/100:last-child  { border-color: var(--vds-theme-text-primary); }
+  .vds-hover\:text-fg:hover  { color: var(--vds-theme-text-primary); }
+  .vds-focus\:text-fg:focus  { color: var(--vds-theme-text-primary); }
+  .vds-focus-visible\:text-fg:focus-visible  { color: var(--vds-theme-text-primary); }
+  .vds-active\:text-fg:active  { color: var(--vds-theme-text-primary); }
+  .vds-placeholder\:text-fg::placeholder  { color: var(--vds-theme-text-primary); }
+  .vds-first\:text-fg:first-child  { color: var(--vds-theme-text-primary); }
+  .vds-last\:text-fg:last-child  { color: var(--vds-theme-text-primary); }
+  .vds-odd\:text-fg:nth-child(odd)  { color: var(--vds-theme-text-primary); }
+  .vds-even\:text-fg:nth-child(even)  { color: var(--vds-theme-text-primary); }
+  .vds-hover\:bg-fg:hover  { background-color: var(--vds-theme-text-primary); }
+  .vds-focus\:bg-fg:focus  { background-color: var(--vds-theme-text-primary); }
+  .vds-focus-visible\:bg-fg:focus-visible  { background-color: var(--vds-theme-text-primary); }
+  .vds-active\:bg-fg:active  { background-color: var(--vds-theme-text-primary); }
+  .vds-first\:bg-fg:first-child  { background-color: var(--vds-theme-text-primary); }
+  .vds-last\:bg-fg:last-child  { background-color: var(--vds-theme-text-primary); }
+  .vds-odd\:bg-fg:nth-child(odd)  { background-color: var(--vds-theme-text-primary); }
+  .vds-even\:bg-fg:nth-child(even)  { background-color: var(--vds-theme-text-primary); }
+  .vds-hover\:border-fg:hover  { border-color: var(--vds-theme-text-primary); }
+  .vds-focus\:border-fg:focus  { border-color: var(--vds-theme-text-primary); }
+  .vds-focus-visible\:border-fg:focus-visible  { border-color: var(--vds-theme-text-primary); }
+  .vds-first\:border-fg:first-child  { border-color: var(--vds-theme-text-primary); }
+  .vds-last\:border-fg:last-child  { border-color: var(--vds-theme-text-primary); }
+  .vds-hover\:text-fg\/0:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-focus\:text-fg\/0:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-focus-visible\:text-fg\/0:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-active\:text-fg\/0:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-placeholder\:text-fg\/0::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-first\:text-fg\/0:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-last\:text-fg\/0:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-odd\:text-fg\/0:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-even\:text-fg\/0:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-hover\:text-fg\/5:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-focus\:text-fg\/5:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-focus-visible\:text-fg\/5:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-active\:text-fg\/5:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-placeholder\:text-fg\/5::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-first\:text-fg\/5:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-last\:text-fg\/5:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-odd\:text-fg\/5:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-even\:text-fg\/5:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-hover\:text-fg\/10:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-focus\:text-fg\/10:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-focus-visible\:text-fg\/10:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-active\:text-fg\/10:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-placeholder\:text-fg\/10::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-first\:text-fg\/10:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-last\:text-fg\/10:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-odd\:text-fg\/10:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-even\:text-fg\/10:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-hover\:text-fg\/15:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-focus\:text-fg\/15:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-focus-visible\:text-fg\/15:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-active\:text-fg\/15:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-placeholder\:text-fg\/15::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-first\:text-fg\/15:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-last\:text-fg\/15:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-odd\:text-fg\/15:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-even\:text-fg\/15:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-hover\:text-fg\/20:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-focus\:text-fg\/20:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-focus-visible\:text-fg\/20:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-active\:text-fg\/20:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-placeholder\:text-fg\/20::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-first\:text-fg\/20:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-last\:text-fg\/20:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-odd\:text-fg\/20:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-even\:text-fg\/20:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-hover\:text-fg\/25:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-focus\:text-fg\/25:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-focus-visible\:text-fg\/25:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-active\:text-fg\/25:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-placeholder\:text-fg\/25::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-first\:text-fg\/25:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-last\:text-fg\/25:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-odd\:text-fg\/25:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-even\:text-fg\/25:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-hover\:text-fg\/30:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-focus\:text-fg\/30:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-focus-visible\:text-fg\/30:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-active\:text-fg\/30:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-placeholder\:text-fg\/30::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-first\:text-fg\/30:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-last\:text-fg\/30:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-odd\:text-fg\/30:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-even\:text-fg\/30:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-hover\:text-fg\/40:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-focus\:text-fg\/40:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-focus-visible\:text-fg\/40:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-active\:text-fg\/40:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-placeholder\:text-fg\/40::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-first\:text-fg\/40:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-last\:text-fg\/40:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-odd\:text-fg\/40:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-even\:text-fg\/40:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-hover\:text-fg\/50:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-focus\:text-fg\/50:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-focus-visible\:text-fg\/50:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-active\:text-fg\/50:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-placeholder\:text-fg\/50::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-first\:text-fg\/50:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-last\:text-fg\/50:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-odd\:text-fg\/50:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-even\:text-fg\/50:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-hover\:text-fg\/60:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-focus\:text-fg\/60:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-focus-visible\:text-fg\/60:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-active\:text-fg\/60:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-placeholder\:text-fg\/60::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-first\:text-fg\/60:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-last\:text-fg\/60:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-odd\:text-fg\/60:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-even\:text-fg\/60:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-hover\:text-fg\/70:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-focus\:text-fg\/70:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-focus-visible\:text-fg\/70:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-active\:text-fg\/70:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-placeholder\:text-fg\/70::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-first\:text-fg\/70:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-last\:text-fg\/70:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-odd\:text-fg\/70:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-even\:text-fg\/70:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-hover\:text-fg\/75:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-focus\:text-fg\/75:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-focus-visible\:text-fg\/75:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-active\:text-fg\/75:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-placeholder\:text-fg\/75::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-first\:text-fg\/75:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-last\:text-fg\/75:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-odd\:text-fg\/75:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-even\:text-fg\/75:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-hover\:text-fg\/80:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-focus\:text-fg\/80:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-focus-visible\:text-fg\/80:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-active\:text-fg\/80:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-placeholder\:text-fg\/80::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-first\:text-fg\/80:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-last\:text-fg\/80:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-odd\:text-fg\/80:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-even\:text-fg\/80:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-hover\:text-fg\/90:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-focus\:text-fg\/90:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-focus-visible\:text-fg\/90:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-active\:text-fg\/90:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-placeholder\:text-fg\/90::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-first\:text-fg\/90:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-last\:text-fg\/90:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-odd\:text-fg\/90:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-even\:text-fg\/90:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-hover\:text-fg\/95:hover  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-focus\:text-fg\/95:focus  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-focus-visible\:text-fg\/95:focus-visible  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-active\:text-fg\/95:active  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-placeholder\:text-fg\/95::placeholder  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-first\:text-fg\/95:first-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-last\:text-fg\/95:last-child  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-odd\:text-fg\/95:nth-child(odd)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-even\:text-fg\/95:nth-child(even)  { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-hover\:text-fg\/100:hover  { color: var(--vds-theme-text-primary); }
+  .vds-focus\:text-fg\/100:focus  { color: var(--vds-theme-text-primary); }
+  .vds-focus-visible\:text-fg\/100:focus-visible  { color: var(--vds-theme-text-primary); }
+  .vds-active\:text-fg\/100:active  { color: var(--vds-theme-text-primary); }
+  .vds-placeholder\:text-fg\/100::placeholder  { color: var(--vds-theme-text-primary); }
+  .vds-first\:text-fg\/100:first-child  { color: var(--vds-theme-text-primary); }
+  .vds-last\:text-fg\/100:last-child  { color: var(--vds-theme-text-primary); }
+  .vds-odd\:text-fg\/100:nth-child(odd)  { color: var(--vds-theme-text-primary); }
+  .vds-even\:text-fg\/100:nth-child(even)  { color: var(--vds-theme-text-primary); }
+  .vds-hover\:bg-fg\/0:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-focus\:bg-fg\/0:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-focus-visible\:bg-fg\/0:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-active\:bg-fg\/0:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-first\:bg-fg\/0:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-last\:bg-fg\/0:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-odd\:bg-fg\/0:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-even\:bg-fg\/0:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-hover\:bg-fg\/5:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-focus\:bg-fg\/5:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-focus-visible\:bg-fg\/5:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-active\:bg-fg\/5:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-first\:bg-fg\/5:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-last\:bg-fg\/5:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-odd\:bg-fg\/5:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-even\:bg-fg\/5:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-hover\:bg-fg\/10:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-focus\:bg-fg\/10:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-focus-visible\:bg-fg\/10:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-active\:bg-fg\/10:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-first\:bg-fg\/10:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-last\:bg-fg\/10:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-odd\:bg-fg\/10:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-even\:bg-fg\/10:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-hover\:bg-fg\/15:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-focus\:bg-fg\/15:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-focus-visible\:bg-fg\/15:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-active\:bg-fg\/15:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-first\:bg-fg\/15:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-last\:bg-fg\/15:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-odd\:bg-fg\/15:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-even\:bg-fg\/15:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-hover\:bg-fg\/20:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-focus\:bg-fg\/20:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-focus-visible\:bg-fg\/20:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-active\:bg-fg\/20:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-first\:bg-fg\/20:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-last\:bg-fg\/20:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-odd\:bg-fg\/20:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-even\:bg-fg\/20:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-hover\:bg-fg\/25:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-focus\:bg-fg\/25:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-focus-visible\:bg-fg\/25:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-active\:bg-fg\/25:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-first\:bg-fg\/25:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-last\:bg-fg\/25:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-odd\:bg-fg\/25:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-even\:bg-fg\/25:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-hover\:bg-fg\/30:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-focus\:bg-fg\/30:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-focus-visible\:bg-fg\/30:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-active\:bg-fg\/30:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-first\:bg-fg\/30:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-last\:bg-fg\/30:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-odd\:bg-fg\/30:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-even\:bg-fg\/30:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-hover\:bg-fg\/40:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-focus\:bg-fg\/40:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-focus-visible\:bg-fg\/40:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-active\:bg-fg\/40:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-first\:bg-fg\/40:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-last\:bg-fg\/40:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-odd\:bg-fg\/40:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-even\:bg-fg\/40:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-hover\:bg-fg\/50:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-focus\:bg-fg\/50:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-focus-visible\:bg-fg\/50:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-active\:bg-fg\/50:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-first\:bg-fg\/50:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-last\:bg-fg\/50:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-odd\:bg-fg\/50:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-even\:bg-fg\/50:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-hover\:bg-fg\/60:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-focus\:bg-fg\/60:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-focus-visible\:bg-fg\/60:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-active\:bg-fg\/60:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-first\:bg-fg\/60:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-last\:bg-fg\/60:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-odd\:bg-fg\/60:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-even\:bg-fg\/60:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-hover\:bg-fg\/70:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-focus\:bg-fg\/70:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-focus-visible\:bg-fg\/70:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-active\:bg-fg\/70:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-first\:bg-fg\/70:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-last\:bg-fg\/70:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-odd\:bg-fg\/70:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-even\:bg-fg\/70:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-hover\:bg-fg\/75:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-focus\:bg-fg\/75:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-focus-visible\:bg-fg\/75:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-active\:bg-fg\/75:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-first\:bg-fg\/75:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-last\:bg-fg\/75:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-odd\:bg-fg\/75:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-even\:bg-fg\/75:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-hover\:bg-fg\/80:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-focus\:bg-fg\/80:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-focus-visible\:bg-fg\/80:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-active\:bg-fg\/80:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-first\:bg-fg\/80:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-last\:bg-fg\/80:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-odd\:bg-fg\/80:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-even\:bg-fg\/80:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-hover\:bg-fg\/90:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-focus\:bg-fg\/90:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-focus-visible\:bg-fg\/90:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-active\:bg-fg\/90:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-first\:bg-fg\/90:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-last\:bg-fg\/90:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-odd\:bg-fg\/90:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-even\:bg-fg\/90:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-hover\:bg-fg\/95:hover  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-focus\:bg-fg\/95:focus  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-focus-visible\:bg-fg\/95:focus-visible  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-active\:bg-fg\/95:active  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-first\:bg-fg\/95:first-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-last\:bg-fg\/95:last-child  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-odd\:bg-fg\/95:nth-child(odd)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-even\:bg-fg\/95:nth-child(even)  { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-hover\:bg-fg\/100:hover  { background-color: var(--vds-theme-text-primary); }
+  .vds-focus\:bg-fg\/100:focus  { background-color: var(--vds-theme-text-primary); }
+  .vds-focus-visible\:bg-fg\/100:focus-visible  { background-color: var(--vds-theme-text-primary); }
+  .vds-active\:bg-fg\/100:active  { background-color: var(--vds-theme-text-primary); }
+  .vds-first\:bg-fg\/100:first-child  { background-color: var(--vds-theme-text-primary); }
+  .vds-last\:bg-fg\/100:last-child  { background-color: var(--vds-theme-text-primary); }
+  .vds-odd\:bg-fg\/100:nth-child(odd)  { background-color: var(--vds-theme-text-primary); }
+  .vds-even\:bg-fg\/100:nth-child(even)  { background-color: var(--vds-theme-text-primary); }
+  .vds-hover\:border-fg\/0:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-focus\:border-fg\/0:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-focus-visible\:border-fg\/0:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-first\:border-fg\/0:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-last\:border-fg\/0:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+  .vds-hover\:border-fg\/5:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-focus\:border-fg\/5:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-focus-visible\:border-fg\/5:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-first\:border-fg\/5:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-last\:border-fg\/5:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+  .vds-hover\:border-fg\/10:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-focus\:border-fg\/10:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-focus-visible\:border-fg\/10:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-first\:border-fg\/10:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-last\:border-fg\/10:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+  .vds-hover\:border-fg\/15:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-focus\:border-fg\/15:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-focus-visible\:border-fg\/15:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-first\:border-fg\/15:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-last\:border-fg\/15:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+  .vds-hover\:border-fg\/20:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-focus\:border-fg\/20:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-focus-visible\:border-fg\/20:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-first\:border-fg\/20:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-last\:border-fg\/20:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+  .vds-hover\:border-fg\/25:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-focus\:border-fg\/25:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-focus-visible\:border-fg\/25:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-first\:border-fg\/25:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-last\:border-fg\/25:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+  .vds-hover\:border-fg\/30:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-focus\:border-fg\/30:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-focus-visible\:border-fg\/30:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-first\:border-fg\/30:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-last\:border-fg\/30:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+  .vds-hover\:border-fg\/40:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-focus\:border-fg\/40:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-focus-visible\:border-fg\/40:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-first\:border-fg\/40:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-last\:border-fg\/40:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+  .vds-hover\:border-fg\/50:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-focus\:border-fg\/50:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-focus-visible\:border-fg\/50:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-first\:border-fg\/50:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-last\:border-fg\/50:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+  .vds-hover\:border-fg\/60:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-focus\:border-fg\/60:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-focus-visible\:border-fg\/60:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-first\:border-fg\/60:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-last\:border-fg\/60:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+  .vds-hover\:border-fg\/70:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-focus\:border-fg\/70:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-focus-visible\:border-fg\/70:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-first\:border-fg\/70:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-last\:border-fg\/70:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+  .vds-hover\:border-fg\/75:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-focus\:border-fg\/75:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-focus-visible\:border-fg\/75:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-first\:border-fg\/75:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-last\:border-fg\/75:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+  .vds-hover\:border-fg\/80:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-focus\:border-fg\/80:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-focus-visible\:border-fg\/80:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-first\:border-fg\/80:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-last\:border-fg\/80:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+  .vds-hover\:border-fg\/90:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-focus\:border-fg\/90:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-focus-visible\:border-fg\/90:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-first\:border-fg\/90:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-last\:border-fg\/90:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+  .vds-hover\:border-fg\/95:hover  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-focus\:border-fg\/95:focus  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-focus-visible\:border-fg\/95:focus-visible  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-first\:border-fg\/95:first-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-last\:border-fg\/95:last-child  { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+  .vds-hover\:border-fg\/100:hover  { border-color: var(--vds-theme-text-primary); }
+  .vds-focus\:border-fg\/100:focus  { border-color: var(--vds-theme-text-primary); }
+  .vds-focus-visible\:border-fg\/100:focus-visible  { border-color: var(--vds-theme-text-primary); }
+  .vds-first\:border-fg\/100:first-child  { border-color: var(--vds-theme-text-primary); }
+  .vds-last\:border-fg\/100:last-child  { border-color: var(--vds-theme-text-primary); }
   .vds-hover\:text-secondary:hover  { color: var(--vds-theme-text-secondary); }
   .vds-focus\:text-secondary:focus  { color: var(--vds-theme-text-secondary); }
   .vds-focus-visible\:text-secondary:focus-visible  { color: var(--vds-theme-text-secondary); }

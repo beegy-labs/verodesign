@@ -1256,57 +1256,57 @@
     .vds-xs\:border-code\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 90%, transparent); }
     .vds-xs\:border-code\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
     .vds-xs\:border-code\/100 { border-color: var(--vds-theme-bg-code); }
-    .vds-xs\:text-primary { color: var(--vds-theme-text-primary); }
-    .vds-xs\:bg-text-primary { background-color: var(--vds-theme-text-primary); }
-    .vds-xs\:border-text-primary { border-color: var(--vds-theme-text-primary); }
-    .vds-xs\:text-primary\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-xs\:text-primary\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-xs\:text-primary\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-xs\:text-primary\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-xs\:text-primary\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-xs\:text-primary\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-xs\:text-primary\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-xs\:text-primary\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-xs\:text-primary\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-xs\:text-primary\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-xs\:text-primary\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-xs\:text-primary\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-xs\:text-primary\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-xs\:text-primary\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-xs\:text-primary\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-xs\:text-primary\/100 { color: var(--vds-theme-text-primary); }
-    .vds-xs\:bg-text-primary\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-xs\:bg-text-primary\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-xs\:bg-text-primary\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-xs\:bg-text-primary\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-xs\:bg-text-primary\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-xs\:bg-text-primary\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-xs\:bg-text-primary\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-xs\:bg-text-primary\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-xs\:bg-text-primary\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-xs\:bg-text-primary\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-xs\:bg-text-primary\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-xs\:bg-text-primary\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-xs\:bg-text-primary\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-xs\:bg-text-primary\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-xs\:bg-text-primary\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-xs\:bg-text-primary\/100 { background-color: var(--vds-theme-text-primary); }
-    .vds-xs\:border-text-primary\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-xs\:border-text-primary\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-xs\:border-text-primary\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-xs\:border-text-primary\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-xs\:border-text-primary\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-xs\:border-text-primary\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-xs\:border-text-primary\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-xs\:border-text-primary\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-xs\:border-text-primary\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-xs\:border-text-primary\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-xs\:border-text-primary\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-xs\:border-text-primary\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-xs\:border-text-primary\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-xs\:border-text-primary\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-xs\:border-text-primary\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-xs\:border-text-primary\/100 { border-color: var(--vds-theme-text-primary); }
+    .vds-xs\:text-fg { color: var(--vds-theme-text-primary); }
+    .vds-xs\:bg-fg { background-color: var(--vds-theme-text-primary); }
+    .vds-xs\:border-fg { border-color: var(--vds-theme-text-primary); }
+    .vds-xs\:text-fg\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-xs\:text-fg\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-xs\:text-fg\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-xs\:text-fg\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-xs\:text-fg\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-xs\:text-fg\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-xs\:text-fg\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-xs\:text-fg\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-xs\:text-fg\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-xs\:text-fg\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-xs\:text-fg\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-xs\:text-fg\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-xs\:text-fg\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-xs\:text-fg\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-xs\:text-fg\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-xs\:text-fg\/100 { color: var(--vds-theme-text-primary); }
+    .vds-xs\:bg-fg\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-xs\:bg-fg\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-xs\:bg-fg\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-xs\:bg-fg\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-xs\:bg-fg\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-xs\:bg-fg\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-xs\:bg-fg\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-xs\:bg-fg\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-xs\:bg-fg\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-xs\:bg-fg\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-xs\:bg-fg\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-xs\:bg-fg\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-xs\:bg-fg\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-xs\:bg-fg\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-xs\:bg-fg\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-xs\:bg-fg\/100 { background-color: var(--vds-theme-text-primary); }
+    .vds-xs\:border-fg\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-xs\:border-fg\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-xs\:border-fg\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-xs\:border-fg\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-xs\:border-fg\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-xs\:border-fg\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-xs\:border-fg\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-xs\:border-fg\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-xs\:border-fg\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-xs\:border-fg\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-xs\:border-fg\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-xs\:border-fg\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-xs\:border-fg\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-xs\:border-fg\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-xs\:border-fg\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-xs\:border-fg\/100 { border-color: var(--vds-theme-text-primary); }
     .vds-xs\:text-secondary { color: var(--vds-theme-text-secondary); }
     .vds-xs\:bg-text-secondary { background-color: var(--vds-theme-text-secondary); }
     .vds-xs\:border-text-secondary { border-color: var(--vds-theme-text-secondary); }
@@ -6736,57 +6736,57 @@
     .vds-sm\:border-code\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 90%, transparent); }
     .vds-sm\:border-code\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
     .vds-sm\:border-code\/100 { border-color: var(--vds-theme-bg-code); }
-    .vds-sm\:text-primary { color: var(--vds-theme-text-primary); }
-    .vds-sm\:bg-text-primary { background-color: var(--vds-theme-text-primary); }
-    .vds-sm\:border-text-primary { border-color: var(--vds-theme-text-primary); }
-    .vds-sm\:text-primary\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-sm\:text-primary\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-sm\:text-primary\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-sm\:text-primary\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-sm\:text-primary\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-sm\:text-primary\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-sm\:text-primary\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-sm\:text-primary\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-sm\:text-primary\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-sm\:text-primary\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-sm\:text-primary\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-sm\:text-primary\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-sm\:text-primary\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-sm\:text-primary\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-sm\:text-primary\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-sm\:text-primary\/100 { color: var(--vds-theme-text-primary); }
-    .vds-sm\:bg-text-primary\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-sm\:bg-text-primary\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-sm\:bg-text-primary\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-sm\:bg-text-primary\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-sm\:bg-text-primary\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-sm\:bg-text-primary\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-sm\:bg-text-primary\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-sm\:bg-text-primary\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-sm\:bg-text-primary\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-sm\:bg-text-primary\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-sm\:bg-text-primary\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-sm\:bg-text-primary\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-sm\:bg-text-primary\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-sm\:bg-text-primary\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-sm\:bg-text-primary\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-sm\:bg-text-primary\/100 { background-color: var(--vds-theme-text-primary); }
-    .vds-sm\:border-text-primary\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-sm\:border-text-primary\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-sm\:border-text-primary\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-sm\:border-text-primary\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-sm\:border-text-primary\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-sm\:border-text-primary\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-sm\:border-text-primary\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-sm\:border-text-primary\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-sm\:border-text-primary\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-sm\:border-text-primary\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-sm\:border-text-primary\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-sm\:border-text-primary\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-sm\:border-text-primary\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-sm\:border-text-primary\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-sm\:border-text-primary\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-sm\:border-text-primary\/100 { border-color: var(--vds-theme-text-primary); }
+    .vds-sm\:text-fg { color: var(--vds-theme-text-primary); }
+    .vds-sm\:bg-fg { background-color: var(--vds-theme-text-primary); }
+    .vds-sm\:border-fg { border-color: var(--vds-theme-text-primary); }
+    .vds-sm\:text-fg\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-sm\:text-fg\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-sm\:text-fg\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-sm\:text-fg\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-sm\:text-fg\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-sm\:text-fg\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-sm\:text-fg\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-sm\:text-fg\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-sm\:text-fg\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-sm\:text-fg\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-sm\:text-fg\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-sm\:text-fg\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-sm\:text-fg\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-sm\:text-fg\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-sm\:text-fg\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-sm\:text-fg\/100 { color: var(--vds-theme-text-primary); }
+    .vds-sm\:bg-fg\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-sm\:bg-fg\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-sm\:bg-fg\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-sm\:bg-fg\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-sm\:bg-fg\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-sm\:bg-fg\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-sm\:bg-fg\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-sm\:bg-fg\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-sm\:bg-fg\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-sm\:bg-fg\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-sm\:bg-fg\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-sm\:bg-fg\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-sm\:bg-fg\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-sm\:bg-fg\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-sm\:bg-fg\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-sm\:bg-fg\/100 { background-color: var(--vds-theme-text-primary); }
+    .vds-sm\:border-fg\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-sm\:border-fg\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-sm\:border-fg\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-sm\:border-fg\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-sm\:border-fg\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-sm\:border-fg\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-sm\:border-fg\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-sm\:border-fg\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-sm\:border-fg\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-sm\:border-fg\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-sm\:border-fg\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-sm\:border-fg\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-sm\:border-fg\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-sm\:border-fg\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-sm\:border-fg\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-sm\:border-fg\/100 { border-color: var(--vds-theme-text-primary); }
     .vds-sm\:text-secondary { color: var(--vds-theme-text-secondary); }
     .vds-sm\:bg-text-secondary { background-color: var(--vds-theme-text-secondary); }
     .vds-sm\:border-text-secondary { border-color: var(--vds-theme-text-secondary); }
@@ -12216,57 +12216,57 @@
     .vds-md\:border-code\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 90%, transparent); }
     .vds-md\:border-code\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
     .vds-md\:border-code\/100 { border-color: var(--vds-theme-bg-code); }
-    .vds-md\:text-primary { color: var(--vds-theme-text-primary); }
-    .vds-md\:bg-text-primary { background-color: var(--vds-theme-text-primary); }
-    .vds-md\:border-text-primary { border-color: var(--vds-theme-text-primary); }
-    .vds-md\:text-primary\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-md\:text-primary\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-md\:text-primary\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-md\:text-primary\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-md\:text-primary\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-md\:text-primary\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-md\:text-primary\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-md\:text-primary\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-md\:text-primary\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-md\:text-primary\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-md\:text-primary\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-md\:text-primary\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-md\:text-primary\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-md\:text-primary\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-md\:text-primary\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-md\:text-primary\/100 { color: var(--vds-theme-text-primary); }
-    .vds-md\:bg-text-primary\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-md\:bg-text-primary\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-md\:bg-text-primary\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-md\:bg-text-primary\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-md\:bg-text-primary\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-md\:bg-text-primary\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-md\:bg-text-primary\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-md\:bg-text-primary\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-md\:bg-text-primary\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-md\:bg-text-primary\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-md\:bg-text-primary\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-md\:bg-text-primary\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-md\:bg-text-primary\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-md\:bg-text-primary\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-md\:bg-text-primary\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-md\:bg-text-primary\/100 { background-color: var(--vds-theme-text-primary); }
-    .vds-md\:border-text-primary\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-md\:border-text-primary\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-md\:border-text-primary\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-md\:border-text-primary\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-md\:border-text-primary\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-md\:border-text-primary\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-md\:border-text-primary\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-md\:border-text-primary\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-md\:border-text-primary\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-md\:border-text-primary\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-md\:border-text-primary\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-md\:border-text-primary\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-md\:border-text-primary\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-md\:border-text-primary\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-md\:border-text-primary\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-md\:border-text-primary\/100 { border-color: var(--vds-theme-text-primary); }
+    .vds-md\:text-fg { color: var(--vds-theme-text-primary); }
+    .vds-md\:bg-fg { background-color: var(--vds-theme-text-primary); }
+    .vds-md\:border-fg { border-color: var(--vds-theme-text-primary); }
+    .vds-md\:text-fg\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-md\:text-fg\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-md\:text-fg\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-md\:text-fg\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-md\:text-fg\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-md\:text-fg\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-md\:text-fg\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-md\:text-fg\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-md\:text-fg\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-md\:text-fg\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-md\:text-fg\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-md\:text-fg\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-md\:text-fg\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-md\:text-fg\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-md\:text-fg\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-md\:text-fg\/100 { color: var(--vds-theme-text-primary); }
+    .vds-md\:bg-fg\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-md\:bg-fg\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-md\:bg-fg\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-md\:bg-fg\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-md\:bg-fg\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-md\:bg-fg\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-md\:bg-fg\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-md\:bg-fg\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-md\:bg-fg\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-md\:bg-fg\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-md\:bg-fg\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-md\:bg-fg\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-md\:bg-fg\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-md\:bg-fg\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-md\:bg-fg\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-md\:bg-fg\/100 { background-color: var(--vds-theme-text-primary); }
+    .vds-md\:border-fg\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-md\:border-fg\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-md\:border-fg\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-md\:border-fg\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-md\:border-fg\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-md\:border-fg\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-md\:border-fg\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-md\:border-fg\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-md\:border-fg\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-md\:border-fg\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-md\:border-fg\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-md\:border-fg\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-md\:border-fg\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-md\:border-fg\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-md\:border-fg\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-md\:border-fg\/100 { border-color: var(--vds-theme-text-primary); }
     .vds-md\:text-secondary { color: var(--vds-theme-text-secondary); }
     .vds-md\:bg-text-secondary { background-color: var(--vds-theme-text-secondary); }
     .vds-md\:border-text-secondary { border-color: var(--vds-theme-text-secondary); }
@@ -17696,57 +17696,57 @@
     .vds-lg\:border-code\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 90%, transparent); }
     .vds-lg\:border-code\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
     .vds-lg\:border-code\/100 { border-color: var(--vds-theme-bg-code); }
-    .vds-lg\:text-primary { color: var(--vds-theme-text-primary); }
-    .vds-lg\:bg-text-primary { background-color: var(--vds-theme-text-primary); }
-    .vds-lg\:border-text-primary { border-color: var(--vds-theme-text-primary); }
-    .vds-lg\:text-primary\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-lg\:text-primary\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-lg\:text-primary\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-lg\:text-primary\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-lg\:text-primary\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-lg\:text-primary\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-lg\:text-primary\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-lg\:text-primary\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-lg\:text-primary\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-lg\:text-primary\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-lg\:text-primary\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-lg\:text-primary\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-lg\:text-primary\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-lg\:text-primary\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-lg\:text-primary\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-lg\:text-primary\/100 { color: var(--vds-theme-text-primary); }
-    .vds-lg\:bg-text-primary\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-lg\:bg-text-primary\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-lg\:bg-text-primary\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-lg\:bg-text-primary\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-lg\:bg-text-primary\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-lg\:bg-text-primary\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-lg\:bg-text-primary\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-lg\:bg-text-primary\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-lg\:bg-text-primary\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-lg\:bg-text-primary\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-lg\:bg-text-primary\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-lg\:bg-text-primary\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-lg\:bg-text-primary\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-lg\:bg-text-primary\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-lg\:bg-text-primary\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-lg\:bg-text-primary\/100 { background-color: var(--vds-theme-text-primary); }
-    .vds-lg\:border-text-primary\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-lg\:border-text-primary\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-lg\:border-text-primary\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-lg\:border-text-primary\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-lg\:border-text-primary\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-lg\:border-text-primary\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-lg\:border-text-primary\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-lg\:border-text-primary\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-lg\:border-text-primary\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-lg\:border-text-primary\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-lg\:border-text-primary\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-lg\:border-text-primary\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-lg\:border-text-primary\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-lg\:border-text-primary\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-lg\:border-text-primary\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-lg\:border-text-primary\/100 { border-color: var(--vds-theme-text-primary); }
+    .vds-lg\:text-fg { color: var(--vds-theme-text-primary); }
+    .vds-lg\:bg-fg { background-color: var(--vds-theme-text-primary); }
+    .vds-lg\:border-fg { border-color: var(--vds-theme-text-primary); }
+    .vds-lg\:text-fg\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-lg\:text-fg\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-lg\:text-fg\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-lg\:text-fg\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-lg\:text-fg\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-lg\:text-fg\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-lg\:text-fg\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-lg\:text-fg\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-lg\:text-fg\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-lg\:text-fg\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-lg\:text-fg\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-lg\:text-fg\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-lg\:text-fg\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-lg\:text-fg\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-lg\:text-fg\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-lg\:text-fg\/100 { color: var(--vds-theme-text-primary); }
+    .vds-lg\:bg-fg\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-lg\:bg-fg\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-lg\:bg-fg\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-lg\:bg-fg\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-lg\:bg-fg\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-lg\:bg-fg\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-lg\:bg-fg\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-lg\:bg-fg\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-lg\:bg-fg\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-lg\:bg-fg\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-lg\:bg-fg\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-lg\:bg-fg\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-lg\:bg-fg\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-lg\:bg-fg\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-lg\:bg-fg\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-lg\:bg-fg\/100 { background-color: var(--vds-theme-text-primary); }
+    .vds-lg\:border-fg\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-lg\:border-fg\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-lg\:border-fg\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-lg\:border-fg\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-lg\:border-fg\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-lg\:border-fg\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-lg\:border-fg\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-lg\:border-fg\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-lg\:border-fg\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-lg\:border-fg\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-lg\:border-fg\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-lg\:border-fg\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-lg\:border-fg\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-lg\:border-fg\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-lg\:border-fg\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-lg\:border-fg\/100 { border-color: var(--vds-theme-text-primary); }
     .vds-lg\:text-secondary { color: var(--vds-theme-text-secondary); }
     .vds-lg\:bg-text-secondary { background-color: var(--vds-theme-text-secondary); }
     .vds-lg\:border-text-secondary { border-color: var(--vds-theme-text-secondary); }
@@ -23176,57 +23176,57 @@
     .vds-xl\:border-code\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 90%, transparent); }
     .vds-xl\:border-code\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
     .vds-xl\:border-code\/100 { border-color: var(--vds-theme-bg-code); }
-    .vds-xl\:text-primary { color: var(--vds-theme-text-primary); }
-    .vds-xl\:bg-text-primary { background-color: var(--vds-theme-text-primary); }
-    .vds-xl\:border-text-primary { border-color: var(--vds-theme-text-primary); }
-    .vds-xl\:text-primary\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-xl\:text-primary\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-xl\:text-primary\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-xl\:text-primary\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-xl\:text-primary\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-xl\:text-primary\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-xl\:text-primary\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-xl\:text-primary\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-xl\:text-primary\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-xl\:text-primary\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-xl\:text-primary\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-xl\:text-primary\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-xl\:text-primary\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-xl\:text-primary\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-xl\:text-primary\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-xl\:text-primary\/100 { color: var(--vds-theme-text-primary); }
-    .vds-xl\:bg-text-primary\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-xl\:bg-text-primary\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-xl\:bg-text-primary\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-xl\:bg-text-primary\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-xl\:bg-text-primary\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-xl\:bg-text-primary\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-xl\:bg-text-primary\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-xl\:bg-text-primary\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-xl\:bg-text-primary\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-xl\:bg-text-primary\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-xl\:bg-text-primary\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-xl\:bg-text-primary\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-xl\:bg-text-primary\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-xl\:bg-text-primary\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-xl\:bg-text-primary\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-xl\:bg-text-primary\/100 { background-color: var(--vds-theme-text-primary); }
-    .vds-xl\:border-text-primary\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-xl\:border-text-primary\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-xl\:border-text-primary\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-xl\:border-text-primary\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-xl\:border-text-primary\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-xl\:border-text-primary\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-xl\:border-text-primary\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-xl\:border-text-primary\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-xl\:border-text-primary\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-xl\:border-text-primary\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-xl\:border-text-primary\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-xl\:border-text-primary\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-xl\:border-text-primary\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-xl\:border-text-primary\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-xl\:border-text-primary\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-xl\:border-text-primary\/100 { border-color: var(--vds-theme-text-primary); }
+    .vds-xl\:text-fg { color: var(--vds-theme-text-primary); }
+    .vds-xl\:bg-fg { background-color: var(--vds-theme-text-primary); }
+    .vds-xl\:border-fg { border-color: var(--vds-theme-text-primary); }
+    .vds-xl\:text-fg\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-xl\:text-fg\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-xl\:text-fg\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-xl\:text-fg\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-xl\:text-fg\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-xl\:text-fg\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-xl\:text-fg\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-xl\:text-fg\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-xl\:text-fg\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-xl\:text-fg\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-xl\:text-fg\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-xl\:text-fg\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-xl\:text-fg\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-xl\:text-fg\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-xl\:text-fg\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-xl\:text-fg\/100 { color: var(--vds-theme-text-primary); }
+    .vds-xl\:bg-fg\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-xl\:bg-fg\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-xl\:bg-fg\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-xl\:bg-fg\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-xl\:bg-fg\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-xl\:bg-fg\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-xl\:bg-fg\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-xl\:bg-fg\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-xl\:bg-fg\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-xl\:bg-fg\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-xl\:bg-fg\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-xl\:bg-fg\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-xl\:bg-fg\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-xl\:bg-fg\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-xl\:bg-fg\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-xl\:bg-fg\/100 { background-color: var(--vds-theme-text-primary); }
+    .vds-xl\:border-fg\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-xl\:border-fg\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-xl\:border-fg\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-xl\:border-fg\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-xl\:border-fg\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-xl\:border-fg\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-xl\:border-fg\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-xl\:border-fg\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-xl\:border-fg\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-xl\:border-fg\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-xl\:border-fg\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-xl\:border-fg\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-xl\:border-fg\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-xl\:border-fg\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-xl\:border-fg\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-xl\:border-fg\/100 { border-color: var(--vds-theme-text-primary); }
     .vds-xl\:text-secondary { color: var(--vds-theme-text-secondary); }
     .vds-xl\:bg-text-secondary { background-color: var(--vds-theme-text-secondary); }
     .vds-xl\:border-text-secondary { border-color: var(--vds-theme-text-secondary); }
@@ -28656,57 +28656,57 @@
     .vds-2xl\:border-code\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 90%, transparent); }
     .vds-2xl\:border-code\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
     .vds-2xl\:border-code\/100 { border-color: var(--vds-theme-bg-code); }
-    .vds-2xl\:text-primary { color: var(--vds-theme-text-primary); }
-    .vds-2xl\:bg-text-primary { background-color: var(--vds-theme-text-primary); }
-    .vds-2xl\:border-text-primary { border-color: var(--vds-theme-text-primary); }
-    .vds-2xl\:text-primary\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-2xl\:text-primary\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-2xl\:text-primary\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-2xl\:text-primary\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-2xl\:text-primary\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-2xl\:text-primary\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-2xl\:text-primary\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-2xl\:text-primary\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-2xl\:text-primary\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-2xl\:text-primary\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-2xl\:text-primary\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-2xl\:text-primary\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-2xl\:text-primary\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-2xl\:text-primary\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-2xl\:text-primary\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-2xl\:text-primary\/100 { color: var(--vds-theme-text-primary); }
-    .vds-2xl\:bg-text-primary\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-2xl\:bg-text-primary\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-2xl\:bg-text-primary\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-2xl\:bg-text-primary\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-2xl\:bg-text-primary\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-2xl\:bg-text-primary\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-2xl\:bg-text-primary\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-2xl\:bg-text-primary\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-2xl\:bg-text-primary\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-2xl\:bg-text-primary\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-2xl\:bg-text-primary\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-2xl\:bg-text-primary\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-2xl\:bg-text-primary\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-2xl\:bg-text-primary\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-2xl\:bg-text-primary\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-2xl\:bg-text-primary\/100 { background-color: var(--vds-theme-text-primary); }
-    .vds-2xl\:border-text-primary\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-2xl\:border-text-primary\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-2xl\:border-text-primary\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-2xl\:border-text-primary\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-2xl\:border-text-primary\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-2xl\:border-text-primary\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-2xl\:border-text-primary\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-2xl\:border-text-primary\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-2xl\:border-text-primary\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-2xl\:border-text-primary\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-2xl\:border-text-primary\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-2xl\:border-text-primary\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-2xl\:border-text-primary\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-2xl\:border-text-primary\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-2xl\:border-text-primary\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-2xl\:border-text-primary\/100 { border-color: var(--vds-theme-text-primary); }
+    .vds-2xl\:text-fg { color: var(--vds-theme-text-primary); }
+    .vds-2xl\:bg-fg { background-color: var(--vds-theme-text-primary); }
+    .vds-2xl\:border-fg { border-color: var(--vds-theme-text-primary); }
+    .vds-2xl\:text-fg\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-2xl\:text-fg\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-2xl\:text-fg\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-2xl\:text-fg\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-2xl\:text-fg\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-2xl\:text-fg\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-2xl\:text-fg\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-2xl\:text-fg\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-2xl\:text-fg\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-2xl\:text-fg\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-2xl\:text-fg\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-2xl\:text-fg\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-2xl\:text-fg\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-2xl\:text-fg\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-2xl\:text-fg\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-2xl\:text-fg\/100 { color: var(--vds-theme-text-primary); }
+    .vds-2xl\:bg-fg\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-2xl\:bg-fg\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-2xl\:bg-fg\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-2xl\:bg-fg\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-2xl\:bg-fg\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-2xl\:bg-fg\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-2xl\:bg-fg\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-2xl\:bg-fg\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-2xl\:bg-fg\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-2xl\:bg-fg\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-2xl\:bg-fg\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-2xl\:bg-fg\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-2xl\:bg-fg\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-2xl\:bg-fg\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-2xl\:bg-fg\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-2xl\:bg-fg\/100 { background-color: var(--vds-theme-text-primary); }
+    .vds-2xl\:border-fg\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-2xl\:border-fg\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-2xl\:border-fg\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-2xl\:border-fg\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-2xl\:border-fg\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-2xl\:border-fg\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-2xl\:border-fg\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-2xl\:border-fg\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-2xl\:border-fg\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-2xl\:border-fg\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-2xl\:border-fg\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-2xl\:border-fg\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-2xl\:border-fg\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-2xl\:border-fg\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-2xl\:border-fg\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-2xl\:border-fg\/100 { border-color: var(--vds-theme-text-primary); }
     .vds-2xl\:text-secondary { color: var(--vds-theme-text-secondary); }
     .vds-2xl\:bg-text-secondary { background-color: var(--vds-theme-text-secondary); }
     .vds-2xl\:border-text-secondary { border-color: var(--vds-theme-text-secondary); }
@@ -34136,57 +34136,57 @@
     .vds-3xl\:border-code\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 90%, transparent); }
     .vds-3xl\:border-code\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
     .vds-3xl\:border-code\/100 { border-color: var(--vds-theme-bg-code); }
-    .vds-3xl\:text-primary { color: var(--vds-theme-text-primary); }
-    .vds-3xl\:bg-text-primary { background-color: var(--vds-theme-text-primary); }
-    .vds-3xl\:border-text-primary { border-color: var(--vds-theme-text-primary); }
-    .vds-3xl\:text-primary\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-3xl\:text-primary\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-3xl\:text-primary\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-3xl\:text-primary\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-3xl\:text-primary\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-3xl\:text-primary\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-3xl\:text-primary\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-3xl\:text-primary\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-3xl\:text-primary\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-3xl\:text-primary\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-3xl\:text-primary\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-3xl\:text-primary\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-3xl\:text-primary\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-3xl\:text-primary\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-3xl\:text-primary\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-3xl\:text-primary\/100 { color: var(--vds-theme-text-primary); }
-    .vds-3xl\:bg-text-primary\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-3xl\:bg-text-primary\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-3xl\:bg-text-primary\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-3xl\:bg-text-primary\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-3xl\:bg-text-primary\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-3xl\:bg-text-primary\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-3xl\:bg-text-primary\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-3xl\:bg-text-primary\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-3xl\:bg-text-primary\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-3xl\:bg-text-primary\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-3xl\:bg-text-primary\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-3xl\:bg-text-primary\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-3xl\:bg-text-primary\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-3xl\:bg-text-primary\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-3xl\:bg-text-primary\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-3xl\:bg-text-primary\/100 { background-color: var(--vds-theme-text-primary); }
-    .vds-3xl\:border-text-primary\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
-    .vds-3xl\:border-text-primary\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
-    .vds-3xl\:border-text-primary\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
-    .vds-3xl\:border-text-primary\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
-    .vds-3xl\:border-text-primary\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
-    .vds-3xl\:border-text-primary\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
-    .vds-3xl\:border-text-primary\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
-    .vds-3xl\:border-text-primary\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
-    .vds-3xl\:border-text-primary\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
-    .vds-3xl\:border-text-primary\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
-    .vds-3xl\:border-text-primary\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
-    .vds-3xl\:border-text-primary\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
-    .vds-3xl\:border-text-primary\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
-    .vds-3xl\:border-text-primary\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
-    .vds-3xl\:border-text-primary\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
-    .vds-3xl\:border-text-primary\/100 { border-color: var(--vds-theme-text-primary); }
+    .vds-3xl\:text-fg { color: var(--vds-theme-text-primary); }
+    .vds-3xl\:bg-fg { background-color: var(--vds-theme-text-primary); }
+    .vds-3xl\:border-fg { border-color: var(--vds-theme-text-primary); }
+    .vds-3xl\:text-fg\/0 { color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-3xl\:text-fg\/5 { color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-3xl\:text-fg\/10 { color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-3xl\:text-fg\/15 { color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-3xl\:text-fg\/20 { color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-3xl\:text-fg\/25 { color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-3xl\:text-fg\/30 { color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-3xl\:text-fg\/40 { color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-3xl\:text-fg\/50 { color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-3xl\:text-fg\/60 { color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-3xl\:text-fg\/70 { color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-3xl\:text-fg\/75 { color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-3xl\:text-fg\/80 { color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-3xl\:text-fg\/90 { color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-3xl\:text-fg\/95 { color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-3xl\:text-fg\/100 { color: var(--vds-theme-text-primary); }
+    .vds-3xl\:bg-fg\/0 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-3xl\:bg-fg\/5 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-3xl\:bg-fg\/10 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-3xl\:bg-fg\/15 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-3xl\:bg-fg\/20 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-3xl\:bg-fg\/25 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-3xl\:bg-fg\/30 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-3xl\:bg-fg\/40 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-3xl\:bg-fg\/50 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-3xl\:bg-fg\/60 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-3xl\:bg-fg\/70 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-3xl\:bg-fg\/75 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-3xl\:bg-fg\/80 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-3xl\:bg-fg\/90 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-3xl\:bg-fg\/95 { background-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-3xl\:bg-fg\/100 { background-color: var(--vds-theme-text-primary); }
+    .vds-3xl\:border-fg\/0 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 0%, transparent); }
+    .vds-3xl\:border-fg\/5 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 5%, transparent); }
+    .vds-3xl\:border-fg\/10 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 10%, transparent); }
+    .vds-3xl\:border-fg\/15 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 15%, transparent); }
+    .vds-3xl\:border-fg\/20 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 20%, transparent); }
+    .vds-3xl\:border-fg\/25 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 25%, transparent); }
+    .vds-3xl\:border-fg\/30 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 30%, transparent); }
+    .vds-3xl\:border-fg\/40 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 40%, transparent); }
+    .vds-3xl\:border-fg\/50 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 50%, transparent); }
+    .vds-3xl\:border-fg\/60 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 60%, transparent); }
+    .vds-3xl\:border-fg\/70 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 70%, transparent); }
+    .vds-3xl\:border-fg\/75 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 75%, transparent); }
+    .vds-3xl\:border-fg\/80 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 80%, transparent); }
+    .vds-3xl\:border-fg\/90 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 90%, transparent); }
+    .vds-3xl\:border-fg\/95 { border-color: color-mix(in oklab, var(--vds-theme-text-primary) 95%, transparent); }
+    .vds-3xl\:border-fg\/100 { border-color: var(--vds-theme-text-primary); }
     .vds-3xl\:text-secondary { color: var(--vds-theme-text-secondary); }
     .vds-3xl\:bg-text-secondary { background-color: var(--vds-theme-text-secondary); }
     .vds-3xl\:border-text-secondary { border-color: var(--vds-theme-text-secondary); }
