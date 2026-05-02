@@ -115,6 +115,49 @@ Source `oklch(50% 0.02 240)` produces dual emission:
 
 Modern browsers parse second line. Legacy browsers stop at first.
 
+## `@property` registration (v0.2.0+)
+
+Every leaf token is registered as a typed custom property. Architecture detail: [`../build/optimization.md#technique-1--property-registration`](../build/optimization.md). Decision lock: [`../decisions.md#performance--size-optimization-v020`](../decisions.md).
+
+### Why register
+
+| Without `@property` | With `@property inherits: false` |
+| ------------------- | -------------------------------- |
+| Token change → subtree style invalidation walk | Only the matched element invalidates |
+| 252 runs/sec (web.dev benchmark) | 214,110 runs/sec — ~849× faster |
+| No type checking on values | Invalid values rejected at parse time |
+| No interpolation/animation | Animatable per declared `<color>` / `<length>` / `<number>` syntax |
+
+### Per DTCG type → `syntax` map
+
+| DTCG `$type` | `syntax` | `inherits` | Example |
+| ------------ | -------- | ---------- | ------- |
+| `color` | `"<color>"` | `false` | `--vds-color-primary` |
+| `dimension` (spacing/sizing/radius/borderWidth) | `"<length>"` | `false` | `--vds-spacing-4` |
+| `dimension` (fontSize, may be fluid `clamp()`) | `"<length-percentage>"` | `false` | `--vds-font-size-base` |
+| `number` (lineHeight) | `"<number>"` | **`true`** | `--vds-line-height-base` (must inherit) |
+| `number` (opacity, fontWeight, zIndex) | `"<number>"` | `false` | `--vds-opacity-disabled` |
+| `time` (duration) | `"<time>"` | `false` | `--vds-duration-fast` |
+| `cubicBezier` (easing) | `"*"` | `false` | `--vds-ease-out` |
+| `shadow` / `gradient` (composite) | `"*"` | `false` | `--vds-shadow-md` |
+| `fontFamily` | `"*"` | `true` | `--vds-font-sans` (font inherits naturally) |
+
+### File placement rule
+
+`@property` is a top-level at-rule. Registrations are global and **not subject to `@layer` ordering** — putting them inside `@layer` parses but is meaningless. Build emits `dist/css/tokens.property.css` un-layered, loaded before `core.css`. The actual `--vds-*: value` declarations live inside `@layer vds-tokens`.
+
+### Initial-value rule
+
+`initial-value` must be **computationally independent**: no `em` (font-relative), no `%` referring to parent, no `currentColor`. Use `rem`, `px`, absolute color literals, or named values. Build validates each `initial-value` round-trips through `CSS.registerProperty()` shim — invalid registrations silently get dropped by browsers, so we catch them at build time.
+
+### Theme override interaction
+
+`[data-theme="X"] { --vds-token: ... }` works identically with or without `@property`. Registration affects type/inheritance/initial-value; the cascade resolves overrides normally. `inherits: false` semantics ensure the override applies only at the matched element, which is what subtree-scoped theming wants.
+
+### Build emission
+
+The build collects all leaf tokens (across primitive, semantic, and theme tiers — uses default theme's value for `initial-value`) and emits one `@property` block per unique CSS variable name. Theme files override the value; the registration is shared across themes.
+
 ## Cross-platform extensibility
 
 Token source is platform-agnostic. Output formatters can target any platform without changing source. See [`platforms.md`](./platforms.md).

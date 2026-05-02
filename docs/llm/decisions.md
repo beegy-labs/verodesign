@@ -506,3 +506,60 @@ Frameworks supported automatically (CSS layer): React, Vue, Svelte, Solid, Angul
 | Token rename | SDD spec → PR → migration guide → major bump |
 | Architecture (tier, layer, prefix) | SDD spec with rationale → major bump |
 | Standards (DTCG, WCAG, OKLCH) | Out of our control; track via `research/llm-knowledge-gaps.md` |
+
+## Performance & size optimization (v0.2.0)
+
+Architecture detail: [`build/optimization.md`](./build/optimization.md). Workflow: [`.add/optimize-2026.md`](../../.add/optimize-2026.md).
+
+### Locked decisions
+
+| Decision | Value | Rationale |
+| -------- | ----- | --------- |
+| Token registration | `@property` for every leaf token | Baseline Newly Available 2024-07; 214,110 runs/sec with `inherits: false` vs 252 runs/sec unregistered (web.dev benchmark Oct 2024) — ~9× recalc speedup |
+| `@property` inheritance default | `inherits: false` | Skips subtree style invalidation on token change. Override only for natively-inheriting properties (lineHeight, color/text inheritance contexts) |
+| `@property` syntax mapping | per-DTCG-type table in `optimization.md` §Technique 1 | `<color>`, `<length>`, `<number>`, `<time>`, `*` per DTCG `$type` |
+| `@property` file placement | `dist/css/tokens.property.css` (no `@layer` wrapper) | At-rule is global; layered placement ignored. Load before `core.css` |
+| Alpha utility emission | `color-mix(in oklab, var(--token) X%, transparent)` | Eliminates 16-step × N-color permutation. `oklab` (rectangular) keeps chroma stable when mixing with `transparent` (chroma-0) |
+| Tint/shade utility emission | `oklch(from var(--token) ...)` (relative color syntax) | Channel-precise, automatic per-theme regeneration. Baseline Widely Available Dec 2024 |
+| Theme mode emission | `light-dark()` single-value tokens | Replaces dual-rule `[data-mode="X"]` emission. Baseline Newly Available 2024-05 / Widely Available May 2026 |
+| `color-scheme` placement | `:root { color-scheme: light dark }` + `[data-mode]` overrides for explicit user choice | Native auto behavior without JS theme-init script |
+| Cascade layers (emission) | `@layer reset, vds-tokens, vds-utilities, components, overrides` — every emitted file declares its layer | Already documented decision; v0.2.0 enforces in build |
+| State variants emission | Curated subset only; `@scope` for component-local variants | `@scope` Baseline Newly Available 2026-01 (Firefox 146). Eliminates `vds-{state}:*` permutation for state×token long tail |
+| Responsive variants emission | `@container` for component layout; media queries reserved for OS prefs + page chrome | Container queries Baseline Widely Available Feb 2025 |
+| Container query units | `cqi` / `cqb` only (logical) | Survives RTL + vertical writing modes; `cqw`/`cqh` banned in emit |
+| Production bundle | Concatenated `dist/verodesign.full.css` + Brotli-11 sibling `.br` | "3 Cs" rule (concatenate-compress-cache) holds in HTTP/3; Brotli-11 ~8% ratio on utility CSS |
+| Static compression level | Brotli quality 11 for all `dist/*.css` siblings | Encode cost paid at build; only bytes-on-wire matter |
+| Shared dictionary compression (RFC 9842) | **Deferred to v0.3+** | Firefox not yet shipping May 2026; Cloudflare Phase 1 beta only |
+| Style Dictionary version | Stay on v4.x for v0.2.0 | SD5 DTCG 2025.10 support incomplete (issue #1590); revisit when gradients/composite types covered |
+| `@scope` fallback | `@supports not (selector(:scope))` for curated state-variant subset | Edge cases on browsers without scope; <0.5% global May 2026 |
+| Removed outputs | `dist/utilities/dark-variants.css`, `dist/utilities/group-variants.css`, `dist/theme-init.js` | Subsumed by `light-dark()` + `@scope` + native `color-scheme` |
+| New outputs | `dist/css/tokens.property.css`, `dist/verodesign.full.css`, `dist/*.css.br` siblings | Per [`outputs.md`](./build/outputs.md) |
+
+### Size budget (v0.2.0)
+
+| File | Cap (raw) | Cap (Brotli-11) |
+| ---- | --------- | --------------- |
+| `dist/utilities/full.css` | 1.5 MB | 200 KB |
+| `dist/css/themes/{slug}.css` | 8 KB | 2 KB |
+| `dist/verodesign.full.css` | 2.0 MB | 250 KB |
+| First-paint utility CSS over wire | — | **≤ 50 KB** |
+
+Build aborts when any file exceeds 1.2× cap. Tracked in `dist/data/size-report.json`.
+
+### Validation gates
+
+| Gate | Threshold | Failure action |
+| ---- | --------- | -------------- |
+| Visual parity | per-pixel ΔE2000 < 1.0 in OKLCH (JND threshold) on reference page set | Block release |
+| Token recalc | median < 1 ms via headless Chrome benchmark | Block release |
+| Bundle size | `full.css.br` ≤ 200 KB | Build aborts |
+| Lighthouse | Performance ≥ 95 on slow-4G profile | Block release |
+| `@property` emission | round-trips through `CSS.registerProperty` shim | Build aborts |
+
+### Versioning impact
+
+| Phase | Version |
+| ----- | ------- |
+| Phases 1–2 (CDD + `@property` + `@layer` enforcement, non-breaking) | v0.1.x patch chain |
+| Phases 3–5 (`light-dark()`, `color-mix()`, `@scope`, `@container` — breaking) | **v0.2.0** |
+| Phase 6 (Brotli + concatenated bundle, additive) | v0.2.x patch |
