@@ -3,12 +3,15 @@ import { rm, readFile, writeFile, readdir, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { transform } from 'lightningcss';
 import { emitCoreCss } from '../src/build/emit-core.mjs';
+import { emitPropertyCss } from '../src/build/emit-property.mjs';
 import { emitThemeCss } from '../src/build/emit-theme.mjs';
 import { emitUtilities } from '../src/build/utilities/index.mjs';
 import { emitProseCss } from '../src/build/emit-prose.mjs';
 import { emitTypes } from '../src/build/emit-types.mjs';
 import { emitTokensJson } from '../src/build/emit-json.mjs';
 import { emitStatic } from '../src/build/emit-static.mjs';
+import { emitConcat } from '../src/build/emit-concat.mjs';
+import { emitCompress } from '../src/build/emit-compress.mjs';
 import { auditContrast } from '../src/audit/contrast.mjs';
 import { auditParity } from '../src/audit/parity.mjs';
 import { auditNaming } from '../src/audit/naming.mjs';
@@ -51,6 +54,10 @@ async function main() {
   }
 
   console.log('[emit]');
+  done = step('dist/css/tokens.property.css');
+  const propertyOut = await emitPropertyCss();
+  done(`(${propertyOut.count} @property)`);
+
   done = step('dist/css/core.css');
   const coreOut = await emitCoreCss();
   done(`(${coreOut.count} tokens)`);
@@ -129,6 +136,17 @@ async function main() {
   }
   const ratio = ((totalMin / totalRaw) * 100).toFixed(1);
   done(`(${cssFiles.length} files, ${(totalRaw / 1024).toFixed(0)} KB → ${(totalMin / 1024).toFixed(0)} KB · ${ratio}%)`);
+
+  // ── Bundle: concatenated production bundle (tokens.property + reset + core + theme + utilities) ───
+  done = step('dist/verodesign.full.css (concatenated production bundle)');
+  const concatOut = await emitConcat({ theme: 'default' });
+  done(`(${(concatOut.bytes / 1024).toFixed(0)} KB)`);
+
+  // ── Compress: Brotli-11 .br siblings for every .css (incl. .min.css) ───
+  done = step('Brotli-11 *.css.br siblings');
+  const cmp = await emitCompress();
+  const brRatio = ((cmp.totalBr / cmp.totalRaw) * 100).toFixed(1);
+  done(`(${cmp.count} files, ${(cmp.totalRaw / 1024).toFixed(0)} KB → ${(cmp.totalBr / 1024).toFixed(0)} KB · ${brRatio}%)`);
 
   console.log('done');
 }

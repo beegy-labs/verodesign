@@ -14,6 +14,10 @@ const FAMILY_PREFIX = [
   ['no-underline', 'decoration'],
 ];
 
+// v0.2.0: curated state set per docs/llm/build/optimization.md § Technique 6.
+// Sibling-position pseudos (first/last/odd/even) removed — consumers compose
+// these via @scope or component-local CSS. `placeholder` retained (text-only
+// utility).
 const STATES = [
   { prefix: 'hover', pseudo: ':hover', applyTo: new Set(['bg', 'text', 'border', 'ring', 'opacity', 'shadow', 'decoration', 'cursor']) },
   { prefix: 'focus', pseudo: ':focus', applyTo: new Set(['bg', 'text', 'border', 'ring', 'opacity', 'outline']) },
@@ -21,12 +25,6 @@ const STATES = [
   { prefix: 'active', pseudo: ':active', applyTo: new Set(['bg', 'text', 'opacity', 'cursor']) },
   { prefix: 'disabled', pseudo: null, applyTo: new Set(['opacity', 'cursor']) },
   { prefix: 'placeholder', pseudo: '::placeholder', applyTo: new Set(['text', 'opacity']) },
-  // Sibling-position variants (CSS `:first-child`, `:last-child`, `:odd`, `:even`)
-  // applied to `border` family enables `vds-last:border-0` (no border on last list item)
-  { prefix: 'first', pseudo: ':first-child', applyTo: new Set(['border', 'bg', 'text', 'opacity']) },
-  { prefix: 'last', pseudo: ':last-child', applyTo: new Set(['border', 'bg', 'text', 'opacity']) },
-  { prefix: 'odd', pseudo: ':nth-child(odd)', applyTo: new Set(['bg', 'text', 'opacity']) },
-  { prefix: 'even', pseudo: ':nth-child(even)', applyTo: new Set(['bg', 'text', 'opacity']) },
 ];
 
 function detectFamily(className) {
