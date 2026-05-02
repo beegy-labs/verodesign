@@ -17,16 +17,16 @@ Format: [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/). SemVer p
 - `@layer base { :root { color-scheme: light dark; } [data-mode="..."] { color-scheme: ...; } }` in core.css — replaces JS-driven mode toggling for color-scheme.
 
 ### Changed
-- BREAKING: `dist/css/themes/{slug}.css` collapsed via `light-dark()` — single declaration per token instead of dual `[data-mode]` rules. Theme files dropped from 16 KB → 4 KB (75%).
-- BREAKING: `state-variants.css` curated to tier-1 semantic slots × base utilities only (no alpha permutations, no sibling pseudos `first`/`last`/`odd`/`even`). 19,329 rules → 2,287 rules. File size 2.3 MB → 256 KB (89%).
-- BREAKING: `responsive.css` curated to layout + sizing + spacing + typography size (no color/effect/transition responsive permutations). 3.7 MB → 548 KB (85%).
-- BREAKING: `group-variants.css` curated to tier-1 semantic slots only. 904 KB → 32 KB (96%).
+- `dist/css/themes/{slug}.css` collapsed via `light-dark()` — single declaration per token instead of dual `[data-mode]` rules. Theme files dropped from 16 KB → 4 KB (75%).
+- `state-variants.css` curated to tier-1 semantic slots × base utilities only (no alpha permutations, no sibling pseudos `first`/`last`/`odd`/`even`). 19,329 rules → 2,287 rules. File size 2.3 MB → 256 KB (89%).
+- `responsive.css` curated to layout + sizing + spacing + typography size (no color/effect/transition responsive permutations). 3.7 MB → 548 KB (85%).
+- `group-variants.css` curated to tier-1 semantic slots only. 904 KB → 32 KB (96%).
 
 ### Removed
-- BREAKING: `dist/utilities/dark-variants.css` — `light-dark()` inside theme tokens handles mode switching automatically. `vds-dark:*` utility classes no longer emitted.
-- BREAKING: `vds-{first,last,odd,even}:*` sibling-position pseudos — consumers compose via `@scope` or component-local CSS.
-- BREAKING: alpha permutations on long-tail color slots (state-variants & group-variants no longer emit `vds-hover:bg-primary/50` etc.). Base alpha utilities (`vds-bg-primary/50`) still emit.
-- BREAKING: responsive permutations on color/effect/transition (e.g., `vds-md:bg-primary` removed). Layout/sizing/spacing responsive retained.
+- `dist/utilities/dark-variants.css` — `light-dark()` inside theme tokens handles mode switching automatically. `vds-dark:*` utility classes no longer emitted.
+- `vds-{first,last,odd,even}:*` sibling-position pseudos — consumers compose via `@scope` or component-local CSS.
+- Alpha permutations on long-tail color slots (state-variants & group-variants no longer emit `vds-hover:bg-primary/50` etc.). Base alpha utilities (`vds-bg-primary/50`) still emit.
+- Responsive permutations on color/effect/transition (e.g., `vds-md:bg-primary` removed). Layout/sizing/spacing responsive retained.
 
 ### Performance
 - `full.css`: 7.8 MB → 1.4 MB raw (82%↓), 39 KB Brotli-11.
