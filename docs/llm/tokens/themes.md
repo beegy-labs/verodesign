@@ -73,28 +73,76 @@ tokens/
 }
 ```
 
-## Mode handling
+## Mode handling (v0.2.0+: `light-dark()`)
 
-Each theme provides one file per mode (light, dark). Build merges them into one CSS file with mode selectors:
+Each theme provides one file per mode (light, dark). Build collapses them via `light-dark()` — single declaration per token, automatic OS-pref tracking, no JS theme-init script needed. Decision lock: [`../decisions.md#performance--size-optimization-v020`](../decisions.md). Architecture: [`../build/optimization.md#technique-4--light-dark-theme-collapse`](../build/optimization.md).
+
+### Emit pattern
 
 ```css
-:root,
-[data-theme="default"][data-mode="light"],
-[data-theme="default"]:not([data-mode]) {
-  --vds-theme-bg-page: oklch(95% 0 0);
-  /* ... */
+@layer base {
+  :root              { color-scheme: light dark; }   /* respect OS by default */
+  [data-mode="light"] { color-scheme: light; }        /* explicit user override */
+  [data-mode="dark"]  { color-scheme: dark; }
+  [data-mode="auto"]  { color-scheme: light dark; }   /* explicit "follow OS" */
 }
 
-[data-theme="default"][data-mode="dark"],
-@media (prefers-color-scheme: dark) {
-  [data-theme="default"]:not([data-mode]) {
-    --vds-theme-bg-page: oklch(12% 0 0);
-    /* ... */
+@layer vds-tokens {
+  :root,
+  [data-theme="default"] {
+    --vds-theme-bg-page: light-dark(
+      oklch(0.98 0 0),
+      oklch(0.10 0 0)
+    );
+    --vds-theme-text-primary: light-dark(
+      oklch(0.20 0 0),
+      oklch(0.95 0 0)
+    );
+    --vds-theme-primary: light-dark(
+      oklch(0.55 0.18 250),
+      oklch(0.70 0.16 250)
+    );
+    /* ... every theme.* slot */
   }
 }
 ```
 
-Default behavior: `prefers-color-scheme` automatic. Override: explicit `[data-mode]`.
+### Why `light-dark()` over dual `[data-mode]` blocks
+
+- One declaration per token instead of two — themes file ~50% smaller (14 KB → ≤ 8 KB)
+- `dark-variants.css` (496 KB) becomes redundant — token automatically toggles when `color-scheme` resolves
+- Native auto behavior — no JS theme-init script needed for FOUC prevention
+- Explicit override still works via `[data-mode]` selector (writes `color-scheme`, not the token)
+
+### Browser support
+
+`light-dark()`: Chrome 123 / Edge 123 / Firefox 120 / Safari 17.5 — Baseline Newly Available 2024-05-13. As of May 2026 it has crossed the 30-month threshold to **Baseline Widely Available**.
+
+### Fallback (optional)
+
+For browsers older than Safari 17.4: build flag `--legacy-light-dark` regenerates dual-rule emission inside `@supports not (color: light-dark(white, black))`. Default off (Baseline-only emit).
+
+### Subtree theming
+
+`color-scheme` cascades to descendants. To force a region to a specific mode regardless of root:
+
+```html
+<aside style="color-scheme: dark">
+  <!-- light-dark() inside resolves to dark branch -->
+</aside>
+```
+
+### 3+ modes (high-contrast etc.)
+
+`light-dark()` only handles two. For high-contrast, sepia, or brand-specific contrast modes, layer additional `[data-theme]` overrides:
+
+```css
+[data-theme="hc-light"] {
+  color-scheme: light;
+  --vds-theme-bg-page: white;
+  --vds-theme-text-primary: black;
+}
+```
 
 ## Adding a new theme
 

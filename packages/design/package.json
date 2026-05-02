@@ -24,6 +24,7 @@
     "LICENSE"
   ],
   "exports": {
+    "./css/tokens.property.css": "./dist/css/tokens.property.css",
     "./css/core.css": "./dist/css/core.css",
     "./css/reset.css": "./dist/css/reset.css",
     "./css/prose.css": "./dist/css/prose.css",
@@ -40,6 +41,8 @@
     "./types/*": "./dist/types/*",
     "./theme-init.js": "./dist/theme-init.js",
     "./tokens/*": "./tokens/*",
+    "./full": "./dist/verodesign.full.css",
+    "./full.css": "./dist/verodesign.full.css",
     "./package.json": "./package.json"
   },
   "bin": {

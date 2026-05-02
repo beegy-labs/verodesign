@@ -1,5 +1,13 @@
 /* @verobee/design — core.css */
 /* Primitives + semantic schema (default light bindings). Override with themes/{theme}.css. */
+/* color-scheme handling: docs/llm/build/optimization.md § Technique 4. */
+
+@layer base {
+  :root              { color-scheme: light dark; }
+  [data-mode="light"] { color-scheme: light; }
+  [data-mode="dark"]  { color-scheme: dark; }
+  [data-mode="auto"]  { color-scheme: light dark; }
+}
 
 @layer vds-tokens {
   :root {
@@ -428,7 +436,7 @@
     --vds-zindex-toast: 700;
     --vds-zindex-max: 9999;
 
-    /* semantic schema (default light) */
+    /* semantic schema (default light) — overridden by themes/{theme}.css */
     --vds-theme-bg-page: #f7f9fa;
     --vds-theme-bg-page: oklch(98% 0.003 240);
     --vds-theme-bg-card: #ffffff;

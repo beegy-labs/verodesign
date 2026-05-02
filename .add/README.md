@@ -1,6 +1,6 @@
 # ADD Workflows Index
 
-> Autonomous Development Engine — execution workflows | **Last Updated**: 2026-04-30
+> Autonomous Development Engine — execution workflows | **Last Updated**: 2026-05-02
 
 Each workflow is a structured prompt for an LLM agent. Read the relevant CDD doc first, then follow the workflow.
 
@@ -29,6 +29,12 @@ Each workflow is a structured prompt for an LLM agent. Read the relevant CDD doc
 | [`release.md`](./release.md) | Tag and release a new version |
 | [`consumer-update.md`](./consumer-update.md) | Update veronex/verobase to new verodesign version |
 | [`doc-sync.md`](./doc-sync.md) | Sync docs after token/theme changes |
+
+## Architecture migration
+
+| Workflow | When to run |
+| -------- | ----------- |
+| [`optimize-2026.md`](./optimize-2026.md) | Execute v0.2.0 size + perf optimization (`@property`, `light-dark()`, `color-mix()`, `@scope`, `@container`, Brotli-11) |
 
 ## Workflow execution rules
 

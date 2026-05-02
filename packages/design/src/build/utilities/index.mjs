@@ -63,7 +63,10 @@ export async function emitUtilities() {
     // chart
     'chart-1', 'chart-2', 'chart-3', 'chart-4', 'chart-5',
   ];
-  const SEMANTIC_RX = new RegExp(`^\\.vds-(bg|text|border)-(${SEMANTIC_SLOTS.map((s) => s.replace(/-/g, '\\-')).join('|')})(?:\\\\\\/[0-9]+)?\\s*\\{`);
+  // v0.2.0 curated subset: base rules only (no alpha permutations) on tier-1
+  // semantic slots. Long-tail combinations move to consumer-authored @scope
+  // blocks. See docs/llm/build/optimization.md § Technique 6.
+  const SEMANTIC_RX = new RegExp(`^\\.vds-(bg|text|border)-(${SEMANTIC_SLOTS.map((s) => s.replace(/-/g, '\\-')).join('|')})\\s*\\{`);
   const stateEligible = [
     ...color.filter((r) => SEMANTIC_RX.test(r)),
     ...effect.filter((r) => r.startsWith('.vds-opacity-') || r.startsWith('.vds-shadow-') || r.startsWith('.vds-outline-') || /^\.vds-border-(0|1|2|4|8)\b/.test(r)),
@@ -74,27 +77,30 @@ export async function emitUtilities() {
   ];
   const stateRules = expandStateVariants(stateEligible);
 
-  const groupEligible = color.filter((r) => /^\.vds-(bg|text|border)-[a-zA-Z0-9-]+(\\\/[0-9]+)?\s*\{/.test(r));
+  // v0.2.0 curated subset: tier-1 semantic slots only, base rules (no alpha
+  // permutations). Long-tail combinations move to consumer @scope blocks.
+  // See docs/llm/build/optimization.md § Technique 6.
+  const groupEligible = color.filter((r) => SEMANTIC_RX.test(r));
   const groupRules = expandGroupVariants(groupEligible);
   groupRules.unshift('.vds-group { /* parent marker for vds-group-hover/focus */ }');
 
-  // Dark-mode variants — emit `vds-dark:CLASS` rules under `[data-mode="dark"]`
-  // parent. Tailwind compat: consumer code post-codemod uses vds-dark:bg-blue-900,
-  // which only applies when ancestor has data-mode="dark". Limited to color
-  // (bg/text/border with all opacity variants) + ring + effect (border/shadow/opacity)
-  // — sufficient for shadcn dark: usage patterns.
-  const darkEligible = [
-    ...color, // all color rules (primitive ramps + semantic) — full Tailwind dark: parity
-    ...effect.filter((r) => r.startsWith('.vds-opacity-') || r.startsWith('.vds-shadow-') || /^\.vds-border-(0|1|2|4|8)\b/.test(r)),
-    ...ring.filter((r) => r.startsWith('.vds-ring-')),
-  ];
-  const darkRules = expandDarkVariants(darkEligible);
+  // v0.2.0: dark-variants removed. light-dark() inside theme tokens handles
+  // mode switching automatically — no need for `vds-dark:CLASS` permutations.
+  // Architecture: docs/llm/build/optimization.md § Technique 4.
+  const darkRules = [];
 
-  const baseAll = [
-    ...color, ...spacing, ...typography, ...layout, ...sizing,
-    ...effect, ...transition, ...transform, ...ring, ...decoration, ...backdrop,
+  // v0.2.0 curated subset: layout + sizing + spacing + typography size only.
+  // Component-local responsive moves to @container (consumer-authored).
+  // Color/effect/transition responsive permutations dropped — the long-tail
+  // multiplier (7 breakpoints × every utility) was the largest single bloat
+  // source. See docs/llm/build/optimization.md § Technique 7.
+  const responsiveEligible = [
+    ...layout,
+    ...sizing,
+    ...spacing,
+    ...typography.filter((r) => /^\.vds-(text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl)|font-|leading-|tracking-|text-(left|center|right|justify))\s*\{/.test(r)),
   ];
-  const responsiveBlocks = wrapResponsive(baseAll, breakpoints);
+  const responsiveBlocks = wrapResponsive(responsiveEligible, breakpoints);
 
   await mkdir(join(DIST, 'utilities', 'by-category'), { recursive: true });
 
@@ -121,8 +127,7 @@ export async function emitUtilities() {
   const groupLines = ['/* @verobee/design — utilities/group-variants (consumer light DOM only) */', '@layer vds-utilities {', ...groupRules.map((l) => '  ' + l), '}', ''].join('\n');
   await writeFile(join(DIST, 'utilities', 'group-variants.css'), groupLines, 'utf8');
 
-  const darkLines = ['/* @verobee/design — utilities/dark-variants ([data-mode="dark"] parent) */', '@layer vds-utilities {', ...darkRules.map((l) => '  ' + l), '}', ''].join('\n');
-  await writeFile(join(DIST, 'utilities', 'dark-variants.css'), darkLines, 'utf8');
+  // dark-variants.css removed — light-dark() handles mode toggling.
 
   const responsiveLines = ['/* @verobee/design — utilities/responsive */', '@layer vds-utilities {', ...responsiveBlocks.map((l) => '  ' + l), '}', ''].join('\n');
   await writeFile(join(DIST, 'utilities', 'responsive.css'), responsiveLines, 'utf8');
@@ -159,7 +164,6 @@ export async function emitUtilities() {
     ...animUtils.map((l) => '  ' + l),
     ...stateRules.map((l) => '  ' + l),
     ...groupRules.map((l) => '  ' + l),
-    ...darkRules.map((l) => '  ' + l),
     ...responsiveBlocks.map((l) => '  ' + l),
     '  @media (prefers-reduced-motion: reduce) {',
     '    .vds-anim-spin, .vds-anim-pulse, .vds-anim-bounce { animation: none; }',
