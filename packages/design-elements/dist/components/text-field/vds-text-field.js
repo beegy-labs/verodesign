@@ -1,49 +1,31 @@
-import { LitElement, css, html } from "lit";
-import { property, query, state } from "lit/decorators.js";
-import { setAriaProperty } from "../../utils/attribute-mirror.js";
-import { focusRing, srOnly } from "../../styles/shared.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as p, html as d } from "lit";
+import { property as s, query as u, state as v } from "lit/decorators.js";
+import { setAriaProperty as n } from "../../utils/attribute-mirror.js";
+import { focusRing as c, srOnly as m } from "../../styles/shared.js";
+import { VdsElement as f } from "../../base/vds-element.js";
+var y = Object.defineProperty, e = (l, t, r, g) => {
+  for (var a = void 0, o = l.length - 1, h; o >= 0; o--)
+    (h = l[o]) && (a = h(t, r, a) || a);
+  return a && y(t, r, a), a;
 };
-class VdsTextField extends LitElement {
+class i extends f {
   constructor() {
-    super();
-    this.value = "";
-    this.type = "text";
-    this.size = "md";
-    this.disabled = false;
-    this.required = false;
-    this.readonly = false;
-    this._touched = false;
-    this._labelId = `vds-tf-label-${crypto.randomUUID().slice(0, 8)}`;
-    this._helperId = `vds-tf-helper-${crypto.randomUUID().slice(0, 8)}`;
-    this.handleInput = (e) => {
-      this.value = e.target.value;
-      this.dispatchEvent(new CustomEvent("vds-input", { bubbles: true, composed: true, detail: { value: this.value } }));
-    };
-    this.handleChange = () => {
-      this.dispatchEvent(new CustomEvent("vds-change", { bubbles: true, composed: true, detail: { value: this.value } }));
-    };
-    this.handleBlur = () => {
-      this._touched = true;
-      this.syncValidity();
-    };
-    this.internals = this.attachInternals();
+    super(), this.value = "", this.type = "text", this.size = "md", this.disabled = !1, this.required = !1, this.readonly = !1, this._touched = !1, this._labelId = this.createId("vds-tf-label"), this._helperId = this.createId("vds-tf-helper"), this.handleInput = (t) => {
+      this.value = t.target.value, this.emit("vds-input", { value: this.value });
+    }, this.handleChange = () => {
+      this.emit("vds-change", { value: this.value });
+    }, this.handleBlur = () => {
+      this._touched = !0, this.syncValidity();
+    }, this.internals = this.attachInternals();
   }
   static {
-    this.formAssociated = true;
+    this.formAssociated = !0;
   }
   static {
     this.styles = [
-      focusRing,
-      srOnly,
-      css`
+      c,
+      m,
+      p`
       :host {
         display: inline-flex;
         flex-direction: column;
@@ -77,9 +59,9 @@ class VdsTextField extends LitElement {
                     box-shadow var(--vds-duration-fast) var(--vds-easing-ease-out);
       }
 
-      :host([data-size="sm"]) .field { padding: var(--vds-spacing-1_5) var(--vds-spacing-2); min-height: 2rem; }
-      :host([data-size="md"]) .field { padding: var(--vds-spacing-2) var(--vds-spacing-3); min-height: 2.5rem; }
-      :host([data-size="lg"]) .field { padding: var(--vds-spacing-3) var(--vds-spacing-4); min-height: 3rem; }
+      :host([size="sm"]) .field { padding: var(--vds-spacing-1_5) var(--vds-spacing-2); min-height: 2rem; }
+      :host([size="md"]) .field { padding: var(--vds-spacing-2) var(--vds-spacing-3); min-height: 2.5rem; }
+      :host([size="lg"]) .field { padding: var(--vds-spacing-3) var(--vds-spacing-4); min-height: 3rem; }
 
       .input {
         all: unset;
@@ -91,9 +73,9 @@ class VdsTextField extends LitElement {
       }
       .input::placeholder { color: var(--vds-theme-text-faint); }
 
-      :host([data-size="sm"]) .input { font-size: var(--vds-font-size-sm); }
-      :host([data-size="md"]) .input { font-size: var(--vds-font-size-base); }
-      :host([data-size="lg"]) .input { font-size: var(--vds-font-size-lg); }
+      :host([size="sm"]) .input { font-size: var(--vds-font-size-sm); }
+      :host([size="md"]) .input { font-size: var(--vds-font-size-base); }
+      :host([size="lg"]) .input { font-size: var(--vds-font-size-lg); }
 
       :host(:focus-within) .field {
         border-color: var(--vds-theme-border-focus);
@@ -131,63 +113,44 @@ class VdsTextField extends LitElement {
   }
   connectedCallback() {
     super.connectedCallback();
-    this.dataset.size = this.size;
   }
-  updated(changed) {
-    if (changed.has("size")) this.dataset.size = this.size;
-    if (changed.has("value") || changed.has("required") || changed.has("minlength") || changed.has("maxlength") || changed.has("pattern")) {
-      this.syncFormValue();
-    }
-    if (changed.has("disabled")) {
-      setAriaProperty(this, this.internals, "ariaDisabled", this.disabled);
-    }
-    if (changed.has("required")) {
-      setAriaProperty(this, this.internals, "ariaRequired", this.required);
-    }
+  updated(t) {
+    super.updated(t), (t.has("value") || t.has("required") || t.has("minlength") || t.has("maxlength") || t.has("pattern")) && this.syncFormValue(), t.has("disabled") && n(this, this.internals, "ariaDisabled", this.disabled), t.has("required") && n(this, this.internals, "ariaRequired", this.required);
   }
   syncFormValue() {
-    this.internals.setFormValue(this.value);
-    this.syncValidity();
+    this.internals.setFormValue(this.value), this.syncValidity();
   }
   syncValidity() {
     if (this.disabled || this.readonly) {
-      this.internals.setValidity({});
-      this.toggleAttribute("data-invalid", false);
+      this.internals.setValidity({}), this.toggleAttribute("data-invalid", !1);
       return;
     }
     if (this.required && this.value.trim() === "") {
-      this.internals.setValidity({ valueMissing: true }, this.errorMessage ?? "Required", this);
-      this.toggleAttribute("data-invalid", this._touched);
+      this.internals.setValidity({ valueMissing: !0 }, this.errorMessage ?? "Required", this), this.toggleAttribute("data-invalid", this._touched);
       return;
     }
     if (this.minlength != null && this.value.length < this.minlength) {
-      this.internals.setValidity({ tooShort: true }, this.errorMessage ?? `Min length ${this.minlength}`, this);
-      this.toggleAttribute("data-invalid", this._touched);
+      this.internals.setValidity({ tooShort: !0 }, this.errorMessage ?? `Min length ${this.minlength}`, this), this.toggleAttribute("data-invalid", this._touched);
       return;
     }
     if (this.maxlength != null && this.value.length > this.maxlength) {
-      this.internals.setValidity({ tooLong: true }, this.errorMessage ?? `Max length ${this.maxlength}`, this);
-      this.toggleAttribute("data-invalid", this._touched);
+      this.internals.setValidity({ tooLong: !0 }, this.errorMessage ?? `Max length ${this.maxlength}`, this), this.toggleAttribute("data-invalid", this._touched);
       return;
     }
     if (this.pattern && !new RegExp(`^(?:${this.pattern})$`).test(this.value)) {
-      this.internals.setValidity({ patternMismatch: true }, this.errorMessage ?? "Pattern mismatch", this);
-      this.toggleAttribute("data-invalid", this._touched);
+      this.internals.setValidity({ patternMismatch: !0 }, this.errorMessage ?? "Pattern mismatch", this), this.toggleAttribute("data-invalid", this._touched);
       return;
     }
-    this.internals.setValidity({});
-    this.toggleAttribute("data-invalid", false);
+    this.internals.setValidity({}), this.toggleAttribute("data-invalid", !1);
   }
   formResetCallback() {
-    this.value = "";
-    this._touched = false;
-    this.syncFormValue();
+    this.value = "", this._touched = !1, this.syncFormValue();
   }
-  formDisabledCallback(disabled) {
-    this.disabled = disabled;
+  formDisabledCallback(t) {
+    this.disabled = t;
   }
-  formStateRestoreCallback(state2) {
-    if (typeof state2 === "string") this.value = state2;
+  formStateRestoreCallback(t) {
+    typeof t == "string" && (this.value = t);
   }
   focus() {
     this.inputEl?.focus();
@@ -196,18 +159,15 @@ class VdsTextField extends LitElement {
     this.inputEl?.select();
   }
   reportValidity() {
-    this._touched = true;
-    this.syncValidity();
-    return this.internals.reportValidity();
+    return this._touched = !0, this.syncValidity(), this.internals.reportValidity();
   }
   checkValidity() {
     return this.internals.checkValidity();
   }
   render() {
-    const errorVisible = this._touched && this.hasAttribute("data-invalid") && this.errorMessage;
-    const helperText = errorVisible ? this.errorMessage : this.helper;
-    return html`
-      ${this.label ? html`<label class="label" id=${this._labelId} ?data-required=${this.required} for="input">${this.label}</label>` : null}
+    const t = this._touched && this.hasAttribute("data-invalid") && this.errorMessage, r = t ? this.errorMessage : this.helper;
+    return d`
+      ${this.label ? d`<label class="label" id=${this._labelId} ?data-required=${this.required} for="input">${this.label}</label>` : null}
       <div class="field">
         <slot name="start"></slot>
         <input
@@ -221,70 +181,69 @@ class VdsTextField extends LitElement {
           placeholder=${this.placeholder ?? ""}
           autocomplete=${this.autocomplete ?? ""}
           aria-labelledby=${this.label ? this._labelId : ""}
-          aria-describedby=${helperText ? this._helperId : ""}
-          aria-invalid=${errorVisible ? "true" : "false"}
+          aria-describedby=${r ? this._helperId : ""}
+          aria-invalid=${t ? "true" : "false"}
           @input=${this.handleInput}
           @change=${this.handleChange}
           @blur=${this.handleBlur}
         />
         <slot name="end"></slot>
       </div>
-      ${helperText ? html`<div class="helper" id=${this._helperId} ?data-error=${errorVisible}>${helperText}</div>` : null}
+      ${r ? d`<div class="helper" id=${this._helperId} ?data-error=${t}>${r}</div>` : null}
     `;
   }
 }
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "value");
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "name");
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "label");
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "helper");
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "errorMessage");
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "placeholder");
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "type");
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsTextField.prototype, "size");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsTextField.prototype, "disabled");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsTextField.prototype, "required");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsTextField.prototype, "readonly");
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "autocomplete");
-__decorateClass([
-  property({ type: Number })
-], VdsTextField.prototype, "minlength");
-__decorateClass([
-  property({ type: Number })
-], VdsTextField.prototype, "maxlength");
-__decorateClass([
-  property({ type: String })
-], VdsTextField.prototype, "pattern");
-__decorateClass([
-  query(".input")
-], VdsTextField.prototype, "inputEl");
-__decorateClass([
-  state()
-], VdsTextField.prototype, "_touched");
+e([
+  s({ type: String })
+], i.prototype, "value");
+e([
+  s({ type: String })
+], i.prototype, "name");
+e([
+  s({ type: String })
+], i.prototype, "label");
+e([
+  s({ type: String })
+], i.prototype, "helper");
+e([
+  s({ type: String })
+], i.prototype, "errorMessage");
+e([
+  s({ type: String })
+], i.prototype, "placeholder");
+e([
+  s({ type: String })
+], i.prototype, "type");
+e([
+  s({ type: String, reflect: !0 })
+], i.prototype, "size");
+e([
+  s({ type: Boolean, reflect: !0 })
+], i.prototype, "disabled");
+e([
+  s({ type: Boolean, reflect: !0 })
+], i.prototype, "required");
+e([
+  s({ type: Boolean, reflect: !0 })
+], i.prototype, "readonly");
+e([
+  s({ type: String })
+], i.prototype, "autocomplete");
+e([
+  s({ type: Number })
+], i.prototype, "minlength");
+e([
+  s({ type: Number })
+], i.prototype, "maxlength");
+e([
+  s({ type: String })
+], i.prototype, "pattern");
+e([
+  u(".input")
+], i.prototype, "inputEl");
+e([
+  v()
+], i.prototype, "_touched");
 export {
-  VdsTextField
+  i as VdsTextField
 };
-//# sourceMappingURL=vds-text-field.js.map

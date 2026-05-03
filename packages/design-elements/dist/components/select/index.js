@@ -1,7 +1,6 @@
-import { VdsSelect } from "./vds-select.js";
-import { VdsOption } from "./vds-option.js";
+import { VdsSelect as r } from "./vds-select.js";
+import { VdsOption as p } from "./vds-option.js";
 export {
-  VdsOption,
-  VdsSelect
+  p as VdsOption,
+  r as VdsSelect
 };
-//# sourceMappingURL=index.js.map

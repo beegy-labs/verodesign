@@ -1,4 +1,5 @@
-import { LitElement, type PropertyValues } from 'lit';
+import { type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Size = 'sm' | 'md' | 'lg';
 /**
  * <vds-checkbox> — tri-state checkbox (WAI-ARIA AP 1.2 § Checkbox).
@@ -8,7 +9,7 @@ type Size = 'sm' | 'md' | 'lg';
  * @slot - label text (rendered after the checkbox)
  * @event change - { detail: { checked: boolean } }
  */
-export declare class VdsCheckbox extends LitElement {
+export declare class VdsCheckbox extends VdsElement {
     static formAssociated: boolean;
     static styles: import("lit").CSSResult;
     checked: boolean;

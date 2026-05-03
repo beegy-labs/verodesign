@@ -1,28 +1,25 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsTabs, VdsTab, VdsTabPanel } from "@verobee/design-elements/components/tabs";
+import * as a from "react";
+import { createComponent as e } from "@lit/react";
+import { VdsTabs as t, VdsTab as s, VdsTabPanel as n } from "@verobee/design-elements/components/tabs";
 import "@verobee/design-elements/define/tabs";
-const Tabs = createComponent({
+const b = e({
   tagName: "vds-tabs",
-  elementClass: VdsTabs,
-  react: React,
+  elementClass: t,
+  react: a,
   events: {
     onChange: "vds-change"
   }
-});
-const Tab = createComponent({
+}), c = e({
   tagName: "vds-tab",
-  elementClass: VdsTab,
-  react: React
-});
-const TabPanel = createComponent({
+  elementClass: s,
+  react: a
+}), l = e({
   tagName: "vds-tab-panel",
-  elementClass: VdsTabPanel,
-  react: React
+  elementClass: n,
+  react: a
 });
 export {
-  Tab,
-  TabPanel,
-  Tabs
+  c as Tab,
+  l as TabPanel,
+  b as Tabs
 };
-//# sourceMappingURL=Tabs.js.map

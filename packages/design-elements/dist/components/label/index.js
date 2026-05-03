@@ -1,5 +1,4 @@
-import { VdsLabel } from "./vds-label.js";
+import { VdsLabel as r } from "./vds-label.js";
 export {
-  VdsLabel
+  r as VdsLabel
 };
-//# sourceMappingURL=index.js.map

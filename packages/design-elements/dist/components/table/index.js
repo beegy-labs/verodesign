@@ -1,5 +1,4 @@
-import { VdsTable } from "./vds-table.js";
+import { VdsTable as r } from "./vds-table.js";
 export {
-  VdsTable
+  r as VdsTable
 };
-//# sourceMappingURL=index.js.map

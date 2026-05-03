@@ -1,22 +1,17 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as n, html as h } from "lit";
+import { property as s } from "lit/decorators.js";
+import { VdsElement as l } from "../../base/vds-element.js";
+var b = Object.defineProperty, v = (r, t, a, p) => {
+  for (var e = void 0, o = r.length - 1, d; o >= 0; o--)
+    (d = r[o]) && (e = d(t, a, e) || e);
+  return e && b(t, a, e), e;
 };
-class VdsCard extends LitElement {
+class i extends l {
   constructor() {
-    super(...arguments);
-    this.variant = "surface";
-    this.elevation = "1";
+    super(...arguments), this.variant = "surface", this.elevation = "1";
   }
   static {
-    this.styles = css`
+    this.styles = n`
     :host {
       display: block;
       background: var(--vds-theme-bg-card);
@@ -25,19 +20,19 @@ class VdsCard extends LitElement {
       overflow: hidden;
     }
 
-    :host([data-variant="outline"]) {
+    :host([variant="outline"]) {
       background: transparent;
       border: var(--vds-border-width-1) solid var(--vds-theme-border-default);
     }
-    :host([data-variant="ghost"]) {
+    :host([variant="ghost"]) {
       background: transparent;
     }
 
-    :host([data-elevation="1"]) { box-shadow: var(--vds-shadow-1); }
-    :host([data-elevation="2"]) { box-shadow: var(--vds-shadow-2); }
-    :host([data-elevation="3"]) { box-shadow: var(--vds-shadow-3); }
-    :host([data-elevation="4"]) { box-shadow: var(--vds-shadow-4); }
-    :host([data-elevation="5"]) { box-shadow: var(--vds-shadow-5); }
+    :host([elevation="1"]) { box-shadow: var(--vds-shadow-1); }
+    :host([elevation="2"]) { box-shadow: var(--vds-shadow-2); }
+    :host([elevation="3"]) { box-shadow: var(--vds-shadow-3); }
+    :host([elevation="4"]) { box-shadow: var(--vds-shadow-4); }
+    :host([elevation="5"]) { box-shadow: var(--vds-shadow-5); }
 
     .header,
     .body,
@@ -63,30 +58,20 @@ class VdsCard extends LitElement {
     }
   `;
   }
-  connectedCallback() {
-    super.connectedCallback();
-    this.dataset.variant = this.variant;
-    this.dataset.elevation = this.elevation;
-  }
-  updated(changed) {
-    if (changed.has("variant")) this.dataset.variant = this.variant;
-    if (changed.has("elevation")) this.dataset.elevation = this.elevation;
-  }
   render() {
-    return html`
+    return h`
       <div class="header"><slot name="header"></slot></div>
       <div class="body"><slot></slot></div>
       <div class="footer"><slot name="footer"></slot></div>
     `;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsCard.prototype, "variant");
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsCard.prototype, "elevation");
+v([
+  s({ type: String, reflect: !0 })
+], i.prototype, "variant");
+v([
+  s({ type: String, reflect: !0 })
+], i.prototype, "elevation");
 export {
-  VdsCard
+  i as VdsCard
 };
-//# sourceMappingURL=vds-card.js.map

@@ -1,16 +1,15 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsButton } from "@verobee/design-elements/components/button";
+import * as t from "react";
+import { createComponent as o } from "@lit/react";
+import { VdsButton as e } from "@verobee/design-elements/components/button";
 import "@verobee/design-elements/define/button";
-const Button = createComponent({
+const a = o({
   tagName: "vds-button",
-  elementClass: VdsButton,
-  react: React,
+  elementClass: e,
+  react: t,
   events: {
     onClick: "click"
   }
 });
 export {
-  Button
+  a as Button
 };
-//# sourceMappingURL=Button.js.map

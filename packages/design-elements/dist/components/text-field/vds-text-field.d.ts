@@ -1,10 +1,11 @@
-import { LitElement, type PropertyValues } from 'lit';
+import { type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Size = 'sm' | 'md' | 'lg';
 /**
  * <vds-text-field> — text input with label, helper, error states. WAI-ARIA AP 1.2 textbox pattern.
  * Form-Associated Custom Element via ElementInternals.
  */
-export declare class VdsTextField extends LitElement {
+export declare class VdsTextField extends VdsElement {
     static formAssociated: boolean;
     static styles: import("lit").CSSResult[];
     value: string;

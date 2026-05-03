@@ -1,17 +1,12 @@
-class ZagController {
-  constructor(host, factory) {
-    this.host = host;
-    this.factory = factory;
-    host.addController(this);
+class r {
+  constructor(e, t) {
+    this.host = e, this.factory = t, e.addController(this);
   }
   hostConnected() {
-    this.service = this.factory();
-    this.unsubscribe = this.service.subscribe(() => this.host.requestUpdate());
-    this.service.start();
+    this.service = this.factory(), this.unsubscribe = this.service.subscribe(() => this.host.requestUpdate()), this.service.start();
   }
   hostDisconnected() {
-    this.unsubscribe?.();
-    this.service?.stop?.();
+    this.unsubscribe?.(), this.service?.stop?.();
   }
   get state() {
     if (!this.service) throw new Error("ZagController.state accessed before connection");
@@ -21,11 +16,10 @@ class ZagController {
     if (!this.service) throw new Error("ZagController.send accessed before connection");
     return this.service.send.bind(this.service);
   }
-  setContext(ctx) {
-    this.service?.setContext?.(ctx);
+  setContext(e) {
+    this.service?.setContext?.(e);
   }
 }
 export {
-  ZagController
+  r as ZagController
 };
-//# sourceMappingURL=zag-controller.js.map

@@ -1,49 +1,30 @@
-import { LitElement, css, html } from "lit";
-import { property, query, state } from "lit/decorators.js";
-import { setAriaProperty } from "../../utils/attribute-mirror.js";
-import { focusRing } from "../../styles/shared.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as v, html as l } from "lit";
+import { property as r, query as p, state as c } from "lit/decorators.js";
+import { setAriaProperty as u } from "../../utils/attribute-mirror.js";
+import { focusRing as f } from "../../styles/shared.js";
+import { VdsElement as y } from "../../base/vds-element.js";
+var b = Object.defineProperty, t = (o, e, a, h) => {
+  for (var s = void 0, d = o.length - 1, n; d >= 0; d--)
+    (n = o[d]) && (s = n(e, a, s) || s);
+  return s && b(e, a, s), s;
 };
-class VdsTextArea extends LitElement {
+class i extends y {
   constructor() {
-    super();
-    this.value = "";
-    this.disabled = false;
-    this.required = false;
-    this.readonly = false;
-    this.rows = 4;
-    this.resize = "vertical";
-    this.showCount = false;
-    this._touched = false;
-    this._labelId = `vds-ta-label-${crypto.randomUUID().slice(0, 8)}`;
-    this._helperId = `vds-ta-helper-${crypto.randomUUID().slice(0, 8)}`;
-    this.handleInput = (e) => {
-      this.value = e.target.value;
-      this.dispatchEvent(new CustomEvent("vds-input", { bubbles: true, composed: true, detail: { value: this.value } }));
-    };
-    this.handleChange = () => {
-      this.dispatchEvent(new CustomEvent("vds-change", { bubbles: true, composed: true, detail: { value: this.value } }));
-    };
-    this.handleBlur = () => {
-      this._touched = true;
-      this.syncValidity();
-    };
-    this.internals = this.attachInternals();
+    super(), this.value = "", this.disabled = !1, this.required = !1, this.readonly = !1, this.rows = 4, this.resize = "vertical", this.showCount = !1, this._touched = !1, this._labelId = this.createId("vds-ta-label"), this._helperId = this.createId("vds-ta-helper"), this.handleInput = (e) => {
+      this.value = e.target.value, this.emit("vds-input", { value: this.value });
+    }, this.handleChange = () => {
+      this.emit("vds-change", { value: this.value });
+    }, this.handleBlur = () => {
+      this._touched = !0, this.syncValidity();
+    }, this.internals = this.attachInternals();
   }
   static {
-    this.formAssociated = true;
+    this.formAssociated = !0;
   }
   static {
     this.styles = [
-      focusRing,
-      css`
+      f,
+      v`
       :host {
         display: inline-flex;
         flex-direction: column;
@@ -124,62 +105,46 @@ class VdsTextArea extends LitElement {
     `
     ];
   }
-  updated(changed) {
-    if (changed.has("value") || changed.has("required") || changed.has("minlength") || changed.has("maxlength")) {
-      this.internals.setFormValue(this.value);
-      this.syncValidity();
-    }
-    if (changed.has("disabled")) setAriaProperty(this, this.internals, "ariaDisabled", this.disabled);
-    if (changed.has("required")) setAriaProperty(this, this.internals, "ariaRequired", this.required);
+  updated(e) {
+    super.updated(e), (e.has("value") || e.has("required") || e.has("minlength") || e.has("maxlength")) && (this.internals.setFormValue(this.value), this.syncValidity()), e.has("disabled") && u(this, this.internals, "ariaDisabled", this.disabled), e.has("required") && u(this, this.internals, "ariaRequired", this.required);
   }
   syncValidity() {
     if (this.disabled || this.readonly) {
-      this.internals.setValidity({});
-      this.toggleAttribute("data-invalid", false);
+      this.internals.setValidity({}), this.toggleAttribute("data-invalid", !1);
       return;
     }
     if (this.required && this.value.trim() === "") {
-      this.internals.setValidity({ valueMissing: true }, this.errorMessage ?? "Required", this);
-      this.toggleAttribute("data-invalid", this._touched);
+      this.internals.setValidity({ valueMissing: !0 }, this.errorMessage ?? "Required", this), this.toggleAttribute("data-invalid", this._touched);
       return;
     }
     if (this.maxlength != null && this.value.length > this.maxlength) {
-      this.internals.setValidity({ tooLong: true }, this.errorMessage ?? `Max length ${this.maxlength}`, this);
-      this.toggleAttribute("data-invalid", this._touched);
+      this.internals.setValidity({ tooLong: !0 }, this.errorMessage ?? `Max length ${this.maxlength}`, this), this.toggleAttribute("data-invalid", this._touched);
       return;
     }
-    this.internals.setValidity({});
-    this.toggleAttribute("data-invalid", false);
+    this.internals.setValidity({}), this.toggleAttribute("data-invalid", !1);
   }
   formResetCallback() {
-    this.value = "";
-    this._touched = false;
-    this.internals.setFormValue("");
-    this.syncValidity();
+    this.value = "", this._touched = !1, this.internals.setFormValue(""), this.syncValidity();
   }
-  formDisabledCallback(disabled) {
-    this.disabled = disabled;
+  formDisabledCallback(e) {
+    this.disabled = e;
   }
-  formStateRestoreCallback(state2) {
-    if (typeof state2 === "string") this.value = state2;
+  formStateRestoreCallback(e) {
+    typeof e == "string" && (this.value = e);
   }
   focus() {
     this.textareaEl?.focus();
   }
   reportValidity() {
-    this._touched = true;
-    this.syncValidity();
-    return this.internals.reportValidity();
+    return this._touched = !0, this.syncValidity(), this.internals.reportValidity();
   }
   checkValidity() {
     return this.internals.checkValidity();
   }
   render() {
-    const errorVisible = this._touched && this.hasAttribute("data-invalid") && this.errorMessage;
-    const helperText = errorVisible ? this.errorMessage : this.helper;
-    const count = this.maxlength != null ? `${this.value.length} / ${this.maxlength}` : `${this.value.length}`;
-    return html`
-      ${this.label ? html`<label class="label" id=${this._labelId} ?data-required=${this.required} for="textarea">${this.label}</label>` : null}
+    const e = this._touched && this.hasAttribute("data-invalid") && this.errorMessage, a = e ? this.errorMessage : this.helper, h = this.maxlength != null ? `${this.value.length} / ${this.maxlength}` : `${this.value.length}`;
+    return l`
+      ${this.label ? l`<label class="label" id=${this._labelId} ?data-required=${this.required} for="textarea">${this.label}</label>` : null}
       <div class="field">
         <textarea
           id="textarea"
@@ -191,69 +156,68 @@ class VdsTextArea extends LitElement {
           ?readonly=${this.readonly}
           placeholder=${this.placeholder ?? ""}
           aria-labelledby=${this.label ? this._labelId : ""}
-          aria-describedby=${helperText ? this._helperId : ""}
-          aria-invalid=${errorVisible ? "true" : "false"}
+          aria-describedby=${a ? this._helperId : ""}
+          aria-invalid=${e ? "true" : "false"}
           @input=${this.handleInput}
           @change=${this.handleChange}
           @blur=${this.handleBlur}
         ></textarea>
       </div>
       <div class="meta">
-        ${helperText ? html`<div class="helper" id=${this._helperId} ?data-error=${errorVisible}>${helperText}</div>` : html`<span></span>`}
-        ${this.showCount ? html`<div class="count" aria-live="polite">${count}</div>` : null}
+        ${a ? l`<div class="helper" id=${this._helperId} ?data-error=${e}>${a}</div>` : l`<span></span>`}
+        ${this.showCount ? l`<div class="count" aria-live="polite">${h}</div>` : null}
       </div>
     `;
   }
 }
-__decorateClass([
-  property({ type: String })
-], VdsTextArea.prototype, "value");
-__decorateClass([
-  property({ type: String })
-], VdsTextArea.prototype, "name");
-__decorateClass([
-  property({ type: String })
-], VdsTextArea.prototype, "label");
-__decorateClass([
-  property({ type: String })
-], VdsTextArea.prototype, "helper");
-__decorateClass([
-  property({ type: String })
-], VdsTextArea.prototype, "errorMessage");
-__decorateClass([
-  property({ type: String })
-], VdsTextArea.prototype, "placeholder");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsTextArea.prototype, "disabled");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsTextArea.prototype, "required");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsTextArea.prototype, "readonly");
-__decorateClass([
-  property({ type: Number })
-], VdsTextArea.prototype, "minlength");
-__decorateClass([
-  property({ type: Number })
-], VdsTextArea.prototype, "maxlength");
-__decorateClass([
-  property({ type: Number })
-], VdsTextArea.prototype, "rows");
-__decorateClass([
-  property({ type: String, reflect: true, attribute: "data-resize" })
-], VdsTextArea.prototype, "resize");
-__decorateClass([
-  property({ type: Boolean, attribute: "show-count" })
-], VdsTextArea.prototype, "showCount");
-__decorateClass([
-  query(".textarea")
-], VdsTextArea.prototype, "textareaEl");
-__decorateClass([
-  state()
-], VdsTextArea.prototype, "_touched");
+t([
+  r({ type: String })
+], i.prototype, "value");
+t([
+  r({ type: String })
+], i.prototype, "name");
+t([
+  r({ type: String })
+], i.prototype, "label");
+t([
+  r({ type: String })
+], i.prototype, "helper");
+t([
+  r({ type: String })
+], i.prototype, "errorMessage");
+t([
+  r({ type: String })
+], i.prototype, "placeholder");
+t([
+  r({ type: Boolean, reflect: !0 })
+], i.prototype, "disabled");
+t([
+  r({ type: Boolean, reflect: !0 })
+], i.prototype, "required");
+t([
+  r({ type: Boolean, reflect: !0 })
+], i.prototype, "readonly");
+t([
+  r({ type: Number })
+], i.prototype, "minlength");
+t([
+  r({ type: Number })
+], i.prototype, "maxlength");
+t([
+  r({ type: Number })
+], i.prototype, "rows");
+t([
+  r({ type: String, reflect: !0, attribute: "data-resize" })
+], i.prototype, "resize");
+t([
+  r({ type: Boolean, attribute: "show-count" })
+], i.prototype, "showCount");
+t([
+  p(".textarea")
+], i.prototype, "textareaEl");
+t([
+  c()
+], i.prototype, "_touched");
 export {
-  VdsTextArea
+  i as VdsTextArea
 };
-//# sourceMappingURL=vds-text-area.js.map

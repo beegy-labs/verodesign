@@ -1,6 +1,7 @@
-import { LitElement, html, css, type PropertyValues } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Size = 'sm' | 'md' | 'lg';
 
@@ -12,7 +13,7 @@ type Size = 'sm' | 'md' | 'lg';
  * @slot - label text (rendered after the checkbox)
  * @event change - { detail: { checked: boolean } }
  */
-export class VdsCheckbox extends LitElement {
+export class VdsCheckbox extends VdsElement {
   static formAssociated = true;
 
   static styles = css`
@@ -26,9 +27,9 @@ export class VdsCheckbox extends LitElement {
       font-family: var(--vds-font-family-sans);
     }
     :host([disabled]) { cursor: not-allowed; opacity: 0.5; }
-    :host([data-size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([data-size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([data-size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
+    :host([size="md"]) { font-size: var(--vds-font-size-base); }
+    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
 
     .box {
       display: inline-flex;
@@ -40,9 +41,9 @@ export class VdsCheckbox extends LitElement {
       background: var(--vds-theme-bg-card);
       transition: background var(--vds-duration-fast), border-color var(--vds-duration-fast);
     }
-    :host([data-size="sm"]) .box { width: 14px; height: 14px; }
-    :host([data-size="md"]) .box { width: 18px; height: 18px; }
-    :host([data-size="lg"]) .box { width: 22px; height: 22px; }
+    :host([size="sm"]) .box { width: 14px; height: 14px; }
+    :host([size="md"]) .box { width: 18px; height: 18px; }
+    :host([size="lg"]) .box { width: 22px; height: 22px; }
 
     :host([checked]) .box,
     :host([indeterminate]) .box {
@@ -84,14 +85,13 @@ export class VdsCheckbox extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    this.dataset.size = this.size;
     if (!this.hasAttribute('tabindex')) this.tabIndex = this.disabled ? -1 : 0;
     this.syncFormValue();
     this.syncAria();
   }
 
   protected updated(changed: PropertyValues): void {
-    if (changed.has('size')) this.dataset.size = this.size;
+    super.updated(changed);
     if (changed.has('checked') || changed.has('indeterminate') || changed.has('disabled') || changed.has('required')) {
       this.syncAria();
       this.syncFormValue();
@@ -133,7 +133,7 @@ export class VdsCheckbox extends LitElement {
     } else {
       this.checked = !this.checked;
     }
-    this.dispatchEvent(new CustomEvent('change', { detail: { checked: this.checked }, bubbles: true, composed: true }));
+    this.emit('change', { checked: this.checked });
   }
 
   render() {

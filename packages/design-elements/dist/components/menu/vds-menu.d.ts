@@ -1,4 +1,5 @@
 import { LitElement, type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 /**
  * <vds-menu> — Menu Button + Menu (WAI-ARIA AP 1.2 Menu Button pattern).
  *
@@ -7,7 +8,7 @@ import { LitElement, type PropertyValues } from 'lit';
  *
  * @event vds-select - dispatched when an item is activated, detail { value }
  */
-export declare class VdsMenu extends LitElement {
+export declare class VdsMenu extends VdsElement {
     static styles: import("lit").CSSResult;
     open: boolean;
     placement: 'bottom-start' | 'bottom-end';
@@ -15,12 +16,14 @@ export declare class VdsMenu extends LitElement {
     private internals;
     private typeBuffer;
     private typeTimer;
+    private itemsCache;
     constructor();
     connectedCallback(): void;
     disconnectedCallback(): void;
     protected updated(changed: PropertyValues): void;
     private getTrigger;
     private getItems;
+    private refreshItems;
     private handleClick;
     private handleKeydown;
     private handleTypeAhead;

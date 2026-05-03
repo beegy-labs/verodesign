@@ -1,6 +1,7 @@
-import { LitElement, html, css } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { setRole } from '../../utils/attribute-mirror.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Orientation = 'horizontal' | 'vertical';
 
@@ -9,7 +10,7 @@ type Orientation = 'horizontal' | 'vertical';
  *
  * WAI-ARIA: when `decorative=true`, role=presentation (no semantic). When false, role=separator.
  */
-export class VdsSeparator extends LitElement {
+export class VdsSeparator extends VdsElement {
   static styles = css`
     :host {
       display: block;
@@ -45,13 +46,12 @@ export class VdsSeparator extends LitElement {
     }
   }
 
-  protected updated(): void {
+  protected updated(changed: PropertyValues): void {
+    super.updated(changed);
+    if (!changed.has('decorative') && !changed.has('orientation')) return;
     setRole(this, this.internals, this.decorative ? 'presentation' : 'separator');
-    if (!this.decorative) {
-      this.setAttribute('aria-orientation', this.orientation);
-    } else {
-      this.removeAttribute('aria-orientation');
-    }
+    this.toggleAttribute('aria-orientation', !this.decorative);
+    if (!this.decorative) this.setAttribute('aria-orientation', this.orientation);
   }
 
   render() {

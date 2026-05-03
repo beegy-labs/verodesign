@@ -1,6 +1,5 @@
-import { VdsToast, VdsToastGroup } from "./vds-toast.js";
+import { VdsToast as r, VdsToastGroup as t } from "./vds-toast.js";
 export {
-  VdsToast,
-  VdsToastGroup
+  r as VdsToast,
+  t as VdsToastGroup
 };
-//# sourceMappingURL=index.js.map

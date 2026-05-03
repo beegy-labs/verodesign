@@ -1,5 +1,2 @@
-import { VdsBadge } from "./vds-badge.js";
-if (!customElements.get("vds-badge")) {
-  customElements.define("vds-badge", VdsBadge);
-}
-//# sourceMappingURL=define.js.map
+import { VdsBadge as e } from "./vds-badge.js";
+customElements.get("vds-badge") || customElements.define("vds-badge", e);

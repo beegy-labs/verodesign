@@ -1,5 +1,6 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
 import { property } from 'lit/decorators.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Density = 'compact' | 'normal' | 'comfortable';
 
@@ -11,7 +12,7 @@ type Density = 'compact' | 'normal' | 'comfortable';
  * @slot caption - <caption>
  * @slot - table contents (thead/tbody/tfoot)
  */
-export class VdsTable extends LitElement {
+export class VdsTable extends VdsElement {
   static styles = css`
     :host { display: block; width: 100%; overflow-x: auto; }
     table {
@@ -26,19 +27,11 @@ export class VdsTable extends LitElement {
     .head ::slotted(*) { background: var(--vds-theme-bg-elevated); }
 
     /* style projected table rows via ::part / standard cascade */
-    :host([data-density="compact"]) table { font-size: var(--vds-font-size-xs); }
-    :host([data-density="comfortable"]) table { font-size: var(--vds-font-size-base); }
+    :host([density="compact"]) table { font-size: var(--vds-font-size-xs); }
+    :host([density="comfortable"]) table { font-size: var(--vds-font-size-base); }
   `;
 
   @property({ type: String, reflect: true }) density: Density = 'normal';
-
-  connectedCallback(): void {
-    super.connectedCallback();
-    this.dataset.density = this.density;
-  }
-  protected updated(): void {
-    this.dataset.density = this.density;
-  }
 
   render() {
     return html`

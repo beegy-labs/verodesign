@@ -1,13 +1,12 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsBadge } from "@verobee/design-elements/components/badge";
+import * as e from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsBadge as o } from "@verobee/design-elements/components/badge";
 import "@verobee/design-elements/define/badge";
-const Badge = createComponent({
+const p = t({
   tagName: "vds-badge",
-  elementClass: VdsBadge,
-  react: React
+  elementClass: o,
+  react: e
 });
 export {
-  Badge
+  p as Badge
 };
-//# sourceMappingURL=Badge.js.map

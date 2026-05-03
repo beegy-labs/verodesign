@@ -1,26 +1,17 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-import { setRole } from "../../utils/attribute-mirror.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { LitElement as p, css as d, html as c } from "lit";
+import { property as s } from "lit/decorators.js";
+import { setRole as v } from "../../utils/attribute-mirror.js";
+var h = Object.defineProperty, o = (t, i, l, m) => {
+  for (var e = void 0, r = t.length - 1, n; r >= 0; r--)
+    (n = t[r]) && (e = n(i, l, e) || e);
+  return e && h(i, l, e), e;
 };
-class VdsOption extends LitElement {
+class a extends p {
   constructor() {
-    super();
-    this.value = "";
-    this.selected = false;
-    this.disabled = false;
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "option");
+    super(), this.value = "", this.selected = !1, this.disabled = !1, this.internals = this.attachInternals(), v(this, this.internals, "option");
   }
   static {
-    this.styles = css`
+    this.styles = d`
     :host {
       display: flex;
       align-items: center;
@@ -36,19 +27,18 @@ class VdsOption extends LitElement {
   `;
   }
   render() {
-    return html`<slot></slot>`;
+    return c`<slot></slot>`;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsOption.prototype, "value");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsOption.prototype, "selected");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsOption.prototype, "disabled");
+o([
+  s({ type: String, reflect: !0 })
+], a.prototype, "value");
+o([
+  s({ type: Boolean, reflect: !0 })
+], a.prototype, "selected");
+o([
+  s({ type: Boolean, reflect: !0 })
+], a.prototype, "disabled");
 export {
-  VdsOption
+  a as VdsOption
 };
-//# sourceMappingURL=vds-option.js.map

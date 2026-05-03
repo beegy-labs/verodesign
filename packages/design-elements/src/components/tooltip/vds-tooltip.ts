@@ -1,6 +1,7 @@
-import { LitElement, html, css, type PropertyValues } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { setRole } from '../../utils/attribute-mirror.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Placement = 'top' | 'right' | 'bottom' | 'left';
 
@@ -13,7 +14,7 @@ type Placement = 'top' | 'right' | 'bottom' | 'left';
  * @slot trigger - the element that triggers the tooltip
  * @slot - the tooltip content
  */
-export class VdsTooltip extends LitElement {
+export class VdsTooltip extends VdsElement {
   static styles = css`
     :host {
       display: inline-flex;
@@ -60,7 +61,8 @@ export class VdsTooltip extends LitElement {
 
   private internals: ElementInternals;
   private timer: ReturnType<typeof setTimeout> | null = null;
-  private tipId = `vds-tooltip-${Math.random().toString(36).slice(2, 9)}`;
+  private triggerEl: HTMLElement | null = null;
+  private tipId = this.createId('vds-tooltip');
 
   constructor() {
     super();
@@ -73,15 +75,27 @@ export class VdsTooltip extends LitElement {
     this.addEventListener('keydown', this.handleKey);
   }
 
-  protected updated(_: PropertyValues): void {
-    const trigger = this.querySelector('[slot="trigger"]') as HTMLElement | null;
-    if (trigger) {
-      const existing = trigger.getAttribute('aria-describedby') ?? '';
-      if (!existing.split(' ').includes(this.tipId)) {
-        trigger.setAttribute('aria-describedby', `${existing} ${this.tipId}`.trim());
-      }
+  disconnectedCallback(): void {
+    super.disconnectedCallback();
+    if (this.timer) clearTimeout(this.timer);
+  }
+
+  protected updated(changed: PropertyValues): void {
+    super.updated(changed);
+    if (changed.has('open') || changed.has('disabled')) {
+      this.syncTrigger();
     }
   }
+
+  private syncTrigger = (): void => {
+    this.triggerEl = this.querySelector('[slot="trigger"]') as HTMLElement | null;
+    if (this.triggerEl) {
+      const existing = this.triggerEl.getAttribute('aria-describedby') ?? '';
+      if (!existing.split(' ').includes(this.tipId)) {
+        this.triggerEl.setAttribute('aria-describedby', `${existing} ${this.tipId}`.trim());
+      }
+    }
+  };
 
   private show = (): void => {
     if (this.disabled) return;
@@ -100,7 +114,7 @@ export class VdsTooltip extends LitElement {
 
   render() {
     return html`
-      <slot name="trigger"></slot>
+      <slot name="trigger" @slotchange=${this.syncTrigger}></slot>
       <span class="tip" part="tip" id=${this.tipId} role="tooltip" ?data-open=${this.open}>
         <slot></slot>
       </span>

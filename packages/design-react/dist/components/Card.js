@@ -1,13 +1,12 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsCard } from "@verobee/design-elements/components/card";
+import * as r from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsCard as o } from "@verobee/design-elements/components/card";
 import "@verobee/design-elements/define/card";
-const Card = createComponent({
+const p = t({
   tagName: "vds-card",
-  elementClass: VdsCard,
-  react: React
+  elementClass: o,
+  react: r
 });
 export {
-  Card
+  p as Card
 };
-//# sourceMappingURL=Card.js.map

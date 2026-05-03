@@ -1,9 +1,4 @@
-import { VdsSelect } from "./vds-select.js";
-import { VdsOption } from "./vds-option.js";
-if (!customElements.get("vds-select")) {
-  customElements.define("vds-select", VdsSelect);
-}
-if (!customElements.get("vds-option")) {
-  customElements.define("vds-option", VdsOption);
-}
-//# sourceMappingURL=define.js.map
+import { VdsSelect as e } from "./vds-select.js";
+import { VdsOption as t } from "./vds-option.js";
+customElements.get("vds-select") || customElements.define("vds-select", e);
+customElements.get("vds-option") || customElements.define("vds-option", t);

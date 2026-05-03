@@ -1,6 +1,7 @@
-import { LitElement, html, css, type PropertyValues } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Tone = 'neutral' | 'success' | 'warning' | 'error' | 'info';
 
@@ -11,7 +12,7 @@ type Tone = 'neutral' | 'success' | 'warning' | 'error' | 'info';
  *
  * @event vds-dismiss - dispatched when toast is dismissed
  */
-export class VdsToast extends LitElement {
+export class VdsToast extends VdsElement {
   static styles = css`
     :host {
       display: flex;
@@ -68,10 +69,7 @@ export class VdsToast extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    setRole(this, this.internals, this.tone === 'error' ? 'alert' : 'status');
-    setAriaProperty(this, this.internals, 'ariaLive', this.tone === 'error' ? 'assertive' : 'polite');
-    setAriaProperty(this, this.internals, 'ariaAtomic', true);
-
+    this.syncAria();
     if (this.duration > 0) {
       this._timer = window.setTimeout(() => this.dismiss(), this.duration);
     }
@@ -82,9 +80,25 @@ export class VdsToast extends LitElement {
     clearTimeout(this._timer);
   }
 
+  protected updated(changed: PropertyValues): void {
+    super.updated(changed);
+    if (changed.has('tone')) this.syncAria();
+    if (changed.has('duration') && this.isConnected) {
+      clearTimeout(this._timer);
+      if (this.duration > 0) this._timer = window.setTimeout(() => this.dismiss(), this.duration);
+    }
+  }
+
+  private syncAria(): void {
+    const isError = this.tone === 'error';
+    setRole(this, this.internals, isError ? 'alert' : 'status');
+    setAriaProperty(this, this.internals, 'ariaLive', isError ? 'assertive' : 'polite');
+    setAriaProperty(this, this.internals, 'ariaAtomic', true);
+  }
+
   dismiss(): void {
     clearTimeout(this._timer);
-    this.dispatchEvent(new CustomEvent('vds-dismiss', { bubbles: true, composed: true }));
+    this.emit('vds-dismiss');
     this.remove();
   }
 
@@ -108,7 +122,7 @@ export class VdsToast extends LitElement {
  *   const group = document.querySelector('vds-toast-group');
  *   group.publish({ title: 'Saved', tone: 'success' });
  */
-export class VdsToastGroup extends LitElement {
+export class VdsToastGroup extends VdsElement {
   static styles = css`
     :host {
       position: fixed;

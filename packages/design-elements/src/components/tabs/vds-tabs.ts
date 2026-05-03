@@ -1,6 +1,7 @@
 import { LitElement, html, css, type PropertyValues } from 'lit';
-import { property, queryAssignedElements } from 'lit/decorators.js';
+import { property } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 /**
  * <vds-tabs> — WAI-ARIA AP 1.2 Tabs pattern.
@@ -10,7 +11,7 @@ import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
  *
  * @event vds-change - dispatched on active tab change with detail { value }
  */
-export class VdsTabs extends LitElement {
+export class VdsTabs extends VdsElement {
   static styles = css`
     :host {
       display: block;
@@ -42,6 +43,8 @@ export class VdsTabs extends LitElement {
   @property({ type: String }) activation: 'auto' | 'manual' = 'auto';
 
   private internals: ElementInternals;
+  private tabsCache: VdsTab[] = [];
+  private panelsCache: VdsTabPanel[] = [];
 
   constructor() {
     super();
@@ -72,10 +75,16 @@ export class VdsTabs extends LitElement {
   }
 
   private get tabs(): VdsTab[] {
-    return Array.from(this.querySelectorAll('vds-tab')) as VdsTab[];
+    return this.tabsCache;
   }
   private get panels(): VdsTabPanel[] {
-    return Array.from(this.querySelectorAll('vds-tab-panel')) as VdsTabPanel[];
+    return this.panelsCache;
+  }
+
+  private refreshChildren = (): void => {
+    this.tabsCache = Array.from(this.querySelectorAll('vds-tab')) as VdsTab[];
+    this.panelsCache = Array.from(this.querySelectorAll('vds-tab-panel')) as VdsTabPanel[];
+    this.syncActive();
   }
 
   private syncActive(): void {
@@ -108,7 +117,7 @@ export class VdsTabs extends LitElement {
     }
     this.value = tab.value;
     tab.focus();
-    this.dispatchEvent(new CustomEvent('vds-change', { bubbles: true, composed: true, detail: { value: this.value } }));
+    this.emit('vds-change', { value: this.value });
   }
 
   private handleClick = (e: MouseEvent): void => {
@@ -149,10 +158,10 @@ export class VdsTabs extends LitElement {
   render() {
     return html`
       <div class="tablist" role="tablist" aria-orientation=${this.orientation}>
-        <slot name="tab"></slot>
+        <slot name="tab" @slotchange=${this.refreshChildren}></slot>
       </div>
       <div class="panels">
-        <slot></slot>
+        <slot @slotchange=${this.refreshChildren}></slot>
       </div>
     `;
   }

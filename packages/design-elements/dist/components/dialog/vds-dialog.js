@@ -1,44 +1,23 @@
-import { LitElement, css, html } from "lit";
-import { property, query } from "lit/decorators.js";
-import { setRole, setAriaProperty } from "../../utils/attribute-mirror.js";
-import { FocusTrap } from "../../utils/focus-trap.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as p, html as c } from "lit";
+import { property as i, query as h } from "lit/decorators.js";
+import { setRole as v, setAriaProperty as d } from "../../utils/attribute-mirror.js";
+import { FocusTrap as u } from "../../utils/focus-trap.js";
+import { VdsElement as m } from "../../base/vds-element.js";
+var f = Object.defineProperty, a = (r, e, o, b) => {
+  for (var t = void 0, n = r.length - 1, l; n >= 0; n--)
+    (l = r[n]) && (t = l(e, o, t) || t);
+  return t && f(e, o, t), t;
 };
-class VdsDialog extends LitElement {
+class s extends m {
   constructor() {
-    super();
-    this.open = false;
-    this.size = "md";
-    this.closeOnBackdrop = true;
-    this.closeOnEscape = true;
-    this.ariaLabelText = null;
-    this._titleId = `vds-dialog-title-${crypto.randomUUID().slice(0, 8)}`;
-    this.handleEscape = (e) => {
-      if (!this.open || !this.closeOnEscape) return;
-      if (e.key === "Escape") {
-        e.preventDefault();
-        this.open = false;
-      }
-    };
-    this.handleBackdropClick = (e) => {
-      if (!this.closeOnBackdrop) return;
-      if (e.target === e.currentTarget) {
-        this.open = false;
-      }
-    };
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "dialog");
-    setAriaProperty(this, this.internals, "ariaModal", true);
+    super(), this.open = !1, this.size = "md", this.closeOnBackdrop = !0, this.closeOnEscape = !0, this.ariaLabelText = null, this._titleId = this.createId("vds-dialog-title"), this.handleEscape = (e) => {
+      !this.open || !this.closeOnEscape || e.key === "Escape" && (e.preventDefault(), this.open = !1);
+    }, this.handleBackdropClick = (e) => {
+      this.closeOnBackdrop && e.target === e.currentTarget && (this.open = !1);
+    }, this.internals = this.attachInternals(), v(this, this.internals, "dialog"), d(this, this.internals, "ariaModal", !0);
   }
   static {
-    this.styles = css`
+    this.styles = p`
     :host {
       display: contents;
     }
@@ -81,8 +60,8 @@ class VdsDialog extends LitElement {
       transform: translateY(0) scale(1);
     }
 
-    :host([data-size="lg"]) .panel { max-width: min(48rem, 100%); }
-    :host([data-size="sm"]) .panel { max-width: min(24rem, 100%); }
+    :host([size="lg"]) .panel { max-width: min(48rem, 100%); }
+    :host([size="sm"]) .panel { max-width: min(24rem, 100%); }
 
     .header {
       padding: var(--vds-spacing-4) var(--vds-spacing-5);
@@ -132,46 +111,29 @@ class VdsDialog extends LitElement {
   `;
   }
   connectedCallback() {
-    super.connectedCallback();
-    document.addEventListener("keydown", this.handleEscape);
-    this.dataset.size = this.size;
+    super.connectedCallback(), document.addEventListener("keydown", this.handleEscape);
   }
   disconnectedCallback() {
-    super.disconnectedCallback();
-    document.removeEventListener("keydown", this.handleEscape);
-    this.focusTrap?.deactivate();
+    super.disconnectedCallback(), document.removeEventListener("keydown", this.handleEscape), this.focusTrap?.deactivate();
   }
-  updated(changed) {
-    if (changed.has("size")) this.dataset.size = this.size;
-    if (changed.has("open")) {
-      if (this.open) this.handleOpen();
-      else this.handleClose();
-    }
-    if (changed.has("ariaLabelText") && this.ariaLabelText != null) {
-      setAriaProperty(this, this.internals, "ariaLabel", this.ariaLabelText);
-    }
+  updated(e) {
+    super.updated(e), e.has("open") && (this.open ? this.handleOpen() : this.handleClose()), e.has("ariaLabelText") && this.ariaLabelText != null && d(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   handleOpen() {
-    document.body.style.overflow = "hidden";
-    this.focusTrap = new FocusTrap(this.panelEl);
-    requestAnimationFrame(() => this.focusTrap?.activate());
-    this.dispatchEvent(new CustomEvent("vds-open", { bubbles: true, composed: true }));
+    document.body.style.overflow = "hidden", this.focusTrap = new u(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate()), this.emit("vds-open");
   }
   handleClose() {
-    document.body.style.overflow = "";
-    this.focusTrap?.deactivate();
-    this.dispatchEvent(new CustomEvent("vds-close", { bubbles: true, composed: true }));
+    document.body.style.overflow = "", this.focusTrap?.deactivate(), this.emit("vds-close");
   }
   show() {
-    this.open = true;
+    this.open = !0;
   }
   hide() {
-    this.open = false;
+    this.open = !1;
   }
   render() {
-    const titleSlot = this.shadowRoot?.querySelector('slot[name="title"]');
-    const hasTitle = (titleSlot?.assignedElements().length ?? 0) > 0 || !this.ariaLabelText;
-    return html`
+    const o = (this.shadowRoot?.querySelector('slot[name="title"]')?.assignedElements().length ?? 0) > 0 || !this.ariaLabelText;
+    return c`
       <div
         class="backdrop"
         @click=${this.handleBackdropClick}
@@ -181,7 +143,7 @@ class VdsDialog extends LitElement {
           class="panel"
           part="panel"
           tabindex="-1"
-          aria-labelledby=${hasTitle && !this.ariaLabelText ? this._titleId : ""}
+          aria-labelledby=${o && !this.ariaLabelText ? this._titleId : ""}
           aria-label=${this.ariaLabelText ?? ""}
         >
           <div class="header">
@@ -190,7 +152,7 @@ class VdsDialog extends LitElement {
               class="close"
               type="button"
               aria-label="Close"
-              @click=${() => this.open = false}
+              @click=${() => this.open = !1}
             >✕</button>
           </div>
           <div class="body" part="body"><slot></slot></div>
@@ -200,25 +162,24 @@ class VdsDialog extends LitElement {
     `;
   }
 }
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsDialog.prototype, "open");
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsDialog.prototype, "size");
-__decorateClass([
-  property({ type: Boolean, attribute: "close-on-backdrop" })
-], VdsDialog.prototype, "closeOnBackdrop");
-__decorateClass([
-  property({ type: Boolean, attribute: "close-on-escape" })
-], VdsDialog.prototype, "closeOnEscape");
-__decorateClass([
-  property({ type: String, attribute: "aria-label" })
-], VdsDialog.prototype, "ariaLabelText");
-__decorateClass([
-  query(".panel")
-], VdsDialog.prototype, "panelEl");
+a([
+  i({ type: Boolean, reflect: !0 })
+], s.prototype, "open");
+a([
+  i({ type: String, reflect: !0 })
+], s.prototype, "size");
+a([
+  i({ type: Boolean, attribute: "close-on-backdrop" })
+], s.prototype, "closeOnBackdrop");
+a([
+  i({ type: Boolean, attribute: "close-on-escape" })
+], s.prototype, "closeOnEscape");
+a([
+  i({ type: String, attribute: "aria-label" })
+], s.prototype, "ariaLabelText");
+a([
+  h(".panel")
+], s.prototype, "panelEl");
 export {
-  VdsDialog
+  s as VdsDialog
 };
-//# sourceMappingURL=vds-dialog.js.map

@@ -1,4 +1,5 @@
-import { LitElement, type PropertyValues } from 'lit';
+import { type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 /**
  * <vds-dialog> — modal dialog (WAI-ARIA AP 1.2 Dialog Modal pattern).
  *
@@ -14,7 +15,7 @@ import { LitElement, type PropertyValues } from 'lit';
  * @event vds-open - dispatched when opened
  * @event vds-close - dispatched when closed
  */
-export declare class VdsDialog extends LitElement {
+export declare class VdsDialog extends VdsElement {
     static styles: import("lit").CSSResult;
     open: boolean;
     size: 'sm' | 'md' | 'lg';

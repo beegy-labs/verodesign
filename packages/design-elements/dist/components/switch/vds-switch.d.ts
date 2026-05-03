@@ -1,4 +1,5 @@
-import { LitElement, type PropertyValues } from 'lit';
+import { type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Size = 'sm' | 'md' | 'lg';
 /**
  * <vds-switch> — toggle switch (WAI-ARIA AP 1.2 § Switch).
@@ -7,7 +8,7 @@ type Size = 'sm' | 'md' | 'lg';
  *
  * @event change - { detail: { checked: boolean } }
  */
-export declare class VdsSwitch extends LitElement {
+export declare class VdsSwitch extends VdsElement {
     static formAssociated: boolean;
     static styles: import("lit").CSSResult;
     checked: boolean;

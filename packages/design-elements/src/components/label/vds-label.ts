@@ -1,5 +1,6 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
 import { property } from 'lit/decorators.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Size = 'sm' | 'md' | 'lg';
 
@@ -11,7 +12,7 @@ type Size = 'sm' | 'md' | 'lg';
  *
  * @slot - label text
  */
-export class VdsLabel extends LitElement {
+export class VdsLabel extends VdsElement {
   static styles = css`
     :host {
       display: inline-flex;
@@ -23,9 +24,9 @@ export class VdsLabel extends LitElement {
       cursor: pointer;
       user-select: none;
     }
-    :host([data-size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([data-size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([data-size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
+    :host([size="md"]) { font-size: var(--vds-font-size-base); }
+    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
 
     .required {
       color: var(--vds-theme-destructive);
@@ -39,12 +40,7 @@ export class VdsLabel extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    this.dataset.size = this.size;
     this.addEventListener('click', this.handleClick);
-  }
-
-  protected updated(): void {
-    this.dataset.size = this.size;
   }
 
   private handleClick = (event: Event): void => {

@@ -1,7 +1,8 @@
-import { LitElement, html, css, type PropertyValues } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property, state, query } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
 import { VdsOption } from './vds-option.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 /**
  * <vds-select> — select-only combobox (WAI-ARIA AP 1.2 § Combobox, select-only).
@@ -11,7 +12,7 @@ import { VdsOption } from './vds-option.js';
  *
  * @event change - { detail: { value: string } }
  */
-export class VdsSelect extends LitElement {
+export class VdsSelect extends VdsElement {
   static formAssociated = true;
 
   static styles = css`
@@ -76,7 +77,7 @@ export class VdsSelect extends LitElement {
   @property({ type: Boolean, reflect: true }) required = false;
   @property({ type: String }) name?: string;
 
-  @state() private open = false;
+  @property({ type: Boolean, reflect: true, attribute: 'data-open' }) private open = false;
   @state() private activeIndex = -1;
   @state() private displayLabel = '';
 
@@ -86,6 +87,7 @@ export class VdsSelect extends LitElement {
   private internals: ElementInternals;
   private typeBuffer = '';
   private typeBufferTimer: ReturnType<typeof setTimeout> | null = null;
+  private _options: VdsOption[] = [];
 
   constructor() {
     super();
@@ -101,9 +103,7 @@ export class VdsSelect extends LitElement {
   }
 
   protected updated(changed: PropertyValues): void {
-    if (changed.has('open')) {
-      if (this.open) this.dataset.open = ''; else delete this.dataset.open;
-    }
+    super.updated(changed);
     if (changed.has('value')) {
       const opt = this.findOptionByValue(this.value);
       this.displayLabel = opt?.textContent?.trim() ?? '';
@@ -117,7 +117,7 @@ export class VdsSelect extends LitElement {
   }
 
   private get options(): VdsOption[] {
-    return Array.from(this.querySelectorAll('vds-option')) as VdsOption[];
+    return this._options;
   }
 
   private findOptionByValue(value: string): VdsOption | null {
@@ -125,6 +125,7 @@ export class VdsSelect extends LitElement {
   }
 
   private refreshOptions(): void {
+    this._options = Array.from(this.querySelectorAll('vds-option')) as VdsOption[];
     if (this.value) {
       const opt = this.findOptionByValue(this.value);
       if (opt) this.displayLabel = opt.textContent?.trim() ?? '';
@@ -165,7 +166,7 @@ export class VdsSelect extends LitElement {
     this.value = opt.value;
     this.displayLabel = opt.textContent?.trim() ?? '';
     this.open = false;
-    this.dispatchEvent(new CustomEvent('change', { detail: { value: this.value }, bubbles: true, composed: true }));
+    this.emit('change', { value: this.value });
   }
 
   private handleKey = (event: KeyboardEvent): void => {

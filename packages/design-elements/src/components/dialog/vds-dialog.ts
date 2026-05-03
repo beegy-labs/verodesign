@@ -1,7 +1,8 @@
-import { LitElement, html, css, type PropertyValues } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
 import { FocusTrap } from '../../utils/focus-trap.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 /**
  * <vds-dialog> — modal dialog (WAI-ARIA AP 1.2 Dialog Modal pattern).
@@ -18,7 +19,7 @@ import { FocusTrap } from '../../utils/focus-trap.js';
  * @event vds-open - dispatched when opened
  * @event vds-close - dispatched when closed
  */
-export class VdsDialog extends LitElement {
+export class VdsDialog extends VdsElement {
   static styles = css`
     :host {
       display: contents;
@@ -62,8 +63,8 @@ export class VdsDialog extends LitElement {
       transform: translateY(0) scale(1);
     }
 
-    :host([data-size="lg"]) .panel { max-width: min(48rem, 100%); }
-    :host([data-size="sm"]) .panel { max-width: min(24rem, 100%); }
+    :host([size="lg"]) .panel { max-width: min(48rem, 100%); }
+    :host([size="sm"]) .panel { max-width: min(24rem, 100%); }
 
     .header {
       padding: var(--vds-spacing-4) var(--vds-spacing-5);
@@ -121,7 +122,7 @@ export class VdsDialog extends LitElement {
   @query('.panel') private panelEl!: HTMLElement;
   private internals: ElementInternals;
   private focusTrap?: FocusTrap;
-  private _titleId = `vds-dialog-title-${crypto.randomUUID().slice(0, 8)}`;
+  private _titleId = this.createId('vds-dialog-title');
 
   constructor() {
     super();
@@ -133,7 +134,6 @@ export class VdsDialog extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
     document.addEventListener('keydown', this.handleEscape);
-    this.dataset.size = this.size;
   }
 
   disconnectedCallback(): void {
@@ -143,7 +143,7 @@ export class VdsDialog extends LitElement {
   }
 
   protected updated(changed: PropertyValues): void {
-    if (changed.has('size')) this.dataset.size = this.size;
+    super.updated(changed);
     if (changed.has('open')) {
       if (this.open) this.handleOpen();
       else this.handleClose();
@@ -157,13 +157,13 @@ export class VdsDialog extends LitElement {
     document.body.style.overflow = 'hidden';
     this.focusTrap = new FocusTrap(this.panelEl);
     requestAnimationFrame(() => this.focusTrap?.activate());
-    this.dispatchEvent(new CustomEvent('vds-open', { bubbles: true, composed: true }));
+    this.emit('vds-open');
   }
 
   private handleClose(): void {
     document.body.style.overflow = '';
     this.focusTrap?.deactivate();
-    this.dispatchEvent(new CustomEvent('vds-close', { bubbles: true, composed: true }));
+    this.emit('vds-close');
   }
 
   private handleEscape = (e: KeyboardEvent): void => {

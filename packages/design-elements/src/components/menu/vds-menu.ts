@@ -1,6 +1,7 @@
 import { LitElement, html, css, type PropertyValues } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 /**
  * <vds-menu> — Menu Button + Menu (WAI-ARIA AP 1.2 Menu Button pattern).
@@ -10,7 +11,7 @@ import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
  *
  * @event vds-select - dispatched when an item is activated, detail { value }
  */
-export class VdsMenu extends LitElement {
+export class VdsMenu extends VdsElement {
   static styles = css`
     :host {
       display: inline-block;
@@ -50,6 +51,7 @@ export class VdsMenu extends LitElement {
   private internals: ElementInternals;
   private typeBuffer = '';
   private typeTimer = 0;
+  private itemsCache: VdsMenuItem[] = [];
 
   constructor() {
     super();
@@ -72,6 +74,7 @@ export class VdsMenu extends LitElement {
   }
 
   protected updated(changed: PropertyValues): void {
+    super.updated(changed);
     if (changed.has('open')) {
       const trigger = this.getTrigger();
       if (trigger) {
@@ -101,7 +104,11 @@ export class VdsMenu extends LitElement {
   }
 
   private getItems(): VdsMenuItem[] {
-    return Array.from(this.querySelectorAll('vds-menu-item:not([disabled])')) as VdsMenuItem[];
+    return this.itemsCache;
+  }
+
+  private refreshItems(): void {
+    this.itemsCache = Array.from(this.querySelectorAll('vds-menu-item:not([disabled])')) as VdsMenuItem[];
   }
 
   private handleClick = (e: MouseEvent): void => {
@@ -187,11 +194,7 @@ export class VdsMenu extends LitElement {
   };
 
   private activate(item: VdsMenuItem): void {
-    this.dispatchEvent(new CustomEvent('vds-select', {
-      bubbles: true,
-      composed: true,
-      detail: { value: item.value, item },
-    }));
+    this.emit('vds-select', { value: item.value, item });
     this.open = false;
   }
 
@@ -202,7 +205,7 @@ export class VdsMenu extends LitElement {
     return html`
       <slot name="trigger"></slot>
       <div class="menu" role="menu">
-        <slot></slot>
+        <slot @slotchange=${this.refreshItems}></slot>
       </div>
     `;
   }

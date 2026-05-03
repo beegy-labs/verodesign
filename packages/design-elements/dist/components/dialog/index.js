@@ -1,5 +1,4 @@
-import { VdsDialog } from "./vds-dialog.js";
+import { VdsDialog as a } from "./vds-dialog.js";
 export {
-  VdsDialog
+  a as VdsDialog
 };
-//# sourceMappingURL=index.js.map

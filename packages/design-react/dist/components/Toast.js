@@ -1,22 +1,20 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsToast, VdsToastGroup } from "@verobee/design-elements/components/toast";
+import * as s from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsToast as o, VdsToastGroup as a } from "@verobee/design-elements/components/toast";
 import "@verobee/design-elements/define/toast";
-const Toast = createComponent({
+const p = t({
   tagName: "vds-toast",
-  elementClass: VdsToast,
-  react: React,
+  elementClass: o,
+  react: s,
   events: {
     onDismiss: "vds-dismiss"
   }
-});
-const ToastGroup = createComponent({
+}), i = t({
   tagName: "vds-toast-group",
-  elementClass: VdsToastGroup,
-  react: React
+  elementClass: a,
+  react: s
 });
 export {
-  Toast,
-  ToastGroup
+  p as Toast,
+  i as ToastGroup
 };
-//# sourceMappingURL=Toast.js.map

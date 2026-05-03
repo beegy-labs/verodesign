@@ -1,5 +1,4 @@
-import { VdsButton } from "./vds-button.js";
+import { VdsButton as r } from "./vds-button.js";
 export {
-  VdsButton
+  r as VdsButton
 };
-//# sourceMappingURL=index.js.map

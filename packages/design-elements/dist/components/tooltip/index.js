@@ -1,5 +1,4 @@
-import { VdsTooltip } from "./vds-tooltip.js";
+import { VdsTooltip as r } from "./vds-tooltip.js";
 export {
-  VdsTooltip
+  r as VdsTooltip
 };
-//# sourceMappingURL=index.js.map

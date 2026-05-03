@@ -1,6 +1,7 @@
-import { LitElement, type PropertyValues } from 'lit';
+import { type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Resize = 'none' | 'vertical' | 'horizontal' | 'both';
-export declare class VdsTextArea extends LitElement {
+export declare class VdsTextArea extends VdsElement {
     static formAssociated: boolean;
     static styles: import("lit").CSSResult[];
     value: string;

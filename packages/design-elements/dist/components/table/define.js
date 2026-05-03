@@ -1,5 +1,2 @@
-import { VdsTable } from "./vds-table.js";
-if (!customElements.get("vds-table")) {
-  customElements.define("vds-table", VdsTable);
-}
-//# sourceMappingURL=define.js.map
+import { VdsTable as e } from "./vds-table.js";
+customElements.get("vds-table") || customElements.define("vds-table", e);

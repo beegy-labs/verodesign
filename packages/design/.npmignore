@@ -1,0 +1,10 @@
+src/
+dist/**/*.br
+dist/data/
+dist/**/*.css
+!dist/**/*.min.css
+!dist/theme-init.js
+!dist/cli/vds.js
+!dist/types/**/*.d.ts
+tokens/experimental/
+tokens/themes/_template-*.json

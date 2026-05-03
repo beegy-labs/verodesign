@@ -1,7 +1,8 @@
-import { LitElement, html, css, type PropertyValues } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { setAriaProperty } from '../../utils/attribute-mirror.js';
 import { focusRing, srOnly } from '../../styles/shared.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Size = 'sm' | 'md' | 'lg';
 
@@ -9,7 +10,7 @@ type Size = 'sm' | 'md' | 'lg';
  * <vds-text-field> — text input with label, helper, error states. WAI-ARIA AP 1.2 textbox pattern.
  * Form-Associated Custom Element via ElementInternals.
  */
-export class VdsTextField extends LitElement {
+export class VdsTextField extends VdsElement {
   static formAssociated = true;
 
   static styles = [
@@ -49,9 +50,9 @@ export class VdsTextField extends LitElement {
                     box-shadow var(--vds-duration-fast) var(--vds-easing-ease-out);
       }
 
-      :host([data-size="sm"]) .field { padding: var(--vds-spacing-1_5) var(--vds-spacing-2); min-height: 2rem; }
-      :host([data-size="md"]) .field { padding: var(--vds-spacing-2) var(--vds-spacing-3); min-height: 2.5rem; }
-      :host([data-size="lg"]) .field { padding: var(--vds-spacing-3) var(--vds-spacing-4); min-height: 3rem; }
+      :host([size="sm"]) .field { padding: var(--vds-spacing-1_5) var(--vds-spacing-2); min-height: 2rem; }
+      :host([size="md"]) .field { padding: var(--vds-spacing-2) var(--vds-spacing-3); min-height: 2.5rem; }
+      :host([size="lg"]) .field { padding: var(--vds-spacing-3) var(--vds-spacing-4); min-height: 3rem; }
 
       .input {
         all: unset;
@@ -63,9 +64,9 @@ export class VdsTextField extends LitElement {
       }
       .input::placeholder { color: var(--vds-theme-text-faint); }
 
-      :host([data-size="sm"]) .input { font-size: var(--vds-font-size-sm); }
-      :host([data-size="md"]) .input { font-size: var(--vds-font-size-base); }
-      :host([data-size="lg"]) .input { font-size: var(--vds-font-size-lg); }
+      :host([size="sm"]) .input { font-size: var(--vds-font-size-sm); }
+      :host([size="md"]) .input { font-size: var(--vds-font-size-base); }
+      :host([size="lg"]) .input { font-size: var(--vds-font-size-lg); }
 
       :host(:focus-within) .field {
         border-color: var(--vds-theme-border-focus);
@@ -121,8 +122,8 @@ export class VdsTextField extends LitElement {
   @state() private _touched = false;
 
   private internals: ElementInternals;
-  private _labelId = `vds-tf-label-${crypto.randomUUID().slice(0, 8)}`;
-  private _helperId = `vds-tf-helper-${crypto.randomUUID().slice(0, 8)}`;
+  private _labelId = this.createId('vds-tf-label');
+  private _helperId = this.createId('vds-tf-helper');
 
   constructor() {
     super();
@@ -131,11 +132,10 @@ export class VdsTextField extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    this.dataset.size = this.size;
   }
 
   protected updated(changed: PropertyValues): void {
-    if (changed.has('size')) this.dataset.size = this.size;
+    super.updated(changed);
     if (changed.has('value') || changed.has('required') || changed.has('minlength') || changed.has('maxlength') || changed.has('pattern')) {
       this.syncFormValue();
     }
@@ -184,11 +184,11 @@ export class VdsTextField extends LitElement {
 
   private handleInput = (e: Event): void => {
     this.value = (e.target as HTMLInputElement).value;
-    this.dispatchEvent(new CustomEvent('vds-input', { bubbles: true, composed: true, detail: { value: this.value } }));
+    this.emit('vds-input', { value: this.value });
   };
 
   private handleChange = (): void => {
-    this.dispatchEvent(new CustomEvent('vds-change', { bubbles: true, composed: true, detail: { value: this.value } }));
+    this.emit('vds-change', { value: this.value });
   };
 
   private handleBlur = (): void => {

@@ -1,48 +1,31 @@
-import { LitElement, css, html } from "lit";
-import { property, state } from "lit/decorators.js";
-import { setRole } from "../../utils/attribute-mirror.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as p, html as d } from "lit";
+import { property as o, state as h } from "lit/decorators.js";
+import { setRole as m } from "../../utils/attribute-mirror.js";
+import { VdsElement as c } from "../../base/vds-element.js";
+var f = Object.defineProperty, s = (r, t, n, v) => {
+  for (var e = void 0, a = r.length - 1, l; a >= 0; a--)
+    (l = r[a]) && (e = l(t, n, e) || e);
+  return e && f(t, n, e), e;
 };
-class VdsTooltip extends LitElement {
+class i extends c {
   constructor() {
-    super();
-    this.placement = "top";
-    this.delay = 200;
-    this.disabled = false;
-    this.open = false;
-    this.timer = null;
-    this.tipId = `vds-tooltip-${Math.random().toString(36).slice(2, 9)}`;
-    this.show = () => {
-      if (this.disabled) return;
-      if (this.timer) clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.open = true;
-      }, this.delay);
-    };
-    this.hide = () => {
-      if (this.timer) clearTimeout(this.timer);
-      this.open = false;
-    };
-    this.handleKey = (event) => {
-      if (event.key === "Escape") this.hide();
-    };
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "presentation");
-    this.addEventListener("mouseenter", this.show);
-    this.addEventListener("mouseleave", this.hide);
-    this.addEventListener("focusin", this.show);
-    this.addEventListener("focusout", this.hide);
-    this.addEventListener("keydown", this.handleKey);
+    super(), this.placement = "top", this.delay = 200, this.disabled = !1, this.open = !1, this.timer = null, this.triggerEl = null, this.tipId = this.createId("vds-tooltip"), this.syncTrigger = () => {
+      if (this.triggerEl = this.querySelector('[slot="trigger"]'), this.triggerEl) {
+        const t = this.triggerEl.getAttribute("aria-describedby") ?? "";
+        t.split(" ").includes(this.tipId) || this.triggerEl.setAttribute("aria-describedby", `${t} ${this.tipId}`.trim());
+      }
+    }, this.show = () => {
+      this.disabled || (this.timer && clearTimeout(this.timer), this.timer = setTimeout(() => {
+        this.open = !0;
+      }, this.delay));
+    }, this.hide = () => {
+      this.timer && clearTimeout(this.timer), this.open = !1;
+    }, this.handleKey = (t) => {
+      t.key === "Escape" && this.hide();
+    }, this.internals = this.attachInternals(), m(this, this.internals, "presentation"), this.addEventListener("mouseenter", this.show), this.addEventListener("mouseleave", this.hide), this.addEventListener("focusin", this.show), this.addEventListener("focusout", this.hide), this.addEventListener("keydown", this.handleKey);
   }
   static {
-    this.styles = css`
+    this.styles = p`
     :host {
       display: inline-flex;
       position: relative;
@@ -80,37 +63,33 @@ class VdsTooltip extends LitElement {
     :host([placement="right"]) .tip[data-open] { transform: translateY(-50%) scale(1); }
   `;
   }
-  updated(_) {
-    const trigger = this.querySelector('[slot="trigger"]');
-    if (trigger) {
-      const existing = trigger.getAttribute("aria-describedby") ?? "";
-      if (!existing.split(" ").includes(this.tipId)) {
-        trigger.setAttribute("aria-describedby", `${existing} ${this.tipId}`.trim());
-      }
-    }
+  disconnectedCallback() {
+    super.disconnectedCallback(), this.timer && clearTimeout(this.timer);
+  }
+  updated(t) {
+    super.updated(t), (t.has("open") || t.has("disabled")) && this.syncTrigger();
   }
   render() {
-    return html`
-      <slot name="trigger"></slot>
+    return d`
+      <slot name="trigger" @slotchange=${this.syncTrigger}></slot>
       <span class="tip" part="tip" id=${this.tipId} role="tooltip" ?data-open=${this.open}>
         <slot></slot>
       </span>
     `;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsTooltip.prototype, "placement");
-__decorateClass([
-  property({ type: Number })
-], VdsTooltip.prototype, "delay");
-__decorateClass([
-  property({ type: Boolean })
-], VdsTooltip.prototype, "disabled");
-__decorateClass([
-  state()
-], VdsTooltip.prototype, "open");
+s([
+  o({ type: String, reflect: !0 })
+], i.prototype, "placement");
+s([
+  o({ type: Number })
+], i.prototype, "delay");
+s([
+  o({ type: Boolean })
+], i.prototype, "disabled");
+s([
+  h()
+], i.prototype, "open");
 export {
-  VdsTooltip
+  i as VdsTooltip
 };
-//# sourceMappingURL=vds-tooltip.js.map

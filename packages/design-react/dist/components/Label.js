@@ -1,13 +1,12 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsLabel } from "@verobee/design-elements/components/label";
+import * as e from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsLabel as o } from "@verobee/design-elements/components/label";
 import "@verobee/design-elements/define/label";
-const Label = createComponent({
+const l = t({
   tagName: "vds-label",
-  elementClass: VdsLabel,
-  react: React
+  elementClass: o,
+  react: e
 });
 export {
-  Label
+  l as Label
 };
-//# sourceMappingURL=Label.js.map

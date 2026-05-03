@@ -1,21 +1,17 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as l, html as d } from "lit";
+import { property as n } from "lit/decorators.js";
+import { VdsElement as i } from "../../base/vds-element.js";
+var v = Object.defineProperty, f = (e, r, a, c) => {
+  for (var t = void 0, s = e.length - 1, o; s >= 0; s--)
+    (o = e[s]) && (t = o(r, a, t) || t);
+  return t && v(r, a, t), t;
 };
-class VdsTable extends LitElement {
+class p extends i {
   constructor() {
-    super(...arguments);
-    this.density = "normal";
+    super(...arguments), this.density = "normal";
   }
   static {
-    this.styles = css`
+    this.styles = l`
     :host { display: block; width: 100%; overflow-x: auto; }
     table {
       width: 100%;
@@ -29,19 +25,12 @@ class VdsTable extends LitElement {
     .head ::slotted(*) { background: var(--vds-theme-bg-elevated); }
 
     /* style projected table rows via ::part / standard cascade */
-    :host([data-density="compact"]) table { font-size: var(--vds-font-size-xs); }
-    :host([data-density="comfortable"]) table { font-size: var(--vds-font-size-base); }
+    :host([density="compact"]) table { font-size: var(--vds-font-size-xs); }
+    :host([density="comfortable"]) table { font-size: var(--vds-font-size-base); }
   `;
   }
-  connectedCallback() {
-    super.connectedCallback();
-    this.dataset.density = this.density;
-  }
-  updated() {
-    this.dataset.density = this.density;
-  }
   render() {
-    return html`
+    return d`
       <table part="table">
         <slot name="caption"></slot>
         <slot></slot>
@@ -49,10 +38,9 @@ class VdsTable extends LitElement {
     `;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsTable.prototype, "density");
+f([
+  n({ type: String, reflect: !0 })
+], p.prototype, "density");
 export {
-  VdsTable
+  p as VdsTable
 };
-//# sourceMappingURL=vds-table.js.map

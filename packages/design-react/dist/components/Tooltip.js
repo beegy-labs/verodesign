@@ -1,13 +1,12 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsTooltip } from "@verobee/design-elements/components/tooltip";
+import * as o from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsTooltip as e } from "@verobee/design-elements/components/tooltip";
 import "@verobee/design-elements/define/tooltip";
-const Tooltip = createComponent({
+const a = t({
   tagName: "vds-tooltip",
-  elementClass: VdsTooltip,
-  react: React
+  elementClass: e,
+  react: o
 });
 export {
-  Tooltip
+  a as Tooltip
 };
-//# sourceMappingURL=Tooltip.js.map

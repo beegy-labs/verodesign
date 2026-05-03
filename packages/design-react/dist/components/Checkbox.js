@@ -1,16 +1,15 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsCheckbox } from "@verobee/design-elements/components/checkbox";
+import * as e from "react";
+import { createComponent as o } from "@lit/react";
+import { VdsCheckbox as t } from "@verobee/design-elements/components/checkbox";
 import "@verobee/design-elements/define/checkbox";
-const Checkbox = createComponent({
+const c = o({
   tagName: "vds-checkbox",
-  elementClass: VdsCheckbox,
-  react: React,
+  elementClass: t,
+  react: e,
   events: {
     onChange: "change"
   }
 });
 export {
-  Checkbox
+  c as Checkbox
 };
-//# sourceMappingURL=Checkbox.js.map

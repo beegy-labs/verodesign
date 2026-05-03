@@ -1,5 +1,2 @@
-import { VdsCheckbox } from "./vds-checkbox.js";
-if (!customElements.get("vds-checkbox")) {
-  customElements.define("vds-checkbox", VdsCheckbox);
-}
-//# sourceMappingURL=define.js.map
+import { VdsCheckbox as e } from "./vds-checkbox.js";
+customElements.get("vds-checkbox") || customElements.define("vds-checkbox", e);

@@ -1,5 +1,4 @@
-import { VdsCard } from "./vds-card.js";
+import { VdsCard as o } from "./vds-card.js";
 export {
-  VdsCard
+  o as VdsCard
 };
-//# sourceMappingURL=index.js.map

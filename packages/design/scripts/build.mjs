@@ -98,6 +98,11 @@ async function main() {
   }
 
   // ── Optimize: Lightning CSS (Rust) minify + vendor prefix + modern syntax transform ───
+  // ── Bundle: concatenated production bundle (tokens.property + reset + core + theme + utilities) ───
+  done = step('dist/verodesign.full.css (concatenated production bundle)');
+  const concatOut = await emitConcat({ theme: 'default' });
+  done(`(${(concatOut.bytes / 1024).toFixed(0)} KB)`);
+
   console.log('[optimize]');
   // Browserslist baseline 2026-Q1 — Chrome/Edge 111+, Firefox 113+, Safari 15.4+
   const TARGETS = {
@@ -136,11 +141,6 @@ async function main() {
   }
   const ratio = ((totalMin / totalRaw) * 100).toFixed(1);
   done(`(${cssFiles.length} files, ${(totalRaw / 1024).toFixed(0)} KB → ${(totalMin / 1024).toFixed(0)} KB · ${ratio}%)`);
-
-  // ── Bundle: concatenated production bundle (tokens.property + reset + core + theme + utilities) ───
-  done = step('dist/verodesign.full.css (concatenated production bundle)');
-  const concatOut = await emitConcat({ theme: 'default' });
-  done(`(${(concatOut.bytes / 1024).toFixed(0)} KB)`);
 
   // ── Compress: Brotli-11 .br siblings for every .css (incl. .min.css) ───
   done = step('Brotli-11 *.css.br siblings');

@@ -1,4 +1,5 @@
 import { LitElement, type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 /**
  * <vds-tabs> — WAI-ARIA AP 1.2 Tabs pattern.
  *
@@ -7,18 +8,21 @@ import { LitElement, type PropertyValues } from 'lit';
  *
  * @event vds-change - dispatched on active tab change with detail { value }
  */
-export declare class VdsTabs extends LitElement {
+export declare class VdsTabs extends VdsElement {
     static styles: import("lit").CSSResult;
     value: string;
     orientation: 'horizontal' | 'vertical';
     activation: 'auto' | 'manual';
     private internals;
+    private tabsCache;
+    private panelsCache;
     constructor();
     connectedCallback(): void;
     disconnectedCallback(): void;
     protected updated(changed: PropertyValues): void;
     private get tabs();
     private get panels();
+    private refreshChildren;
     private syncActive;
     private setActive;
     private handleClick;

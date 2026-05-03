@@ -1,24 +1,18 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-import { setRole } from "../../utils/attribute-mirror.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as p, html as d } from "lit";
+import { property as n } from "lit/decorators.js";
+import { setRole as s } from "../../utils/attribute-mirror.js";
+import { VdsElement as c } from "../../base/vds-element.js";
+var u = Object.defineProperty, h = (r, t, o, f) => {
+  for (var e = void 0, i = r.length - 1, a; i >= 0; i--)
+    (a = r[i]) && (e = a(t, o, e) || e);
+  return e && u(t, o, e), e;
 };
-class VdsSeparator extends LitElement {
+class l extends c {
   constructor() {
-    super();
-    this.orientation = "horizontal";
-    this.decorative = true;
-    this.internals = this.attachInternals();
+    super(), this.orientation = "horizontal", this.decorative = !0, this.internals = this.attachInternals();
   }
   static {
-    this.styles = css`
+    this.styles = p`
     :host {
       display: block;
       flex-shrink: 0;
@@ -36,31 +30,21 @@ class VdsSeparator extends LitElement {
   `;
   }
   connectedCallback() {
-    super.connectedCallback();
-    setRole(this, this.internals, this.decorative ? "presentation" : "separator");
-    if (!this.decorative) {
-      this.setAttribute("aria-orientation", this.orientation);
-    }
+    super.connectedCallback(), s(this, this.internals, this.decorative ? "presentation" : "separator"), this.decorative || this.setAttribute("aria-orientation", this.orientation);
   }
-  updated() {
-    setRole(this, this.internals, this.decorative ? "presentation" : "separator");
-    if (!this.decorative) {
-      this.setAttribute("aria-orientation", this.orientation);
-    } else {
-      this.removeAttribute("aria-orientation");
-    }
+  updated(t) {
+    super.updated(t), !(!t.has("decorative") && !t.has("orientation")) && (s(this, this.internals, this.decorative ? "presentation" : "separator"), this.toggleAttribute("aria-orientation", !this.decorative), this.decorative || this.setAttribute("aria-orientation", this.orientation));
   }
   render() {
-    return html``;
+    return d``;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsSeparator.prototype, "orientation");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsSeparator.prototype, "decorative");
+h([
+  n({ type: String, reflect: !0 })
+], l.prototype, "orientation");
+h([
+  n({ type: Boolean, reflect: !0 })
+], l.prototype, "decorative");
 export {
-  VdsSeparator
+  l as VdsSeparator
 };
-//# sourceMappingURL=vds-separator.js.map

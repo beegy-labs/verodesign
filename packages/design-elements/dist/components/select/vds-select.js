@@ -1,96 +1,67 @@
-import { LitElement, css, html } from "lit";
-import { property, state, query } from "lit/decorators.js";
-import { setRole, setAriaProperty } from "../../utils/attribute-mirror.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as f, html as u } from "lit";
+import { property as a, state as p, query as c } from "lit/decorators.js";
+import { setRole as v, setAriaProperty as n } from "../../utils/attribute-mirror.js";
+import { VdsElement as y } from "../../base/vds-element.js";
+var b = Object.defineProperty, s = (l, t, e, i) => {
+  for (var o = void 0, d = l.length - 1, h; d >= 0; d--)
+    (h = l[d]) && (o = h(t, e, o) || o);
+  return o && b(t, e, o), o;
 };
-class VdsSelect extends LitElement {
+class r extends y {
   constructor() {
-    super();
-    this.value = "";
-    this.placeholder = "Select…";
-    this.disabled = false;
-    this.required = false;
-    this.open = false;
-    this.activeIndex = -1;
-    this.displayLabel = "";
-    this.typeBuffer = "";
-    this.typeBufferTimer = null;
-    this.handleKey = (event) => {
+    super(), this.value = "", this.placeholder = "Select…", this.disabled = !1, this.required = !1, this.open = !1, this.activeIndex = -1, this.displayLabel = "", this.typeBuffer = "", this.typeBufferTimer = null, this._options = [], this.handleKey = (t) => {
       if (this.disabled) return;
-      const opts = this.options;
-      if (!this.open) {
-        if (event.key === " " || event.key === "Enter" || event.key === "ArrowDown") {
-          event.preventDefault();
-          this.toggle();
+      const e = this.options;
+      if (this.open) {
+        if (t.key === "Escape") {
+          t.preventDefault(), this.open = !1;
           return;
         }
-      } else {
-        if (event.key === "Escape") {
-          event.preventDefault();
-          this.open = false;
+        if (t.key === "ArrowDown") {
+          t.preventDefault(), this.setActive(Math.min(e.length - 1, this.activeIndex + 1));
           return;
         }
-        if (event.key === "ArrowDown") {
-          event.preventDefault();
-          this.setActive(Math.min(opts.length - 1, this.activeIndex + 1));
+        if (t.key === "ArrowUp") {
+          t.preventDefault(), this.setActive(Math.max(0, this.activeIndex - 1));
           return;
         }
-        if (event.key === "ArrowUp") {
-          event.preventDefault();
-          this.setActive(Math.max(0, this.activeIndex - 1));
+        if (t.key === "Home") {
+          t.preventDefault(), this.setActive(0);
           return;
         }
-        if (event.key === "Home") {
-          event.preventDefault();
-          this.setActive(0);
+        if (t.key === "End") {
+          t.preventDefault(), this.setActive(e.length - 1);
           return;
         }
-        if (event.key === "End") {
-          event.preventDefault();
-          this.setActive(opts.length - 1);
+        if (t.key === "Enter" || t.key === " ") {
+          t.preventDefault(), this.activeIndex >= 0 && this.commit(this.activeIndex);
           return;
         }
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          if (this.activeIndex >= 0) this.commit(this.activeIndex);
-          return;
-        }
-        if (event.key.length === 1) {
-          this.typeBuffer += event.key.toLowerCase();
-          if (this.typeBufferTimer) clearTimeout(this.typeBufferTimer);
-          this.typeBufferTimer = setTimeout(() => {
+        if (t.key.length === 1) {
+          this.typeBuffer += t.key.toLowerCase(), this.typeBufferTimer && clearTimeout(this.typeBufferTimer), this.typeBufferTimer = setTimeout(() => {
             this.typeBuffer = "";
           }, 500);
-          const match = opts.findIndex((o) => (o.textContent ?? "").toLowerCase().startsWith(this.typeBuffer));
-          if (match >= 0) this.setActive(match);
+          const i = e.findIndex((o) => (o.textContent ?? "").toLowerCase().startsWith(this.typeBuffer));
+          i >= 0 && this.setActive(i);
         }
+      } else if (t.key === " " || t.key === "Enter" || t.key === "ArrowDown") {
+        t.preventDefault(), this.toggle();
+        return;
       }
-    };
-    this.handleTriggerClick = () => {
+    }, this.handleTriggerClick = () => {
       this.toggle();
-    };
-    this.handleListClick = (event) => {
-      const target = event.target.closest("vds-option");
-      if (!target) return;
-      const idx = this.options.indexOf(target);
-      if (idx >= 0) this.commit(idx);
-    };
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "combobox");
-    this.addEventListener("keydown", this.handleKey);
+    }, this.handleListClick = (t) => {
+      const e = t.target.closest("vds-option");
+      if (!e) return;
+      const i = this.options.indexOf(e);
+      i >= 0 && this.commit(i);
+    }, this.internals = this.attachInternals(), v(this, this.internals, "combobox"), this.addEventListener("keydown", this.handleKey);
   }
   static {
-    this.formAssociated = true;
+    this.formAssociated = !0;
   }
   static {
-    this.styles = css`
+    this.styles = f`
     :host {
       display: inline-flex;
       position: relative;
@@ -147,73 +118,49 @@ class VdsSelect extends LitElement {
   `;
   }
   connectedCallback() {
-    super.connectedCallback();
-    if (!this.hasAttribute("tabindex")) this.tabIndex = this.disabled ? -1 : 0;
-    queueMicrotask(() => this.refreshOptions());
+    super.connectedCallback(), this.hasAttribute("tabindex") || (this.tabIndex = this.disabled ? -1 : 0), queueMicrotask(() => this.refreshOptions());
   }
-  updated(changed) {
-    if (changed.has("open")) {
-      if (this.open) this.dataset.open = "";
-      else delete this.dataset.open;
+  updated(t) {
+    if (super.updated(t), t.has("value")) {
+      const e = this.findOptionByValue(this.value);
+      this.displayLabel = e?.textContent?.trim() ?? "", this.refreshSelected(), this.internals.setFormValue(this.value || null);
     }
-    if (changed.has("value")) {
-      const opt = this.findOptionByValue(this.value);
-      this.displayLabel = opt?.textContent?.trim() ?? "";
-      this.refreshSelected();
-      this.internals.setFormValue(this.value || null);
-    }
-    setAriaProperty(this, this.internals, "ariaExpanded", this.open);
-    setAriaProperty(this, this.internals, "ariaDisabled", this.disabled);
-    setAriaProperty(this, this.internals, "ariaRequired", this.required);
-    setAriaProperty(this, this.internals, "ariaHasPopup", "listbox");
+    n(this, this.internals, "ariaExpanded", this.open), n(this, this.internals, "ariaDisabled", this.disabled), n(this, this.internals, "ariaRequired", this.required), n(this, this.internals, "ariaHasPopup", "listbox");
   }
   get options() {
-    return Array.from(this.querySelectorAll("vds-option"));
+    return this._options;
   }
-  findOptionByValue(value) {
-    return this.options.find((o) => o.value === value) ?? null;
+  findOptionByValue(t) {
+    return this.options.find((e) => e.value === t) ?? null;
   }
   refreshOptions() {
-    if (this.value) {
-      const opt = this.findOptionByValue(this.value);
-      if (opt) this.displayLabel = opt.textContent?.trim() ?? "";
+    if (this._options = Array.from(this.querySelectorAll("vds-option")), this.value) {
+      const t = this.findOptionByValue(this.value);
+      t && (this.displayLabel = t.textContent?.trim() ?? "");
     }
     this.refreshSelected();
   }
   refreshSelected() {
-    for (const o of this.options) {
-      o.selected = o.value === this.value;
-    }
+    for (const t of this.options)
+      t.selected = t.value === this.value;
   }
-  setActive(idx) {
-    const opts = this.options;
-    for (const o of opts) o.removeAttribute("data-active");
-    if (idx >= 0 && idx < opts.length) {
-      opts[idx].setAttribute("data-active", "");
-      opts[idx].scrollIntoView({ block: "nearest" });
-    }
-    this.activeIndex = idx;
+  setActive(t) {
+    const e = this.options;
+    for (const i of e) i.removeAttribute("data-active");
+    t >= 0 && t < e.length && (e[t].setAttribute("data-active", ""), e[t].scrollIntoView({ block: "nearest" })), this.activeIndex = t;
   }
   toggle() {
-    if (this.disabled) return;
-    this.open = !this.open;
-    if (this.open) {
-      const opts = this.options;
-      const selectedIdx = opts.findIndex((o) => o.value === this.value);
-      this.setActive(selectedIdx >= 0 ? selectedIdx : 0);
+    if (!this.disabled && (this.open = !this.open, this.open)) {
+      const e = this.options.findIndex((i) => i.value === this.value);
+      this.setActive(e >= 0 ? e : 0);
     }
   }
-  commit(idx) {
-    const opts = this.options;
-    const opt = opts[idx];
-    if (!opt || opt.disabled) return;
-    this.value = opt.value;
-    this.displayLabel = opt.textContent?.trim() ?? "";
-    this.open = false;
-    this.dispatchEvent(new CustomEvent("change", { detail: { value: this.value }, bubbles: true, composed: true }));
+  commit(t) {
+    const i = this.options[t];
+    !i || i.disabled || (this.value = i.value, this.displayLabel = i.textContent?.trim() ?? "", this.open = !1, this.emit("change", { value: this.value }));
   }
   render() {
-    return html`
+    return u`
       <div class="trigger" part="trigger" @click=${this.handleTriggerClick}>
         <span class=${this.displayLabel ? "" : "placeholder"}>${this.displayLabel || this.placeholder}</span>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -224,37 +171,36 @@ class VdsSelect extends LitElement {
     `;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsSelect.prototype, "value");
-__decorateClass([
-  property({ type: String })
-], VdsSelect.prototype, "placeholder");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsSelect.prototype, "disabled");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsSelect.prototype, "required");
-__decorateClass([
-  property({ type: String })
-], VdsSelect.prototype, "name");
-__decorateClass([
-  state()
-], VdsSelect.prototype, "open");
-__decorateClass([
-  state()
-], VdsSelect.prototype, "activeIndex");
-__decorateClass([
-  state()
-], VdsSelect.prototype, "displayLabel");
-__decorateClass([
-  query(".trigger")
-], VdsSelect.prototype, "triggerEl");
-__decorateClass([
-  query(".listbox")
-], VdsSelect.prototype, "listboxEl");
+s([
+  a({ type: String, reflect: !0 })
+], r.prototype, "value");
+s([
+  a({ type: String })
+], r.prototype, "placeholder");
+s([
+  a({ type: Boolean, reflect: !0 })
+], r.prototype, "disabled");
+s([
+  a({ type: Boolean, reflect: !0 })
+], r.prototype, "required");
+s([
+  a({ type: String })
+], r.prototype, "name");
+s([
+  a({ type: Boolean, reflect: !0, attribute: "data-open" })
+], r.prototype, "open");
+s([
+  p()
+], r.prototype, "activeIndex");
+s([
+  p()
+], r.prototype, "displayLabel");
+s([
+  c(".trigger")
+], r.prototype, "triggerEl");
+s([
+  c(".listbox")
+], r.prototype, "listboxEl");
 export {
-  VdsSelect
+  r as VdsSelect
 };
-//# sourceMappingURL=vds-select.js.map

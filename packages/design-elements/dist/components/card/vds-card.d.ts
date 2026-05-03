@@ -1,4 +1,4 @@
-import { LitElement } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Elevation = '0' | '1' | '2' | '3' | '4' | '5';
 type Variant = 'surface' | 'outline' | 'ghost';
 /**
@@ -8,12 +8,10 @@ type Variant = 'surface' | 'outline' | 'ghost';
  * @slot header - top header content
  * @slot footer - bottom footer content
  */
-export declare class VdsCard extends LitElement {
+export declare class VdsCard extends VdsElement {
     static styles: import("lit").CSSResult;
     variant: Variant;
     elevation: Elevation;
-    connectedCallback(): void;
-    protected updated(changed: Map<string, unknown>): void;
     render(): import("lit").TemplateResult<1>;
 }
 export {};

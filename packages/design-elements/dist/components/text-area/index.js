@@ -1,5 +1,4 @@
-import { VdsTextArea } from "./vds-text-area.js";
+import { VdsTextArea as o } from "./vds-text-area.js";
 export {
-  VdsTextArea
+  o as VdsTextArea
 };
-//# sourceMappingURL=index.js.map

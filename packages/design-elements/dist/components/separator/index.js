@@ -1,5 +1,4 @@
-import { VdsSeparator } from "./vds-separator.js";
+import { VdsSeparator as a } from "./vds-separator.js";
 export {
-  VdsSeparator
+  a as VdsSeparator
 };
-//# sourceMappingURL=index.js.map

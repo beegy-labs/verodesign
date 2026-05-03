@@ -1,55 +1,34 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-import { setRole, setAriaProperty } from "../../utils/attribute-mirror.js";
-import { focusRing, srOnly, reducedMotion } from "../../styles/shared.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as h, html as n } from "lit";
+import { property as e } from "lit/decorators.js";
+import { setRole as c, setAriaProperty as v } from "../../utils/attribute-mirror.js";
+import { focusRing as u, srOnly as b, reducedMotion as p } from "../../styles/shared.js";
+import { VdsElement as m } from "../../base/vds-element.js";
+var f = Object.defineProperty, r = (s, t, d, g) => {
+  for (var a = void 0, i = s.length - 1, l; i >= 0; i--)
+    (l = s[i]) && (a = l(t, d, a) || a);
+  return a && f(t, d, a), a;
 };
-class VdsButton extends LitElement {
+class o extends m {
   constructor() {
-    super();
-    this.variant = "solid";
-    this.tone = "primary";
-    this.size = "md";
-    this.type = "button";
-    this.disabled = false;
-    this.loading = false;
-    this.ariaLabelText = null;
-    this.handleClick = (event) => {
+    super(), this.variant = "solid", this.tone = "primary", this.size = "md", this.type = "button", this.disabled = !1, this.loading = !1, this.ariaLabelText = null, this.handleClick = (t) => {
       if (this.disabled || this.loading) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
+        t.preventDefault(), t.stopImmediatePropagation();
         return;
       }
-      if (this.type === "submit") this.internals.form?.requestSubmit();
-      if (this.type === "reset") this.internals.form?.reset();
-    };
-    this.handleKeydown = (event) => {
-      if (event.key === " " || event.key === "Enter") {
-        event.preventDefault();
-        this.click();
-      }
-    };
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "button");
-    this.addEventListener("click", this.handleClick);
-    this.addEventListener("keydown", this.handleKeydown);
+      this.type === "submit" && this.internals.form?.requestSubmit(), this.type === "reset" && this.internals.form?.reset();
+    }, this.handleKeydown = (t) => {
+      (t.key === " " || t.key === "Enter") && (t.preventDefault(), this.click());
+    }, this.internals = this.attachInternals(), c(this, this.internals, "button"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
   }
   static {
-    this.formAssociated = true;
+    this.formAssociated = !0;
   }
   static {
     this.styles = [
-      focusRing,
-      srOnly,
-      reducedMotion,
-      css`
+      u,
+      b,
+      p,
+      h`
       :host {
         display: inline-flex;
         vertical-align: middle;
@@ -78,100 +57,100 @@ class VdsButton extends LitElement {
                     box-shadow var(--vds-duration-fast) var(--vds-easing-ease-out);
       }
 
-      :host([data-size="sm"]) .button {
+      :host([size="sm"]) .button {
         padding: var(--vds-spacing-1_5) var(--vds-spacing-3);
         font-size: var(--vds-font-size-sm);
         min-height: 2rem;
       }
-      :host([data-size="md"]) .button {
+      :host([size="md"]) .button {
         padding: var(--vds-spacing-2) var(--vds-spacing-4);
         font-size: var(--vds-font-size-base);
         min-height: 2.5rem;
       }
-      :host([data-size="lg"]) .button {
+      :host([size="lg"]) .button {
         padding: var(--vds-spacing-3) var(--vds-spacing-5);
         font-size: var(--vds-font-size-lg);
         min-height: 3rem;
       }
 
-      :host([data-tone="primary"][data-variant="solid"]) .button {
+      :host([tone="primary"][variant="solid"]) .button {
         background: var(--vds-theme-primary);
         color: var(--vds-theme-primary-fg);
       }
-      :host([data-tone="primary"][data-variant="solid"]:hover) .button {
+      :host([tone="primary"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-primary) 90%, black);
       }
-      :host([data-tone="primary"][data-variant="soft"]) .button {
+      :host([tone="primary"][variant="soft"]) .button {
         background: color-mix(in oklch, var(--vds-theme-primary) 12%, transparent);
         color: var(--vds-theme-primary);
       }
-      :host([data-tone="primary"][data-variant="outline"]) .button {
+      :host([tone="primary"][variant="outline"]) .button {
         border-color: var(--vds-theme-primary);
         color: var(--vds-theme-primary);
       }
-      :host([data-tone="primary"][data-variant="ghost"]) .button {
+      :host([tone="primary"][variant="ghost"]) .button {
         color: var(--vds-theme-primary);
       }
-      :host([data-tone="primary"][data-variant="ghost"]:hover) .button,
-      :host([data-tone="primary"][data-variant="outline"]:hover) .button {
+      :host([tone="primary"][variant="ghost"]:hover) .button,
+      :host([tone="primary"][variant="outline"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-primary) 8%, transparent);
       }
 
-      :host([data-tone="accent"][data-variant="solid"]) .button {
+      :host([tone="accent"][variant="solid"]) .button {
         background: var(--vds-theme-accent);
         color: var(--vds-theme-accent-fg);
       }
-      :host([data-tone="accent"][data-variant="solid"]:hover) .button {
+      :host([tone="accent"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-accent) 90%, black);
       }
-      :host([data-tone="accent"][data-variant="soft"]) .button {
+      :host([tone="accent"][variant="soft"]) .button {
         background: color-mix(in oklch, var(--vds-theme-accent) 12%, transparent);
         color: var(--vds-theme-accent);
       }
-      :host([data-tone="accent"][data-variant="outline"]) .button {
+      :host([tone="accent"][variant="outline"]) .button {
         border-color: var(--vds-theme-accent);
         color: var(--vds-theme-accent);
       }
-      :host([data-tone="accent"][data-variant="ghost"]) .button {
+      :host([tone="accent"][variant="ghost"]) .button {
         color: var(--vds-theme-accent);
       }
 
-      :host([data-tone="neutral"][data-variant="solid"]) .button {
+      :host([tone="neutral"][variant="solid"]) .button {
         background: var(--vds-theme-neutral);
         color: var(--vds-theme-neutral-fg);
       }
-      :host([data-tone="neutral"][data-variant="soft"]) .button {
+      :host([tone="neutral"][variant="soft"]) .button {
         background: var(--vds-theme-bg-muted);
         color: var(--vds-theme-text-primary);
       }
-      :host([data-tone="neutral"][data-variant="outline"]) .button {
+      :host([tone="neutral"][variant="outline"]) .button {
         border-color: var(--vds-theme-border-default);
         color: var(--vds-theme-text-primary);
       }
-      :host([data-tone="neutral"][data-variant="ghost"]) .button {
+      :host([tone="neutral"][variant="ghost"]) .button {
         color: var(--vds-theme-text-primary);
       }
-      :host([data-tone="neutral"][data-variant="ghost"]:hover) .button,
-      :host([data-tone="neutral"][data-variant="outline"]:hover) .button {
+      :host([tone="neutral"][variant="ghost"]:hover) .button,
+      :host([tone="neutral"][variant="outline"]:hover) .button {
         background: var(--vds-theme-bg-hover);
       }
 
-      :host([data-tone="destructive"][data-variant="solid"]) .button {
+      :host([tone="destructive"][variant="solid"]) .button {
         background: var(--vds-theme-destructive);
         color: var(--vds-theme-destructive-fg);
       }
-      :host([data-tone="destructive"][data-variant="solid"]:hover) .button {
+      :host([tone="destructive"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-destructive) 90%, black);
       }
-      :host([data-tone="destructive"][data-variant="soft"]) .button {
+      :host([tone="destructive"][variant="soft"]) .button {
         background: color-mix(in oklch, var(--vds-theme-destructive) 12%, transparent);
         color: var(--vds-theme-destructive);
       }
-      :host([data-tone="destructive"][data-variant="outline"]) .button {
+      :host([tone="destructive"][variant="outline"]) .button {
         border-color: var(--vds-theme-destructive);
         color: var(--vds-theme-destructive);
       }
-      :host([data-tone="destructive"][data-variant="ghost"]) .button {
+      :host([tone="destructive"][variant="ghost"]) .button {
         color: var(--vds-theme-destructive);
       }
 
@@ -198,29 +177,14 @@ class VdsButton extends LitElement {
     `
     ];
   }
-  updated(changed) {
-    if (changed.has("size")) this.dataset.size = this.size;
-    if (changed.has("variant")) this.dataset.variant = this.variant;
-    if (changed.has("tone")) this.dataset.tone = this.tone;
-    if (changed.has("disabled")) {
-      setAriaProperty(this, this.internals, "ariaDisabled", this.disabled);
-      this.tabIndex = this.disabled ? -1 : 0;
-    } else if (this.tabIndex < 0 && !this.disabled) {
-      this.tabIndex = 0;
-    }
-    if (changed.has("ariaLabelText") && this.ariaLabelText != null) {
-      setAriaProperty(this, this.internals, "ariaLabel", this.ariaLabelText);
-    }
+  updated(t) {
+    super.updated(t), t.has("disabled") ? (v(this, this.internals, "ariaDisabled", this.disabled), this.tabIndex = this.disabled ? -1 : 0) : this.tabIndex < 0 && !this.disabled && (this.tabIndex = 0), t.has("ariaLabelText") && this.ariaLabelText != null && v(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   connectedCallback() {
-    super.connectedCallback();
-    this.dataset.size = this.size;
-    this.dataset.variant = this.variant;
-    this.dataset.tone = this.tone;
-    if (!this.hasAttribute("tabindex")) this.tabIndex = 0;
+    super.connectedCallback(), this.hasAttribute("tabindex") || (this.tabIndex = 0);
   }
   render() {
-    return html`
+    return n`
       <button
         class="button"
         part="button"
@@ -229,41 +193,40 @@ class VdsButton extends LitElement {
         tabindex="-1"
         aria-hidden="true"
       >
-        ${this.loading ? html`<span class="spinner" aria-hidden="true"></span>` : html`<slot name="start"></slot>`}
+        ${this.loading ? n`<span class="spinner" aria-hidden="true"></span>` : n`<slot name="start"></slot>`}
         <slot></slot>
         <slot name="end"></slot>
       </button>
     `;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsButton.prototype, "variant");
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsButton.prototype, "tone");
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsButton.prototype, "size");
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsButton.prototype, "type");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsButton.prototype, "disabled");
-__decorateClass([
-  property({ type: Boolean, reflect: true, attribute: "data-loading" })
-], VdsButton.prototype, "loading");
-__decorateClass([
-  property({ type: String })
-], VdsButton.prototype, "name");
-__decorateClass([
-  property({ type: String })
-], VdsButton.prototype, "value");
-__decorateClass([
-  property({ type: String, attribute: "aria-label" })
-], VdsButton.prototype, "ariaLabelText");
+r([
+  e({ type: String, reflect: !0 })
+], o.prototype, "variant");
+r([
+  e({ type: String, reflect: !0 })
+], o.prototype, "tone");
+r([
+  e({ type: String, reflect: !0 })
+], o.prototype, "size");
+r([
+  e({ type: String, reflect: !0 })
+], o.prototype, "type");
+r([
+  e({ type: Boolean, reflect: !0 })
+], o.prototype, "disabled");
+r([
+  e({ type: Boolean, reflect: !0, attribute: "data-loading" })
+], o.prototype, "loading");
+r([
+  e({ type: String })
+], o.prototype, "name");
+r([
+  e({ type: String })
+], o.prototype, "value");
+r([
+  e({ type: String, attribute: "aria-label" })
+], o.prototype, "ariaLabelText");
 export {
-  VdsButton
+  o as VdsButton
 };
-//# sourceMappingURL=vds-button.js.map

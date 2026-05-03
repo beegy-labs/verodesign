@@ -1,5 +1,4 @@
-import { VdsSwitch } from "./vds-switch.js";
+import { VdsSwitch as t } from "./vds-switch.js";
 export {
-  VdsSwitch
+  t as VdsSwitch
 };
-//# sourceMappingURL=index.js.map

@@ -1,5 +1,6 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
 import { property } from 'lit/decorators.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Elevation = '0' | '1' | '2' | '3' | '4' | '5';
 type Variant = 'surface' | 'outline' | 'ghost';
@@ -11,7 +12,7 @@ type Variant = 'surface' | 'outline' | 'ghost';
  * @slot header - top header content
  * @slot footer - bottom footer content
  */
-export class VdsCard extends LitElement {
+export class VdsCard extends VdsElement {
   static styles = css`
     :host {
       display: block;
@@ -21,19 +22,19 @@ export class VdsCard extends LitElement {
       overflow: hidden;
     }
 
-    :host([data-variant="outline"]) {
+    :host([variant="outline"]) {
       background: transparent;
       border: var(--vds-border-width-1) solid var(--vds-theme-border-default);
     }
-    :host([data-variant="ghost"]) {
+    :host([variant="ghost"]) {
       background: transparent;
     }
 
-    :host([data-elevation="1"]) { box-shadow: var(--vds-shadow-1); }
-    :host([data-elevation="2"]) { box-shadow: var(--vds-shadow-2); }
-    :host([data-elevation="3"]) { box-shadow: var(--vds-shadow-3); }
-    :host([data-elevation="4"]) { box-shadow: var(--vds-shadow-4); }
-    :host([data-elevation="5"]) { box-shadow: var(--vds-shadow-5); }
+    :host([elevation="1"]) { box-shadow: var(--vds-shadow-1); }
+    :host([elevation="2"]) { box-shadow: var(--vds-shadow-2); }
+    :host([elevation="3"]) { box-shadow: var(--vds-shadow-3); }
+    :host([elevation="4"]) { box-shadow: var(--vds-shadow-4); }
+    :host([elevation="5"]) { box-shadow: var(--vds-shadow-5); }
 
     .header,
     .body,
@@ -61,18 +62,6 @@ export class VdsCard extends LitElement {
 
   @property({ type: String, reflect: true }) variant: Variant = 'surface';
   @property({ type: String, reflect: true }) elevation: Elevation = '1';
-
-  connectedCallback(): void {
-    super.connectedCallback();
-    this.dataset.variant = this.variant;
-    this.dataset.elevation = this.elevation;
-  }
-
-  protected updated(changed: Map<string, unknown>): void {
-    if (changed.has('variant')) this.dataset.variant = this.variant;
-    if (changed.has('elevation')) this.dataset.elevation = this.elevation;
-  }
-
   render() {
     return html`
       <div class="header"><slot name="header"></slot></div>

@@ -1,22 +1,20 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsMenu, VdsMenuItem } from "@verobee/design-elements/components/menu";
+import * as e from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsMenu as m, VdsMenuItem as n } from "@verobee/design-elements/components/menu";
 import "@verobee/design-elements/define/menu";
-const Menu = createComponent({
+const r = t({
   tagName: "vds-menu",
-  elementClass: VdsMenu,
-  react: React,
+  elementClass: m,
+  react: e,
   events: {
     onSelect: "vds-select"
   }
-});
-const MenuItem = createComponent({
+}), c = t({
   tagName: "vds-menu-item",
-  elementClass: VdsMenuItem,
-  react: React
+  elementClass: n,
+  react: e
 });
 export {
-  Menu,
-  MenuItem
+  r as Menu,
+  c as MenuItem
 };
-//# sourceMappingURL=Menu.js.map

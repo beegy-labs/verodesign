@@ -1,7 +1,6 @@
-import { VdsTab, VdsTabPanel, VdsTabs } from "./vds-tabs.js";
+import { VdsTab as b, VdsTabPanel as d, VdsTabs as T } from "./vds-tabs.js";
 export {
-  VdsTab,
-  VdsTabPanel,
-  VdsTabs
+  b as VdsTab,
+  d as VdsTabPanel,
+  T as VdsTabs
 };
-//# sourceMappingURL=index.js.map

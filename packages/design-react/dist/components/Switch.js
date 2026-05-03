@@ -1,16 +1,15 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsSwitch } from "@verobee/design-elements/components/switch";
+import * as t from "react";
+import { createComponent as e } from "@lit/react";
+import { VdsSwitch as o } from "@verobee/design-elements/components/switch";
 import "@verobee/design-elements/define/switch";
-const Switch = createComponent({
+const c = e({
   tagName: "vds-switch",
-  elementClass: VdsSwitch,
-  react: React,
+  elementClass: o,
+  react: t,
   events: {
     onChange: "change"
   }
 });
 export {
-  Switch
+  c as Switch
 };
-//# sourceMappingURL=Switch.js.map

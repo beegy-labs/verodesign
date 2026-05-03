@@ -1,26 +1,18 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-import { setRole, setAriaProperty } from "../../utils/attribute-mirror.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as c, html as a } from "lit";
+import { property as i } from "lit/decorators.js";
+import { setRole as v, setAriaProperty as l } from "../../utils/attribute-mirror.js";
+import { VdsElement as p } from "../../base/vds-element.js";
+var f = Object.defineProperty, r = (n, t, s, m) => {
+  for (var e = void 0, d = n.length - 1, h; d >= 0; d--)
+    (h = n[d]) && (e = h(t, s, e) || e);
+  return e && f(t, s, e), e;
 };
-class VdsToast extends LitElement {
+class o extends p {
   constructor() {
-    super();
-    this.tone = "neutral";
-    this.duration = 5e3;
-    this.dismissible = true;
-    this._timer = 0;
-    this.internals = this.attachInternals();
+    super(), this.tone = "neutral", this.duration = 5e3, this.dismissible = !0, this._timer = 0, this.internals = this.attachInternals();
   }
   static {
-    this.styles = css`
+    this.styles = c`
     :host {
       display: flex;
       align-items: flex-start;
@@ -61,59 +53,52 @@ class VdsToast extends LitElement {
   `;
   }
   connectedCallback() {
-    super.connectedCallback();
-    setRole(this, this.internals, this.tone === "error" ? "alert" : "status");
-    setAriaProperty(this, this.internals, "ariaLive", this.tone === "error" ? "assertive" : "polite");
-    setAriaProperty(this, this.internals, "ariaAtomic", true);
-    if (this.duration > 0) {
-      this._timer = window.setTimeout(() => this.dismiss(), this.duration);
-    }
+    super.connectedCallback(), this.syncAria(), this.duration > 0 && (this._timer = window.setTimeout(() => this.dismiss(), this.duration));
   }
   disconnectedCallback() {
-    super.disconnectedCallback();
-    clearTimeout(this._timer);
+    super.disconnectedCallback(), clearTimeout(this._timer);
+  }
+  updated(t) {
+    super.updated(t), t.has("tone") && this.syncAria(), t.has("duration") && this.isConnected && (clearTimeout(this._timer), this.duration > 0 && (this._timer = window.setTimeout(() => this.dismiss(), this.duration)));
+  }
+  syncAria() {
+    const t = this.tone === "error";
+    v(this, this.internals, t ? "alert" : "status"), l(this, this.internals, "ariaLive", t ? "assertive" : "polite"), l(this, this.internals, "ariaAtomic", !0);
   }
   dismiss() {
-    clearTimeout(this._timer);
-    this.dispatchEvent(new CustomEvent("vds-dismiss", { bubbles: true, composed: true }));
-    this.remove();
+    clearTimeout(this._timer), this.emit("vds-dismiss"), this.remove();
   }
   render() {
-    return html`
+    return a`
       <div class="body">
-        ${this.toastTitle ? html`<div class="title">${this.toastTitle}</div>` : null}
-        ${this.message ? html`<div class="message">${this.message}</div>` : html`<slot></slot>`}
+        ${this.toastTitle ? a`<div class="title">${this.toastTitle}</div>` : null}
+        ${this.message ? a`<div class="message">${this.message}</div>` : a`<slot></slot>`}
       </div>
-      ${this.dismissible ? html`<button class="dismiss" type="button" aria-label="Dismiss" @click=${() => this.dismiss()}>✕</button>` : null}
+      ${this.dismissible ? a`<button class="dismiss" type="button" aria-label="Dismiss" @click=${() => this.dismiss()}>✕</button>` : null}
     `;
   }
 }
-__decorateClass([
-  property({ type: String })
-], VdsToast.prototype, "toastTitle");
-__decorateClass([
-  property({ type: String })
-], VdsToast.prototype, "message");
-__decorateClass([
-  property({ type: String, reflect: true, attribute: "data-tone" })
-], VdsToast.prototype, "tone");
-__decorateClass([
-  property({ type: Number })
-], VdsToast.prototype, "duration");
-__decorateClass([
-  property({ type: Boolean })
-], VdsToast.prototype, "dismissible");
-class VdsToastGroup extends LitElement {
+r([
+  i({ type: String })
+], o.prototype, "toastTitle");
+r([
+  i({ type: String })
+], o.prototype, "message");
+r([
+  i({ type: String, reflect: !0, attribute: "data-tone" })
+], o.prototype, "tone");
+r([
+  i({ type: Number })
+], o.prototype, "duration");
+r([
+  i({ type: Boolean })
+], o.prototype, "dismissible");
+class u extends p {
   constructor() {
-    super();
-    this.placement = "bottom-right";
-    this.max = 5;
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "region");
-    setAriaProperty(this, this.internals, "ariaLabel", "Notifications");
+    super(), this.placement = "bottom-right", this.max = 5, this.internals = this.attachInternals(), v(this, this.internals, "region"), l(this, this.internals, "ariaLabel", "Notifications");
   }
   static {
-    this.styles = css`
+    this.styles = c`
     :host {
       position: fixed;
       z-index: var(--vds-zindex-toast);
@@ -131,32 +116,25 @@ class VdsToastGroup extends LitElement {
     :host([data-placement="bottom-center"]) { bottom: 0; left: 50%; transform: translateX(-50%); }
   `;
   }
-  publish(opts) {
-    const toast = document.createElement("vds-toast");
-    if (opts.title) toast.toastTitle = opts.title;
-    if (opts.message) toast.message = opts.message;
-    if (opts.tone) toast.tone = opts.tone;
-    if (opts.duration != null) toast.duration = opts.duration;
-    if (opts.dismissible != null) toast.dismissible = opts.dismissible;
-    const overflow = this.children.length - this.max + 1;
-    for (let i = 0; i < overflow; i++) {
+  publish(t) {
+    const s = document.createElement("vds-toast");
+    t.title && (s.toastTitle = t.title), t.message && (s.message = t.message), t.tone && (s.tone = t.tone), t.duration != null && (s.duration = t.duration), t.dismissible != null && (s.dismissible = t.dismissible);
+    const m = this.children.length - this.max + 1;
+    for (let e = 0; e < m; e++)
       this.children[0]?.dismiss?.();
-    }
-    this.appendChild(toast);
-    return toast;
+    return this.appendChild(s), s;
   }
   render() {
-    return html`<slot></slot>`;
+    return a`<slot></slot>`;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true, attribute: "data-placement" })
-], VdsToastGroup.prototype, "placement");
-__decorateClass([
-  property({ type: Number })
-], VdsToastGroup.prototype, "max");
+r([
+  i({ type: String, reflect: !0, attribute: "data-placement" })
+], u.prototype, "placement");
+r([
+  i({ type: Number })
+], u.prototype, "max");
 export {
-  VdsToast,
-  VdsToastGroup
+  o as VdsToast,
+  u as VdsToastGroup
 };
-//# sourceMappingURL=vds-toast.js.map

@@ -1,13 +1,12 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsTable } from "@verobee/design-elements/components/table";
+import * as e from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsTable as o } from "@verobee/design-elements/components/table";
 import "@verobee/design-elements/define/table";
-const Table = createComponent({
+const p = t({
   tagName: "vds-table",
-  elementClass: VdsTable,
-  react: React
+  elementClass: o,
+  react: e
 });
 export {
-  Table
+  p as Table
 };
-//# sourceMappingURL=Table.js.map

@@ -1,5 +1,2 @@
-import { VdsButton } from "./vds-button.js";
-if (!customElements.get("vds-button")) {
-  customElements.define("vds-button", VdsButton);
-}
-//# sourceMappingURL=define.js.map
+import { VdsButton as t } from "./vds-button.js";
+customElements.get("vds-button") || customElements.define("vds-button", t);

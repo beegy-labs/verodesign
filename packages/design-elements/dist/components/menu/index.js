@@ -1,6 +1,5 @@
-import { VdsMenu, VdsMenuItem } from "./vds-menu.js";
+import { VdsMenu as m, VdsMenuItem as n } from "./vds-menu.js";
 export {
-  VdsMenu,
-  VdsMenuItem
+  m as VdsMenu,
+  n as VdsMenuItem
 };
-//# sourceMappingURL=index.js.map

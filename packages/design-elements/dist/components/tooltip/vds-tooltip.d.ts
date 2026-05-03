@@ -1,4 +1,5 @@
-import { LitElement, type PropertyValues } from 'lit';
+import { type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Placement = 'top' | 'right' | 'bottom' | 'left';
 /**
  * <vds-tooltip> — non-interactive descriptive tooltip (WAI-ARIA AP 1.2 § Tooltip).
@@ -9,7 +10,7 @@ type Placement = 'top' | 'right' | 'bottom' | 'left';
  * @slot trigger - the element that triggers the tooltip
  * @slot - the tooltip content
  */
-export declare class VdsTooltip extends LitElement {
+export declare class VdsTooltip extends VdsElement {
     static styles: import("lit").CSSResult;
     placement: Placement;
     delay: number;
@@ -17,9 +18,12 @@ export declare class VdsTooltip extends LitElement {
     private open;
     private internals;
     private timer;
+    private triggerEl;
     private tipId;
     constructor();
-    protected updated(_: PropertyValues): void;
+    disconnectedCallback(): void;
+    protected updated(changed: PropertyValues): void;
+    private syncTrigger;
     private show;
     private hide;
     private handleKey;

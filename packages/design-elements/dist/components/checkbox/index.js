@@ -1,5 +1,4 @@
-import { VdsCheckbox } from "./vds-checkbox.js";
+import { VdsCheckbox as r } from "./vds-checkbox.js";
 export {
-  VdsCheckbox
+  r as VdsCheckbox
 };
-//# sourceMappingURL=index.js.map

@@ -1,34 +1,24 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as c, html as d } from "lit";
+import { property as n } from "lit/decorators.js";
+import { VdsElement as p } from "../../base/vds-element.js";
+var u = Object.defineProperty, a = (i, r, e, s) => {
+  for (var t = void 0, o = i.length - 1, f; o >= 0; o--)
+    (f = i[o]) && (t = f(r, e, t) || t);
+  return t && u(r, e, t), t;
 };
-class VdsLabel extends LitElement {
+class l extends p {
   constructor() {
-    super(...arguments);
-    this.required = false;
-    this.size = "md";
-    this.handleClick = (event) => {
-      if (!this.for) return;
-      if (event.defaultPrevented) return;
-      const target = this.getRootNode().getElementById(this.for);
-      if (target && typeof target.focus === "function") {
-        target.focus();
-        if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
-          const input = target;
-          if (input.type === "checkbox" || input.type === "radio") input.click();
-        }
+    super(...arguments), this.required = !1, this.size = "md", this.handleClick = (r) => {
+      if (!this.for || r.defaultPrevented) return;
+      const e = this.getRootNode().getElementById(this.for);
+      if (e && typeof e.focus == "function" && (e.focus(), e.tagName === "INPUT" || e.tagName === "TEXTAREA")) {
+        const s = e;
+        (s.type === "checkbox" || s.type === "radio") && s.click();
       }
     };
   }
   static {
-    this.styles = css`
+    this.styles = c`
     :host {
       display: inline-flex;
       align-items: center;
@@ -39,9 +29,9 @@ class VdsLabel extends LitElement {
       cursor: pointer;
       user-select: none;
     }
-    :host([data-size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([data-size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([data-size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
+    :host([size="md"]) { font-size: var(--vds-font-size-base); }
+    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
 
     .required {
       color: var(--vds-theme-destructive);
@@ -50,30 +40,24 @@ class VdsLabel extends LitElement {
   `;
   }
   connectedCallback() {
-    super.connectedCallback();
-    this.dataset.size = this.size;
-    this.addEventListener("click", this.handleClick);
-  }
-  updated() {
-    this.dataset.size = this.size;
+    super.connectedCallback(), this.addEventListener("click", this.handleClick);
   }
   render() {
-    return html`
+    return d`
       <slot></slot>
-      ${this.required ? html`<span class="required" aria-hidden="true">*</span>` : null}
+      ${this.required ? d`<span class="required" aria-hidden="true">*</span>` : null}
     `;
   }
 }
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsLabel.prototype, "for");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsLabel.prototype, "required");
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsLabel.prototype, "size");
+a([
+  n({ type: String, reflect: !0 })
+], l.prototype, "for");
+a([
+  n({ type: Boolean, reflect: !0 })
+], l.prototype, "required");
+a([
+  n({ type: String, reflect: !0 })
+], l.prototype, "size");
 export {
-  VdsLabel
+  l as VdsLabel
 };
-//# sourceMappingURL=vds-label.js.map

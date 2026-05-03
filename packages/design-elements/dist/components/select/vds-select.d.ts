@@ -1,4 +1,5 @@
-import { LitElement, type PropertyValues } from 'lit';
+import { type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 /**
  * <vds-select> — select-only combobox (WAI-ARIA AP 1.2 § Combobox, select-only).
  *
@@ -7,7 +8,7 @@ import { LitElement, type PropertyValues } from 'lit';
  *
  * @event change - { detail: { value: string } }
  */
-export declare class VdsSelect extends LitElement {
+export declare class VdsSelect extends VdsElement {
     static formAssociated: boolean;
     static styles: import("lit").CSSResult;
     value: string;
@@ -23,6 +24,7 @@ export declare class VdsSelect extends LitElement {
     private internals;
     private typeBuffer;
     private typeBufferTimer;
+    private _options;
     constructor();
     connectedCallback(): void;
     protected updated(changed: PropertyValues): void;

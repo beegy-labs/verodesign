@@ -1,4 +1,4 @@
-const KEY_TO_ATTR = {
+const o = {
   role: "role",
   ariaLabel: "aria-label",
   ariaLabelledBy: "aria-labelledby",
@@ -20,70 +20,57 @@ const KEY_TO_ATTR = {
   ariaActiveDescendantElement: "aria-activedescendant",
   ariaControlsElements: "aria-controls",
   ariaOwnsElements: "aria-owns"
-};
-const ELEMENT_REF_KEYS = /* @__PURE__ */ new Set([
+}, c = /* @__PURE__ */ new Set([
   "ariaActiveDescendantElement",
   "ariaControlsElements",
   "ariaOwnsElements"
 ]);
-let _supportsInternalsAriaReflection;
-function supportsInternalsAriaReflection() {
-  if (_supportsInternalsAriaReflection !== void 0) return _supportsInternalsAriaReflection;
-  if (typeof document === "undefined" || typeof HTMLElement === "undefined" || !("attachInternals" in HTMLElement.prototype)) {
-    _supportsInternalsAriaReflection = false;
-    return false;
-  }
+let i;
+function l() {
+  if (i !== void 0) return i;
+  if (typeof document > "u" || typeof HTMLElement > "u" || !("attachInternals" in HTMLElement.prototype))
+    return i = !1, !1;
   try {
-    const probe = document.createElement("div");
-    if (!("attachInternals" in probe)) {
-      _supportsInternalsAriaReflection = false;
-      return false;
-    }
-    const internals = probe.attachInternals?.();
-    _supportsInternalsAriaReflection = internals != null && "role" in internals;
-    return _supportsInternalsAriaReflection;
+    const e = document.createElement("div");
+    if (!("attachInternals" in e))
+      return i = !1, !1;
+    const t = e.attachInternals?.();
+    return i = t != null && "role" in t, i;
   } catch {
-    _supportsInternalsAriaReflection = false;
-    return false;
+    return i = !1, !1;
   }
 }
-function setAriaProperty(host, internals, key, value) {
-  const attr = KEY_TO_ATTR[key];
-  if (supportsInternalsAriaReflection() && !ELEMENT_REF_KEYS.has(key)) {
+function f(e, t, n, a) {
+  const r = o[n];
+  if (l() && !c.has(n))
     try {
-      internals[key] = value;
+      t[n] = a;
     } catch {
     }
-  }
-  if (value == null || value === false) {
-    host.removeAttribute(attr);
+  if (a == null || a === !1) {
+    e.removeAttribute(r);
     return;
   }
-  if (Array.isArray(value)) {
-    const ids = value.map((el) => el.id).filter(Boolean).join(" ");
-    if (ids) host.setAttribute(attr, ids);
-    else host.removeAttribute(attr);
+  if (Array.isArray(a)) {
+    const s = a.map((d) => d.id).filter(Boolean).join(" ");
+    s ? e.setAttribute(r, s) : e.removeAttribute(r);
     return;
   }
-  if (value instanceof Element) {
-    if (value.id) host.setAttribute(attr, value.id);
-    else host.removeAttribute(attr);
+  if (a instanceof Element) {
+    a.id ? e.setAttribute(r, a.id) : e.removeAttribute(r);
     return;
   }
-  if (value === true) {
-    host.setAttribute(attr, "true");
+  if (a === !0) {
+    e.setAttribute(r, "true");
     return;
   }
-  host.setAttribute(attr, String(value));
+  e.setAttribute(r, String(a));
 }
-function setRole(host, internals, role) {
-  setAriaProperty(host, internals, "role", role);
+function u(e, t, n) {
+  f(e, t, "role", n);
 }
-if (typeof document !== "undefined" && typeof HTMLElement !== "undefined") {
-  void supportsInternalsAriaReflection();
-}
+typeof document < "u" && typeof HTMLElement < "u" && l();
 export {
-  setAriaProperty,
-  setRole
+  f as setAriaProperty,
+  u as setRole
 };
-//# sourceMappingURL=attribute-mirror.js.map

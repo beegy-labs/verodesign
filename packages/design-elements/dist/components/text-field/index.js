@@ -1,5 +1,4 @@
-import { VdsTextField } from "./vds-text-field.js";
+import { VdsTextField as o } from "./vds-text-field.js";
 export {
-  VdsTextField
+  o as VdsTextField
 };
-//# sourceMappingURL=index.js.map

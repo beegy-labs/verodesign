@@ -1,6 +1,7 @@
-import { LitElement, html, css, type PropertyValues } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Size = 'sm' | 'md' | 'lg';
 
@@ -11,7 +12,7 @@ type Size = 'sm' | 'md' | 'lg';
  *
  * @event change - { detail: { checked: boolean } }
  */
-export class VdsSwitch extends LitElement {
+export class VdsSwitch extends VdsElement {
   static formAssociated = true;
 
   static styles = css`
@@ -25,9 +26,9 @@ export class VdsSwitch extends LitElement {
       font-family: var(--vds-font-family-sans);
     }
     :host([disabled]) { cursor: not-allowed; opacity: 0.5; }
-    :host([data-size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([data-size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([data-size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
+    :host([size="md"]) { font-size: var(--vds-font-size-base); }
+    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
 
     .track {
       position: relative;
@@ -36,9 +37,9 @@ export class VdsSwitch extends LitElement {
       border-radius: 999px;
       transition: background var(--vds-duration-fast);
     }
-    :host([data-size="sm"]) .track { width: 28px; height: 16px; }
-    :host([data-size="md"]) .track { width: 36px; height: 20px; }
-    :host([data-size="lg"]) .track { width: 44px; height: 24px; }
+    :host([size="sm"]) .track { width: 28px; height: 16px; }
+    :host([size="md"]) .track { width: 36px; height: 20px; }
+    :host([size="lg"]) .track { width: 44px; height: 24px; }
 
     :host([checked]) .track { background: var(--vds-theme-primary); }
 
@@ -51,13 +52,13 @@ export class VdsSwitch extends LitElement {
       transition: transform var(--vds-duration-fast);
       box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }
-    :host([data-size="sm"]) .thumb { width: 12px; height: 12px; }
-    :host([data-size="md"]) .thumb { width: 16px; height: 16px; }
-    :host([data-size="lg"]) .thumb { width: 20px; height: 20px; }
+    :host([size="sm"]) .thumb { width: 12px; height: 12px; }
+    :host([size="md"]) .thumb { width: 16px; height: 16px; }
+    :host([size="lg"]) .thumb { width: 20px; height: 20px; }
 
-    :host([data-size="sm"][checked]) .thumb { transform: translateX(12px); }
-    :host([data-size="md"][checked]) .thumb { transform: translateX(16px); }
-    :host([data-size="lg"][checked]) .thumb { transform: translateX(20px); }
+    :host([size="sm"][checked]) .thumb { transform: translateX(12px); }
+    :host([size="md"][checked]) .thumb { transform: translateX(16px); }
+    :host([size="lg"][checked]) .thumb { transform: translateX(20px); }
 
     :host(:focus-visible) .track {
       outline: 2px solid var(--vds-theme-border-focus);
@@ -84,14 +85,13 @@ export class VdsSwitch extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    this.dataset.size = this.size;
     if (!this.hasAttribute('tabindex')) this.tabIndex = this.disabled ? -1 : 0;
     this.syncFormValue();
     this.syncAria();
   }
 
   protected updated(changed: PropertyValues): void {
-    if (changed.has('size')) this.dataset.size = this.size;
+    super.updated(changed);
     if (changed.has('checked') || changed.has('disabled') || changed.has('required')) {
       this.syncAria();
       this.syncFormValue();
@@ -127,7 +127,7 @@ export class VdsSwitch extends LitElement {
 
   toggle(): void {
     this.checked = !this.checked;
-    this.dispatchEvent(new CustomEvent('change', { detail: { checked: this.checked }, bubbles: true, composed: true }));
+    this.emit('change', { checked: this.checked });
   }
 
   render() {

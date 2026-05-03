@@ -1,11 +1,12 @@
-import { LitElement, html, css, type PropertyValues } from 'lit';
+import { html, css, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { setAriaProperty } from '../../utils/attribute-mirror.js';
 import { focusRing } from '../../styles/shared.js';
+import { VdsElement } from '../../base/vds-element.js';
 
 type Resize = 'none' | 'vertical' | 'horizontal' | 'both';
 
-export class VdsTextArea extends LitElement {
+export class VdsTextArea extends VdsElement {
   static formAssociated = true;
 
   static styles = [
@@ -110,8 +111,8 @@ export class VdsTextArea extends LitElement {
   @state() private _touched = false;
 
   private internals: ElementInternals;
-  private _labelId = `vds-ta-label-${crypto.randomUUID().slice(0, 8)}`;
-  private _helperId = `vds-ta-helper-${crypto.randomUUID().slice(0, 8)}`;
+  private _labelId = this.createId('vds-ta-label');
+  private _helperId = this.createId('vds-ta-helper');
 
   constructor() {
     super();
@@ -119,6 +120,7 @@ export class VdsTextArea extends LitElement {
   }
 
   protected updated(changed: PropertyValues): void {
+    super.updated(changed);
     if (changed.has('value') || changed.has('required') || changed.has('minlength') || changed.has('maxlength')) {
       this.internals.setFormValue(this.value);
       this.syncValidity();
@@ -149,10 +151,10 @@ export class VdsTextArea extends LitElement {
 
   private handleInput = (e: Event): void => {
     this.value = (e.target as HTMLTextAreaElement).value;
-    this.dispatchEvent(new CustomEvent('vds-input', { bubbles: true, composed: true, detail: { value: this.value } }));
+    this.emit('vds-input', { value: this.value });
   };
   private handleChange = (): void => {
-    this.dispatchEvent(new CustomEvent('vds-change', { bubbles: true, composed: true, detail: { value: this.value } }));
+    this.emit('vds-change', { value: this.value });
   };
   private handleBlur = (): void => { this._touched = true; this.syncValidity(); };
 

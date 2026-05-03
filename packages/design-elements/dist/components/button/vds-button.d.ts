@@ -1,4 +1,5 @@
-import { LitElement, type PropertyValues } from 'lit';
+import { type PropertyValues } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Variant = 'solid' | 'soft' | 'outline' | 'ghost';
 type Tone = 'primary' | 'accent' | 'neutral' | 'destructive';
 type Size = 'sm' | 'md' | 'lg';
@@ -13,7 +14,7 @@ type Size = 'sm' | 'md' | 'lg';
  * @slot start - leading icon
  * @slot end - trailing icon
  */
-export declare class VdsButton extends LitElement {
+export declare class VdsButton extends VdsElement {
     static formAssociated: boolean;
     static styles: import("lit").CSSResult[];
     variant: Variant;

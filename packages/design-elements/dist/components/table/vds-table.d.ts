@@ -1,4 +1,4 @@
-import { LitElement } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Density = 'compact' | 'normal' | 'comfortable';
 /**
  * <vds-table> — semantic table wrapper. Renders inside a `<table>` and applies
@@ -8,11 +8,9 @@ type Density = 'compact' | 'normal' | 'comfortable';
  * @slot caption - <caption>
  * @slot - table contents (thead/tbody/tfoot)
  */
-export declare class VdsTable extends LitElement {
+export declare class VdsTable extends VdsElement {
     static styles: import("lit").CSSResult;
     density: Density;
-    connectedCallback(): void;
-    protected updated(): void;
     render(): import("lit").TemplateResult<1>;
 }
 export {};

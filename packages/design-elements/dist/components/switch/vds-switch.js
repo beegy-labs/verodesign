@@ -1,47 +1,29 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-import { setRole, setAriaProperty } from "../../utils/attribute-mirror.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as l, html as c } from "lit";
+import { property as s } from "lit/decorators.js";
+import { setRole as p, setAriaProperty as o } from "../../utils/attribute-mirror.js";
+import { VdsElement as u } from "../../base/vds-element.js";
+var m = Object.defineProperty, i = (a, t, d, f) => {
+  for (var e = void 0, h = a.length - 1, n; h >= 0; h--)
+    (n = a[h]) && (e = n(t, d, e) || e);
+  return e && m(t, d, e), e;
 };
-class VdsSwitch extends LitElement {
+class r extends u {
   constructor() {
-    super();
-    this.checked = false;
-    this.disabled = false;
-    this.required = false;
-    this.value = "on";
-    this.size = "md";
-    this.handleClick = (event) => {
+    super(), this.checked = !1, this.disabled = !1, this.required = !1, this.value = "on", this.size = "md", this.handleClick = (t) => {
       if (this.disabled) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
+        t.preventDefault(), t.stopImmediatePropagation();
         return;
       }
       this.toggle();
-    };
-    this.handleKeydown = (event) => {
-      if (event.key === " " || event.key === "Enter") {
-        event.preventDefault();
-        if (!this.disabled) this.toggle();
-      }
-    };
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "switch");
-    this.addEventListener("click", this.handleClick);
-    this.addEventListener("keydown", this.handleKeydown);
+    }, this.handleKeydown = (t) => {
+      (t.key === " " || t.key === "Enter") && (t.preventDefault(), this.disabled || this.toggle());
+    }, this.internals = this.attachInternals(), p(this, this.internals, "switch"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
   }
   static {
-    this.formAssociated = true;
+    this.formAssociated = !0;
   }
   static {
-    this.styles = css`
+    this.styles = l`
     :host {
       display: inline-flex;
       align-items: center;
@@ -52,9 +34,9 @@ class VdsSwitch extends LitElement {
       font-family: var(--vds-font-family-sans);
     }
     :host([disabled]) { cursor: not-allowed; opacity: 0.5; }
-    :host([data-size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([data-size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([data-size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
+    :host([size="md"]) { font-size: var(--vds-font-size-base); }
+    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
 
     .track {
       position: relative;
@@ -63,9 +45,9 @@ class VdsSwitch extends LitElement {
       border-radius: 999px;
       transition: background var(--vds-duration-fast);
     }
-    :host([data-size="sm"]) .track { width: 28px; height: 16px; }
-    :host([data-size="md"]) .track { width: 36px; height: 20px; }
-    :host([data-size="lg"]) .track { width: 44px; height: 24px; }
+    :host([size="sm"]) .track { width: 28px; height: 16px; }
+    :host([size="md"]) .track { width: 36px; height: 20px; }
+    :host([size="lg"]) .track { width: 44px; height: 24px; }
 
     :host([checked]) .track { background: var(--vds-theme-primary); }
 
@@ -78,13 +60,13 @@ class VdsSwitch extends LitElement {
       transition: transform var(--vds-duration-fast);
       box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }
-    :host([data-size="sm"]) .thumb { width: 12px; height: 12px; }
-    :host([data-size="md"]) .thumb { width: 16px; height: 16px; }
-    :host([data-size="lg"]) .thumb { width: 20px; height: 20px; }
+    :host([size="sm"]) .thumb { width: 12px; height: 12px; }
+    :host([size="md"]) .thumb { width: 16px; height: 16px; }
+    :host([size="lg"]) .thumb { width: 20px; height: 20px; }
 
-    :host([data-size="sm"][checked]) .thumb { transform: translateX(12px); }
-    :host([data-size="md"][checked]) .thumb { transform: translateX(16px); }
-    :host([data-size="lg"][checked]) .thumb { transform: translateX(20px); }
+    :host([size="sm"][checked]) .thumb { transform: translateX(12px); }
+    :host([size="md"][checked]) .thumb { transform: translateX(16px); }
+    :host([size="lg"][checked]) .thumb { transform: translateX(20px); }
 
     :host(:focus-visible) .track {
       outline: 2px solid var(--vds-theme-border-focus);
@@ -93,34 +75,22 @@ class VdsSwitch extends LitElement {
   `;
   }
   connectedCallback() {
-    super.connectedCallback();
-    this.dataset.size = this.size;
-    if (!this.hasAttribute("tabindex")) this.tabIndex = this.disabled ? -1 : 0;
-    this.syncFormValue();
-    this.syncAria();
+    super.connectedCallback(), this.hasAttribute("tabindex") || (this.tabIndex = this.disabled ? -1 : 0), this.syncFormValue(), this.syncAria();
   }
-  updated(changed) {
-    if (changed.has("size")) this.dataset.size = this.size;
-    if (changed.has("checked") || changed.has("disabled") || changed.has("required")) {
-      this.syncAria();
-      this.syncFormValue();
-    }
-    if (changed.has("disabled")) this.tabIndex = this.disabled ? -1 : 0;
+  updated(t) {
+    super.updated(t), (t.has("checked") || t.has("disabled") || t.has("required")) && (this.syncAria(), this.syncFormValue()), t.has("disabled") && (this.tabIndex = this.disabled ? -1 : 0);
   }
   syncAria() {
-    setAriaProperty(this, this.internals, "ariaChecked", this.checked ? "true" : "false");
-    setAriaProperty(this, this.internals, "ariaDisabled", this.disabled);
-    setAriaProperty(this, this.internals, "ariaRequired", this.required);
+    o(this, this.internals, "ariaChecked", this.checked ? "true" : "false"), o(this, this.internals, "ariaDisabled", this.disabled), o(this, this.internals, "ariaRequired", this.required);
   }
   syncFormValue() {
     this.internals.setFormValue(this.checked ? this.value : null);
   }
   toggle() {
-    this.checked = !this.checked;
-    this.dispatchEvent(new CustomEvent("change", { detail: { checked: this.checked }, bubbles: true, composed: true }));
+    this.checked = !this.checked, this.emit("change", { checked: this.checked });
   }
   render() {
-    return html`
+    return c`
       <span class="track" part="track" aria-hidden="true">
         <span class="thumb" part="thumb"></span>
       </span>
@@ -128,25 +98,24 @@ class VdsSwitch extends LitElement {
     `;
   }
 }
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsSwitch.prototype, "checked");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsSwitch.prototype, "disabled");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsSwitch.prototype, "required");
-__decorateClass([
-  property({ type: String })
-], VdsSwitch.prototype, "name");
-__decorateClass([
-  property({ type: String })
-], VdsSwitch.prototype, "value");
-__decorateClass([
-  property({ type: String, reflect: true })
-], VdsSwitch.prototype, "size");
+i([
+  s({ type: Boolean, reflect: !0 })
+], r.prototype, "checked");
+i([
+  s({ type: Boolean, reflect: !0 })
+], r.prototype, "disabled");
+i([
+  s({ type: Boolean, reflect: !0 })
+], r.prototype, "required");
+i([
+  s({ type: String })
+], r.prototype, "name");
+i([
+  s({ type: String })
+], r.prototype, "value");
+i([
+  s({ type: String, reflect: !0 })
+], r.prototype, "size");
 export {
-  VdsSwitch
+  r as VdsSwitch
 };
-//# sourceMappingURL=vds-switch.js.map

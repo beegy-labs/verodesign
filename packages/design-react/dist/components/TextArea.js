@@ -1,17 +1,16 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsTextArea } from "@verobee/design-elements/components/text-area";
+import * as e from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsTextArea as a } from "@verobee/design-elements/components/text-area";
 import "@verobee/design-elements/define/text-area";
-const TextArea = createComponent({
+const m = t({
   tagName: "vds-text-area",
-  elementClass: VdsTextArea,
-  react: React,
+  elementClass: a,
+  react: e,
   events: {
     onInput: "vds-input",
     onChange: "vds-change"
   }
 });
 export {
-  TextArea
+  m as TextArea
 };
-//# sourceMappingURL=TextArea.js.map

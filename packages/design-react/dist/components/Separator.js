@@ -1,13 +1,12 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsSeparator } from "@verobee/design-elements/components/separator";
+import * as r from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsSeparator as o } from "@verobee/design-elements/components/separator";
 import "@verobee/design-elements/define/separator";
-const Separator = createComponent({
+const p = t({
   tagName: "vds-separator",
-  elementClass: VdsSeparator,
-  react: React
+  elementClass: o,
+  react: r
 });
 export {
-  Separator
+  p as Separator
 };
-//# sourceMappingURL=Separator.js.map

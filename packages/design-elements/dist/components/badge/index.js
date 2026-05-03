@@ -1,5 +1,4 @@
-import { VdsBadge } from "./vds-badge.js";
+import { VdsBadge as o } from "./vds-badge.js";
 export {
-  VdsBadge
+  o as VdsBadge
 };
-//# sourceMappingURL=index.js.map

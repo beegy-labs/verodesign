@@ -1,12 +1,11 @@
-import { css } from "lit";
-const focusRing = css`
+import { css as o } from "lit";
+const e = o`
   :host(:focus-visible),
   :host([data-focus]) {
     outline: 2px solid var(--vds-theme-border-focus);
     outline-offset: 2px;
   }
-`;
-const srOnly = css`
+`, i = o`
   .sr-only {
     position: absolute;
     width: 1px;
@@ -18,8 +17,7 @@ const srOnly = css`
     white-space: nowrap;
     border: 0;
   }
-`;
-const reducedMotion = css`
+`, n = o`
   @media (prefers-reduced-motion: reduce) {
     :host {
       transition: none !important;
@@ -28,8 +26,7 @@ const reducedMotion = css`
   }
 `;
 export {
-  focusRing,
-  reducedMotion,
-  srOnly
+  e as focusRing,
+  n as reducedMotion,
+  i as srOnly
 };
-//# sourceMappingURL=shared.js.map

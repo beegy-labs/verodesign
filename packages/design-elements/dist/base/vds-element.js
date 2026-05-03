@@ -1,26 +1,31 @@
-import { LitElement, html } from "lit";
-class VdsElement extends LitElement {
+import { LitElement as o, html as a } from "lit";
+let r = 0;
+class c extends o {
   static {
-    this.formAssociated = false;
+    this.formAssociated = !1;
   }
-  emit(name, detail, options = {}) {
-    const event = new CustomEvent(name, {
-      bubbles: true,
-      composed: true,
-      cancelable: true,
-      ...options,
-      detail
+  emit(e, t, s = {}) {
+    const n = new CustomEvent(e, {
+      bubbles: !0,
+      composed: !0,
+      cancelable: !0,
+      ...s,
+      detail: t
     });
-    return this.dispatchEvent(event);
+    return this.dispatchEvent(n);
   }
-  updated(changed) {
-    super.updated(changed);
+  updated(e) {
+    super.updated(e);
   }
-  renderSr(text) {
-    return html`<span class="sr-only">${text}</span>`;
+  createId(e) {
+    r += 1;
+    const t = globalThis.crypto?.randomUUID?.().slice(0, 8) ?? r.toString(36);
+    return `${e}-${t}`;
+  }
+  renderSr(e) {
+    return a`<span class="sr-only">${e}</span>`;
   }
 }
 export {
-  VdsElement
+  c as VdsElement
 };
-//# sourceMappingURL=vds-element.js.map

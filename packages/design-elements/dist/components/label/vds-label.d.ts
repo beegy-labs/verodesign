@@ -1,4 +1,4 @@
-import { LitElement } from 'lit';
+import { VdsElement } from '../../base/vds-element.js';
 type Size = 'sm' | 'md' | 'lg';
 /**
  * <vds-label> — accessible form-field label.
@@ -8,13 +8,12 @@ type Size = 'sm' | 'md' | 'lg';
  *
  * @slot - label text
  */
-export declare class VdsLabel extends LitElement {
+export declare class VdsLabel extends VdsElement {
     static styles: import("lit").CSSResult;
     for?: string;
     required: boolean;
     size: Size;
     connectedCallback(): void;
-    protected updated(): void;
     private handleClick;
     render(): import("lit").TemplateResult<1>;
 }

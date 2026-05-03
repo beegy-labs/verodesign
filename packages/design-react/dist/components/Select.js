@@ -1,22 +1,20 @@
-import * as React from "react";
-import { createComponent } from "@lit/react";
-import { VdsSelect, VdsOption } from "@verobee/design-elements/components/select";
+import * as e from "react";
+import { createComponent as t } from "@lit/react";
+import { VdsSelect as o, VdsOption as a } from "@verobee/design-elements/components/select";
 import "@verobee/design-elements/define/select";
-const Select = createComponent({
+const r = t({
   tagName: "vds-select",
-  elementClass: VdsSelect,
-  react: React,
+  elementClass: o,
+  react: e,
   events: {
     onChange: "change"
   }
-});
-const Option = createComponent({
+}), c = t({
   tagName: "vds-option",
-  elementClass: VdsOption,
-  react: React
+  elementClass: a,
+  react: e
 });
 export {
-  Option,
-  Select
+  c as Option,
+  r as Select
 };
-//# sourceMappingURL=Select.js.map

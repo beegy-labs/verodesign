@@ -1,5 +1,2 @@
-import { VdsDialog } from "./vds-dialog.js";
-if (!customElements.get("vds-dialog")) {
-  customElements.define("vds-dialog", VdsDialog);
-}
-//# sourceMappingURL=define.js.map
+import { VdsDialog as e } from "./vds-dialog.js";
+customElements.get("vds-dialog") || customElements.define("vds-dialog", e);

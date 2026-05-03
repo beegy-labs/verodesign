@@ -1,55 +1,39 @@
-import { LitElement, css, html } from "lit";
-import { property } from "lit/decorators.js";
-import { setRole, setAriaProperty } from "../../utils/attribute-mirror.js";
-var __defProp = Object.defineProperty;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp(target, key, result);
-  return result;
+import { css as d, html as h, LitElement as u } from "lit";
+import { property as r } from "lit/decorators.js";
+import { setRole as c, setAriaProperty as p } from "../../utils/attribute-mirror.js";
+import { VdsElement as m } from "../../base/vds-element.js";
+var A = Object.defineProperty, n = (o, t, i, e) => {
+  for (var s = void 0, a = o.length - 1, l; a >= 0; a--)
+    (l = o[a]) && (s = l(t, i, s) || s);
+  return s && A(t, i, s), s;
 };
-class VdsTabs extends LitElement {
+class v extends m {
   constructor() {
-    super();
-    this.value = "";
-    this.orientation = "horizontal";
-    this.activation = "auto";
-    this.handleClick = (e) => {
-      const target = e.target.closest("vds-tab");
-      if (target) this.setActive(target);
-    };
-    this.handleKeydown = (e) => {
-      const target = e.target.closest("vds-tab");
-      if (!target) return;
-      const tabs = this.tabs.filter((t) => !t.disabled);
-      const idx = tabs.indexOf(target);
-      if (idx < 0) return;
-      let next;
-      const isHorizontal = this.orientation === "horizontal";
-      const prevKey = isHorizontal ? "ArrowLeft" : "ArrowUp";
-      const nextKey = isHorizontal ? "ArrowRight" : "ArrowDown";
-      if (e.key === prevKey) next = tabs[(idx - 1 + tabs.length) % tabs.length];
-      else if (e.key === nextKey) next = tabs[(idx + 1) % tabs.length];
-      else if (e.key === "Home") next = tabs[0];
-      else if (e.key === "End") next = tabs[tabs.length - 1];
-      else if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        this.setActive(target);
+    super(), this.value = "", this.orientation = "horizontal", this.activation = "auto", this.tabsCache = [], this.panelsCache = [], this.refreshChildren = () => {
+      this.tabsCache = Array.from(this.querySelectorAll("vds-tab")), this.panelsCache = Array.from(this.querySelectorAll("vds-tab-panel")), this.syncActive();
+    }, this.handleClick = (t) => {
+      const i = t.target.closest("vds-tab");
+      i && this.setActive(i);
+    }, this.handleKeydown = (t) => {
+      const i = t.target.closest("vds-tab");
+      if (!i) return;
+      const e = this.tabs.filter((g) => !g.disabled), s = e.indexOf(i);
+      if (s < 0) return;
+      let a;
+      const l = this.orientation === "horizontal", b = l ? "ArrowLeft" : "ArrowUp", y = l ? "ArrowRight" : "ArrowDown";
+      if (t.key === b) a = e[(s - 1 + e.length) % e.length];
+      else if (t.key === y) a = e[(s + 1) % e.length];
+      else if (t.key === "Home") a = e[0];
+      else if (t.key === "End") a = e[e.length - 1];
+      else if (t.key === "Enter" || t.key === " ") {
+        t.preventDefault(), this.setActive(i);
         return;
       }
-      if (next) {
-        e.preventDefault();
-        if (this.activation === "auto") this.setActive(next);
-        else next.focus();
-      }
-    };
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "presentation");
+      a && (t.preventDefault(), this.activation === "auto" ? this.setActive(a) : a.focus());
+    }, this.internals = this.attachInternals(), c(this, this.internals, "presentation");
   }
   static {
-    this.styles = css`
+    this.styles = d`
     :host {
       display: block;
       font-family: var(--vds-font-family-sans);
@@ -76,90 +60,69 @@ class VdsTabs extends LitElement {
   `;
   }
   connectedCallback() {
-    super.connectedCallback();
-    this.addEventListener("keydown", this.handleKeydown);
-    this.addEventListener("click", this.handleClick);
-    queueMicrotask(() => this.syncActive());
+    super.connectedCallback(), this.addEventListener("keydown", this.handleKeydown), this.addEventListener("click", this.handleClick), queueMicrotask(() => this.syncActive());
   }
   disconnectedCallback() {
-    super.disconnectedCallback();
-    this.removeEventListener("keydown", this.handleKeydown);
-    this.removeEventListener("click", this.handleClick);
+    super.disconnectedCallback(), this.removeEventListener("keydown", this.handleKeydown), this.removeEventListener("click", this.handleClick);
   }
-  updated(changed) {
-    if (changed.has("value") || changed.has("orientation")) {
-      this.syncActive();
-    }
-    if (changed.has("orientation")) {
-      setAriaProperty(this, this.internals, "ariaOrientation", this.orientation);
-    }
+  updated(t) {
+    (t.has("value") || t.has("orientation")) && this.syncActive(), t.has("orientation") && p(this, this.internals, "ariaOrientation", this.orientation);
   }
   get tabs() {
-    return Array.from(this.querySelectorAll("vds-tab"));
+    return this.tabsCache;
   }
   get panels() {
-    return Array.from(this.querySelectorAll("vds-tab-panel"));
+    return this.panelsCache;
   }
   syncActive() {
-    const tabs = this.tabs;
-    if (tabs.length === 0) return;
-    let active = tabs.find((t) => t.value === this.value);
-    if (!active) {
-      active = tabs[0];
-      this.value = active.value;
+    const t = this.tabs;
+    if (t.length === 0) return;
+    let i = t.find((e) => e.value === this.value);
+    i || (i = t[0], this.value = i.value);
+    for (const e of t) {
+      const s = e === i;
+      e.toggleAttribute("data-active", s), e.tabIndex = s ? 0 : -1, e.setAttribute("aria-selected", String(s));
     }
-    for (const tab of tabs) {
-      const isActive = tab === active;
-      tab.toggleAttribute("data-active", isActive);
-      tab.tabIndex = isActive ? 0 : -1;
-      tab.setAttribute("aria-selected", String(isActive));
-    }
-    for (const panel of this.panels) {
-      const isActive = panel.value === this.value;
-      panel.toggleAttribute("hidden", !isActive);
-      panel.setAttribute("aria-hidden", String(!isActive));
+    for (const e of this.panels) {
+      const s = e.value === this.value;
+      e.toggleAttribute("hidden", !s), e.setAttribute("aria-hidden", String(!s));
     }
   }
-  setActive(tab) {
-    if (!tab || tab.disabled) return;
-    if (this.value === tab.value) {
-      tab.focus();
-      return;
+  setActive(t) {
+    if (!(!t || t.disabled)) {
+      if (this.value === t.value) {
+        t.focus();
+        return;
+      }
+      this.value = t.value, t.focus(), this.emit("vds-change", { value: this.value });
     }
-    this.value = tab.value;
-    tab.focus();
-    this.dispatchEvent(new CustomEvent("vds-change", { bubbles: true, composed: true, detail: { value: this.value } }));
   }
   render() {
-    return html`
+    return h`
       <div class="tablist" role="tablist" aria-orientation=${this.orientation}>
-        <slot name="tab"></slot>
+        <slot name="tab" @slotchange=${this.refreshChildren}></slot>
       </div>
       <div class="panels">
-        <slot></slot>
+        <slot @slotchange=${this.refreshChildren}></slot>
       </div>
     `;
   }
 }
-__decorateClass([
-  property({ type: String })
-], VdsTabs.prototype, "value");
-__decorateClass([
-  property({ type: String, reflect: true, attribute: "data-orientation" })
-], VdsTabs.prototype, "orientation");
-__decorateClass([
-  property({ type: String })
-], VdsTabs.prototype, "activation");
-class VdsTab extends LitElement {
+n([
+  r({ type: String })
+], v.prototype, "value");
+n([
+  r({ type: String, reflect: !0, attribute: "data-orientation" })
+], v.prototype, "orientation");
+n([
+  r({ type: String })
+], v.prototype, "activation");
+class f extends u {
   constructor() {
-    super();
-    this.value = "";
-    this.disabled = false;
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "tab");
+    super(), this.value = "", this.disabled = !1, this.internals = this.attachInternals(), c(this, this.internals, "tab");
   }
   static {
-    this.styles = css`
+    this.styles = d`
     :host {
       display: inline-flex;
       align-items: center;
@@ -187,49 +150,40 @@ class VdsTab extends LitElement {
   `;
   }
   connectedCallback() {
-    super.connectedCallback();
-    this.slot = "tab";
-    if (!this.hasAttribute("tabindex")) this.tabIndex = -1;
+    super.connectedCallback(), this.slot = "tab", this.hasAttribute("tabindex") || (this.tabIndex = -1);
   }
-  updated(changed) {
-    if (changed.has("disabled")) {
-      setAriaProperty(this, this.internals, "ariaDisabled", this.disabled);
-    }
+  updated(t) {
+    t.has("disabled") && p(this, this.internals, "ariaDisabled", this.disabled);
   }
   render() {
-    return html`<slot></slot>`;
+    return h`<slot></slot>`;
   }
 }
-__decorateClass([
-  property({ type: String })
-], VdsTab.prototype, "value");
-__decorateClass([
-  property({ type: Boolean, reflect: true })
-], VdsTab.prototype, "disabled");
-class VdsTabPanel extends LitElement {
+n([
+  r({ type: String })
+], f.prototype, "value");
+n([
+  r({ type: Boolean, reflect: !0 })
+], f.prototype, "disabled");
+class x extends u {
   constructor() {
-    super();
-    this.value = "";
-    this.internals = this.attachInternals();
-    setRole(this, this.internals, "tabpanel");
-    this.tabIndex = 0;
+    super(), this.value = "", this.internals = this.attachInternals(), c(this, this.internals, "tabpanel"), this.tabIndex = 0;
   }
   static {
-    this.styles = css`
+    this.styles = d`
     :host { display: block; padding: var(--vds-spacing-4) 0; }
     :host([hidden]) { display: none; }
   `;
   }
   render() {
-    return html`<slot></slot>`;
+    return h`<slot></slot>`;
   }
 }
-__decorateClass([
-  property({ type: String })
-], VdsTabPanel.prototype, "value");
+n([
+  r({ type: String })
+], x.prototype, "value");
 export {
-  VdsTab,
-  VdsTabPanel,
-  VdsTabs
+  f as VdsTab,
+  x as VdsTabPanel,
+  v as VdsTabs
 };
-//# sourceMappingURL=vds-tabs.js.map
