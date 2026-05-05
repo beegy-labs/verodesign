@@ -1,61 +1,110 @@
 /* @verobee/design — themes/veronex.css */
-/* Theme: veronex. light-dark() collapsed; mode toggled via :root color-scheme. */
-/* Architecture: docs/llm/build/optimization.md § Technique 4. */
+/* Theme: veronex. Mode toggled via [data-mode] attribute selector. */
+/* Each mode has its own block — no light-dark() function dependency. */
 
 @layer vds-tokens {
-  [data-theme="veronex"] {
-  --vds-theme-bg-page: light-dark(oklch(98% 0.003 240), oklch(5% 0.005 240));
-  --vds-theme-bg-card: light-dark(oklch(100% 0 0), oklch(12% 0.012 240));
-  --vds-theme-bg-elevated: light-dark(oklch(100% 0 0), oklch(20% 0.015 240));
-  --vds-theme-bg-hover: light-dark(oklch(95% 0.005 240), oklch(20% 0.015 240));
-  --vds-theme-bg-muted: light-dark(oklch(90% 0.008 240), oklch(30% 0.018 240));
-  --vds-theme-bg-inverse: light-dark(oklch(12% 0.012 240), oklch(98% 0.003 240));
-  --vds-theme-bg-code: light-dark(oklch(95% 0.005 240), oklch(20% 0.015 240));
-  --vds-theme-text-primary: light-dark(oklch(12% 0.012 240), oklch(98% 0.003 240));
-  --vds-theme-text-secondary: light-dark(oklch(30% 0.018 240), oklch(90% 0.008 240));
-  --vds-theme-text-dim: light-dark(oklch(50% 0.02 240), oklch(70% 0.015 240));
-  --vds-theme-text-faint: light-dark(oklch(70% 0.015 240), oklch(50% 0.02 240));
-  --vds-theme-text-bright: light-dark(oklch(5% 0.005 240), oklch(100% 0 0));
-  --vds-theme-text-inverse: light-dark(oklch(98% 0.003 240), oklch(12% 0.012 240));
-  --vds-theme-border-subtle: light-dark(oklch(90% 0.008 240), oklch(20% 0.015 240));
-  --vds-theme-border-default: light-dark(oklch(80% 0.012 240), oklch(30% 0.018 240));
-  --vds-theme-border-strong: light-dark(oklch(50% 0.02 240), oklch(60% 0.018 240));
-  --vds-theme-border-focus: light-dark(oklch(40% 0.1 150), oklch(72% 0.16 165));
-  --vds-theme-primary: light-dark(oklch(30% 0.06 150), oklch(72% 0.16 165));
-  --vds-theme-primary-fg: light-dark(oklch(100% 0 0), oklch(15% 0.04 150));
-  --vds-theme-primary-ring: light-dark(oklch(40% 0.1 150), oklch(82% 0.12 165));
-  --vds-theme-accent: light-dark(oklch(50% 0.152 180), oklch(70% 0.136 180));
-  --vds-theme-accent-fg: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
-  --vds-theme-destructive: oklch(50% 0.2 25);
-  --vds-theme-destructive-fg: oklch(100% 0 0);
-  --vds-theme-success: oklch(50% 0.171 145);
-  --vds-theme-success-fg: oklch(100% 0 0);
-  --vds-theme-warning: light-dark(oklch(60% 0.18 70), oklch(70% 0.153 70));
-  --vds-theme-warning-fg: oklch(5% 0.005 240);
-  --vds-theme-error: oklch(50% 0.2 25);
-  --vds-theme-error-fg: oklch(100% 0 0);
-  --vds-theme-info: light-dark(oklch(30% 0.06 150), oklch(72% 0.16 165));
-  --vds-theme-info-fg: light-dark(oklch(100% 0 0), oklch(15% 0.04 150));
-  --vds-theme-neutral: light-dark(oklch(50% 0.02 240), oklch(60% 0.018 240));
-  --vds-theme-neutral-fg: oklch(100% 0 0);
-  --vds-theme-chart-1: light-dark(oklch(30% 0.06 150), oklch(72% 0.16 165));
-  --vds-theme-chart-2: light-dark(oklch(60% 0.16 180), oklch(70% 0.136 180));
-  --vds-theme-chart-3: light-dark(oklch(60% 0.18 130), oklch(70% 0.153 130));
-  --vds-theme-chart-4: light-dark(oklch(60% 0.18 70), oklch(70% 0.153 70));
-  --vds-theme-chart-5: light-dark(oklch(60% 0.21 275), oklch(70% 0.179 275));
-  --vds-theme-success-bg: light-dark(oklch(95% 0.018 145), oklch(20% 0.09 145));
-  --vds-theme-error-bg: light-dark(oklch(95% 0.018 25), oklch(20% 0.105 25));
-  --vds-theme-warning-bg: light-dark(oklch(95% 0.018 70), oklch(20% 0.09 70));
-  --vds-theme-info-bg: light-dark(oklch(95% 0.018 250), oklch(20% 0.05 165));
-  --vds-theme-neutral-bg: light-dark(oklch(95% 0.005 240), oklch(20% 0.015 240));
-  --vds-theme-cancelled: light-dark(oklch(50% 0.02 240), oklch(40% 0.02 240));
-  --vds-theme-cancelled-fg: light-dark(oklch(100% 0 0), oklch(98% 0.003 240));
-  --vds-theme-accent-2: light-dark(oklch(45% 0.16 60), oklch(65% 0.16 60));
-  --vds-theme-accent-2-fg: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
-  --vds-theme-accent-3: light-dark(oklch(50% 0.16 195), oklch(70% 0.14 195));
-  --vds-theme-accent-3-fg: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
-  --vds-theme-logo-start: light-dark(oklch(30% 0.06 150), oklch(72% 0.16 165));
-  --vds-theme-logo-end: light-dark(oklch(60% 0.16 180), oklch(70% 0.136 180));
-  --vds-theme-logo-inner: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
+  [data-theme="veronex"],
+  [data-theme="veronex"][data-mode="light"] {
+    --vds-theme-bg-page: oklch(98% 0.003 240);
+    --vds-theme-bg-card: oklch(100% 0 0);
+    --vds-theme-bg-elevated: oklch(100% 0 0);
+    --vds-theme-bg-hover: oklch(95% 0.005 240);
+    --vds-theme-bg-muted: oklch(90% 0.008 240);
+    --vds-theme-bg-inverse: oklch(12% 0.012 240);
+    --vds-theme-bg-code: oklch(95% 0.005 240);
+    --vds-theme-text-primary: oklch(12% 0.012 240);
+    --vds-theme-text-secondary: oklch(30% 0.018 240);
+    --vds-theme-text-dim: oklch(50% 0.02 240);
+    --vds-theme-text-faint: oklch(70% 0.015 240);
+    --vds-theme-text-bright: oklch(5% 0.005 240);
+    --vds-theme-text-inverse: oklch(98% 0.003 240);
+    --vds-theme-border-subtle: oklch(90% 0.008 240);
+    --vds-theme-border-default: oklch(80% 0.012 240);
+    --vds-theme-border-strong: oklch(50% 0.02 240);
+    --vds-theme-border-focus: oklch(40% 0.1 150);
+    --vds-theme-primary: oklch(30% 0.06 150);
+    --vds-theme-primary-fg: oklch(100% 0 0);
+    --vds-theme-primary-ring: oklch(40% 0.1 150);
+    --vds-theme-accent: oklch(50% 0.152 180);
+    --vds-theme-accent-fg: oklch(100% 0 0);
+    --vds-theme-destructive: oklch(50% 0.2 25);
+    --vds-theme-destructive-fg: oklch(100% 0 0);
+    --vds-theme-success: oklch(50% 0.171 145);
+    --vds-theme-success-fg: oklch(100% 0 0);
+    --vds-theme-warning: oklch(60% 0.18 70);
+    --vds-theme-warning-fg: oklch(5% 0.005 240);
+    --vds-theme-error: oklch(50% 0.2 25);
+    --vds-theme-error-fg: oklch(100% 0 0);
+    --vds-theme-info: oklch(30% 0.06 150);
+    --vds-theme-info-fg: oklch(100% 0 0);
+    --vds-theme-neutral: oklch(50% 0.02 240);
+    --vds-theme-neutral-fg: oklch(100% 0 0);
+    --vds-theme-chart-1: oklch(30% 0.06 150);
+    --vds-theme-chart-2: oklch(60% 0.16 180);
+    --vds-theme-chart-3: oklch(60% 0.18 130);
+    --vds-theme-chart-4: oklch(60% 0.18 70);
+    --vds-theme-chart-5: oklch(60% 0.21 275);
+    --vds-theme-success-bg: oklch(95% 0.018 145);
+    --vds-theme-error-bg: oklch(95% 0.018 25);
+    --vds-theme-warning-bg: oklch(95% 0.018 70);
+    --vds-theme-info-bg: oklch(95% 0.018 250);
+    --vds-theme-neutral-bg: oklch(95% 0.005 240);
+    --vds-theme-cancelled: oklch(50% 0.02 240);
+    --vds-theme-cancelled-fg: oklch(100% 0 0);
+    --vds-theme-accent-2: oklch(45% 0.16 60);
+    --vds-theme-accent-2-fg: oklch(100% 0 0);
+    --vds-theme-accent-3: oklch(50% 0.16 195);
+    --vds-theme-accent-3-fg: oklch(100% 0 0);
+    --vds-theme-logo-start: oklch(30% 0.06 150);
+    --vds-theme-logo-end: oklch(60% 0.16 180);
+    --vds-theme-logo-inner: oklch(100% 0 0);
+  }
+
+  [data-theme="veronex"][data-mode="dark"] {
+    --vds-theme-bg-page: oklch(5% 0.005 240);
+    --vds-theme-bg-card: oklch(12% 0.012 240);
+    --vds-theme-bg-elevated: oklch(20% 0.015 240);
+    --vds-theme-bg-hover: oklch(20% 0.015 240);
+    --vds-theme-bg-muted: oklch(30% 0.018 240);
+    --vds-theme-bg-inverse: oklch(98% 0.003 240);
+    --vds-theme-bg-code: oklch(20% 0.015 240);
+    --vds-theme-text-primary: oklch(98% 0.003 240);
+    --vds-theme-text-secondary: oklch(90% 0.008 240);
+    --vds-theme-text-dim: oklch(70% 0.015 240);
+    --vds-theme-text-faint: oklch(50% 0.02 240);
+    --vds-theme-text-bright: oklch(100% 0 0);
+    --vds-theme-text-inverse: oklch(12% 0.012 240);
+    --vds-theme-border-subtle: oklch(20% 0.015 240);
+    --vds-theme-border-default: oklch(30% 0.018 240);
+    --vds-theme-border-strong: oklch(60% 0.018 240);
+    --vds-theme-border-focus: oklch(72% 0.16 165);
+    --vds-theme-primary: oklch(72% 0.16 165);
+    --vds-theme-primary-fg: oklch(15% 0.04 150);
+    --vds-theme-primary-ring: oklch(82% 0.12 165);
+    --vds-theme-accent: oklch(70% 0.136 180);
+    --vds-theme-accent-fg: oklch(5% 0.005 240);
+    --vds-theme-warning: oklch(70% 0.153 70);
+    --vds-theme-info: oklch(72% 0.16 165);
+    --vds-theme-info-fg: oklch(15% 0.04 150);
+    --vds-theme-neutral: oklch(60% 0.018 240);
+    --vds-theme-chart-1: oklch(72% 0.16 165);
+    --vds-theme-chart-2: oklch(70% 0.136 180);
+    --vds-theme-chart-3: oklch(70% 0.153 130);
+    --vds-theme-chart-4: oklch(70% 0.153 70);
+    --vds-theme-chart-5: oklch(70% 0.179 275);
+    --vds-theme-success-bg: oklch(20% 0.09 145);
+    --vds-theme-error-bg: oklch(20% 0.105 25);
+    --vds-theme-warning-bg: oklch(20% 0.09 70);
+    --vds-theme-info-bg: oklch(20% 0.05 165);
+    --vds-theme-neutral-bg: oklch(20% 0.015 240);
+    --vds-theme-cancelled: oklch(40% 0.02 240);
+    --vds-theme-cancelled-fg: oklch(98% 0.003 240);
+    --vds-theme-accent-2: oklch(65% 0.16 60);
+    --vds-theme-accent-2-fg: oklch(5% 0.005 240);
+    --vds-theme-accent-3: oklch(70% 0.14 195);
+    --vds-theme-accent-3-fg: oklch(5% 0.005 240);
+    --vds-theme-logo-start: oklch(72% 0.16 165);
+    --vds-theme-logo-end: oklch(70% 0.136 180);
+    --vds-theme-logo-inner: oklch(5% 0.005 240);
   }
 }

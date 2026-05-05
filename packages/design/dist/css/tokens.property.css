@@ -1249,267 +1249,267 @@
 }
 @property --vds-theme-bg-page {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(98% 0.003 240);
 }
 @property --vds-theme-bg-card {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-bg-elevated {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-bg-hover {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.005 240);
 }
 @property --vds-theme-bg-muted {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(90% 0.008 240);
 }
 @property --vds-theme-bg-inverse {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(12% 0.012 240);
 }
 @property --vds-theme-bg-code {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.005 240);
 }
 @property --vds-theme-text-primary {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(12% 0.012 240);
 }
 @property --vds-theme-text-secondary {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(30% 0.018 240);
 }
 @property --vds-theme-text-dim {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
 @property --vds-theme-text-faint {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(70% 0.015 240);
 }
 @property --vds-theme-text-bright {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(5% 0.005 240);
 }
 @property --vds-theme-text-inverse {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(98% 0.003 240);
 }
 @property --vds-theme-border-subtle {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(90% 0.008 240);
 }
 @property --vds-theme-border-default {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(80% 0.012 240);
 }
 @property --vds-theme-border-strong {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
 @property --vds-theme-border-focus {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.2 250);
 }
 @property --vds-theme-primary {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.19 250);
 }
 @property --vds-theme-primary-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-primary-ring {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(70% 0.17 250);
 }
 @property --vds-theme-accent {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.152 215);
 }
 @property --vds-theme-accent-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-destructive {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.2 25);
 }
 @property --vds-theme-destructive-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-success {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.171 145);
 }
 @property --vds-theme-success-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-warning {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.18 70);
 }
 @property --vds-theme-warning-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(5% 0.005 240);
 }
 @property --vds-theme-error {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.2 25);
 }
 @property --vds-theme-error-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-info {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.19 250);
 }
 @property --vds-theme-info-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-neutral {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
 @property --vds-theme-neutral-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-chart-1 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.2 250);
 }
 @property --vds-theme-chart-2 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.18 145);
 }
 @property --vds-theme-chart-3 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.18 70);
 }
 @property --vds-theme-chart-4 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.2 305);
 }
 @property --vds-theme-chart-5 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.2 350);
 }
 @property --vds-theme-success-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.018 145);
 }
 @property --vds-theme-error-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.018 25);
 }
 @property --vds-theme-warning-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.018 70);
 }
 @property --vds-theme-info-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.018 250);
 }
 @property --vds-theme-neutral-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.005 240);
 }
 @property --vds-theme-cancelled {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
 @property --vds-theme-cancelled-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-accent-2 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.171 70);
 }
 @property --vds-theme-accent-2-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-accent-3 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.152 215);
 }
 @property --vds-theme-accent-3-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-logo-start {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.19 250);
 }
 @property --vds-theme-logo-end {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.16 215);
 }
 @property --vds-theme-logo-inner {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-breakpoint-xs {

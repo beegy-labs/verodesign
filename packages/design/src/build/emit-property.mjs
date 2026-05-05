@@ -18,7 +18,16 @@ function descriptorFor(token) {
   if (type === 'shadow') return { syntax: '"*"', inherits: 'false', composite: true };
   if (type === 'cubicBezier') return { syntax: '"*"', inherits: 'false', composite: true };
 
-  if (type === 'color') return { syntax: '"<color>"', inherits: 'false' };
+  // Theme color tokens (theme.bg.page, theme.text.primary, etc.) MUST inherit
+  // so that :root / [data-theme] / [data-mode] cascades flow to every
+  // descendant — otherwise children fall back to the registered
+  // `initial-value` (light) regardless of the active mode and theming breaks.
+  // Palette primitives (color.slate.*, color.blue.*) stay non-inheriting since
+  // they're constants used only via var() reference, never re-defined per element.
+  if (type === 'color') {
+    const isThemeToken = path[0] === 'theme';
+    return { syntax: '"<color>"', inherits: isThemeToken ? 'true' : 'false' };
+  }
 
   if (type === 'dimension') {
     // font-size may eventually be fluid clamp() — accept length-percentage for those paths

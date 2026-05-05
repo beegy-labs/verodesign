@@ -1253,267 +1253,267 @@
 }
 @property --vds-theme-bg-page {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(98% 0.003 240);
 }
 @property --vds-theme-bg-card {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-bg-elevated {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-bg-hover {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.005 240);
 }
 @property --vds-theme-bg-muted {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(90% 0.008 240);
 }
 @property --vds-theme-bg-inverse {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(12% 0.012 240);
 }
 @property --vds-theme-bg-code {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.005 240);
 }
 @property --vds-theme-text-primary {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(12% 0.012 240);
 }
 @property --vds-theme-text-secondary {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(30% 0.018 240);
 }
 @property --vds-theme-text-dim {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
 @property --vds-theme-text-faint {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(70% 0.015 240);
 }
 @property --vds-theme-text-bright {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(5% 0.005 240);
 }
 @property --vds-theme-text-inverse {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(98% 0.003 240);
 }
 @property --vds-theme-border-subtle {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(90% 0.008 240);
 }
 @property --vds-theme-border-default {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(80% 0.012 240);
 }
 @property --vds-theme-border-strong {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
 @property --vds-theme-border-focus {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.2 250);
 }
 @property --vds-theme-primary {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.19 250);
 }
 @property --vds-theme-primary-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-primary-ring {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(70% 0.17 250);
 }
 @property --vds-theme-accent {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.152 215);
 }
 @property --vds-theme-accent-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-destructive {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.2 25);
 }
 @property --vds-theme-destructive-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-success {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.171 145);
 }
 @property --vds-theme-success-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-warning {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.18 70);
 }
 @property --vds-theme-warning-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(5% 0.005 240);
 }
 @property --vds-theme-error {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.2 25);
 }
 @property --vds-theme-error-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-info {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.19 250);
 }
 @property --vds-theme-info-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-neutral {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
 @property --vds-theme-neutral-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-chart-1 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.2 250);
 }
 @property --vds-theme-chart-2 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.18 145);
 }
 @property --vds-theme-chart-3 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.18 70);
 }
 @property --vds-theme-chart-4 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.2 305);
 }
 @property --vds-theme-chart-5 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.2 350);
 }
 @property --vds-theme-success-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.018 145);
 }
 @property --vds-theme-error-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.018 25);
 }
 @property --vds-theme-warning-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.018 70);
 }
 @property --vds-theme-info-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.018 250);
 }
 @property --vds-theme-neutral-bg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(95% 0.005 240);
 }
 @property --vds-theme-cancelled {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
 @property --vds-theme-cancelled-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-accent-2 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.171 70);
 }
 @property --vds-theme-accent-2-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-accent-3 {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.152 215);
 }
 @property --vds-theme-accent-3-fg {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-theme-logo-start {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(50% 0.19 250);
 }
 @property --vds-theme-logo-end {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(60% 0.16 215);
 }
 @property --vds-theme-logo-inner {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: oklch(100% 0 0);
 }
 @property --vds-breakpoint-xs {
@@ -2274,65 +2274,114 @@
 
 /* === css/themes/default.css === */
 /* @verobee/design — themes/default.css */
-/* Theme: default. light-dark() collapsed; mode toggled via :root color-scheme. */
-/* Architecture: docs/llm/build/optimization.md § Technique 4. */
+/* Theme: default. Mode toggled via [data-mode] attribute selector. */
+/* Each mode has its own block — no light-dark() function dependency. */
 
 @layer vds-tokens {
   :root,
-  [data-theme="default"] {
-  --vds-theme-bg-page: light-dark(oklch(98% 0.003 240), oklch(5% 0.005 240));
-  --vds-theme-bg-card: light-dark(oklch(100% 0 0), oklch(12% 0.012 240));
-  --vds-theme-bg-elevated: light-dark(oklch(100% 0 0), oklch(20% 0.015 240));
-  --vds-theme-bg-hover: light-dark(oklch(95% 0.005 240), oklch(20% 0.015 240));
-  --vds-theme-bg-muted: light-dark(oklch(90% 0.008 240), oklch(30% 0.018 240));
-  --vds-theme-bg-inverse: light-dark(oklch(12% 0.012 240), oklch(98% 0.003 240));
-  --vds-theme-bg-code: light-dark(oklch(95% 0.005 240), oklch(20% 0.015 240));
-  --vds-theme-text-primary: light-dark(oklch(12% 0.012 240), oklch(98% 0.003 240));
-  --vds-theme-text-secondary: light-dark(oklch(30% 0.018 240), oklch(90% 0.008 240));
-  --vds-theme-text-dim: light-dark(oklch(50% 0.02 240), oklch(70% 0.015 240));
-  --vds-theme-text-faint: light-dark(oklch(70% 0.015 240), oklch(50% 0.02 240));
-  --vds-theme-text-bright: light-dark(oklch(5% 0.005 240), oklch(100% 0 0));
-  --vds-theme-text-inverse: light-dark(oklch(98% 0.003 240), oklch(12% 0.012 240));
-  --vds-theme-border-subtle: light-dark(oklch(90% 0.008 240), oklch(20% 0.015 240));
-  --vds-theme-border-default: light-dark(oklch(80% 0.012 240), oklch(30% 0.018 240));
-  --vds-theme-border-strong: light-dark(oklch(50% 0.02 240), oklch(60% 0.018 240));
-  --vds-theme-border-focus: light-dark(oklch(60% 0.2 250), oklch(70% 0.17 250));
-  --vds-theme-primary: light-dark(oklch(50% 0.19 250), oklch(70% 0.17 250));
-  --vds-theme-primary-fg: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
-  --vds-theme-primary-ring: light-dark(oklch(70% 0.17 250), oklch(80% 0.1 250));
-  --vds-theme-accent: light-dark(oklch(50% 0.152 215), oklch(70% 0.136 215));
-  --vds-theme-accent-fg: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
-  --vds-theme-destructive: oklch(50% 0.2 25);
-  --vds-theme-destructive-fg: oklch(100% 0 0);
-  --vds-theme-success: oklch(50% 0.171 145);
-  --vds-theme-success-fg: oklch(100% 0 0);
-  --vds-theme-warning: light-dark(oklch(60% 0.18 70), oklch(70% 0.153 70));
-  --vds-theme-warning-fg: oklch(5% 0.005 240);
-  --vds-theme-error: oklch(50% 0.2 25);
-  --vds-theme-error-fg: oklch(100% 0 0);
-  --vds-theme-info: light-dark(oklch(50% 0.19 250), oklch(70% 0.17 250));
-  --vds-theme-info-fg: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
-  --vds-theme-neutral: light-dark(oklch(50% 0.02 240), oklch(60% 0.018 240));
-  --vds-theme-neutral-fg: oklch(100% 0 0);
-  --vds-theme-chart-1: light-dark(oklch(60% 0.2 250), oklch(70% 0.17 250));
-  --vds-theme-chart-2: light-dark(oklch(60% 0.18 145), oklch(70% 0.153 145));
-  --vds-theme-chart-3: light-dark(oklch(60% 0.18 70), oklch(70% 0.153 70));
-  --vds-theme-chart-4: light-dark(oklch(60% 0.2 305), oklch(70% 0.17 305));
-  --vds-theme-chart-5: light-dark(oklch(60% 0.2 350), oklch(70% 0.17 350));
-  --vds-theme-success-bg: light-dark(oklch(95% 0.018 145), oklch(20% 0.09 145));
-  --vds-theme-error-bg: light-dark(oklch(95% 0.018 25), oklch(20% 0.105 25));
-  --vds-theme-warning-bg: light-dark(oklch(95% 0.018 70), oklch(20% 0.09 70));
-  --vds-theme-info-bg: light-dark(oklch(95% 0.018 250), oklch(20% 0.1 250));
-  --vds-theme-neutral-bg: light-dark(oklch(95% 0.005 240), oklch(20% 0.015 240));
-  --vds-theme-cancelled: light-dark(oklch(50% 0.02 240), oklch(40% 0.02 240));
-  --vds-theme-cancelled-fg: light-dark(oklch(100% 0 0), oklch(98% 0.003 240));
-  --vds-theme-accent-2: light-dark(oklch(50% 0.171 70), oklch(70% 0.153 70));
-  --vds-theme-accent-2-fg: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
-  --vds-theme-accent-3: light-dark(oklch(50% 0.152 215), oklch(70% 0.136 215));
-  --vds-theme-accent-3-fg: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
-  --vds-theme-logo-start: light-dark(oklch(50% 0.19 250), oklch(70% 0.17 250));
-  --vds-theme-logo-end: light-dark(oklch(60% 0.16 215), oklch(70% 0.136 215));
-  --vds-theme-logo-inner: light-dark(oklch(100% 0 0), oklch(5% 0.005 240));
+  [data-theme="default"],
+  [data-theme="default"][data-mode="light"] {
+    --vds-theme-bg-page: oklch(98% 0.003 240);
+    --vds-theme-bg-card: oklch(100% 0 0);
+    --vds-theme-bg-elevated: oklch(100% 0 0);
+    --vds-theme-bg-hover: oklch(95% 0.005 240);
+    --vds-theme-bg-muted: oklch(90% 0.008 240);
+    --vds-theme-bg-inverse: oklch(12% 0.012 240);
+    --vds-theme-bg-code: oklch(95% 0.005 240);
+    --vds-theme-text-primary: oklch(12% 0.012 240);
+    --vds-theme-text-secondary: oklch(30% 0.018 240);
+    --vds-theme-text-dim: oklch(50% 0.02 240);
+    --vds-theme-text-faint: oklch(70% 0.015 240);
+    --vds-theme-text-bright: oklch(5% 0.005 240);
+    --vds-theme-text-inverse: oklch(98% 0.003 240);
+    --vds-theme-border-subtle: oklch(90% 0.008 240);
+    --vds-theme-border-default: oklch(80% 0.012 240);
+    --vds-theme-border-strong: oklch(50% 0.02 240);
+    --vds-theme-border-focus: oklch(60% 0.2 250);
+    --vds-theme-primary: oklch(50% 0.19 250);
+    --vds-theme-primary-fg: oklch(100% 0 0);
+    --vds-theme-primary-ring: oklch(70% 0.17 250);
+    --vds-theme-accent: oklch(50% 0.152 215);
+    --vds-theme-accent-fg: oklch(100% 0 0);
+    --vds-theme-destructive: oklch(50% 0.2 25);
+    --vds-theme-destructive-fg: oklch(100% 0 0);
+    --vds-theme-success: oklch(50% 0.171 145);
+    --vds-theme-success-fg: oklch(100% 0 0);
+    --vds-theme-warning: oklch(60% 0.18 70);
+    --vds-theme-warning-fg: oklch(5% 0.005 240);
+    --vds-theme-error: oklch(50% 0.2 25);
+    --vds-theme-error-fg: oklch(100% 0 0);
+    --vds-theme-info: oklch(50% 0.19 250);
+    --vds-theme-info-fg: oklch(100% 0 0);
+    --vds-theme-neutral: oklch(50% 0.02 240);
+    --vds-theme-neutral-fg: oklch(100% 0 0);
+    --vds-theme-chart-1: oklch(60% 0.2 250);
+    --vds-theme-chart-2: oklch(60% 0.18 145);
+    --vds-theme-chart-3: oklch(60% 0.18 70);
+    --vds-theme-chart-4: oklch(60% 0.2 305);
+    --vds-theme-chart-5: oklch(60% 0.2 350);
+    --vds-theme-success-bg: oklch(95% 0.018 145);
+    --vds-theme-error-bg: oklch(95% 0.018 25);
+    --vds-theme-warning-bg: oklch(95% 0.018 70);
+    --vds-theme-info-bg: oklch(95% 0.018 250);
+    --vds-theme-neutral-bg: oklch(95% 0.005 240);
+    --vds-theme-cancelled: oklch(50% 0.02 240);
+    --vds-theme-cancelled-fg: oklch(100% 0 0);
+    --vds-theme-accent-2: oklch(50% 0.171 70);
+    --vds-theme-accent-2-fg: oklch(100% 0 0);
+    --vds-theme-accent-3: oklch(50% 0.152 215);
+    --vds-theme-accent-3-fg: oklch(100% 0 0);
+    --vds-theme-logo-start: oklch(50% 0.19 250);
+    --vds-theme-logo-end: oklch(60% 0.16 215);
+    --vds-theme-logo-inner: oklch(100% 0 0);
+  }
+
+  [data-theme="default"][data-mode="dark"] {
+    --vds-theme-bg-page: oklch(5% 0.005 240);
+    --vds-theme-bg-card: oklch(12% 0.012 240);
+    --vds-theme-bg-elevated: oklch(20% 0.015 240);
+    --vds-theme-bg-hover: oklch(20% 0.015 240);
+    --vds-theme-bg-muted: oklch(30% 0.018 240);
+    --vds-theme-bg-inverse: oklch(98% 0.003 240);
+    --vds-theme-bg-code: oklch(20% 0.015 240);
+    --vds-theme-text-primary: oklch(98% 0.003 240);
+    --vds-theme-text-secondary: oklch(90% 0.008 240);
+    --vds-theme-text-dim: oklch(70% 0.015 240);
+    --vds-theme-text-faint: oklch(50% 0.02 240);
+    --vds-theme-text-bright: oklch(100% 0 0);
+    --vds-theme-text-inverse: oklch(12% 0.012 240);
+    --vds-theme-border-subtle: oklch(20% 0.015 240);
+    --vds-theme-border-default: oklch(30% 0.018 240);
+    --vds-theme-border-strong: oklch(60% 0.018 240);
+    --vds-theme-border-focus: oklch(70% 0.17 250);
+    --vds-theme-primary: oklch(70% 0.17 250);
+    --vds-theme-primary-fg: oklch(5% 0.005 240);
+    --vds-theme-primary-ring: oklch(80% 0.1 250);
+    --vds-theme-accent: oklch(70% 0.136 215);
+    --vds-theme-accent-fg: oklch(5% 0.005 240);
+    --vds-theme-warning: oklch(70% 0.153 70);
+    --vds-theme-info: oklch(70% 0.17 250);
+    --vds-theme-info-fg: oklch(5% 0.005 240);
+    --vds-theme-neutral: oklch(60% 0.018 240);
+    --vds-theme-chart-1: oklch(70% 0.17 250);
+    --vds-theme-chart-2: oklch(70% 0.153 145);
+    --vds-theme-chart-3: oklch(70% 0.153 70);
+    --vds-theme-chart-4: oklch(70% 0.17 305);
+    --vds-theme-chart-5: oklch(70% 0.17 350);
+    --vds-theme-success-bg: oklch(20% 0.09 145);
+    --vds-theme-error-bg: oklch(20% 0.105 25);
+    --vds-theme-warning-bg: oklch(20% 0.09 70);
+    --vds-theme-info-bg: oklch(20% 0.1 250);
+    --vds-theme-neutral-bg: oklch(20% 0.015 240);
+    --vds-theme-cancelled: oklch(40% 0.02 240);
+    --vds-theme-cancelled-fg: oklch(98% 0.003 240);
+    --vds-theme-accent-2: oklch(70% 0.153 70);
+    --vds-theme-accent-2-fg: oklch(5% 0.005 240);
+    --vds-theme-accent-3: oklch(70% 0.136 215);
+    --vds-theme-accent-3-fg: oklch(5% 0.005 240);
+    --vds-theme-logo-start: oklch(70% 0.17 250);
+    --vds-theme-logo-end: oklch(70% 0.136 215);
+    --vds-theme-logo-inner: oklch(5% 0.005 240);
   }
 }
 

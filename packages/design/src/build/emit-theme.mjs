@@ -17,14 +17,9 @@ function formatColor(value) {
   return value;
 }
 
-// Collapse a (light, dark) pair into a single CSS declaration. If the values
-// are equal, emit a plain value; otherwise emit light-dark(L, D). Architecture:
-// docs/llm/build/optimization.md § Technique 4 — light-dark() theme collapse.
-function emitDeclaration(cssVar, lightValue, darkValue) {
-  const L = formatColor(lightValue);
-  const D = formatColor(darkValue);
-  if (L === D) return `  ${cssVar}: ${L};`;
-  return `  ${cssVar}: light-dark(${L}, ${D});`;
+// Emit a single declaration line for one mode (light or dark).
+function emitLine(cssVar, value) {
+  return `    ${cssVar}: ${formatColor(value)};`;
 }
 
 export async function emitThemeCss(theme) {
@@ -34,32 +29,42 @@ export async function emitThemeCss(theme) {
   const lightFlat = resolveTokens(flattenTokens(lightTree), lightTree).filter(isSemanticToken);
   const darkFlat = resolveTokens(flattenTokens(darkTree), darkTree).filter(isSemanticToken);
 
-  // Build a path-keyed map for both modes
   const lightByVar = new Map(lightFlat.map((t) => [tokenPathToCssVar(t.path), t.resolvedValue]));
   const darkByVar = new Map(darkFlat.map((t) => [tokenPathToCssVar(t.path), t.resolvedValue]));
 
-  // Emit a declaration per unique semantic token
   const allVars = new Set([...lightByVar.keys(), ...darkByVar.keys()]);
-  const lines = [];
+
+  // Split into mode-specific blocks. Tokens that share the same value across
+  // modes go into the light block (which is the default + [data-mode="light"]).
+  const lightLines = [];
+  const darkLines = [];
   for (const cssVar of allVars) {
     const L = lightByVar.get(cssVar) ?? darkByVar.get(cssVar);
     const D = darkByVar.get(cssVar) ?? lightByVar.get(cssVar);
-    lines.push(emitDeclaration(cssVar, L, D));
+    lightLines.push(emitLine(cssVar, L));
+    if (formatColor(L) !== formatColor(D)) {
+      darkLines.push(emitLine(cssVar, D));
+    }
   }
 
   const isDefault = theme === 'default';
-  const selector = isDefault
-    ? `:root,\n  [data-theme="${theme}"]`
-    : `[data-theme="${theme}"]`;
+  const baseSelector = isDefault
+    ? `:root,\n  [data-theme="${theme}"],\n  [data-theme="${theme}"][data-mode="light"]`
+    : `[data-theme="${theme}"],\n  [data-theme="${theme}"][data-mode="light"]`;
+  const darkSelector = `[data-theme="${theme}"][data-mode="dark"]`;
 
   const css = [
     `/* @verobee/design — themes/${theme}.css */`,
-    `/* Theme: ${theme}. light-dark() collapsed; mode toggled via :root color-scheme. */`,
-    `/* Architecture: docs/llm/build/optimization.md § Technique 4. */`,
+    `/* Theme: ${theme}. Mode toggled via [data-mode] attribute selector. */`,
+    `/* Each mode has its own block — no light-dark() function dependency. */`,
     '',
     '@layer vds-tokens {',
-    `  ${selector} {`,
-    ...lines,
+    `  ${baseSelector} {`,
+    ...lightLines,
+    '  }',
+    '',
+    `  ${darkSelector} {`,
+    ...darkLines,
     '  }',
     '}',
     '',
