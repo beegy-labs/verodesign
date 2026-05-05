@@ -201,6 +201,43 @@
       "4": { "$value": "{color.violet.6}", "$type": "color" },
       "5": { "$value": "{color.pink.6}", "$type": "color" }
     },
+    "map": {
+      "ocean": {
+        "$value": "oklch(94% 0.018 245)",
+        "$type": "color",
+        "$description": "Geographic data-viz canvas background"
+      },
+      "sphere": {
+        "$value": "oklch(97% 0.014 245)",
+        "$type": "color",
+        "$description": "Orthographic globe body"
+      },
+      "land": {
+        "$value": "oklch(76% 0.035 245)",
+        "$type": "color",
+        "$description": "Neutral land fill"
+      },
+      "border": {
+        "$value": "oklch(64% 0.04 245)",
+        "$type": "color",
+        "$description": "Country boundary stroke"
+      },
+      "active": {
+        "$value": "oklch(52% 0.14 250)",
+        "$type": "color",
+        "$description": "Low-intensity geographic data fill"
+      },
+      "active-strong": {
+        "$value": "oklch(38% 0.16 250)",
+        "$type": "color",
+        "$description": "High-intensity geographic data fill"
+      },
+      "glow": {
+        "$value": "oklch(70% 0.14 250)",
+        "$type": "color",
+        "$description": "Map focus and active halo"
+      }
+    },
     "success-bg": {
       "$value": "{color.green.2}",
       "$type": "color",

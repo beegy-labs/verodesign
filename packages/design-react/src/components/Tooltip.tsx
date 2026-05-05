@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsTooltip } from '@verobee/design-elements/components/tooltip';
 import '@verobee/design-elements/define/tooltip';
 
-export const Tooltip = createComponent({
+export const Tooltip = /*#__PURE__*/ createComponent({
   tagName: 'vds-tooltip',
   elementClass: VdsTooltip,
   react: React,

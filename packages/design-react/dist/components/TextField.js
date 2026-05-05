@@ -2,7 +2,7 @@ import * as e from "react";
 import { createComponent as t } from "@lit/react";
 import { VdsTextField as o } from "@verobee/design-elements/components/text-field";
 import "@verobee/design-elements/define/text-field";
-const a = t({
+const a = /* @__PURE__ */ t({
   tagName: "vds-text-field",
   elementClass: o,
   react: e,

@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsDialog } from '@verobee/design-elements/components/dialog';
 import '@verobee/design-elements/define/dialog';
 
-export const Dialog = createComponent({
+export const Dialog = /*#__PURE__*/ createComponent({
   tagName: 'vds-dialog',
   elementClass: VdsDialog,
   react: React,

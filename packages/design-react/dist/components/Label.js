@@ -2,7 +2,7 @@ import * as e from "react";
 import { createComponent as t } from "@lit/react";
 import { VdsLabel as o } from "@verobee/design-elements/components/label";
 import "@verobee/design-elements/define/label";
-const l = t({
+const l = /* @__PURE__ */ t({
   tagName: "vds-label",
   elementClass: o,
   react: e

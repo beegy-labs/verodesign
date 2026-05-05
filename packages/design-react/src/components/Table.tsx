@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsTable } from '@verobee/design-elements/components/table';
 import '@verobee/design-elements/define/table';
 
-export const Table = createComponent({
+export const Table = /*#__PURE__*/ createComponent({
   tagName: 'vds-table',
   elementClass: VdsTable,
   react: React,

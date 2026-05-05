@@ -64,6 +64,15 @@
       "4": { "$value": "{color.violet.5}", "$type": "color" },
       "5": { "$value": "{color.green.5}", "$type": "color" }
     },
+    "map": {
+      "ocean": { "$value": "oklch(8.5% 0.016 245)", "$type": "color" },
+      "sphere": { "$value": "oklch(13% 0.028 245)", "$type": "color" },
+      "land": { "$value": "oklch(23% 0.034 245)", "$type": "color" },
+      "border": { "$value": "oklch(34% 0.044 245)", "$type": "color" },
+      "active": { "$value": "oklch(64% 0.13 250)", "$type": "color" },
+      "active-strong": { "$value": "oklch(78% 0.15 250)", "$type": "color" },
+      "glow": { "$value": "oklch(75% 0.14 250)", "$type": "color" }
+    },
     "success-bg": { "$value": "{color.green.10}", "$type": "color" },
     "error-bg": { "$value": "{color.red.10}", "$type": "color" },
     "warning-bg": { "$value": "{color.amber.10}", "$type": "color" },

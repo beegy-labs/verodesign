@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsTextField } from '@verobee/design-elements/components/text-field';
 import '@verobee/design-elements/define/text-field';
 
-export const TextField = createComponent({
+export const TextField = /*#__PURE__*/ createComponent({
   tagName: 'vds-text-field',
   elementClass: VdsTextField,
   react: React,

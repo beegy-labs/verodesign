@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsSelect, VdsOption } from '@verobee/design-elements/components/select';
 import '@verobee/design-elements/define/select';
 
-export const Select = createComponent({
+export const Select = /*#__PURE__*/ createComponent({
   tagName: 'vds-select',
   elementClass: VdsSelect,
   react: React,
@@ -12,7 +12,7 @@ export const Select = createComponent({
   },
 });
 
-export const Option = createComponent({
+export const Option = /*#__PURE__*/ createComponent({
   tagName: 'vds-option',
   elementClass: VdsOption,
   react: React,

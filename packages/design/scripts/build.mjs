@@ -146,7 +146,7 @@ async function main() {
   done = step('Brotli-11 *.css.br siblings');
   const cmp = await emitCompress();
   const brRatio = ((cmp.totalBr / cmp.totalRaw) * 100).toFixed(1);
-  done(`(${cmp.count} files, ${(cmp.totalRaw / 1024).toFixed(0)} KB → ${(cmp.totalBr / 1024).toFixed(0)} KB · ${brRatio}%)`);
+  done(`(${cmp.count} files, concurrency=${cmp.concurrency}, ${(cmp.totalRaw / 1024).toFixed(0)} KB → ${(cmp.totalBr / 1024).toFixed(0)} KB · ${brRatio}%)`);
 
   console.log('done');
 }

@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsBadge } from '@verobee/design-elements/components/badge';
 import '@verobee/design-elements/define/badge';
 
-export const Badge = createComponent({
+export const Badge = /*#__PURE__*/ createComponent({
   tagName: 'vds-badge',
   elementClass: VdsBadge,
   react: React,

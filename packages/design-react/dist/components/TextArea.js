@@ -2,7 +2,7 @@ import * as e from "react";
 import { createComponent as t } from "@lit/react";
 import { VdsTextArea as a } from "@verobee/design-elements/components/text-area";
 import "@verobee/design-elements/define/text-area";
-const m = t({
+const m = /* @__PURE__ */ t({
   tagName: "vds-text-area",
   elementClass: a,
   react: e,

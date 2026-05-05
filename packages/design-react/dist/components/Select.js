@@ -1,17 +1,17 @@
 import * as e from "react";
 import { createComponent as t } from "@lit/react";
-import { VdsSelect as o, VdsOption as a } from "@verobee/design-elements/components/select";
+import { VdsOption as o, VdsSelect as a } from "@verobee/design-elements/components/select";
 import "@verobee/design-elements/define/select";
-const r = t({
+const r = /* @__PURE__ */ t({
   tagName: "vds-select",
-  elementClass: o,
+  elementClass: a,
   react: e,
   events: {
     onChange: "change"
   }
-}), c = t({
+}), c = /* @__PURE__ */ t({
   tagName: "vds-option",
-  elementClass: a,
+  elementClass: o,
   react: e
 });
 export {

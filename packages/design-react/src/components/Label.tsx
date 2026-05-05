@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsLabel } from '@verobee/design-elements/components/label';
 import '@verobee/design-elements/define/label';
 
-export const Label = createComponent({
+export const Label = /*#__PURE__*/ createComponent({
   tagName: 'vds-label',
   elementClass: VdsLabel,
   react: React,

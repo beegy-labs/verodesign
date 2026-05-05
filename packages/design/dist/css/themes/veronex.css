@@ -44,6 +44,13 @@
     --vds-theme-chart-3: oklch(60% 0.18 130);
     --vds-theme-chart-4: oklch(60% 0.18 70);
     --vds-theme-chart-5: oklch(60% 0.21 275);
+    --vds-theme-map-ocean: oklch(94% 0.018 245);
+    --vds-theme-map-sphere: oklch(97% 0.014 245);
+    --vds-theme-map-land: oklch(76% 0.035 245);
+    --vds-theme-map-border: oklch(64% 0.04 245);
+    --vds-theme-map-active: oklch(52% 0.14 250);
+    --vds-theme-map-active-strong: oklch(38% 0.16 250);
+    --vds-theme-map-glow: oklch(70% 0.14 250);
     --vds-theme-success-bg: oklch(95% 0.018 145);
     --vds-theme-error-bg: oklch(95% 0.018 25);
     --vds-theme-warning-bg: oklch(95% 0.018 70);
@@ -92,6 +99,13 @@
     --vds-theme-chart-3: oklch(70% 0.153 130);
     --vds-theme-chart-4: oklch(70% 0.153 70);
     --vds-theme-chart-5: oklch(70% 0.179 275);
+    --vds-theme-map-ocean: oklch(9% 0.016 165);
+    --vds-theme-map-sphere: oklch(13% 0.03 165);
+    --vds-theme-map-land: oklch(23% 0.035 165);
+    --vds-theme-map-border: oklch(34% 0.045 165);
+    --vds-theme-map-active: oklch(62% 0.14 165);
+    --vds-theme-map-active-strong: oklch(74% 0.16 165);
+    --vds-theme-map-glow: oklch(72% 0.16 165);
     --vds-theme-success-bg: oklch(20% 0.09 145);
     --vds-theme-error-bg: oklch(20% 0.105 25);
     --vds-theme-warning-bg: oklch(20% 0.09 70);

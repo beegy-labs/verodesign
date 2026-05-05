@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsTextArea } from '@verobee/design-elements/components/text-area';
 import '@verobee/design-elements/define/text-area';
 
-export const TextArea = createComponent({
+export const TextArea = /*#__PURE__*/ createComponent({
   tagName: 'vds-text-area',
   elementClass: VdsTextArea,
   react: React,

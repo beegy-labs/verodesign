@@ -1446,6 +1446,41 @@
   inherits: true;
   initial-value: oklch(60% 0.2 350);
 }
+@property --vds-theme-map-ocean {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(94% 0.018 245);
+}
+@property --vds-theme-map-sphere {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(97% 0.014 245);
+}
+@property --vds-theme-map-land {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(76% 0.035 245);
+}
+@property --vds-theme-map-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(64% 0.04 245);
+}
+@property --vds-theme-map-active {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(52% 0.14 250);
+}
+@property --vds-theme-map-active-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(38% 0.16 250);
+}
+@property --vds-theme-map-glow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(70% 0.14 250);
+}
 @property --vds-theme-success-bg {
   syntax: "<color>";
   inherits: true;
@@ -2264,6 +2299,20 @@
     --vds-theme-chart-4: oklch(60% 0.2 305);
     --vds-theme-chart-5: #d13d91;
     --vds-theme-chart-5: oklch(60% 0.2 350);
+    --vds-theme-map-ocean: #e2edf7;
+    --vds-theme-map-ocean: oklch(94% 0.018 245);
+    --vds-theme-map-sphere: #eef6fe;
+    --vds-theme-map-sphere: oklch(97% 0.014 245);
+    --vds-theme-map-land: #9fb4c6;
+    --vds-theme-map-land: oklch(76% 0.035 245);
+    --vds-theme-map-border: #788fa3;
+    --vds-theme-map-border: oklch(64% 0.04 245);
+    --vds-theme-map-active: #116bb5;
+    --vds-theme-map-active: oklch(52% 0.14 250);
+    --vds-theme-map-active-strong: #004092;
+    --vds-theme-map-active-strong: oklch(38% 0.16 250);
+    --vds-theme-map-glow: #53a3f2;
+    --vds-theme-map-glow: oklch(70% 0.14 250);
     --vds-theme-success-bg: #e7f2e7;
     --vds-theme-success-bg: oklch(95% 0.018 145);
     --vds-theme-error-bg: #fbeae8;
@@ -2343,6 +2392,13 @@
     --vds-theme-chart-3: oklch(60% 0.18 70);
     --vds-theme-chart-4: oklch(60% 0.2 305);
     --vds-theme-chart-5: oklch(60% 0.2 350);
+    --vds-theme-map-ocean: oklch(94% 0.018 245);
+    --vds-theme-map-sphere: oklch(97% 0.014 245);
+    --vds-theme-map-land: oklch(76% 0.035 245);
+    --vds-theme-map-border: oklch(64% 0.04 245);
+    --vds-theme-map-active: oklch(52% 0.14 250);
+    --vds-theme-map-active-strong: oklch(38% 0.16 250);
+    --vds-theme-map-glow: oklch(70% 0.14 250);
     --vds-theme-success-bg: oklch(95% 0.018 145);
     --vds-theme-error-bg: oklch(95% 0.018 25);
     --vds-theme-warning-bg: oklch(95% 0.018 70);
@@ -2391,6 +2447,13 @@
     --vds-theme-chart-3: oklch(70% 0.153 70);
     --vds-theme-chart-4: oklch(70% 0.17 305);
     --vds-theme-chart-5: oklch(70% 0.17 350);
+    --vds-theme-map-ocean: oklch(9% 0.016 245);
+    --vds-theme-map-sphere: oklch(13% 0.03 245);
+    --vds-theme-map-land: oklch(23% 0.035 245);
+    --vds-theme-map-border: oklch(34% 0.045 245);
+    --vds-theme-map-active: oklch(65% 0.14 250);
+    --vds-theme-map-active-strong: oklch(77% 0.16 250);
+    --vds-theme-map-glow: oklch(75% 0.14 250);
     --vds-theme-success-bg: oklch(20% 0.09 145);
     --vds-theme-error-bg: oklch(20% 0.105 25);
     --vds-theme-warning-bg: oklch(20% 0.09 70);

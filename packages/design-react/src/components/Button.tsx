@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsButton } from '@verobee/design-elements/components/button';
 import '@verobee/design-elements/define/button';
 
-export const Button = createComponent({
+export const Button = /*#__PURE__*/ createComponent({
   tagName: 'vds-button',
   elementClass: VdsButton,
   react: React,

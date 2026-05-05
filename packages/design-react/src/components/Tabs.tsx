@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsTabs, VdsTab, VdsTabPanel } from '@verobee/design-elements/components/tabs';
 import '@verobee/design-elements/define/tabs';
 
-export const Tabs = createComponent({
+export const Tabs = /*#__PURE__*/ createComponent({
   tagName: 'vds-tabs',
   elementClass: VdsTabs,
   react: React,
@@ -12,13 +12,13 @@ export const Tabs = createComponent({
   },
 });
 
-export const Tab = createComponent({
+export const Tab = /*#__PURE__*/ createComponent({
   tagName: 'vds-tab',
   elementClass: VdsTab,
   react: React,
 });
 
-export const TabPanel = createComponent({
+export const TabPanel = /*#__PURE__*/ createComponent({
   tagName: 'vds-tab-panel',
   elementClass: VdsTabPanel,
   react: React,

@@ -1442,6 +1442,41 @@
   inherits: true;
   initial-value: oklch(60% 0.2 350);
 }
+@property --vds-theme-map-ocean {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(94% 0.018 245);
+}
+@property --vds-theme-map-sphere {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(97% 0.014 245);
+}
+@property --vds-theme-map-land {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(76% 0.035 245);
+}
+@property --vds-theme-map-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(64% 0.04 245);
+}
+@property --vds-theme-map-active {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(52% 0.14 250);
+}
+@property --vds-theme-map-active-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(38% 0.16 250);
+}
+@property --vds-theme-map-glow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(70% 0.14 250);
+}
 @property --vds-theme-success-bg {
   syntax: "<color>";
   inherits: true;

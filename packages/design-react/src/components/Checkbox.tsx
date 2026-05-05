@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsCheckbox } from '@verobee/design-elements/components/checkbox';
 import '@verobee/design-elements/define/checkbox';
 
-export const Checkbox = createComponent({
+export const Checkbox = /*#__PURE__*/ createComponent({
   tagName: 'vds-checkbox',
   elementClass: VdsCheckbox,
   react: React,

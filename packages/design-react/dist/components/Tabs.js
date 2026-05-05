@@ -1,21 +1,21 @@
 import * as a from "react";
 import { createComponent as e } from "@lit/react";
-import { VdsTabs as t, VdsTab as s, VdsTabPanel as n } from "@verobee/design-elements/components/tabs";
+import { VdsTab as t, VdsTabPanel as s, VdsTabs as n } from "@verobee/design-elements/components/tabs";
 import "@verobee/design-elements/define/tabs";
-const b = e({
+const b = /* @__PURE__ */ e({
   tagName: "vds-tabs",
-  elementClass: t,
+  elementClass: n,
   react: a,
   events: {
     onChange: "vds-change"
   }
-}), c = e({
+}), c = /* @__PURE__ */ e({
   tagName: "vds-tab",
-  elementClass: s,
+  elementClass: t,
   react: a
-}), l = e({
+}), l = /* @__PURE__ */ e({
   tagName: "vds-tab-panel",
-  elementClass: n,
+  elementClass: s,
   react: a
 });
 export {

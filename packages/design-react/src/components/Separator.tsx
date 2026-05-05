@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsSeparator } from '@verobee/design-elements/components/separator';
 import '@verobee/design-elements/define/separator';
 
-export const Separator = createComponent({
+export const Separator = /*#__PURE__*/ createComponent({
   tagName: 'vds-separator',
   elementClass: VdsSeparator,
   react: React,

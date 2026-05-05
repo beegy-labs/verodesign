@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsSwitch } from '@verobee/design-elements/components/switch';
 import '@verobee/design-elements/define/switch';
 
-export const Switch = createComponent({
+export const Switch = /*#__PURE__*/ createComponent({
   tagName: 'vds-switch',
   elementClass: VdsSwitch,
   react: React,

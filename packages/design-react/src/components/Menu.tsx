@@ -3,7 +3,7 @@ import { createComponent } from '@lit/react';
 import { VdsMenu, VdsMenuItem } from '@verobee/design-elements/components/menu';
 import '@verobee/design-elements/define/menu';
 
-export const Menu = createComponent({
+export const Menu = /*#__PURE__*/ createComponent({
   tagName: 'vds-menu',
   elementClass: VdsMenu,
   react: React,
@@ -12,7 +12,7 @@ export const Menu = createComponent({
   },
 });
 
-export const MenuItem = createComponent({
+export const MenuItem = /*#__PURE__*/ createComponent({
   tagName: 'vds-menu-item',
   elementClass: VdsMenuItem,
   react: React,

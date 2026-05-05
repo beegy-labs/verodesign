@@ -2,7 +2,7 @@ import * as r from "react";
 import { createComponent as t } from "@lit/react";
 import { VdsSeparator as o } from "@verobee/design-elements/components/separator";
 import "@verobee/design-elements/define/separator";
-const p = t({
+const p = /* @__PURE__ */ t({
   tagName: "vds-separator",
   elementClass: o,
   react: r
