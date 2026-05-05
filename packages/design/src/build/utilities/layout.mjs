@@ -84,5 +84,17 @@ export function generateLayout() {
     rules.push(`.vds-pointer-events-${v} { pointer-events: ${v}; }`);
   }
 
+  // touch-action — controls gesture handling on touch devices.
+  for (const v of ['auto', 'none', 'manipulation', 'pan-x', 'pan-y', 'pan-left', 'pan-right', 'pan-up', 'pan-down', 'pinch-zoom']) {
+    rules.push(`.vds-touch-${v} { touch-action: ${v}; }`);
+  }
+
+  // overscroll-behavior — prevents scroll chaining to the body.
+  for (const v of ['auto', 'contain', 'none']) {
+    rules.push(`.vds-overscroll-${v} { overscroll-behavior: ${v}; }`);
+    rules.push(`.vds-overscroll-x-${v} { overscroll-behavior-x: ${v}; }`);
+    rules.push(`.vds-overscroll-y-${v} { overscroll-behavior-y: ${v}; }`);
+  }
+
   return rules;
 }

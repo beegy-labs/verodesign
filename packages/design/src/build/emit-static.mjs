@@ -24,6 +24,9 @@ const RESET_CSS = `/* @verobee/design — reset.css */
        브라우저 기본 <button>/<input>/<fieldset> outset 보더 제거. */
     border-width: 0;
     border-style: solid;
+    /* Remove the grey flash on tap in iOS/Android WebView. Interaction
+       feedback is provided by :active state styles instead. */
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
@@ -88,6 +91,16 @@ const RESET_CSS = `/* @verobee/design — reset.css */
   /* button bg transparent — utility-driven background */
   button { background-color: transparent; background-image: none; }
   button, [role="button"] { cursor: pointer; }
+  /* Disable double-tap zoom on all interactive controls without removing
+     standard pinch-zoom. manipulation allows panning + pinch-zoom but
+     treats double-tap as a click, preventing the 300ms delay and the
+     involuntary zoom that follows on iOS Safari. Applied here in reset so
+     every button/anchor gets it by default; per-element touch-action
+     utilities override when finer control is needed. */
+  button, [role="button"], a, label, [type='checkbox'], [type='radio'],
+  input, select, textarea {
+    touch-action: manipulation;
+  }
   :disabled { cursor: default; }
   ::-moz-focus-inner { border-style: none; padding: 0; }
   :-moz-focusring { outline: 1px dotted ButtonText; }
@@ -123,6 +136,16 @@ const RESET_CSS = `/* @verobee/design — reset.css */
   *, *::before, *::after { border-color: var(--vds-theme-border-subtle, currentColor); }
   /* 전역 outline-color 디폴트 — focus-ring 슬롯 사용 (Tailwind 의 default ring-color 와 동등) */
   * { outline-color: color-mix(in oklab, var(--vds-theme-border-focus, currentColor) 50%, transparent); }
+
+  /* iOS input zoom prevention:
+     iOS Safari zooms in when the focused input font-size is below 16px.
+     Gate on pointer: coarse so desktop layouts keep design-token sizes;
+     only touch screens (phones, tablets) receive the 16px floor. */
+  @media (pointer: coarse) {
+    input, input[type], select, textarea {
+      font-size: max(1rem, 16px);
+    }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
