@@ -1,0 +1,52 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "theme",
+      "theme": "verobase-admin",
+      "mode": "light",
+      "implements": ["core", "web"],
+      "since": "v0.2.0",
+      "concept": "Verobase Admin Light — honey hive primary, verde accent (beekeeper mode)",
+      "primary": "OKLCH(70% 0.14 75) Soft Honey",
+      "accent": "OKLCH(45% 0.13 155) Sage Verde"
+    }
+  },
+  "theme": {
+    "bg": {
+      "page": { "$value": "oklch(99% 0.004 152)", "$type": "color" },
+      "card": { "$value": "oklch(98% 0.004 152)", "$type": "color" }
+    },
+    "text": {
+      "primary": { "$value": "oklch(25% 0.020 80)", "$type": "color", "$description": "Override: soft near-black, honey undertone" },
+      "dim": { "$value": "oklch(50% 0.015 80)", "$type": "color", "$description": "Override: honey-toned dim text" },
+      "faint": {
+        "$value": "oklch(65% 0.012 80)",
+        "$type": "color",
+        "$extensions": { "verobee": { "contrast": { "allow": "AA-large", "rationale": "Hint text only" } } }
+      }
+    },
+    "primary": { "$value": "oklch(70% 0.14 75)", "$type": "color" },
+    "primary-fg": { "$value": "oklch(20% 0.04 75)", "$type": "color" },
+    "primary-ring": { "$value": "oklch(80% 0.12 75)", "$type": "color" },
+    "accent": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
+    "accent-fg": { "$value": "oklch(99% 0.003 90)", "$type": "color" },
+    "border": {
+      "focus": { "$value": "oklch(80% 0.12 75)", "$type": "color" }
+    },
+    "info": { "$value": "oklch(70% 0.14 75)", "$type": "color" },
+    "info-fg": { "$value": "oklch(20% 0.04 75)", "$type": "color" },
+    "chart": {
+      "1": { "$value": "oklch(70% 0.14 75)", "$type": "color" },
+      "2": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
+      "3": { "$value": "oklch(60% 0.10 215)", "$type": "color" },
+      "4": { "$value": "oklch(60% 0.16 305)", "$type": "color" },
+      "5": { "$value": "oklch(55% 0.12 25)", "$type": "color" }
+    },
+    "logo": {
+      "start": { "$value": "oklch(70% 0.14 75)", "$type": "color" },
+      "end": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
+      "inner": { "$value": "oklch(99% 0.003 90)", "$type": "color" }
+    }
+  }
+}

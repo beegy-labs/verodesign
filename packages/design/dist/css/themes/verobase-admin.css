@@ -1,0 +1,108 @@
+/* @verobee/design — themes/verobase-admin.css */
+/* Theme: verobase-admin. Mode toggled via [data-mode] attribute selector. */
+/* Each mode has its own block — no light-dark() function dependency. */
+
+@layer vds-tokens {
+  [data-theme="verobase-admin"],
+  [data-theme="verobase-admin"][data-mode="light"] {
+    --vds-theme-bg-page: oklch(99% 0.004 152);
+    --vds-theme-bg-card: oklch(98% 0.004 152);
+    --vds-theme-bg-elevated: oklch(100% 0 0);
+    --vds-theme-bg-hover: oklch(95% 0.005 240);
+    --vds-theme-bg-muted: oklch(90% 0.008 240);
+    --vds-theme-bg-inverse: oklch(12% 0.012 240);
+    --vds-theme-bg-code: oklch(95% 0.005 240);
+    --vds-theme-text-primary: oklch(25% 0.02 80);
+    --vds-theme-text-secondary: oklch(30% 0.018 240);
+    --vds-theme-text-dim: oklch(50% 0.015 80);
+    --vds-theme-text-faint: oklch(65% 0.012 80);
+    --vds-theme-text-bright: oklch(5% 0.005 240);
+    --vds-theme-text-inverse: oklch(98% 0.003 240);
+    --vds-theme-border-subtle: oklch(90% 0.008 240);
+    --vds-theme-border-default: oklch(80% 0.012 240);
+    --vds-theme-border-strong: oklch(50% 0.02 240);
+    --vds-theme-border-focus: oklch(80% 0.12 75);
+    --vds-theme-primary: oklch(70% 0.14 75);
+    --vds-theme-primary-fg: oklch(20% 0.04 75);
+    --vds-theme-primary-ring: oklch(80% 0.12 75);
+    --vds-theme-accent: oklch(45% 0.13 155);
+    --vds-theme-accent-fg: oklch(99% 0.003 90);
+    --vds-theme-destructive: oklch(50% 0.2 25);
+    --vds-theme-destructive-fg: oklch(100% 0 0);
+    --vds-theme-success: oklch(50% 0.171 145);
+    --vds-theme-success-fg: oklch(100% 0 0);
+    --vds-theme-warning: oklch(60% 0.18 70);
+    --vds-theme-warning-fg: oklch(5% 0.005 240);
+    --vds-theme-error: oklch(50% 0.2 25);
+    --vds-theme-error-fg: oklch(100% 0 0);
+    --vds-theme-info: oklch(70% 0.14 75);
+    --vds-theme-info-fg: oklch(20% 0.04 75);
+    --vds-theme-neutral: oklch(50% 0.02 240);
+    --vds-theme-neutral-fg: oklch(100% 0 0);
+    --vds-theme-chart-1: oklch(70% 0.14 75);
+    --vds-theme-chart-2: oklch(45% 0.13 155);
+    --vds-theme-chart-3: oklch(60% 0.1 215);
+    --vds-theme-chart-4: oklch(60% 0.16 305);
+    --vds-theme-chart-5: oklch(55% 0.12 25);
+    --vds-theme-success-bg: oklch(95% 0.018 145);
+    --vds-theme-error-bg: oklch(95% 0.018 25);
+    --vds-theme-warning-bg: oklch(95% 0.018 70);
+    --vds-theme-info-bg: oklch(95% 0.018 250);
+    --vds-theme-neutral-bg: oklch(95% 0.005 240);
+    --vds-theme-cancelled: oklch(50% 0.02 240);
+    --vds-theme-cancelled-fg: oklch(100% 0 0);
+    --vds-theme-accent-2: oklch(50% 0.171 70);
+    --vds-theme-accent-2-fg: oklch(100% 0 0);
+    --vds-theme-accent-3: oklch(50% 0.152 215);
+    --vds-theme-accent-3-fg: oklch(100% 0 0);
+    --vds-theme-logo-start: oklch(70% 0.14 75);
+    --vds-theme-logo-end: oklch(45% 0.13 155);
+    --vds-theme-logo-inner: oklch(99% 0.003 90);
+  }
+
+  [data-theme="verobase-admin"][data-mode="dark"] {
+    --vds-theme-bg-page: oklch(15% 0.01 80);
+    --vds-theme-bg-card: oklch(19% 0.012 80);
+    --vds-theme-bg-elevated: oklch(24% 0.014 80);
+    --vds-theme-bg-hover: oklch(28% 0.015 80);
+    --vds-theme-bg-muted: oklch(22% 0.012 80);
+    --vds-theme-bg-inverse: oklch(95% 0.005 152);
+    --vds-theme-bg-code: oklch(24% 0.014 80);
+    --vds-theme-text-primary: oklch(95% 0.005 152);
+    --vds-theme-text-secondary: oklch(85% 0.008 152);
+    --vds-theme-text-dim: oklch(70% 0.012 80);
+    --vds-theme-text-faint: oklch(55% 0.015 80);
+    --vds-theme-text-bright: oklch(99% 0.003 90);
+    --vds-theme-text-inverse: oklch(19% 0.012 80);
+    --vds-theme-border-subtle: oklch(22% 0.012 80);
+    --vds-theme-border-default: oklch(30% 0.014 80);
+    --vds-theme-border-strong: oklch(50% 0.014 80);
+    --vds-theme-border-focus: oklch(82% 0.13 75);
+    --vds-theme-primary: oklch(75% 0.15 75);
+    --vds-theme-primary-ring: oklch(82% 0.13 75);
+    --vds-theme-accent: oklch(60% 0.14 155);
+    --vds-theme-accent-fg: oklch(15% 0.02 155);
+    --vds-theme-warning: oklch(70% 0.153 70);
+    --vds-theme-warning-fg: oklch(20% 0.04 75);
+    --vds-theme-info: oklch(75% 0.15 75);
+    --vds-theme-neutral: oklch(60% 0.018 240);
+    --vds-theme-chart-1: oklch(75% 0.15 75);
+    --vds-theme-chart-2: oklch(60% 0.14 155);
+    --vds-theme-chart-3: oklch(65% 0.11 215);
+    --vds-theme-chart-4: oklch(65% 0.14 305);
+    --vds-theme-chart-5: oklch(60% 0.13 25);
+    --vds-theme-success-bg: oklch(20% 0.09 145);
+    --vds-theme-error-bg: oklch(20% 0.105 25);
+    --vds-theme-warning-bg: oklch(20% 0.09 70);
+    --vds-theme-info-bg: oklch(20% 0.05 80);
+    --vds-theme-neutral-bg: oklch(22% 0.012 80);
+    --vds-theme-cancelled: oklch(40% 0.02 240);
+    --vds-theme-cancelled-fg: oklch(95% 0.005 152);
+    --vds-theme-accent-2: oklch(60% 0.14 155);
+    --vds-theme-accent-2-fg: oklch(99% 0.003 90);
+    --vds-theme-accent-3: oklch(65% 0.11 215);
+    --vds-theme-accent-3-fg: oklch(95% 0.005 152);
+    --vds-theme-logo-start: oklch(75% 0.15 75);
+    --vds-theme-logo-end: oklch(60% 0.14 155);
+  }
+}
