@@ -7,37 +7,46 @@
       "mode": "light",
       "implements": ["core", "web"],
       "since": "v0.1.0",
-      "concept": "Vero Base — deep navy enterprise",
-      "primary": "OKLCH(32% 0.07 250) Deep Navy",
-      "accent": "OKLCH(50% 0.171 50) Orange — split-complementary"
+      "concept": "Verobase Solution Light — verde sage + honey accent",
+      "primary": "OKLCH(45% 0.13 155) Sage Verde",
+      "accent": "OKLCH(72% 0.14 80) Soft Honey"
     }
   },
   "theme": {
-    "primary": { "$value": "oklch(32% 0.07 250)", "$type": "color" },
-    "primary-fg": { "$value": "{color.white}", "$type": "color" },
-    "primary-ring": { "$value": "oklch(45% 0.10 250)", "$type": "color" },
-    "accent": { "$value": "{color.orange.7}", "$type": "color" },
-    "accent-fg": { "$value": "{color.white}", "$type": "color" },
+    "bg": {
+      "page": { "$value": "oklch(99% 0.003 90)", "$type": "color" },
+      "card": { "$value": "oklch(98% 0.004 90)", "$type": "color" }
+    },
     "text": {
-      "dim": { "$value": "{color.slate.8}", "$type": "color", "$description": "Override: 가독성 위해 slate.8 (40%) — Tailwind muted-foreground 정합" },
-      "faint": { "$value": "{color.slate.7}", "$type": "color", "$description": "Override: slate.7 (50%) for placeholder" }
+      "primary": { "$value": "oklch(25% 0.020 155)", "$type": "color", "$description": "Override: soft near-black, verde undertone" },
+      "dim": { "$value": "oklch(50% 0.015 155)", "$type": "color", "$description": "Override: verde-toned dim text" },
+      "faint": {
+        "$value": "oklch(65% 0.012 155)",
+        "$type": "color",
+        "$extensions": { "verobee": { "contrast": { "allow": "AA-large", "rationale": "Hint text only" } } }
+      }
     },
+    "primary": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
+    "primary-fg": { "$value": "oklch(99% 0.003 90)", "$type": "color" },
+    "primary-ring": { "$value": "oklch(60% 0.14 155)", "$type": "color" },
+    "accent": { "$value": "oklch(72% 0.14 80)", "$type": "color" },
+    "accent-fg": { "$value": "oklch(25% 0.04 80)", "$type": "color" },
     "border": {
-      "focus": { "$value": "oklch(45% 0.10 250)", "$type": "color" }
+      "focus": { "$value": "oklch(60% 0.14 155)", "$type": "color" }
     },
-    "info": { "$value": "oklch(32% 0.07 250)", "$type": "color" },
-    "info-fg": { "$value": "{color.white}", "$type": "color" },
+    "info": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
+    "info-fg": { "$value": "oklch(99% 0.003 90)", "$type": "color" },
     "chart": {
-      "1": { "$value": "oklch(32% 0.07 250)", "$type": "color" },
-      "2": { "$value": "{color.cyan.6}", "$type": "color" },
-      "3": { "$value": "{color.orange.6}", "$type": "color" },
-      "4": { "$value": "{color.violet.6}", "$type": "color" },
-      "5": { "$value": "{color.green.6}", "$type": "color" }
+      "1": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
+      "2": { "$value": "oklch(72% 0.14 80)", "$type": "color" },
+      "3": { "$value": "oklch(60% 0.10 215)", "$type": "color" },
+      "4": { "$value": "oklch(60% 0.16 305)", "$type": "color" },
+      "5": { "$value": "oklch(55% 0.12 25)", "$type": "color" }
     },
     "logo": {
-      "start": { "$value": "oklch(32% 0.07 250)", "$type": "color" },
-      "end": { "$value": "{color.blue.5}", "$type": "color" },
-      "inner": { "$value": "{color.white}", "$type": "color" }
+      "start": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
+      "end": { "$value": "oklch(72% 0.14 80)", "$type": "color" },
+      "inner": { "$value": "oklch(99% 0.003 90)", "$type": "color" }
     }
   }
 }

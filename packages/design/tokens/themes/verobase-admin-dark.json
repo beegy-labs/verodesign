@@ -1,0 +1,84 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "theme",
+      "theme": "verobase-admin",
+      "mode": "dark",
+      "implements": ["core", "web"],
+      "since": "v0.2.0",
+      "concept": "Verobase Admin Dark — honey hive primary, verde accent (beekeeper mode)",
+      "primary": "OKLCH(75% 0.15 75) Bright Soft Honey",
+      "accent": "OKLCH(60% 0.14 155) Bright Sage Verde"
+    }
+  },
+  "theme": {
+    "bg": {
+      "page": { "$value": "oklch(15% 0.010 80)", "$type": "color" },
+      "card": { "$value": "oklch(19% 0.012 80)", "$type": "color" },
+      "elevated": { "$value": "oklch(24% 0.014 80)", "$type": "color" },
+      "hover": { "$value": "oklch(28% 0.015 80)", "$type": "color" },
+      "muted": { "$value": "oklch(22% 0.012 80)", "$type": "color" },
+      "inverse": { "$value": "oklch(95% 0.005 152)", "$type": "color" },
+      "code": { "$value": "oklch(24% 0.014 80)", "$type": "color" }
+    },
+    "text": {
+      "primary": { "$value": "oklch(95% 0.005 152)", "$type": "color" },
+      "secondary": { "$value": "oklch(85% 0.008 152)", "$type": "color" },
+      "dim": { "$value": "oklch(70% 0.012 80)", "$type": "color" },
+      "faint": {
+        "$value": "oklch(55% 0.015 80)",
+        "$type": "color",
+        "$extensions": { "verobee": { "contrast": { "allow": "AA-large", "rationale": "Hint text only" } } }
+      },
+      "bright": { "$value": "oklch(99% 0.003 90)", "$type": "color" },
+      "inverse": { "$value": "oklch(19% 0.012 80)", "$type": "color" }
+    },
+    "border": {
+      "subtle": { "$value": "oklch(22% 0.012 80)", "$type": "color" },
+      "default": { "$value": "oklch(30% 0.014 80)", "$type": "color" },
+      "strong": { "$value": "oklch(50% 0.014 80)", "$type": "color" },
+      "focus": { "$value": "oklch(82% 0.13 75)", "$type": "color" }
+    },
+    "primary": { "$value": "oklch(75% 0.15 75)", "$type": "color" },
+    "primary-fg": { "$value": "oklch(20% 0.04 75)", "$type": "color" },
+    "primary-ring": { "$value": "oklch(82% 0.13 75)", "$type": "color" },
+    "accent": { "$value": "oklch(60% 0.14 155)", "$type": "color" },
+    "accent-fg": { "$value": "oklch(15% 0.02 155)", "$type": "color" },
+    "destructive": { "$value": "{color.red.7}", "$type": "color" },
+    "destructive-fg": { "$value": "{color.white}", "$type": "color" },
+    "success": { "$value": "{color.green.7}", "$type": "color" },
+    "success-fg": { "$value": "{color.white}", "$type": "color" },
+    "warning": { "$value": "{color.amber.5}", "$type": "color" },
+    "warning-fg": { "$value": "oklch(20% 0.04 75)", "$type": "color" },
+    "error": { "$value": "{color.red.7}", "$type": "color" },
+    "error-fg": { "$value": "{color.white}", "$type": "color" },
+    "info": { "$value": "oklch(75% 0.15 75)", "$type": "color" },
+    "info-fg": { "$value": "oklch(20% 0.04 75)", "$type": "color" },
+    "neutral": { "$value": "{color.slate.6}", "$type": "color" },
+    "neutral-fg": { "$value": "{color.white}", "$type": "color" },
+    "chart": {
+      "1": { "$value": "oklch(75% 0.15 75)", "$type": "color" },
+      "2": { "$value": "oklch(60% 0.14 155)", "$type": "color" },
+      "3": { "$value": "oklch(65% 0.11 215)", "$type": "color" },
+      "4": { "$value": "oklch(65% 0.14 305)", "$type": "color" },
+      "5": { "$value": "oklch(60% 0.13 25)", "$type": "color" }
+    },
+    "success-bg": { "$value": "{color.green.10}", "$type": "color" },
+    "error-bg": { "$value": "{color.red.10}", "$type": "color" },
+    "warning-bg": { "$value": "{color.amber.10}", "$type": "color" },
+    "info-bg": { "$value": "oklch(20% 0.05 80)", "$type": "color" },
+    "neutral-bg": { "$value": "oklch(22% 0.012 80)", "$type": "color" },
+    "cancelled": { "$value": "{color.slate.8}", "$type": "color" },
+    "cancelled-fg": { "$value": "oklch(95% 0.005 152)", "$type": "color" },
+    "accent-2": { "$value": "oklch(60% 0.14 155)", "$type": "color" },
+    "accent-2-fg": { "$value": "oklch(99% 0.003 90)", "$type": "color" },
+    "accent-3": { "$value": "oklch(65% 0.11 215)", "$type": "color" },
+    "accent-3-fg": { "$value": "oklch(95% 0.005 152)", "$type": "color" },
+    "logo": {
+      "start": { "$value": "oklch(75% 0.15 75)", "$type": "color" },
+      "end": { "$value": "oklch(60% 0.14 155)", "$type": "color" },
+      "inner": { "$value": "oklch(99% 0.003 90)", "$type": "color" }
+    }
+  }
+}

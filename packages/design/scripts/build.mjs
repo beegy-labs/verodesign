@@ -17,7 +17,7 @@ import { auditParity } from '../src/audit/parity.mjs';
 import { auditNaming } from '../src/audit/naming.mjs';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
-const THEMES = ['default', 'veronex', 'verobase'];
+const THEMES = ['default', 'veronex', 'verobase', 'verobase-admin'];
 
 function step(label) {
   process.stdout.write(`  ${label}...`);
