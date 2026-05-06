@@ -1,0 +1,28 @@
+---
+import DocLayout from "../layouts/DocLayout.astro";
+---
+<DocLayout title="Home" description="Verobee Design System — token-driven, Web Components-first, framework-agnostic.">
+  <h1 style="font-size: 3rem; margin: 1rem 0;">Verobee Design System</h1>
+  <p style="font-size: 1.25rem; color: var(--vds-theme-text-dim); max-width: 60ch;">
+    A token-driven, framework-agnostic design system. OKLCH-first colors,
+    Lit web components, multi-brand themes, WCAG-validated at build time.
+  </p>
+
+  <section style="margin-top: 3rem;">
+    <h2>Architecture</h2>
+    <ul>
+      <li><a href="/foundations">Foundations</a> — color, typography, spacing, motion</li>
+      <li><a href="/tokens">Tokens</a> — DTCG-standard JSON, 3-tier model</li>
+      <li><a href="/components">Components</a> — Lit web components + React adapters</li>
+      <li><a href="/themes">Themes</a> — verobase, veronex, default</li>
+    </ul>
+  </section>
+
+  <section style="margin-top: 3rem;">
+    <h2>Quick install</h2>
+    <pre style="background: var(--vds-theme-bg-card); padding: 1rem; border-radius: 0.5rem; overflow-x: auto;"><code># .npmrc
+@verobee:registry=https://npm.pkg.github.com
+
+pnpm add @verobee/spec @verobee/primitive @verobee/theme-verobase @verobee/utilities</code></pre>
+  </section>
+</DocLayout>

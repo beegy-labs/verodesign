@@ -1,0 +1,45 @@
+---
+// Theme + mode switcher. Vanilla JS — no React needed.
+---
+<div class="theme-switcher" data-theme-switcher>
+  <span style="font-size: 0.75rem; color: var(--vds-theme-text-dim);">Theme</span>
+  <button data-theme="verobase">verobase</button>
+  <button data-theme="veronex">veronex</button>
+  <button data-theme="default">default</button>
+  <span style="font-size: 0.75rem; color: var(--vds-theme-text-dim); margin-left: 1rem;">Mode</span>
+  <button data-mode="light">light</button>
+  <button data-mode="dark">dark</button>
+</div>
+
+<script>
+  const root = document.documentElement;
+  const switcher = document.querySelector('[data-theme-switcher]');
+  if (!switcher) {
+    // no-op
+  } else {
+    function syncPressed() {
+      switcher!.querySelectorAll('button[data-theme]').forEach((b) => {
+        const el = b as HTMLButtonElement;
+        el.setAttribute('aria-pressed', String(el.dataset.theme === root.dataset.theme));
+      });
+      switcher!.querySelectorAll('button[data-mode]').forEach((b) => {
+        const el = b as HTMLButtonElement;
+        el.setAttribute('aria-pressed', String(el.dataset.mode === root.dataset.mode));
+      });
+    }
+    syncPressed();
+    switcher.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('button');
+      if (!btn) return;
+      if (btn.dataset.theme) {
+        root.dataset.theme = btn.dataset.theme;
+        try { localStorage.setItem('vds:theme', btn.dataset.theme); } catch {}
+      }
+      if (btn.dataset.mode) {
+        root.dataset.mode = btn.dataset.mode;
+        try { localStorage.setItem('vds:mode', btn.dataset.mode); } catch {}
+      }
+      syncPressed();
+    });
+  }
+</script>

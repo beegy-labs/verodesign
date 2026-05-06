@@ -14,6 +14,7 @@ export type ThemeToken =
   | '--vds-theme-bg-inverse'
   | '--vds-theme-bg-muted'
   | '--vds-theme-bg-page'
+  | '--vds-theme-bg-selected'
   | '--vds-theme-border-default'
   | '--vds-theme-border-focus'
   | '--vds-theme-border-strong'

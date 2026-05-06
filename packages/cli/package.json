@@ -1,0 +1,31 @@
+{
+  "name": "@verobee/cli",
+  "version": "1.0.0",
+  "description": "Verobee Design System \u2014 CLI tool. vds new-brand, vds doctor, vds add-token.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "bin": {
+    "vds": "./dist/cli.js",
+    "verodesign": "./dist/cli.js"
+  },
+  "files": [
+    "dist/**",
+    "templates/**",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "@verobee/spec": "workspace:*",
+    "@verobee/primitive": "workspace:*"
+  }
+}

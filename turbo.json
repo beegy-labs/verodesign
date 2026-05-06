@@ -8,15 +8,19 @@
         "src/**",
         "scripts/**",
         "tokens/**",
+        "transforms/**",
+        "templates/**",
         "package.json",
-        "tsconfig.json"
+        "tsconfig.json",
+        "tsconfig.build.json"
       ]
     },
     "validate": {
       "inputs": [
         "src/**",
         "scripts/**",
-        "tokens/**"
+        "tokens/**",
+        "package.json"
       ]
     },
     "test": {
@@ -24,11 +28,15 @@
       "inputs": [
         "src/**",
         "test/**",
+        "transforms/**",
         "package.json"
       ]
     },
     "clean": {
       "cache": false
+    },
+    "lint": {
+      "inputs": ["src/**", "scripts/**", "package.json"]
     }
   }
 }

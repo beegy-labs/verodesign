@@ -1,0 +1,47 @@
+---
+import DocLayout from "../layouts/DocLayout.astro";
+import semanticCore from "@verobee/spec/tokens/semantic/core.json";
+
+// Walk the spec to flatten slot paths.
+function flatten(obj: any, prefix: string[] = []): { path: string; type: string; description?: string }[] {
+  const out: { path: string; type: string; description?: string }[] = [];
+  for (const [k, v] of Object.entries(obj)) {
+    if (k.startsWith('$')) continue;
+    if (v && typeof v === 'object' && '$type' in (v as any)) {
+      out.push({
+        path: [...prefix, k].join('.'),
+        type: (v as any).$type,
+        description: (v as any).$description,
+      });
+    } else if (v && typeof v === 'object') {
+      out.push(...flatten(v, [...prefix, k]));
+    }
+  }
+  return out;
+}
+
+const slots = flatten(semanticCore);
+---
+<DocLayout title="Tokens">
+  <h1>Tokens</h1>
+  <p>{slots.length} semantic slots defined in <code>@verobee/spec</code>.</p>
+
+  <table style="width: 100%; border-collapse: collapse; margin-top: 2rem;">
+    <thead>
+      <tr style="border-bottom: 1px solid var(--vds-theme-border-default);">
+        <th style="text-align: left; padding: 0.75rem;">Path</th>
+        <th style="text-align: left; padding: 0.75rem;">Type</th>
+        <th style="text-align: left; padding: 0.75rem;">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {slots.map((s) => (
+        <tr style="border-bottom: 1px solid var(--vds-theme-border-subtle);">
+          <td style="padding: 0.75rem;"><code>{s.path}</code></td>
+          <td style="padding: 0.75rem; color: var(--vds-theme-text-dim);">{s.type}</td>
+          <td style="padding: 0.75rem; color: var(--vds-theme-text-dim);">{s.description ?? '—'}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</DocLayout>

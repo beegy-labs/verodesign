@@ -451,6 +451,8 @@
     --vds-theme-bg-inverse: oklch(12% 0.012 240);
     --vds-theme-bg-code: #eceff1;
     --vds-theme-bg-code: oklch(95% 0.005 240);
+    --vds-theme-bg-selected: #ffffff;
+    --vds-theme-bg-selected: oklch(100% 0 0);
     --vds-theme-text-primary: #030609;
     --vds-theme-text-primary: oklch(12% 0.012 240);
     --vds-theme-text-secondary: #262f36;

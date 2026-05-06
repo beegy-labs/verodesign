@@ -1,0 +1,40 @@
+{
+  "name": "@verobee/theme-verobase",
+  "version": "1.0.0",
+  "description": "Verobee Design System \u2014 verobase brand theme. Implements @verobee/spec slots with verobase color/spacing values.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "peerDependencies": {
+    "@verobee/spec": "^1.0.0",
+    "@verobee/primitive": "^1.0.0"
+  },
+  "files": [
+    "tokens/**/*.json",
+    "dist/**",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    "./tokens/light.json": "./tokens/verobase-light.json",
+    "./tokens/dark.json": "./tokens/verobase-dark.json",
+    "./css/theme.css": "./dist/css/verobase.min.css",
+    "./css/theme.css.br": "./dist/css/verobase.min.css.br",
+    "./types/tokens": "./dist/types/tokens.d.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "@verobee/spec": "workspace:*",
+    "@verobee/primitive": "workspace:*"
+  }
+}

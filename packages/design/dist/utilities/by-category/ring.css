@@ -19,6 +19,7 @@
   .vds-ring-offset-muted { --vds-ring-offset-color: var(--vds-theme-bg-muted); }
   .vds-ring-offset-inverse { --vds-ring-offset-color: var(--vds-theme-bg-inverse); }
   .vds-ring-offset-code { --vds-ring-offset-color: var(--vds-theme-bg-code); }
+  .vds-ring-offset-selected { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
   .vds-ring-primary { --vds-ring-color: var(--vds-theme-primary); }
   .vds-ring-offset-primary { --vds-ring-offset-color: var(--vds-theme-primary); }
   .vds-ring-primary\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary) 0%, transparent); }

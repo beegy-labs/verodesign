@@ -1,0 +1,29 @@
+{
+  "name": "@verobee/spec",
+  "version": "1.0.0",
+  "description": "Verobee Design System — DTCG schema. Defines semantic slot names; supplies no values. Themes peer-depend on this package.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "tokens/**/*.json",
+    "dist/**",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    "./tokens/*": "./tokens/*",
+    "./tokens/semantic/core.json": "./tokens/semantic/core.json",
+    "./tokens/semantic/web.json": "./tokens/semantic/web.json",
+    "./dist/types/*": "./dist/types/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs"
+  }
+}

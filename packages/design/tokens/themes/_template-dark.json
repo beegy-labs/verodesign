@@ -18,7 +18,8 @@
       "elevated": { "$value": "{color.slate.10}", "$type": "color" },
       "hover": { "$value": "{color.slate.10}", "$type": "color" },
       "muted": { "$value": "{color.slate.9}", "$type": "color" },
-      "inverse": { "$value": "{color.slate.1}", "$type": "color" }
+      "inverse": { "$value": "{color.slate.1}", "$type": "color" },
+      "selected": { "$value": "{color.slate.9}", "$type": "color" }
     },
     "text": {
       "primary": { "$value": "{color.slate.1}", "$type": "color" },

@@ -1,7 +1,7 @@
 {
   "name": "verodesign",
   "version": "0.0.1",
-  "description": "Verobee Design System monorepo — tokens, web components, framework adapters.",
+  "description": "Verobee Design System monorepo — tokens (spec, primitive, themes), utility CSS, Lit web components, React adapters, codemods, CLI.",
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -14,10 +14,19 @@
     "validate": "turbo run validate",
     "test": "turbo run test",
     "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish",
+    "build:spec": "pnpm --filter @verobee/spec build",
+    "build:primitive": "pnpm --filter @verobee/primitive build",
+    "build:themes": "pnpm --filter '@verobee/theme-*' build",
+    "build:utilities": "pnpm --filter @verobee/utilities build",
+    "build:components": "pnpm --filter '@verobee/design-elements' --filter '@verobee/design-react' build",
     "build:design": "pnpm --filter @verobee/design build",
     "validate:design": "pnpm --filter @verobee/design validate"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.0",
     "turbo": "^2.3.0"
   }
 }

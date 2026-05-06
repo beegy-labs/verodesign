@@ -1,0 +1,38 @@
+{
+  "name": "@verobee/utilities",
+  "version": "1.0.0",
+  "description": "Verobee Design System \u2014 vds-* utility CSS classes. Theme-agnostic; references var(--vds-theme-*) only.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "peerDependencies": {
+    "@verobee/spec": "^1.0.0"
+  },
+  "files": [
+    "src/**/*.mjs",
+    "dist/**",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    "./css/full.css": "./dist/css/full.min.css",
+    "./css/full.css.br": "./dist/css/full.min.css.br",
+    "./css/state-variants.css": "./dist/css/state-variants.min.css",
+    "./css/responsive.css": "./dist/css/responsive.min.css",
+    "./css/by-category/*": "./dist/css/by-category/*.min.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "@verobee/spec": "workspace:*"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@verobee/codemods",
+  "version": "1.0.0",
+  "description": "Verobee Design System — jscodeshift transforms for migrating between verodesign versions.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "bin": {
+    "verobee-codemod": "./dist/cli.js"
+  },
+  "files": [
+    "dist/**",
+    "transforms/**/*.{js,ts,mjs}",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test transforms/**/*.test.mjs"
+  },
+  "dependencies": {
+    "jscodeshift": "^17.0.0"
+  }
+}

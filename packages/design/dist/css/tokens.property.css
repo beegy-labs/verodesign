@@ -1282,6 +1282,11 @@
   inherits: true;
   initial-value: oklch(95% 0.005 240);
 }
+@property --vds-theme-bg-selected {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
 @property --vds-theme-text-primary {
   syntax: "<color>";
   inherits: true;

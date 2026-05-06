@@ -1,0 +1,37 @@
+{
+  "name": "@verobee/primitive",
+  "version": "1.0.0",
+  "description": "Verobee Design System \u2014 primitive tokens (raw color ramps, spacing, radius, shadow, typography, animation). Brand-agnostic.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "peerDependencies": {
+    "@verobee/spec": "^1.0.0"
+  },
+  "files": [
+    "tokens/**/*.json",
+    "dist/**",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    "./tokens/*": "./tokens/*",
+    "./dist/css/core.css": "./dist/css/core.min.css",
+    "./dist/css/reset.css": "./dist/css/reset.min.css",
+    "./dist/types/*": "./dist/types/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "@verobee/spec": "workspace:*"
+  }
+}

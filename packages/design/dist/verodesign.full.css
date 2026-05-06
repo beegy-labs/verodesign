@@ -1286,6 +1286,11 @@
   inherits: true;
   initial-value: oklch(95% 0.005 240);
 }
+@property --vds-theme-bg-selected {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
 @property --vds-theme-text-primary {
   syntax: "<color>";
   inherits: true;
@@ -2235,6 +2240,8 @@
     --vds-theme-bg-inverse: oklch(12% 0.012 240);
     --vds-theme-bg-code: #eceff1;
     --vds-theme-bg-code: oklch(95% 0.005 240);
+    --vds-theme-bg-selected: #ffffff;
+    --vds-theme-bg-selected: oklch(100% 0 0);
     --vds-theme-text-primary: #030609;
     --vds-theme-text-primary: oklch(12% 0.012 240);
     --vds-theme-text-secondary: #262f36;
@@ -2360,6 +2367,7 @@
     --vds-theme-bg-muted: oklch(90% 0.008 240);
     --vds-theme-bg-inverse: oklch(12% 0.012 240);
     --vds-theme-bg-code: oklch(95% 0.005 240);
+    --vds-theme-bg-selected: oklch(100% 0 0);
     --vds-theme-text-primary: oklch(12% 0.012 240);
     --vds-theme-text-secondary: oklch(30% 0.018 240);
     --vds-theme-text-dim: oklch(50% 0.02 240);
@@ -2423,6 +2431,7 @@
     --vds-theme-bg-muted: oklch(30% 0.018 240);
     --vds-theme-bg-inverse: oklch(98% 0.003 240);
     --vds-theme-bg-code: oklch(20% 0.015 240);
+    --vds-theme-bg-selected: oklch(30% 0.018 240);
     --vds-theme-text-primary: oklch(98% 0.003 240);
     --vds-theme-text-secondary: oklch(90% 0.008 240);
     --vds-theme-text-dim: oklch(70% 0.015 240);
@@ -3732,6 +3741,57 @@
   .vds-border-code\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 90%, transparent); }
   .vds-border-code\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-code) 95%, transparent); }
   .vds-border-code\/100 { border-color: var(--vds-theme-bg-code); }
+  .vds-bg-selected { background-color: var(--vds-theme-bg-selected); }
+  .vds-text-selected { color: var(--vds-theme-bg-selected); }
+  .vds-border-selected { border-color: var(--vds-theme-bg-selected); }
+  .vds-bg-selected\/0 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 0%, transparent); }
+  .vds-bg-selected\/5 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 5%, transparent); }
+  .vds-bg-selected\/10 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 10%, transparent); }
+  .vds-bg-selected\/15 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 15%, transparent); }
+  .vds-bg-selected\/20 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 20%, transparent); }
+  .vds-bg-selected\/25 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 25%, transparent); }
+  .vds-bg-selected\/30 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 30%, transparent); }
+  .vds-bg-selected\/40 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 40%, transparent); }
+  .vds-bg-selected\/50 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 50%, transparent); }
+  .vds-bg-selected\/60 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 60%, transparent); }
+  .vds-bg-selected\/70 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 70%, transparent); }
+  .vds-bg-selected\/75 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 75%, transparent); }
+  .vds-bg-selected\/80 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 80%, transparent); }
+  .vds-bg-selected\/90 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 90%, transparent); }
+  .vds-bg-selected\/95 { background-color: color-mix(in oklab, var(--vds-theme-bg-selected) 95%, transparent); }
+  .vds-bg-selected\/100 { background-color: var(--vds-theme-bg-selected); }
+  .vds-text-selected\/0 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 0%, transparent); }
+  .vds-text-selected\/5 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 5%, transparent); }
+  .vds-text-selected\/10 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 10%, transparent); }
+  .vds-text-selected\/15 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 15%, transparent); }
+  .vds-text-selected\/20 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 20%, transparent); }
+  .vds-text-selected\/25 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 25%, transparent); }
+  .vds-text-selected\/30 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 30%, transparent); }
+  .vds-text-selected\/40 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 40%, transparent); }
+  .vds-text-selected\/50 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 50%, transparent); }
+  .vds-text-selected\/60 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 60%, transparent); }
+  .vds-text-selected\/70 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 70%, transparent); }
+  .vds-text-selected\/75 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 75%, transparent); }
+  .vds-text-selected\/80 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 80%, transparent); }
+  .vds-text-selected\/90 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 90%, transparent); }
+  .vds-text-selected\/95 { color: color-mix(in oklab, var(--vds-theme-bg-selected) 95%, transparent); }
+  .vds-text-selected\/100 { color: var(--vds-theme-bg-selected); }
+  .vds-border-selected\/0 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 0%, transparent); }
+  .vds-border-selected\/5 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 5%, transparent); }
+  .vds-border-selected\/10 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 10%, transparent); }
+  .vds-border-selected\/15 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 15%, transparent); }
+  .vds-border-selected\/20 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 20%, transparent); }
+  .vds-border-selected\/25 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 25%, transparent); }
+  .vds-border-selected\/30 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 30%, transparent); }
+  .vds-border-selected\/40 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 40%, transparent); }
+  .vds-border-selected\/50 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 50%, transparent); }
+  .vds-border-selected\/60 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 60%, transparent); }
+  .vds-border-selected\/70 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 70%, transparent); }
+  .vds-border-selected\/75 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 75%, transparent); }
+  .vds-border-selected\/80 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 80%, transparent); }
+  .vds-border-selected\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 90%, transparent); }
+  .vds-border-selected\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 95%, transparent); }
+  .vds-border-selected\/100 { border-color: var(--vds-theme-bg-selected); }
   .vds-text-fg { color: var(--vds-theme-text-primary); }
   .vds-bg-fg { background-color: var(--vds-theme-text-primary); }
   .vds-border-fg { border-color: var(--vds-theme-text-primary); }
@@ -7932,6 +7992,7 @@
   .vds-ring-offset-muted { --vds-ring-offset-color: var(--vds-theme-bg-muted); }
   .vds-ring-offset-inverse { --vds-ring-offset-color: var(--vds-theme-bg-inverse); }
   .vds-ring-offset-code { --vds-ring-offset-color: var(--vds-theme-bg-code); }
+  .vds-ring-offset-selected { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
   .vds-ring-primary { --vds-ring-color: var(--vds-theme-primary); }
   .vds-ring-offset-primary { --vds-ring-offset-color: var(--vds-theme-primary); }
   .vds-ring-primary\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary) 0%, transparent); }
@@ -9298,6 +9359,9 @@
   .vds-hover\:ring-offset-code:hover  { --vds-ring-offset-color: var(--vds-theme-bg-code); }
   .vds-focus\:ring-offset-code:focus  { --vds-ring-offset-color: var(--vds-theme-bg-code); }
   .vds-focus-visible\:ring-offset-code:focus-visible  { --vds-ring-offset-color: var(--vds-theme-bg-code); }
+  .vds-hover\:ring-offset-selected:hover  { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
+  .vds-focus\:ring-offset-selected:focus  { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
+  .vds-focus-visible\:ring-offset-selected:focus-visible  { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
   .vds-hover\:ring-primary:hover  { --vds-ring-color: var(--vds-theme-primary); }
   .vds-focus\:ring-primary:focus  { --vds-ring-color: var(--vds-theme-primary); }
   .vds-focus-visible\:ring-primary:focus-visible  { --vds-ring-color: var(--vds-theme-primary); }

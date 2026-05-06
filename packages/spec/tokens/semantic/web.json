@@ -1,0 +1,33 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "semantic",
+      "slotGroup": "web",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "rationale": "Web-only slots: viewport breakpoints, stacking context z-index. Not theme-dependent (constants)."
+    }
+  },
+  "breakpoint": {
+    "xs": { "$value": "360px", "$type": "dimension", "$description": "Small mobile" },
+    "sm": { "$value": "480px", "$type": "dimension", "$description": "Large mobile" },
+    "md": { "$value": "768px", "$type": "dimension", "$description": "Tablet portrait" },
+    "lg": { "$value": "1024px", "$type": "dimension", "$description": "Tablet landscape / small laptop" },
+    "xl": { "$value": "1280px", "$type": "dimension", "$description": "Laptop" },
+    "2xl": { "$value": "1536px", "$type": "dimension", "$description": "Desktop" },
+    "3xl": { "$value": "1920px", "$type": "dimension", "$description": "Large desktop / dashboard" }
+  },
+  "zindex": {
+    "base": { "$value": 0, "$type": "number" },
+    "raised": { "$value": 10, "$type": "number" },
+    "dropdown": { "$value": 100, "$type": "number" },
+    "sticky": { "$value": 200, "$type": "number" },
+    "overlay": { "$value": 300, "$type": "number" },
+    "modal": { "$value": 400, "$type": "number" },
+    "popover": { "$value": 500, "$type": "number" },
+    "tooltip": { "$value": 600, "$type": "number" },
+    "toast": { "$value": 700, "$type": "number" },
+    "max": { "$value": 9999, "$type": "number" }
+  }
+}

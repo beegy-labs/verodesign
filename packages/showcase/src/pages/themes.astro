@@ -1,0 +1,31 @@
+---
+import DocLayout from "../layouts/DocLayout.astro";
+
+const themes = [
+  { name: "verobase", concept: "Vero Base — electric blue clarity (dark) / deep navy enterprise (light)", primary: "OKLCH(75% 0.14 250)" },
+  { name: "veronex",  concept: "Verde Nexus — deep ivy authority", primary: "OKLCH(30% 0.06 150)" },
+  { name: "default",  concept: "Universal blue (color-blind safe)", primary: "OKLCH(70% 0.17 250)" },
+];
+---
+<DocLayout title="Themes">
+  <h1>Themes</h1>
+  <p>3 brand themes share the same semantic schema. Each ships as its own npm package.</p>
+
+  <div style="display: grid; gap: 1rem; margin-top: 2rem;">
+    {themes.map((t) => (
+      <div style="border: 1px solid var(--vds-theme-border-default); border-radius: 0.75rem; padding: 1.5rem; background: var(--vds-theme-bg-card);">
+        <h2 style="margin: 0 0 0.5rem 0;">@verobee/theme-{t.name}</h2>
+        <p style="color: var(--vds-theme-text-dim); margin: 0;">{t.concept}</p>
+        <p style="font-family: ui-monospace, monospace; color: var(--vds-theme-text-dim); margin-top: 0.5rem;">primary: {t.primary}</p>
+      </div>
+    ))}
+  </div>
+
+  <section style="margin-top: 3rem;">
+    <h2>Adding a new brand</h2>
+    <pre style="background: var(--vds-theme-bg-card); padding: 1rem; border-radius: 0.5rem; overflow-x: auto;"><code>vds new-brand veroteam --primary "oklch(45% 0.18 30)"
+pnpm install
+pnpm --filter @verobee/theme-veroteam build
+pnpm changeset</code></pre>
+  </section>
+</DocLayout>

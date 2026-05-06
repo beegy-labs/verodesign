@@ -1,10 +1,13 @@
 # Token CHANGELOG
 
-> CDD Layer 2 — Per-release token changes | **Last Updated**: 2026-05-02
+> CDD Layer 2 — Per-release token changes | **Last Updated**: 2026-05-06
 
 Format: [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/). SemVer policy: [`../build/versioning.md`](../build/versioning.md).
 
 ## [Unreleased]
+
+### Added
+- `theme.bg.selected` — semantic slot for selected/active surface used by segmented controls, selected list rows, and active sidebar nav buttons. Distinct from `bg.hover` (transient pointer) and `bg.elevated` (floating surface). Default `{color.white}` (light themes inherit); dark themes (default-dark, verobase-dark, veronex-dark, _template-dark) provide explicit values brighter than `bg.hover` for clear elevation. Spec: `.specs/verodesign/2026-05-06-bg-selected.md`. Driver: verobase admin + dashboard shell unification (운영/서비스 segmented toggle).
 
 ### Docs
 - Lock 2026 optimization architecture: `@property` registration, `color-mix()` alpha, `oklch(from ...)` shade ramps, `light-dark()` themes, `@scope` state variants, `@container` responsive, Brotli-11 precompressed bundle. SSOT: [`../build/optimization.md`](../build/optimization.md). Workflow: [`../../../.add/optimize-2026.md`](../../../.add/optimize-2026.md). Decision lock: [`../decisions.md` § Performance & size optimization](../decisions.md).

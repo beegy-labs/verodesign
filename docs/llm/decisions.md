@@ -29,8 +29,13 @@ All architectural and policy decisions for verodesign. Every other doc reference
 | Format standard | W3C DTCG (Design Tokens Community Group) |
 | Build tool | Style Dictionary 4.x |
 | Module format | ESM only |
-| Distribution | GitHub git URL + Releases (npm publish deferred to 1.0) |
-| Repo layout | monorepo (pnpm workspaces + Turborepo) — `packages/design`, `packages/design-elements`, `packages/design-react` |
+| Distribution | **GitHub Package Registry (GHPR)** for npm packages, **GHCR** for container images (showcase site). Per-package independent semver via Changesets. SDD: `.specs/verodesign/2026-05-06-greenfield-architecture.md`. |
+| Repo layout | monorepo (pnpm workspaces + Turborepo) — **7-layer split**: `packages/{spec, primitive, theme-verobase, theme-veronex, theme-default, utilities, design-elements, design-react, codemods, cli, showcase}` |
+| Brand isolation | Each brand theme is its own npm package (`@verobee/theme-{name}`). Consumer apps pin exact versions; `workspace:*` is forbidden in production `package.json`. |
+| Public API contract | `PUBLIC_API.md` (root) — Frozen / Experimental / Internal surfaces |
+| Breaking-change policy | Every breaking change requires a `@verobee/codemods` transform; deprecation cycle ≥ 6 months |
+| Showcase site | `@verobee/showcase` — Astro 4 + MDX, deployed as GHCR container to K8s via `platform-gitops` + ArgoCD |
+| CI release flow | Changesets `action` opens "Version Packages" PR → merge → publish to GHPR (per-package semver bump) |
 
 ## Component layer (v0.2.0+)
 

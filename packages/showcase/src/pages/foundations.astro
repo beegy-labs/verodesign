@@ -1,0 +1,42 @@
+---
+import DocLayout from "../layouts/DocLayout.astro";
+
+// Surface tokens to demo
+const bgSlots = ['page', 'card', 'elevated', 'hover', 'muted', 'selected'];
+const textSlots = ['primary', 'secondary', 'dim', 'faint', 'bright'];
+---
+<DocLayout title="Foundations">
+  <h1>Foundations</h1>
+  <p>The visual primitives that compose every Verobee surface.</p>
+
+  <section>
+    <h2>Backgrounds</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      {bgSlots.map((slot) => (
+        <div class="token-swatch">
+          <div class="swatch-color" style={`background-color: var(--vds-theme-bg-${slot});`}></div>
+          <span class="swatch-name">--vds-theme-bg-{slot}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>Text</h2>
+    {textSlots.map((slot) => (
+      <p style={`color: var(--vds-theme-text-${slot});`}>
+        text-{slot} — The quick brown fox jumps over the lazy dog.
+      </p>
+    ))}
+  </section>
+
+  <section>
+    <h2>Spacing</h2>
+    <p style="color: var(--vds-theme-text-dim);">Try the theme switcher above to see how all values shift coherently.</p>
+    <div style="display: flex; align-items: flex-end; gap: 0.5rem;">
+      {[1, 2, 3, 4, 5, 6, 8, 10, 12, 16].map((n) => (
+        <div style={`width: var(--vds-spacing-${n}); height: var(--vds-spacing-${n}); background: var(--vds-theme-primary); border-radius: 0.25rem;`} title={`spacing-${n}`}></div>
+      ))}
+    </div>
+  </section>
+</DocLayout>

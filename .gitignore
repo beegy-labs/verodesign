@@ -11,3 +11,4 @@ coverage/
 
 # Showcase is a dev tool — built artifact not consumed externally
 packages/showcase/dist/
+packages/showcase/.astro/
