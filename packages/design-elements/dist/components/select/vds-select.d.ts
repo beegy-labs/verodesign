@@ -13,6 +13,9 @@ export declare class VdsSelect extends VdsElement {
     static styles: import("lit").CSSResult;
     value: string;
     placeholder: string;
+    label?: string;
+    helper?: string;
+    errorMessage?: string;
     disabled: boolean;
     required: boolean;
     name?: string;

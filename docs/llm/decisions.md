@@ -58,7 +58,7 @@ All architectural and policy decisions for verodesign. Every other doc reference
 
 ## Utility layer (`[Unreleased]`)
 
-> Tailwind-independent utility classes. Scope is **bounded by what consumers actually need**, not 1:1 with Tailwind. Driven by verobase frequency analysis (2026-05-01).
+> **Sovereign utility classes.** Generated from verodesign's own tokens, referencing `--vds-*` CSS variables only. Not a Tailwind rebrand — the design system itself, exposed as a transparent utility layer (white-box: every class is defined in verodesign source, traceable to a token, version-controlled here). Tailwind is not a dependency at any layer; consumers using `vds-*` classes have zero third-party utility-engine in their stack. Scope is **bounded by what consumers actually need**, not 1:1 with Tailwind. Driven by verobase frequency analysis (2026-05-01).
 
 ### In scope (verobase 1차 마이그 기준)
 

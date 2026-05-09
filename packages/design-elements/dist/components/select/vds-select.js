@@ -1,11 +1,11 @@
 import { css as f, html as u } from "lit";
-import { property as a, state as p, query as c } from "lit/decorators.js";
-import { setRole as v, setAriaProperty as n } from "../../utils/attribute-mirror.js";
+import { property as o, state as p, query as c } from "lit/decorators.js";
+import { setRole as v, setAriaProperty as l } from "../../utils/attribute-mirror.js";
 import { VdsElement as y } from "../../base/vds-element.js";
-var b = Object.defineProperty, s = (l, t, e, i) => {
-  for (var o = void 0, d = l.length - 1, h; d >= 0; d--)
-    (h = l[d]) && (o = h(t, e, o) || o);
-  return o && b(t, e, o), o;
+var g = Object.defineProperty, i = (n, t, e, s) => {
+  for (var a = void 0, d = n.length - 1, h; d >= 0; d--)
+    (h = n[d]) && (a = h(t, e, a) || a);
+  return a && g(t, e, a), a;
 };
 class r extends y {
   constructor() {
@@ -41,8 +41,8 @@ class r extends y {
           this.typeBuffer += t.key.toLowerCase(), this.typeBufferTimer && clearTimeout(this.typeBufferTimer), this.typeBufferTimer = setTimeout(() => {
             this.typeBuffer = "";
           }, 500);
-          const i = e.findIndex((o) => (o.textContent ?? "").toLowerCase().startsWith(this.typeBuffer));
-          i >= 0 && this.setActive(i);
+          const s = e.findIndex((a) => (a.textContent ?? "").toLowerCase().startsWith(this.typeBuffer));
+          s >= 0 && this.setActive(s);
         }
       } else if (t.key === " " || t.key === "Enter" || t.key === "ArrowDown") {
         t.preventDefault(), this.toggle();
@@ -53,8 +53,8 @@ class r extends y {
     }, this.handleListClick = (t) => {
       const e = t.target.closest("vds-option");
       if (!e) return;
-      const i = this.options.indexOf(e);
-      i >= 0 && this.commit(i);
+      const s = this.options.indexOf(e);
+      s >= 0 && this.commit(s);
     }, this.internals = this.attachInternals(), v(this, this.internals, "combobox"), this.addEventListener("keydown", this.handleKey);
   }
   static {
@@ -64,8 +64,29 @@ class r extends y {
     this.styles = f`
     :host {
       display: inline-flex;
-      position: relative;
+      flex-direction: column;
+      gap: var(--vds-spacing-1);
       font-family: var(--vds-font-family-sans);
+      width: 100%;
+    }
+    .label {
+      font-size: var(--vds-font-size-sm);
+      font-weight: var(--vds-font-weight-500);
+      color: var(--vds-theme-text-primary);
+    }
+    .label[data-required]::after {
+      content: ' *';
+      color: var(--vds-theme-destructive);
+    }
+    .helper {
+      font-size: var(--vds-font-size-xs);
+      color: var(--vds-theme-text-dim);
+    }
+    .helper[data-error] { color: var(--vds-theme-destructive); }
+    .label:empty, .helper:empty { display: none; }
+
+    .control {
+      position: relative;
       width: 100%;
     }
 
@@ -125,7 +146,7 @@ class r extends y {
       const e = this.findOptionByValue(this.value);
       this.displayLabel = e?.textContent?.trim() ?? "", this.refreshSelected(), this.internals.setFormValue(this.value || null);
     }
-    n(this, this.internals, "ariaExpanded", this.open), n(this, this.internals, "ariaDisabled", this.disabled), n(this, this.internals, "ariaRequired", this.required), n(this, this.internals, "ariaHasPopup", "listbox");
+    l(this, this.internals, "ariaExpanded", this.open), l(this, this.internals, "ariaDisabled", this.disabled), l(this, this.internals, "ariaRequired", this.required), l(this, this.internals, "ariaHasPopup", "listbox");
   }
   get options() {
     return this._options;
@@ -146,59 +167,73 @@ class r extends y {
   }
   setActive(t) {
     const e = this.options;
-    for (const i of e) i.removeAttribute("data-active");
+    for (const s of e) s.removeAttribute("data-active");
     t >= 0 && t < e.length && (e[t].setAttribute("data-active", ""), e[t].scrollIntoView({ block: "nearest" })), this.activeIndex = t;
   }
   toggle() {
     if (!this.disabled && (this.open = !this.open, this.open)) {
-      const e = this.options.findIndex((i) => i.value === this.value);
+      const e = this.options.findIndex((s) => s.value === this.value);
       this.setActive(e >= 0 ? e : 0);
     }
   }
   commit(t) {
-    const i = this.options[t];
-    !i || i.disabled || (this.value = i.value, this.displayLabel = i.textContent?.trim() ?? "", this.open = !1, this.emit("change", { value: this.value }));
+    const s = this.options[t];
+    !s || s.disabled || (this.value = s.value, this.displayLabel = s.textContent?.trim() ?? "", this.open = !1, this.emit("change", { value: this.value }));
   }
   render() {
+    const t = this.errorMessage ?? this.helper ?? "";
     return u`
-      <div class="trigger" part="trigger" @click=${this.handleTriggerClick}>
-        <span class=${this.displayLabel ? "" : "placeholder"}>${this.displayLabel || this.placeholder}</span>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <span class="label" ?data-required=${this.required}>${this.label ?? ""}</span>
+      <div class="control">
+        <div class="trigger" part="trigger" @click=${this.handleTriggerClick}>
+          <span class=${this.displayLabel ? "" : "placeholder"}>${this.displayLabel || this.placeholder}</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="listbox" part="listbox" role="listbox" @click=${this.handleListClick}>
+          <slot @slotchange=${() => this.refreshOptions()}></slot>
+        </div>
       </div>
-      <div class="listbox" part="listbox" role="listbox" @click=${this.handleListClick}>
-        <slot @slotchange=${() => this.refreshOptions()}></slot>
-      </div>
+      <span class="helper" ?data-error=${!!this.errorMessage}>${t}</span>
     `;
   }
 }
-s([
-  a({ type: String, reflect: !0 })
+i([
+  o({ type: String, reflect: !0 })
 ], r.prototype, "value");
-s([
-  a({ type: String })
+i([
+  o({ type: String })
 ], r.prototype, "placeholder");
-s([
-  a({ type: Boolean, reflect: !0 })
+i([
+  o({ type: String })
+], r.prototype, "label");
+i([
+  o({ type: String })
+], r.prototype, "helper");
+i([
+  o({ type: String })
+], r.prototype, "errorMessage");
+i([
+  o({ type: Boolean, reflect: !0 })
 ], r.prototype, "disabled");
-s([
-  a({ type: Boolean, reflect: !0 })
+i([
+  o({ type: Boolean, reflect: !0 })
 ], r.prototype, "required");
-s([
-  a({ type: String })
+i([
+  o({ type: String })
 ], r.prototype, "name");
-s([
-  a({ type: Boolean, reflect: !0, attribute: "data-open" })
+i([
+  o({ type: Boolean, reflect: !0, attribute: "data-open" })
 ], r.prototype, "open");
-s([
+i([
   p()
 ], r.prototype, "activeIndex");
-s([
+i([
   p()
 ], r.prototype, "displayLabel");
-s([
+i([
   c(".trigger")
 ], r.prototype, "triggerEl");
-s([
+i([
   c(".listbox")
 ], r.prototype, "listboxEl");
 export {

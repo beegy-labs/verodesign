@@ -18,8 +18,29 @@ export class VdsSelect extends VdsElement {
   static styles = css`
     :host {
       display: inline-flex;
-      position: relative;
+      flex-direction: column;
+      gap: var(--vds-spacing-1);
       font-family: var(--vds-font-family-sans);
+      width: 100%;
+    }
+    .label {
+      font-size: var(--vds-font-size-sm);
+      font-weight: var(--vds-font-weight-500);
+      color: var(--vds-theme-text-primary);
+    }
+    .label[data-required]::after {
+      content: ' *';
+      color: var(--vds-theme-destructive);
+    }
+    .helper {
+      font-size: var(--vds-font-size-xs);
+      color: var(--vds-theme-text-dim);
+    }
+    .helper[data-error] { color: var(--vds-theme-destructive); }
+    .label:empty, .helper:empty { display: none; }
+
+    .control {
+      position: relative;
       width: 100%;
     }
 
@@ -73,6 +94,9 @@ export class VdsSelect extends VdsElement {
 
   @property({ type: String, reflect: true }) value = '';
   @property({ type: String }) placeholder = 'Select…';
+  @property({ type: String }) label?: string;
+  @property({ type: String }) helper?: string;
+  @property({ type: String }) errorMessage?: string;
   @property({ type: Boolean, reflect: true }) disabled = false;
   @property({ type: Boolean, reflect: true }) required = false;
   @property({ type: String }) name?: string;
@@ -232,14 +256,19 @@ export class VdsSelect extends VdsElement {
   };
 
   render() {
+    const helperText = this.errorMessage ?? this.helper ?? '';
     return html`
-      <div class="trigger" part="trigger" @click=${this.handleTriggerClick}>
-        <span class=${this.displayLabel ? '' : 'placeholder'}>${this.displayLabel || this.placeholder}</span>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <span class="label" ?data-required=${this.required}>${this.label ?? ''}</span>
+      <div class="control">
+        <div class="trigger" part="trigger" @click=${this.handleTriggerClick}>
+          <span class=${this.displayLabel ? '' : 'placeholder'}>${this.displayLabel || this.placeholder}</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="listbox" part="listbox" role="listbox" @click=${this.handleListClick}>
+          <slot @slotchange=${() => this.refreshOptions()}></slot>
+        </div>
       </div>
-      <div class="listbox" part="listbox" role="listbox" @click=${this.handleListClick}>
-        <slot @slotchange=${() => this.refreshOptions()}></slot>
-      </div>
+      <span class="helper" ?data-error=${!!this.errorMessage}>${helperText}</span>
     `;
   }
 }

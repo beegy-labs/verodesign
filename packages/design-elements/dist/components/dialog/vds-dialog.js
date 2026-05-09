@@ -1,14 +1,14 @@
 import { css as p, html as c } from "lit";
 import { property as i, query as h } from "lit/decorators.js";
 import { setRole as v, setAriaProperty as d } from "../../utils/attribute-mirror.js";
-import { FocusTrap as u } from "../../utils/focus-trap.js";
-import { VdsElement as m } from "../../base/vds-element.js";
+import { FocusTrap as m } from "../../utils/focus-trap.js";
+import { VdsElement as u } from "../../base/vds-element.js";
 var f = Object.defineProperty, a = (r, e, o, b) => {
   for (var t = void 0, n = r.length - 1, l; n >= 0; n--)
     (l = r[n]) && (t = l(e, o, t) || t);
   return t && f(e, o, t), t;
 };
-class s extends m {
+class s extends u {
   constructor() {
     super(), this.open = !1, this.size = "md", this.closeOnBackdrop = !0, this.closeOnEscape = !0, this.ariaLabelText = null, this._titleId = this.createId("vds-dialog-title"), this.handleEscape = (e) => {
       !this.open || !this.closeOnEscape || e.key === "Escape" && (e.preventDefault(), this.open = !1);
@@ -60,8 +60,10 @@ class s extends m {
       transform: translateY(0) scale(1);
     }
 
-    :host([size="lg"]) .panel { max-width: min(48rem, 100%); }
-    :host([size="sm"]) .panel { max-width: min(24rem, 100%); }
+    :host([size="sm"])  .panel { max-width: min(24rem, 100%); }
+    :host([size="lg"])  .panel { max-width: min(48rem, 100%); }
+    :host([size="xl"])  .panel { max-width: min(56rem, 100%); }
+    :host([size="2xl"]) .panel { max-width: min(72rem, 100%); }
 
     .header {
       padding: var(--vds-spacing-4) var(--vds-spacing-5);
@@ -120,7 +122,7 @@ class s extends m {
     super.updated(e), e.has("open") && (this.open ? this.handleOpen() : this.handleClose()), e.has("ariaLabelText") && this.ariaLabelText != null && d(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   handleOpen() {
-    document.body.style.overflow = "hidden", this.focusTrap = new u(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate()), this.emit("vds-open");
+    document.body.style.overflow = "hidden", this.focusTrap = new m(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate()), this.emit("vds-open");
   }
   handleClose() {
     document.body.style.overflow = "", this.focusTrap?.deactivate(), this.emit("vds-close");

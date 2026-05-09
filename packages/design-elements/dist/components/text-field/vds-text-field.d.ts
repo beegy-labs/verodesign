@@ -14,7 +14,7 @@ export declare class VdsTextField extends VdsElement {
     helper?: string;
     errorMessage?: string;
     placeholder?: string;
-    type: 'text' | 'email' | 'password' | 'tel' | 'url' | 'search';
+    type: 'text' | 'email' | 'password' | 'tel' | 'url' | 'search' | 'number' | 'date' | 'datetime-local' | 'time' | 'month' | 'week' | 'color' | 'range' | 'file' | 'hidden';
     size: Size;
     disabled: boolean;
     required: boolean;

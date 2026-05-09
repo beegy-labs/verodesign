@@ -35,7 +35,7 @@ Update consumer projects (veronex, verobase) to use a new verodesign version.
 | 7 | Set `<html data-theme="{theme}">` on consumer's root element | Theme attribute |
 | 8 | Add `theme-init.js` snippet for FOUC prevention | Script added |
 | 9 | If breaking changes in CHANGELOG: search-and-replace renamed tokens in consumer code | Migration applied |
-| 10 | If consumer was using Tailwind classes that conflict: switch to `vds-*` prefix or use Tailwind plugin | Alignment |
+| 10 | Remove Tailwind entirely from consumer: drop `tailwindcss` from `package.json`, delete `tailwind.config.*`, drop `@tailwind` directives from CSS, and replace any utility usage with verodesign primitives (`<Stack>`, `<Cluster>`, `<Grid>`, `<Text>`, `<Heading>`, ...) or with `vds-*` utility classes (verodesign-owned). The end state has zero Tailwind dependency. | Sovereignty |
 | 11 | Run consumer's build/dev — verify visual regression | No visual issues |
 | 12 | Commit: `chore(deps): bump @verobee/design to vX.Y.Z` (in consumer repo) | Commit |
 
@@ -46,17 +46,20 @@ Update consumer projects (veronex, verobase) to use a new verodesign version.
 | Consumer build passes | Yes |
 | No visual regression (manual check on key pages) | Yes |
 | All `var(--theme-*)` references migrated to `var(--vds-theme-*)` | Yes |
-| All Tailwind utility classes (if removing Tailwind) replaced with `vds-*` | Yes (in scope) |
+| Tailwind dependency fully removed (no `tailwindcss` in `package.json`, no `@tailwind` directives, no `tailwind.config.*`) | Yes |
+| Any remaining utility-style classes use the `vds-*` prefix (verodesign-owned, transparent) | Yes |
 | Lockfile updated | Yes |
 
 ## Migration patterns
 
-| Before (legacy) | After (verodesign) |
-| --------------- | ------------------ |
+> **Note**: `vds-*` utility classes are **not a Tailwind rename**. They are verodesign's own utility layer — generated from the same tokens that drive the Lit components, referencing `--vds-*` CSS variables only. Removing Tailwind from a consumer means deleting the Tailwind dependency entirely; the resulting `vds-*` classes belong to the design system as a transparent, audit-able layer (no build-time black box).
+
+| Before (Tailwind, removed) | After (verodesign-native) |
+| -------------------------- | ------------------------- |
 | `@import './tokens.css'` | `@import "@verobee/design/css/themes/veronex.css"` |
 | `var(--theme-bg-page)` | `var(--vds-theme-bg-page)` |
-| `class="bg-blue-500"` (Tailwind) | `class="vds-bg-primary"` |
-| `class="dark:bg-card"` (Tailwind dark) | `class="vds-bg-card"` (theme handles mode) |
+| `class="bg-blue-500"` (Tailwind palette) | `class="vds-bg-primary"` (verodesign semantic slot) |
+| `class="dark:bg-card"` (Tailwind dark prefix) | `class="vds-bg-card"` (theme attribute drives mode automatically) |
 | `<html class="dark">` | `<html data-theme="veronex" data-mode="dark">` |
 
 ## Per-consumer specifics
@@ -86,5 +89,5 @@ Same pattern as veronex but theme = `verobase`. Delete each app's local `tokens.
 | ------- | ------ |
 | Build fails on missing CSS variable | Search for unmigrated `--theme-*` references → update to `--vds-theme-*` |
 | Visual regression in dark mode | Verify `data-mode` attribute or `prefers-color-scheme` working |
-| Tailwind class still present | Either replace with `vds-*` OR keep Tailwind plugin temporarily |
+| Tailwind class still present | Replace with verodesign primitive (preferred) or `vds-*` utility class. Do not keep Tailwind — that defeats the sovereignty goal. |
 | Theme switching not working at runtime | Verify `theme-init.js` runs before hydration |

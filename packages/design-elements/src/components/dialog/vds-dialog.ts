@@ -63,8 +63,10 @@ export class VdsDialog extends VdsElement {
       transform: translateY(0) scale(1);
     }
 
-    :host([size="lg"]) .panel { max-width: min(48rem, 100%); }
-    :host([size="sm"]) .panel { max-width: min(24rem, 100%); }
+    :host([size="sm"])  .panel { max-width: min(24rem, 100%); }
+    :host([size="lg"])  .panel { max-width: min(48rem, 100%); }
+    :host([size="xl"])  .panel { max-width: min(56rem, 100%); }
+    :host([size="2xl"]) .panel { max-width: min(72rem, 100%); }
 
     .header {
       padding: var(--vds-spacing-4) var(--vds-spacing-5);
@@ -114,7 +116,7 @@ export class VdsDialog extends VdsElement {
   `;
 
   @property({ type: Boolean, reflect: true }) open = false;
-  @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg' = 'md';
+  @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg' | 'xl' | '2xl' = 'md';
   @property({ type: Boolean, attribute: 'close-on-backdrop' }) closeOnBackdrop = true;
   @property({ type: Boolean, attribute: 'close-on-escape' }) closeOnEscape = true;
   @property({ type: String, attribute: 'aria-label' }) ariaLabelText: string | null = null;

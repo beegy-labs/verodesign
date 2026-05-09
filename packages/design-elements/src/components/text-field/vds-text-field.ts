@@ -108,7 +108,10 @@ export class VdsTextField extends VdsElement {
   @property({ type: String }) helper?: string;
   @property({ type: String }) errorMessage?: string;
   @property({ type: String }) placeholder?: string;
-  @property({ type: String }) type: 'text' | 'email' | 'password' | 'tel' | 'url' | 'search' = 'text';
+  @property({ type: String }) type:
+    | 'text' | 'email' | 'password' | 'tel' | 'url' | 'search'
+    | 'number' | 'date' | 'datetime-local' | 'time' | 'month' | 'week'
+    | 'color' | 'range' | 'file' | 'hidden' = 'text';
   @property({ type: String, reflect: true }) size: Size = 'md';
   @property({ type: Boolean, reflect: true }) disabled = false;
   @property({ type: Boolean, reflect: true }) required = false;
