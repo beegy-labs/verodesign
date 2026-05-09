@@ -1,0 +1,140 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "status": "experimental",
+      "since": "v0.X.Y",
+      "source": "internal:dreamstock — 자본 성장 시뮬레이터 (1000만→100억)",
+      "implements": [
+        "growth-projection",
+        "leverage-panel",
+        "dividend-projection"
+      ],
+      "consumer": "dreamstock"
+    }
+  },
+  "exp": {
+    "dreamstock": {
+      "growth": {
+        "trajectory-line": {
+          "$value": "{theme.primary}",
+          "$type": "color",
+          "$description": "Capital trajectory line on the cycle-by-cycle projection chart."
+        },
+        "target-line": {
+          "$value": "{theme.success}",
+          "$type": "color",
+          "$description": "Dashed reference line for the goal capital (e.g. 100억)."
+        },
+        "milestone-repay": {
+          "$value": "{theme.warning}",
+          "$type": "color",
+          "$description": "Marker dot on the cycle where loan repayment from profit-share begins."
+        },
+        "milestone-dividend": {
+          "$value": "{theme.info}",
+          "$type": "color",
+          "$description": "Marker dot on the cycle where dividend reinvestment begins."
+        },
+        "milestone-target": {
+          "$value": "{theme.success}",
+          "$type": "color",
+          "$description": "Marker dot on the cycle where the goal is reached."
+        },
+        "milestone-loan-matured": {
+          "$value": "{theme.destructive}",
+          "$type": "color",
+          "$description": "Marker dot on the cycle where a term loan reaches maturity (balloon trigger)."
+        }
+      },
+      "leverage": {
+        "balance-line": {
+          "$value": "{theme.warning}",
+          "$type": "color",
+          "$description": "Loan balance line on the projection chart — secondary to the capital line."
+        },
+        "interest-accent": {
+          "$value": "{theme.warning}",
+          "$type": "color",
+          "$description": "Accent for accrued/cumulative interest figures in summary cards."
+        },
+        "type-overdraft-bg": {
+          "$value": "{theme.bg.card}",
+          "$type": "color",
+          "$description": "마이너스 통장 chip background — neutral / always-revolving connotation."
+        },
+        "type-term-bg": {
+          "$value": "{theme.bg.selected}",
+          "$type": "color",
+          "$description": "일반 대출 chip background — emphasised as the choice with a fixed maturity."
+        }
+      },
+      "dividend": {
+        "pool-line": {
+          "$value": "{theme.info}",
+          "$type": "color",
+          "$description": "Cumulative dividend principal line on the projection chart."
+        },
+        "income-accent": {
+          "$value": "{theme.info}",
+          "$type": "color",
+          "$description": "Accent for projected annual dividend income figures."
+        }
+      },
+      "networth": {
+        "positive": {
+          "$value": "{theme.primary}",
+          "$type": "color",
+          "$description": "Net worth (capital − loan) when positive — primary hero figure."
+        },
+        "negative": {
+          "$value": "{theme.destructive}",
+          "$type": "color",
+          "$description": "Net worth hero figure when negative (deeply leveraged underwater state)."
+        },
+        "progress-track": {
+          "$value": "{theme.bg.card}",
+          "$type": "color",
+          "$description": "Progress-bar track for goal completion (회차 진행도)."
+        },
+        "progress-fill-start": {
+          "$value": "{theme.primary}",
+          "$type": "color",
+          "$description": "Progress-bar gradient start."
+        },
+        "progress-fill-end": {
+          "$value": "{theme.success}",
+          "$type": "color",
+          "$description": "Progress-bar gradient end (approaching goal)."
+        }
+      },
+      "journal": {
+        "buy-tone": {
+          "$value": "{theme.info}",
+          "$type": "color",
+          "$description": "Buy-trade row accent (entry into a position)."
+        },
+        "sell-tone": {
+          "$value": "{theme.primary}",
+          "$type": "color",
+          "$description": "Sell-trade row accent (exit / realised pnl)."
+        },
+        "pnl-positive-bg": {
+          "$value": "{theme.success}",
+          "$type": "color",
+          "$description": "Realised-profit pill background; consumer should mix with 12% alpha."
+        },
+        "pnl-negative-bg": {
+          "$value": "{theme.destructive}",
+          "$type": "color",
+          "$description": "Realised-loss pill background; consumer should mix with 12% alpha."
+        },
+        "note-rule": {
+          "$value": "{theme.primary}",
+          "$type": "color",
+          "$description": "Left-border rule on a trade note quoting the rationale (왜 샀/팔았는지)."
+        }
+      }
+    }
+  }
+}

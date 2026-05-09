@@ -17,7 +17,7 @@
 
 | Pattern | Status | Source | First seen | Notes |
 | ------- | ------ | ------ | ---------- | ----- |
-| _none yet_ | | | | |
+| dreamstock-simulator | experimental | internal:dreamstock | 2026-05-10 | trajectory + leverage + dividend + networth + journal aliases |
 
 ## Entry Template
 
