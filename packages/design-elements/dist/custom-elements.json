@@ -2670,197 +2670,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/grid/define.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "vds-grid",
-          "declaration": {
-            "name": "VdsGrid",
-            "module": "/src/components/grid/vds-grid.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/grid/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsGrid",
-          "declaration": {
-            "name": "VdsGrid",
-            "module": "./vds-grid.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/grid/vds-grid.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "<vds-grid> — CSS grid layout primitive.",
-          "name": "VdsGrid",
-          "slots": [
-            {
-              "description": "children laid in `cols` columns with `gap`",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "cols",
-              "type": {
-                "text": "Cols"
-              },
-              "default": "'1'",
-              "attribute": "cols",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "gap",
-              "type": {
-                "text": "Gap"
-              },
-              "default": "'0'",
-              "attribute": "gap",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "false",
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "emit",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "name",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "detail",
-                  "optional": true,
-                  "type": {
-                    "text": "T"
-                  }
-                },
-                {
-                  "name": "options",
-                  "default": "{}",
-                  "type": {
-                    "text": "EventInit"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "createId",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "prefix",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderSr",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "text",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "cols",
-              "type": {
-                "text": "Cols"
-              },
-              "default": "'1'",
-              "fieldName": "cols"
-            },
-            {
-              "name": "gap",
-              "type": {
-                "text": "Gap"
-              },
-              "default": "'0'",
-              "fieldName": "gap"
-            }
-          ],
-          "superclass": {
-            "name": "VdsElement",
-            "module": "/src/base/vds-element.js"
-          },
-          "tagName": "vds-grid",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsGrid",
-          "declaration": {
-            "name": "VdsGrid",
-            "module": "src/components/grid/vds-grid.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/empty-state/define.ts",
       "declarations": [],
       "exports": [
@@ -3070,6 +2879,197 @@
           "declaration": {
             "name": "VdsEmptyState",
             "module": "src/components/empty-state/vds-empty-state.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/grid/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-grid",
+          "declaration": {
+            "name": "VdsGrid",
+            "module": "/src/components/grid/vds-grid.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/grid/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsGrid",
+          "declaration": {
+            "name": "VdsGrid",
+            "module": "./vds-grid.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/grid/vds-grid.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-grid> — CSS grid layout primitive.",
+          "name": "VdsGrid",
+          "slots": [
+            {
+              "description": "children laid in `cols` columns with `gap`",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "cols",
+              "type": {
+                "text": "Cols"
+              },
+              "default": "'1'",
+              "attribute": "cols",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "gap",
+              "type": {
+                "text": "Gap"
+              },
+              "default": "'0'",
+              "attribute": "gap",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "false",
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "emit",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "optional": true,
+                  "type": {
+                    "text": "T"
+                  }
+                },
+                {
+                  "name": "options",
+                  "default": "{}",
+                  "type": {
+                    "text": "EventInit"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createId",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "prefix",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderSr",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "cols",
+              "type": {
+                "text": "Cols"
+              },
+              "default": "'1'",
+              "fieldName": "cols"
+            },
+            {
+              "name": "gap",
+              "type": {
+                "text": "Gap"
+              },
+              "default": "'0'",
+              "fieldName": "gap"
+            }
+          ],
+          "superclass": {
+            "name": "VdsElement",
+            "module": "/src/base/vds-element.js"
+          },
+          "tagName": "vds-grid",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsGrid",
+          "declaration": {
+            "name": "VdsGrid",
+            "module": "src/components/grid/vds-grid.ts"
           }
         }
       ]
@@ -4252,9 +4252,13 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "<vds-page-header> — page-level title row.\nRenders title (h1) + optional subtitle, with right-aligned `actions` slot.",
+          "description": "<vds-page-header> — page-level title row.\nRenders leading slot + title (h1) + optional subtitle, with right-aligned\n`actions` slot.",
           "name": "VdsPageHeader",
           "slots": [
+            {
+              "description": "optional leading content (back button, brand, etc.)",
+              "name": "leading"
+            },
             {
               "description": "right-aligned action elements (buttons, etc.)",
               "name": "actions"
@@ -6254,183 +6258,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/table/define.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "vds-table",
-          "declaration": {
-            "name": "VdsTable",
-            "module": "/src/components/table/vds-table.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/table/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsTable",
-          "declaration": {
-            "name": "VdsTable",
-            "module": "./vds-table.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/table/vds-table.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "<vds-table> — semantic table wrapper. Renders inside a `<table>` and applies\ntheme-token styling. Use standard `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`\ninside.",
-          "name": "VdsTable",
-          "slots": [
-            {
-              "description": "<caption>",
-              "name": "caption"
-            },
-            {
-              "description": "table contents (thead/tbody/tfoot)",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "density",
-              "type": {
-                "text": "Density"
-              },
-              "default": "'normal'",
-              "attribute": "density",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "false",
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "emit",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "name",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "detail",
-                  "optional": true,
-                  "type": {
-                    "text": "T"
-                  }
-                },
-                {
-                  "name": "options",
-                  "default": "{}",
-                  "type": {
-                    "text": "EventInit"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "createId",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "prefix",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderSr",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "text",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "density",
-              "type": {
-                "text": "Density"
-              },
-              "default": "'normal'",
-              "fieldName": "density"
-            }
-          ],
-          "superclass": {
-            "name": "VdsElement",
-            "module": "/src/base/vds-element.js"
-          },
-          "tagName": "vds-table",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsTable",
-          "declaration": {
-            "name": "VdsTable",
-            "module": "src/components/table/vds-table.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/switch/define.ts",
       "declarations": [],
       "exports": [
@@ -6731,6 +6558,183 @@
           "declaration": {
             "name": "VdsSwitch",
             "module": "src/components/switch/vds-switch.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/table/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-table",
+          "declaration": {
+            "name": "VdsTable",
+            "module": "/src/components/table/vds-table.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/table/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTable",
+          "declaration": {
+            "name": "VdsTable",
+            "module": "./vds-table.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/table/vds-table.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-table> — semantic table wrapper. Renders inside a `<table>` and applies\ntheme-token styling. Use standard `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`\ninside.",
+          "name": "VdsTable",
+          "slots": [
+            {
+              "description": "<caption>",
+              "name": "caption"
+            },
+            {
+              "description": "table contents (thead/tbody/tfoot)",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "density",
+              "type": {
+                "text": "Density"
+              },
+              "default": "'normal'",
+              "attribute": "density",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "false",
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "emit",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "optional": true,
+                  "type": {
+                    "text": "T"
+                  }
+                },
+                {
+                  "name": "options",
+                  "default": "{}",
+                  "type": {
+                    "text": "EventInit"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createId",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "prefix",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderSr",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "density",
+              "type": {
+                "text": "Density"
+              },
+              "default": "'normal'",
+              "fieldName": "density"
+            }
+          ],
+          "superclass": {
+            "name": "VdsElement",
+            "module": "/src/base/vds-element.js"
+          },
+          "tagName": "vds-table",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTable",
+          "declaration": {
+            "name": "VdsTable",
+            "module": "src/components/table/vds-table.ts"
           }
         }
       ]
@@ -8748,277 +8752,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/tooltip/define.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "vds-tooltip",
-          "declaration": {
-            "name": "VdsTooltip",
-            "module": "/src/components/tooltip/vds-tooltip.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/tooltip/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsTooltip",
-          "declaration": {
-            "name": "VdsTooltip",
-            "module": "./vds-tooltip.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/tooltip/vds-tooltip.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "<vds-tooltip> — non-interactive descriptive tooltip (WAI-ARIA AP 1.2 § Tooltip).\n\nTrigger: focus or hover on the slotted trigger element. Esc dismisses.\nRenders a tip that is `role=tooltip` and is referenced by `aria-describedby`.",
-          "name": "VdsTooltip",
-          "slots": [
-            {
-              "description": "the element that triggers the tooltip",
-              "name": "trigger"
-            },
-            {
-              "description": "the tooltip content",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "placement",
-              "type": {
-                "text": "Placement"
-              },
-              "default": "'top'",
-              "attribute": "placement",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "delay",
-              "type": {
-                "text": "number"
-              },
-              "default": "200",
-              "attribute": "delay"
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "attribute": "disabled"
-            },
-            {
-              "kind": "field",
-              "name": "open",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "private",
-              "default": "false"
-            },
-            {
-              "kind": "field",
-              "name": "internals",
-              "type": {
-                "text": "ElementInternals"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "timer",
-              "type": {
-                "text": "ReturnType<typeof setTimeout> | null"
-              },
-              "privacy": "private",
-              "default": "null"
-            },
-            {
-              "kind": "field",
-              "name": "triggerEl",
-              "type": {
-                "text": "HTMLElement | null"
-              },
-              "privacy": "private",
-              "default": "null"
-            },
-            {
-              "kind": "field",
-              "name": "tipId",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "syncTrigger",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "show",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "hide",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "handleKey",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "false",
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "emit",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "name",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "detail",
-                  "optional": true,
-                  "type": {
-                    "text": "T"
-                  }
-                },
-                {
-                  "name": "options",
-                  "default": "{}",
-                  "type": {
-                    "text": "EventInit"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "createId",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "prefix",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderSr",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "text",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "placement",
-              "type": {
-                "text": "Placement"
-              },
-              "default": "'top'",
-              "fieldName": "placement"
-            },
-            {
-              "name": "delay",
-              "type": {
-                "text": "number"
-              },
-              "default": "200",
-              "fieldName": "delay"
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "disabled"
-            }
-          ],
-          "superclass": {
-            "name": "VdsElement",
-            "module": "/src/base/vds-element.js"
-          },
-          "tagName": "vds-tooltip",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsTooltip",
-          "declaration": {
-            "name": "VdsTooltip",
-            "module": "src/components/tooltip/vds-tooltip.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/toast/define.ts",
       "declarations": [],
       "exports": [
@@ -9473,6 +9206,277 @@
           "declaration": {
             "name": "VdsToastGroup",
             "module": "src/components/toast/vds-toast.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tooltip/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-tooltip",
+          "declaration": {
+            "name": "VdsTooltip",
+            "module": "/src/components/tooltip/vds-tooltip.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tooltip/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTooltip",
+          "declaration": {
+            "name": "VdsTooltip",
+            "module": "./vds-tooltip.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tooltip/vds-tooltip.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-tooltip> — non-interactive descriptive tooltip (WAI-ARIA AP 1.2 § Tooltip).\n\nTrigger: focus or hover on the slotted trigger element. Esc dismisses.\nRenders a tip that is `role=tooltip` and is referenced by `aria-describedby`.",
+          "name": "VdsTooltip",
+          "slots": [
+            {
+              "description": "the element that triggers the tooltip",
+              "name": "trigger"
+            },
+            {
+              "description": "the tooltip content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "Placement"
+              },
+              "default": "'top'",
+              "attribute": "placement",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "delay",
+              "type": {
+                "text": "number"
+              },
+              "default": "200",
+              "attribute": "delay"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "timer",
+              "type": {
+                "text": "ReturnType<typeof setTimeout> | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "triggerEl",
+              "type": {
+                "text": "HTMLElement | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "tipId",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "syncTrigger",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "show",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "hide",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleKey",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "false",
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "emit",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "optional": true,
+                  "type": {
+                    "text": "T"
+                  }
+                },
+                {
+                  "name": "options",
+                  "default": "{}",
+                  "type": {
+                    "text": "EventInit"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createId",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "prefix",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderSr",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "placement",
+              "type": {
+                "text": "Placement"
+              },
+              "default": "'top'",
+              "fieldName": "placement"
+            },
+            {
+              "name": "delay",
+              "type": {
+                "text": "number"
+              },
+              "default": "200",
+              "fieldName": "delay"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "VdsElement",
+            "module": "/src/base/vds-element.js"
+          },
+          "tagName": "vds-tooltip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsTooltip",
+          "declaration": {
+            "name": "VdsTooltip",
+            "module": "src/components/tooltip/vds-tooltip.ts"
           }
         }
       ]

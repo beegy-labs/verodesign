@@ -1,14 +1,15 @@
-import { css as h, html as n } from "lit";
+import { unsafeCSS as v, css as u, html as n } from "lit";
 import { property as e } from "lit/decorators.js";
-import { setRole as c, setAriaProperty as v } from "../../utils/attribute-mirror.js";
-import { focusRing as u, srOnly as b, reducedMotion as p } from "../../styles/shared.js";
-import { VdsElement as m } from "../../base/vds-element.js";
-var f = Object.defineProperty, r = (s, t, d, g) => {
-  for (var a = void 0, i = s.length - 1, l; i >= 0; i--)
-    (l = s[i]) && (a = l(t, d, a) || a);
-  return a && f(t, d, a), a;
+import { setAriaProperty as h, setRole as p } from "../../utils/attribute-mirror.js";
+import { focusRing as m, srOnly as b, reducedMotion as f } from "../../styles/shared.js";
+import { VdsElement as g } from "../../base/vds-element.js";
+var y = Object.defineProperty, r = (s, t, d, k) => {
+  for (var o = void 0, i = s.length - 1, l; i >= 0; i--)
+    (l = s[i]) && (o = l(t, d, o) || o);
+  return o && y(t, d, o), o;
 };
-class o extends m {
+const c = "2.75rem";
+class a extends g {
   constructor() {
     super(), this.variant = "solid", this.tone = "primary", this.size = "md", this.type = "button", this.disabled = !1, this.loading = !1, this.ariaLabelText = null, this.handleClick = (t) => {
       if (this.disabled || this.loading) {
@@ -18,17 +19,17 @@ class o extends m {
       this.type === "submit" && this.internals.form?.requestSubmit(), this.type === "reset" && this.internals.form?.reset();
     }, this.handleKeydown = (t) => {
       (t.key === " " || t.key === "Enter") && (t.preventDefault(), this.click());
-    }, this.internals = this.attachInternals(), c(this, this.internals, "button"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
+    }, this.internals = this.attachInternals(), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
   }
   static {
     this.formAssociated = !0;
   }
   static {
     this.styles = [
-      u,
+      m,
       b,
-      p,
-      h`
+      f,
+      u`
       :host {
         display: inline-flex;
         vertical-align: middle;
@@ -36,12 +37,19 @@ class o extends m {
 
       :host([hidden]) { display: none; }
 
+      :host([full-width]) {
+        display: flex;
+        width: 100%;
+      }
+      :host([full-width]) .button { width: 100%; }
+
       .button {
         all: unset;
         box-sizing: border-box;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         gap: var(--vds-spacing-2);
         font-family: var(--vds-font-family-sans);
         font-weight: var(--vds-font-weight-500);
@@ -55,6 +63,26 @@ class o extends m {
                     color var(--vds-duration-fast) var(--vds-easing-ease-out),
                     border-color var(--vds-duration-fast) var(--vds-easing-ease-out),
                     box-shadow var(--vds-duration-fast) var(--vds-easing-ease-out);
+        /* defaults (size=md, tone=primary, variant=solid). Lit reflect:true
+           does not always reflect class-field initializers before first paint,
+           so default appearance must work without attribute selectors. */
+        padding: var(--vds-spacing-2) var(--vds-spacing-4);
+        font-size: var(--vds-font-size-base);
+        min-height: 2.5rem;
+        background: var(--vds-theme-primary);
+        color: var(--vds-theme-primary-fg);
+      }
+
+      @media (pointer: coarse) {
+        .button::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: max(100%, ${v(c)});
+          height: max(100%, ${v(c)});
+          transform: translate(-50%, -50%);
+        }
       }
 
       :host([size="sm"]) .button {
@@ -178,10 +206,10 @@ class o extends m {
     ];
   }
   updated(t) {
-    super.updated(t), t.has("disabled") ? (v(this, this.internals, "ariaDisabled", this.disabled), this.tabIndex = this.disabled ? -1 : 0) : this.tabIndex < 0 && !this.disabled && (this.tabIndex = 0), t.has("ariaLabelText") && this.ariaLabelText != null && v(this, this.internals, "ariaLabel", this.ariaLabelText);
+    super.updated(t), t.has("disabled") ? (h(this, this.internals, "ariaDisabled", this.disabled), this.tabIndex = this.disabled ? -1 : 0) : this.tabIndex < 0 && !this.disabled && (this.tabIndex = 0), t.has("ariaLabelText") && this.ariaLabelText != null && h(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   connectedCallback() {
-    super.connectedCallback(), this.hasAttribute("tabindex") || (this.tabIndex = 0);
+    super.connectedCallback(), p(this, this.internals, "button"), this.hasAttribute("tabindex") || (this.tabIndex = 0);
   }
   render() {
     return n`
@@ -202,31 +230,31 @@ class o extends m {
 }
 r([
   e({ type: String, reflect: !0 })
-], o.prototype, "variant");
+], a.prototype, "variant");
 r([
   e({ type: String, reflect: !0 })
-], o.prototype, "tone");
+], a.prototype, "tone");
 r([
   e({ type: String, reflect: !0 })
-], o.prototype, "size");
+], a.prototype, "size");
 r([
   e({ type: String, reflect: !0 })
-], o.prototype, "type");
+], a.prototype, "type");
 r([
   e({ type: Boolean, reflect: !0 })
-], o.prototype, "disabled");
+], a.prototype, "disabled");
 r([
   e({ type: Boolean, reflect: !0, attribute: "data-loading" })
-], o.prototype, "loading");
+], a.prototype, "loading");
 r([
   e({ type: String })
-], o.prototype, "name");
+], a.prototype, "name");
 r([
   e({ type: String })
-], o.prototype, "value");
+], a.prototype, "value");
 r([
   e({ type: String, attribute: "aria-label" })
-], o.prototype, "ariaLabelText");
+], a.prototype, "ariaLabelText");
 export {
-  o as VdsButton
+  a as VdsButton
 };

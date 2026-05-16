@@ -6,6 +6,15 @@ Format: [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/). SemVer p
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-05-16
+
+### Added
+- `vds-button` and `vds-icon-button` now add a coarse-pointer-only transparent hit-area in shadow DOM so all sizes keep a minimum `2.75rem` × `2.75rem` touch target without changing visual layout, padding, min-height, color, radius, or Frozen API/manifest surface. Spec: `.specs/verodesign/2026-05-16-touch-safe-compact-button.md`.
+
+### Changed
+- `@verobee/design-elements` version bumped `0.0.1` → `0.1.0` for the additive touch-safe compact button improvement.
+- `@verobee/design-react` version bumped `0.0.1` → `0.1.0` because it re-exports the updated button and icon-button components.
+
 ### Added
 - `theme.bg.selected` — semantic slot for selected/active surface used by segmented controls, selected list rows, and active sidebar nav buttons. Distinct from `bg.hover` (transient pointer) and `bg.elevated` (floating surface). Default `{color.white}` (light themes inherit); dark themes (default-dark, verobase-dark, veronex-dark, _template-dark) provide explicit values brighter than `bg.hover` for clear elevation. Spec: `.specs/verodesign/2026-05-06-bg-selected.md`. Driver: verobase admin + dashboard shell unification (운영/서비스 segmented toggle).
 

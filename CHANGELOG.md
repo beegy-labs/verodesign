@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0
 > Pre-release work in progress on top of `0.0.1` scaffold. Versions are not bumped until tested + approved by maintainer. Below is a running log of `[Unreleased]` work staged for the next release decision.
 
 ### Added (staged, untested)
+- `vds-page-header`: add `leading` slot
 - W3C DTCG primitive tokens: 144 OKLCH colors (12 hue families × 12 L scale), spacing (18 steps), radius (8 steps), typography (size/weight/family/lineHeight/letterSpacing), shadow (Material elevation 0-6), animation (5 durations + 5 easings), opacity (13 steps), border widths (5 steps)
 - Semantic `core` slot group: bg / text / border / brand roles (primary, accent, destructive, success, warning, error, info, neutral with `-fg` pairs) / chart 1-5
 - Semantic `web` slot group: 7 breakpoints (xs-3xl) + 10 z-index slots

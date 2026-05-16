@@ -52,6 +52,11 @@ Loading replaces `start-slot` with a spinner.
 - `aria-disabled` reflected from `disabled` attribute.
 - Focus ring uses `--vds-theme-border-focus` (2px outline + 2px offset).
 
+## Touch target
+- Visual size is unchanged across `sm` / `md` / `lg`.
+- On coarse pointers only (`@media (pointer: coarse)`), shadow DOM adds a transparent hit-area so the interactive target is at least `2.75rem` × `2.75rem` (44px).
+- Fine pointers keep identical layout, padding, min-height, border, color, and manifest/API surface.
+
 ## Tokens consumed
 - `--vds-theme-{primary,accent,neutral,destructive}` (with `-fg`)
 - `--vds-theme-bg-{muted,hover}`, `--vds-theme-text-primary`

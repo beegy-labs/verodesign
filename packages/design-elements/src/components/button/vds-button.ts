@@ -1,4 +1,4 @@
-import { html, css, type PropertyValues } from 'lit';
+import { html, css, unsafeCSS, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
 import { focusRing, srOnly, reducedMotion } from '../../styles/shared.js';
@@ -7,6 +7,9 @@ import { VdsElement } from '../../base/vds-element.js';
 type Variant = 'solid' | 'soft' | 'outline' | 'ghost';
 type Tone = 'primary' | 'accent' | 'neutral' | 'destructive';
 type Size = 'sm' | 'md' | 'lg';
+
+// 44px coarse-pointer minimum touch target from the touch-safe compact button spec.
+const TOUCH_TARGET_MIN_SIZE = '2.75rem';
 
 /**
  * <vds-button> — accessible button (WAI-ARIA AP 1.2 button pattern).
@@ -34,12 +37,19 @@ export class VdsButton extends VdsElement {
 
       :host([hidden]) { display: none; }
 
+      :host([full-width]) {
+        display: flex;
+        width: 100%;
+      }
+      :host([full-width]) .button { width: 100%; }
+
       .button {
         all: unset;
         box-sizing: border-box;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         gap: var(--vds-spacing-2);
         font-family: var(--vds-font-family-sans);
         font-weight: var(--vds-font-weight-500);
@@ -53,6 +63,26 @@ export class VdsButton extends VdsElement {
                     color var(--vds-duration-fast) var(--vds-easing-ease-out),
                     border-color var(--vds-duration-fast) var(--vds-easing-ease-out),
                     box-shadow var(--vds-duration-fast) var(--vds-easing-ease-out);
+        /* defaults (size=md, tone=primary, variant=solid). Lit reflect:true
+           does not always reflect class-field initializers before first paint,
+           so default appearance must work without attribute selectors. */
+        padding: var(--vds-spacing-2) var(--vds-spacing-4);
+        font-size: var(--vds-font-size-base);
+        min-height: 2.5rem;
+        background: var(--vds-theme-primary);
+        color: var(--vds-theme-primary-fg);
+      }
+
+      @media (pointer: coarse) {
+        .button::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: max(100%, ${unsafeCSS(TOUCH_TARGET_MIN_SIZE)});
+          height: max(100%, ${unsafeCSS(TOUCH_TARGET_MIN_SIZE)});
+          transform: translate(-50%, -50%);
+        }
       }
 
       :host([size="sm"]) .button {
@@ -190,7 +220,6 @@ export class VdsButton extends VdsElement {
   constructor() {
     super();
     this.internals = this.attachInternals();
-    setRole(this, this.internals, 'button');
     this.addEventListener('click', this.handleClick);
     this.addEventListener('keydown', this.handleKeydown);
   }
@@ -210,6 +239,10 @@ export class VdsButton extends VdsElement {
 
   connectedCallback(): void {
     super.connectedCallback();
+    // setRole modifies the host's `role` attribute; deferring it to
+    // connectedCallback avoids the spec violation that bans attribute mutation
+    // inside a custom-element constructor (NotSupportedError on upgrade).
+    setRole(this, this.internals, 'button');
     if (!this.hasAttribute('tabindex')) this.tabIndex = 0;
   }
 

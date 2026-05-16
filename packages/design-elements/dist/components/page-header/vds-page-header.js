@@ -1,12 +1,12 @@
 import { css as d, html as p } from "lit";
-import { property as o } from "lit/decorators.js";
+import { property as l } from "lit/decorators.js";
 import { VdsElement as v } from "../../base/vds-element.js";
-var c = Object.defineProperty, r = (e, i, n, f) => {
+var f = Object.defineProperty, o = (e, i, n, c) => {
   for (var t = void 0, s = e.length - 1, a; s >= 0; s--)
     (a = e[s]) && (t = a(i, n, t) || t);
-  return t && c(i, n, t), t;
+  return t && f(i, n, t), t;
 };
-class l extends v {
+class r extends v {
   static {
     this.styles = d`
     :host {
@@ -18,10 +18,18 @@ class l extends v {
     }
     :host([hidden]) { display: none; }
 
+    slot[name="leading"] {
+      flex-shrink: 0;
+    }
+    slot[name="leading"]:empty {
+      display: none;
+    }
+
     .body {
       display: flex;
       flex-direction: column;
       gap: var(--vds-spacing-1);
+      flex: 1;
       min-width: 0;
     }
     .title {
@@ -49,6 +57,7 @@ class l extends v {
   }
   render() {
     return p`
+      <slot name="leading"></slot>
       <div class="body">
         <h1 class="title">${this.heading ?? ""}</h1>
         <p class="subtitle">${this.subtitle ?? ""}</p>
@@ -59,12 +68,12 @@ class l extends v {
     `;
   }
 }
-r([
-  o({ type: String })
-], l.prototype, "heading");
-r([
-  o({ type: String })
-], l.prototype, "subtitle");
+o([
+  l({ type: String })
+], r.prototype, "heading");
+o([
+  l({ type: String })
+], r.prototype, "subtitle");
 export {
-  l as VdsPageHeader
+  r as VdsPageHeader
 };

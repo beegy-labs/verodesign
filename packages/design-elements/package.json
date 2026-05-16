@@ -1,6 +1,6 @@
 {
   "name": "@verobee/design-elements",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Verobee Design System \u2014 Lit 3 web components, framework-agnostic, WAI-ARIA AP 1.2 compliant.",
   "license": "MIT",
   "private": true,

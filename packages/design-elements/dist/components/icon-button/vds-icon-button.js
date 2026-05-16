@@ -1,29 +1,30 @@
-import { css as h, html as u } from "lit";
+import { unsafeCSS as l, css as v, html as c } from "lit";
 import { property as r } from "lit/decorators.js";
-import { setRole as v, setAriaProperty as l } from "../../utils/attribute-mirror.js";
-import { focusRing as c, srOnly as b } from "../../styles/shared.js";
-import { VdsElement as p } from "../../base/vds-element.js";
-var m = Object.defineProperty, s = (i, t, n, f) => {
+import { setAriaProperty as h, setRole as b } from "../../utils/attribute-mirror.js";
+import { focusRing as p, srOnly as m } from "../../styles/shared.js";
+import { VdsElement as f } from "../../base/vds-element.js";
+var y = Object.defineProperty, s = (i, t, n, g) => {
   for (var e = void 0, o = i.length - 1, d; o >= 0; o--)
     (d = i[o]) && (e = d(t, n, e) || e);
-  return e && m(t, n, e), e;
+  return e && y(t, n, e), e;
 };
-class a extends p {
+const u = "2.75rem";
+class a extends f {
   constructor() {
     super(), this.variant = "ghost", this.tone = "neutral", this.size = "md", this.disabled = !1, this.ariaLabelText = null, this.handleClick = (t) => {
       this.disabled && (t.preventDefault(), t.stopImmediatePropagation());
     }, this.handleKeydown = (t) => {
       (t.key === " " || t.key === "Enter") && (t.preventDefault(), this.click());
-    }, this.internals = this.attachInternals(), v(this, this.internals, "button"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
+    }, this.internals = this.attachInternals(), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
   }
   static {
     this.formAssociated = !0;
   }
   static {
     this.styles = [
-      c,
-      b,
-      h`
+      p,
+      m,
+      v`
       :host { display: inline-flex; vertical-align: middle; }
       :host([hidden]) { display: none; }
 
@@ -33,12 +34,25 @@ class a extends p {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         cursor: pointer;
         user-select: none;
         border-radius: var(--vds-radius-md);
         transition: background-color var(--vds-duration-fast) var(--vds-easing-ease-out),
                     color var(--vds-duration-fast) var(--vds-easing-ease-out);
         color: var(--vds-theme-text-secondary);
+      }
+
+      @media (pointer: coarse) {
+        .button::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: max(100%, ${l(u)});
+          height: max(100%, ${l(u)});
+          transform: translate(-50%, -50%);
+        }
       }
       .button ::slotted(*) {
         width: 1em; height: 1em;
@@ -85,13 +99,13 @@ class a extends p {
     ];
   }
   updated(t) {
-    super.updated(t), t.has("disabled") ? (l(this, this.internals, "ariaDisabled", this.disabled), this.tabIndex = this.disabled ? -1 : 0) : this.tabIndex < 0 && !this.disabled && (this.tabIndex = 0), t.has("ariaLabelText") && this.ariaLabelText != null && l(this, this.internals, "ariaLabel", this.ariaLabelText);
+    super.updated(t), t.has("disabled") ? (h(this, this.internals, "ariaDisabled", this.disabled), this.tabIndex = this.disabled ? -1 : 0) : this.tabIndex < 0 && !this.disabled && (this.tabIndex = 0), t.has("ariaLabelText") && this.ariaLabelText != null && h(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   connectedCallback() {
-    super.connectedCallback(), this.hasAttribute("tabindex") || (this.tabIndex = 0);
+    super.connectedCallback(), b(this, this.internals, "button"), this.hasAttribute("tabindex") || (this.tabIndex = 0);
   }
   render() {
-    return u`
+    return c`
       <button class="button" part="button" type="button" ?disabled=${this.disabled} tabindex="-1" aria-hidden="true">
         <slot></slot>
       </button>
