@@ -26,7 +26,7 @@ export class VdsBadge extends VdsElement {
       align-items: center;
       gap: var(--vds-spacing-1);
       font-family: var(--vds-font-family-sans);
-      font-weight: var(--vds-font-weight-500);
+      font-weight: var(--vds-type-role-label-weight);
       line-height: 1;
       white-space: nowrap;
       border-radius: var(--vds-radius-full);
@@ -34,14 +34,14 @@ export class VdsBadge extends VdsElement {
     }
 
     :host([size="sm"]) .badge {
-      padding: 2px var(--vds-spacing-2);
-      font-size: var(--vds-font-size-xs);
-      min-height: 1.125rem;
+      padding: calc(var(--vds-spacing-0_5) / 2) var(--vds-spacing-2);
+      font-size: var(--vds-type-role-caption-size);
+      min-height: calc(var(--vds-spacing-4) + var(--vds-spacing-0_5));
     }
     :host([size="md"]) .badge {
       padding: var(--vds-spacing-1) var(--vds-spacing-2_5);
-      font-size: var(--vds-font-size-sm);
-      min-height: 1.5rem;
+      font-size: var(--vds-type-role-label-size);
+      min-height: calc(var(--vds-spacing-6));
     }
 
     :host([tone="primary"][variant="solid"]) .badge { background: var(--vds-theme-primary); color: var(--vds-theme-primary-fg); }

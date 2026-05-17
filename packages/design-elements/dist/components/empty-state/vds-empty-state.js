@@ -1,17 +1,20 @@
-import { css as c, html as p } from "lit";
-import { property as e } from "lit/decorators.js";
-import { VdsElement as l } from "../../base/vds-element.js";
-var v = Object.defineProperty, o = (s, r, a, m) => {
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as p } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as e } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as c } from "../../base/vds-element.js";
+import { css as l } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var v = Object.defineProperty, o = (s, n, r, m) => {
   for (var t = void 0, i = s.length - 1, d; i >= 0; i--)
-    (d = s[i]) && (t = d(r, a, t) || t);
-  return t && v(r, a, t), t;
+    (d = s[i]) && (t = d(n, r, t) || t);
+  return t && v(n, r, t), t;
 };
-class n extends l {
+class a extends c {
   constructor() {
     super(...arguments), this.size = "md";
   }
   static {
-    this.styles = c`
+    this.styles = l`
     :host {
       display: flex;
       flex-direction: column;
@@ -34,15 +37,15 @@ class n extends l {
     :host([size="lg"]) .icon ::slotted(*) { width: var(--vds-spacing-10); height: var(--vds-spacing-10); }
 
     .title {
-      font-size: var(--vds-font-size-sm);
-      font-weight: var(--vds-font-weight-500);
+      font-size: var(--vds-type-role-label-size);
+      font-weight: var(--vds-type-role-label-weight);
       color: var(--vds-theme-text-primary);
       margin: 0;
     }
     .description {
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       color: var(--vds-theme-text-secondary);
-      max-width: 28rem;
+      max-width: calc(var(--vds-spacing-64) + var(--vds-spacing-48));
       margin: 0;
     }
     .action { margin-top: var(--vds-spacing-3); }
@@ -64,13 +67,13 @@ class n extends l {
 }
 o([
   e({ type: String, reflect: !0 })
-], n.prototype, "size");
+], a.prototype, "size");
 o([
   e({ type: String })
-], n.prototype, "heading");
+], a.prototype, "heading");
 o([
   e({ type: String })
-], n.prototype, "description");
+], a.prototype, "description");
 export {
-  n as VdsEmptyState
+  a as VdsEmptyState
 };

@@ -1,13 +1,16 @@
-import { css as d, html as h, LitElement as u } from "lit";
-import { property as r } from "lit/decorators.js";
-import { setRole as c, setAriaProperty as p } from "../../utils/attribute-mirror.js";
-import { VdsElement as m } from "../../base/vds-element.js";
-var A = Object.defineProperty, n = (o, t, i, e) => {
-  for (var s = void 0, a = o.length - 1, l; a >= 0; a--)
-    (l = o[a]) && (s = l(t, i, s) || s);
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as d } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { LitElement as p } from "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as r } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { setRole as h, setAriaProperty as u } from "../../utils/attribute-mirror.js";
+import { VdsElement as g } from "../../base/vds-element.js";
+import { css as c } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var A = Object.defineProperty, o = (n, t, i, e) => {
+  for (var s = void 0, a = n.length - 1, l; a >= 0; a--)
+    (l = n[a]) && (s = l(t, i, s) || s);
   return s && A(t, i, s), s;
 };
-class v extends m {
+class v extends g {
   constructor() {
     super(), this.value = "", this.orientation = "horizontal", this.activation = "auto", this.tabsCache = [], this.panelsCache = [], this.refreshChildren = () => {
       this.tabsCache = Array.from(this.querySelectorAll("vds-tab")), this.panelsCache = Array.from(this.querySelectorAll("vds-tab-panel")), this.syncActive();
@@ -17,11 +20,11 @@ class v extends m {
     }, this.handleKeydown = (t) => {
       const i = t.target.closest("vds-tab");
       if (!i) return;
-      const e = this.tabs.filter((g) => !g.disabled), s = e.indexOf(i);
+      const e = this.tabs.filter((m) => !m.disabled), s = e.indexOf(i);
       if (s < 0) return;
       let a;
-      const l = this.orientation === "horizontal", b = l ? "ArrowLeft" : "ArrowUp", y = l ? "ArrowRight" : "ArrowDown";
-      if (t.key === b) a = e[(s - 1 + e.length) % e.length];
+      const l = this.orientation === "horizontal", f = l ? "ArrowLeft" : "ArrowUp", y = l ? "ArrowRight" : "ArrowDown";
+      if (t.key === f) a = e[(s - 1 + e.length) % e.length];
       else if (t.key === y) a = e[(s + 1) % e.length];
       else if (t.key === "Home") a = e[0];
       else if (t.key === "End") a = e[e.length - 1];
@@ -30,10 +33,10 @@ class v extends m {
         return;
       }
       a && (t.preventDefault(), this.activation === "auto" ? this.setActive(a) : a.focus());
-    }, this.internals = this.attachInternals(), c(this, this.internals, "presentation");
+    }, this.internals = this.attachInternals(), h(this, this.internals, "presentation");
   }
   static {
-    this.styles = d`
+    this.styles = c`
     :host {
       display: block;
       font-family: var(--vds-font-family-sans);
@@ -66,7 +69,7 @@ class v extends m {
     super.disconnectedCallback(), this.removeEventListener("keydown", this.handleKeydown), this.removeEventListener("click", this.handleClick);
   }
   updated(t) {
-    (t.has("value") || t.has("orientation")) && this.syncActive(), t.has("orientation") && p(this, this.internals, "ariaOrientation", this.orientation);
+    (t.has("value") || t.has("orientation")) && this.syncActive(), t.has("orientation") && u(this, this.internals, "ariaOrientation", this.orientation);
   }
   get tabs() {
     return this.tabsCache;
@@ -98,7 +101,7 @@ class v extends m {
     }
   }
   render() {
-    return h`
+    return d`
       <div class="tablist" role="tablist" aria-orientation=${this.orientation}>
         <slot name="tab" @slotchange=${this.refreshChildren}></slot>
       </div>
@@ -108,21 +111,21 @@ class v extends m {
     `;
   }
 }
-n([
+o([
   r({ type: String })
 ], v.prototype, "value");
-n([
+o([
   r({ type: String, reflect: !0, attribute: "data-orientation" })
 ], v.prototype, "orientation");
-n([
+o([
   r({ type: String })
 ], v.prototype, "activation");
-class f extends u {
+class b extends p {
   constructor() {
-    super(), this.value = "", this.disabled = !1, this.internals = this.attachInternals(), c(this, this.internals, "tab");
+    super(), this.value = "", this.disabled = !1, this.internals = this.attachInternals(), h(this, this.internals, "tab");
   }
   static {
-    this.styles = d`
+    this.styles = c`
     :host {
       display: inline-flex;
       align-items: center;
@@ -132,8 +135,8 @@ class f extends u {
       user-select: none;
       color: var(--vds-theme-text-dim);
       border-bottom: 2px solid transparent;
-      font-size: var(--vds-font-size-sm);
-      font-weight: var(--vds-font-weight-500);
+      font-size: var(--vds-type-role-label-size);
+      font-weight: var(--vds-type-role-label-weight);
       transition: color var(--vds-duration-fast) var(--vds-easing-ease-out),
                   border-color var(--vds-duration-fast) var(--vds-easing-ease-out);
     }
@@ -153,37 +156,37 @@ class f extends u {
     super.connectedCallback(), this.slot = "tab", this.hasAttribute("tabindex") || (this.tabIndex = -1);
   }
   updated(t) {
-    t.has("disabled") && p(this, this.internals, "ariaDisabled", this.disabled);
+    t.has("disabled") && u(this, this.internals, "ariaDisabled", this.disabled);
   }
   render() {
-    return h`<slot></slot>`;
+    return d`<slot></slot>`;
   }
 }
-n([
+o([
   r({ type: String })
-], f.prototype, "value");
-n([
+], b.prototype, "value");
+o([
   r({ type: Boolean, reflect: !0 })
-], f.prototype, "disabled");
-class x extends u {
+], b.prototype, "disabled");
+class x extends p {
   constructor() {
-    super(), this.value = "", this.internals = this.attachInternals(), c(this, this.internals, "tabpanel"), this.tabIndex = 0;
+    super(), this.value = "", this.internals = this.attachInternals(), h(this, this.internals, "tabpanel"), this.tabIndex = 0;
   }
   static {
-    this.styles = d`
+    this.styles = c`
     :host { display: block; padding: var(--vds-spacing-4) 0; }
     :host([hidden]) { display: none; }
   `;
   }
   render() {
-    return h`<slot></slot>`;
+    return d`<slot></slot>`;
   }
 }
-n([
+o([
   r({ type: String })
 ], x.prototype, "value");
 export {
-  f as VdsTab,
+  b as VdsTab,
   x as VdsTabPanel,
   v as VdsTabs
 };

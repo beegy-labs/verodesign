@@ -13,7 +13,7 @@ export class VdsOption extends LitElement {
       padding: var(--vds-spacing-1_5) var(--vds-spacing-3);
       cursor: pointer;
       color: var(--vds-theme-text-primary);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       user-select: none;
     }
     :host([disabled]) { opacity: 0.5; cursor: not-allowed; }

@@ -49,6 +49,12 @@
 | [`research/pattern-catalog.md`](./research/pattern-catalog.md) | Discovered patterns with status |
 | [`research/trend-snapshot.md`](./research/trend-snapshot.md) | Quarterly trend snapshot |
 
+## Brands domain
+
+| Doc | Purpose |
+| --- | ------- |
+| [`brands/girok.md`](./brands/girok.md) | girok CI/BI canonical guide (LLM-neutral) |
+
 ## LLM context indexes
 
 | Doc | Purpose |

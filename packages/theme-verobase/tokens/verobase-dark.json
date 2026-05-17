@@ -41,9 +41,9 @@
       "strong": { "$value": "{color.slate.6}", "$type": "color" },
       "focus": { "$value": "oklch(75% 0.14 250)", "$type": "color" }
     },
-    "primary": { "$value": "oklch(75% 0.14 250)", "$type": "color" },
-    "primary-fg": { "$value": "oklch(12% 0.04 250)", "$type": "color" },
-    "primary-ring": { "$value": "oklch(85% 0.10 250)", "$type": "color" },
+    "primary": { "$value": "oklch(52% 0.22 252)", "$type": "color" },
+    "primary-fg": { "$value": "{color.white}", "$type": "color" },
+    "primary-ring": { "$value": "oklch(68% 0.17 252)", "$type": "color" },
     "accent": { "$value": "{color.orange.5}", "$type": "color" },
     "accent-fg": { "$value": "{color.slate.12}", "$type": "color" },
     "destructive": { "$value": "{color.red.7}", "$type": "color" },

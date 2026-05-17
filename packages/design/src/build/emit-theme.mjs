@@ -8,7 +8,7 @@ import { normalizeOklch } from '../util/color.mjs';
 const DIST = new URL('../../dist/', import.meta.url).pathname;
 
 function isSemanticToken(token) {
-  return token.path[0] === 'theme';
+  return token.path[0] === 'theme' || token.path[0] === 'exp';
 }
 
 function formatColor(value) {

@@ -1,17 +1,20 @@
-import { css as h, html as p } from "lit";
-import { property as t } from "lit/decorators.js";
-import { VdsElement as f } from "../../base/vds-element.js";
-var v = Object.defineProperty, e = (s, i, a, c) => {
-  for (var r = void 0, n = s.length - 1, l; n >= 0; n--)
-    (l = s[n]) && (r = l(i, a, r) || r);
-  return r && v(i, a, r), r;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as p } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as t } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as h } from "../../base/vds-element.js";
+import { css as f } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var v = Object.defineProperty, e = (s, a, n, c) => {
+  for (var r = void 0, i = s.length - 1, l; i >= 0; i--)
+    (l = s[i]) && (r = l(a, n, r) || r);
+  return r && v(a, n, r), r;
 };
-class o extends f {
+class o extends h {
   constructor() {
     super(...arguments), this.truncate = !1, this.uppercase = !1, this.mono = !1, this.tabular = !1;
   }
   static {
-    this.styles = h`
+    this.styles = f`
     :host {
       display: block;
       font-family: var(--vds-font-family-sans);
@@ -21,11 +24,11 @@ class o extends f {
     :host([as="span"]) { display: inline; }
     :host([hidden]) { display: none; }
 
-    :host([size="xs"])    { font-size: var(--vds-font-size-xs); }
-    :host([size="sm"])    { font-size: var(--vds-font-size-sm); }
-    :host([size="base"])  { font-size: var(--vds-font-size-base); }
-    :host([size="lg"])    { font-size: var(--vds-font-size-lg); }
-    :host([size="xl"])    { font-size: var(--vds-font-size-xl); }
+    :host([size="xs"])    { font-size: var(--vds-type-role-caption-size); }
+    :host([size="sm"])    { font-size: var(--vds-type-role-label-size); }
+    :host([size="base"])  { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"])    { font-size: var(--vds-type-role-title-size); }
+    :host([size="xl"])    { font-size: var(--vds-type-role-metric-size); }
 
     :host([tone="bright"])  { color: var(--vds-theme-text-bright); }
     :host([tone="dim"])     { color: var(--vds-theme-text-secondary); }

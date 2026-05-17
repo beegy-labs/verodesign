@@ -1,10 +1,14 @@
-import { css as p, html as u, LitElement as f } from "lit";
-import { property as d, query as v } from "lit/decorators.js";
-import { setRole as m, setAriaProperty as y } from "../../utils/attribute-mirror.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as p } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { LitElement as f } from "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as l } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { query as v } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/query.js";
+import { setRole as u, setAriaProperty as y } from "../../utils/attribute-mirror.js";
 import { VdsElement as g } from "../../base/vds-element.js";
-var b = Object.defineProperty, a = (l, e, s, r) => {
-  for (var t = void 0, i = l.length - 1, n; i >= 0; i--)
-    (n = l[i]) && (t = n(e, s, t) || t);
+import { css as m } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var b = Object.defineProperty, a = (d, e, s, r) => {
+  for (var t = void 0, i = d.length - 1, n; i >= 0; i--)
+    (n = d[i]) && (t = n(e, s, t) || t);
   return t && b(e, s, t), t;
 };
 class h extends g {
@@ -32,10 +36,10 @@ class h extends g {
     }, this.handleOutsideClick = (e) => {
       if (!this.open) return;
       e.composedPath().includes(this) || (this.open = !1);
-    }, this.internals = this.attachInternals(), m(this, this.internals, "presentation");
+    }, this.internals = this.attachInternals(), u(this, this.internals, "presentation");
   }
   static {
-    this.styles = p`
+    this.styles = m`
     :host {
       display: inline-block;
       position: relative;
@@ -105,7 +109,7 @@ class h extends g {
     this.open = !1;
   }
   render() {
-    return u`
+    return p`
       <slot name="trigger"></slot>
       <div class="menu" role="menu">
         <slot @slotchange=${this.refreshItems}></slot>
@@ -114,20 +118,20 @@ class h extends g {
   }
 }
 a([
-  d({ type: Boolean, reflect: !0 })
+  l({ type: Boolean, reflect: !0 })
 ], h.prototype, "open");
 a([
-  d({ type: String })
+  l({ type: String })
 ], h.prototype, "placement");
 a([
   v(".menu")
 ], h.prototype, "menuEl");
 class c extends f {
   constructor() {
-    super(), this.value = "", this.disabled = !1, this.tone = "default", this.internals = this.attachInternals(), m(this, this.internals, "menuitem");
+    super(), this.value = "", this.disabled = !1, this.tone = "default", this.internals = this.attachInternals(), u(this, this.internals, "menuitem");
   }
   static {
-    this.styles = p`
+    this.styles = m`
     :host {
       display: flex;
       align-items: center;
@@ -137,7 +141,7 @@ class c extends f {
       user-select: none;
       color: var(--vds-theme-text-primary);
       border-radius: var(--vds-radius-sm);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       transition: background var(--vds-duration-fast) var(--vds-easing-ease-out);
     }
     :host(:hover),
@@ -161,17 +165,17 @@ class c extends f {
     e.has("disabled") && y(this, this.internals, "ariaDisabled", this.disabled);
   }
   render() {
-    return u`<slot></slot>`;
+    return p`<slot></slot>`;
   }
 }
 a([
-  d({ type: String })
+  l({ type: String })
 ], c.prototype, "value");
 a([
-  d({ type: Boolean, reflect: !0 })
+  l({ type: Boolean, reflect: !0 })
 ], c.prototype, "disabled");
 a([
-  d({ type: String, reflect: !0, attribute: "data-tone" })
+  l({ type: String, reflect: !0, attribute: "data-tone" })
 ], c.prototype, "tone");
 export {
   h as VdsMenu,

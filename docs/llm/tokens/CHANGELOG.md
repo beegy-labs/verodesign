@@ -6,6 +6,10 @@ Format: [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/). SemVer p
 
 ## [Unreleased]
 
+### Added
+- cross-brand `theme.state.{hover,press,selected,disabled}` semantics plus `web.app-shell` region/z tokens to support fixed AppShell regions and restrained interaction hierarchy without changing brand token values. Spec: `.specs/verodesign/2026-05-16-appshell-fixed-and-hierarchy.md`.
+- clarity(정제) token delta on top of girok palette refinement: `theme.finance.{up,down,flat}`, `font.size.numeric-display-{sm,lg}`, and flat elevation usage guidance for default component surfaces. Spec: `.specs/verodesign/2026-05-16-design-system-clarity-overhaul.md`. Included in staged `0.1.0`; no extra bump.
+
 ## [0.1.0] - 2026-05-16
 
 ### Added

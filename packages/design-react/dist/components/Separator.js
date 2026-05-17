@@ -1,12 +1,8 @@
-import * as r from "react";
-import { createComponent as t } from "@lit/react";
-import { VdsSeparator as o } from "@verobee/design-elements/components/separator";
-import "@verobee/design-elements/define/separator";
-const p = /* @__PURE__ */ t({
-  tagName: "vds-separator",
-  elementClass: o,
-  react: r
+import { jsx as d } from "react/jsx-runtime";
+import * as i from "react";
+const h = i.forwardRef(function({ orientation: r = "horizontal", decorative: o = !0, style: t, ...a }, e) {
+  return /* @__PURE__ */ d("div", { ...a, ref: e, role: o ? "presentation" : "separator", "aria-orientation": o ? void 0 : r, style: { display: "block", flexShrink: 0, background: "var(--vds-theme-border-subtle)", width: r === "horizontal" ? "100%" : "var(--vds-border-width-1)", height: r === "horizontal" ? "var(--vds-border-width-1)" : "auto", alignSelf: r === "vertical" ? "stretch" : void 0, ...t } });
 });
 export {
-  p as Separator
+  h as Separator
 };

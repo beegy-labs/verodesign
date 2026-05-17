@@ -19,12 +19,12 @@ export class VdsSeparator extends VdsElement {
     }
     :host([orientation="horizontal"]) {
       width: 100%;
-      height: 1px;
+      height: var(--vds-border-width-1);
     }
     :host([orientation="vertical"]) {
       height: auto;
       align-self: stretch;
-      width: 1px;
+      width: var(--vds-border-width-1);
     }
   `;
 

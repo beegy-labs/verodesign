@@ -1,12 +1,17 @@
-import { css as v, html as l } from "lit";
-import { property as r, query as p, state as c } from "lit/decorators.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as l } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as r } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { state as p } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/state.js";
+import { query as v } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/query.js";
 import { setAriaProperty as u } from "../../utils/attribute-mirror.js";
-import { focusRing as f } from "../../styles/shared.js";
+import { focusRing as c } from "../../styles/shared.js";
 import { VdsElement as y } from "../../base/vds-element.js";
-var b = Object.defineProperty, t = (o, e, a, h) => {
+import { css as f } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var m = Object.defineProperty, t = (o, e, a, h) => {
   for (var s = void 0, d = o.length - 1, n; d >= 0; d--)
     (n = o[d]) && (s = n(e, a, s) || s);
-  return s && b(e, a, s), s;
+  return s && m(e, a, s), s;
 };
 class i extends y {
   constructor() {
@@ -23,8 +28,8 @@ class i extends y {
   }
   static {
     this.styles = [
-      f,
-      v`
+      c,
+      f`
       :host {
         display: inline-flex;
         flex-direction: column;
@@ -37,8 +42,8 @@ class i extends y {
       :host([hidden]) { display: none; }
 
       .label {
-        font-size: var(--vds-font-size-sm);
-        font-weight: var(--vds-font-weight-500);
+        font-size: var(--vds-type-role-label-size);
+        font-weight: var(--vds-type-role-label-weight);
       }
       .label[data-required]::after {
         content: ' *';
@@ -71,10 +76,10 @@ class i extends y {
         all: unset;
         display: block;
         width: 100%;
-        min-height: 6rem;
+        min-height: calc(var(--vds-spacing-24));
         font: inherit;
-        font-size: var(--vds-font-size-base);
-        line-height: var(--vds-font-lineheight-normal);
+        font-size: var(--vds-type-role-body-size);
+        line-height: var(--vds-type-role-body-lineheight);
         color: var(--vds-theme-text-primary);
         background: transparent;
         resize: vertical;
@@ -91,14 +96,14 @@ class i extends y {
         gap: var(--vds-spacing-2);
       }
       .helper {
-        font-size: var(--vds-font-size-xs);
+        font-size: var(--vds-type-role-caption-size);
         color: var(--vds-theme-text-dim);
       }
       .helper[data-error] {
         color: var(--vds-theme-destructive);
       }
       .count {
-        font-size: var(--vds-font-size-xs);
+        font-size: var(--vds-type-role-caption-size);
         color: var(--vds-theme-text-dim);
         font-variant-numeric: tabular-nums;
       }
@@ -213,10 +218,10 @@ t([
   r({ type: Boolean, attribute: "show-count" })
 ], i.prototype, "showCount");
 t([
-  p(".textarea")
+  v(".textarea")
 ], i.prototype, "textareaEl");
 t([
-  c()
+  p()
 ], i.prototype, "_touched");
 export {
   i as VdsTextArea

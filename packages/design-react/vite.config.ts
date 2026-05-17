@@ -29,6 +29,7 @@ export default defineConfig({
       external: [
         'react',
         'react/jsx-runtime',
+        'react-dom',
         /^@lit\//,
         /^lit($|\/)/,
         /^@verobee\//,

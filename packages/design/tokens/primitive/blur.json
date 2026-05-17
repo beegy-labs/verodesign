@@ -1,0 +1,20 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "primitive",
+      "status": "canonical",
+      "since": "v0.2.0",
+      "platform": ["web", "ios", "android"],
+      "rationale": "Primitive blur radii (glass/backdrop-filter). Kept small to avoid text legibility loss; semantic tier decides where blur is allowed."
+    }
+  },
+  "blur": {
+    "0": { "$value": "0px", "$type": "dimension", "$description": "No blur" },
+    "1": { "$value": "2px", "$type": "dimension", "$description": "Subtle" },
+    "2": { "$value": "6px", "$type": "dimension", "$description": "Standard glass" },
+    "3": { "$value": "12px", "$type": "dimension", "$description": "Strong glass" },
+    "4": { "$value": "20px", "$type": "dimension", "$description": "Max (surgical, sparse UI only)" }
+  }
+}
+

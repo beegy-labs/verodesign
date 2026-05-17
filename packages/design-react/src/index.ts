@@ -67,6 +67,24 @@ export type { SpacerProps } from './components/Spacer.js';
 export { PageHeader } from './components/PageHeader.js';
 export type { PageHeaderProps } from './components/PageHeader.js';
 
+export { ThemeToggle } from './components/ThemeToggle.js';
+export type { ThemeToggleProps, ThemeMode } from './components/ThemeToggle.js';
+
+export { EntryDialog } from './components/EntryDialog.js';
+export type { EntryDialogProps } from './components/EntryDialog.js';
+
+export { CompactRow } from './components/CompactRow.js';
+export type { CompactRowProps } from './components/CompactRow.js';
+
+export { BentoGrid } from './components/BentoGrid.js';
+export type { BentoGridProps } from './components/BentoGrid.js';
+
+export { BentoItem } from './components/BentoItem.js';
+export type { BentoItemProps } from './components/BentoItem.js';
+
+export { GlassSurface } from './components/GlassSurface.js';
+export type { GlassSurfaceProps, GlassStrength } from './components/GlassSurface.js';
+
 export { EmptyState } from './components/EmptyState.js';
 export type { EmptyStateProps } from './components/EmptyState.js';
 
@@ -87,3 +105,6 @@ export type { SurfaceProps } from './components/Surface.js';
 
 export { Text } from './components/Text.js';
 export type { TextProps } from './components/Text.js';
+
+export { AppShell } from './components/AppShell.js';
+export type { AppShellProps } from './components/AppShell.js';

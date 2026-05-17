@@ -1,0 +1,77 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "theme",
+      "theme": "girok",
+      "mode": "dark",
+      "status": "canonical",
+      "implements": ["core", "web"],
+      "since": "v0.0.0",
+      "concept": "Girok Dark — deep walnut shadows + parchment text + warm cognac accents (night library)",
+      "primary": "OKLCH(71.55% 0.0851 63.98) Warm Cognac",
+      "accent": "OKLCH(74.8% 0.1132 73.92) Amber"
+    }
+  },
+  "theme": {
+    "bg": {
+      "page":     { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
+      "card":     { "$value": "oklch(23.4% 0.008 72)", "$type": "color" },
+      "elevated": { "$value": "oklch(28.6% 0.01 74)", "$type": "color" },
+      "hover":    { "$value": "oklch(31.5% 0.01 74)", "$type": "color" },
+      "muted":    { "$value": "oklch(21.5% 0.007 72)", "$type": "color" },
+      "code":     { "$value": "oklch(28.6% 0.01 74)", "$type": "color" },
+      "selected": { "$value": "oklch(33.5% 0.014 76)", "$type": "color" }
+    },
+    "text": {
+      "primary":   { "$value": "oklch(93.6% 0.02 86)", "$type": "color" },
+      "secondary": { "$value": "oklch(82.5% 0.028 86)", "$type": "color" },
+      "dim":       { "$value": "oklch(66% 0.02 84)", "$type": "color" },
+      "faint":     { "$value": "oklch(52% 0.012 82)", "$type": "color" },
+      "bright":    { "$value": "oklch(97.8% 0.01 88)", "$type": "color" }
+    },
+    "border": {
+      "subtle":  { "$value": "oklch(21.5% 0.007 72)", "$type": "color" },
+      "default": { "$value": "oklch(33.5% 0.014 76)", "$type": "color" },
+      "strong":  { "$value": "oklch(52% 0.012 82)", "$type": "color" },
+      "focus":   { "$value": "oklch(72% 0.09 66)", "$type": "color" }
+    },
+    "primary":      { "$value": "oklch(72% 0.09 66)", "$type": "color" },
+    "primary-fg":   { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
+    "primary-ring": { "$value": "oklch(80% 0.08 66)", "$type": "color" },
+    "accent":       { "$value": "oklch(76% 0.1 74)", "$type": "color" },
+    "accent-fg":    { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
+    "info":    { "$value": "oklch(72% 0.09 66)", "$type": "color" },
+    "info-fg": { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
+    "chart": {
+      "1": { "$value": "oklch(72% 0.09 66)", "$type": "color" },
+      "2": { "$value": "oklch(70% 0.08 145)", "$type": "color" },
+      "3": { "$value": "oklch(76% 0.1 74)", "$type": "color" },
+      "4": { "$value": "oklch(70% 0.08 28)", "$type": "color" },
+      "5": { "$value": "oklch(78% 0.07 255)", "$type": "color" }
+    },
+    "map": {
+      "ocean":         { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
+      "sphere":        { "$value": "oklch(23.4% 0.008 72)", "$type": "color" },
+      "land":          { "$value": "oklch(33.5% 0.014 76)", "$type": "color" },
+      "border":        { "$value": "oklch(52% 0.012 82)", "$type": "color" },
+      "active":        { "$value": "oklch(72% 0.09 66)", "$type": "color" },
+      "active-strong": { "$value": "oklch(76% 0.1 74)", "$type": "color" },
+      "glow":          { "$value": "oklch(80% 0.08 66)", "$type": "color" }
+    },
+    "logo": {
+      "start": { "$value": "oklch(72% 0.09 66)", "$type": "color" },
+      "end":   { "$value": "oklch(76% 0.1 74)", "$type": "color" },
+      "inner": { "$value": "oklch(93.6% 0.02 86)", "$type": "color" }
+    }
+  },
+  "exp": {
+    "girok": {
+      "finance": {
+        "up":   { "$value": "oklch(70% 0.17 28)", "$type": "color" },
+        "down": { "$value": "oklch(73% 0.11 255)", "$type": "color" },
+        "flat": { "$value": "oklch(67% 0.018 84)", "$type": "color" }
+      }
+    }
+  }
+}

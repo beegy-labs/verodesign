@@ -1,13 +1,18 @@
-import { css as f, html as u } from "lit";
-import { property as o, state as p, query as c } from "lit/decorators.js";
-import { setRole as v, setAriaProperty as l } from "../../utils/attribute-mirror.js";
-import { VdsElement as y } from "../../base/vds-element.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as v } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as o } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { state as h } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/state.js";
+import { query as c } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/query.js";
+import { setRole as f, setAriaProperty as l } from "../../utils/attribute-mirror.js";
+import { VdsElement as u } from "../../base/vds-element.js";
+import { css as y } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
 var g = Object.defineProperty, i = (n, t, e, s) => {
-  for (var a = void 0, d = n.length - 1, h; d >= 0; d--)
-    (h = n[d]) && (a = h(t, e, a) || a);
+  for (var a = void 0, d = n.length - 1, p; d >= 0; d--)
+    (p = n[d]) && (a = p(t, e, a) || a);
   return a && g(t, e, a), a;
 };
-class r extends y {
+class r extends u {
   constructor() {
     super(), this.value = "", this.placeholder = "Select…", this.disabled = !1, this.required = !1, this.open = !1, this.activeIndex = -1, this.displayLabel = "", this.typeBuffer = "", this.typeBufferTimer = null, this._options = [], this.handleKey = (t) => {
       if (this.disabled) return;
@@ -55,13 +60,13 @@ class r extends y {
       if (!e) return;
       const s = this.options.indexOf(e);
       s >= 0 && this.commit(s);
-    }, this.internals = this.attachInternals(), v(this, this.internals, "combobox"), this.addEventListener("keydown", this.handleKey);
+    }, this.internals = this.attachInternals(), f(this, this.internals, "combobox"), this.addEventListener("keydown", this.handleKey);
   }
   static {
     this.formAssociated = !0;
   }
   static {
-    this.styles = f`
+    this.styles = y`
     :host {
       display: inline-flex;
       flex-direction: column;
@@ -70,8 +75,8 @@ class r extends y {
       width: 100%;
     }
     .label {
-      font-size: var(--vds-font-size-sm);
-      font-weight: var(--vds-font-weight-500);
+      font-size: var(--vds-type-role-label-size);
+      font-weight: var(--vds-type-role-label-weight);
       color: var(--vds-theme-text-primary);
     }
     .label[data-required]::after {
@@ -79,7 +84,7 @@ class r extends y {
       color: var(--vds-theme-destructive);
     }
     .helper {
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       color: var(--vds-theme-text-dim);
     }
     .helper[data-error] { color: var(--vds-theme-destructive); }
@@ -96,13 +101,13 @@ class r extends y {
       justify-content: space-between;
       gap: var(--vds-spacing-2);
       width: 100%;
-      min-height: 2.5rem;
+      min-height: calc(var(--vds-spacing-10));
       padding: var(--vds-spacing-2) var(--vds-spacing-3);
       background: var(--vds-theme-bg-card);
       color: var(--vds-theme-text-primary);
       border: var(--vds-border-width-1) solid var(--vds-theme-border-default);
       border-radius: var(--vds-radius-md);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       cursor: pointer;
       user-select: none;
       transition: border-color var(--vds-duration-fast);
@@ -116,7 +121,7 @@ class r extends y {
     }
 
     .placeholder { color: var(--vds-theme-text-faint); }
-    .chevron { width: 16px; height: 16px; flex-shrink: 0; transition: transform var(--vds-duration-fast); }
+    .chevron { width: var(--vds-spacing-4); height: var(--vds-spacing-4); flex-shrink: 0; transition: transform var(--vds-duration-fast); }
     :host([data-open]) .chevron { transform: rotate(180deg); }
 
     .listbox {
@@ -124,13 +129,13 @@ class r extends y {
       top: 100%;
       left: 0;
       right: 0;
-      margin-top: 4px;
+      margin-top: var(--vds-spacing-1);
       background: var(--vds-theme-bg-card);
       border: var(--vds-border-width-1) solid var(--vds-theme-border-default);
       border-radius: var(--vds-radius-md);
       box-shadow: var(--vds-shadow-3);
       z-index: var(--vds-zindex-popover, 500);
-      max-height: 240px;
+      max-height: calc(var(--vds-spacing-64) - var(--vds-spacing-4));
       overflow-y: auto;
       padding: var(--vds-spacing-1) 0;
       display: none;
@@ -182,7 +187,7 @@ class r extends y {
   }
   render() {
     const t = this.errorMessage ?? this.helper ?? "";
-    return u`
+    return v`
       <span class="label" ?data-required=${this.required}>${this.label ?? ""}</span>
       <div class="control">
         <div class="trigger" part="trigger" @click=${this.handleTriggerClick}>
@@ -225,10 +230,10 @@ i([
   o({ type: Boolean, reflect: !0, attribute: "data-open" })
 ], r.prototype, "open");
 i([
-  p()
+  h()
 ], r.prototype, "activeIndex");
 i([
-  p()
+  h()
 ], r.prototype, "displayLabel");
 i([
   c(".trigger")

@@ -19,18 +19,18 @@ export class VdsLabel extends VdsElement {
       align-items: center;
       gap: var(--vds-spacing-1);
       font-family: var(--vds-font-family-sans);
-      font-weight: var(--vds-font-weight-500);
+      font-weight: var(--vds-type-role-label-weight);
       color: var(--vds-theme-text-primary);
       cursor: pointer;
       user-select: none;
     }
-    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-type-role-label-size); }
+    :host([size="md"]) { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"]) { font-size: var(--vds-type-role-title-size); }
 
     .required {
       color: var(--vds-theme-destructive);
-      margin-left: 2px;
+      margin-left: calc(var(--vds-spacing-0_5) / 2);
     }
   `;
 

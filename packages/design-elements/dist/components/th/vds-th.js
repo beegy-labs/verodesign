@@ -1,12 +1,15 @@
-import { css as i, html as d } from "lit";
-import { property as l } from "lit/decorators.js";
-import { VdsElement as p } from "../../base/vds-element.js";
-var h = Object.defineProperty, s = (c, t, o, v) => {
-  for (var e = void 0, a = c.length - 1, n; a >= 0; a--)
-    (n = c[a]) && (e = n(t, o, e) || e);
-  return e && h(t, o, e), e;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as n } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as s } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as d } from "../../base/vds-element.js";
+import { css as p } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var h = Object.defineProperty, l = (c, t, a, m) => {
+  for (var e = void 0, o = c.length - 1, i; o >= 0; o--)
+    (i = c[o]) && (e = i(t, a, e) || e);
+  return e && h(t, a, e), e;
 };
-class r extends p {
+class r extends d {
   constructor() {
     super(...arguments), this.align = "left", this.compact = !1, this.dim = !1;
   }
@@ -15,11 +18,11 @@ class r extends p {
     return this;
   }
   static {
-    this.styles = i``;
+    this.styles = p``;
   }
   render() {
     const t = ["vds-th-cell"];
-    return this.align && t.push(`vds-th-cell--${this.align}`), this.compact && t.push("vds-th-cell--compact"), this.dim && t.push("vds-th-cell--dim"), d`<th class="${t.join(" ")}" part="cell" colspan=${this.colspan ?? 1}><slot></slot></th>`;
+    return this.align && t.push(`vds-th-cell--${this.align}`), this.compact && t.push("vds-th-cell--compact"), this.dim && t.push("vds-th-cell--dim"), n`<th class="${t.join(" ")}" part="cell" colspan=${this.colspan ?? 1}><slot></slot></th>`;
   }
   connectedCallback() {
     if (super.connectedCallback(), !document.head.querySelector("style[data-vds-th]")) {
@@ -40,17 +43,17 @@ class r extends p {
     }
   }
 }
-s([
-  l({ type: String, reflect: !0 })
+l([
+  s({ type: String, reflect: !0 })
 ], r.prototype, "align");
-s([
-  l({ type: Boolean, reflect: !0 })
+l([
+  s({ type: Boolean, reflect: !0 })
 ], r.prototype, "compact");
-s([
-  l({ type: Boolean, reflect: !0 })
+l([
+  s({ type: Boolean, reflect: !0 })
 ], r.prototype, "dim");
-s([
-  l({ type: Number, reflect: !0 })
+l([
+  s({ type: Number, reflect: !0 })
 ], r.prototype, "colspan");
 export {
   r as VdsTh

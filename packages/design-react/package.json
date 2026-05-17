@@ -1,7 +1,7 @@
 {
   "name": "@verobee/design-react",
   "version": "0.1.0",
-  "description": "Verobee Design System — React 19+ adapter wrapping @verobee/design-elements via @lit/react.",
+  "description": "Verobee Design System — React 19+ hand-written primitives with zero Lit runtime dependency.",
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -42,12 +42,9 @@
   },
   "peerDependencies": {
     "react": ">=19.0.0",
-    "react-dom": ">=19.0.0",
-    "@verobee/design-elements": "workspace:*"
+    "react-dom": ">=19.0.0"
   },
-  "dependencies": {
-    "@lit/react": "^1.0.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/react": "^19.0.0",
     "react": "^19.0.0",

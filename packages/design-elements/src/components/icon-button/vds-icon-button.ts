@@ -58,9 +58,9 @@ export class VdsIconButton extends VdsElement {
         width: 1em; height: 1em;
       }
 
-      :host([size="sm"]) .button { padding: var(--vds-spacing-1);   font-size: 0.875rem; }
-      :host([size="md"]) .button { padding: var(--vds-spacing-1_5); font-size: 1rem;     }
-      :host([size="lg"]) .button { padding: var(--vds-spacing-2);   font-size: 1.125rem; }
+      :host([size="sm"]) .button { padding: var(--vds-spacing-1);   font-size: var(--vds-type-role-label-size); }
+      :host([size="md"]) .button { padding: var(--vds-spacing-1_5); font-size: var(--vds-type-role-body-size); }
+      :host([size="lg"]) .button { padding: var(--vds-spacing-2);   font-size: var(--vds-type-role-title-size); }
 
       :host([variant="ghost"][tone="neutral"]:hover) .button {
         background: var(--vds-theme-bg-hover);

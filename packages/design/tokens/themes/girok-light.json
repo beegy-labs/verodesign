@@ -1,0 +1,69 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "theme",
+      "theme": "girok",
+      "mode": "light",
+      "status": "canonical",
+      "implements": ["core", "web"],
+      "since": "v0.0.0",
+      "concept": "Girok Light — warm cream paper + walnut text + cognac wood accents (library study)",
+      "primary": "OKLCH(46.39% 0.0778 56.42) Cognac Wood",
+      "accent": "OKLCH(57.91% 0.1165 65.81) Warm Amber"
+    }
+  },
+  "theme": {
+    "bg": {
+      "page":     { "$value": "oklch(93% 0.012 86)", "$type": "color" },
+      "card":     { "$value": "oklch(98.1% 0.006 88)", "$type": "color" },
+      "selected": { "$value": "oklch(90.5% 0.018 86)", "$type": "color" }
+    },
+    "text": {
+      "primary":   { "$value": "oklch(22.2% 0.012 80)", "$type": "color" },
+      "secondary": { "$value": "oklch(39.2% 0.018 80)", "$type": "color" },
+      "dim":       { "$value": "oklch(50% 0.016 82)", "$type": "color" },
+      "faint":     { "$value": "oklch(72% 0.012 86)", "$type": "color" }
+    },
+    "primary":      { "$value": "oklch(46% 0.08 56)", "$type": "color" },
+    "primary-fg":   { "$value": "oklch(98.1% 0.006 88)", "$type": "color" },
+    "primary-ring": { "$value": "oklch(58% 0.09 62)", "$type": "color" },
+    "accent":       { "$value": "oklch(56% 0.11 66)", "$type": "color" },
+    "accent-fg":    { "$value": "oklch(98.1% 0.006 88)", "$type": "color" },
+    "border": {
+      "focus": { "$value": "oklch(58% 0.09 62)", "$type": "color" }
+    },
+    "info":    { "$value": "oklch(46% 0.08 56)", "$type": "color" },
+    "info-fg": { "$value": "oklch(98.1% 0.006 88)", "$type": "color" },
+    "chart": {
+      "1": { "$value": "oklch(46% 0.08 56)", "$type": "color" },
+      "2": { "$value": "oklch(48% 0.07 145)", "$type": "color" },
+      "3": { "$value": "oklch(56% 0.11 66)", "$type": "color" },
+      "4": { "$value": "oklch(43% 0.11 28)", "$type": "color" },
+      "5": { "$value": "oklch(60% 0.06 255)", "$type": "color" }
+    },
+    "map": {
+      "ocean":         { "$value": "oklch(92.6% 0.018 86)", "$type": "color" },
+      "sphere":        { "$value": "oklch(98.1% 0.006 88)", "$type": "color" },
+      "land":          { "$value": "oklch(84% 0.022 86)", "$type": "color" },
+      "border":        { "$value": "oklch(84% 0.022 86)", "$type": "color" },
+      "active":        { "$value": "oklch(46% 0.08 56)", "$type": "color" },
+      "active-strong": { "$value": "oklch(56% 0.11 66)", "$type": "color" },
+      "glow":          { "$value": "oklch(58% 0.09 62)", "$type": "color" }
+    },
+    "logo": {
+      "start": { "$value": "oklch(46% 0.08 56)", "$type": "color" },
+      "end":   { "$value": "oklch(56% 0.11 66)", "$type": "color" },
+      "inner": { "$value": "oklch(98.1% 0.006 88)", "$type": "color" }
+    }
+  },
+  "exp": {
+    "girok": {
+      "finance": {
+        "up":   { "$value": "oklch(50% 0.17 28)", "$type": "color" },
+        "down": { "$value": "oklch(47% 0.11 255)", "$type": "color" },
+        "flat": { "$value": "oklch(44% 0.015 82)", "$type": "color" }
+      }
+    }
+  }
+}

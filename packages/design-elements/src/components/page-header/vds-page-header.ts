@@ -37,14 +37,14 @@ export class VdsPageHeader extends VdsElement {
     }
     .title {
       margin: 0;
-      font-size: var(--vds-font-size-2xl);
-      font-weight: var(--vds-font-weight-700);
-      line-height: var(--vds-font-lineheight-snug);
+      font-size: var(--vds-type-role-title-size);
+      font-weight: var(--vds-type-role-title-weight);
+      line-height: var(--vds-type-role-title-lineheight);
       color: var(--vds-theme-text-bright);
     }
     .subtitle {
       margin: 0;
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       color: var(--vds-theme-text-secondary);
     }
     .subtitle:empty { display: none; }

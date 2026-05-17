@@ -1,18 +1,21 @@
-import { css as d } from "lit";
-import { literal as o, html as v } from "lit/static-html.js";
-import { property as i } from "lit/decorators.js";
-import { VdsElement as f } from "../../base/vds-element.js";
-var g = Object.defineProperty, h = (r, t, s, p) => {
-  for (var e = void 0, n = r.length - 1, l; n >= 0; n--)
-    (l = r[n]) && (e = l(t, s, e) || e);
-  return e && g(t, s, e), e;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { literal as s, html as d } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/static.js";
+import { property as l } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as v } from "../../base/vds-element.js";
+import { css as p } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var g = Object.defineProperty, n = (o, e, r, f) => {
+  for (var t = void 0, i = o.length - 1, h; i >= 0; i--)
+    (h = o[i]) && (t = h(e, r, t) || t);
+  return t && g(e, r, t), t;
 };
-class a extends f {
+class a extends v {
   constructor() {
     super(...arguments), this.level = "1", this.tone = "bright";
   }
   static {
-    this.styles = d`
+    this.styles = p`
     :host {
       display: block;
       font-family: var(--vds-font-family-sans);
@@ -21,32 +24,32 @@ class a extends f {
 
     .heading {
       margin: 0;
-      font-weight: var(--vds-font-weight-700);
+      font-weight: var(--vds-type-role-title-weight);
       line-height: var(--vds-font-lineheight-snug);
       color: var(--vds-theme-text-bright);
     }
-    :host([level="1"]) .heading { font-size: var(--vds-font-size-2xl); }
-    :host([level="2"]) .heading { font-size: var(--vds-font-size-xl); }
-    :host([level="3"]) .heading { font-size: var(--vds-font-size-lg); }
-    :host([level="4"]) .heading { font-size: var(--vds-font-size-base); }
+    :host([level="1"]) .heading { font-size: var(--vds-type-role-title-size); }
+    :host([level="2"]) .heading { font-size: var(--vds-type-role-title-size); }
+    :host([level="3"]) .heading { font-size: var(--vds-type-role-body-size); }
+    :host([level="4"]) .heading { font-size: var(--vds-type-role-label-size); }
 
     :host([tone="default"]) .heading { color: var(--vds-theme-text-primary); }
     :host([tone="muted"])   .heading { color: var(--vds-theme-text-secondary); }
   `;
   }
   render() {
-    const t = this.as ?? `h${this.level}`, s = t === "h1" ? o`h1` : t === "h2" ? o`h2` : t === "h3" ? o`h3` : o`h4`;
-    return v`<${s} class="heading" part="heading"><slot></slot></${s}>`;
+    const e = this.as ?? `h${this.level}`, r = e === "h1" ? s`h1` : e === "h2" ? s`h2` : e === "h3" ? s`h3` : s`h4`;
+    return d`<${r} class="heading" part="heading"><slot></slot></${r}>`;
   }
 }
-h([
-  i({ type: String, reflect: !0 })
+n([
+  l({ type: String, reflect: !0 })
 ], a.prototype, "level");
-h([
-  i({ type: String })
+n([
+  l({ type: String })
 ], a.prototype, "as");
-h([
-  i({ type: String, reflect: !0 })
+n([
+  l({ type: String, reflect: !0 })
 ], a.prototype, "tone");
 export {
   a as VdsHeading

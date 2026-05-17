@@ -1,0 +1,22 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "status": "experimental",
+      "since": "v0.2.0",
+      "source": "internal:verodesign/.specs/verodesign/2026-05-16-girok-modern-expression.md",
+      "implements": ["core"]
+    }
+  },
+  "exp": {
+    "glass": {
+      "blur": {
+        "md": { "$value": "{blur.md}", "$type": "dimension" }
+      },
+      "elevation": {
+        "floating": { "$value": "{elevation.3}", "$type": "shadow" }
+      }
+    }
+  }
+}
+

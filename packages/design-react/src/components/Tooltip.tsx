@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { createComponent } from '@lit/react';
-import { VdsTooltip } from '@verobee/design-elements/components/tooltip';
-import '@verobee/design-elements/define/tooltip';
+import { extractSlottedChildren } from './_internal.js';
 
-export const Tooltip = /*#__PURE__*/ createComponent({
-  tagName: 'vds-tooltip',
-  elementClass: VdsTooltip,
-  react: React,
+type Placement = 'top' | 'right' | 'bottom' | 'left';
+export interface TooltipProps extends React.HTMLAttributes<HTMLDivElement> { placement?: Placement; delay?: number; disabled?: boolean; }
+export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(function Tooltip({ placement = 'top', delay = 200, disabled = false, children, style, ...rest }, ref) {
+  const [open, setOpen] = React.useState(false);
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const tipId = React.useId();
+  const { slotted: trigger, rest: content } = extractSlottedChildren(children, 'trigger');
+  const positioning: Record<Placement, React.CSSProperties> = { top: { bottom: '100%', left: '50%', transform: `translateX(-50%) ${open ? 'scale(1)' : 'scale(0.95)'}`, marginBottom: '6px' }, bottom: { top: '100%', left: '50%', transform: `translateX(-50%) ${open ? 'scale(1)' : 'scale(0.95)'}`, marginTop: '6px' }, left: { right: '100%', top: '50%', transform: `translateY(-50%) ${open ? 'scale(1)' : 'scale(0.95)'}`, marginRight: '6px' }, right: { left: '100%', top: '50%', transform: `translateY(-50%) ${open ? 'scale(1)' : 'scale(0.95)'}`, marginLeft: '6px' } };
+  const triggerNode = trigger[0] && React.isValidElement(trigger[0]) ? React.cloneElement(trigger[0] as React.ReactElement<any>, { 'aria-describedby': tipId, onMouseEnter: (event: React.MouseEvent) => { if (!disabled) timerRef.current = setTimeout(() => setOpen(true), delay); (trigger[0] as React.ReactElement<any>).props.onMouseEnter?.(event); }, onMouseLeave: (event: React.MouseEvent) => { if (timerRef.current) clearTimeout(timerRef.current); setOpen(false); (trigger[0] as React.ReactElement<any>).props.onMouseLeave?.(event); }, onFocus: (event: React.FocusEvent) => { if (!disabled) timerRef.current = setTimeout(() => setOpen(true), delay); (trigger[0] as React.ReactElement<any>).props.onFocus?.(event); }, onBlur: (event: React.FocusEvent) => { if (timerRef.current) clearTimeout(timerRef.current); setOpen(false); (trigger[0] as React.ReactElement<any>).props.onBlur?.(event); } }) : null;
+  return <div {...rest} ref={ref} onKeyDown={(event) => { if (event.key === 'Escape') setOpen(false); }} style={{ display: 'inline-flex', position: 'relative', verticalAlign: 'middle', ...style }}>{triggerNode}<span id={tipId} role="tooltip" style={{ position: 'absolute', zIndex: 'var(--vds-zindex-tooltip, 600)', padding: 'var(--vds-spacing-1_5) var(--vds-spacing-2_5)', background: 'var(--vds-theme-bg-inverse)', color: 'var(--vds-theme-text-inverse)', fontFamily: 'var(--vds-font-family-sans)', fontSize: 'var(--vds-type-role-caption-size)', borderRadius: 'var(--vds-radius-sm)', pointerEvents: 'none', opacity: open ? 1 : 0, whiteSpace: 'nowrap', maxWidth: '240px', boxShadow: 'var(--vds-shadow-2)', ...positioning[placement] }}>{content}</span></div>;
 });
-
-export type TooltipProps = React.ComponentProps<typeof Tooltip>;

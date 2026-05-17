@@ -52,8 +52,8 @@ export class VdsButton extends VdsElement {
         position: relative;
         gap: var(--vds-spacing-2);
         font-family: var(--vds-font-family-sans);
-        font-weight: var(--vds-font-weight-500);
-        line-height: var(--vds-font-lineheight-normal);
+        font-weight: var(--vds-type-role-body-weight);
+        line-height: var(--vds-type-role-body-lineheight);
         white-space: nowrap;
         cursor: pointer;
         user-select: none;
@@ -67,8 +67,8 @@ export class VdsButton extends VdsElement {
            does not always reflect class-field initializers before first paint,
            so default appearance must work without attribute selectors. */
         padding: var(--vds-spacing-2) var(--vds-spacing-4);
-        font-size: var(--vds-font-size-base);
-        min-height: 2.5rem;
+        font-size: var(--vds-type-role-body-size);
+        min-height: calc(var(--vds-spacing-10));
         background: var(--vds-theme-primary);
         color: var(--vds-theme-primary-fg);
       }
@@ -87,18 +87,24 @@ export class VdsButton extends VdsElement {
 
       :host([size="sm"]) .button {
         padding: var(--vds-spacing-1_5) var(--vds-spacing-3);
-        font-size: var(--vds-font-size-sm);
-        min-height: 2rem;
+        font-size: var(--vds-type-role-label-size);
+        font-weight: var(--vds-type-role-label-weight);
+        line-height: var(--vds-type-role-label-lineheight);
+        min-height: calc(var(--vds-spacing-8));
       }
       :host([size="md"]) .button {
         padding: var(--vds-spacing-2) var(--vds-spacing-4);
-        font-size: var(--vds-font-size-base);
-        min-height: 2.5rem;
+        font-size: var(--vds-type-role-body-size);
+        font-weight: var(--vds-type-role-body-weight);
+        line-height: var(--vds-type-role-body-lineheight);
+        min-height: calc(var(--vds-spacing-10));
       }
       :host([size="lg"]) .button {
         padding: var(--vds-spacing-3) var(--vds-spacing-5);
-        font-size: var(--vds-font-size-lg);
-        min-height: 3rem;
+        font-size: var(--vds-type-role-title-size);
+        font-weight: var(--vds-type-role-title-weight);
+        line-height: var(--vds-type-role-title-lineheight);
+        min-height: calc(var(--vds-spacing-12));
       }
 
       :host([tone="primary"][variant="solid"]) .button {

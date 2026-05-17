@@ -1,17 +1,20 @@
-import { css as i, html as c } from "lit";
-import { property as a } from "lit/decorators.js";
-import { VdsElement as l } from "../../base/vds-element.js";
-var h = Object.defineProperty, o = (r, n, d, g) => {
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as i } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as a } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as c } from "../../base/vds-element.js";
+import { css as l } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var g = Object.defineProperty, o = (r, n, d, h) => {
   for (var e = void 0, t = r.length - 1, v; t >= 0; t--)
     (v = r[t]) && (e = v(n, d, e) || e);
-  return e && h(n, d, e), e;
+  return e && g(n, d, e), e;
 };
-class s extends l {
+class s extends c {
   constructor() {
     super(...arguments), this.variant = "soft", this.tone = "neutral", this.size = "md";
   }
   static {
-    this.styles = i`
+    this.styles = l`
     :host {
       display: inline-flex;
       vertical-align: middle;
@@ -23,7 +26,7 @@ class s extends l {
       align-items: center;
       gap: var(--vds-spacing-1);
       font-family: var(--vds-font-family-sans);
-      font-weight: var(--vds-font-weight-500);
+      font-weight: var(--vds-type-role-label-weight);
       line-height: 1;
       white-space: nowrap;
       border-radius: var(--vds-radius-full);
@@ -31,14 +34,14 @@ class s extends l {
     }
 
     :host([size="sm"]) .badge {
-      padding: 2px var(--vds-spacing-2);
-      font-size: var(--vds-font-size-xs);
-      min-height: 1.125rem;
+      padding: calc(var(--vds-spacing-0_5) / 2) var(--vds-spacing-2);
+      font-size: var(--vds-type-role-caption-size);
+      min-height: calc(var(--vds-spacing-4) + var(--vds-spacing-0_5));
     }
     :host([size="md"]) .badge {
       padding: var(--vds-spacing-1) var(--vds-spacing-2_5);
-      font-size: var(--vds-font-size-sm);
-      min-height: 1.5rem;
+      font-size: var(--vds-type-role-label-size);
+      min-height: calc(var(--vds-spacing-6));
     }
 
     :host([tone="primary"][variant="solid"]) .badge { background: var(--vds-theme-primary); color: var(--vds-theme-primary-fg); }
@@ -71,7 +74,7 @@ class s extends l {
   `;
   }
   render() {
-    return c`
+    return i`
       <span class="badge" part="badge">
         <slot name="start"></slot>
         <slot></slot>

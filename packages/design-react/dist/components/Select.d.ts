@@ -1,13 +1,22 @@
 import * as React from 'react';
-import { type EventName } from '@lit/react';
-import { VdsSelect, VdsOption } from '@verobee/design-elements/components/select';
-import '@verobee/design-elements/define/select';
 export type SelectChangeEvent = CustomEvent<{
     value: string;
 }>;
-export declare const Select: import("@lit/react").ReactWebComponent<VdsSelect, {
-    onChange: EventName<SelectChangeEvent>;
-}>;
-export declare const Option: import("@lit/react").ReactWebComponent<VdsOption, {}>;
-export type SelectProps = React.ComponentProps<typeof Select>;
-export type OptionProps = React.ComponentProps<typeof Option>;
+export interface OptionProps extends React.HTMLAttributes<HTMLDivElement> {
+    value?: string;
+    selected?: boolean;
+    disabled?: boolean;
+}
+export interface SelectProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+    value?: string;
+    placeholder?: string;
+    label?: string;
+    helper?: string;
+    errorMessage?: string;
+    disabled?: boolean;
+    required?: boolean;
+    name?: string;
+    onChange?: ((event: SelectChangeEvent) => void) | undefined;
+}
+export declare const Option: React.ForwardRefExoticComponent<OptionProps & React.RefAttributes<HTMLDivElement>>;
+export declare const Select: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLDivElement>>;
