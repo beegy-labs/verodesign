@@ -1,17 +1,20 @@
-import { css as n, html as v } from "lit";
-import { property as s } from "lit/decorators.js";
-import { VdsElement as p } from "../../base/vds-element.js";
-var u = Object.defineProperty, d = (e, a, i, h) => {
-  for (var r = void 0, t = e.length - 1, l; t >= 0; t--)
-    (l = e[t]) && (r = l(a, i, r) || r);
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as n } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as s } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as v } from "../../base/vds-element.js";
+import { css as p } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var u = Object.defineProperty, d = (t, a, i, h) => {
+  for (var r = void 0, e = t.length - 1, l; e >= 0; e--)
+    (l = t[e]) && (r = l(a, i, r) || r);
   return r && u(a, i, r), r;
 };
-class o extends p {
+class o extends v {
   constructor() {
     super(...arguments), this.variant = "default", this.radius = "xl", this.borderless = !1;
   }
   static {
-    this.styles = n`
+    this.styles = p`
     :host {
       display: block;
       background: var(--vds-theme-bg-card);
@@ -39,7 +42,7 @@ class o extends p {
   `;
   }
   render() {
-    return v`<slot></slot>`;
+    return n`<slot></slot>`;
   }
 }
 d([

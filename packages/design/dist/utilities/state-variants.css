@@ -775,6 +775,9 @@
   .vds-hover\:ring-offset-selected:hover  { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
   .vds-focus\:ring-offset-selected:focus  { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
   .vds-focus-visible\:ring-offset-selected:focus-visible  { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
+  .vds-hover\:ring-offset-disabled:hover  { --vds-ring-offset-color: var(--vds-theme-bg-disabled); }
+  .vds-focus\:ring-offset-disabled:focus  { --vds-ring-offset-color: var(--vds-theme-bg-disabled); }
+  .vds-focus-visible\:ring-offset-disabled:focus-visible  { --vds-ring-offset-color: var(--vds-theme-bg-disabled); }
   .vds-hover\:ring-primary:hover  { --vds-ring-color: var(--vds-theme-primary); }
   .vds-focus\:ring-primary:focus  { --vds-ring-color: var(--vds-theme-primary); }
   .vds-focus-visible\:ring-primary:focus-visible  { --vds-ring-color: var(--vds-theme-primary); }

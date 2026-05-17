@@ -1,0 +1,32 @@
+---
+import DocLayout from "../../layouts/DocLayout.astro";
+---
+<DocLayout title="Button Probe" description="Temporary probe page for vds-button runtime verification.">
+  <h1>Button Probe</h1>
+  <p>Temporary runtime check for variant, slot projection, and reflected properties.</p>
+
+  <div class="demo-frame">
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+      <vds-button id="btn-solid">Solid</vds-button>
+      <vds-button id="btn-soft" variant="soft">Soft</vds-button>
+      <vds-button id="btn-outline" variant="outline">Outline</vds-button>
+      <vds-button id="btn-ghost" variant="ghost">Ghost</vds-button>
+    </div>
+  </div>
+
+  <div class="demo-frame">
+    <vds-button id="btn-dynamic">Dynamic</vds-button>
+  </div>
+
+  <script type="module">
+    import "@verobee/design-elements/define/button";
+
+    const dynamic = document.getElementById("btn-dynamic");
+    if (dynamic) {
+      setTimeout(() => {
+        dynamic.setAttribute("variant", "ghost");
+        dynamic.textContent = "Dynamic Ghost";
+      }, 50);
+    }
+  </script>
+</DocLayout>

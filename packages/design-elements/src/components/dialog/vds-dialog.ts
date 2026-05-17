@@ -28,7 +28,7 @@ export class VdsDialog extends VdsElement {
     .backdrop {
       position: fixed;
       inset: 0;
-      background: oklch(0% 0 0 / 0.5);
+      background: color-mix(in oklab, var(--vds-color-black) 50%, transparent);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -78,8 +78,8 @@ export class VdsDialog extends VdsElement {
     }
     .title {
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-xl);
-      font-weight: var(--vds-font-weight-600);
+      font-size: var(--vds-type-role-title-size);
+      font-weight: var(--vds-type-role-title-weight);
       line-height: var(--vds-font-lineheight-tight);
     }
     .close {

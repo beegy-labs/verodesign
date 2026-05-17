@@ -1,15 +1,21 @@
 import * as React from 'react';
-import { type EventName } from '@lit/react';
-import { VdsTextArea } from '@verobee/design-elements/components/text-area';
-import '@verobee/design-elements/define/text-area';
 export type TextAreaInputEvent = CustomEvent<{
     value: string;
 }>;
 export type TextAreaChangeEvent = CustomEvent<{
     value: string;
 }>;
-export declare const TextArea: import("@lit/react").ReactWebComponent<VdsTextArea, {
-    onInput: EventName<TextAreaInputEvent>;
-    onChange: EventName<TextAreaChangeEvent>;
-}>;
-export type TextAreaProps = React.ComponentProps<typeof TextArea>;
+type Resize = 'none' | 'vertical' | 'horizontal' | 'both';
+export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'size' | 'onInput' | 'onChange'> {
+    label?: string;
+    helper?: string;
+    errorMessage?: string;
+    resize?: Resize;
+    rows?: number;
+    showCount?: boolean;
+    'show-count'?: boolean;
+    onInput?: ((event: TextAreaInputEvent) => void) | undefined;
+    onChange?: ((event: TextAreaChangeEvent) => void) | undefined;
+}
+export declare const TextArea: React.ForwardRefExoticComponent<TextAreaProps & React.RefAttributes<HTMLTextAreaElement>>;
+export {};

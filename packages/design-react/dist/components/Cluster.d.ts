@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { VdsCluster } from '@verobee/design-elements/components/cluster';
-import '@verobee/design-elements/define/cluster';
-export declare const Cluster: import("@lit/react").ReactWebComponent<VdsCluster, {}>;
-export type ClusterProps = React.ComponentProps<typeof Cluster>;
+type Gap = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '8';
+type Align = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
+type Justify = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
+export interface ClusterProps extends React.HTMLAttributes<HTMLDivElement> {
+    gap?: Gap;
+    align?: Align;
+    justify?: Justify;
+    nowrap?: boolean;
+}
+export declare const Cluster: React.ForwardRefExoticComponent<ClusterProps & React.RefAttributes<HTMLDivElement>>;
+export {};

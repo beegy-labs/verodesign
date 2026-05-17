@@ -27,8 +27,6 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        /^lit($|\/)/,
-        /^@lit($|\/)/,
         /^@zag-js\//,
       ],
       output: {

@@ -24,14 +24,14 @@ export class VdsHeading extends VdsElement {
 
     .heading {
       margin: 0;
-      font-weight: var(--vds-font-weight-700);
+      font-weight: var(--vds-type-role-title-weight);
       line-height: var(--vds-font-lineheight-snug);
       color: var(--vds-theme-text-bright);
     }
-    :host([level="1"]) .heading { font-size: var(--vds-font-size-2xl); }
-    :host([level="2"]) .heading { font-size: var(--vds-font-size-xl); }
-    :host([level="3"]) .heading { font-size: var(--vds-font-size-lg); }
-    :host([level="4"]) .heading { font-size: var(--vds-font-size-base); }
+    :host([level="1"]) .heading { font-size: var(--vds-type-role-title-size); }
+    :host([level="2"]) .heading { font-size: var(--vds-type-role-title-size); }
+    :host([level="3"]) .heading { font-size: var(--vds-type-role-body-size); }
+    :host([level="4"]) .heading { font-size: var(--vds-type-role-label-size); }
 
     :host([tone="default"]) .heading { color: var(--vds-theme-text-primary); }
     :host([tone="muted"])   .heading { color: var(--vds-theme-text-secondary); }

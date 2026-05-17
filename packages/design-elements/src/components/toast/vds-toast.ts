@@ -25,7 +25,7 @@ export class VdsToast extends VdsElement {
       border-radius: var(--vds-radius-md);
       box-shadow: var(--vds-shadow-3);
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       pointer-events: auto;
       max-width: 24rem;
     }

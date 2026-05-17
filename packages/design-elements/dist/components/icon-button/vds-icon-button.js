@@ -1,20 +1,24 @@
-import { css as h, html as u } from "lit";
-import { property as r } from "lit/decorators.js";
-import { setRole as v, setAriaProperty as l } from "../../utils/attribute-mirror.js";
-import { focusRing as c, srOnly as b } from "../../styles/shared.js";
-import { VdsElement as p } from "../../base/vds-element.js";
-var m = Object.defineProperty, s = (i, t, n, f) => {
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as v } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as r } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { setAriaProperty as l, setRole as b } from "../../utils/attribute-mirror.js";
+import { focusRing as c, srOnly as p } from "../../styles/shared.js";
+import { VdsElement as m } from "../../base/vds-element.js";
+import { unsafeCSS as h, css as f } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var y = Object.defineProperty, s = (i, t, n, g) => {
   for (var e = void 0, o = i.length - 1, d; o >= 0; o--)
     (d = i[o]) && (e = d(t, n, e) || e);
-  return e && m(t, n, e), e;
+  return e && y(t, n, e), e;
 };
-class a extends p {
+const u = "2.75rem";
+class a extends m {
   constructor() {
     super(), this.variant = "ghost", this.tone = "neutral", this.size = "md", this.disabled = !1, this.ariaLabelText = null, this.handleClick = (t) => {
       this.disabled && (t.preventDefault(), t.stopImmediatePropagation());
     }, this.handleKeydown = (t) => {
       (t.key === " " || t.key === "Enter") && (t.preventDefault(), this.click());
-    }, this.internals = this.attachInternals(), v(this, this.internals, "button"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
+    }, this.internals = this.attachInternals(), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
   }
   static {
     this.formAssociated = !0;
@@ -22,8 +26,8 @@ class a extends p {
   static {
     this.styles = [
       c,
-      b,
-      h`
+      p,
+      f`
       :host { display: inline-flex; vertical-align: middle; }
       :host([hidden]) { display: none; }
 
@@ -33,6 +37,7 @@ class a extends p {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         cursor: pointer;
         user-select: none;
         border-radius: var(--vds-radius-md);
@@ -40,13 +45,25 @@ class a extends p {
                     color var(--vds-duration-fast) var(--vds-easing-ease-out);
         color: var(--vds-theme-text-secondary);
       }
+
+      @media (pointer: coarse) {
+        .button::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: max(100%, ${h(u)});
+          height: max(100%, ${h(u)});
+          transform: translate(-50%, -50%);
+        }
+      }
       .button ::slotted(*) {
         width: 1em; height: 1em;
       }
 
-      :host([size="sm"]) .button { padding: var(--vds-spacing-1);   font-size: 0.875rem; }
-      :host([size="md"]) .button { padding: var(--vds-spacing-1_5); font-size: 1rem;     }
-      :host([size="lg"]) .button { padding: var(--vds-spacing-2);   font-size: 1.125rem; }
+      :host([size="sm"]) .button { padding: var(--vds-spacing-1);   font-size: var(--vds-type-role-label-size); }
+      :host([size="md"]) .button { padding: var(--vds-spacing-1_5); font-size: var(--vds-type-role-body-size); }
+      :host([size="lg"]) .button { padding: var(--vds-spacing-2);   font-size: var(--vds-type-role-title-size); }
 
       :host([variant="ghost"][tone="neutral"]:hover) .button {
         background: var(--vds-theme-bg-hover);
@@ -88,10 +105,10 @@ class a extends p {
     super.updated(t), t.has("disabled") ? (l(this, this.internals, "ariaDisabled", this.disabled), this.tabIndex = this.disabled ? -1 : 0) : this.tabIndex < 0 && !this.disabled && (this.tabIndex = 0), t.has("ariaLabelText") && this.ariaLabelText != null && l(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   connectedCallback() {
-    super.connectedCallback(), this.hasAttribute("tabindex") || (this.tabIndex = 0);
+    super.connectedCallback(), b(this, this.internals, "button"), this.hasAttribute("tabindex") || (this.tabIndex = 0);
   }
   render() {
-    return u`
+    return v`
       <button class="button" part="button" type="button" ?disabled=${this.disabled} tabindex="-1" aria-hidden="true">
         <slot></slot>
       </button>

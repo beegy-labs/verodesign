@@ -29,7 +29,7 @@ export class VdsTooltip extends VdsElement {
       background: var(--vds-theme-bg-inverse);
       color: var(--vds-theme-text-inverse);
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       border-radius: var(--vds-radius-sm);
       pointer-events: none;
       opacity: 0;

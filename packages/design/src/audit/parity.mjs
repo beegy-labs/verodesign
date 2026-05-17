@@ -2,9 +2,10 @@ import { buildThemeTokens, flattenTokens } from '../build/loader.mjs';
 
 export async function auditParity(themes) {
   const sets = {};
+  const isCanonicalSlot = (token) => token.path[0] !== 'exp';
   for (const theme of themes) {
     const tree = await buildThemeTokens(theme, 'light');
-    const flat = flattenTokens(tree);
+    const flat = flattenTokens(tree).filter(isCanonicalSlot);
     sets[theme] = new Set(flat.map((t) => t.path.join('.')));
   }
 

@@ -29,8 +29,8 @@ export class VdsTextField extends VdsElement {
       :host([hidden]) { display: none; }
 
       .label {
-        font-size: var(--vds-font-size-sm);
-        font-weight: var(--vds-font-weight-500);
+        font-size: var(--vds-type-role-label-size);
+        font-weight: var(--vds-type-role-label-weight);
         color: var(--vds-theme-text-primary);
       }
       .label[data-required]::after {
@@ -50,9 +50,9 @@ export class VdsTextField extends VdsElement {
                     box-shadow var(--vds-duration-fast) var(--vds-easing-ease-out);
       }
 
-      :host([size="sm"]) .field { padding: var(--vds-spacing-1_5) var(--vds-spacing-2); min-height: 2rem; }
-      :host([size="md"]) .field { padding: var(--vds-spacing-2) var(--vds-spacing-3); min-height: 2.5rem; }
-      :host([size="lg"]) .field { padding: var(--vds-spacing-3) var(--vds-spacing-4); min-height: 3rem; }
+      :host([size="sm"]) .field { padding: var(--vds-spacing-1_5) var(--vds-spacing-2); min-height: calc(var(--vds-spacing-8)); }
+      :host([size="md"]) .field { padding: var(--vds-spacing-2) var(--vds-spacing-3); min-height: calc(var(--vds-spacing-10)); }
+      :host([size="lg"]) .field { padding: var(--vds-spacing-3) var(--vds-spacing-4); min-height: calc(var(--vds-spacing-12)); }
 
       .input {
         all: unset;
@@ -64,9 +64,9 @@ export class VdsTextField extends VdsElement {
       }
       .input::placeholder { color: var(--vds-theme-text-faint); }
 
-      :host([size="sm"]) .input { font-size: var(--vds-font-size-sm); }
-      :host([size="md"]) .input { font-size: var(--vds-font-size-base); }
-      :host([size="lg"]) .input { font-size: var(--vds-font-size-lg); }
+      :host([size="sm"]) .input { font-size: var(--vds-type-role-label-size); }
+      :host([size="md"]) .input { font-size: var(--vds-type-role-body-size); }
+      :host([size="lg"]) .input { font-size: var(--vds-type-role-title-size); }
 
       :host(:focus-within) .field {
         border-color: var(--vds-theme-border-focus);
@@ -87,7 +87,7 @@ export class VdsTextField extends VdsElement {
       :host([disabled]) .input { cursor: not-allowed; }
 
       .helper {
-        font-size: var(--vds-font-size-xs);
+        font-size: var(--vds-type-role-caption-size);
         color: var(--vds-theme-text-dim);
       }
       .helper[data-error] {

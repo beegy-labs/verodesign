@@ -1,8 +1,10 @@
 import { VdsElement } from '../../base/vds-element.js';
 /**
  * <vds-page-header> — page-level title row.
- * Renders title (h1) + optional subtitle, with right-aligned `actions` slot.
+ * Renders leading slot + title (h1) + optional subtitle, with right-aligned
+ * `actions` slot.
  *
+ * @slot leading - optional leading content (back button, brand, etc.)
  * @slot actions - right-aligned action elements (buttons, etc.)
  */
 export declare class VdsPageHeader extends VdsElement {

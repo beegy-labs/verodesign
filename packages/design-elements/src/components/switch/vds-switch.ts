@@ -26,9 +26,9 @@ export class VdsSwitch extends VdsElement {
       font-family: var(--vds-font-family-sans);
     }
     :host([disabled]) { cursor: not-allowed; opacity: 0.5; }
-    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-type-role-label-size); }
+    :host([size="md"]) { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"]) { font-size: var(--vds-type-role-title-size); }
 
     .track {
       position: relative;
@@ -37,28 +37,28 @@ export class VdsSwitch extends VdsElement {
       border-radius: 999px;
       transition: background var(--vds-duration-fast);
     }
-    :host([size="sm"]) .track { width: 28px; height: 16px; }
-    :host([size="md"]) .track { width: 36px; height: 20px; }
-    :host([size="lg"]) .track { width: 44px; height: 24px; }
+    :host([size="sm"]) .track { width: calc(var(--vds-spacing-7)); height: calc(var(--vds-spacing-4)); }
+    :host([size="md"]) .track { width: calc(var(--vds-spacing-9)); height: calc(var(--vds-spacing-5)); }
+    :host([size="lg"]) .track { width: calc(var(--vds-spacing-11)); height: calc(var(--vds-spacing-6)); }
 
     :host([checked]) .track { background: var(--vds-theme-primary); }
 
     .thumb {
       position: absolute;
-      top: 2px;
-      left: 2px;
+      top: calc(var(--vds-spacing-0_5) / 2);
+      left: calc(var(--vds-spacing-0_5) / 2);
       background: var(--vds-theme-bg-card);
       border-radius: 999px;
       transition: transform var(--vds-duration-fast);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      box-shadow: var(--vds-shadow-1);
     }
-    :host([size="sm"]) .thumb { width: 12px; height: 12px; }
-    :host([size="md"]) .thumb { width: 16px; height: 16px; }
-    :host([size="lg"]) .thumb { width: 20px; height: 20px; }
+    :host([size="sm"]) .thumb { width: calc(var(--vds-spacing-3)); height: calc(var(--vds-spacing-3)); }
+    :host([size="md"]) .thumb { width: calc(var(--vds-spacing-4)); height: calc(var(--vds-spacing-4)); }
+    :host([size="lg"]) .thumb { width: calc(var(--vds-spacing-5)); height: calc(var(--vds-spacing-5)); }
 
-    :host([size="sm"][checked]) .thumb { transform: translateX(12px); }
-    :host([size="md"][checked]) .thumb { transform: translateX(16px); }
-    :host([size="lg"][checked]) .thumb { transform: translateX(20px); }
+    :host([size="sm"][checked]) .thumb { transform: translateX(calc(var(--vds-spacing-3))); }
+    :host([size="md"][checked]) .thumb { transform: translateX(calc(var(--vds-spacing-4))); }
+    :host([size="lg"][checked]) .thumb { transform: translateX(calc(var(--vds-spacing-5))); }
 
     :host(:focus-visible) .track {
       outline: 2px solid var(--vds-theme-border-focus);

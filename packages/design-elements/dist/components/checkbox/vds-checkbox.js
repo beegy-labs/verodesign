@@ -1,13 +1,16 @@
-import { css as l, html as c } from "lit";
-import { property as t } from "lit/decorators.js";
-import { setRole as p, setAriaProperty as d } from "../../utils/attribute-mirror.js";
-import { VdsElement as u } from "../../base/vds-element.js";
-var f = Object.defineProperty, s = (a, e, n, m) => {
-  for (var r = void 0, o = a.length - 1, h; o >= 0; o--)
-    (h = a[o]) && (r = h(e, n, r) || r);
-  return r && f(e, n, r), r;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as h } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as t } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { setRole as c, setAriaProperty as d } from "../../utils/attribute-mirror.js";
+import { VdsElement as p } from "../../base/vds-element.js";
+import { css as v } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var m = Object.defineProperty, s = (a, e, n, u) => {
+  for (var r = void 0, o = a.length - 1, l; o >= 0; o--)
+    (l = a[o]) && (r = l(e, n, r) || r);
+  return r && m(e, n, r), r;
 };
-class i extends u {
+class i extends p {
   constructor() {
     super(), this.checked = !1, this.indeterminate = !1, this.disabled = !1, this.required = !1, this.value = "on", this.size = "md", this.handleClick = (e) => {
       if (this.disabled) {
@@ -17,13 +20,13 @@ class i extends u {
       this.toggle();
     }, this.handleKeydown = (e) => {
       e.key === " " && (e.preventDefault(), this.disabled || this.toggle());
-    }, this.internals = this.attachInternals(), p(this, this.internals, "checkbox"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
+    }, this.internals = this.attachInternals(), c(this, this.internals, "checkbox"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
   }
   static {
     this.formAssociated = !0;
   }
   static {
-    this.styles = l`
+    this.styles = v`
     :host {
       display: inline-flex;
       align-items: center;
@@ -34,9 +37,9 @@ class i extends u {
       font-family: var(--vds-font-family-sans);
     }
     :host([disabled]) { cursor: not-allowed; opacity: 0.5; }
-    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-type-role-label-size); }
+    :host([size="md"]) { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"]) { font-size: var(--vds-type-role-title-size); }
 
     .box {
       display: inline-flex;
@@ -48,9 +51,9 @@ class i extends u {
       background: var(--vds-theme-bg-card);
       transition: background var(--vds-duration-fast), border-color var(--vds-duration-fast);
     }
-    :host([size="sm"]) .box { width: 14px; height: 14px; }
-    :host([size="md"]) .box { width: 18px; height: 18px; }
-    :host([size="lg"]) .box { width: 22px; height: 22px; }
+    :host([size="sm"]) .box { width: calc(var(--vds-spacing-3) + var(--vds-spacing-0_5)); height: calc(var(--vds-spacing-3) + var(--vds-spacing-0_5)); }
+    :host([size="md"]) .box { width: calc(var(--vds-spacing-4) + var(--vds-spacing-0_5)); height: calc(var(--vds-spacing-4) + var(--vds-spacing-0_5)); }
+    :host([size="lg"]) .box { width: calc(var(--vds-spacing-5) + var(--vds-spacing-0_5)); height: calc(var(--vds-spacing-5) + var(--vds-spacing-0_5)); }
 
     :host([checked]) .box,
     :host([indeterminate]) .box {
@@ -89,7 +92,7 @@ class i extends u {
     this.indeterminate ? (this.indeterminate = !1, this.checked = !0) : this.checked = !this.checked, this.emit("change", { checked: this.checked });
   }
   render() {
-    return c`
+    return h`
       <span class="box" part="box" aria-hidden="true">
         <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         <svg class="dash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>

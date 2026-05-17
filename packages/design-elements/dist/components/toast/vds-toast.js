@@ -1,18 +1,21 @@
-import { css as c, html as a } from "lit";
-import { property as i } from "lit/decorators.js";
-import { setRole as v, setAriaProperty as l } from "../../utils/attribute-mirror.js";
-import { VdsElement as p } from "../../base/vds-element.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as a } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as i } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { setRole as p, setAriaProperty as l } from "../../utils/attribute-mirror.js";
+import { VdsElement as c } from "../../base/vds-element.js";
+import { css as v } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
 var f = Object.defineProperty, r = (n, t, s, m) => {
   for (var e = void 0, d = n.length - 1, h; d >= 0; d--)
     (h = n[d]) && (e = h(t, s, e) || e);
   return e && f(t, s, e), e;
 };
-class o extends p {
+class o extends c {
   constructor() {
     super(), this.tone = "neutral", this.duration = 5e3, this.dismissible = !0, this._timer = 0, this.internals = this.attachInternals();
   }
   static {
-    this.styles = c`
+    this.styles = v`
     :host {
       display: flex;
       align-items: flex-start;
@@ -24,7 +27,7 @@ class o extends p {
       border-radius: var(--vds-radius-md);
       box-shadow: var(--vds-shadow-3);
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       pointer-events: auto;
       max-width: 24rem;
     }
@@ -63,7 +66,7 @@ class o extends p {
   }
   syncAria() {
     const t = this.tone === "error";
-    v(this, this.internals, t ? "alert" : "status"), l(this, this.internals, "ariaLive", t ? "assertive" : "polite"), l(this, this.internals, "ariaAtomic", !0);
+    p(this, this.internals, t ? "alert" : "status"), l(this, this.internals, "ariaLive", t ? "assertive" : "polite"), l(this, this.internals, "ariaAtomic", !0);
   }
   dismiss() {
     clearTimeout(this._timer), this.emit("vds-dismiss"), this.remove();
@@ -93,12 +96,12 @@ r([
 r([
   i({ type: Boolean })
 ], o.prototype, "dismissible");
-class u extends p {
+class u extends c {
   constructor() {
-    super(), this.placement = "bottom-right", this.max = 5, this.internals = this.attachInternals(), v(this, this.internals, "region"), l(this, this.internals, "ariaLabel", "Notifications");
+    super(), this.placement = "bottom-right", this.max = 5, this.internals = this.attachInternals(), p(this, this.internals, "region"), l(this, this.internals, "ariaLabel", "Notifications");
   }
   static {
-    this.styles = c`
+    this.styles = v`
     :host {
       position: fixed;
       z-index: var(--vds-zindex-toast);

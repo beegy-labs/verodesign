@@ -27,9 +27,9 @@ export class VdsCheckbox extends VdsElement {
       font-family: var(--vds-font-family-sans);
     }
     :host([disabled]) { cursor: not-allowed; opacity: 0.5; }
-    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-type-role-label-size); }
+    :host([size="md"]) { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"]) { font-size: var(--vds-type-role-title-size); }
 
     .box {
       display: inline-flex;
@@ -41,9 +41,9 @@ export class VdsCheckbox extends VdsElement {
       background: var(--vds-theme-bg-card);
       transition: background var(--vds-duration-fast), border-color var(--vds-duration-fast);
     }
-    :host([size="sm"]) .box { width: 14px; height: 14px; }
-    :host([size="md"]) .box { width: 18px; height: 18px; }
-    :host([size="lg"]) .box { width: 22px; height: 22px; }
+    :host([size="sm"]) .box { width: calc(var(--vds-spacing-3) + var(--vds-spacing-0_5)); height: calc(var(--vds-spacing-3) + var(--vds-spacing-0_5)); }
+    :host([size="md"]) .box { width: calc(var(--vds-spacing-4) + var(--vds-spacing-0_5)); height: calc(var(--vds-spacing-4) + var(--vds-spacing-0_5)); }
+    :host([size="lg"]) .box { width: calc(var(--vds-spacing-5) + var(--vds-spacing-0_5)); height: calc(var(--vds-spacing-5) + var(--vds-spacing-0_5)); }
 
     :host([checked]) .box,
     :host([indeterminate]) .box {

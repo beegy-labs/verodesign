@@ -1,14 +1,17 @@
-import { css as d, html as p } from "lit";
-import { property as o } from "lit/decorators.js";
-import { VdsElement as v } from "../../base/vds-element.js";
-var c = Object.defineProperty, r = (e, i, n, f) => {
-  for (var t = void 0, s = e.length - 1, a; s >= 0; s--)
-    (a = e[s]) && (t = a(i, n, t) || t);
-  return t && c(i, n, t), t;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as d } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as a } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as p } from "../../base/vds-element.js";
+import { css as m } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var v = Object.defineProperty, o = (t, s, l, c) => {
+  for (var e = void 0, i = t.length - 1, n; i >= 0; i--)
+    (n = t[i]) && (e = n(s, l, e) || e);
+  return e && v(s, l, e), e;
 };
-class l extends v {
+class r extends p {
   static {
-    this.styles = d`
+    this.styles = m`
     :host {
       display: flex;
       flex-direction: row;
@@ -18,22 +21,30 @@ class l extends v {
     }
     :host([hidden]) { display: none; }
 
+    slot[name="leading"] {
+      flex-shrink: 0;
+    }
+    slot[name="leading"]:empty {
+      display: none;
+    }
+
     .body {
       display: flex;
       flex-direction: column;
       gap: var(--vds-spacing-1);
+      flex: 1;
       min-width: 0;
     }
     .title {
       margin: 0;
-      font-size: var(--vds-font-size-2xl);
-      font-weight: var(--vds-font-weight-700);
-      line-height: var(--vds-font-lineheight-snug);
+      font-size: var(--vds-type-role-title-size);
+      font-weight: var(--vds-type-role-title-weight);
+      line-height: var(--vds-type-role-title-lineheight);
       color: var(--vds-theme-text-bright);
     }
     .subtitle {
       margin: 0;
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       color: var(--vds-theme-text-secondary);
     }
     .subtitle:empty { display: none; }
@@ -48,7 +59,8 @@ class l extends v {
   `;
   }
   render() {
-    return p`
+    return d`
+      <slot name="leading"></slot>
       <div class="body">
         <h1 class="title">${this.heading ?? ""}</h1>
         <p class="subtitle">${this.subtitle ?? ""}</p>
@@ -59,12 +71,12 @@ class l extends v {
     `;
   }
 }
-r([
-  o({ type: String })
-], l.prototype, "heading");
-r([
-  o({ type: String })
-], l.prototype, "subtitle");
+o([
+  a({ type: String })
+], r.prototype, "heading");
+o([
+  a({ type: String })
+], r.prototype, "subtitle");
 export {
-  l as VdsPageHeader
+  r as VdsPageHeader
 };

@@ -50,6 +50,11 @@
         "$value": "{color.white}",
         "$type": "color",
         "$description": "Selected/active surface for segmented controls, selected list items, and active nav buttons. Must be visibly elevated above its immediate container (page/card) and distinct from hover."
+      },
+      "disabled": {
+        "$value": "{theme.bg.muted}",
+        "$type": "color",
+        "$description": "Disabled surface state. Cross-brand: every brand needs a non-interactive muted surface."
       }
     },
     "text": {
@@ -112,6 +117,28 @@
         "$value": "{color.blue.6}",
         "$type": "color",
         "$description": "Focus ring outline"
+      }
+    },
+    "state": {
+      "hover": {
+        "$value": "{theme.bg.hover}",
+        "$type": "color",
+        "$description": "Transient pointer hover state. Cross-brand: every brand needs the same interaction meaning with brand-specific binding."
+      },
+      "press": {
+        "$value": "{theme.bg.selected}",
+        "$type": "color",
+        "$description": "Pressed/active state surface. Cross-brand: every brand needs a stronger temporary action state than hover."
+      },
+      "selected": {
+        "$value": "{theme.bg.selected}",
+        "$type": "color",
+        "$description": "Selected or current state surface. Cross-brand: every brand needs persistent selection semantics."
+      },
+      "disabled": {
+        "$value": "{theme.bg.disabled}",
+        "$type": "color",
+        "$description": "Disabled/non-interactive state surface. Cross-brand: every brand needs disabled semantics."
       }
     },
     "primary": {
@@ -315,5 +342,69 @@
         "$description": "Logo inner accent (optional)"
       }
     }
+  }
+  ,
+  "elevation": {
+    "0": { "$value": "{shadow.0}", "$type": "shadow", "$description": "Flat / no elevation. Default resting surfaces should prefer border and surface contrast over shadow." },
+    "1": { "$value": "{shadow.1}", "$type": "shadow", "$description": "Reserved for exceptional pressed or selected islands, not default component rest state." },
+    "2": { "$value": "{shadow.2}", "$type": "shadow", "$description": "Reserved for exceptional raised separation. Do not use as the default card rest state." },
+    "3": { "$value": "{shadow.3}", "$type": "shadow", "$description": "Floating layer (dropdown, floating tab bar)" },
+    "4": { "$value": "{shadow.4}", "$type": "shadow", "$description": "Popover / tooltip container" },
+    "5": { "$value": "{shadow.5}", "$type": "shadow", "$description": "Dialog / sheet modal layer" }
+  },
+  "motion": {
+    "duration": {
+      "instant": { "$value": "{duration.instant}", "$type": "duration", "$description": "Reduced motion" },
+      "fast": { "$value": "{duration.fast}", "$type": "duration", "$description": "UI feedback" },
+      "base": { "$value": "{duration.medium}", "$type": "duration", "$description": "Standard transition" },
+      "slow": { "$value": "{duration.slow}", "$type": "duration", "$description": "Large layout shift" }
+    },
+    "easing": {
+      "linear": { "$value": "{easing.linear}", "$type": "cubicBezier", "$description": "Constant velocity" },
+      "standard": { "$value": "{easing.ease-in-out}", "$type": "cubicBezier", "$description": "Standard transition" },
+      "decelerate": { "$value": "{easing.ease-out}", "$type": "cubicBezier", "$description": "Entering element" },
+      "accelerate": { "$value": "{easing.ease-in}", "$type": "cubicBezier", "$description": "Exiting element" },
+      "spring": { "$value": "{easing.spring}", "$type": "cubicBezier", "$description": "Bouncy / playful (surgical)" }
+    }
+  },
+  "type": {
+    "role": {
+      "display": {
+        "size": { "$value": "{font.size.numeric-display-lg}", "$type": "dimension", "$description": "Cross-brand hero metric. One primary display per screen." },
+        "lineHeight": { "$value": "{font.lineHeight.tight}", "$type": "number", "$description": "Display line height" },
+        "weight": { "$value": "{font.weight.700}", "$type": "fontWeight", "$description": "Display emphasis weight" }
+      },
+      "metric": {
+        "size": { "$value": "{font.size.numeric-display-sm}", "$type": "dimension", "$description": "Cross-brand supporting metric / amount. Smaller than display for container stability." },
+        "lineHeight": { "$value": "{font.lineHeight.tight}", "$type": "number", "$description": "Metric line height" },
+        "weight": { "$value": "{font.weight.700}", "$type": "fontWeight", "$description": "Metric emphasis weight" }
+      },
+      "title": {
+        "size": { "$value": "{font.size.lg}", "$type": "dimension", "$description": "Cross-brand section and card title." },
+        "lineHeight": { "$value": "{font.lineHeight.snug}", "$type": "number", "$description": "Title line height" },
+        "weight": { "$value": "{font.weight.700}", "$type": "fontWeight", "$description": "Title emphasis weight" }
+      },
+      "body": {
+        "size": { "$value": "{font.size.base}", "$type": "dimension", "$description": "Cross-brand body copy. AAA target range." },
+        "lineHeight": { "$value": "{font.lineHeight.normal}", "$type": "number", "$description": "Body line height" },
+        "weight": { "$value": "{font.weight.400}", "$type": "fontWeight", "$description": "Body reading weight" }
+      },
+      "label": {
+        "size": { "$value": "{font.size.sm}", "$type": "dimension", "$description": "Cross-brand UI label. AAA target range." },
+        "lineHeight": { "$value": "{font.lineHeight.normal}", "$type": "number", "$description": "Label line height" },
+        "weight": { "$value": "{font.weight.500}", "$type": "fontWeight", "$description": "Label emphasis weight" }
+      },
+      "caption": {
+        "size": { "$value": "{font.size.xs}", "$type": "dimension", "$description": "Cross-brand caption and meta copy." },
+        "lineHeight": { "$value": "{font.lineHeight.normal}", "$type": "number", "$description": "Caption line height" },
+        "weight": { "$value": "{font.weight.400}", "$type": "fontWeight", "$description": "Caption reading weight" }
+      }
+    }
+  },
+  "blur": {
+    "none": { "$value": "{blur.0}", "$type": "dimension", "$description": "No blur" },
+    "sm": { "$value": "{blur.1}", "$type": "dimension", "$description": "Subtle blur" },
+    "md": { "$value": "{blur.2}", "$type": "dimension", "$description": "Standard glass" },
+    "lg": { "$value": "{blur.3}", "$type": "dimension", "$description": "Strong glass" }
   }
 }

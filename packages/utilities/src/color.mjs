@@ -32,7 +32,7 @@ export function generateColor(flat) {
   // Tailwind-static colors (no theme dependency, cascade-safe)
   // emitted FIRST so per-slot colors (slate.X, primary, etc.) can override
   const STATIC_COLORS = {
-    'black': '#000', 'white': '#fff', 'transparent': 'transparent',
+    'black': 'var(--vds-color-black)', 'white': 'var(--vds-color-white)', 'transparent': 'transparent',
     'current': 'currentColor', 'inherit': 'inherit',
   };
   for (const [name, value] of Object.entries(STATIC_COLORS)) {

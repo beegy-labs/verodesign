@@ -12,7 +12,7 @@ export const srOnly = css`
   .sr-only {
     position: absolute;
     width: 1px;
-    height: 1px;
+    height: var(--vds-border-width-1);
     padding: 0;
     margin: -1px;
     overflow: hidden;

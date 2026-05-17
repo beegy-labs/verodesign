@@ -98,7 +98,7 @@ export async function emitUtilities() {
     ...layout,
     ...sizing,
     ...spacing,
-    ...typography.filter((r) => /^\.vds-(text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl)|font-|leading-|tracking-|text-(left|center|right|justify))\s*\{/.test(r)),
+    ...typography.filter((r) => /^\.vds-(text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|display|metric|title|body|label|caption)|font-|leading-|tracking-|text-(left|center|right|justify))\s*\{/.test(r)),
   ];
   const responsiveBlocks = wrapResponsive(responsiveEligible, breakpoints);
 

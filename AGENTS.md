@@ -23,6 +23,25 @@ Core loop: `CDD → SDD → ADD → CDD (feedback)`. Definitions: [docs/llm/poli
 | `.specs/` | SDD | Change plans — token additions, theme changes, deprecations |
 | `.add/` | ADD | Execution — token-add, theme-add, release, pattern-* workflows |
 
+## Agent Role Split
+
+ADD is realized by two cooperating agents. Each request is routed by role; the same agent never owns both roles in the same scope.
+
+| Agent | Role | Reads | Writes | Token Profile |
+| ----- | ---- | ----- | ------ | ------------- |
+| Claude Code | **Planner / Reviewer** | CDD (`.ai/`, `docs/llm/`), SDD scope/tasks, Codex summaries, naming policy | SDD (`.specs/verodesign/{scope}.md`), CDD feedback, naming/contrast decisions | High-context reasoning, no token-file body reads |
+| Codex (via MCP) | **Implementer** | SDD scope/tasks, `tokens/`, `themes/`, build/contrast output | DTCG JSON, theme files, generated CSS pipeline outputs | Bulk file I/O, build loops, contrast retry cycles |
+
+| Step | Owner | Action |
+| ---- | ----- | ------ |
+| 1 | Claude | Pick workflow from `.add/README.md`, author `.specs/verodesign/{scope}.md` (token name, semantic role, theme target, pattern source) |
+| 2 | Claude | Delegate via `mcp__codex__codex` per [.add/codex-delegate.md](.add/codex-delegate.md) |
+| 3 | Codex | Edit tokens/themes/patterns, run `pnpm build` + contrast checks, retry up to 3× |
+| 4 | Codex | Return compressed summary (≤400 tokens, no CSS/diffs) |
+| 5 | Claude | Verify summary vs scope; trigger Layer 2 fresh-eyes review or `doc-sync.md` |
+
+Stay-in-Claude exceptions: naming a new semantic role, pattern graduation decisions, contrast trade-offs between themes, one-line typo, escalations. See [.add/codex-delegate.md](.add/codex-delegate.md#decision-matrix).
+
 ## Commit Rules
 
 | Rule | Detail |
@@ -118,3 +137,14 @@ LLM agents MUST read [docs/llm/research/llm-knowledge-gaps.md](docs/llm/research
 | LLM | (Claude family) | `CLAUDE.md` |
 | LLM | (Codex family) | `AGENTS.md` |
 | LLM | (Gemini family) | `GEMINI.md` |
+
+## Token & Cache Hygiene (2026)
+
+Anthropic prompt cache TTL dropped from 60 min to 5 min in 2026 Q1. To preserve hit rate (Claude Code achieves ~92% with proper layout):
+
+| Rule | Reason |
+| ---- | ------ |
+| Static prefix first | This file, `.ai/` SSOT, tool defs — placed before any per-request material |
+| No timestamps in static sections | A single shifting byte invalidates the entire prefix cache |
+| `Last Updated` lives only in the header line | Never embed timestamps inside rule tables |
+| Living document | Encode every recurring correction as a rule — AI-generated rules show no measurable benefit |

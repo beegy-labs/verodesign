@@ -178,8 +178,8 @@ export class VdsTab extends LitElement {
       user-select: none;
       color: var(--vds-theme-text-dim);
       border-bottom: 2px solid transparent;
-      font-size: var(--vds-font-size-sm);
-      font-weight: var(--vds-font-weight-500);
+      font-size: var(--vds-type-role-label-size);
+      font-weight: var(--vds-type-role-label-weight);
       transition: color var(--vds-duration-fast) var(--vds-easing-ease-out),
                   border-color var(--vds-duration-fast) var(--vds-easing-ease-out);
     }

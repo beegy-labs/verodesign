@@ -1,13 +1,17 @@
-import { css as p, html as d } from "lit";
-import { property as o, state as h } from "lit/decorators.js";
-import { setRole as m } from "../../utils/attribute-mirror.js";
-import { VdsElement as c } from "../../base/vds-element.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as p } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as o } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { state as d } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/state.js";
+import { setRole as h } from "../../utils/attribute-mirror.js";
+import { VdsElement as m } from "../../base/vds-element.js";
+import { css as c } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
 var f = Object.defineProperty, s = (r, t, n, v) => {
   for (var e = void 0, a = r.length - 1, l; a >= 0; a--)
     (l = r[a]) && (e = l(t, n, e) || e);
   return e && f(t, n, e), e;
 };
-class i extends c {
+class i extends m {
   constructor() {
     super(), this.placement = "top", this.delay = 200, this.disabled = !1, this.open = !1, this.timer = null, this.triggerEl = null, this.tipId = this.createId("vds-tooltip"), this.syncTrigger = () => {
       if (this.triggerEl = this.querySelector('[slot="trigger"]'), this.triggerEl) {
@@ -22,10 +26,10 @@ class i extends c {
       this.timer && clearTimeout(this.timer), this.open = !1;
     }, this.handleKey = (t) => {
       t.key === "Escape" && this.hide();
-    }, this.internals = this.attachInternals(), m(this, this.internals, "presentation"), this.addEventListener("mouseenter", this.show), this.addEventListener("mouseleave", this.hide), this.addEventListener("focusin", this.show), this.addEventListener("focusout", this.hide), this.addEventListener("keydown", this.handleKey);
+    }, this.internals = this.attachInternals(), h(this, this.internals, "presentation"), this.addEventListener("mouseenter", this.show), this.addEventListener("mouseleave", this.hide), this.addEventListener("focusin", this.show), this.addEventListener("focusout", this.hide), this.addEventListener("keydown", this.handleKey);
   }
   static {
-    this.styles = p`
+    this.styles = c`
     :host {
       display: inline-flex;
       position: relative;
@@ -39,7 +43,7 @@ class i extends c {
       background: var(--vds-theme-bg-inverse);
       color: var(--vds-theme-text-inverse);
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       border-radius: var(--vds-radius-sm);
       pointer-events: none;
       opacity: 0;
@@ -70,7 +74,7 @@ class i extends c {
     super.updated(t), (t.has("open") || t.has("disabled")) && this.syncTrigger();
   }
   render() {
-    return d`
+    return p`
       <slot name="trigger" @slotchange=${this.syncTrigger}></slot>
       <span class="tip" part="tip" id=${this.tipId} role="tooltip" ?data-open=${this.open}>
         <slot></slot>
@@ -88,7 +92,7 @@ s([
   o({ type: Boolean })
 ], i.prototype, "disabled");
 s([
-  h()
+  d()
 ], i.prototype, "open");
 export {
   i as VdsTooltip

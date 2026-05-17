@@ -1,17 +1,20 @@
-import { css as n, html as c } from "lit";
-import { property as a } from "lit/decorators.js";
-import { VdsElement as d } from "../../base/vds-element.js";
-var p = Object.defineProperty, e = (i, h, o, l) => {
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as n } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as a } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as p } from "../../base/vds-element.js";
+import { css as c } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var d = Object.defineProperty, r = (i, o, h, l) => {
   for (var s = void 0, t = i.length - 1, v; t >= 0; t--)
-    (v = i[t]) && (s = v(h, o, s) || s);
-  return s && p(h, o, s), s;
+    (v = i[t]) && (s = v(o, h, s) || s);
+  return s && d(o, h, s), s;
 };
-class r extends d {
+class e extends p {
   constructor() {
     super(...arguments), this.axis = "vertical", this.grow = !1;
   }
   static {
-    this.styles = n`
+    this.styles = c`
     :host { display: block; flex-shrink: 0; }
     :host([hidden]) { display: none; }
 
@@ -41,18 +44,18 @@ class r extends d {
   `;
   }
   render() {
-    return c``;
+    return n``;
   }
 }
-e([
+r([
   a({ type: String, reflect: !0 })
-], r.prototype, "axis");
-e([
+], e.prototype, "axis");
+r([
   a({ type: String, reflect: !0 })
-], r.prototype, "size");
-e([
+], e.prototype, "size");
+r([
   a({ type: Boolean, reflect: !0 })
-], r.prototype, "grow");
+], e.prototype, "grow");
 export {
-  r as VdsSpacer
+  e as VdsSpacer
 };

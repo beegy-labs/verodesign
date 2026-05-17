@@ -4,6 +4,24 @@
 
 Each workflow is a structured prompt for an LLM agent. Read the relevant CDD doc first, then follow the workflow.
 
+## Policy enforcement (skills) — ABSOLUTE
+
+> **정책은 무조건 지켜진다.** 모든 토큰/테마/컴포넌트/슬롯/유틸 변경은 머지·
+> 위임·커밋 전에 아래 스킬 검출을 통과해야 한다(LLM-agnostic — Claude/Codex/
+> Gemini 동일 적용). 위반 잔존은 SDD `잔존(사유)` + 사용자 비준일 때만.
+
+| Skill | When to run |
+| ----- | ----------- |
+| [`skills/README.md`](./skills/README.md) | 스킬 인덱스·3 게이트·공통 출력 형식 |
+| [`skills/brand-isolation.md`](./skills/brand-isolation.md) | semantic 슬롯/theme/컴포넌트 색·값 변경 — brand X→Y zero diff 강제 |
+| [`skills/token-ssot.md`](./skills/token-ssot.md) | typography/size/spacing·컴포넌트 크기 — 3-tier·의미역할 SSOT 강제 |
+
+## Delegation contract
+
+| Workflow | When to run |
+| -------- | ----------- |
+| [`codex-delegate.md`](./codex-delegate.md) | Read before every Claude → Codex handoff. Defines the response cap, review pipeline, and stay-in-Claude exceptions |
+
 ## Token lifecycle
 
 | Workflow | When to run |

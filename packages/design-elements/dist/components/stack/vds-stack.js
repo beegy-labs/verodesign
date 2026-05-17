@@ -1,17 +1,20 @@
-import { css as l, html as c } from "lit";
-import { property as e } from "lit/decorators.js";
-import { VdsElement as g } from "../../base/vds-element.js";
-var f = Object.defineProperty, s = (n, a, i, h) => {
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as l } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as e } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as c } from "../../base/vds-element.js";
+import { css as g } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var f = Object.defineProperty, s = (n, i, a, h) => {
   for (var t = void 0, o = n.length - 1, p; o >= 0; o--)
-    (p = n[o]) && (t = p(a, i, t) || t);
-  return t && f(a, i, t), t;
+    (p = n[o]) && (t = p(i, a, t) || t);
+  return t && f(i, a, t), t;
 };
-class r extends g {
+class r extends c {
   constructor() {
     super(...arguments), this.direction = "column", this.gap = "0", this.wrap = !1;
   }
   static {
-    this.styles = l`
+    this.styles = g`
     :host {
       display: flex;
       flex-direction: column;
@@ -46,7 +49,7 @@ class r extends g {
   `;
   }
   render() {
-    return c`<slot></slot>`;
+    return l`<slot></slot>`;
   }
 }
 s([

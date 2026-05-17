@@ -4,8 +4,10 @@ import { VdsElement } from '../../base/vds-element.js';
 
 /**
  * <vds-page-header> — page-level title row.
- * Renders title (h1) + optional subtitle, with right-aligned `actions` slot.
+ * Renders leading slot + title (h1) + optional subtitle, with right-aligned
+ * `actions` slot.
  *
+ * @slot leading - optional leading content (back button, brand, etc.)
  * @slot actions - right-aligned action elements (buttons, etc.)
  */
 export class VdsPageHeader extends VdsElement {
@@ -19,22 +21,30 @@ export class VdsPageHeader extends VdsElement {
     }
     :host([hidden]) { display: none; }
 
+    slot[name="leading"] {
+      flex-shrink: 0;
+    }
+    slot[name="leading"]:empty {
+      display: none;
+    }
+
     .body {
       display: flex;
       flex-direction: column;
       gap: var(--vds-spacing-1);
+      flex: 1;
       min-width: 0;
     }
     .title {
       margin: 0;
-      font-size: var(--vds-font-size-2xl);
-      font-weight: var(--vds-font-weight-700);
-      line-height: var(--vds-font-lineheight-snug);
+      font-size: var(--vds-type-role-title-size);
+      font-weight: var(--vds-type-role-title-weight);
+      line-height: var(--vds-type-role-title-lineheight);
       color: var(--vds-theme-text-bright);
     }
     .subtitle {
       margin: 0;
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       color: var(--vds-theme-text-secondary);
     }
     .subtitle:empty { display: none; }
@@ -53,6 +63,7 @@ export class VdsPageHeader extends VdsElement {
 
   render() {
     return html`
+      <slot name="leading"></slot>
       <div class="body">
         <h1 class="title">${this.heading ?? ''}</h1>
         <p class="subtitle">${this.subtitle ?? ''}</p>

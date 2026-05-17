@@ -26,11 +26,11 @@ export class VdsText extends VdsElement {
     :host([as="span"]) { display: inline; }
     :host([hidden]) { display: none; }
 
-    :host([size="xs"])    { font-size: var(--vds-font-size-xs); }
-    :host([size="sm"])    { font-size: var(--vds-font-size-sm); }
-    :host([size="base"])  { font-size: var(--vds-font-size-base); }
-    :host([size="lg"])    { font-size: var(--vds-font-size-lg); }
-    :host([size="xl"])    { font-size: var(--vds-font-size-xl); }
+    :host([size="xs"])    { font-size: var(--vds-type-role-caption-size); }
+    :host([size="sm"])    { font-size: var(--vds-type-role-label-size); }
+    :host([size="base"])  { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"])    { font-size: var(--vds-type-role-title-size); }
+    :host([size="xl"])    { font-size: var(--vds-type-role-metric-size); }
 
     :host([tone="bright"])  { color: var(--vds-theme-text-bright); }
     :host([tone="dim"])     { color: var(--vds-theme-text-secondary); }

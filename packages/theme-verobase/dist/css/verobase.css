@@ -46,9 +46,9 @@
     --vds-theme-border-default: oklch(30% 0.018 240);
     --vds-theme-border-strong: oklch(60% 0.018 240);
     --vds-theme-border-focus: oklch(75% 0.14 250);
-    --vds-theme-primary: oklch(75% 0.14 250);
-    --vds-theme-primary-fg: oklch(12% 0.04 250);
-    --vds-theme-primary-ring: oklch(85% 0.10 250);
+    --vds-theme-primary: oklch(52% 0.22 252);
+    --vds-theme-primary-fg: oklch(100% 0 0);
+    --vds-theme-primary-ring: oklch(68% 0.17 252);
     --vds-theme-accent: oklch(70% 0.153 50);
     --vds-theme-accent-fg: oklch(5% 0.005 240);
     --vds-theme-destructive: oklch(50% 0.20 25);

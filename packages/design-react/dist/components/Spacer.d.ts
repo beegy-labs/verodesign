@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { VdsSpacer } from '@verobee/design-elements/components/spacer';
-import '@verobee/design-elements/define/spacer';
-export declare const Spacer: import("@lit/react").ReactWebComponent<VdsSpacer, {}>;
-export type SpacerProps = React.ComponentProps<typeof Spacer>;
+type Size = '1' | '2' | '3' | '4' | '5' | '6' | '8' | '10' | '12' | '16';
+type Axis = 'horizontal' | 'vertical';
+export interface SpacerProps extends React.HTMLAttributes<HTMLDivElement> {
+    axis?: Axis;
+    size?: Size;
+    grow?: boolean;
+}
+export declare const Spacer: React.ForwardRefExoticComponent<SpacerProps & React.RefAttributes<HTMLDivElement>>;
+export {};

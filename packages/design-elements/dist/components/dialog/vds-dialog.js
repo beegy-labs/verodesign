@@ -1,23 +1,27 @@
-import { css as p, html as c } from "lit";
-import { property as i, query as h } from "lit/decorators.js";
-import { setRole as v, setAriaProperty as d } from "../../utils/attribute-mirror.js";
-import { FocusTrap as m } from "../../utils/focus-trap.js";
-import { VdsElement as u } from "../../base/vds-element.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as p } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as i } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { query as c } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/query.js";
+import { setRole as h, setAriaProperty as d } from "../../utils/attribute-mirror.js";
+import { FocusTrap as v } from "../../utils/focus-trap.js";
+import { VdsElement as m } from "../../base/vds-element.js";
+import { css as u } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
 var f = Object.defineProperty, a = (r, e, o, b) => {
   for (var t = void 0, n = r.length - 1, l; n >= 0; n--)
     (l = r[n]) && (t = l(e, o, t) || t);
   return t && f(e, o, t), t;
 };
-class s extends u {
+class s extends m {
   constructor() {
     super(), this.open = !1, this.size = "md", this.closeOnBackdrop = !0, this.closeOnEscape = !0, this.ariaLabelText = null, this._titleId = this.createId("vds-dialog-title"), this.handleEscape = (e) => {
       !this.open || !this.closeOnEscape || e.key === "Escape" && (e.preventDefault(), this.open = !1);
     }, this.handleBackdropClick = (e) => {
       this.closeOnBackdrop && e.target === e.currentTarget && (this.open = !1);
-    }, this.internals = this.attachInternals(), v(this, this.internals, "dialog"), d(this, this.internals, "ariaModal", !0);
+    }, this.internals = this.attachInternals(), h(this, this.internals, "dialog"), d(this, this.internals, "ariaModal", !0);
   }
   static {
-    this.styles = p`
+    this.styles = u`
     :host {
       display: contents;
     }
@@ -25,7 +29,7 @@ class s extends u {
     .backdrop {
       position: fixed;
       inset: 0;
-      background: oklch(0% 0 0 / 0.5);
+      background: color-mix(in oklab, var(--vds-color-black) 50%, transparent);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -75,8 +79,8 @@ class s extends u {
     }
     .title {
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-xl);
-      font-weight: var(--vds-font-weight-600);
+      font-size: var(--vds-type-role-title-size);
+      font-weight: var(--vds-type-role-title-weight);
       line-height: var(--vds-font-lineheight-tight);
     }
     .close {
@@ -122,7 +126,7 @@ class s extends u {
     super.updated(e), e.has("open") && (this.open ? this.handleOpen() : this.handleClose()), e.has("ariaLabelText") && this.ariaLabelText != null && d(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   handleOpen() {
-    document.body.style.overflow = "hidden", this.focusTrap = new m(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate()), this.emit("vds-open");
+    document.body.style.overflow = "hidden", this.focusTrap = new v(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate()), this.emit("vds-open");
   }
   handleClose() {
     document.body.style.overflow = "", this.focusTrap?.deactivate(), this.emit("vds-close");
@@ -135,7 +139,7 @@ class s extends u {
   }
   render() {
     const o = (this.shadowRoot?.querySelector('slot[name="title"]')?.assignedElements().length ?? 0) > 0 || !this.ariaLabelText;
-    return c`
+    return p`
       <div
         class="backdrop"
         @click=${this.handleBackdropClick}
@@ -180,7 +184,7 @@ a([
   i({ type: String, attribute: "aria-label" })
 ], s.prototype, "ariaLabelText");
 a([
-  h(".panel")
+  c(".panel")
 ], s.prototype, "panelEl");
 export {
   s as VdsDialog

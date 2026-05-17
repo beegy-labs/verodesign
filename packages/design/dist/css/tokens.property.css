@@ -51,6 +51,51 @@
   syntax: "*";
   inherits: false;
 }
+@property --vds-blur-0 {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --vds-blur-1 {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 2px;
+}
+@property --vds-blur-2 {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 6px;
+}
+@property --vds-blur-3 {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 12px;
+}
+@property --vds-blur-4 {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 20px;
+}
+@property --vds-blur-none {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --vds-blur-sm {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 2px;
+}
+@property --vds-blur-md {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 6px;
+}
+@property --vds-blur-lg {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 12px;
+}
 @property --vds-border-width-0 {
   syntax: "<length>";
   inherits: false;
@@ -1172,6 +1217,16 @@
   inherits: false;
   initial-value: 5.625rem;
 }
+@property --vds-font-size-numeric-display-sm {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 2.75rem;
+}
+@property --vds-font-size-numeric-display-lg {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 3.5rem;
+}
 @property --vds-font-weight-400 {
   syntax: "<number>";
   inherits: false;
@@ -1287,6 +1342,11 @@
   inherits: true;
   initial-value: oklch(100% 0 0);
 }
+@property --vds-theme-bg-disabled {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(90% 0.008 240);
+}
 @property --vds-theme-text-primary {
   syntax: "<color>";
   inherits: true;
@@ -1336,6 +1396,26 @@
   syntax: "<color>";
   inherits: true;
   initial-value: oklch(60% 0.2 250);
+}
+@property --vds-theme-state-hover {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(95% 0.005 240);
+}
+@property --vds-theme-state-press {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-state-selected {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-state-disabled {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(90% 0.008 240);
 }
 @property --vds-theme-primary {
   syntax: "<color>";
@@ -1552,6 +1632,160 @@
   inherits: true;
   initial-value: oklch(100% 0 0);
 }
+@property --vds-elevation-0 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-elevation-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-elevation-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-elevation-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-elevation-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-elevation-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-motion-duration-instant {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 0ms;
+}
+@property --vds-motion-duration-fast {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 100ms;
+}
+@property --vds-motion-duration-base {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 200ms;
+}
+@property --vds-motion-duration-slow {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 400ms;
+}
+@property --vds-motion-easing-linear {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-motion-easing-standard {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-motion-easing-decelerate {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-motion-easing-accelerate {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-motion-easing-spring {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-type-role-display-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 3.5rem;
+}
+@property --vds-type-role-display-lineheight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1.25;
+}
+@property --vds-type-role-display-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 700;
+}
+@property --vds-type-role-metric-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 2.75rem;
+}
+@property --vds-type-role-metric-lineheight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1.25;
+}
+@property --vds-type-role-metric-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 700;
+}
+@property --vds-type-role-title-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1.125rem;
+}
+@property --vds-type-role-title-lineheight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1.375;
+}
+@property --vds-type-role-title-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 700;
+}
+@property --vds-type-role-body-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1rem;
+}
+@property --vds-type-role-body-lineheight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1.5;
+}
+@property --vds-type-role-body-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 400;
+}
+@property --vds-type-role-label-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.875rem;
+}
+@property --vds-type-role-label-lineheight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1.5;
+}
+@property --vds-type-role-label-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 500;
+}
+@property --vds-type-role-caption-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.75rem;
+}
+@property --vds-type-role-caption-lineheight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1.5;
+}
+@property --vds-type-role-caption-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 400;
+}
 @property --vds-breakpoint-xs {
   syntax: "<length>";
   inherits: false;
@@ -1602,6 +1836,11 @@
   inherits: false;
   initial-value: 100;
 }
+@property --vds-zindex-app-shell {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 150;
+}
 @property --vds-zindex-sticky {
   syntax: "<number>";
   inherits: false;
@@ -1636,4 +1875,14 @@
   syntax: "<number>";
   inherits: false;
   initial-value: 9999;
+}
+@property --vds-app-shell-header-height {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 3.5rem;
+}
+@property --vds-app-shell-bottom-nav-height {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 4rem;
 }

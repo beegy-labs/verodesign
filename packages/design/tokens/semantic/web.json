@@ -22,6 +22,7 @@
     "base": { "$value": 0, "$type": "number" },
     "raised": { "$value": 10, "$type": "number" },
     "dropdown": { "$value": 100, "$type": "number" },
+    "app-shell": { "$value": 150, "$type": "number", "$description": "Fixed app shell regions above document content and below overlays. Cross-brand: shell chrome semantics are shared across all brands." },
     "sticky": { "$value": 200, "$type": "number" },
     "overlay": { "$value": 300, "$type": "number" },
     "modal": { "$value": 400, "$type": "number" },
@@ -29,5 +30,9 @@
     "tooltip": { "$value": 600, "$type": "number" },
     "toast": { "$value": 700, "$type": "number" },
     "max": { "$value": 9999, "$type": "number" }
+  },
+  "app-shell": {
+    "header-height": { "$value": "{spacing.14}", "$type": "dimension", "$description": "Default fixed header region height. Cross-brand: mobile app shells need a shared vertical rhythm." },
+    "bottom-nav-height": { "$value": "{spacing.16}", "$type": "dimension", "$description": "Default fixed bottom navigation region height. Cross-brand: mobile app shells need a shared touch-safe bottom region." }
   }
 }

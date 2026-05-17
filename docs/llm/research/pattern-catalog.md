@@ -18,6 +18,14 @@
 | Pattern | Status | Source | First seen | Notes |
 | ------- | ------ | ------ | ---------- | ----- |
 | dreamstock-simulator | experimental | internal:dreamstock | 2026-05-10 | trajectory + leverage + dividend + networth + journal aliases |
+| girok-theme | canonical | internal:dreamstock | 2026-05-15 | warm-neutral + brass theme (light/dark), contrast-audited |
+| bento-grid | experimental | external:trends-2026 | 2026-05-16 | design-react component present (BentoGrid/BentoItem) |
+| glass-surface | experimental | external:trends-2026 | 2026-05-16 | DTCG tokens present (tokens/experimental/glass-surface.json) |
+| motion-tokens | experimental | external:trends-2026 | 2026-05-16 | DTCG tokens present (tokens/experimental/motion-tokens.json) |
+| theme-toggle | canonical | internal:dreamstock | 2026-05-13 | auto/light/dark segmented |
+| entry-dialog | canonical | internal:dreamstock | 2026-05-13 | row entity add/edit dialog |
+| compact-row | canonical | internal:dreamstock | 2026-05-13 | compact list item row |
+| touch-safe-target | canonical | internal:app-girok | 2026-05-16 | coarse pointer hit-area preserves compact visuals with 44px target |
 
 ## Entry Template
 
