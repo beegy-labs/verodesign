@@ -38,6 +38,7 @@ export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dia
   const backdropEnabled = closeOnBackdropAttr ?? closeOnBackdrop;
   const escapeEnabled = closeOnEscapeAttr ?? closeOnEscape;
   const isBottom = placement === 'bottom';
+  const [entered, setEntered] = React.useState(false);
   const [reduceMotion, setReduceMotion] = React.useState(false);
   const [closeHovered, setCloseHovered] = React.useState(false);
   const [closeFocusVisible, setCloseFocusVisible] = React.useState(false);
@@ -51,6 +52,20 @@ export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dia
     mediaQuery.addEventListener('change', update);
     return () => mediaQuery.removeEventListener('change', update);
   }, []);
+
+  React.useLayoutEffect(() => {
+    if (!open || !isBottom) {
+      setEntered(false);
+      return;
+    }
+    if (reduceMotion) {
+      setEntered(true);
+      return;
+    }
+    setEntered(false);
+    const frame = window.requestAnimationFrame(() => setEntered(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, [isBottom, open, reduceMotion]);
 
   React.useEffect(() => { if (open) onOpen?.(new CustomEvent('vds-open')); }, [open, onOpen]);
   React.useEffect(() => {
@@ -71,6 +86,7 @@ export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dia
     return () => { document.body.style.overflow = previous; window.removeEventListener('keydown', onKeyDown); };
   }, [escapeEnabled, onClose, open]);
   if (!open) return null;
+  const bottomTransform = isBottom ? (reduceMotion || entered ? 'translateY(0)' : 'translateY(100%)') : undefined;
   return createPortal(
     <div
       role="presentation"
@@ -105,15 +121,15 @@ export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dia
           boxShadow: 'var(--vds-shadow-5, var(--vds-elevation-3))',
           maxWidth: `min(${dialogWidths[size]}, 100%)`,
           width: '100%',
-          maxHeight: isBottom ? 'calc(100dvh - var(--vds-spacing-20))' : 'calc(100dvh - 2rem)',
+          maxHeight: isBottom ? 'calc(100dvh - var(--vds-spacing-8))' : 'calc(100dvh - 2rem)',
+          minHeight: isBottom ? '60dvh' : undefined,
           display: 'flex',
           flexDirection: 'column',
           outline: 'none',
-          transform: isBottom ? (open ? 'translateY(0)' : 'translateY(100%)') : undefined,
           transition: reduceMotion ? 'none' : (isBottom ? 'transform var(--vds-duration-medium) var(--vds-easing-ease-out)' : undefined),
           ...(isBottom ? style : undefined),
           ...(isBottom ? bottomSheetGeometry : undefined),
-          ...(isBottom ? { transform: open ? 'translateY(0)' : 'translateY(100%)' } : style),
+          ...(isBottom ? { transform: bottomTransform } : style),
         }}
       >
         {isBottom ? <div aria-hidden="true" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 'var(--vds-spacing-6)', paddingTop: 'var(--vds-spacing-2)' }}><div style={{ width: 'var(--vds-spacing-12)', height: 'var(--vds-spacing-1)', borderRadius: 'var(--vds-radius-full)', background: 'var(--vds-theme-border-subtle)' }} /></div> : null}
