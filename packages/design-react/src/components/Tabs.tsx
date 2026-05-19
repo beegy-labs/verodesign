@@ -2,10 +2,12 @@ import * as React from 'react';
 
 type TabsOrientation = 'horizontal' | 'vertical';
 type TabsActivation = 'auto' | 'manual';
+type TabsVariant = 'underline' | 'segmented';
 
 type TabsContextValue = {
   value: string;
   orientation: TabsOrientation;
+  variant: TabsVariant;
   setActive: (value: string, focus?: boolean) => void;
   activation: TabsActivation;
   registerTab: (value: string, ref: HTMLButtonElement | null, disabled: boolean) => void;
@@ -20,6 +22,7 @@ export interface TabsProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'o
   value?: string;
   activation?: TabsActivation;
   orientation?: TabsOrientation;
+  variant?: TabsVariant;
   onChange?: ((event: CustomEvent<{ value: string }>) => void) | undefined;
 }
 
@@ -37,6 +40,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
     value = '',
     activation = 'auto',
     orientation = 'horizontal',
+    variant = 'underline',
     onChange,
     className,
     children,
@@ -76,6 +80,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
     () => ({
       value: currentValue,
       orientation,
+      variant,
       setActive,
       activation,
       registerTab,
@@ -83,7 +88,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
       tabId: (tabValue) => `${generatedId}-tab-${tabValue}`,
       panelId: (tabValue) => `${generatedId}-panel-${tabValue}`,
     }),
-    [activation, activeIndex, currentValue, generatedId, orientation, registerTab, setActive],
+    [activation, activeIndex, currentValue, generatedId, orientation, registerTab, setActive, variant],
   );
 
   const tabs: React.ReactNode[] = [];
@@ -104,6 +109,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
         ref={ref}
         className={['vds-block', className].filter(Boolean).join(' ')}
         data-orientation={orientation}
+        data-variant={variant}
         style={{
           display: orientation === 'vertical' ? 'grid' : 'block',
           gridTemplateColumns: orientation === 'vertical' ? 'auto 1fr' : undefined,
@@ -117,21 +123,24 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
           role="tablist"
           aria-orientation={orientation}
           className="vds-tabs-list"
-          style={{
-            display: 'flex',
-            flexDirection: orientation === 'vertical' ? 'column' : 'row',
-            gap: 'var(--vds-spacing-1)',
-            borderBottom:
-              orientation === 'horizontal'
-                ? 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)'
-                : undefined,
-            borderRight:
-              orientation === 'vertical'
-                ? 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)'
-                : undefined,
-            overflowX: orientation === 'horizontal' ? 'auto' : 'visible',
-            scrollbarWidth: 'thin',
-          }}
+            style={{
+              display: 'flex',
+              flexDirection: orientation === 'vertical' ? 'column' : 'row',
+              gap: 'var(--vds-spacing-1)',
+              padding: variant === 'segmented' ? 'var(--vds-spacing-1)' : '0',
+              borderBottom:
+                orientation === 'horizontal' && variant === 'underline'
+                  ? 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)'
+                  : undefined,
+              borderRight:
+                orientation === 'vertical' && variant === 'underline'
+                  ? 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)'
+                  : undefined,
+              borderRadius: variant === 'segmented' ? 'var(--vds-radius-lg)' : '0',
+              background: variant === 'segmented' ? 'var(--vds-theme-bg-subtle)' : 'transparent',
+              overflowX: orientation === 'horizontal' ? 'auto' : 'visible',
+              scrollbarWidth: 'thin',
+            }}
         >
           {tabs}
         </div>
@@ -192,18 +201,31 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>(function Tab(
         padding: 'var(--vds-spacing-2) var(--vds-spacing-4)',
         cursor: disabled ? 'not-allowed' : 'pointer',
         userSelect: 'none',
-        color: isActive ? 'var(--vds-theme-primary)' : 'var(--vds-theme-text-dim)',
+        color:
+          tabsContext.variant === 'segmented'
+            ? isActive
+              ? 'var(--vds-theme-text-primary)'
+              : 'var(--vds-theme-text-dim)'
+            : isActive
+              ? 'var(--vds-theme-primary)'
+              : 'var(--vds-theme-text-dim)',
         border: 'none',
         borderBottom:
-          context.orientation === 'horizontal'
+          context.orientation === 'horizontal' && tabsContext.variant !== 'segmented'
             ? `2px solid ${isActive ? 'var(--vds-theme-primary)' : 'transparent'}`
             : 'none',
-        background: 'transparent',
+        borderRadius: tabsContext.variant === 'segmented' ? 'var(--vds-radius-md)' : '0',
+        background:
+          tabsContext.variant === 'segmented'
+            ? isActive
+              ? 'var(--vds-theme-bg-elevated)'
+              : 'transparent'
+            : 'transparent',
         fontSize: 'var(--vds-type-role-label-size)',
         fontWeight: 'var(--vds-type-role-label-weight)',
         opacity: disabled ? 0.5 : 1,
         transition:
-          'color var(--vds-duration-fast) var(--vds-easing-ease-out), border-color var(--vds-duration-fast) var(--vds-easing-ease-out)',
+          'color var(--vds-duration-fast) var(--vds-easing-ease-out), border-color var(--vds-duration-fast) var(--vds-easing-ease-out), background-color var(--vds-duration-fast) var(--vds-easing-ease-out)',
         ...style,
       }}
       onClick={(event) => {

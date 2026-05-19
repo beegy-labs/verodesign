@@ -1,10 +1,12 @@
 import * as React from 'react';
 type TabsOrientation = 'horizontal' | 'vertical';
 type TabsActivation = 'auto' | 'manual';
+type TabsVariant = 'underline' | 'segmented';
 export interface TabsProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
     value?: string;
     activation?: TabsActivation;
     orientation?: TabsOrientation;
+    variant?: TabsVariant;
     onChange?: ((event: CustomEvent<{
         value: string;
     }>) => void) | undefined;

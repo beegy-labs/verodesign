@@ -1,59 +1,62 @@
-import { jsx as I, jsxs as B } from "react/jsx-runtime";
+import { jsx as I, jsxs as z } from "react/jsx-runtime";
 import * as s from "react";
-const k = s.createContext(null), D = s.forwardRef(function({
-  value: e = "",
+const A = s.createContext(null), N = s.forwardRef(function({
+  value: t = "",
   activation: i = "auto",
   orientation: o = "horizontal",
+  variant: l = "underline",
   onChange: p,
   className: h,
-  children: m,
-  style: y,
-  ...c
-}, d) {
-  const f = s.useId(), t = s.useRef(/* @__PURE__ */ new Map()), [g, v] = s.useState(e), x = e || g, a = s.Children.toArray(m).filter((r) => s.isValidElement(r) && r.type === C).map((r) => r.props.value ?? "");
+  children: b,
+  style: c,
+  ...u
+}, g) {
+  const e = s.useId(), y = s.useRef(/* @__PURE__ */ new Map()), [f, x] = s.useState(t), a = t || f, v = s.Children.toArray(b).filter((r) => s.isValidElement(r) && r.type === C).map((r) => r.props.value ?? "");
   s.useEffect(() => {
-    e && v(e);
-  }, [e]);
-  const u = s.useCallback((r, A, R) => {
-    t.current.set(r, { ref: A, disabled: R });
-  }, []), b = s.useCallback((r) => a.indexOf(r), [a]), n = s.useCallback(
-    (r, A = !0) => {
-      v(r), p?.(new CustomEvent("vds-change", { detail: { value: r } })), A && queueMicrotask(() => t.current.get(r)?.ref?.focus());
+    t && x(t);
+  }, [t]);
+  const m = s.useCallback((r, k, B) => {
+    y.current.set(r, { ref: k, disabled: B });
+  }, []), n = s.useCallback((r) => v.indexOf(r), [v]), d = s.useCallback(
+    (r, k = !0) => {
+      x(r), p?.(new CustomEvent("vds-change", { detail: { value: r } })), k && queueMicrotask(() => y.current.get(r)?.ref?.focus());
     },
     [p]
-  ), l = s.useMemo(
+  ), R = s.useMemo(
     () => ({
-      value: x,
+      value: a,
       orientation: o,
-      setActive: n,
+      variant: l,
+      setActive: d,
       activation: i,
-      registerTab: u,
-      activeIndex: b,
-      tabId: (r) => `${f}-tab-${r}`,
-      panelId: (r) => `${f}-panel-${r}`
+      registerTab: m,
+      activeIndex: n,
+      tabId: (r) => `${e}-tab-${r}`,
+      panelId: (r) => `${e}-panel-${r}`
     }),
-    [i, b, x, f, o, u, n]
+    [i, n, a, e, o, m, d, l]
   ), E = [], w = [];
-  return s.Children.forEach(m, (r) => {
+  return s.Children.forEach(b, (r) => {
     if (!s.isValidElement(r)) {
       w.push(r);
       return;
     }
     r.type === C ? E.push(r) : w.push(r);
-  }), /* @__PURE__ */ I(k.Provider, { value: l, children: /* @__PURE__ */ B(
+  }), /* @__PURE__ */ I(A.Provider, { value: R, children: /* @__PURE__ */ z(
     "div",
     {
-      ...c,
-      ref: d,
+      ...u,
+      ref: g,
       className: ["vds-block", h].filter(Boolean).join(" "),
       "data-orientation": o,
+      "data-variant": l,
       style: {
         display: o === "vertical" ? "grid" : "block",
         gridTemplateColumns: o === "vertical" ? "auto 1fr" : void 0,
         gap: o === "vertical" ? "var(--vds-spacing-4)" : void 0,
         fontFamily: "var(--vds-font-family-sans)",
         color: "var(--vds-theme-text-primary)",
-        ...y
+        ...c
       },
       children: [
         /* @__PURE__ */ I(
@@ -66,8 +69,11 @@ const k = s.createContext(null), D = s.forwardRef(function({
               display: "flex",
               flexDirection: o === "vertical" ? "column" : "row",
               gap: "var(--vds-spacing-1)",
-              borderBottom: o === "horizontal" ? "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)" : void 0,
-              borderRight: o === "vertical" ? "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)" : void 0,
+              padding: l === "segmented" ? "var(--vds-spacing-1)" : "0",
+              borderBottom: o === "horizontal" && l === "underline" ? "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)" : void 0,
+              borderRight: o === "vertical" && l === "underline" ? "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)" : void 0,
+              borderRadius: l === "segmented" ? "var(--vds-radius-lg)" : "0",
+              background: l === "segmented" ? "var(--vds-theme-bg-subtle)" : "transparent",
               overflowX: o === "horizontal" ? "auto" : "visible",
               scrollbarWidth: "thin"
             },
@@ -78,35 +84,35 @@ const k = s.createContext(null), D = s.forwardRef(function({
       ]
     }
   ) });
-}), C = s.forwardRef(function({ value: e = "", disabled: i = !1, className: o, children: p, onClick: h, onKeyDown: m, style: y, ...c }, d) {
-  const f = s.useContext(k);
-  if (!f) throw new Error("Tab must be used within Tabs");
-  const t = f, g = s.useRef(null);
-  s.useImperativeHandle(d, () => g.current, []), s.useEffect(() => {
-    t.registerTab(e, g.current, i);
-  }, [i, t, e]);
-  const v = t.value === e || !t.value && t.activeIndex(e) === 0;
+}), C = s.forwardRef(function({ value: t = "", disabled: i = !1, className: o, children: l, onClick: p, onKeyDown: h, style: b, ...c }, u) {
+  const g = s.useContext(A);
+  if (!g) throw new Error("Tab must be used within Tabs");
+  const e = g, y = s.useRef(null);
+  s.useImperativeHandle(u, () => y.current, []), s.useEffect(() => {
+    e.registerTab(t, y.current, i);
+  }, [i, e, t]);
+  const f = e.value === t || !e.value && e.activeIndex(t) === 0;
   function x(a) {
-    const u = Array.from(document.getElementById(t.tabId(e))?.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]') ?? []).filter((l) => l instanceof HTMLButtonElement && l.getAttribute("aria-disabled") !== "true"), b = u.findIndex((l) => l.id === t.tabId(e));
-    if (b < 0) return;
-    const n = u[(b + a + u.length) % u.length];
-    n && (t.activation === "auto" && n.dataset.value ? t.setActive(n.dataset.value, !0) : n.focus());
+    const v = Array.from(document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]') ?? []).filter((d) => d instanceof HTMLButtonElement && d.getAttribute("aria-disabled") !== "true"), m = v.findIndex((d) => d.id === e.tabId(t));
+    if (m < 0) return;
+    const n = v[(m + a + v.length) % v.length];
+    n && (e.activation === "auto" && n.dataset.value ? e.setActive(n.dataset.value, !0) : n.focus());
   }
   return /* @__PURE__ */ I(
     "button",
     {
       ...c,
       ref: (a) => {
-        g.current = a, typeof d == "function" && d(a);
+        y.current = a, typeof u == "function" && u(a);
       },
-      id: t.tabId(e),
+      id: e.tabId(t),
       type: "button",
       role: "tab",
-      "data-value": e,
-      "aria-selected": v,
-      "aria-controls": t.panelId(e),
+      "data-value": t,
+      "aria-selected": f,
+      "aria-controls": e.panelId(t),
       "aria-disabled": i || void 0,
-      tabIndex: v ? 0 : -1,
+      tabIndex: f ? 0 : -1,
       disabled: i,
       className: ["vds-inline-flex vds-items-center", o].filter(Boolean).join(" "),
       style: {
@@ -116,59 +122,60 @@ const k = s.createContext(null), D = s.forwardRef(function({
         padding: "var(--vds-spacing-2) var(--vds-spacing-4)",
         cursor: i ? "not-allowed" : "pointer",
         userSelect: "none",
-        color: v ? "var(--vds-theme-primary)" : "var(--vds-theme-text-dim)",
+        color: e.variant === "segmented" ? f ? "var(--vds-theme-text-primary)" : "var(--vds-theme-text-dim)" : f ? "var(--vds-theme-primary)" : "var(--vds-theme-text-dim)",
         border: "none",
-        borderBottom: f.orientation === "horizontal" ? `2px solid ${v ? "var(--vds-theme-primary)" : "transparent"}` : "none",
-        background: "transparent",
+        borderBottom: g.orientation === "horizontal" && e.variant !== "segmented" ? `2px solid ${f ? "var(--vds-theme-primary)" : "transparent"}` : "none",
+        borderRadius: e.variant === "segmented" ? "var(--vds-radius-md)" : "0",
+        background: e.variant === "segmented" && f ? "var(--vds-theme-bg-elevated)" : "transparent",
         fontSize: "var(--vds-type-role-label-size)",
         fontWeight: "var(--vds-type-role-label-weight)",
         opacity: i ? 0.5 : 1,
-        transition: "color var(--vds-duration-fast) var(--vds-easing-ease-out), border-color var(--vds-duration-fast) var(--vds-easing-ease-out)",
-        ...y
+        transition: "color var(--vds-duration-fast) var(--vds-easing-ease-out), border-color var(--vds-duration-fast) var(--vds-easing-ease-out), background-color var(--vds-duration-fast) var(--vds-easing-ease-out)",
+        ...b
       },
       onClick: (a) => {
-        i || f.setActive(e), h?.(a);
+        i || g.setActive(t), p?.(a);
       },
       onKeyDown: (a) => {
-        const u = t.orientation === "horizontal" ? "ArrowLeft" : "ArrowUp", b = t.orientation === "horizontal" ? "ArrowRight" : "ArrowDown";
-        if (a.key === u)
+        const v = e.orientation === "horizontal" ? "ArrowLeft" : "ArrowUp", m = e.orientation === "horizontal" ? "ArrowRight" : "ArrowDown";
+        if (a.key === v)
           a.preventDefault(), x(-1);
-        else if (a.key === b)
+        else if (a.key === m)
           a.preventDefault(), x(1);
         else if (a.key === "Home") {
           a.preventDefault();
-          const n = document.getElementById(t.tabId(e))?.closest('[role="tablist"]')?.querySelector('[role="tab"]');
-          n?.focus(), t.activation === "auto" && n?.dataset.value && t.setActive(n.dataset.value, !1);
+          const n = document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelector('[role="tab"]');
+          n?.focus(), e.activation === "auto" && n?.dataset.value && e.setActive(n.dataset.value, !1);
         } else if (a.key === "End") {
           a.preventDefault();
-          const n = document.getElementById(t.tabId(e))?.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]'), l = n?.[n.length - 1];
-          l?.focus(), t.activation === "auto" && l?.dataset.value && t.setActive(l.dataset.value, !1);
-        } else (a.key === "Enter" || a.key === " ") && (a.preventDefault(), i || t.setActive(e));
-        m?.(a);
+          const n = document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]'), d = n?.[n.length - 1];
+          d?.focus(), e.activation === "auto" && d?.dataset.value && e.setActive(d.dataset.value, !1);
+        } else (a.key === "Enter" || a.key === " ") && (a.preventDefault(), i || e.setActive(t));
+        h?.(a);
       },
-      children: p
+      children: l
     }
   );
-}), N = s.forwardRef(function({ value: e = "", className: i, children: o, style: p, ...h }, m) {
-  const y = s.useContext(k);
-  if (!y) throw new Error("TabPanel must be used within Tabs");
-  const c = y, d = c.value === e || !c.value && c.activeIndex(e) === 0;
+}), S = s.forwardRef(function({ value: t = "", className: i, children: o, style: l, ...p }, h) {
+  const b = s.useContext(A);
+  if (!b) throw new Error("TabPanel must be used within Tabs");
+  const c = b, u = c.value === t || !c.value && c.activeIndex(t) === 0;
   return /* @__PURE__ */ I(
     "div",
     {
-      ...h,
-      ref: m,
-      id: c.panelId(e),
+      ...p,
+      ref: h,
+      id: c.panelId(t),
       role: "tabpanel",
-      "aria-labelledby": c.tabId(e),
-      "aria-hidden": !d,
-      hidden: !d,
+      "aria-labelledby": c.tabId(t),
+      "aria-hidden": !u,
+      hidden: !u,
       tabIndex: 0,
       className: ["vds-block", i].filter(Boolean).join(" "),
       style: {
-        display: d ? "block" : "none",
+        display: u ? "block" : "none",
         padding: "var(--vds-spacing-4) 0",
-        ...p
+        ...l
       },
       children: o
     }
@@ -176,6 +183,6 @@ const k = s.createContext(null), D = s.forwardRef(function({
 });
 export {
   C as Tab,
-  N as TabPanel,
-  D as Tabs
+  S as TabPanel,
+  N as Tabs
 };
