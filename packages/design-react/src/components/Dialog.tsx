@@ -20,7 +20,11 @@ export interface DialogProps extends React.HTMLAttributes<HTMLDivElement> {
 const dialogWidths: Record<DialogSize, string> = { sm: '24rem', md: '32rem', lg: '48rem', xl: '56rem', '2xl': '72rem' };
 const focusableSelector = 'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])';
 const reducedMotionQuery = '(prefers-reduced-motion: reduce)';
-const safeAreaBottom = 'env(safe-area-inset-bottom, var(--vds-spacing-0))';
+const bottomSheetGeometry: React.CSSProperties = {
+  borderRadius: 'var(--vds-radius-lg) var(--vds-radius-lg) 0 0',
+  width: '100%',
+  maxWidth: 'none',
+};
 
 export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dialog(
   { open = false, size = 'md', placement = 'center', closeOnBackdrop = true, 'close-on-backdrop': closeOnBackdropAttr, closeOnEscape = true, 'close-on-escape': closeOnEscapeAttr, onOpen, onClose, className, children, style, ...rest },
@@ -82,9 +86,7 @@ export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dia
         display: 'flex',
         alignItems: isBottom ? 'flex-end' : 'center',
         justifyContent: 'center',
-        padding: isBottom
-          ? `var(--vds-spacing-4) var(--vds-spacing-4) calc(var(--vds-spacing-4) + ${safeAreaBottom})`
-          : 'var(--vds-spacing-4)',
+        padding: isBottom ? '0' : 'var(--vds-spacing-4)',
         zIndex: 'var(--vds-zindex-modal)',
       }}
     >
@@ -99,17 +101,19 @@ export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dia
         style={{
           background: 'var(--vds-theme-bg-elevated)',
           color: 'var(--vds-theme-text-primary)',
-          borderRadius: isBottom ? 'var(--vds-radius-lg) var(--vds-radius-lg) 0 0' : 'var(--vds-radius-lg)',
+          borderRadius: 'var(--vds-radius-lg)',
           boxShadow: 'var(--vds-shadow-5, var(--vds-elevation-3))',
-          maxWidth: isBottom ? 'none' : `min(${dialogWidths[size]}, 100%)`,
+          maxWidth: `min(${dialogWidths[size]}, 100%)`,
           width: '100%',
           maxHeight: isBottom ? 'calc(100dvh - var(--vds-spacing-20))' : 'calc(100dvh - 2rem)',
           display: 'flex',
           flexDirection: 'column',
           outline: 'none',
-          transform: isBottom ? (open ? 'translateY(0)' : `translateY(calc(var(--vds-spacing-12) + ${safeAreaBottom}))`) : undefined,
+          transform: isBottom ? (open ? 'translateY(0)' : 'translateY(100%)') : undefined,
           transition: reduceMotion ? 'none' : (isBottom ? 'transform var(--vds-duration-medium) var(--vds-easing-ease-out)' : undefined),
-          ...style,
+          ...(isBottom ? style : undefined),
+          ...(isBottom ? bottomSheetGeometry : undefined),
+          ...(isBottom ? { transform: open ? 'translateY(0)' : 'translateY(100%)' } : style),
         }}
       >
         {isBottom ? <div aria-hidden="true" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 'var(--vds-spacing-6)', paddingTop: 'var(--vds-spacing-2)' }}><div style={{ width: 'var(--vds-spacing-12)', height: 'var(--vds-spacing-1)', borderRadius: 'var(--vds-radius-full)', background: 'var(--vds-theme-border-subtle)' }} /></div> : null}
