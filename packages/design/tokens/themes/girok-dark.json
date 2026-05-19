@@ -16,12 +16,12 @@
   "theme": {
     "bg": {
       "page":     { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
-      "card":     { "$value": "oklch(23.4% 0.008 72)", "$type": "color" },
-      "elevated": { "$value": "oklch(28.6% 0.01 74)", "$type": "color" },
-      "hover":    { "$value": "oklch(31.5% 0.01 74)", "$type": "color" },
-      "muted":    { "$value": "oklch(21.5% 0.007 72)", "$type": "color" },
-      "code":     { "$value": "oklch(28.6% 0.01 74)", "$type": "color" },
-      "selected": { "$value": "oklch(33.5% 0.014 76)", "$type": "color" }
+      "card":     { "$value": "oklch(21.8% 0.007 72)", "$type": "color" },
+      "elevated": { "$value": "oklch(24.8% 0.009 74)", "$type": "color" },
+      "hover":    { "$value": "oklch(26.8% 0.01 74)", "$type": "color" },
+      "muted":    { "$value": "oklch(20.2% 0.007 72)", "$type": "color" },
+      "code":     { "$value": "oklch(24.8% 0.009 74)", "$type": "color" },
+      "selected": { "$value": "oklch(28.8% 0.012 76)", "$type": "color" }
     },
     "text": {
       "primary":   { "$value": "oklch(93.6% 0.02 86)", "$type": "color" },
@@ -31,11 +31,12 @@
       "bright":    { "$value": "oklch(97.8% 0.01 88)", "$type": "color" }
     },
     "border": {
-      "subtle":  { "$value": "oklch(21.5% 0.007 72)", "$type": "color" },
-      "default": { "$value": "oklch(33.5% 0.014 76)", "$type": "color" },
-      "strong":  { "$value": "oklch(52% 0.012 82)", "$type": "color" },
+      "subtle":  { "$value": "oklch(27.2% 0.007 74)", "$type": "color" },
+      "default": { "$value": "oklch(33.2% 0.01 78)", "$type": "color" },
+      "strong":  { "$value": "oklch(47% 0.012 82)", "$type": "color" },
       "focus":   { "$value": "oklch(72% 0.09 66)", "$type": "color" }
     },
+    "scrim":        { "$value": "oklch(12% 0.012 74 / 0.72)", "$type": "color" },
     "primary":      { "$value": "oklch(72% 0.09 66)", "$type": "color" },
     "primary-fg":   { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
     "primary-ring": { "$value": "oklch(80% 0.08 66)", "$type": "color" },
@@ -63,6 +64,12 @@
       "start": { "$value": "oklch(72% 0.09 66)", "$type": "color" },
       "end":   { "$value": "oklch(76% 0.1 74)", "$type": "color" },
       "inner": { "$value": "oklch(93.6% 0.02 86)", "$type": "color" }
+    },
+    "state": {
+      "hover":    { "$value": "{theme.bg.hover}", "$type": "color" },
+      "press":    { "$value": "{theme.bg.selected}", "$type": "color" },
+      "selected": { "$value": "{theme.bg.selected}", "$type": "color" },
+      "disabled": { "$value": "{theme.bg.muted}", "$type": "color" }
     }
   },
   "exp": {

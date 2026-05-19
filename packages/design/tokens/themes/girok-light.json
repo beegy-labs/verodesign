@@ -16,8 +16,12 @@
   "theme": {
     "bg": {
       "page":     { "$value": "oklch(93% 0.012 86)", "$type": "color" },
-      "card":     { "$value": "oklch(98.1% 0.006 88)", "$type": "color" },
-      "selected": { "$value": "oklch(90.5% 0.018 86)", "$type": "color" }
+      "card":     { "$value": "oklch(95.6% 0.008 88)", "$type": "color" },
+      "elevated": { "$value": "oklch(97.2% 0.007 88)", "$type": "color" },
+      "hover":    { "$value": "oklch(94.5% 0.01 87)", "$type": "color" },
+      "muted":    { "$value": "oklch(92% 0.01 86)", "$type": "color" },
+      "code":     { "$value": "oklch(94.5% 0.01 87)", "$type": "color" },
+      "selected": { "$value": "oklch(91.2% 0.016 86)", "$type": "color" }
     },
     "text": {
       "primary":   { "$value": "oklch(22.2% 0.012 80)", "$type": "color" },
@@ -31,8 +35,12 @@
     "accent":       { "$value": "oklch(56% 0.11 66)", "$type": "color" },
     "accent-fg":    { "$value": "oklch(98.1% 0.006 88)", "$type": "color" },
     "border": {
-      "focus": { "$value": "oklch(58% 0.09 62)", "$type": "color" }
+      "subtle":  { "$value": "oklch(89.2% 0.008 86)", "$type": "color" },
+      "default": { "$value": "oklch(84.8% 0.01 84)", "$type": "color" },
+      "strong":  { "$value": "oklch(73% 0.012 82)", "$type": "color" },
+      "focus":   { "$value": "oklch(58% 0.09 62)", "$type": "color" }
     },
+    "scrim":        { "$value": "oklch(34% 0.02 76 / 0.58)", "$type": "color" },
     "info":    { "$value": "oklch(46% 0.08 56)", "$type": "color" },
     "info-fg": { "$value": "oklch(98.1% 0.006 88)", "$type": "color" },
     "chart": {
@@ -55,6 +63,12 @@
       "start": { "$value": "oklch(46% 0.08 56)", "$type": "color" },
       "end":   { "$value": "oklch(56% 0.11 66)", "$type": "color" },
       "inner": { "$value": "oklch(98.1% 0.006 88)", "$type": "color" }
+    },
+    "state": {
+      "hover":    { "$value": "{theme.bg.hover}", "$type": "color" },
+      "press":    { "$value": "{theme.bg.selected}", "$type": "color" },
+      "selected": { "$value": "{theme.bg.selected}", "$type": "color" },
+      "disabled": { "$value": "{theme.bg.muted}", "$type": "color" }
     }
   },
   "exp": {

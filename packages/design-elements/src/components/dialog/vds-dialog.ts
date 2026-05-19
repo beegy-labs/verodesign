@@ -28,7 +28,7 @@ export class VdsDialog extends VdsElement {
     .backdrop {
       position: fixed;
       inset: 0;
-      background: color-mix(in oklab, var(--vds-color-black) 50%, transparent);
+      background: var(--vds-theme-scrim, color-mix(in oklab, var(--vds-color-black) 50%, transparent));
       display: flex;
       align-items: center;
       justify-content: center;

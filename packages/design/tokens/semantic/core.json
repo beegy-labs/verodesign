@@ -141,6 +141,11 @@
         "$description": "Disabled/non-interactive state surface. Cross-brand: every brand needs disabled semantics."
       }
     },
+    "scrim": {
+      "$value": "oklch(0% 0 0 / 0.5)",
+      "$type": "color",
+      "$description": "Modal/backdrop scrim. Dims background content without changing overlay surface tokens."
+    },
     "primary": {
       "$value": "{color.blue.7}",
       "$type": "color",
