@@ -21,9 +21,18 @@ export class VdsTabs extends VdsElement {
     .tablist {
       display: flex;
       gap: var(--vds-spacing-1);
+      padding: 0;
       border-bottom: var(--vds-border-width-1) solid var(--vds-theme-border-subtle);
+      border-radius: 0;
+      background: transparent;
       overflow-x: auto;
       scrollbar-width: thin;
+    }
+    :host([variant="segmented"]) .tablist {
+      padding: var(--vds-spacing-1);
+      border-bottom: none;
+      border-radius: var(--vds-radius-lg);
+      background: var(--vds-theme-bg-subtle);
     }
     :host([data-orientation="vertical"]) {
       display: grid;
@@ -36,11 +45,15 @@ export class VdsTabs extends VdsElement {
       border-right: var(--vds-border-width-1) solid var(--vds-theme-border-subtle);
       overflow-x: visible;
     }
+    :host([data-orientation="vertical"][variant="segmented"]) .tablist {
+      border-right: none;
+    }
   `;
 
   @property({ type: String }) value = '';
   @property({ type: String, reflect: true, attribute: 'data-orientation' }) orientation: 'horizontal' | 'vertical' = 'horizontal';
   @property({ type: String }) activation: 'auto' | 'manual' = 'auto';
+  @property({ type: String, reflect: true }) variant: 'underline' | 'segmented' = 'underline';
 
   private internals: ElementInternals;
   private tabsCache: VdsTab[] = [];
@@ -66,7 +79,7 @@ export class VdsTabs extends VdsElement {
   }
 
   protected updated(changed: PropertyValues): void {
-    if (changed.has('value') || changed.has('orientation')) {
+    if (changed.has('value') || changed.has('orientation') || changed.has('variant')) {
       this.syncActive();
     }
     if (changed.has('orientation')) {
@@ -98,6 +111,7 @@ export class VdsTabs extends VdsElement {
     }
     for (const tab of tabs) {
       const isActive = tab === active;
+      tab.setAttribute('data-variant', this.variant);
       tab.toggleAttribute('data-active', isActive);
       tab.tabIndex = isActive ? 0 : -1;
       tab.setAttribute('aria-selected', String(isActive));
@@ -177,21 +191,36 @@ export class VdsTab extends LitElement {
       cursor: pointer;
       user-select: none;
       color: var(--vds-theme-text-dim);
-      border-bottom: 2px solid transparent;
+      border-bottom: var(--vds-border-width-2) solid transparent;
+      border-radius: 0;
+      background: transparent;
       font-size: var(--vds-type-role-label-size);
       font-weight: var(--vds-type-role-label-weight);
       transition: color var(--vds-duration-fast) var(--vds-easing-ease-out),
-                  border-color var(--vds-duration-fast) var(--vds-easing-ease-out);
+        border-color var(--vds-duration-fast) var(--vds-easing-ease-out),
+        background-color var(--vds-duration-fast) var(--vds-easing-ease-out);
     }
     :host(:hover) { color: var(--vds-theme-text-primary); }
     :host([data-active]) {
       color: var(--vds-theme-primary);
       border-bottom-color: var(--vds-theme-primary);
     }
+    :host([data-variant="segmented"]) {
+      border-bottom-color: transparent;
+      border-radius: var(--vds-radius-md);
+    }
+    :host([data-variant="segmented"]:hover) {
+      background: var(--vds-theme-bg-elevated-hover);
+      color: var(--vds-theme-text-primary);
+    }
+    :host([data-variant="segmented"][data-active]) {
+      background: var(--vds-theme-bg-elevated);
+      color: var(--vds-theme-text-primary);
+    }
     :host([disabled]) { opacity: 0.5; cursor: not-allowed; }
     :host(:focus-visible) {
-      outline: 2px solid var(--vds-theme-border-focus);
-      outline-offset: 2px;
+      outline: var(--vds-border-width-2) solid var(--vds-theme-border-focus);
+      outline-offset: var(--vds-spacing-0_5);
     }
   `;
 

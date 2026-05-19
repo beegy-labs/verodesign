@@ -1581,205 +1581,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/card/define.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "vds-card",
-          "declaration": {
-            "name": "VdsCard",
-            "module": "/src/components/card/vds-card.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/card/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsCard",
-          "declaration": {
-            "name": "VdsCard",
-            "module": "./vds-card.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/card/vds-card.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "<vds-card> — surface container with optional elevation and structured slots.",
-          "name": "VdsCard",
-          "slots": [
-            {
-              "description": "main body content",
-              "name": ""
-            },
-            {
-              "description": "top header content",
-              "name": "header"
-            },
-            {
-              "description": "bottom footer content",
-              "name": "footer"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "Variant"
-              },
-              "default": "'surface'",
-              "attribute": "variant",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "elevation",
-              "type": {
-                "text": "Elevation"
-              },
-              "default": "'1'",
-              "attribute": "elevation",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "false",
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "emit",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "name",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "detail",
-                  "optional": true,
-                  "type": {
-                    "text": "T"
-                  }
-                },
-                {
-                  "name": "options",
-                  "default": "{}",
-                  "type": {
-                    "text": "EventInit"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "createId",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "prefix",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderSr",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "text",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "variant",
-              "type": {
-                "text": "Variant"
-              },
-              "default": "'surface'",
-              "fieldName": "variant"
-            },
-            {
-              "name": "elevation",
-              "type": {
-                "text": "Elevation"
-              },
-              "default": "'1'",
-              "fieldName": "elevation"
-            }
-          ],
-          "superclass": {
-            "name": "VdsElement",
-            "module": "/src/base/vds-element.js"
-          },
-          "tagName": "vds-card",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsCard",
-          "declaration": {
-            "name": "VdsCard",
-            "module": "src/components/card/vds-card.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/checkbox/define.ts",
       "declarations": [],
       "exports": [
@@ -2110,85 +1911,75 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/cluster/define.ts",
+      "path": "src/components/card/define.ts",
       "declarations": [],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "vds-cluster",
+          "name": "vds-card",
           "declaration": {
-            "name": "VdsCluster",
-            "module": "/src/components/cluster/vds-cluster.js"
+            "name": "VdsCard",
+            "module": "/src/components/card/vds-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/cluster/index.ts",
+      "path": "src/components/card/index.ts",
       "declarations": [],
       "exports": [
         {
           "kind": "js",
-          "name": "VdsCluster",
+          "name": "VdsCard",
           "declaration": {
-            "name": "VdsCluster",
-            "module": "./vds-cluster.js"
+            "name": "VdsCard",
+            "module": "./vds-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/cluster/vds-cluster.ts",
+      "path": "src/components/card/vds-card.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "<vds-cluster> — horizontal flex cluster with auto-wrap.\nUse for tag lists, action button rows, breadcrumbs.",
-          "name": "VdsCluster",
+          "description": "<vds-card> — surface container with optional elevation and structured slots.",
+          "name": "VdsCard",
           "slots": [
             {
-              "description": "children laid horizontally, wrapping by default",
+              "description": "main body content",
               "name": ""
+            },
+            {
+              "description": "top header content",
+              "name": "header"
+            },
+            {
+              "description": "bottom footer content",
+              "name": "footer"
             }
           ],
           "members": [
             {
               "kind": "field",
-              "name": "gap",
+              "name": "variant",
               "type": {
-                "text": "Gap"
+                "text": "Variant"
               },
-              "default": "'2'",
-              "attribute": "gap",
+              "default": "'surface'",
+              "attribute": "variant",
               "reflects": true
             },
             {
               "kind": "field",
-              "name": "align",
+              "name": "elevation",
               "type": {
-                "text": "Align | undefined"
+                "text": "Elevation"
               },
-              "attribute": "align",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "justify",
-              "type": {
-                "text": "Justify | undefined"
-              },
-              "attribute": "justify",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "nowrap",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "attribute": "nowrap",
+              "default": "'1'",
+              "attribute": "elevation",
               "reflects": true
             },
             {
@@ -2282,51 +2073,37 @@
           ],
           "attributes": [
             {
-              "name": "gap",
+              "name": "variant",
               "type": {
-                "text": "Gap"
+                "text": "Variant"
               },
-              "default": "'2'",
-              "fieldName": "gap"
+              "default": "'surface'",
+              "fieldName": "variant"
             },
             {
-              "name": "align",
+              "name": "elevation",
               "type": {
-                "text": "Align | undefined"
+                "text": "Elevation"
               },
-              "fieldName": "align"
-            },
-            {
-              "name": "justify",
-              "type": {
-                "text": "Justify | undefined"
-              },
-              "fieldName": "justify"
-            },
-            {
-              "name": "nowrap",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "nowrap"
+              "default": "'1'",
+              "fieldName": "elevation"
             }
           ],
           "superclass": {
             "name": "VdsElement",
             "module": "/src/base/vds-element.js"
           },
-          "tagName": "vds-cluster",
+          "tagName": "vds-card",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "VdsCluster",
+          "name": "VdsCard",
           "declaration": {
-            "name": "VdsCluster",
-            "module": "src/components/cluster/vds-cluster.ts"
+            "name": "VdsCard",
+            "module": "src/components/card/vds-card.ts"
           }
         }
       ]
@@ -2664,6 +2441,229 @@
           "declaration": {
             "name": "VdsDialog",
             "module": "src/components/dialog/vds-dialog.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/cluster/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-cluster",
+          "declaration": {
+            "name": "VdsCluster",
+            "module": "/src/components/cluster/vds-cluster.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/cluster/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsCluster",
+          "declaration": {
+            "name": "VdsCluster",
+            "module": "./vds-cluster.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/cluster/vds-cluster.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-cluster> — horizontal flex cluster with auto-wrap.\nUse for tag lists, action button rows, breadcrumbs.",
+          "name": "VdsCluster",
+          "slots": [
+            {
+              "description": "children laid horizontally, wrapping by default",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "gap",
+              "type": {
+                "text": "Gap"
+              },
+              "default": "'2'",
+              "attribute": "gap",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "align",
+              "type": {
+                "text": "Align | undefined"
+              },
+              "attribute": "align",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "justify",
+              "type": {
+                "text": "Justify | undefined"
+              },
+              "attribute": "justify",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "nowrap",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "nowrap",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "false",
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "emit",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "optional": true,
+                  "type": {
+                    "text": "T"
+                  }
+                },
+                {
+                  "name": "options",
+                  "default": "{}",
+                  "type": {
+                    "text": "EventInit"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createId",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "prefix",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderSr",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "gap",
+              "type": {
+                "text": "Gap"
+              },
+              "default": "'2'",
+              "fieldName": "gap"
+            },
+            {
+              "name": "align",
+              "type": {
+                "text": "Align | undefined"
+              },
+              "fieldName": "align"
+            },
+            {
+              "name": "justify",
+              "type": {
+                "text": "Justify | undefined"
+              },
+              "fieldName": "justify"
+            },
+            {
+              "name": "nowrap",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "nowrap"
+            }
+          ],
+          "superclass": {
+            "name": "VdsElement",
+            "module": "/src/base/vds-element.js"
+          },
+          "tagName": "vds-cluster",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsCluster",
+          "declaration": {
+            "name": "VdsCluster",
+            "module": "src/components/cluster/vds-cluster.ts"
           }
         }
       ]
@@ -6840,6 +6840,16 @@
             },
             {
               "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'underline' | 'segmented'"
+              },
+              "default": "'underline'",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "internals",
               "type": {
                 "text": "ElementInternals"
@@ -7044,6 +7054,14 @@
               },
               "default": "'auto'",
               "fieldName": "activation"
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "'underline' | 'segmented'"
+              },
+              "default": "'underline'",
+              "fieldName": "variant"
             }
           ],
           "superclass": {
