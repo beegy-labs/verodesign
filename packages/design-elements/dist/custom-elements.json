@@ -2670,6 +2670,197 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/grid/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vds-grid",
+          "declaration": {
+            "name": "VdsGrid",
+            "module": "/src/components/grid/vds-grid.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/grid/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsGrid",
+          "declaration": {
+            "name": "VdsGrid",
+            "module": "./vds-grid.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/grid/vds-grid.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "<vds-grid> — CSS grid layout primitive.",
+          "name": "VdsGrid",
+          "slots": [
+            {
+              "description": "children laid in `cols` columns with `gap`",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "cols",
+              "type": {
+                "text": "Cols"
+              },
+              "default": "'1'",
+              "attribute": "cols",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "gap",
+              "type": {
+                "text": "Gap"
+              },
+              "default": "'0'",
+              "attribute": "gap",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "false",
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "emit",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "optional": true,
+                  "type": {
+                    "text": "T"
+                  }
+                },
+                {
+                  "name": "options",
+                  "default": "{}",
+                  "type": {
+                    "text": "EventInit"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createId",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "prefix",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderSr",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "VdsElement",
+                "module": "src/base/vds-element.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "cols",
+              "type": {
+                "text": "Cols"
+              },
+              "default": "'1'",
+              "fieldName": "cols"
+            },
+            {
+              "name": "gap",
+              "type": {
+                "text": "Gap"
+              },
+              "default": "'0'",
+              "fieldName": "gap"
+            }
+          ],
+          "superclass": {
+            "name": "VdsElement",
+            "module": "/src/base/vds-element.js"
+          },
+          "tagName": "vds-grid",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VdsGrid",
+          "declaration": {
+            "name": "VdsGrid",
+            "module": "src/components/grid/vds-grid.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/empty-state/define.ts",
       "declarations": [],
       "exports": [
@@ -2879,197 +3070,6 @@
           "declaration": {
             "name": "VdsEmptyState",
             "module": "src/components/empty-state/vds-empty-state.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/grid/define.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "vds-grid",
-          "declaration": {
-            "name": "VdsGrid",
-            "module": "/src/components/grid/vds-grid.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/grid/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsGrid",
-          "declaration": {
-            "name": "VdsGrid",
-            "module": "./vds-grid.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/grid/vds-grid.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "<vds-grid> — CSS grid layout primitive.",
-          "name": "VdsGrid",
-          "slots": [
-            {
-              "description": "children laid in `cols` columns with `gap`",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "cols",
-              "type": {
-                "text": "Cols"
-              },
-              "default": "'1'",
-              "attribute": "cols",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "gap",
-              "type": {
-                "text": "Gap"
-              },
-              "default": "'0'",
-              "attribute": "gap",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "false",
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "emit",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "name",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "detail",
-                  "optional": true,
-                  "type": {
-                    "text": "T"
-                  }
-                },
-                {
-                  "name": "options",
-                  "default": "{}",
-                  "type": {
-                    "text": "EventInit"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "createId",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "prefix",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderSr",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "text",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "VdsElement",
-                "module": "src/base/vds-element.ts"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "cols",
-              "type": {
-                "text": "Cols"
-              },
-              "default": "'1'",
-              "fieldName": "cols"
-            },
-            {
-              "name": "gap",
-              "type": {
-                "text": "Gap"
-              },
-              "default": "'0'",
-              "fieldName": "gap"
-            }
-          ],
-          "superclass": {
-            "name": "VdsElement",
-            "module": "/src/base/vds-element.js"
-          },
-          "tagName": "vds-grid",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "VdsGrid",
-          "declaration": {
-            "name": "VdsGrid",
-            "module": "src/components/grid/vds-grid.ts"
           }
         }
       ]

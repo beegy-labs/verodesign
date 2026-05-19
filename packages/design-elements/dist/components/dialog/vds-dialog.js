@@ -8,8 +8,8 @@ import { FocusTrap as v } from "../../utils/focus-trap.js";
 import { VdsElement as m } from "../../base/vds-element.js";
 import { css as u } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
 var f = Object.defineProperty, a = (r, e, o, b) => {
-  for (var t = void 0, n = r.length - 1, l; n >= 0; n--)
-    (l = r[n]) && (t = l(e, o, t) || t);
+  for (var t = void 0, l = r.length - 1, n; l >= 0; l--)
+    (n = r[l]) && (t = n(e, o, t) || t);
   return t && f(e, o, t), t;
 };
 class s extends m {
@@ -29,7 +29,7 @@ class s extends m {
     .backdrop {
       position: fixed;
       inset: 0;
-      background: color-mix(in oklab, var(--vds-color-black) 50%, transparent);
+      background: var(--vds-theme-scrim, color-mix(in oklab, var(--vds-color-black) 50%, transparent));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -74,17 +74,22 @@ class s extends m {
       border-bottom: var(--vds-border-width-1) solid var(--vds-theme-border-subtle);
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: var(--vds-spacing-3);
     }
     .title {
+      flex: 1;
+      min-width: 0;
       font-family: var(--vds-font-family-sans);
       font-size: var(--vds-type-role-title-size);
       font-weight: var(--vds-type-role-title-weight);
       line-height: var(--vds-font-lineheight-tight);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .close {
       all: unset;
+      flex: none;
       cursor: pointer;
       padding: var(--vds-spacing-1);
       border-radius: var(--vds-radius-sm);
@@ -126,7 +131,7 @@ class s extends m {
     super.updated(e), e.has("open") && (this.open ? this.handleOpen() : this.handleClose()), e.has("ariaLabelText") && this.ariaLabelText != null && d(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   handleOpen() {
-    document.body.style.overflow = "hidden", this.focusTrap = new v(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate()), this.emit("vds-open");
+    document.body.style.overflow = "hidden", this.focusTrap = new v(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate(this.panelEl)), this.emit("vds-open");
   }
   handleClose() {
     document.body.style.overflow = "", this.focusTrap?.deactivate(), this.emit("vds-close");

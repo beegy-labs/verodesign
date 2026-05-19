@@ -73,17 +73,22 @@ export class VdsDialog extends VdsElement {
       border-bottom: var(--vds-border-width-1) solid var(--vds-theme-border-subtle);
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: var(--vds-spacing-3);
     }
     .title {
+      flex: 1;
+      min-width: 0;
       font-family: var(--vds-font-family-sans);
       font-size: var(--vds-type-role-title-size);
       font-weight: var(--vds-type-role-title-weight);
       line-height: var(--vds-font-lineheight-tight);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .close {
       all: unset;
+      flex: none;
       cursor: pointer;
       padding: var(--vds-spacing-1);
       border-radius: var(--vds-radius-sm);
@@ -158,7 +163,7 @@ export class VdsDialog extends VdsElement {
   private handleOpen(): void {
     document.body.style.overflow = 'hidden';
     this.focusTrap = new FocusTrap(this.panelEl);
-    requestAnimationFrame(() => this.focusTrap?.activate());
+    requestAnimationFrame(() => this.focusTrap?.activate(this.panelEl));
     this.emit('vds-open');
   }
 
