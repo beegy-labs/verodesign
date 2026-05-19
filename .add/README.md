@@ -1,11 +1,17 @@
 # ADD Workflows Index
 
-> Autonomous Development Engine — execution workflows | **Last Updated**: 2026-05-02
+> Autonomous Development Engine — execution workflows | **Last Updated**: 2026-05-20
 
 Each workflow is a structured prompt for an LLM agent. Read the relevant CDD doc first, then follow the workflow.
 
 > **리팩토링 진입점 = [`refactor-2026.md`](./refactor-2026.md)** (2026
-> canonical·체크리스트·도구). 모든 리팩토링은 거기서 시작.
+> canonical·체크리스트·도구·§5 베스트프랙티스 수동 canon·§6 배치 로그).
+> 모든 리팩토링은 거기서 시작. 베이스라인 =
+> [`refactor-2026-baseline.md`](./refactor-2026-baseline.md).
+> **개발 베스트프랙티스 SSOT(필수 pre-read) = CDD
+> [`../docs/llm/dev-best-practices.md`](../docs/llm/dev-best-practices.md)**
+> (토큰 SSOT/최적화·순수성·간결화·데드코드·불변식, 수동 갱신만).
+> 타이포 정책 = CDD [`../docs/llm/typography-policy.md`](../docs/llm/typography-policy.md).
 
 ## Policy enforcement (skills) — ABSOLUTE
 
