@@ -4,6 +4,9 @@
 
 Each workflow is a structured prompt for an LLM agent. Read the relevant CDD doc first, then follow the workflow.
 
+> **리팩토링 진입점 = [`refactor-2026.md`](./refactor-2026.md)** (2026
+> canonical·체크리스트·도구). 모든 리팩토링은 거기서 시작.
+
 ## Policy enforcement (skills) — ABSOLUTE
 
 > **정책은 무조건 지켜진다.** 모든 토큰/테마/컴포넌트/슬롯/유틸 변경은 머지·
