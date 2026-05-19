@@ -1,34 +1,34 @@
-import { jsx as r, jsxs as h } from "react/jsx-runtime";
+import { jsx as r, jsxs as c } from "react/jsx-runtime";
 import * as s from "react";
-import { createPortal as F } from "react-dom";
-import { extractSlottedChildren as b, focusRing as H, cx as K, mergeRefs as Y } from "./_internal.js";
-const $ = { sm: "24rem", md: "32rem", lg: "48rem", xl: "56rem", "2xl": "72rem" }, N = 'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])', Q = "(prefers-reduced-motion: reduce)", y = "env(safe-area-inset-bottom, var(--vds-spacing-0))", U = s.forwardRef(function({ open: a = !1, size: w = "md", placement: x = "center", closeOnBackdrop: E = !0, "close-on-backdrop": k, closeOnEscape: R = !0, "close-on-escape": C, onOpen: v, onClose: o, className: S, children: D, style: I, ...j }, M) {
-  const d = s.useRef(null), u = s.useId(), { slotted: l, rest: z } = b(D, "title"), { slotted: f, rest: A } = b(z, "footer"), B = k ?? E, m = C ?? R, t = x === "bottom", [L, T] = s.useState(!1);
+import { createPortal as Q } from "react-dom";
+import { extractSlottedChildren as m, focusRing as V, cx as q, mergeRefs as G } from "./_internal.js";
+const J = { sm: "24rem", md: "32rem", lg: "48rem", xl: "56rem", "2xl": "72rem" }, U = 'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])', X = "(prefers-reduced-motion: reduce)", k = "env(safe-area-inset-bottom, var(--vds-spacing-0))", te = s.forwardRef(function({ open: n = !1, size: R = "md", placement: S = "center", closeOnBackdrop: C = !0, "close-on-backdrop": D, closeOnEscape: I = !0, "close-on-escape": M, onOpen: p, onClose: l, className: j, children: z, style: F, ...H }, W) {
+  const a = s.useRef(null), h = s.useId(), { slotted: v, rest: B } = m(z, "title"), { slotted: i, rest: L } = m(B, "description"), { slotted: b, rest: A } = m(L, "footer"), T = D ?? C, y = M ?? I, e = S === "bottom", [K, Y] = s.useState(!1), [$, w] = s.useState(!1), [N, u] = s.useState(!1), f = s.useRef(!1);
   return s.useEffect(() => {
     if (typeof window > "u" || typeof window.matchMedia != "function") return;
-    const e = window.matchMedia(Q), n = () => T(e.matches);
-    return n(), e.addEventListener("change", n), () => e.removeEventListener("change", n);
+    const t = window.matchMedia(X), o = () => Y(t.matches);
+    return o(), t.addEventListener("change", o), () => t.removeEventListener("change", o);
   }, []), s.useEffect(() => {
-    a && v?.(new CustomEvent("vds-open"));
-  }, [a, v]), s.useEffect(() => {
-    if (!a) return;
-    const e = document.body.style.overflow;
-    document.body.style.overflow = "hidden", d.current?.focus();
-    const n = (i) => {
-      if (i.key === "Escape" && m && o?.(new CustomEvent("vds-close")), i.key !== "Tab" || !d.current) return;
-      const c = Array.from(d.current.querySelectorAll(N)).filter((W) => !W.hasAttribute("disabled")), g = c[0] ?? d.current, p = c[c.length - 1];
-      i.shiftKey && document.activeElement === g && (i.preventDefault(), (p ?? d.current).focus()), !i.shiftKey && document.activeElement === p && (i.preventDefault(), g.focus());
+    n && p?.(new CustomEvent("vds-open"));
+  }, [n, p]), s.useEffect(() => {
+    if (!n) return;
+    const t = document.body.style.overflow;
+    document.body.style.overflow = "hidden", a.current?.focus();
+    const o = (d) => {
+      if (d.key === "Escape" && y && l?.(new CustomEvent("vds-close")), d.key !== "Tab" || !a.current) return;
+      const g = Array.from(a.current.querySelectorAll(U)).filter((P) => !P.hasAttribute("disabled")), x = g[0] ?? a.current, E = g[g.length - 1];
+      d.shiftKey && document.activeElement === x && (d.preventDefault(), (E ?? a.current).focus()), !d.shiftKey && document.activeElement === E && (d.preventDefault(), x.focus());
     };
-    return window.addEventListener("keydown", n), () => {
-      document.body.style.overflow = e, window.removeEventListener("keydown", n);
+    return window.addEventListener("keydown", o), () => {
+      document.body.style.overflow = t, window.removeEventListener("keydown", o);
     };
-  }, [m, o, a]), a ? F(
+  }, [y, l, n]), n ? Q(
     /* @__PURE__ */ r(
       "div",
       {
         role: "presentation",
-        onMouseDown: (e) => {
-          e.target === e.currentTarget && B && o?.(new CustomEvent("vds-close"));
+        onMouseDown: (t) => {
+          t.target === t.currentTarget && T && l?.(new CustomEvent("vds-close"));
         },
         style: {
           position: "fixed",
@@ -37,46 +37,56 @@ const $ = { sm: "24rem", md: "32rem", lg: "48rem", xl: "56rem", "2xl": "72rem" }
           backdropFilter: "blur(var(--vds-blur-lg))",
           WebkitBackdropFilter: "blur(var(--vds-blur-lg))",
           display: "flex",
-          alignItems: t ? "flex-end" : "center",
+          alignItems: e ? "flex-end" : "center",
           justifyContent: "center",
-          padding: t ? `var(--vds-spacing-4) var(--vds-spacing-4) calc(var(--vds-spacing-4) + ${y})` : "var(--vds-spacing-4)",
+          padding: e ? `var(--vds-spacing-4) var(--vds-spacing-4) calc(var(--vds-spacing-4) + ${k})` : "var(--vds-spacing-4)",
           zIndex: "var(--vds-zindex-modal)"
         },
-        children: /* @__PURE__ */ h(
+        children: /* @__PURE__ */ c(
           "div",
           {
-            ...j,
-            ref: (e) => {
-              d.current = e, Y(M, e);
+            ...H,
+            ref: (t) => {
+              a.current = t, G(W, t);
             },
             role: "dialog",
             "aria-modal": "true",
-            "aria-labelledby": l.length ? u : void 0,
+            "aria-labelledby": v.length ? h : void 0,
             tabIndex: -1,
-            className: K("vds-dialog", S),
+            className: q("vds-dialog", j),
             style: {
               background: "var(--vds-theme-bg-elevated)",
               color: "var(--vds-theme-text-primary)",
-              borderRadius: t ? "var(--vds-radius-lg) var(--vds-radius-lg) 0 0" : "var(--vds-radius-lg)",
+              borderRadius: e ? "var(--vds-radius-lg) var(--vds-radius-lg) 0 0" : "var(--vds-radius-lg)",
               boxShadow: "var(--vds-shadow-5, var(--vds-elevation-3))",
-              maxWidth: t ? "none" : `min(${$[w]}, 100%)`,
+              maxWidth: e ? "none" : `min(${J[R]}, 100%)`,
               width: "100%",
-              maxHeight: t ? "calc(100dvh - var(--vds-spacing-20))" : "calc(100dvh - 2rem)",
+              maxHeight: e ? "calc(100dvh - var(--vds-spacing-20))" : "calc(100dvh - 2rem)",
               display: "flex",
               flexDirection: "column",
               outline: "none",
-              transform: t ? a ? "translateY(0)" : `translateY(calc(var(--vds-spacing-12) + ${y}))` : void 0,
-              transition: L ? "none" : t ? "transform var(--vds-duration-medium) var(--vds-easing-ease-out)" : void 0,
-              ...I
+              transform: e ? n ? "translateY(0)" : `translateY(calc(var(--vds-spacing-12) + ${k}))` : void 0,
+              transition: K ? "none" : e ? "transform var(--vds-duration-medium) var(--vds-easing-ease-out)" : void 0,
+              ...F
             },
             children: [
-              t ? /* @__PURE__ */ r("div", { "aria-hidden": "true", style: { display: "flex", alignItems: "center", justifyContent: "center", minHeight: "var(--vds-spacing-6)", paddingTop: "var(--vds-spacing-2)" }, children: /* @__PURE__ */ r("div", { style: { width: "var(--vds-spacing-12)", height: "var(--vds-spacing-1)", borderRadius: "var(--vds-radius-full)", background: "var(--vds-theme-border-subtle)" } }) }) : null,
-              l.length ? /* @__PURE__ */ h("div", { style: { padding: t ? "var(--vds-spacing-2) var(--vds-spacing-5) var(--vds-spacing-4)" : "var(--vds-spacing-4) var(--vds-spacing-5)", borderBottom: "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "var(--vds-spacing-3)" }, children: [
-                /* @__PURE__ */ r("div", { id: u, style: { margin: 0, fontFamily: "var(--vds-font-family-sans)", fontSize: "var(--vds-type-role-title-size)", fontWeight: "var(--vds-type-role-title-weight)", lineHeight: "var(--vds-font-lineheight-tight)" }, children: l }),
-                /* @__PURE__ */ r("button", { type: "button", "aria-label": "Close dialog", onClick: () => o?.(new CustomEvent("vds-close")), style: { all: "unset", cursor: "pointer", padding: "var(--vds-spacing-1)", borderRadius: "var(--vds-radius-sm)", color: "var(--vds-theme-text-dim)", ...H }, children: "×" })
+              e ? /* @__PURE__ */ r("div", { "aria-hidden": "true", style: { display: "flex", alignItems: "center", justifyContent: "center", minHeight: "var(--vds-spacing-6)", paddingTop: "var(--vds-spacing-2)" }, children: /* @__PURE__ */ r("div", { style: { width: "var(--vds-spacing-12)", height: "var(--vds-spacing-1)", borderRadius: "var(--vds-radius-full)", background: "var(--vds-theme-border-subtle)" } }) }) : null,
+              v.length ? /* @__PURE__ */ c("div", { style: { padding: e ? "var(--vds-spacing-2) var(--vds-spacing-5) var(--vds-spacing-5)" : "var(--vds-spacing-4) var(--vds-spacing-5)", borderBottom: e ? "none" : "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "var(--vds-spacing-3)" }, children: [
+                /* @__PURE__ */ c("div", { style: { flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: i.length && e ? "var(--vds-spacing-1)" : void 0 }, children: [
+                  /* @__PURE__ */ r("div", { id: h, style: { margin: 0, fontFamily: "var(--vds-font-family-sans)", fontSize: "var(--vds-type-role-title-size)", fontWeight: "var(--vds-type-role-title-weight)", lineHeight: "var(--vds-font-lineheight-tight)" }, children: v }),
+                  i.length && e ? /* @__PURE__ */ r("div", { style: { color: "var(--vds-theme-text-dim)", fontSize: "var(--vds-type-role-label-size)", fontWeight: "var(--vds-type-role-label-weight)", lineHeight: "var(--vds-font-lineheight-normal)" }, children: i }) : null
+                ] }),
+                /* @__PURE__ */ r("button", { type: "button", "aria-label": "Close dialog", onClick: () => l?.(new CustomEvent("vds-close")), onMouseEnter: () => w(!0), onMouseLeave: () => w(!1), onPointerDown: () => {
+                  f.current = !0, u(!1);
+                }, onFocus: () => u(!f.current), onBlur: () => {
+                  f.current = !1, u(!1);
+                }, style: { all: "unset", cursor: "pointer", display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "var(--vds-spacing-1)", color: "var(--vds-theme-text-dim)", background: $ ? "var(--vds-theme-bg-hover)" : "transparent", border: "none", boxShadow: "none", ...N ? V : {} }, children: "×" })
               ] }) : null,
-              /* @__PURE__ */ r("div", { style: { padding: "var(--vds-spacing-4) var(--vds-spacing-5)", flex: 1, overflowY: "auto" }, children: A }),
-              f.length ? /* @__PURE__ */ r("div", { style: { padding: "var(--vds-spacing-4) var(--vds-spacing-5)", borderTop: "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)", display: "flex", justifyContent: "flex-end", gap: "var(--vds-spacing-2)" }, children: f }) : null
+              /* @__PURE__ */ c("div", { style: { padding: e ? "0 var(--vds-spacing-5) var(--vds-spacing-6)" : "var(--vds-spacing-4) var(--vds-spacing-5)", flex: 1, overflowY: "auto" }, children: [
+                !e && i.length ? i : null,
+                A
+              ] }),
+              b.length ? /* @__PURE__ */ r("div", { style: { padding: e ? "var(--vds-spacing-5) var(--vds-spacing-5) calc(var(--vds-spacing-5) + env(safe-area-inset-bottom))" : "var(--vds-spacing-4) var(--vds-spacing-5)", borderTop: "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)", display: "flex", justifyContent: "flex-end", gap: "var(--vds-spacing-2)" }, children: b }) : null
             ]
           }
         )
@@ -86,5 +96,5 @@ const $ = { sm: "24rem", md: "32rem", lg: "48rem", xl: "56rem", "2xl": "72rem" }
   ) : null;
 });
 export {
-  U as Dialog
+  te as Dialog
 };

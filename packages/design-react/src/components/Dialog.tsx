@@ -29,11 +29,15 @@ export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dia
   const panelRef = React.useRef<HTMLDivElement | null>(null);
   const titleId = React.useId();
   const { slotted: titleSlot, rest: titleRest } = extractSlottedChildren(children, 'title');
-  const { slotted: footerSlot, rest: bodyNodes } = extractSlottedChildren(titleRest, 'footer');
+  const { slotted: descriptionSlot, rest: descriptionRest } = extractSlottedChildren(titleRest, 'description');
+  const { slotted: footerSlot, rest: bodyNodes } = extractSlottedChildren(descriptionRest, 'footer');
   const backdropEnabled = closeOnBackdropAttr ?? closeOnBackdrop;
   const escapeEnabled = closeOnEscapeAttr ?? closeOnEscape;
   const isBottom = placement === 'bottom';
   const [reduceMotion, setReduceMotion] = React.useState(false);
+  const [closeHovered, setCloseHovered] = React.useState(false);
+  const [closeFocusVisible, setCloseFocusVisible] = React.useState(false);
+  const pointerDownRef = React.useRef(false);
 
   React.useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
@@ -109,9 +113,9 @@ export const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(function Dia
         }}
       >
         {isBottom ? <div aria-hidden="true" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 'var(--vds-spacing-6)', paddingTop: 'var(--vds-spacing-2)' }}><div style={{ width: 'var(--vds-spacing-12)', height: 'var(--vds-spacing-1)', borderRadius: 'var(--vds-radius-full)', background: 'var(--vds-theme-border-subtle)' }} /></div> : null}
-        {titleSlot.length ? <div style={{ padding: isBottom ? 'var(--vds-spacing-2) var(--vds-spacing-5) var(--vds-spacing-4)' : 'var(--vds-spacing-4) var(--vds-spacing-5)', borderBottom: 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--vds-spacing-3)' }}><div id={titleId} style={{ margin: 0, fontFamily: 'var(--vds-font-family-sans)', fontSize: 'var(--vds-type-role-title-size)', fontWeight: 'var(--vds-type-role-title-weight)', lineHeight: 'var(--vds-font-lineheight-tight)' }}>{titleSlot}</div><button type="button" aria-label="Close dialog" onClick={() => onClose?.(new CustomEvent('vds-close'))} style={{ all: 'unset', cursor: 'pointer', padding: 'var(--vds-spacing-1)', borderRadius: 'var(--vds-radius-sm)', color: 'var(--vds-theme-text-dim)', ...focusRing }}>×</button></div> : null}
-        <div style={{ padding: 'var(--vds-spacing-4) var(--vds-spacing-5)', flex: 1, overflowY: 'auto' }}>{bodyNodes}</div>
-        {footerSlot.length ? <div style={{ padding: 'var(--vds-spacing-4) var(--vds-spacing-5)', borderTop: 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)', display: 'flex', justifyContent: 'flex-end', gap: 'var(--vds-spacing-2)' }}>{footerSlot}</div> : null}
+        {titleSlot.length ? <div style={{ padding: isBottom ? 'var(--vds-spacing-2) var(--vds-spacing-5) var(--vds-spacing-5)' : 'var(--vds-spacing-4) var(--vds-spacing-5)', borderBottom: isBottom ? 'none' : 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 'var(--vds-spacing-3)' }}><div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: descriptionSlot.length && isBottom ? 'var(--vds-spacing-1)' : undefined }}><div id={titleId} style={{ margin: 0, fontFamily: 'var(--vds-font-family-sans)', fontSize: 'var(--vds-type-role-title-size)', fontWeight: 'var(--vds-type-role-title-weight)', lineHeight: 'var(--vds-font-lineheight-tight)' }}>{titleSlot}</div>{descriptionSlot.length && isBottom ? <div style={{ color: 'var(--vds-theme-text-dim)', fontSize: 'var(--vds-type-role-label-size)', fontWeight: 'var(--vds-type-role-label-weight)', lineHeight: 'var(--vds-font-lineheight-normal)' }}>{descriptionSlot}</div> : null}</div><button type="button" aria-label="Close dialog" onClick={() => onClose?.(new CustomEvent('vds-close'))} onMouseEnter={() => setCloseHovered(true)} onMouseLeave={() => setCloseHovered(false)} onPointerDown={() => { pointerDownRef.current = true; setCloseFocusVisible(false); }} onFocus={() => setCloseFocusVisible(!pointerDownRef.current)} onBlur={() => { pointerDownRef.current = false; setCloseFocusVisible(false); }} style={{ all: 'unset', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: 'var(--vds-spacing-1)', color: 'var(--vds-theme-text-dim)', background: closeHovered ? 'var(--vds-theme-bg-hover)' : 'transparent', border: 'none', boxShadow: 'none', ...(closeFocusVisible ? focusRing : {}) }}>×</button></div> : null}
+        <div style={{ padding: isBottom ? '0 var(--vds-spacing-5) var(--vds-spacing-6)' : 'var(--vds-spacing-4) var(--vds-spacing-5)', flex: 1, overflowY: 'auto' }}>{!isBottom && descriptionSlot.length ? descriptionSlot : null}{bodyNodes}</div>
+        {footerSlot.length ? <div style={{ padding: isBottom ? 'var(--vds-spacing-5) var(--vds-spacing-5) calc(var(--vds-spacing-5) + env(safe-area-inset-bottom))' : 'var(--vds-spacing-4) var(--vds-spacing-5)', borderTop: 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)', display: 'flex', justifyContent: 'flex-end', gap: 'var(--vds-spacing-2)' }}>{footerSlot}</div> : null}
       </div>
     </div>,
     document.body,
