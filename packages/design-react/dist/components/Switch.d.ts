@@ -1,11 +1,16 @@
 import * as React from 'react';
-import { type EventName } from '@lit/react';
-import { VdsSwitch } from '@verobee/design-elements/components/switch';
-import '@verobee/design-elements/define/switch';
 export type SwitchChangeEvent = CustomEvent<{
     checked: boolean;
 }>;
-export declare const Switch: import("@lit/react").ReactWebComponent<VdsSwitch, {
-    onChange: EventName<SwitchChangeEvent>;
-}>;
-export type SwitchProps = React.ComponentProps<typeof Switch>;
+type SwitchSize = 'sm' | 'md' | 'lg';
+export interface SwitchProps extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'onChange'> {
+    checked?: boolean;
+    disabled?: boolean;
+    required?: boolean;
+    name?: string;
+    value?: string;
+    size?: SwitchSize;
+    onChange?: ((event: SwitchChangeEvent) => void) | undefined;
+}
+export declare const Switch: React.ForwardRefExoticComponent<SwitchProps & React.RefAttributes<HTMLLabelElement>>;
+export {};

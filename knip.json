@@ -1,0 +1,142 @@
+{
+  "$schema": "https://unpkg.com/knip@5.63.1/schema.json",
+  "workspaces": {
+    "packages/cli": {
+      "entry": [
+        "scripts/build.mjs"
+      ],
+      "project": [
+        "scripts/**/*.mjs"
+      ]
+    },
+    "packages/codemods": {
+      "entry": [
+        "scripts/build.mjs",
+        "transforms/**/*.test.mjs"
+      ],
+      "project": [
+        "scripts/**/*.mjs",
+        "transforms/**/*.{js,mjs,ts}"
+      ]
+    },
+    "packages/design": {
+      "entry": [
+        "scripts/build.mjs",
+        "scripts/validate.mjs",
+        "src/**/*.mjs"
+      ],
+      "project": [
+        "scripts/**/*.{js,mjs}",
+        "src/**/*.{js,mjs,ts}",
+        "tsconfig.json"
+      ]
+    },
+    "packages/design-elements": {
+      "entry": [
+        "src/**/*.ts",
+        "test/**/*.{ts,mjs}",
+        "vite.config.ts",
+        "web-test-runner.config.mjs"
+      ],
+      "project": [
+        "src/**/*.ts",
+        "test/**/*.{ts,mjs}",
+        "vite.config.ts",
+        "web-test-runner.config.mjs",
+        "tsconfig.json",
+        "tsconfig.build.json"
+      ]
+    },
+    "packages/design-react": {
+      "entry": [
+        "src/**/*.{ts,tsx}",
+        "vite.config.ts",
+        "vitest.config.ts"
+      ],
+      "project": [
+        "src/**/*.{ts,tsx}",
+        "vite.config.ts",
+        "vitest.config.ts",
+        "tsconfig.json",
+        "tsconfig.build.json"
+      ]
+    },
+    "packages/primitive": {
+      "entry": [
+        "scripts/build.mjs",
+        "scripts/validate.mjs"
+      ],
+      "project": [
+        "scripts/**/*.mjs"
+      ]
+    },
+    "packages/showcase": {
+      "entry": [
+        "astro.config.mjs",
+        "src/**/*.{astro,ts,tsx,js,jsx,mjs}"
+      ],
+      "project": [
+        "astro.config.mjs",
+        "src/**/*.{astro,ts,tsx,js,jsx,mjs}",
+        "tsconfig.json"
+      ]
+    },
+    "packages/spec": {
+      "entry": [
+        "scripts/build.mjs",
+        "scripts/validate.mjs"
+      ],
+      "project": [
+        "scripts/**/*.mjs"
+      ]
+    },
+    "packages/theme-default": {
+      "entry": [
+        "scripts/build.mjs",
+        "scripts/validate.mjs"
+      ],
+      "project": [
+        "scripts/**/*.mjs"
+      ]
+    },
+    "packages/theme-verobase": {
+      "entry": [
+        "scripts/build.mjs",
+        "scripts/validate.mjs"
+      ],
+      "project": [
+        "scripts/**/*.mjs"
+      ]
+    },
+    "packages/theme-veronex": {
+      "entry": [
+        "scripts/build.mjs",
+        "scripts/validate.mjs"
+      ],
+      "project": [
+        "scripts/**/*.mjs"
+      ]
+    },
+    "packages/utilities": {
+      "entry": [
+        "scripts/build.mjs",
+        "scripts/validate.mjs",
+        "src/**/*.mjs"
+      ],
+      "project": [
+        "scripts/**/*.mjs",
+        "src/**/*.mjs"
+      ]
+    }
+  },
+  "ignore": [
+    "**/dist/**",
+    "**/.turbo/**",
+    "**/coverage/**",
+    "**/*.d.ts",
+    "**/*.min.css",
+    "**/*.min.css.br",
+    "**/*.css.br",
+    "packages/**/tokens/**/*.json"
+  ]
+}

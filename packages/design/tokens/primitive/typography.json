@@ -32,7 +32,9 @@
       "3xl": { "$value": "2.375rem", "$type": "dimension", "$description": "38px h3" },
       "4xl": { "$value": "3.1875rem", "$type": "dimension", "$description": "51px h2" },
       "5xl": { "$value": "4.1875rem", "$type": "dimension", "$description": "67px h1 / hero" },
-      "6xl": { "$value": "5.625rem", "$type": "dimension", "$description": "90px display" }
+      "6xl": { "$value": "5.625rem", "$type": "dimension", "$description": "90px display" },
+      "numeric-display-sm": { "$value": "2.75rem", "$type": "dimension", "$description": "44px primary amount / headline metric" },
+      "numeric-display-lg": { "$value": "3.5rem", "$type": "dimension", "$description": "56px hero amount / market summary metric" }
     },
     "weight": {
       "400": { "$value": 400, "$type": "fontWeight", "$description": "Regular" },

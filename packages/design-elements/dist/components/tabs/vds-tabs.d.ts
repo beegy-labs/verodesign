@@ -13,6 +13,7 @@ export declare class VdsTabs extends VdsElement {
     value: string;
     orientation: 'horizontal' | 'vertical';
     activation: 'auto' | 'manual';
+    variant: 'underline' | 'segmented';
     private internals;
     private tabsCache;
     private panelsCache;

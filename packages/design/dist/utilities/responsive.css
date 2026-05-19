@@ -1328,6 +1328,12 @@
     .vds-xs\:text-4xl { font-size: var(--vds-font-size-4xl); }
     .vds-xs\:text-5xl { font-size: var(--vds-font-size-5xl); }
     .vds-xs\:text-6xl { font-size: var(--vds-font-size-6xl); }
+    .vds-xs\:text-display { font-size: var(--vds-type-role-display-size); line-height: var(--vds-type-role-display-lineheight); font-weight: var(--vds-type-role-display-weight); }
+    .vds-xs\:text-metric { font-size: var(--vds-type-role-metric-size); line-height: var(--vds-type-role-metric-lineheight); font-weight: var(--vds-type-role-metric-weight); }
+    .vds-xs\:text-title { font-size: var(--vds-type-role-title-size); line-height: var(--vds-type-role-title-lineheight); font-weight: var(--vds-type-role-title-weight); }
+    .vds-xs\:text-body { font-size: var(--vds-type-role-body-size); line-height: var(--vds-type-role-body-lineheight); font-weight: var(--vds-type-role-body-weight); }
+    .vds-xs\:text-label { font-size: var(--vds-type-role-label-size); line-height: var(--vds-type-role-label-lineheight); font-weight: var(--vds-type-role-label-weight); }
+    .vds-xs\:text-caption { font-size: var(--vds-type-role-caption-size); line-height: var(--vds-type-role-caption-lineheight); font-weight: var(--vds-type-role-caption-weight); }
     .vds-xs\:text-left { text-align: left; }
     .vds-xs\:text-center { text-align: center; }
     .vds-xs\:text-right { text-align: right; }
@@ -2661,6 +2667,12 @@
     .vds-sm\:text-4xl { font-size: var(--vds-font-size-4xl); }
     .vds-sm\:text-5xl { font-size: var(--vds-font-size-5xl); }
     .vds-sm\:text-6xl { font-size: var(--vds-font-size-6xl); }
+    .vds-sm\:text-display { font-size: var(--vds-type-role-display-size); line-height: var(--vds-type-role-display-lineheight); font-weight: var(--vds-type-role-display-weight); }
+    .vds-sm\:text-metric { font-size: var(--vds-type-role-metric-size); line-height: var(--vds-type-role-metric-lineheight); font-weight: var(--vds-type-role-metric-weight); }
+    .vds-sm\:text-title { font-size: var(--vds-type-role-title-size); line-height: var(--vds-type-role-title-lineheight); font-weight: var(--vds-type-role-title-weight); }
+    .vds-sm\:text-body { font-size: var(--vds-type-role-body-size); line-height: var(--vds-type-role-body-lineheight); font-weight: var(--vds-type-role-body-weight); }
+    .vds-sm\:text-label { font-size: var(--vds-type-role-label-size); line-height: var(--vds-type-role-label-lineheight); font-weight: var(--vds-type-role-label-weight); }
+    .vds-sm\:text-caption { font-size: var(--vds-type-role-caption-size); line-height: var(--vds-type-role-caption-lineheight); font-weight: var(--vds-type-role-caption-weight); }
     .vds-sm\:text-left { text-align: left; }
     .vds-sm\:text-center { text-align: center; }
     .vds-sm\:text-right { text-align: right; }
@@ -3994,6 +4006,12 @@
     .vds-md\:text-4xl { font-size: var(--vds-font-size-4xl); }
     .vds-md\:text-5xl { font-size: var(--vds-font-size-5xl); }
     .vds-md\:text-6xl { font-size: var(--vds-font-size-6xl); }
+    .vds-md\:text-display { font-size: var(--vds-type-role-display-size); line-height: var(--vds-type-role-display-lineheight); font-weight: var(--vds-type-role-display-weight); }
+    .vds-md\:text-metric { font-size: var(--vds-type-role-metric-size); line-height: var(--vds-type-role-metric-lineheight); font-weight: var(--vds-type-role-metric-weight); }
+    .vds-md\:text-title { font-size: var(--vds-type-role-title-size); line-height: var(--vds-type-role-title-lineheight); font-weight: var(--vds-type-role-title-weight); }
+    .vds-md\:text-body { font-size: var(--vds-type-role-body-size); line-height: var(--vds-type-role-body-lineheight); font-weight: var(--vds-type-role-body-weight); }
+    .vds-md\:text-label { font-size: var(--vds-type-role-label-size); line-height: var(--vds-type-role-label-lineheight); font-weight: var(--vds-type-role-label-weight); }
+    .vds-md\:text-caption { font-size: var(--vds-type-role-caption-size); line-height: var(--vds-type-role-caption-lineheight); font-weight: var(--vds-type-role-caption-weight); }
     .vds-md\:text-left { text-align: left; }
     .vds-md\:text-center { text-align: center; }
     .vds-md\:text-right { text-align: right; }
@@ -5327,6 +5345,12 @@
     .vds-lg\:text-4xl { font-size: var(--vds-font-size-4xl); }
     .vds-lg\:text-5xl { font-size: var(--vds-font-size-5xl); }
     .vds-lg\:text-6xl { font-size: var(--vds-font-size-6xl); }
+    .vds-lg\:text-display { font-size: var(--vds-type-role-display-size); line-height: var(--vds-type-role-display-lineheight); font-weight: var(--vds-type-role-display-weight); }
+    .vds-lg\:text-metric { font-size: var(--vds-type-role-metric-size); line-height: var(--vds-type-role-metric-lineheight); font-weight: var(--vds-type-role-metric-weight); }
+    .vds-lg\:text-title { font-size: var(--vds-type-role-title-size); line-height: var(--vds-type-role-title-lineheight); font-weight: var(--vds-type-role-title-weight); }
+    .vds-lg\:text-body { font-size: var(--vds-type-role-body-size); line-height: var(--vds-type-role-body-lineheight); font-weight: var(--vds-type-role-body-weight); }
+    .vds-lg\:text-label { font-size: var(--vds-type-role-label-size); line-height: var(--vds-type-role-label-lineheight); font-weight: var(--vds-type-role-label-weight); }
+    .vds-lg\:text-caption { font-size: var(--vds-type-role-caption-size); line-height: var(--vds-type-role-caption-lineheight); font-weight: var(--vds-type-role-caption-weight); }
     .vds-lg\:text-left { text-align: left; }
     .vds-lg\:text-center { text-align: center; }
     .vds-lg\:text-right { text-align: right; }
@@ -6660,6 +6684,12 @@
     .vds-xl\:text-4xl { font-size: var(--vds-font-size-4xl); }
     .vds-xl\:text-5xl { font-size: var(--vds-font-size-5xl); }
     .vds-xl\:text-6xl { font-size: var(--vds-font-size-6xl); }
+    .vds-xl\:text-display { font-size: var(--vds-type-role-display-size); line-height: var(--vds-type-role-display-lineheight); font-weight: var(--vds-type-role-display-weight); }
+    .vds-xl\:text-metric { font-size: var(--vds-type-role-metric-size); line-height: var(--vds-type-role-metric-lineheight); font-weight: var(--vds-type-role-metric-weight); }
+    .vds-xl\:text-title { font-size: var(--vds-type-role-title-size); line-height: var(--vds-type-role-title-lineheight); font-weight: var(--vds-type-role-title-weight); }
+    .vds-xl\:text-body { font-size: var(--vds-type-role-body-size); line-height: var(--vds-type-role-body-lineheight); font-weight: var(--vds-type-role-body-weight); }
+    .vds-xl\:text-label { font-size: var(--vds-type-role-label-size); line-height: var(--vds-type-role-label-lineheight); font-weight: var(--vds-type-role-label-weight); }
+    .vds-xl\:text-caption { font-size: var(--vds-type-role-caption-size); line-height: var(--vds-type-role-caption-lineheight); font-weight: var(--vds-type-role-caption-weight); }
     .vds-xl\:text-left { text-align: left; }
     .vds-xl\:text-center { text-align: center; }
     .vds-xl\:text-right { text-align: right; }
@@ -7993,6 +8023,12 @@
     .vds-2xl\:text-4xl { font-size: var(--vds-font-size-4xl); }
     .vds-2xl\:text-5xl { font-size: var(--vds-font-size-5xl); }
     .vds-2xl\:text-6xl { font-size: var(--vds-font-size-6xl); }
+    .vds-2xl\:text-display { font-size: var(--vds-type-role-display-size); line-height: var(--vds-type-role-display-lineheight); font-weight: var(--vds-type-role-display-weight); }
+    .vds-2xl\:text-metric { font-size: var(--vds-type-role-metric-size); line-height: var(--vds-type-role-metric-lineheight); font-weight: var(--vds-type-role-metric-weight); }
+    .vds-2xl\:text-title { font-size: var(--vds-type-role-title-size); line-height: var(--vds-type-role-title-lineheight); font-weight: var(--vds-type-role-title-weight); }
+    .vds-2xl\:text-body { font-size: var(--vds-type-role-body-size); line-height: var(--vds-type-role-body-lineheight); font-weight: var(--vds-type-role-body-weight); }
+    .vds-2xl\:text-label { font-size: var(--vds-type-role-label-size); line-height: var(--vds-type-role-label-lineheight); font-weight: var(--vds-type-role-label-weight); }
+    .vds-2xl\:text-caption { font-size: var(--vds-type-role-caption-size); line-height: var(--vds-type-role-caption-lineheight); font-weight: var(--vds-type-role-caption-weight); }
     .vds-2xl\:text-left { text-align: left; }
     .vds-2xl\:text-center { text-align: center; }
     .vds-2xl\:text-right { text-align: right; }
@@ -9326,6 +9362,12 @@
     .vds-3xl\:text-4xl { font-size: var(--vds-font-size-4xl); }
     .vds-3xl\:text-5xl { font-size: var(--vds-font-size-5xl); }
     .vds-3xl\:text-6xl { font-size: var(--vds-font-size-6xl); }
+    .vds-3xl\:text-display { font-size: var(--vds-type-role-display-size); line-height: var(--vds-type-role-display-lineheight); font-weight: var(--vds-type-role-display-weight); }
+    .vds-3xl\:text-metric { font-size: var(--vds-type-role-metric-size); line-height: var(--vds-type-role-metric-lineheight); font-weight: var(--vds-type-role-metric-weight); }
+    .vds-3xl\:text-title { font-size: var(--vds-type-role-title-size); line-height: var(--vds-type-role-title-lineheight); font-weight: var(--vds-type-role-title-weight); }
+    .vds-3xl\:text-body { font-size: var(--vds-type-role-body-size); line-height: var(--vds-type-role-body-lineheight); font-weight: var(--vds-type-role-body-weight); }
+    .vds-3xl\:text-label { font-size: var(--vds-type-role-label-size); line-height: var(--vds-type-role-label-lineheight); font-weight: var(--vds-type-role-label-weight); }
+    .vds-3xl\:text-caption { font-size: var(--vds-type-role-caption-size); line-height: var(--vds-type-role-caption-lineheight); font-weight: var(--vds-type-role-caption-weight); }
     .vds-3xl\:text-left { text-align: left; }
     .vds-3xl\:text-center { text-align: center; }
     .vds-3xl\:text-right { text-align: right; }

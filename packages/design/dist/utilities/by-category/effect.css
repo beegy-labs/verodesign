@@ -66,6 +66,7 @@
   .vds-z-base { z-index: var(--vds-zindex-base); }
   .vds-z-raised { z-index: var(--vds-zindex-raised); }
   .vds-z-dropdown { z-index: var(--vds-zindex-dropdown); }
+  .vds-z-app-shell { z-index: var(--vds-zindex-app-shell); }
   .vds-z-sticky { z-index: var(--vds-zindex-sticky); }
   .vds-z-overlay { z-index: var(--vds-zindex-overlay); }
   .vds-z-modal { z-index: var(--vds-zindex-modal); }

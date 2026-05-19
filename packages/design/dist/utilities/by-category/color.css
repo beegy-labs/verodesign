@@ -1306,6 +1306,57 @@
   .vds-border-selected\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 90%, transparent); }
   .vds-border-selected\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-selected) 95%, transparent); }
   .vds-border-selected\/100 { border-color: var(--vds-theme-bg-selected); }
+  .vds-bg-disabled { background-color: var(--vds-theme-bg-disabled); }
+  .vds-text-disabled { color: var(--vds-theme-bg-disabled); }
+  .vds-border-disabled { border-color: var(--vds-theme-bg-disabled); }
+  .vds-bg-disabled\/0 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 0%, transparent); }
+  .vds-bg-disabled\/5 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 5%, transparent); }
+  .vds-bg-disabled\/10 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 10%, transparent); }
+  .vds-bg-disabled\/15 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 15%, transparent); }
+  .vds-bg-disabled\/20 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 20%, transparent); }
+  .vds-bg-disabled\/25 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 25%, transparent); }
+  .vds-bg-disabled\/30 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 30%, transparent); }
+  .vds-bg-disabled\/40 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 40%, transparent); }
+  .vds-bg-disabled\/50 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 50%, transparent); }
+  .vds-bg-disabled\/60 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 60%, transparent); }
+  .vds-bg-disabled\/70 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 70%, transparent); }
+  .vds-bg-disabled\/75 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 75%, transparent); }
+  .vds-bg-disabled\/80 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 80%, transparent); }
+  .vds-bg-disabled\/90 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 90%, transparent); }
+  .vds-bg-disabled\/95 { background-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 95%, transparent); }
+  .vds-bg-disabled\/100 { background-color: var(--vds-theme-bg-disabled); }
+  .vds-text-disabled\/0 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 0%, transparent); }
+  .vds-text-disabled\/5 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 5%, transparent); }
+  .vds-text-disabled\/10 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 10%, transparent); }
+  .vds-text-disabled\/15 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 15%, transparent); }
+  .vds-text-disabled\/20 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 20%, transparent); }
+  .vds-text-disabled\/25 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 25%, transparent); }
+  .vds-text-disabled\/30 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 30%, transparent); }
+  .vds-text-disabled\/40 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 40%, transparent); }
+  .vds-text-disabled\/50 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 50%, transparent); }
+  .vds-text-disabled\/60 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 60%, transparent); }
+  .vds-text-disabled\/70 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 70%, transparent); }
+  .vds-text-disabled\/75 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 75%, transparent); }
+  .vds-text-disabled\/80 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 80%, transparent); }
+  .vds-text-disabled\/90 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 90%, transparent); }
+  .vds-text-disabled\/95 { color: color-mix(in oklab, var(--vds-theme-bg-disabled) 95%, transparent); }
+  .vds-text-disabled\/100 { color: var(--vds-theme-bg-disabled); }
+  .vds-border-disabled\/0 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 0%, transparent); }
+  .vds-border-disabled\/5 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 5%, transparent); }
+  .vds-border-disabled\/10 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 10%, transparent); }
+  .vds-border-disabled\/15 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 15%, transparent); }
+  .vds-border-disabled\/20 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 20%, transparent); }
+  .vds-border-disabled\/25 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 25%, transparent); }
+  .vds-border-disabled\/30 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 30%, transparent); }
+  .vds-border-disabled\/40 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 40%, transparent); }
+  .vds-border-disabled\/50 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 50%, transparent); }
+  .vds-border-disabled\/60 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 60%, transparent); }
+  .vds-border-disabled\/70 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 70%, transparent); }
+  .vds-border-disabled\/75 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 75%, transparent); }
+  .vds-border-disabled\/80 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 80%, transparent); }
+  .vds-border-disabled\/90 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 90%, transparent); }
+  .vds-border-disabled\/95 { border-color: color-mix(in oklab, var(--vds-theme-bg-disabled) 95%, transparent); }
+  .vds-border-disabled\/100 { border-color: var(--vds-theme-bg-disabled); }
   .vds-text-fg { color: var(--vds-theme-text-primary); }
   .vds-bg-fg { background-color: var(--vds-theme-text-primary); }
   .vds-border-fg { border-color: var(--vds-theme-text-primary); }

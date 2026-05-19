@@ -24,8 +24,8 @@ export class VdsSelect extends VdsElement {
       width: 100%;
     }
     .label {
-      font-size: var(--vds-font-size-sm);
-      font-weight: var(--vds-font-weight-500);
+      font-size: var(--vds-type-role-label-size);
+      font-weight: var(--vds-type-role-label-weight);
       color: var(--vds-theme-text-primary);
     }
     .label[data-required]::after {
@@ -33,7 +33,7 @@ export class VdsSelect extends VdsElement {
       color: var(--vds-theme-destructive);
     }
     .helper {
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       color: var(--vds-theme-text-dim);
     }
     .helper[data-error] { color: var(--vds-theme-destructive); }
@@ -50,13 +50,13 @@ export class VdsSelect extends VdsElement {
       justify-content: space-between;
       gap: var(--vds-spacing-2);
       width: 100%;
-      min-height: 2.5rem;
+      min-height: calc(var(--vds-spacing-10));
       padding: var(--vds-spacing-2) var(--vds-spacing-3);
       background: var(--vds-theme-bg-card);
       color: var(--vds-theme-text-primary);
       border: var(--vds-border-width-1) solid var(--vds-theme-border-default);
       border-radius: var(--vds-radius-md);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       cursor: pointer;
       user-select: none;
       transition: border-color var(--vds-duration-fast);
@@ -70,7 +70,7 @@ export class VdsSelect extends VdsElement {
     }
 
     .placeholder { color: var(--vds-theme-text-faint); }
-    .chevron { width: 16px; height: 16px; flex-shrink: 0; transition: transform var(--vds-duration-fast); }
+    .chevron { width: var(--vds-spacing-4); height: var(--vds-spacing-4); flex-shrink: 0; transition: transform var(--vds-duration-fast); }
     :host([data-open]) .chevron { transform: rotate(180deg); }
 
     .listbox {
@@ -78,13 +78,13 @@ export class VdsSelect extends VdsElement {
       top: 100%;
       left: 0;
       right: 0;
-      margin-top: 4px;
+      margin-top: var(--vds-spacing-1);
       background: var(--vds-theme-bg-card);
       border: var(--vds-border-width-1) solid var(--vds-theme-border-default);
       border-radius: var(--vds-radius-md);
       box-shadow: var(--vds-shadow-3);
       z-index: var(--vds-zindex-popover, 500);
-      max-height: 240px;
+      max-height: calc(var(--vds-spacing-64) - var(--vds-spacing-4));
       overflow-y: auto;
       padding: var(--vds-spacing-1) 0;
       display: none;

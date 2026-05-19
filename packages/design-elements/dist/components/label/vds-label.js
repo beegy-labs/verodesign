@@ -1,9 +1,12 @@
-import { css as c, html as d } from "lit";
-import { property as n } from "lit/decorators.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as c } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as a } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
 import { VdsElement as p } from "../../base/vds-element.js";
-var u = Object.defineProperty, a = (i, r, e, s) => {
-  for (var t = void 0, o = i.length - 1, f; o >= 0; o--)
-    (f = i[o]) && (t = f(r, e, t) || t);
+import { css as f } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var u = Object.defineProperty, n = (i, r, e, s) => {
+  for (var t = void 0, o = i.length - 1, d; o >= 0; o--)
+    (d = i[o]) && (t = d(r, e, t) || t);
   return t && u(r, e, t), t;
 };
 class l extends p {
@@ -18,24 +21,24 @@ class l extends p {
     };
   }
   static {
-    this.styles = c`
+    this.styles = f`
     :host {
       display: inline-flex;
       align-items: center;
       gap: var(--vds-spacing-1);
       font-family: var(--vds-font-family-sans);
-      font-weight: var(--vds-font-weight-500);
+      font-weight: var(--vds-type-role-label-weight);
       color: var(--vds-theme-text-primary);
       cursor: pointer;
       user-select: none;
     }
-    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-type-role-label-size); }
+    :host([size="md"]) { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"]) { font-size: var(--vds-type-role-title-size); }
 
     .required {
       color: var(--vds-theme-destructive);
-      margin-left: 2px;
+      margin-left: calc(var(--vds-spacing-0_5) / 2);
     }
   `;
   }
@@ -43,20 +46,20 @@ class l extends p {
     super.connectedCallback(), this.addEventListener("click", this.handleClick);
   }
   render() {
-    return d`
+    return c`
       <slot></slot>
-      ${this.required ? d`<span class="required" aria-hidden="true">*</span>` : null}
+      ${this.required ? c`<span class="required" aria-hidden="true">*</span>` : null}
     `;
   }
 }
-a([
-  n({ type: String, reflect: !0 })
+n([
+  a({ type: String, reflect: !0 })
 ], l.prototype, "for");
-a([
-  n({ type: Boolean, reflect: !0 })
+n([
+  a({ type: Boolean, reflect: !0 })
 ], l.prototype, "required");
-a([
-  n({ type: String, reflect: !0 })
+n([
+  a({ type: String, reflect: !0 })
 ], l.prototype, "size");
 export {
   l as VdsLabel

@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { VdsTooltip } from '@verobee/design-elements/components/tooltip';
-import '@verobee/design-elements/define/tooltip';
-export declare const Tooltip: import("@lit/react").ReactWebComponent<VdsTooltip, {}>;
-export type TooltipProps = React.ComponentProps<typeof Tooltip>;
+type Placement = 'top' | 'right' | 'bottom' | 'left';
+export interface TooltipProps extends React.HTMLAttributes<HTMLDivElement> {
+    placement?: Placement;
+    delay?: number;
+    disabled?: boolean;
+}
+export declare const Tooltip: React.ForwardRefExoticComponent<TooltipProps & React.RefAttributes<HTMLDivElement>>;
+export {};

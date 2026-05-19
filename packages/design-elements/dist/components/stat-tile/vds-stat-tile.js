@@ -1,17 +1,20 @@
-import { css as d, html as v } from "lit";
-import { property as t } from "lit/decorators.js";
-import { VdsElement as p } from "../../base/vds-element.js";
-var h = Object.defineProperty, s = (r, o, i, c) => {
-  for (var e = void 0, n = r.length - 1, l; n >= 0; n--)
-    (l = r[n]) && (e = l(o, i, e) || e);
-  return e && h(o, i, e), e;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as d } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as t } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as v } from "../../base/vds-element.js";
+import { css as p } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var c = Object.defineProperty, a = (r, i, n, h) => {
+  for (var e = void 0, o = r.length - 1, l; o >= 0; o--)
+    (l = r[o]) && (e = l(i, n, e) || e);
+  return e && c(i, n, e), e;
 };
-class a extends p {
+class s extends v {
   constructor() {
     super(...arguments), this.label = "", this.value = "", this.deltaTone = "neutral", this.tone = "default";
   }
   static {
-    this.styles = d`
+    this.styles = p`
     :host {
       display: flex;
       flex-direction: column;
@@ -30,17 +33,17 @@ class a extends p {
       gap: var(--vds-spacing-2);
     }
     .label {
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       color: var(--vds-theme-text-secondary);
     }
     .icon { color: var(--vds-theme-text-faint); display: flex; }
-    .icon ::slotted(*) { width: 1rem; height: 1rem; }
+    .icon ::slotted(*) { width: var(--vds-spacing-4); height: var(--vds-spacing-4); }
 
     .value {
-      font-size: var(--vds-font-size-2xl);
-      font-weight: var(--vds-font-weight-700);
+      font-size: var(--vds-type-role-metric-size);
+      font-weight: var(--vds-type-role-metric-weight);
       color: var(--vds-theme-text-bright);
-      line-height: var(--vds-font-lineheight-tight);
+      line-height: var(--vds-type-role-metric-lineheight);
       font-variant-numeric: tabular-nums;
     }
     :host([tone="success"]) .value { color: var(--vds-theme-success); }
@@ -54,8 +57,8 @@ class a extends p {
       flex-wrap: wrap;
     }
     .delta {
-      font-size: var(--vds-font-size-xs);
-      font-weight: var(--vds-font-weight-500);
+      font-size: var(--vds-type-role-caption-size);
+      font-weight: var(--vds-type-role-label-weight);
     }
     :host([delta-tone="positive"]) .delta { color: var(--vds-theme-success); }
     :host([delta-tone="negative"]) .delta { color: var(--vds-theme-destructive); }
@@ -63,7 +66,7 @@ class a extends p {
     .delta:empty { display: none; }
 
     .hint {
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       color: var(--vds-theme-text-secondary);
     }
     .hint:empty { display: none; }
@@ -71,7 +74,7 @@ class a extends p {
   `;
   }
   render() {
-    return v`
+    return d`
       <div class="header">
         <span class="label">${this.label}</span>
         <span class="icon"><slot name="icon"></slot></span>
@@ -84,24 +87,24 @@ class a extends p {
     `;
   }
 }
-s([
+a([
   t({ type: String })
-], a.prototype, "label");
-s([
+], s.prototype, "label");
+a([
   t({ type: String })
-], a.prototype, "value");
-s([
+], s.prototype, "value");
+a([
   t({ type: String })
-], a.prototype, "delta");
-s([
+], s.prototype, "delta");
+a([
   t({ type: String })
-], a.prototype, "hint");
-s([
+], s.prototype, "hint");
+a([
   t({ type: String, reflect: !0, attribute: "delta-tone" })
-], a.prototype, "deltaTone");
-s([
+], s.prototype, "deltaTone");
+a([
   t({ type: String, reflect: !0 })
-], a.prototype, "tone");
+], s.prototype, "tone");
 export {
-  a as VdsStatTile
+  s as VdsStatTile
 };

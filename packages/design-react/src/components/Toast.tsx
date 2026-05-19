@@ -1,22 +1,16 @@
 import * as React from 'react';
-import { createComponent } from '@lit/react';
-import { VdsToast, VdsToastGroup } from '@verobee/design-elements/components/toast';
-import '@verobee/design-elements/define/toast';
+import { cx, focusRing } from './_internal.js';
 
-export const Toast = /*#__PURE__*/ createComponent({
-  tagName: 'vds-toast',
-  elementClass: VdsToast,
-  react: React,
-  events: {
-    onDismiss: 'vds-dismiss',
-  },
+type Tone = 'neutral' | 'success' | 'warning' | 'error' | 'info';
+type Placement = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
+export interface ToastProps extends React.HTMLAttributes<HTMLDivElement> { toastTitle?: string; message?: string; tone?: Tone; duration?: number; dismissible?: boolean; onDismiss?: ((event: CustomEvent<void>) => void) | undefined; }
+export interface ToastGroupProps extends React.HTMLAttributes<HTMLDivElement> { placement?: Placement; max?: number; }
+export const Toast = React.forwardRef<HTMLDivElement, ToastProps>(function Toast({ toastTitle, message, tone = 'neutral', duration = 5000, dismissible = true, onDismiss, children, style, ...rest }, ref) {
+  React.useEffect(() => { if (duration > 0) { const id = window.setTimeout(() => onDismiss?.(new CustomEvent('vds-dismiss')), duration); return () => clearTimeout(id); } }, [duration, onDismiss]);
+  const borderTone = tone === 'success' ? 'var(--vds-theme-success)' : tone === 'warning' ? 'var(--vds-theme-warning)' : tone === 'error' ? 'var(--vds-theme-error)' : tone === 'info' ? 'var(--vds-theme-info)' : undefined;
+  return <div {...rest} ref={ref} role={tone === 'error' ? 'alert' : 'status'} aria-live={tone === 'error' ? 'assertive' : 'polite'} aria-atomic="true" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--vds-spacing-3)', padding: 'var(--vds-spacing-3) var(--vds-spacing-4)', background: 'var(--vds-theme-bg-elevated)', color: 'var(--vds-theme-text-primary)', border: 'var(--vds-border-width-1) solid var(--vds-theme-border-subtle)', borderLeft: borderTone ? `4px solid ${borderTone}` : undefined, borderRadius: 'var(--vds-radius-md)', boxShadow: 'var(--vds-shadow-3)', fontFamily: 'var(--vds-font-family-sans)', fontSize: 'var(--vds-type-role-label-size)', pointerEvents: 'auto', maxWidth: '24rem', ...style }}><div style={{ flex: 1, minWidth: 0 }}>{toastTitle ? <div style={{ fontWeight: 'var(--vds-font-weight-600)', marginBottom: 'var(--vds-spacing-0_5)' }}>{toastTitle}</div> : null}{message ? <div style={{ color: 'var(--vds-theme-text-secondary)' }}>{message}</div> : children}</div>{dismissible ? <button type="button" aria-label="Dismiss" onClick={() => onDismiss?.(new CustomEvent('vds-dismiss'))} style={{ all: 'unset', cursor: 'pointer', color: 'var(--vds-theme-text-dim)', padding: 'var(--vds-spacing-0_5)', borderRadius: 'var(--vds-radius-sm)', flexShrink: 0, ...focusRing }}>✕</button> : null}</div>;
 });
-
-export const ToastGroup = /*#__PURE__*/ createComponent({
-  tagName: 'vds-toast-group',
-  elementClass: VdsToastGroup,
-  react: React,
+export const ToastGroup = React.forwardRef<HTMLDivElement, ToastGroupProps>(function ToastGroup({ placement = 'bottom-right', style, ...rest }, ref) {
+  const positions: Record<Placement, React.CSSProperties> = { 'top-right': { top: 0, right: 0 }, 'top-left': { top: 0, left: 0 }, 'bottom-right': { bottom: 0, right: 0 }, 'bottom-left': { bottom: 0, left: 0 }, 'top-center': { top: 0, left: '50%', transform: 'translateX(-50%)' }, 'bottom-center': { bottom: 0, left: '50%', transform: 'translateX(-50%)' } };
+  return <div {...rest} ref={ref} role="region" aria-label="Notifications" style={{ position: 'fixed', zIndex: 'var(--vds-zindex-toast)', display: 'flex', flexDirection: 'column', gap: 'var(--vds-spacing-2)', padding: 'var(--vds-spacing-4)', pointerEvents: 'none', ...positions[placement], ...style }} />;
 });
-
-export type ToastProps = React.ComponentProps<typeof Toast>;
-export type ToastGroupProps = React.ComponentProps<typeof ToastGroup>;

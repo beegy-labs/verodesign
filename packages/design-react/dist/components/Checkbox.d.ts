@@ -1,7 +1,16 @@
 import * as React from 'react';
-import { VdsCheckbox } from '@verobee/design-elements/components/checkbox';
-import '@verobee/design-elements/define/checkbox';
-export declare const Checkbox: import("@lit/react").ReactWebComponent<VdsCheckbox, {
-    onChange: string;
-}>;
-export type CheckboxProps = React.ComponentProps<typeof Checkbox>;
+type CheckboxSize = 'sm' | 'md' | 'lg';
+export interface CheckboxProps extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'onChange'> {
+    checked?: boolean;
+    indeterminate?: boolean;
+    disabled?: boolean;
+    required?: boolean;
+    name?: string;
+    value?: string;
+    size?: CheckboxSize;
+    onChange?: ((event: CustomEvent<{
+        checked: boolean;
+    }>) => void) | React.ChangeEventHandler<HTMLInputElement>;
+}
+export declare const Checkbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLLabelElement>>;
+export {};

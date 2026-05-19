@@ -7,11 +7,11 @@ import { contrastRatio } from '../util/color.mjs';
 const DIST = new URL('../../dist/', import.meta.url).pathname;
 
 const PAIRS = [
-  { fg: 'theme.text.primary', bg: 'theme.bg.page', required: 'AA' },
-  { fg: 'theme.text.primary', bg: 'theme.bg.card', required: 'AA' },
-  { fg: 'theme.text.secondary', bg: 'theme.bg.page', required: 'AA' },
+  { fg: 'theme.text.primary', bg: 'theme.bg.page', required: 'AAA' },
+  { fg: 'theme.text.primary', bg: 'theme.bg.card', required: 'AAA' },
+  { fg: 'theme.text.secondary', bg: 'theme.bg.page', required: 'AAA' },
   { fg: 'theme.text.dim', bg: 'theme.bg.page', required: 'AA' },
-  { fg: 'theme.text.bright', bg: 'theme.bg.page', required: 'AAA' },
+  { fg: 'theme.text.bright', bg: 'theme.bg.page', required: 'AA' },
   { fg: 'theme.primary-fg', bg: 'theme.primary', required: 'AA' },
   { fg: 'theme.accent-fg', bg: 'theme.accent', required: 'AA' },
   { fg: 'theme.destructive-fg', bg: 'theme.destructive', required: 'AA' },

@@ -1,11 +1,24 @@
 import * as React from 'react';
-import { VdsTabs, VdsTab, VdsTabPanel } from '@verobee/design-elements/components/tabs';
-import '@verobee/design-elements/define/tabs';
-export declare const Tabs: import("@lit/react").ReactWebComponent<VdsTabs, {
-    onChange: string;
-}>;
-export declare const Tab: import("@lit/react").ReactWebComponent<VdsTab, {}>;
-export declare const TabPanel: import("@lit/react").ReactWebComponent<VdsTabPanel, {}>;
-export type TabsProps = React.ComponentProps<typeof Tabs>;
-export type TabProps = React.ComponentProps<typeof Tab>;
-export type TabPanelProps = React.ComponentProps<typeof TabPanel>;
+type TabsOrientation = 'horizontal' | 'vertical';
+type TabsActivation = 'auto' | 'manual';
+type TabsVariant = 'underline' | 'segmented';
+export interface TabsProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+    value?: string;
+    activation?: TabsActivation;
+    orientation?: TabsOrientation;
+    variant?: TabsVariant;
+    onChange?: ((event: CustomEvent<{
+        value: string;
+    }>) => void) | undefined;
+}
+export interface TabProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    value?: string;
+    disabled?: boolean;
+}
+export interface TabPanelProps extends React.HTMLAttributes<HTMLDivElement> {
+    value?: string;
+}
+export declare const Tabs: React.ForwardRefExoticComponent<TabsProps & React.RefAttributes<HTMLDivElement>>;
+export declare const Tab: React.ForwardRefExoticComponent<TabProps & React.RefAttributes<HTMLButtonElement>>;
+export declare const TabPanel: React.ForwardRefExoticComponent<TabPanelProps & React.RefAttributes<HTMLDivElement>>;
+export {};

@@ -1,9 +1,16 @@
 import * as React from 'react';
-import { VdsMenu, VdsMenuItem } from '@verobee/design-elements/components/menu';
-import '@verobee/design-elements/define/menu';
-export declare const Menu: import("@lit/react").ReactWebComponent<VdsMenu, {
-    onSelect: string;
-}>;
-export declare const MenuItem: import("@lit/react").ReactWebComponent<VdsMenuItem, {}>;
-export type MenuProps = React.ComponentProps<typeof Menu>;
-export type MenuItemProps = React.ComponentProps<typeof MenuItem>;
+export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onSelect'> {
+    open?: boolean;
+    placement?: 'bottom-start' | 'bottom-end';
+    onSelect?: ((event: CustomEvent<{
+        value: string;
+    }>) => void) | undefined;
+}
+export interface MenuItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    value?: string;
+    disabled?: boolean;
+    tone?: 'default' | 'destructive';
+    'data-tone'?: 'default' | 'destructive';
+}
+export declare const Menu: React.ForwardRefExoticComponent<MenuProps & React.RefAttributes<HTMLDivElement>>;
+export declare const MenuItem: React.ForwardRefExoticComponent<MenuItemProps & React.RefAttributes<HTMLButtonElement>>;

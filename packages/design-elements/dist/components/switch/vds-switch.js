@@ -1,13 +1,16 @@
-import { css as l, html as c } from "lit";
-import { property as s } from "lit/decorators.js";
-import { setRole as p, setAriaProperty as o } from "../../utils/attribute-mirror.js";
-import { VdsElement as u } from "../../base/vds-element.js";
-var m = Object.defineProperty, i = (a, t, d, f) => {
-  for (var e = void 0, h = a.length - 1, n; h >= 0; h--)
-    (n = a[h]) && (e = n(t, d, e) || e);
-  return e && m(t, d, e), e;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as l } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as e } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { setRole as n, setAriaProperty as d } from "../../utils/attribute-mirror.js";
+import { VdsElement as p } from "../../base/vds-element.js";
+import { css as v } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var u = Object.defineProperty, a = (r, t, h, m) => {
+  for (var s = void 0, c = r.length - 1, o; c >= 0; c--)
+    (o = r[c]) && (s = o(t, h, s) || s);
+  return s && u(t, h, s), s;
 };
-class r extends u {
+class i extends p {
   constructor() {
     super(), this.checked = !1, this.disabled = !1, this.required = !1, this.value = "on", this.size = "md", this.handleClick = (t) => {
       if (this.disabled) {
@@ -17,13 +20,13 @@ class r extends u {
       this.toggle();
     }, this.handleKeydown = (t) => {
       (t.key === " " || t.key === "Enter") && (t.preventDefault(), this.disabled || this.toggle());
-    }, this.internals = this.attachInternals(), p(this, this.internals, "switch"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
+    }, this.internals = this.attachInternals(), n(this, this.internals, "switch"), this.addEventListener("click", this.handleClick), this.addEventListener("keydown", this.handleKeydown);
   }
   static {
     this.formAssociated = !0;
   }
   static {
-    this.styles = l`
+    this.styles = v`
     :host {
       display: inline-flex;
       align-items: center;
@@ -34,9 +37,9 @@ class r extends u {
       font-family: var(--vds-font-family-sans);
     }
     :host([disabled]) { cursor: not-allowed; opacity: 0.5; }
-    :host([size="sm"]) { font-size: var(--vds-font-size-sm); }
-    :host([size="md"]) { font-size: var(--vds-font-size-base); }
-    :host([size="lg"]) { font-size: var(--vds-font-size-lg); }
+    :host([size="sm"]) { font-size: var(--vds-type-role-label-size); }
+    :host([size="md"]) { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"]) { font-size: var(--vds-type-role-title-size); }
 
     .track {
       position: relative;
@@ -45,28 +48,28 @@ class r extends u {
       border-radius: 999px;
       transition: background var(--vds-duration-fast);
     }
-    :host([size="sm"]) .track { width: 28px; height: 16px; }
-    :host([size="md"]) .track { width: 36px; height: 20px; }
-    :host([size="lg"]) .track { width: 44px; height: 24px; }
+    :host([size="sm"]) .track { width: calc(var(--vds-spacing-7)); height: calc(var(--vds-spacing-4)); }
+    :host([size="md"]) .track { width: calc(var(--vds-spacing-9)); height: calc(var(--vds-spacing-5)); }
+    :host([size="lg"]) .track { width: calc(var(--vds-spacing-11)); height: calc(var(--vds-spacing-6)); }
 
     :host([checked]) .track { background: var(--vds-theme-primary); }
 
     .thumb {
       position: absolute;
-      top: 2px;
-      left: 2px;
+      top: calc(var(--vds-spacing-0_5) / 2);
+      left: calc(var(--vds-spacing-0_5) / 2);
       background: var(--vds-theme-bg-card);
       border-radius: 999px;
       transition: transform var(--vds-duration-fast);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      box-shadow: var(--vds-shadow-1);
     }
-    :host([size="sm"]) .thumb { width: 12px; height: 12px; }
-    :host([size="md"]) .thumb { width: 16px; height: 16px; }
-    :host([size="lg"]) .thumb { width: 20px; height: 20px; }
+    :host([size="sm"]) .thumb { width: calc(var(--vds-spacing-3)); height: calc(var(--vds-spacing-3)); }
+    :host([size="md"]) .thumb { width: calc(var(--vds-spacing-4)); height: calc(var(--vds-spacing-4)); }
+    :host([size="lg"]) .thumb { width: calc(var(--vds-spacing-5)); height: calc(var(--vds-spacing-5)); }
 
-    :host([size="sm"][checked]) .thumb { transform: translateX(12px); }
-    :host([size="md"][checked]) .thumb { transform: translateX(16px); }
-    :host([size="lg"][checked]) .thumb { transform: translateX(20px); }
+    :host([size="sm"][checked]) .thumb { transform: translateX(calc(var(--vds-spacing-3))); }
+    :host([size="md"][checked]) .thumb { transform: translateX(calc(var(--vds-spacing-4))); }
+    :host([size="lg"][checked]) .thumb { transform: translateX(calc(var(--vds-spacing-5))); }
 
     :host(:focus-visible) .track {
       outline: 2px solid var(--vds-theme-border-focus);
@@ -81,7 +84,7 @@ class r extends u {
     super.updated(t), (t.has("checked") || t.has("disabled") || t.has("required")) && (this.syncAria(), this.syncFormValue()), t.has("disabled") && (this.tabIndex = this.disabled ? -1 : 0);
   }
   syncAria() {
-    o(this, this.internals, "ariaChecked", this.checked ? "true" : "false"), o(this, this.internals, "ariaDisabled", this.disabled), o(this, this.internals, "ariaRequired", this.required);
+    d(this, this.internals, "ariaChecked", this.checked ? "true" : "false"), d(this, this.internals, "ariaDisabled", this.disabled), d(this, this.internals, "ariaRequired", this.required);
   }
   syncFormValue() {
     this.internals.setFormValue(this.checked ? this.value : null);
@@ -90,7 +93,7 @@ class r extends u {
     this.checked = !this.checked, this.emit("change", { checked: this.checked });
   }
   render() {
-    return c`
+    return l`
       <span class="track" part="track" aria-hidden="true">
         <span class="thumb" part="thumb"></span>
       </span>
@@ -98,24 +101,24 @@ class r extends u {
     `;
   }
 }
-i([
-  s({ type: Boolean, reflect: !0 })
-], r.prototype, "checked");
-i([
-  s({ type: Boolean, reflect: !0 })
-], r.prototype, "disabled");
-i([
-  s({ type: Boolean, reflect: !0 })
-], r.prototype, "required");
-i([
-  s({ type: String })
-], r.prototype, "name");
-i([
-  s({ type: String })
-], r.prototype, "value");
-i([
-  s({ type: String, reflect: !0 })
-], r.prototype, "size");
+a([
+  e({ type: Boolean, reflect: !0 })
+], i.prototype, "checked");
+a([
+  e({ type: Boolean, reflect: !0 })
+], i.prototype, "disabled");
+a([
+  e({ type: Boolean, reflect: !0 })
+], i.prototype, "required");
+a([
+  e({ type: String })
+], i.prototype, "name");
+a([
+  e({ type: String })
+], i.prototype, "value");
+a([
+  e({ type: String, reflect: !0 })
+], i.prototype, "size");
 export {
-  r as VdsSwitch
+  i as VdsSwitch
 };

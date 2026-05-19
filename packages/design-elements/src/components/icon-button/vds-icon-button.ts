@@ -1,4 +1,4 @@
-import { html, css, type PropertyValues } from 'lit';
+import { html, css, unsafeCSS, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { setAriaProperty, setRole } from '../../utils/attribute-mirror.js';
 import { focusRing, srOnly } from '../../styles/shared.js';
@@ -7,6 +7,9 @@ import { VdsElement } from '../../base/vds-element.js';
 type Variant = 'ghost' | 'soft' | 'outline';
 type Tone = 'neutral' | 'primary' | 'destructive';
 type Size = 'sm' | 'md' | 'lg';
+
+// 44px coarse-pointer minimum touch target from the touch-safe compact button spec.
+const TOUCH_TARGET_MIN_SIZE = '2.75rem';
 
 /**
  * <vds-icon-button> — square icon-only button. WAI-ARIA AP 1.2 button pattern.
@@ -31,6 +34,7 @@ export class VdsIconButton extends VdsElement {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         cursor: pointer;
         user-select: none;
         border-radius: var(--vds-radius-md);
@@ -38,13 +42,25 @@ export class VdsIconButton extends VdsElement {
                     color var(--vds-duration-fast) var(--vds-easing-ease-out);
         color: var(--vds-theme-text-secondary);
       }
+
+      @media (pointer: coarse) {
+        .button::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: max(100%, ${unsafeCSS(TOUCH_TARGET_MIN_SIZE)});
+          height: max(100%, ${unsafeCSS(TOUCH_TARGET_MIN_SIZE)});
+          transform: translate(-50%, -50%);
+        }
+      }
       .button ::slotted(*) {
         width: 1em; height: 1em;
       }
 
-      :host([size="sm"]) .button { padding: var(--vds-spacing-1);   font-size: 0.875rem; }
-      :host([size="md"]) .button { padding: var(--vds-spacing-1_5); font-size: 1rem;     }
-      :host([size="lg"]) .button { padding: var(--vds-spacing-2);   font-size: 1.125rem; }
+      :host([size="sm"]) .button { padding: var(--vds-spacing-1);   font-size: var(--vds-type-role-label-size); }
+      :host([size="md"]) .button { padding: var(--vds-spacing-1_5); font-size: var(--vds-type-role-body-size); }
+      :host([size="lg"]) .button { padding: var(--vds-spacing-2);   font-size: var(--vds-type-role-title-size); }
 
       :host([variant="ghost"][tone="neutral"]:hover) .button {
         background: var(--vds-theme-bg-hover);
@@ -93,7 +109,6 @@ export class VdsIconButton extends VdsElement {
   constructor() {
     super();
     this.internals = this.attachInternals();
-    setRole(this, this.internals, 'button');
     this.addEventListener('click', this.handleClick);
     this.addEventListener('keydown', this.handleKeydown);
   }
@@ -113,6 +128,7 @@ export class VdsIconButton extends VdsElement {
 
   connectedCallback(): void {
     super.connectedCallback();
+    setRole(this, this.internals, 'button');
     if (!this.hasAttribute('tabindex')) this.tabIndex = 0;
   }
 

@@ -1,17 +1,20 @@
-import { css as n, html as h } from "lit";
-import { property as s } from "lit/decorators.js";
-import { VdsElement as l } from "../../base/vds-element.js";
-var b = Object.defineProperty, v = (r, t, a, p) => {
-  for (var e = void 0, o = r.length - 1, d; o >= 0; o--)
-    (d = r[o]) && (e = d(t, a, e) || e);
-  return e && b(t, a, e), e;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as n } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as d } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as h } from "../../base/vds-element.js";
+import { css as l } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var p = Object.defineProperty, v = (o, t, a, b) => {
+  for (var r = void 0, e = o.length - 1, s; e >= 0; e--)
+    (s = o[e]) && (r = s(t, a, r) || r);
+  return r && p(t, a, r), r;
 };
-class i extends l {
+class i extends h {
   constructor() {
     super(...arguments), this.variant = "surface", this.elevation = "1";
   }
   static {
-    this.styles = n`
+    this.styles = l`
     :host {
       display: block;
       background: var(--vds-theme-bg-card);
@@ -59,7 +62,7 @@ class i extends l {
   `;
   }
   render() {
-    return h`
+    return n`
       <div class="header"><slot name="header"></slot></div>
       <div class="body"><slot></slot></div>
       <div class="footer"><slot name="footer"></slot></div>
@@ -67,10 +70,10 @@ class i extends l {
   }
 }
 v([
-  s({ type: String, reflect: !0 })
+  d({ type: String, reflect: !0 })
 ], i.prototype, "variant");
 v([
-  s({ type: String, reflect: !0 })
+  d({ type: String, reflect: !0 })
 ], i.prototype, "elevation");
 export {
   i as VdsCard

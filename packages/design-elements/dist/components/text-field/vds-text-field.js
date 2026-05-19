@@ -1,14 +1,19 @@
-import { css as p, html as d } from "lit";
-import { property as s, query as u, state as v } from "lit/decorators.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as d } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as s } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { state as p } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/state.js";
+import { query as u } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/query.js";
 import { setAriaProperty as n } from "../../utils/attribute-mirror.js";
-import { focusRing as c, srOnly as m } from "../../styles/shared.js";
-import { VdsElement as f } from "../../base/vds-element.js";
-var y = Object.defineProperty, e = (l, t, r, g) => {
+import { focusRing as v, srOnly as c } from "../../styles/shared.js";
+import { VdsElement as m } from "../../base/vds-element.js";
+import { css as y } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var f = Object.defineProperty, e = (l, t, r, g) => {
   for (var a = void 0, o = l.length - 1, h; o >= 0; o--)
     (h = l[o]) && (a = h(t, r, a) || a);
-  return a && y(t, r, a), a;
+  return a && f(t, r, a), a;
 };
-class i extends f {
+class i extends m {
   constructor() {
     super(), this.value = "", this.type = "text", this.size = "md", this.disabled = !1, this.required = !1, this.readonly = !1, this._touched = !1, this._labelId = this.createId("vds-tf-label"), this._helperId = this.createId("vds-tf-helper"), this.handleInput = (t) => {
       this.value = t.target.value, this.emit("vds-input", { value: this.value });
@@ -23,9 +28,9 @@ class i extends f {
   }
   static {
     this.styles = [
+      v,
       c,
-      m,
-      p`
+      y`
       :host {
         display: inline-flex;
         flex-direction: column;
@@ -38,8 +43,8 @@ class i extends f {
       :host([hidden]) { display: none; }
 
       .label {
-        font-size: var(--vds-font-size-sm);
-        font-weight: var(--vds-font-weight-500);
+        font-size: var(--vds-type-role-label-size);
+        font-weight: var(--vds-type-role-label-weight);
         color: var(--vds-theme-text-primary);
       }
       .label[data-required]::after {
@@ -59,9 +64,9 @@ class i extends f {
                     box-shadow var(--vds-duration-fast) var(--vds-easing-ease-out);
       }
 
-      :host([size="sm"]) .field { padding: var(--vds-spacing-1_5) var(--vds-spacing-2); min-height: 2rem; }
-      :host([size="md"]) .field { padding: var(--vds-spacing-2) var(--vds-spacing-3); min-height: 2.5rem; }
-      :host([size="lg"]) .field { padding: var(--vds-spacing-3) var(--vds-spacing-4); min-height: 3rem; }
+      :host([size="sm"]) .field { padding: var(--vds-spacing-1_5) var(--vds-spacing-2); min-height: calc(var(--vds-spacing-8)); }
+      :host([size="md"]) .field { padding: var(--vds-spacing-2) var(--vds-spacing-3); min-height: calc(var(--vds-spacing-10)); }
+      :host([size="lg"]) .field { padding: var(--vds-spacing-3) var(--vds-spacing-4); min-height: calc(var(--vds-spacing-12)); }
 
       .input {
         all: unset;
@@ -73,9 +78,9 @@ class i extends f {
       }
       .input::placeholder { color: var(--vds-theme-text-faint); }
 
-      :host([size="sm"]) .input { font-size: var(--vds-font-size-sm); }
-      :host([size="md"]) .input { font-size: var(--vds-font-size-base); }
-      :host([size="lg"]) .input { font-size: var(--vds-font-size-lg); }
+      :host([size="sm"]) .input { font-size: var(--vds-type-role-label-size); }
+      :host([size="md"]) .input { font-size: var(--vds-type-role-body-size); }
+      :host([size="lg"]) .input { font-size: var(--vds-type-role-title-size); }
 
       :host(:focus-within) .field {
         border-color: var(--vds-theme-border-focus);
@@ -96,7 +101,7 @@ class i extends f {
       :host([disabled]) .input { cursor: not-allowed; }
 
       .helper {
-        font-size: var(--vds-font-size-xs);
+        font-size: var(--vds-type-role-caption-size);
         color: var(--vds-theme-text-dim);
       }
       .helper[data-error] {
@@ -242,7 +247,7 @@ e([
   u(".input")
 ], i.prototype, "inputEl");
 e([
-  v()
+  p()
 ], i.prototype, "_touched");
 export {
   i as VdsTextField

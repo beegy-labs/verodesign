@@ -31,17 +31,17 @@ export class VdsStatTile extends VdsElement {
       gap: var(--vds-spacing-2);
     }
     .label {
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       color: var(--vds-theme-text-secondary);
     }
     .icon { color: var(--vds-theme-text-faint); display: flex; }
-    .icon ::slotted(*) { width: 1rem; height: 1rem; }
+    .icon ::slotted(*) { width: var(--vds-spacing-4); height: var(--vds-spacing-4); }
 
     .value {
-      font-size: var(--vds-font-size-2xl);
-      font-weight: var(--vds-font-weight-700);
+      font-size: var(--vds-type-role-metric-size);
+      font-weight: var(--vds-type-role-metric-weight);
       color: var(--vds-theme-text-bright);
-      line-height: var(--vds-font-lineheight-tight);
+      line-height: var(--vds-type-role-metric-lineheight);
       font-variant-numeric: tabular-nums;
     }
     :host([tone="success"]) .value { color: var(--vds-theme-success); }
@@ -55,8 +55,8 @@ export class VdsStatTile extends VdsElement {
       flex-wrap: wrap;
     }
     .delta {
-      font-size: var(--vds-font-size-xs);
-      font-weight: var(--vds-font-weight-500);
+      font-size: var(--vds-type-role-caption-size);
+      font-weight: var(--vds-type-role-label-weight);
     }
     :host([delta-tone="positive"]) .delta { color: var(--vds-theme-success); }
     :host([delta-tone="negative"]) .delta { color: var(--vds-theme-destructive); }
@@ -64,7 +64,7 @@ export class VdsStatTile extends VdsElement {
     .delta:empty { display: none; }
 
     .hint {
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       color: var(--vds-theme-text-secondary);
     }
     .hint:empty { display: none; }

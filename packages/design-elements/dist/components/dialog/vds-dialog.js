@@ -1,23 +1,27 @@
-import { css as p, html as c } from "lit";
-import { property as i, query as h } from "lit/decorators.js";
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as p } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as i } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { query as c } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/query.js";
 import { setRole as v, setAriaProperty as d } from "../../utils/attribute-mirror.js";
-import { FocusTrap as m } from "../../utils/focus-trap.js";
-import { VdsElement as u } from "../../base/vds-element.js";
-var f = Object.defineProperty, a = (r, e, o, b) => {
-  for (var t = void 0, n = r.length - 1, l; n >= 0; n--)
-    (l = r[n]) && (t = l(e, o, t) || t);
-  return t && f(e, o, t), t;
+import { FocusTrap as h } from "../../utils/focus-trap.js";
+import { VdsElement as m } from "../../base/vds-element.js";
+import { css as u } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var f = Object.defineProperty, t = (o, e, r, b) => {
+  for (var s = void 0, n = o.length - 1, l; n >= 0; n--)
+    (l = o[n]) && (s = l(e, r, s) || s);
+  return s && f(e, r, s), s;
 };
-class s extends u {
+class a extends m {
   constructor() {
-    super(), this.open = !1, this.size = "md", this.closeOnBackdrop = !0, this.closeOnEscape = !0, this.ariaLabelText = null, this._titleId = this.createId("vds-dialog-title"), this.handleEscape = (e) => {
+    super(), this.open = !1, this.size = "md", this.placement = "center", this.closeOnBackdrop = !0, this.closeOnEscape = !0, this.ariaLabelText = null, this._titleId = this.createId("vds-dialog-title"), this.handleEscape = (e) => {
       !this.open || !this.closeOnEscape || e.key === "Escape" && (e.preventDefault(), this.open = !1);
     }, this.handleBackdropClick = (e) => {
       this.closeOnBackdrop && e.target === e.currentTarget && (this.open = !1);
     }, this.internals = this.attachInternals(), v(this, this.internals, "dialog"), d(this, this.internals, "ariaModal", !0);
   }
   static {
-    this.styles = p`
+    this.styles = u`
     :host {
       display: contents;
     }
@@ -25,7 +29,7 @@ class s extends u {
     .backdrop {
       position: fixed;
       inset: 0;
-      background: oklch(0% 0 0 / 0.5);
+      background: var(--vds-theme-scrim, color-mix(in oklab, var(--vds-color-black) 50%, transparent));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -34,6 +38,13 @@ class s extends u {
       opacity: 0;
       transition: opacity var(--vds-duration-medium) var(--vds-easing-ease-out);
       pointer-events: none;
+    }
+
+    :host([placement="bottom"]) .backdrop {
+      align-items: flex-end;
+      padding: var(--vds-spacing-4) var(--vds-spacing-4) calc(var(--vds-spacing-4) + env(safe-area-inset-bottom, var(--vds-spacing-0)));
+      backdrop-filter: blur(var(--vds-blur-lg));
+      -webkit-backdrop-filter: blur(var(--vds-blur-lg));
     }
 
     :host([open]) .backdrop {
@@ -56,8 +67,20 @@ class s extends u {
       outline: none;
     }
 
+    :host([placement="bottom"]) .panel {
+      max-width: none;
+      width: 100%;
+      max-height: calc(100dvh - var(--vds-spacing-20));
+      border-radius: var(--vds-radius-lg) var(--vds-radius-lg) 0 0;
+      transform: translateY(calc(var(--vds-spacing-12) + env(safe-area-inset-bottom, var(--vds-spacing-0))));
+    }
+
     :host([open]) .panel {
       transform: translateY(0) scale(1);
+    }
+
+    :host([placement="bottom"][open]) .panel {
+      transform: translateY(0);
     }
 
     :host([size="sm"])  .panel { max-width: min(24rem, 100%); }
@@ -70,17 +93,27 @@ class s extends u {
       border-bottom: var(--vds-border-width-1) solid var(--vds-theme-border-subtle);
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: var(--vds-spacing-3);
     }
+
+    :host([placement="bottom"]) .header {
+      padding-top: var(--vds-spacing-2);
+    }
+
     .title {
+      flex: 1;
+      min-width: 0;
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-xl);
-      font-weight: var(--vds-font-weight-600);
+      font-size: var(--vds-type-role-title-size);
+      font-weight: var(--vds-type-role-title-weight);
       line-height: var(--vds-font-lineheight-tight);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .close {
       all: unset;
+      flex: none;
       cursor: pointer;
       padding: var(--vds-spacing-1);
       border-radius: var(--vds-radius-sm);
@@ -88,6 +121,25 @@ class s extends u {
     }
     .close:hover { background: var(--vds-theme-bg-hover); color: var(--vds-theme-text-primary); }
     .close:focus-visible { outline: 2px solid var(--vds-theme-border-focus); outline-offset: 2px; }
+
+    .handle-area {
+      display: none;
+    }
+
+    :host([placement="bottom"]) .handle-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: var(--vds-spacing-6);
+      padding-top: var(--vds-spacing-2);
+    }
+
+    .handle {
+      width: var(--vds-spacing-12);
+      height: var(--vds-spacing-1);
+      border-radius: var(--vds-radius-full);
+      background: var(--vds-theme-border-subtle);
+    }
 
     .body {
       padding: var(--vds-spacing-4) var(--vds-spacing-5);
@@ -122,7 +174,7 @@ class s extends u {
     super.updated(e), e.has("open") && (this.open ? this.handleOpen() : this.handleClose()), e.has("ariaLabelText") && this.ariaLabelText != null && d(this, this.internals, "ariaLabel", this.ariaLabelText);
   }
   handleOpen() {
-    document.body.style.overflow = "hidden", this.focusTrap = new m(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate()), this.emit("vds-open");
+    document.body.style.overflow = "hidden", this.focusTrap = new h(this.panelEl), requestAnimationFrame(() => this.focusTrap?.activate(this.panelEl)), this.emit("vds-open");
   }
   handleClose() {
     document.body.style.overflow = "", this.focusTrap?.deactivate(), this.emit("vds-close");
@@ -134,8 +186,8 @@ class s extends u {
     this.open = !1;
   }
   render() {
-    const o = (this.shadowRoot?.querySelector('slot[name="title"]')?.assignedElements().length ?? 0) > 0 || !this.ariaLabelText;
-    return c`
+    const r = (this.shadowRoot?.querySelector('slot[name="title"]')?.assignedElements().length ?? 0) > 0 || !this.ariaLabelText;
+    return p`
       <div
         class="backdrop"
         @click=${this.handleBackdropClick}
@@ -145,9 +197,10 @@ class s extends u {
           class="panel"
           part="panel"
           tabindex="-1"
-          aria-labelledby=${o && !this.ariaLabelText ? this._titleId : ""}
+          aria-labelledby=${r && !this.ariaLabelText ? this._titleId : ""}
           aria-label=${this.ariaLabelText ?? ""}
         >
+          <div class="handle-area" aria-hidden="true"><div class="handle" part="handle"></div></div>
           <div class="header">
             <h2 class="title" id=${this._titleId}><slot name="title"></slot></h2>
             <button
@@ -164,24 +217,27 @@ class s extends u {
     `;
   }
 }
-a([
+t([
   i({ type: Boolean, reflect: !0 })
-], s.prototype, "open");
-a([
+], a.prototype, "open");
+t([
   i({ type: String, reflect: !0 })
-], s.prototype, "size");
-a([
+], a.prototype, "size");
+t([
+  i({ type: String, reflect: !0 })
+], a.prototype, "placement");
+t([
   i({ type: Boolean, attribute: "close-on-backdrop" })
-], s.prototype, "closeOnBackdrop");
-a([
+], a.prototype, "closeOnBackdrop");
+t([
   i({ type: Boolean, attribute: "close-on-escape" })
-], s.prototype, "closeOnEscape");
-a([
+], a.prototype, "closeOnEscape");
+t([
   i({ type: String, attribute: "aria-label" })
-], s.prototype, "ariaLabelText");
-a([
-  h(".panel")
-], s.prototype, "panelEl");
+], a.prototype, "ariaLabelText");
+t([
+  c(".panel")
+], a.prototype, "panelEl");
 export {
-  s as VdsDialog
+  a as VdsDialog
 };

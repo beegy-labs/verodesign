@@ -28,7 +28,7 @@ export class VdsDialog extends VdsElement {
     .backdrop {
       position: fixed;
       inset: 0;
-      background: oklch(0% 0 0 / 0.5);
+      background: var(--vds-theme-scrim, color-mix(in oklab, var(--vds-color-black) 50%, transparent));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -37,6 +37,13 @@ export class VdsDialog extends VdsElement {
       opacity: 0;
       transition: opacity var(--vds-duration-medium) var(--vds-easing-ease-out);
       pointer-events: none;
+    }
+
+    :host([placement="bottom"]) .backdrop {
+      align-items: flex-end;
+      padding: var(--vds-spacing-4) var(--vds-spacing-4) calc(var(--vds-spacing-4) + env(safe-area-inset-bottom, var(--vds-spacing-0)));
+      backdrop-filter: blur(var(--vds-blur-lg));
+      -webkit-backdrop-filter: blur(var(--vds-blur-lg));
     }
 
     :host([open]) .backdrop {
@@ -59,8 +66,20 @@ export class VdsDialog extends VdsElement {
       outline: none;
     }
 
+    :host([placement="bottom"]) .panel {
+      max-width: none;
+      width: 100%;
+      max-height: calc(100dvh - var(--vds-spacing-20));
+      border-radius: var(--vds-radius-lg) var(--vds-radius-lg) 0 0;
+      transform: translateY(calc(var(--vds-spacing-12) + env(safe-area-inset-bottom, var(--vds-spacing-0))));
+    }
+
     :host([open]) .panel {
       transform: translateY(0) scale(1);
+    }
+
+    :host([placement="bottom"][open]) .panel {
+      transform: translateY(0);
     }
 
     :host([size="sm"])  .panel { max-width: min(24rem, 100%); }
@@ -73,17 +92,27 @@ export class VdsDialog extends VdsElement {
       border-bottom: var(--vds-border-width-1) solid var(--vds-theme-border-subtle);
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: var(--vds-spacing-3);
     }
+
+    :host([placement="bottom"]) .header {
+      padding-top: var(--vds-spacing-2);
+    }
+
     .title {
+      flex: 1;
+      min-width: 0;
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-xl);
-      font-weight: var(--vds-font-weight-600);
+      font-size: var(--vds-type-role-title-size);
+      font-weight: var(--vds-type-role-title-weight);
       line-height: var(--vds-font-lineheight-tight);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .close {
       all: unset;
+      flex: none;
       cursor: pointer;
       padding: var(--vds-spacing-1);
       border-radius: var(--vds-radius-sm);
@@ -91,6 +120,25 @@ export class VdsDialog extends VdsElement {
     }
     .close:hover { background: var(--vds-theme-bg-hover); color: var(--vds-theme-text-primary); }
     .close:focus-visible { outline: 2px solid var(--vds-theme-border-focus); outline-offset: 2px; }
+
+    .handle-area {
+      display: none;
+    }
+
+    :host([placement="bottom"]) .handle-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: var(--vds-spacing-6);
+      padding-top: var(--vds-spacing-2);
+    }
+
+    .handle {
+      width: var(--vds-spacing-12);
+      height: var(--vds-spacing-1);
+      border-radius: var(--vds-radius-full);
+      background: var(--vds-theme-border-subtle);
+    }
 
     .body {
       padding: var(--vds-spacing-4) var(--vds-spacing-5);
@@ -117,6 +165,7 @@ export class VdsDialog extends VdsElement {
 
   @property({ type: Boolean, reflect: true }) open = false;
   @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg' | 'xl' | '2xl' = 'md';
+  @property({ type: String, reflect: true }) placement: 'center' | 'bottom' = 'center';
   @property({ type: Boolean, attribute: 'close-on-backdrop' }) closeOnBackdrop = true;
   @property({ type: Boolean, attribute: 'close-on-escape' }) closeOnEscape = true;
   @property({ type: String, attribute: 'aria-label' }) ariaLabelText: string | null = null;
@@ -158,7 +207,7 @@ export class VdsDialog extends VdsElement {
   private handleOpen(): void {
     document.body.style.overflow = 'hidden';
     this.focusTrap = new FocusTrap(this.panelEl);
-    requestAnimationFrame(() => this.focusTrap?.activate());
+    requestAnimationFrame(() => this.focusTrap?.activate(this.panelEl));
     this.emit('vds-open');
   }
 
@@ -203,6 +252,7 @@ export class VdsDialog extends VdsElement {
           aria-labelledby=${hasTitle && !this.ariaLabelText ? this._titleId : ''}
           aria-label=${this.ariaLabelText ?? ''}
         >
+          <div class="handle-area" aria-hidden="true"><div class="handle" part="handle"></div></div>
           <div class="header">
             <h2 class="title" id=${this._titleId}><slot name="title"></slot></h2>
             <button

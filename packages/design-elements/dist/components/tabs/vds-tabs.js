@@ -1,39 +1,42 @@
-import { css as d, html as h, LitElement as u } from "lit";
-import { property as r } from "lit/decorators.js";
-import { setRole as c, setAriaProperty as p } from "../../utils/attribute-mirror.js";
-import { VdsElement as m } from "../../base/vds-element.js";
-var A = Object.defineProperty, n = (o, t, i, e) => {
-  for (var s = void 0, a = o.length - 1, l; a >= 0; a--)
-    (l = o[a]) && (s = l(t, i, s) || s);
-  return s && A(t, i, s), s;
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as h } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { LitElement as u } from "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as i } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { setRole as v, setAriaProperty as b } from "../../utils/attribute-mirror.js";
+import { VdsElement as y } from "../../base/vds-element.js";
+import { css as c } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var k = Object.defineProperty, o = (n, t, a, e) => {
+  for (var s = void 0, r = n.length - 1, l; r >= 0; r--)
+    (l = n[r]) && (s = l(t, a, s) || s);
+  return s && k(t, a, s), s;
 };
-class v extends m {
+class d extends y {
   constructor() {
-    super(), this.value = "", this.orientation = "horizontal", this.activation = "auto", this.tabsCache = [], this.panelsCache = [], this.refreshChildren = () => {
+    super(), this.value = "", this.orientation = "horizontal", this.activation = "auto", this.variant = "underline", this.tabsCache = [], this.panelsCache = [], this.refreshChildren = () => {
       this.tabsCache = Array.from(this.querySelectorAll("vds-tab")), this.panelsCache = Array.from(this.querySelectorAll("vds-tab-panel")), this.syncActive();
     }, this.handleClick = (t) => {
-      const i = t.target.closest("vds-tab");
-      i && this.setActive(i);
+      const a = t.target.closest("vds-tab");
+      a && this.setActive(a);
     }, this.handleKeydown = (t) => {
-      const i = t.target.closest("vds-tab");
-      if (!i) return;
-      const e = this.tabs.filter((g) => !g.disabled), s = e.indexOf(i);
+      const a = t.target.closest("vds-tab");
+      if (!a) return;
+      const e = this.tabs.filter((m) => !m.disabled), s = e.indexOf(a);
       if (s < 0) return;
-      let a;
-      const l = this.orientation === "horizontal", b = l ? "ArrowLeft" : "ArrowUp", y = l ? "ArrowRight" : "ArrowDown";
-      if (t.key === b) a = e[(s - 1 + e.length) % e.length];
-      else if (t.key === y) a = e[(s + 1) % e.length];
-      else if (t.key === "Home") a = e[0];
-      else if (t.key === "End") a = e[e.length - 1];
+      let r;
+      const l = this.orientation === "horizontal", f = l ? "ArrowLeft" : "ArrowUp", g = l ? "ArrowRight" : "ArrowDown";
+      if (t.key === f) r = e[(s - 1 + e.length) % e.length];
+      else if (t.key === g) r = e[(s + 1) % e.length];
+      else if (t.key === "Home") r = e[0];
+      else if (t.key === "End") r = e[e.length - 1];
       else if (t.key === "Enter" || t.key === " ") {
-        t.preventDefault(), this.setActive(i);
+        t.preventDefault(), this.setActive(a);
         return;
       }
-      a && (t.preventDefault(), this.activation === "auto" ? this.setActive(a) : a.focus());
-    }, this.internals = this.attachInternals(), c(this, this.internals, "presentation");
+      r && (t.preventDefault(), this.activation === "auto" ? this.setActive(r) : r.focus());
+    }, this.internals = this.attachInternals(), v(this, this.internals, "presentation");
   }
   static {
-    this.styles = d`
+    this.styles = c`
     :host {
       display: block;
       font-family: var(--vds-font-family-sans);
@@ -42,9 +45,18 @@ class v extends m {
     .tablist {
       display: flex;
       gap: var(--vds-spacing-1);
+      padding: 0;
       border-bottom: var(--vds-border-width-1) solid var(--vds-theme-border-subtle);
+      border-radius: 0;
+      background: transparent;
       overflow-x: auto;
       scrollbar-width: thin;
+    }
+    :host([variant="segmented"]) .tablist {
+      padding: var(--vds-spacing-1);
+      border-bottom: none;
+      border-radius: var(--vds-radius-lg);
+      background: var(--vds-theme-bg-subtle);
     }
     :host([data-orientation="vertical"]) {
       display: grid;
@@ -57,6 +69,9 @@ class v extends m {
       border-right: var(--vds-border-width-1) solid var(--vds-theme-border-subtle);
       overflow-x: visible;
     }
+    :host([data-orientation="vertical"][variant="segmented"]) .tablist {
+      border-right: none;
+    }
   `;
   }
   connectedCallback() {
@@ -66,7 +81,7 @@ class v extends m {
     super.disconnectedCallback(), this.removeEventListener("keydown", this.handleKeydown), this.removeEventListener("click", this.handleClick);
   }
   updated(t) {
-    (t.has("value") || t.has("orientation")) && this.syncActive(), t.has("orientation") && p(this, this.internals, "ariaOrientation", this.orientation);
+    (t.has("value") || t.has("orientation") || t.has("variant")) && this.syncActive(), t.has("orientation") && b(this, this.internals, "ariaOrientation", this.orientation);
   }
   get tabs() {
     return this.tabsCache;
@@ -77,11 +92,11 @@ class v extends m {
   syncActive() {
     const t = this.tabs;
     if (t.length === 0) return;
-    let i = t.find((e) => e.value === this.value);
-    i || (i = t[0], this.value = i.value);
+    let a = t.find((e) => e.value === this.value);
+    a || (a = t[0], this.value = a.value);
     for (const e of t) {
-      const s = e === i;
-      e.toggleAttribute("data-active", s), e.tabIndex = s ? 0 : -1, e.setAttribute("aria-selected", String(s));
+      const s = e === a;
+      e.setAttribute("data-variant", this.variant), e.toggleAttribute("data-active", s), e.tabIndex = s ? 0 : -1, e.setAttribute("aria-selected", String(s));
     }
     for (const e of this.panels) {
       const s = e.value === this.value;
@@ -108,21 +123,24 @@ class v extends m {
     `;
   }
 }
-n([
-  r({ type: String })
-], v.prototype, "value");
-n([
-  r({ type: String, reflect: !0, attribute: "data-orientation" })
-], v.prototype, "orientation");
-n([
-  r({ type: String })
-], v.prototype, "activation");
-class f extends u {
+o([
+  i({ type: String })
+], d.prototype, "value");
+o([
+  i({ type: String, reflect: !0, attribute: "data-orientation" })
+], d.prototype, "orientation");
+o([
+  i({ type: String })
+], d.prototype, "activation");
+o([
+  i({ type: String, reflect: !0 })
+], d.prototype, "variant");
+class p extends u {
   constructor() {
-    super(), this.value = "", this.disabled = !1, this.internals = this.attachInternals(), c(this, this.internals, "tab");
+    super(), this.value = "", this.disabled = !1, this.internals = this.attachInternals(), v(this, this.internals, "tab");
   }
   static {
-    this.styles = d`
+    this.styles = c`
     :host {
       display: inline-flex;
       align-items: center;
@@ -131,21 +149,36 @@ class f extends u {
       cursor: pointer;
       user-select: none;
       color: var(--vds-theme-text-dim);
-      border-bottom: 2px solid transparent;
-      font-size: var(--vds-font-size-sm);
-      font-weight: var(--vds-font-weight-500);
+      border-bottom: var(--vds-border-width-2) solid transparent;
+      border-radius: 0;
+      background: transparent;
+      font-size: var(--vds-type-role-label-size);
+      font-weight: var(--vds-type-role-label-weight);
       transition: color var(--vds-duration-fast) var(--vds-easing-ease-out),
-                  border-color var(--vds-duration-fast) var(--vds-easing-ease-out);
+        border-color var(--vds-duration-fast) var(--vds-easing-ease-out),
+        background-color var(--vds-duration-fast) var(--vds-easing-ease-out);
     }
     :host(:hover) { color: var(--vds-theme-text-primary); }
     :host([data-active]) {
       color: var(--vds-theme-primary);
       border-bottom-color: var(--vds-theme-primary);
     }
+    :host([data-variant="segmented"]) {
+      border-bottom-color: transparent;
+      border-radius: var(--vds-radius-md);
+    }
+    :host([data-variant="segmented"]:hover) {
+      background: var(--vds-theme-bg-elevated-hover);
+      color: var(--vds-theme-text-primary);
+    }
+    :host([data-variant="segmented"][data-active]) {
+      background: var(--vds-theme-bg-elevated);
+      color: var(--vds-theme-text-primary);
+    }
     :host([disabled]) { opacity: 0.5; cursor: not-allowed; }
     :host(:focus-visible) {
-      outline: 2px solid var(--vds-theme-border-focus);
-      outline-offset: 2px;
+      outline: var(--vds-border-width-2) solid var(--vds-theme-border-focus);
+      outline-offset: var(--vds-spacing-0_5);
     }
   `;
   }
@@ -153,24 +186,24 @@ class f extends u {
     super.connectedCallback(), this.slot = "tab", this.hasAttribute("tabindex") || (this.tabIndex = -1);
   }
   updated(t) {
-    t.has("disabled") && p(this, this.internals, "ariaDisabled", this.disabled);
+    t.has("disabled") && b(this, this.internals, "ariaDisabled", this.disabled);
   }
   render() {
     return h`<slot></slot>`;
   }
 }
-n([
-  r({ type: String })
-], f.prototype, "value");
-n([
-  r({ type: Boolean, reflect: !0 })
-], f.prototype, "disabled");
-class x extends u {
+o([
+  i({ type: String })
+], p.prototype, "value");
+o([
+  i({ type: Boolean, reflect: !0 })
+], p.prototype, "disabled");
+class A extends u {
   constructor() {
-    super(), this.value = "", this.internals = this.attachInternals(), c(this, this.internals, "tabpanel"), this.tabIndex = 0;
+    super(), this.value = "", this.internals = this.attachInternals(), v(this, this.internals, "tabpanel"), this.tabIndex = 0;
   }
   static {
-    this.styles = d`
+    this.styles = c`
     :host { display: block; padding: var(--vds-spacing-4) 0; }
     :host([hidden]) { display: none; }
   `;
@@ -179,11 +212,11 @@ class x extends u {
     return h`<slot></slot>`;
   }
 }
-n([
-  r({ type: String })
-], x.prototype, "value");
+o([
+  i({ type: String })
+], A.prototype, "value");
 export {
-  f as VdsTab,
-  x as VdsTabPanel,
-  v as VdsTabs
+  p as VdsTab,
+  A as VdsTabPanel,
+  d as VdsTabs
 };

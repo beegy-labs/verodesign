@@ -37,15 +37,15 @@ export class VdsEmptyState extends VdsElement {
     :host([size="lg"]) .icon ::slotted(*) { width: var(--vds-spacing-10); height: var(--vds-spacing-10); }
 
     .title {
-      font-size: var(--vds-font-size-sm);
-      font-weight: var(--vds-font-weight-500);
+      font-size: var(--vds-type-role-label-size);
+      font-weight: var(--vds-type-role-label-weight);
       color: var(--vds-theme-text-primary);
       margin: 0;
     }
     .description {
-      font-size: var(--vds-font-size-xs);
+      font-size: var(--vds-type-role-caption-size);
       color: var(--vds-theme-text-secondary);
-      max-width: 28rem;
+      max-width: calc(var(--vds-spacing-64) + var(--vds-spacing-48));
       margin: 0;
     }
     .action { margin-top: var(--vds-spacing-3); }

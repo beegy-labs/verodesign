@@ -1,17 +1,20 @@
-import { css as g, html as e } from "lit";
-import { property as a } from "lit/decorators.js";
-import { VdsElement as v } from "../../base/vds-element.js";
-var h = Object.defineProperty, d = (p, t, o, l) => {
-  for (var i = void 0, s = p.length - 1, r; s >= 0; s--)
-    (r = p[s]) && (i = r(t, o, i) || i);
+import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as g } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
+import { property as a } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { VdsElement as e } from "../../base/vds-element.js";
+import { css as v } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
+var h = Object.defineProperty, p = (s, t, o, l) => {
+  for (var i = void 0, n = s.length - 1, r; n >= 0; n--)
+    (r = s[n]) && (i = r(t, o, i) || i);
   return i && h(t, o, i), i;
 };
-class n extends v {
+class d extends e {
   constructor() {
     super(...arguments), this.inline = !1;
   }
   static {
-    this.styles = g`
+    this.styles = v`
     :host { display: block; }
     :host([hidden]) { display: none; }
     :host([inline]) { display: inline-block; }
@@ -65,24 +68,24 @@ class n extends v {
   `;
   }
   render() {
-    return e`<slot></slot>`;
+    return g`<slot></slot>`;
   }
 }
-d([
+p([
   a({ type: String, reflect: !0 })
-], n.prototype, "p");
-d([
+], d.prototype, "p");
+p([
   a({ type: String, reflect: !0 })
-], n.prototype, "px");
-d([
+], d.prototype, "px");
+p([
   a({ type: String, reflect: !0 })
-], n.prototype, "py");
-d([
+], d.prototype, "py");
+p([
   a({ type: String, reflect: !0, attribute: "max-width" })
-], n.prototype, "maxWidth");
-d([
+], d.prototype, "maxWidth");
+p([
   a({ type: Boolean, reflect: !0 })
-], n.prototype, "inline");
+], d.prototype, "inline");
 export {
-  n as VdsBox
+  d as VdsBox
 };

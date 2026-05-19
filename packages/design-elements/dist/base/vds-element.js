@@ -1,29 +1,31 @@
-import { LitElement as o, html as a } from "lit";
+import "../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
+import { html as o } from "../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { LitElement as a } from "../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
 let r = 0;
-class c extends o {
+class c extends a {
   static {
     this.formAssociated = !1;
   }
-  emit(e, t, s = {}) {
-    const n = new CustomEvent(e, {
+  emit(t, e, s = {}) {
+    const n = new CustomEvent(t, {
       bubbles: !0,
       composed: !0,
       cancelable: !0,
       ...s,
-      detail: t
+      detail: e
     });
     return this.dispatchEvent(n);
   }
-  updated(e) {
-    super.updated(e);
+  updated(t) {
+    super.updated(t);
   }
-  createId(e) {
+  createId(t) {
     r += 1;
-    const t = globalThis.crypto?.randomUUID?.().slice(0, 8) ?? r.toString(36);
-    return `${e}-${t}`;
+    const e = globalThis.crypto?.randomUUID?.().slice(0, 8) ?? r.toString(36);
+    return `${t}-${e}`;
   }
-  renderSr(e) {
-    return a`<span class="sr-only">${e}</span>`;
+  renderSr(t) {
+    return o`<span class="sr-only">${t}</span>`;
   }
 }
 export {
