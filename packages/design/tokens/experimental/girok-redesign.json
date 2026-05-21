@@ -1,0 +1,151 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "status": "experimental",
+      "since": "TBD",
+      "source": "/Users/vero/workspace/beegy/redesing.txt + .specs/verodesign/2026-05-21-pattern-girok-redesign/sections/*.tsx",
+      "implements": [
+        "girok-app-shell"
+      ],
+      "brand": "girok"
+    }
+  },
+  "exp": {
+    "girok-redesign": {
+      "shell": {
+        "frame-surface": {
+          "$value": "oklch(15.91% 0.0064 91.69)",
+          "$type": "color",
+          "$description": "Primary girok device frame and root shell surface."
+        },
+        "content-surface": {
+          "$value": "oklch(15.47% 0.0045 84.57)",
+          "$type": "color",
+          "$description": "Main scroll content surface behind tab content."
+        }
+      },
+      "surface": {
+        "card": {
+          "$value": "oklch(21.79% 0.0117 91.77)",
+          "$type": "color",
+          "$description": "Default redesign card and modal surface."
+        },
+        "toolbar": {
+          "$value": "oklch(20.95% 0.01 88.8)",
+          "$type": "color",
+          "$description": "Toolbar and compact control rail surface."
+        },
+        "card-subtle": {
+          "$value": "oklch(18.31% 0.0085 84.57)",
+          "$type": "color",
+          "$description": "Subtle inner card surface used in stats and list rows."
+        }
+      },
+      "border": {
+        "card-subtle": {
+          "$value": "oklch(24.41% 0.0152 89.92)",
+          "$type": "color",
+          "$description": "Subtle low-emphasis card border."
+        },
+        "control": {
+          "$value": "oklch(27.41% 0.017 86.87)",
+          "$type": "color",
+          "$description": "Default control border for dark girok redesign surfaces."
+        },
+        "modal-strong": {
+          "$value": "oklch(32.45% 0.024 82.83)",
+          "$type": "color",
+          "$description": "Higher-emphasis modal and sheet border."
+        },
+        "active": {
+          "$value": "oklch(36.9% 0.0321 81.99)",
+          "$type": "color",
+          "$description": "Active chip, pill, and selected control border."
+        }
+      },
+      "nav": {
+        "tab-active": {
+          "$value": "oklch(83.69% 0.1644 84.43)",
+          "$type": "color",
+          "$description": "Active 1-depth tab and key accent text tone."
+        },
+        "bottom-active": {
+          "$value": "oklch(76.86% 0.1647 70.08)",
+          "$type": "color",
+          "$description": "Bottom navigation active icon and label tone."
+        },
+        "bottom-inactive": {
+          "$value": "oklch(71.18% 0.0129 286.07)",
+          "$type": "color",
+          "$description": "Bottom navigation inactive tone, lifted from source zinc-500 to zinc-400 for AA on shell surface."
+        },
+        "tabUnderlineGlow": {
+          "$value": "0 -2px 8px 0 oklch(83.69% 0.1644 84.43 / 0.5)",
+          "$type": "shadow",
+          "$description": "Underline glow for active first-depth tab emphasis."
+        }
+      },
+      "stats": {
+        "income-text": {
+          "$value": "oklch(69.59% 0.1491 162.48)",
+          "$type": "color",
+          "$description": "Income and savings-positive text tone in redesign cards."
+        },
+        "expense-text": {
+          "$value": "oklch(71.92% 0.169 13.43)",
+          "$type": "color",
+          "$description": "Expense and negative outflow text tone in redesign cards."
+        }
+      },
+      "chart": {
+        "top-rank-fill": {
+          "$value": "oklch(77.29% 0.1535 163.22)",
+          "$type": "color",
+          "$description": "Positive chart fill used for highlighted savings and rank emphasis."
+        },
+        "rank-4-fill": {
+          "$value": "oklch(68.01% 0.1583 276.93)",
+          "$type": "color",
+          "$description": "Fourth-rank progress fill accent in analysis charts."
+        },
+        "rank-5-fill": {
+          "$value": "oklch(72.17% 0.1767 305.5)",
+          "$type": "color",
+          "$description": "Fifth-rank progress fill accent in analysis charts."
+        }
+      },
+      "toggle": {
+        "expense-active": {
+          "$value": "oklch(64.5% 0.2154 16.44)",
+          "$type": "color",
+          "$description": "Expense-side active pill tone for transaction toggles."
+        },
+        "incomeActive": {
+          "$value": "oklch(69.59% 0.1491 162.48)",
+          "$type": "color",
+          "$description": "Income-side active pill tone for transaction and savings toggles."
+        },
+        "activeForeground": {
+          "$value": "oklch(15.91% 0.0064 91.69)",
+          "$type": "color",
+          "$description": "High-contrast foreground for active income and expense toggle pills."
+        }
+      },
+      "calendar": {
+        "weekend-sat": {
+          "$value": "oklch(71.37% 0.1434 254.62)",
+          "$type": "color",
+          "$description": "Saturday calendar label tone in ledger calendar."
+        }
+      },
+      "icon": {
+        "info-strong": {
+          "$value": "oklch(68.01% 0.1583 276.93)",
+          "$type": "color",
+          "$description": "Indigo info icon emphasis, lifted to the lighter indigo-400 step for AA on dark card surfaces."
+        }
+      }
+    }
+  }
+}
