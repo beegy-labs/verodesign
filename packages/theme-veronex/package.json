@@ -1,7 +1,7 @@
 {
   "name": "@verobee/theme-veronex",
   "version": "1.0.0",
-  "description": "Verobee Design System \u2014 veronex brand theme. Implements @verobee/spec slots with veronex color/spacing values.",
+  "description": "Verobee Design System — veronex brand theme. Implements @verobee/spec slots with veronex color/spacing values.",
   "license": "MIT",
   "type": "module",
   "engines": {

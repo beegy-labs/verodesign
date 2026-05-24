@@ -4,25 +4,40 @@ const WEIGHT_ALIAS = { 400: 'normal', 500: 'medium', 600: 'semibold', 700: 'bold
 
 export function generateTypography(flat) {
   const rules = [];
+  const roleParts = new Map();
 
   for (const t of flat) {
-    if (t.path[0] !== 'font') continue;
-    const v = `var(${tokenPathToCssVar(t.path)})`;
+    if (t.path[0] === 'font') {
+      const v = `var(${tokenPathToCssVar(t.path)})`;
 
-    if (t.path[1] === 'size') {
-      rules.push(`.vds-text-${t.path[2]} { font-size: ${v}; }`);
-    } else if (t.path[1] === 'weight') {
-      const numeric = t.path[2];
-      rules.push(`.vds-font-${numeric} { font-weight: ${v}; }`);
-      const alias = WEIGHT_ALIAS[numeric];
-      if (alias) rules.push(`.vds-font-${alias} { font-weight: ${v}; }`);
-    } else if (t.path[1] === 'lineHeight') {
-      rules.push(`.vds-leading-${t.path[2]} { line-height: ${v}; }`);
-    } else if (t.path[1] === 'letterSpacing') {
-      rules.push(`.vds-tracking-${t.path[2]} { letter-spacing: ${v}; }`);
-    } else if (t.path[1] === 'family') {
-      rules.push(`.vds-font-${t.path[2]} { font-family: ${v}; }`);
+      if (t.path[1] === 'size') {
+        rules.push(`.vds-text-${t.path[2]} { font-size: ${v}; }`);
+      } else if (t.path[1] === 'weight') {
+        const numeric = t.path[2];
+        rules.push(`.vds-font-${numeric} { font-weight: ${v}; }`);
+        const alias = WEIGHT_ALIAS[numeric];
+        if (alias) rules.push(`.vds-font-${alias} { font-weight: ${v}; }`);
+      } else if (t.path[1] === 'lineHeight') {
+        rules.push(`.vds-leading-${t.path[2]} { line-height: ${v}; }`);
+      } else if (t.path[1] === 'letterSpacing') {
+        rules.push(`.vds-tracking-${t.path[2]} { letter-spacing: ${v}; }`);
+      } else if (t.path[1] === 'family') {
+        rules.push(`.vds-font-${t.path[2]} { font-family: ${v}; }`);
+      }
+      continue;
     }
+
+    if (t.path[0] === 'type' && t.path[1] === 'role' && t.path.length === 4) {
+      const role = t.path[2];
+      const prop = t.path[3];
+      const entry = roleParts.get(role) ?? {};
+      entry[prop] = `var(${tokenPathToCssVar(t.path)})`;
+      roleParts.set(role, entry);
+    }
+  }
+
+  for (const [role, props] of roleParts) {
+    rules.push(`.vds-text-${role} { font-size: ${props.size}; line-height: ${props.lineHeight}; font-weight: ${props.weight}; }`);
   }
 
   rules.push(`.vds-text-left { text-align: left; }`);

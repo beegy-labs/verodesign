@@ -1,0 +1,29 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "category-color-swatch": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "category-color-swatch component density scale."
+        },
+        "inline-size-1": {
+          "$value": "calc(1.75rem * var(--vds-exp-girok-category-color-swatch-scale))",
+          "$type": "dimension",
+          "$description": "category-color-swatch inline-size token."
+        },
+        "block-size-2": {
+          "$value": "calc(1.75rem * var(--vds-exp-girok-category-color-swatch-scale))",
+          "$type": "dimension",
+          "$description": "category-color-swatch block-size token."
+        },
+        "box-shadow-3": {
+          "$value": "0 0 0 calc(2px * var(--vds-exp-girok-category-color-swatch-scale)) var(--vds-exp-girok-redesign-accent-strong)",
+          "$type": "other",
+          "$description": "category-color-swatch box-shadow token."
+        }
+      }
+    }
+  }
+}

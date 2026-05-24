@@ -1,0 +1,26 @@
+/* GIROK pattern: register-chip */
+@scope (.vds-pattern-girok-register-chip) {
+  :scope {
+    min-height: var(--vds-exp-girok-register-chip-min-height-1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-exp-girok-register-chip-padding-2);
+    appearance: none;
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-active);
+    border-radius: var(--vds-exp-girok-radius-round);
+    background: var(--vds-exp-girok-surface-control-active);
+    color: var(--vds-exp-girok-accent-light);
+    font-size: var(--vds-exp-girok-register-chip-font-size-3);
+    font-weight: var(--vds-font-weight-800);
+    line-height: 1.454545;
+    white-space: nowrap;
+    transition:
+      transform var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard),
+      background-color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  :scope:active {
+    transform: scale(var(--vds-exp-girok-press-scale-default));
+  }
+}

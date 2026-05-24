@@ -222,7 +222,7 @@ export class VdsMenuItem extends LitElement {
       user-select: none;
       color: var(--vds-theme-text-primary);
       border-radius: var(--vds-radius-sm);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       transition: background var(--vds-duration-fast) var(--vds-easing-ease-out);
     }
     :host(:hover),

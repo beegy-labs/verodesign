@@ -50,12 +50,12 @@ export async function emitUtilities() {
     'primary', 'secondary', 'dim', 'faint', 'bright',
     // border slots
     'subtle', 'default', 'strong', 'focus',
-    // role slots (× -fg, -bg, -ring)
-    'primary-fg', 'primary-ring', 'accent', 'accent-fg', 'accent-2', 'accent-2-fg', 'accent-3', 'accent-3-fg',
-    'destructive', 'destructive-fg', 'success', 'success-bg', 'success-fg',
-    'warning', 'warning-bg', 'warning-fg', 'error', 'error-bg', 'error-fg',
-    'info', 'info-bg', 'info-fg', 'neutral', 'neutral-bg', 'neutral-fg',
-    'cancelled', 'cancelled-fg',
+    // role slots (× -foreground, -bg, -ring)
+    'primary-foreground', 'primary-ring', 'accent', 'accent-foreground', 'accent-2', 'accent-2-foreground', 'accent-3', 'accent-3-foreground',
+    'destructive', 'destructive-foreground', 'success', 'success-bg', 'success-foreground',
+    'warning', 'warning-bg', 'warning-foreground', 'error', 'error-bg', 'error-foreground',
+    'info', 'info-bg', 'info-foreground', 'neutral', 'neutral-bg', 'neutral-foreground',
+    'cancelled', 'cancelled-foreground',
     // foreground text (theme.text.primary slot — 'fg' alias to avoid collision with role primary)
     'fg',
     // text-prefixed (`bg-text-dim` etc.)

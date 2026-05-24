@@ -1,95 +1,89 @@
 # Select
 
-> Tag: `<vds-select>` (with `<vds-option>` children) · Import: `@verobee/design-elements/components/select` · React: `Select` + `Option` from `@verobee/design-react` · Pattern: WAI-ARIA AP 1.2 § Combobox (select-only) · Status: v0.2.0-alpha
-
-**Lookup**: select, dropdown, combobox, picker.
+> Tag: `<vds-select>`, `<vds-option>` · React: `Select + Option` · Status: v0.2.0-alpha · APG pattern: Combobox + Listbox (select-only)
 
 ## Purpose
-Single-select combobox with listbox popup. Form-associated.
+Select-only combobox with FACE submission and type-ahead.
 
-> Phase 1 ships **select-only** (no inline text input). Editable combobox planned for v0.3.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Choosing one value from a bounded list. |
+| Use | Forms that need a custom-element select while preserving keyboard semantics. |
+| Do not use | Free-text entry or async search. |
+| Do not use | Contextual command menus where actions, not values, are the goal. |
 
-## When to use
-- Pick one of many predefined options (3+ items).
-- Tied to form submission (`name="..."`).
+## Design rationale
+Select keeps the interaction contract narrow: a select-only combobox rather than a generalized autocomplete.
 
-## When NOT to use
-- 2 mutually-exclusive choices → consider `<vds-switch>` or radio.
-- Free text input → use `<vds-text-field>`.
-- Multi-select → not yet supported (use checkbox group).
+## A11y narrative
+Implements APG select-only combobox behavior with listbox options, active option management, type-ahead, and form-associated value submission.
 
-## Anatomy
-```
-[ trigger ▼ ]    ← always visible
-  ┌────────────┐
-  │ Option A   │ ← listbox (visible when open)
-  │ Option B   │
-  │ Option C   │
-  └────────────┘
-```
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
 
-## Props (vds-select)
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `value` | `string` | `""` | Currently selected option value |
-| `placeholder` | `string` | `"Select…"` | Shown when no value |
-| `disabled` | `boolean` | `false` | Disabled state |
-| `required` | `boolean` | `false` | Form validation |
-| `name` | `string` | — | Form field name |
+<!-- CEM:START -->
+### `<vds-select>`
 
-## Props (vds-option)
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `value` | `string` | `""` | Option value |
-| `selected` | `boolean` | `false` | Reflected from select |
-| `disabled` | `boolean` | `false` | Skip in nav |
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `value` | `value` | `string` | `` |
+| `placeholder` | `placeholder` | `string` | `Select…` |
+| `label` | `label` | `string | undefined` | — |
+| `helper` | `helper` | `string | undefined` | — |
+| `errorMessage` | `errorMessage` | `string | undefined` | — |
+| `disabled` | `disabled` | `boolean` | `false` |
+| `required` | `required` | `boolean` | `false` |
+| `name` | `name` | `string | undefined` | — |
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `change` | `{ value: string }` | Fires when user commits a selection |
+#### Slots
+None.
 
-## A11y (WAI-ARIA AP 1.2 § Combobox)
-- `role="combobox"` on host with `aria-expanded`, `aria-haspopup="listbox"`.
-- Listbox has `role="listbox"`, options `role="option"`.
-- Keyboard:
-  - `Enter` / `Space` / `↓` (closed) → open + activate first or selected option.
-  - `↑` / `↓` (open) → move active option.
-  - `Home` / `End` → first / last.
-  - `Esc` → close.
-  - Type-ahead (any letter) → jump to matching option (500ms buffer).
-  - `Enter` / `Space` (open) → commit active option.
+#### Events
+| Name | Description |
+| ---- | ----------- |
+| `change` | { detail: { value: string } } |
 
-## Tokens consumed
-- `--vds-theme-{bg-card,bg-hover,text-primary,text-faint,border-default,border-focus,primary,primary-fg}`
-- `--vds-spacing-{1,1_5,2,2_5,3}`, `--vds-radius-md`, `--vds-shadow-3`
-- `--vds-zindex-popover`, `--vds-font-{family-sans,size-sm}`
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+
+### `<vds-option>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `value` | `value` | `string` | `` |
+| `selected` | `selected` | `boolean` | `false` |
+| `disabled` | `disabled` | `boolean` | `false` |
+
+#### Slots
+None.
+
+#### Events
+None.
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
-### HTML
 ```html
-<vds-select name="country" placeholder="Select country">
+<vds-select name="country">
   <vds-option value="kr">Korea</vds-option>
   <vds-option value="us">United States</vds-option>
-  <vds-option value="jp">Japan</vds-option>
 </vds-select>
 ```
 
-### React
 ```tsx
 import { Select, Option } from '@verobee/design-react';
 
-<Select
-  name="country"
-  value={country}
-  onChange={(e) => setCountry(e.detail.value)}
->
-  <Option value="kr">Korea</Option>
-  <Option value="us">United States</Option>
-  <Option value="jp">Japan</Option>
-</Select>
+<Select><Option value="kr">Korea</Option></Select>
 ```
 
-## Related
-[`<vds-menu>`](menu.md), [`<vds-text-field>`](text-field.md)

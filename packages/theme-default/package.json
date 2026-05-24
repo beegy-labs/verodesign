@@ -1,7 +1,7 @@
 {
   "name": "@verobee/theme-default",
   "version": "1.0.0",
-  "description": "Verobee Design System \u2014 default brand theme. Implements @verobee/spec slots with default color/spacing values.",
+  "description": "Verobee Design System — default brand theme. Implements @verobee/spec slots with default color/spacing values.",
   "license": "MIT",
   "type": "module",
   "engines": {

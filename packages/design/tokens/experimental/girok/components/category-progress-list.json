@@ -1,0 +1,29 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "category-progress-list": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "category-progress-list component density scale."
+        },
+        "inline-size-1": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-category-progress-list-scale))",
+          "$type": "dimension",
+          "$description": "category-progress-list inline-size token."
+        },
+        "block-size-2": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-category-progress-list-scale))",
+          "$type": "dimension",
+          "$description": "category-progress-list block-size token."
+        },
+        "block-size-3": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-category-progress-list-scale))",
+          "$type": "dimension",
+          "$description": "category-progress-list block-size token."
+        }
+      }
+    }
+  }
+}

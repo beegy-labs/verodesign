@@ -1,7 +1,20 @@
 import * as React from 'react';
-import { VdsButton } from '@verobee/design-elements/components/button';
-import '@verobee/design-elements/define/button';
-export declare const Button: import("@lit/react").ReactWebComponent<VdsButton, {
-    onClick: string;
-}>;
-export type ButtonProps = React.ComponentProps<typeof Button>;
+type ButtonVariant = 'solid' | 'tonal' | 'ghost' | 'soft' | 'outline';
+type ButtonTone = 'primary' | 'accent' | 'neutral' | 'destructive';
+type ButtonSize = 'sm' | 'md' | 'lg';
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'type'> {
+    variant?: ButtonVariant;
+    tone?: ButtonTone;
+    size?: ButtonSize;
+    type?: 'button' | 'submit' | 'reset';
+    disabled?: boolean;
+    loading?: boolean;
+    name?: string;
+    value?: string;
+    ariaLabelText?: string | null;
+    fullWidth?: boolean;
+    'full-width'?: boolean;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+export declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
+export {};

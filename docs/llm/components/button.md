@@ -1,86 +1,71 @@
 # Button
 
-> Tag: `<vds-button>` · Import: `@verobee/design-elements/components/button` · React: `Button` from `@verobee/design-react` · Pattern: WAI-ARIA AP 1.2 § Button · Status: v0.2.0-alpha
-
-**Lookup**: button, action, submit, btn, cta, call to action.
+> Tag: `<vds-button>` · React: `Button` · Status: v0.2.0-alpha · APG pattern: Button
 
 ## Purpose
-Action trigger. Form-associated when `type="submit" | "reset"`.
+Action trigger with FACE-backed submit and reset behavior.
 
-## When to use
-- Triggering an action (form submit, navigation, dialog open, async work).
-- Anchoring a primary or secondary action in a flow.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Primary and secondary actions in forms, dialogs, and toolbars. |
+| Use | Cases where async/loading and semantic tone need to stay inside the system contract. |
+| Do not use | Pure navigation that should remain an anchor. |
+| Do not use | Persistent selection state; use checkbox, switch, or tabs depending on the pattern. |
 
-## When NOT to use
-- Pure navigation → use `<a>` (anchor).
-- Toggle on/off → use `<vds-switch>`.
+## Design rationale
+Button keeps the API additive and token-driven: the public contract is size, tone, variant, and form semantics, not arbitrary visual knobs.
 
-## Anatomy
-```
-[ start-slot  label  end-slot ]
-```
-Loading replaces `start-slot` with a spinner.
+## A11y narrative
+Uses APG button behavior with keyboard activation, disabled signaling, and coarse-pointer touch-target expansion without changing fine-pointer geometry.
 
-## Props (attributes)
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `variant` | `"solid"` \| `"soft"` \| `"outline"` \| `"ghost"` | `"solid"` | Fill style |
-| `tone` | `"primary"` \| `"accent"` \| `"neutral"` \| `"destructive"` | `"primary"` | Color role |
-| `size` | `"sm"` \| `"md"` \| `"lg"` | `"md"` | Visual size |
-| `type` | `"button"` \| `"submit"` \| `"reset"` | `"button"` | Form behavior |
-| `disabled` | `boolean` | `false` | Disabled state |
-| `loading` | `boolean` | `false` | Show spinner, prevent clicks |
-| `name` | `string` | — | Form name (for submit) |
-| `value` | `string` | — | Form value |
-| `aria-label` | `string` | — | Accessible name when no visible label |
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
 
-## Slots
+<!-- CEM:START -->
+### `<vds-button>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `variant` | `variant` | `Variant` | `solid` |
+| `tone` | `tone` | `Tone` | `primary` |
+| `size` | `size` | `Size` | `md` |
+| `type` | `type` | `'button' | 'submit' | 'reset'` | `button` |
+| `disabled` | `disabled` | `boolean` | `false` |
+| `loading` | `data-loading` | `boolean` | `false` |
+| `name` | `name` | `string | undefined` | — |
+| `value` | `value` | `string | undefined` | — |
+| `ariaLabelText` | `aria-label` | `string | null` | `null` |
+
+#### Slots
 | Name | Description |
 | ---- | ----------- |
-| (default) | Button label |
-| `start` | Leading icon |
-| `end` | Trailing icon |
+| (default) | button label |
+| `start` | leading icon |
+| `end` | trailing icon |
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `click` | (native MouseEvent) | Suppressed when `disabled` or `loading` |
+#### Events
+None.
 
-## A11y (WAI-ARIA AP 1.2 § Button)
-- `role="button"` set via ElementInternals.
-- Keyboard: Enter and Space activate.
-- `aria-disabled` reflected from `disabled` attribute.
-- Focus ring uses `--vds-theme-border-focus` (2px outline + 2px offset).
+#### CSS Variables
+None.
 
-## Tokens consumed
-- `--vds-theme-{primary,accent,neutral,destructive}` (with `-fg`)
-- `--vds-theme-bg-{muted,hover}`, `--vds-theme-text-primary`
-- `--vds-theme-border-{default,focus}`
-- `--vds-spacing-{1_5,2,3,4,5}`, `--vds-radius-md`, `--vds-border-width-1`
-- `--vds-font-{size-{sm,base,lg},weight-500,family-sans}`
-- `--vds-duration-fast`, `--vds-easing-ease-out`
+#### CSS Parts
+| Name | Description |
+| ---- | ----------- |
+| `button` | the underlying button element |
+<!-- CEM:END -->
 
 ## Examples
-
-### HTML
 ```html
 <vds-button>Save</vds-button>
-<vds-button variant="outline" tone="primary">Cancel</vds-button>
 <vds-button tone="destructive" loading>Delete</vds-button>
-
-<form action="/save" method="post">
-  <vds-button type="submit">Submit</vds-button>
-</form>
 ```
 
-### React
 ```tsx
 import { Button } from '@verobee/design-react';
 
-<Button onClick={() => save()}>Save</Button>
-<Button variant="outline" tone="primary">Cancel</Button>
-<Button tone="destructive" loading>Delete</Button>
+<Button variant="outline">Cancel</Button>
 ```
 
-## Related
-[`<vds-text-field>`](text-field.md), [`<vds-dialog>`](dialog.md)

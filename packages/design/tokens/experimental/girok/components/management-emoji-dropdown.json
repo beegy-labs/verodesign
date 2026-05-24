@@ -1,0 +1,49 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "management-emoji-dropdown": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "management-emoji-dropdown component density scale."
+        },
+        "min-inline-size-1": {
+          "$value": "calc(14rem * var(--vds-exp-girok-management-emoji-dropdown-scale))",
+          "$type": "dimension",
+          "$description": "management-emoji-dropdown min-inline-size token."
+        },
+        "max-block-size-2": {
+          "$value": "calc(22.5rem * var(--vds-exp-girok-management-emoji-dropdown-scale))",
+          "$type": "dimension",
+          "$description": "management-emoji-dropdown max-block-size token."
+        },
+        "padding-3": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-emoji-dropdown-scale))",
+          "$type": "dimension",
+          "$description": "management-emoji-dropdown padding token."
+        },
+        "box-shadow-4": {
+          "$value": "0 calc(25px * var(--vds-exp-girok-management-emoji-dropdown-scale)) calc(50px * var(--vds-exp-girok-management-emoji-dropdown-scale)) calc(-12px * var(--vds-exp-girok-management-emoji-dropdown-scale)) var(--vds-exp-girok-redesign-surface-backdrop-medium)",
+          "$type": "other",
+          "$description": "management-emoji-dropdown box-shadow token."
+        },
+        "padding-5": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-management-emoji-dropdown-scale))",
+          "$type": "dimension",
+          "$description": "management-emoji-dropdown padding token."
+        },
+        "font-size-6": {
+          "$value": "calc(1.375rem * var(--vds-exp-girok-management-emoji-dropdown-scale))",
+          "$type": "dimension",
+          "$description": "management-emoji-dropdown font-size token."
+        },
+        "font-size-7": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-management-emoji-dropdown-scale))",
+          "$type": "dimension",
+          "$description": "management-emoji-dropdown font-size token."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+/* GIROK pattern: category-progress-list */
+@scope (.vds-pattern-girok-category-progress-list) {
+  :scope {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-spacing-3);
+    background: var(--vds-exp-girok-surface-card-subtle);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-control-alpha-80);
+    border-radius: var(--vds-radius-2xl);
+    padding-block: var(--vds-spacing-3);
+    padding-inline: var(--vds-spacing-3);
+  }
+
+  .vds-pattern-girok-category-progress-list__row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-spacing-1_5);
+  }
+
+  .vds-pattern-girok-category-progress-list__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-2);
+    font-size: var(--vds-font-size-xs);
+  }
+
+  .vds-pattern-girok-category-progress-list__name {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--vds-spacing-1_5);
+    color: var(--vds-theme-text-primary);
+    font-weight: var(--vds-font-weight-600);
+  }
+
+  .vds-pattern-girok-category-progress-list__dot {
+    inline-size: var(--vds-exp-girok-category-progress-list-inline-size-1);
+    block-size: var(--vds-exp-girok-category-progress-list-block-size-2);
+    border-radius: var(--vds-radius-full);
+    flex-shrink: 0;
+  }
+
+  .vds-pattern-girok-category-progress-list__dot.is-rose,
+  .vds-pattern-girok-category-progress-list__fill.is-rose,
+  .vds-pattern-girok-category-progress-list__dot--rose,
+  .vds-pattern-girok-category-progress-list__fill--rose,
+  .vds-pattern-girok-category-progress-list__dot.is-rose,
+  .vds-pattern-girok-category-progress-list__dot--food,
+  .vds-pattern-girok-category-progress-list__fill--food {
+    background: var(--vds-exp-girok-category-palette-rose);
+  }
+
+  .vds-pattern-girok-category-progress-list__dot.is-amber,
+  .vds-pattern-girok-category-progress-list__fill.is-amber,
+  .vds-pattern-girok-category-progress-list__dot--amber,
+  .vds-pattern-girok-category-progress-list__fill--amber,
+  .vds-pattern-girok-category-progress-list__dot--housing,
+  .vds-pattern-girok-category-progress-list__fill--housing {
+    background: var(--vds-exp-girok-category-palette-amber);
+  }
+
+  .vds-pattern-girok-category-progress-list__dot.is-info,
+  .vds-pattern-girok-category-progress-list__fill.is-info,
+  .vds-pattern-girok-category-progress-list__dot--blue,
+  .vds-pattern-girok-category-progress-list__fill--blue,
+  .vds-pattern-girok-category-progress-list__dot--shopping,
+  .vds-pattern-girok-category-progress-list__fill--shopping {
+    background: var(--vds-exp-girok-category-palette-blue);
+  }
+
+  .vds-pattern-girok-category-progress-list__dot--emerald,
+  .vds-pattern-girok-category-progress-list__fill--emerald,
+  .vds-pattern-girok-category-progress-list__dot--transport,
+  .vds-pattern-girok-category-progress-list__fill--transport {
+    background: var(--vds-exp-girok-category-palette-emerald);
+  }
+
+  .vds-pattern-girok-category-progress-list__dot--purple,
+  .vds-pattern-girok-category-progress-list__fill--purple {
+    background: var(--vds-exp-girok-category-palette-purple);
+  }
+
+  .vds-pattern-girok-category-progress-list__dot--teal,
+  .vds-pattern-girok-category-progress-list__fill--teal {
+    background: var(--vds-exp-girok-category-palette-teal);
+  }
+
+  .vds-pattern-girok-category-progress-list__dot--pink,
+  .vds-pattern-girok-category-progress-list__fill--pink {
+    background: var(--vds-exp-girok-category-palette-pink);
+  }
+
+  .vds-pattern-girok-category-progress-list__dot.is-neutral,
+  .vds-pattern-girok-category-progress-list__fill.is-neutral,
+  .vds-pattern-girok-category-progress-list__dot--slate,
+  .vds-pattern-girok-category-progress-list__fill--slate,
+  .vds-pattern-girok-category-progress-list__dot--etc,
+  .vds-pattern-girok-category-progress-list__fill--etc {
+    background: var(--vds-exp-girok-category-palette-slate);
+  }
+
+  .vds-pattern-girok-category-progress-list__amount {
+    color: var(--vds-theme-text-secondary);
+    font-size: var(--vds-font-size-xs);
+    font-weight: var(--vds-font-weight-600);
+    white-space: nowrap;
+  }
+
+  .vds-pattern-girok-category-progress-list__percent {
+    color: var(--vds-theme-text-dim);
+    font-weight: var(--vds-font-weight-400);
+    padding-inline-start: var(--vds-spacing-1);
+  }
+
+  .vds-pattern-girok-category-progress-list__track {
+    inline-size: 100%;
+    block-size: var(--vds-exp-girok-category-progress-list-block-size-3);
+    overflow: hidden;
+    background: var(--vds-exp-girok-surface-toolbar);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-control-alpha-80);
+    border-radius: var(--vds-radius-full);
+  }
+
+  .vds-pattern-girok-category-progress-list__fill {
+    block-size: 100%;
+    border-radius: var(--vds-radius-full);
+    background: var(--vds-exp-girok-category-palette-rose);
+  }
+  }

@@ -1,7 +1,7 @@
 {
   "name": "@verobee/theme-verobase",
   "version": "1.0.0",
-  "description": "Verobee Design System \u2014 verobase brand theme. Implements @verobee/spec slots with verobase color/spacing values.",
+  "description": "Verobee Design System — verobase brand theme. Implements @verobee/spec slots with verobase color/spacing values.",
   "license": "MIT",
   "type": "module",
   "engines": {

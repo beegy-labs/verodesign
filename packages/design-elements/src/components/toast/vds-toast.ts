@@ -25,15 +25,15 @@ export class VdsToast extends VdsElement {
       border-radius: var(--vds-radius-md);
       box-shadow: var(--vds-shadow-3);
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       pointer-events: auto;
       max-width: 24rem;
     }
 
-    :host([data-tone="success"]) { border-left: 4px solid var(--vds-theme-success); }
-    :host([data-tone="warning"]) { border-left: 4px solid var(--vds-theme-warning); }
-    :host([data-tone="error"]) { border-left: 4px solid var(--vds-theme-error); }
-    :host([data-tone="info"]) { border-left: 4px solid var(--vds-theme-info); }
+    :host([data-tone="success"]) { border-left: 4px solid var(--vds-theme-status-success); }
+    :host([data-tone="warning"]) { border-left: 4px solid var(--vds-theme-status-warning); }
+    :host([data-tone="error"]) { border-left: 4px solid var(--vds-theme-status-error); }
+    :host([data-tone="info"]) { border-left: 4px solid var(--vds-theme-status-info); }
 
     .body { flex: 1; min-width: 0; }
     .title {

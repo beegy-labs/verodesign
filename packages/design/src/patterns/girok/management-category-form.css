@@ -1,0 +1,95 @@
+/* GIROK pattern: management-category-form */
+@scope (.vds-pattern-girok-management-category-form) {
+  :scope {
+    display: flex;
+    flex-direction: column;
+    padding: var(--vds-exp-girok-management-category-form-padding-1);
+    background: var(--vds-exp-girok-surface-segment-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-card-emphasis);
+    border-radius: var(--vds-exp-girok-radius-medium-card);
+  }
+
+  .vds-pattern-girok-management-category-form__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-exp-girok-management-category-form-gap-2);
+  }
+
+  .vds-pattern-girok-management-category-form__type-toggle {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--vds-exp-girok-management-category-form-gap-3);
+    padding: var(--vds-exp-girok-management-category-form-padding-4);
+    background: var(--vds-exp-girok-surface-scrim-40);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+  }
+
+  .vds-pattern-girok-management-category-form__type-toggle-btn {
+    padding: var(--vds-exp-girok-management-category-form-padding-5);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-xs);
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-management-category-form-font-size-6);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-management-category-form__type-toggle-btn--expense.vds-pattern-girok-management-category-form__type-toggle-btn--active {
+    background: var(--vds-exp-girok-status-expense-base);
+    color: var(--vds-exp-girok-text-primary);
+  }
+
+  .vds-pattern-girok-management-category-form__type-toggle-btn--income.vds-pattern-girok-management-category-form__type-toggle-btn--active {
+    background: var(--vds-exp-girok-status-income-base);
+    color: var(--vds-exp-girok-text-primary);
+  }
+
+  .vds-pattern-girok-management-category-form__emoji-row {
+    display: flex;
+    align-items: center;
+    gap: var(--vds-exp-girok-management-category-form-gap-7);
+    inline-size: 100%;
+  }
+
+  .vds-pattern-girok-management-category-form__emoji-select,
+  .vds-pattern-girok-management-category-form__input {
+    background: var(--vds-exp-girok-surface-app-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-neutral-strong);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+  }
+
+  .vds-pattern-girok-management-category-form__emoji-select {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--vds-exp-girok-management-category-form-gap-8);
+    min-inline-size: var(--vds-exp-girok-management-category-form-min-inline-size-9);
+    padding: var(--vds-exp-girok-management-category-form-padding-10);
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-management-category-form-font-size-11);
+    line-height: 1.111111;
+  }
+
+  .vds-pattern-girok-management-category-form__input {
+    flex: 1;
+    min-width: 0;
+    padding: var(--vds-exp-girok-management-category-form-padding-12);
+    color: var(--vds-exp-girok-text-base);
+    font-size: var(--vds-exp-girok-management-category-form-font-size-13);
+    line-height: 1.333333;
+  }
+
+  .vds-pattern-girok-management-category-form__add-btn {
+    inline-size: 100%;
+    padding-top: var(--vds-exp-girok-management-category-form-padding-top-14);
+    padding-bottom: var(--vds-exp-girok-management-category-form-padding-bottom-15);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+    background: var(--vds-exp-girok-border-neutral-strong);
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-management-category-form-font-size-16);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.454545;
+  }
+}

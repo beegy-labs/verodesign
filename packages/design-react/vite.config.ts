@@ -10,8 +10,19 @@ for (const file of readdirSync(componentsDir)) {
   const name = file.replace(/\.tsx?$/, '');
   componentEntries[`components/${name}`] = resolve(componentsDir, file);
 }
+const iconsDir = resolve(__dirname, 'src/icons');
+for (const file of readdirSync(iconsDir)) {
+  if (!file.endsWith('.tsx') && !file.endsWith('.ts')) continue;
+  if (file.endsWith('.d.ts')) continue;
+  const name = file.replace(/\.tsx?$/, '');
+  componentEntries[`icons/${name}`] = resolve(iconsDir, file);
+}
 
 export default defineConfig({
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test-setup.ts'],
+  },
   build: {
     outDir: 'dist',
     emptyOutDir: false,
@@ -29,6 +40,7 @@ export default defineConfig({
       external: [
         'react',
         'react/jsx-runtime',
+        'react-dom',
         /^@lit\//,
         /^lit($|\/)/,
         /^@verobee\//,

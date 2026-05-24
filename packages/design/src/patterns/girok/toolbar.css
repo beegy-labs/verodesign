@@ -1,0 +1,8 @@
+/* GIROK pattern: toolbar */
+@scope (.vds-pattern-girok-toolbar) {
+  :scope {
+    display: flex;
+    align-items: center;
+    gap: var(--vds-exp-girok-toolbar-gap-1);
+  }
+  }

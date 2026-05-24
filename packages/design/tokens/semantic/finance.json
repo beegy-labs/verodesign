@@ -1,0 +1,59 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "semantic",
+      "slotGroup": "finance",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "implements": [
+        "finance"
+      ],
+      "rationale": "Optional finance slot group. Brands implement this group only when they need finance-specific semantics."
+    }
+  },
+  "theme": {
+    "finance": {
+      "market": {
+        "up": {
+          "$root": {
+            "$value": "{color.green.7}",
+            "$type": "color",
+            "$description": "Positive market direction"
+          },
+          "foreground": {
+            "$value": "{color.white}",
+            "$type": "color",
+            "$description": "Foreground on positive market direction"
+          }
+        },
+        "down": {
+          "$root": {
+            "$value": "{color.red.7}",
+            "$type": "color",
+            "$description": "Negative market direction"
+          },
+          "foreground": {
+            "$value": "{color.white}",
+            "$type": "color",
+            "$description": "Foreground on negative market direction"
+          }
+        }
+      },
+      "loan": {
+        "priority": {
+          "$root": {
+            "$value": "{color.amber.6}",
+            "$type": "color",
+            "$description": "Priority loan or financing status"
+          },
+          "foreground": {
+            "$value": "{color.slate.12}",
+            "$type": "color",
+            "$description": "Foreground on priority loan status"
+          }
+        }
+      }
+    }
+  }
+}

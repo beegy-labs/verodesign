@@ -1,0 +1,37 @@
+# CODEOWNERS — explicit owner approval for policy + standard files.
+#
+# Required by docs/llm/policies/distribution.md (Safeguard #1):
+# every policy / SSOT file change must be reviewed before merge.
+#
+# Pair this with branch-protection "Require pull request reviews before merging"
+# and the policy-distribution workflow's GitHub Environment required reviewer.
+
+# Tier-0 root
+/AGENTS.md             @verobee
+/CLAUDE.md             @verobee
+/CODEX.md              @verobee
+/GEMINI.md             @verobee
+
+# Tier-1 index
+/.ai/                  @verobee
+
+# Tier-1p playbooks (canonical)
+/.agents/              @verobee
+
+# Per-tool skill mirrors (re-derived; PRs touching these should normally
+# only contain symlink updates from scripts/docs/sync-skill-symlinks.sh)
+/.claude/skills/       @verobee
+/.codex/skills/        @verobee
+/.gemini/skills/       @verobee
+/.cursor/skills/       @verobee
+
+# Tier-2 SSOT
+/docs/llm/policies/    @verobee
+/docs/llm/decisions/   @verobee
+/docs/llm/architecture/ @verobee
+
+# Tooling
+/scripts/docs/         @verobee
+/lefthook.yml          @verobee
+/.gitignore            @verobee
+/.github/              @verobee

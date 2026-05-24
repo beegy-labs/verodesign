@@ -12,3 +12,27 @@ coverage/
 # Showcase is a dev tool — built artifact not consumed externally
 packages/showcase/dist/
 packages/showcase/.astro/
+
+# Local secrets inbox (org standard secrets-management policy).
+# NEVER commit. NEVER push. NEVER referenced from helm values / TF tfvars.
+# Operator's working copy of credentials; canonical store is OpenBao + ansible-vault.
+.secrets/
+.secrets/**
+
+# Per-tool skill mirrors are required for LLM-tool portability (organization
+# standard v1.0). Canonical lives in .agents/skills/; each tool dir holds
+# only symlinks back to canonical. Track these so contributors get the
+# correct skill layout on clone (lefthook also re-derives via
+# scripts/docs/sync-skill-symlinks.sh).
+.claude/*
+!.claude/skills/
+!.claude/skills/**
+.codex/*
+!.codex/skills/
+!.codex/skills/**
+.cursor/*
+!.cursor/skills/
+!.cursor/skills/**
+.gemini/*
+!.gemini/skills/
+!.gemini/skills/**

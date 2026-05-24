@@ -17,6 +17,7 @@
   "files": [
     "dist/**/*.min.css",
     "dist/**/*.min.css.br",
+    "dist/fonts/**",
     "dist/theme-init.js",
     "dist/cli/vds.js",
     "dist/types/**/*.d.ts",
@@ -30,6 +31,8 @@
     "LICENSE"
   ],
   "exports": {
+    "./css/full.css": "./dist/verodesign.full.min.css",
+    "./css/full.css.br": "./dist/verodesign.full.min.css.br",
     "./css/tokens.property.css": "./dist/css/tokens.property.min.css",
     "./css/tokens.property.css.br": "./dist/css/tokens.property.min.css.br",
     "./css/core.css": "./dist/css/core.min.css",
@@ -40,6 +43,8 @@
     "./css/prose.css.br": "./dist/css/prose.min.css.br",
     "./css/themes/*.css": "./dist/css/themes/*.min.css",
     "./css/themes/*.css.br": "./dist/css/themes/*.min.css.br",
+    "./patterns/girok-app.css": "./dist/patterns/girok-app.min.css",
+    "./patterns/girok-app.css.br": "./dist/patterns/girok-app.min.css.br",
     "./prose": "./dist/css/prose.min.css",
     "./utilities/full": "./dist/utilities/full.min.css",
     "./utilities/full.css.br": "./dist/utilities/full.min.css.br",
@@ -56,6 +61,8 @@
     "./animations": "./dist/animations.min.css",
     "./animations.css": "./dist/animations.min.css",
     "./animations.css.br": "./dist/animations.min.css.br",
+    "./fonts/plus-jakarta-sans.css": "./dist/fonts/plus-jakarta-sans/plus-jakarta-sans.css",
+    "./fonts/plus-jakarta-sans/*": "./dist/fonts/plus-jakarta-sans/*",
     "./types/*": "./dist/types/*",
     "./theme-init.js": "./dist/theme-init.js",
     "./tokens/*": "./tokens/*",
@@ -70,12 +77,21 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "audit:pattern-files": "node scripts/audit-pattern-files.mjs",
+    "audit:pattern-spacing": "node scripts/audit-pattern-spacing.mjs",
+    "audit:unused-tokens": "node scripts/audit-unused-tokens.mjs",
+    "audit:legacy-namespace": "node scripts/audit-legacy-namespace.mjs",
+    "audit:no-literal-fallback": "node scripts/audit-no-literal-fallback.mjs",
+    "audit:no-raw-px-in-patterns": "node scripts/audit-no-raw-px-in-patterns.mjs",
+    "audit:tokens-dtcg": "node scripts/audit-token-dtcg.mjs",
     "clean": "rm -rf dist && mkdir -p dist",
     "rebuild": "pnpm clean && pnpm build",
     "validate": "node scripts/validate.mjs",
     "prepublishOnly": "pnpm rebuild && pnpm validate"
   },
   "devDependencies": {
+    "chokidar": "^4.0.3",
     "culori": "^4.0.1",
     "lightningcss": "^1.32.0",
     "style-dictionary": "^4.4.0",

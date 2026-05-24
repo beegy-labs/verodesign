@@ -1,0 +1,19 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "page-toolbar": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "page-toolbar component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-page-toolbar-scale)) calc(1rem * var(--vds-exp-girok-page-toolbar-scale))",
+          "$type": "other",
+          "$description": "page-toolbar padding token."
+        }
+      }
+    }
+  }
+}

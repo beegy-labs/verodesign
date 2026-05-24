@@ -1,0 +1,25 @@
+/* GIROK pattern: category-color-swatch */
+@scope (.vds-pattern-girok-category-color-swatch) {
+  :scope {
+    display: inline-flex;
+    inline-size: var(--vds-exp-girok-category-color-swatch-inline-size-1);
+    block-size: var(--vds-exp-girok-category-color-swatch-block-size-2);
+    padding: 0;
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-round);
+    background: var(--vds-exp-girok-category-palette-rose);
+  }
+
+  :scope.is-selected {
+    box-shadow: var(--vds-exp-girok-category-color-swatch-box-shadow-3);
+  }
+
+  :scope.--rose { background: var(--vds-exp-girok-category-palette-rose); }
+  :scope.--amber { background: var(--vds-exp-girok-category-palette-amber); }
+  :scope.--emerald { background: var(--vds-exp-girok-category-palette-emerald); }
+  :scope.--blue { background: var(--vds-exp-girok-category-palette-blue); }
+  :scope.--purple { background: var(--vds-exp-girok-category-palette-purple); }
+  :scope.--teal { background: var(--vds-exp-girok-category-palette-teal); }
+  :scope.--pink { background: var(--vds-exp-girok-category-palette-pink); }
+  :scope.--slate { background: var(--vds-exp-girok-category-palette-slate); }
+}

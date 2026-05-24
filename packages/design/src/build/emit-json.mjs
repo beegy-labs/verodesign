@@ -25,7 +25,10 @@ export async function emitTokensJson(themes) {
     out[theme] = { light: {}, dark: {} };
     for (const mode of ['light', 'dark']) {
       const tree = await buildThemeTokens(theme, mode);
-      const flat = resolveTokens(flattenTokens(tree), tree);
+      const flat = resolveTokens(
+        flattenTokens(tree).filter((token) => token.path[0] !== 'exp'),
+        tree
+      );
       for (const t of flat) {
         out[theme][mode][tokenPathToCssVar(t.path)] = valueToJson(t);
       }

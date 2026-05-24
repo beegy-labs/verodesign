@@ -1,0 +1,14 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "select-card": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "select-card component density scale."
+        }
+      }
+    }
+  }
+}

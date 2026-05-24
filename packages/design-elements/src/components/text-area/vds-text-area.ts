@@ -24,8 +24,8 @@ export class VdsTextArea extends VdsElement {
       :host([hidden]) { display: none; }
 
       .label {
-        font-size: var(--vds-font-size-sm);
-        font-weight: var(--vds-font-weight-500);
+        font-size: var(--vds-type-role-label-size);
+        font-weight: var(--vds-type-role-label-weight);
       }
       .label[data-required]::after {
         content: ' *';
@@ -58,10 +58,10 @@ export class VdsTextArea extends VdsElement {
         all: unset;
         display: block;
         width: 100%;
-        min-height: 6rem;
+        min-height: calc(var(--vds-spacing-24));
         font: inherit;
-        font-size: var(--vds-font-size-base);
-        line-height: var(--vds-font-lineheight-normal);
+        font-size: var(--vds-type-role-body-size);
+        line-height: var(--vds-type-role-body-lineheight);
         color: var(--vds-theme-text-primary);
         background: transparent;
         resize: vertical;
@@ -78,14 +78,14 @@ export class VdsTextArea extends VdsElement {
         gap: var(--vds-spacing-2);
       }
       .helper {
-        font-size: var(--vds-font-size-xs);
+        font-size: var(--vds-type-role-caption-size);
         color: var(--vds-theme-text-dim);
       }
       .helper[data-error] {
         color: var(--vds-theme-destructive);
       }
       .count {
-        font-size: var(--vds-font-size-xs);
+        font-size: var(--vds-type-role-caption-size);
         color: var(--vds-theme-text-dim);
         font-variant-numeric: tabular-nums;
       }

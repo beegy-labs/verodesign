@@ -1,0 +1,44 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "toast": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "toast component density scale."
+        },
+        "inset-block-start-1": {
+          "$value": "calc(4rem * var(--vds-exp-girok-toast-scale))",
+          "$type": "dimension",
+          "$description": "toast inset-block-start token."
+        },
+        "gap-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-toast-scale))",
+          "$type": "dimension",
+          "$description": "toast gap token."
+        },
+        "padding-3": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-toast-scale)) calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-toast-scale))",
+          "$type": "other",
+          "$description": "toast padding token."
+        },
+        "font-size-4": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-toast-scale))",
+          "$type": "dimension",
+          "$description": "toast font-size token."
+        },
+        "inline-size-5": {
+          "$value": "calc(1rem * var(--vds-exp-girok-toast-scale))",
+          "$type": "dimension",
+          "$description": "toast inline-size token."
+        },
+        "block-size-6": {
+          "$value": "calc(1rem * var(--vds-exp-girok-toast-scale))",
+          "$type": "dimension",
+          "$description": "toast block-size token."
+        }
+      }
+    }
+  }
+}

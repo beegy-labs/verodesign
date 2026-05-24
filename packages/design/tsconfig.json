@@ -11,5 +11,9 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["scripts/**/*", "src/**/*", "tokens/**/*.json"]
+  "include": [
+    "scripts/**/*",
+    "src/**/*",
+    "tokens/**/*.json"
+  ]
 }

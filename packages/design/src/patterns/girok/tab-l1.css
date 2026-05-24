@@ -1,0 +1,68 @@
+/* GIROK pattern: tab-l1 */
+@scope (.vds-pattern-girok-tab-l1) {
+    :scope {
+      --tab-l1-cells: 5;
+      position: relative;
+      background: var(--vds-exp-girok-shell-frame-surface);
+      border-bottom: var(--vds-border-width-1) solid color-mix(in oklch, var(--vds-theme-border-strong) 80%, transparent);
+    }
+
+    .vds-pattern-girok-tab-l1__scroll {
+      display: grid;
+      grid-template-columns: repeat(var(--tab-l1-cells), minmax(0, 1fr));
+      inline-size: 100%;
+      gap: var(--vds-spacing-3);
+      padding: 0 var(--vds-exp-girok-tab-l1-scroll-padding-x);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .vds-pattern-girok-tab-l1__scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .vds-pattern-girok-tab-l1__item {
+      position: relative;
+      inline-size: 100%;
+      min-inline-size: 0;
+      min-width: var(--vds-exp-girok-tab-l1-min-width);
+      padding:
+        var(--vds-exp-girok-tab-l1-padding-y)
+        var(--vds-exp-girok-tab-l1-padding-x);
+      border: 0;
+      background: transparent;
+      color: color-mix(in oklab, var(--vds-exp-girok-nav-bottom-inactive) 90%, transparent);
+      font-size: var(--vds-exp-girok-tab-l1-font-size);
+      font-weight: var(--vds-exp-girok-tab-l1-weight-inactive);
+      line-height: 1.333333;
+      white-space: nowrap;
+      transition:
+        color var(--vds-motion-duration-fast) var(--vds-motion-easing-standard),
+        text-shadow var(--vds-motion-duration-fast) var(--vds-motion-easing-standard);
+    }
+
+    .vds-pattern-girok-tab-l1__item:hover,
+    .vds-pattern-girok-tab-l1__item.is-active,
+    .vds-pattern-girok-tab-l1__item[aria-current="page"] {
+      color: var(--vds-exp-girok-nav-tab-active);
+    }
+
+    .vds-pattern-girok-tab-l1__item.is-active,
+    .vds-pattern-girok-tab-l1__item[aria-current="page"] {
+      font-weight: var(--vds-exp-girok-tab-l1-weight-active);
+      text-shadow: var(--vds-exp-girok-tab-l1-underline-glow);
+    }
+
+    .vds-pattern-girok-tab-l1__item.is-active::after,
+    .vds-pattern-girok-tab-l1__item[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      left: var(--vds-exp-girok-tab-l1-underline-inset);
+      right: var(--vds-exp-girok-tab-l1-underline-inset);
+      bottom: 0;
+      height: var(--vds-exp-girok-tab-l1-underline-height);
+      border-radius: var(--vds-radius-full);
+      background-color: var(--vds-exp-girok-nav-tab-active);
+      box-shadow: var(--vds-exp-girok-tab-l1-underline-glow);
+    }
+  }

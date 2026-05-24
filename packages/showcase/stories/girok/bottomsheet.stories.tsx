@@ -1,0 +1,6 @@
+import type { StoryObj } from "@storybook/react-vite";
+import { Icon, Shell, paths, sectionMeta } from "./storybook-helpers";
+const meta = sectionMeta("bottomsheet");
+export default meta;
+type Story = StoryObj<typeof meta>;
+export const Default: Story = { render: () => <Shell phone><div className="girok-story-bottomsheet-stage"><div className="vds-pattern-bottomsheet__backdrop" /><div className="girok-story-bottomsheet-wrap"><section className="vds-pattern-bottomsheet__sheet is-daily"><div className="vds-pattern-bottomsheet__handle" /><header className="vds-pattern-bottomsheet__header"><div><strong className="vds-pattern-bottomsheet__title">오늘의 저축 기록</strong><span className="vds-pattern-bottomsheet__subtitle">2026년 5월 24일 · 자동 계산</span></div><button className="vds-pattern-bottomsheet__close"><Icon path={paths.close} /></button></header><div className="vds-pattern-bottomsheet__body"><div className="girok-story-stack"><div className="girok-story-card"><strong>예상 여유 자금</strong><p>620,000원을 눈덩이 통장으로 이동할 수 있습니다.</p></div><div className="girok-story-card"><strong>이번 주 메모</strong><p>카드값 반영 후 목표 상환률이 68%로 올라갑니다.</p></div></div></div><footer className="vds-pattern-bottomsheet__footer"><button className="vds-pattern-bottomsheet__cta">저축 루틴 실행</button></footer></section></div></div></Shell> };

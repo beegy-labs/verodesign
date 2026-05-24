@@ -1,12 +1,9 @@
-import * as r from "react";
-import { createComponent as t } from "@lit/react";
-import { VdsGrid as o } from "@verobee/design-elements/components/grid";
-import "@verobee/design-elements/define/grid";
-const i = /* @__PURE__ */ t({
-  tagName: "vds-grid",
-  elementClass: o,
-  react: r
+import { jsx as a } from "react/jsx-runtime";
+import * as e from "react";
+import { spacing as p } from "./_internal.js";
+const s = e.forwardRef(function({ cols: r = "1", gap: i = "0", style: o, ...t }, m) {
+  return /* @__PURE__ */ a("div", { ...t, ref: m, style: { display: "grid", gridTemplateColumns: `repeat(${r}, minmax(0, 1fr))`, gap: p[i], ...o } });
 });
 export {
-  i as Grid
+  s as Grid
 };

@@ -1,56 +1,57 @@
 # Separator
 
-> Tag: `<vds-separator>` · Import: `@verobee/design-elements/components/separator` · React: `Separator` from `@verobee/design-react` · Pattern: WAI-ARIA AP 1.2 § Separator · Status: v0.2.0-alpha
-
-**Lookup**: separator, divider, hr, rule, horizontal/vertical line.
+> Tag: `<vds-separator>` · React: `Separator` · Status: v0.2.0-alpha · APG pattern: Separator
 
 ## Purpose
-Visual separator between content sections. Optionally semantic.
+Visual divider with optional semantic exposure.
 
-## When to use
-- Between sections that don't warrant a heading.
-- Inside menus to group items.
-- Sidebar item dividers.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Section breaks and inline group dividers. |
+| Use | Menu grouping or simple horizontal rules within system surfaces. |
+| Do not use | A layout crutch for spacing problems. |
+| Do not use | Interactive resize handles or custom splitter widgets. |
 
-## When NOT to use
-- Around interactive groups → consider `border` on a container instead.
-- Between tabs → tabs already provide separation.
+## Design rationale
+Separator keeps the contract minimal: orientation plus decorative-vs-semantic choice.
 
-## Props
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `orientation` | `"horizontal"` \| `"vertical"` | `"horizontal"` | Direction |
-| `decorative` | `boolean` | `true` | If false, exposes `role="separator"` for AT |
+## A11y narrative
+Decorative separators stay out of the accessibility tree. Semantic separators expose orientation when the divider itself has meaning.
 
-## A11y
-- `decorative=true` → `role="presentation"` (no AT announcement).
-- `decorative=false` → `role="separator"` + `aria-orientation`.
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
 
-## Tokens consumed
-- `--vds-theme-border-subtle`
+<!-- CEM:START -->
+### `<vds-separator>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `orientation` | `orientation` | `Orientation` | `horizontal` |
+| `decorative` | `decorative` | `boolean` | `true` |
+
+#### Slots
+None.
+
+#### Events
+None.
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
-### HTML
 ```html
-<section>...</section>
 <vds-separator></vds-separator>
-<section>...</section>
-
-<div style="display: flex; align-items: center; gap: 12px">
-  <span>A</span>
-  <vds-separator orientation="vertical" style="height: 24px"></vds-separator>
-  <span>B</span>
-</div>
 ```
 
-### React
 ```tsx
 import { Separator } from '@verobee/design-react';
 
-<Separator />
-<Separator orientation="vertical" style={{ height: 24 }} />
+<Separator orientation="vertical" />
 ```
 
-## Related
-[`<vds-menu>`](menu.md), [`<vds-card>`](card.md)

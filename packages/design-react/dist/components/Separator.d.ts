@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { VdsSeparator } from '@verobee/design-elements/components/separator';
-import '@verobee/design-elements/define/separator';
-export declare const Separator: import("@lit/react").ReactWebComponent<VdsSeparator, {}>;
-export type SeparatorProps = React.ComponentProps<typeof Separator>;
+type Orientation = 'horizontal' | 'vertical';
+export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {
+    orientation?: Orientation;
+    decorative?: boolean;
+}
+export declare const Separator: React.ForwardRefExoticComponent<SeparatorProps & React.RefAttributes<HTMLDivElement>>;
+export {};

@@ -1,0 +1,499 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "shell": {
+        "frame-surface": {
+          "$value": "oklch(15.91% 0.0064 91.69)",
+          "$type": "color",
+          "$description": "Primary girok device frame and root shell surface."
+        },
+        "content-surface": {
+          "$value": "oklch(15.47% 0.0045 84.57)",
+          "$type": "color",
+          "$description": "Main scroll content surface behind tab content."
+        }
+      },
+      "category": {
+        "palette": {
+          "rose": {
+            "$value": "{exp.girok.status.expense-light}",
+            "$type": "color",
+            "$description": "Category palette rose swatch for expense-like categories."
+          },
+          "amber": {
+            "$value": "{exp.girok.accent.strong}",
+            "$type": "color",
+            "$description": "Category palette amber swatch for highlight categories."
+          },
+          "emerald": {
+            "$value": "{exp.girok.status.income-light}",
+            "$type": "color",
+            "$description": "Category palette emerald swatch for income-like categories."
+          },
+          "blue": {
+            "$value": "{exp.girok.status.sell-light}",
+            "$type": "color",
+            "$description": "Category palette blue swatch for cool accent categories."
+          },
+          "purple": {
+            "$value": "oklch(71.4% 0.137 304.8)",
+            "$type": "color",
+            "$description": "Category palette purple swatch for custom categories."
+          },
+          "teal": {
+            "$value": "oklch(79.6% 0.116 190.8)",
+            "$type": "color",
+            "$description": "Category palette teal swatch for custom categories."
+          },
+          "pink": {
+            "$value": "oklch(75.5% 0.166 353.2)",
+            "$type": "color",
+            "$description": "Category palette pink swatch for custom categories."
+          },
+          "slate": {
+            "$value": "oklch(72.3% 0.033 250.1)",
+            "$type": "color",
+            "$description": "Category palette slate swatch for neutral categories."
+          }
+        }
+      },
+      "nav": {
+        "tab-active": {
+          "$value": "oklch(83.69% 0.1644 84.43)",
+          "$type": "color",
+          "$description": "Active 1-depth tab and key accent text tone."
+        },
+        "bottom-active": {
+          "$value": "oklch(76.86% 0.1647 70.08)",
+          "$type": "color",
+          "$description": "Bottom navigation active icon and label tone."
+        },
+        "bottom-inactive": {
+          "$value": "oklch(71.18% 0.0129 286.07)",
+          "$type": "color",
+          "$description": "Bottom navigation inactive tone, lifted from source zinc-500 to zinc-400 for AA on shell surface."
+        },
+        "tab-underline-glow": {
+          "$value": "0 -2px 8px 0 oklch(83.69% 0.1644 84.43 / 0.5)",
+          "$type": "shadow",
+          "$description": "Underline glow for active first-depth tab emphasis."
+        },
+        "tabunderlineglow": {
+          "$value": "{exp.girok.nav.tab-underline-glow}",
+          "$type": "shadow",
+          "$description": "Deprecated alias for `exp.girok-redesign.nav.tab-underline-glow`; remove after 1-week soak."
+        }
+      },
+      "radius": {
+        "device-frame": {
+          "$value": "55px",
+          "$type": "dimension",
+          "$description": "Device frame outer radius from the React mockup token SSOT."
+        },
+        "sheet": {
+          "$value": "32px",
+          "$type": "dimension",
+          "$description": "Bottom sheet top-rounded corners."
+        },
+        "modal": {
+          "$value": "28px",
+          "$type": "dimension",
+          "$description": "Centered modal radius."
+        },
+        "large-card": {
+          "$value": "{radius.2xl}",
+          "$type": "dimension",
+          "$description": "24px large card radius alias for girok redesign."
+        },
+        "medium-card": {
+          "$value": "{radius.xl}",
+          "$type": "dimension",
+          "$description": "16px medium card radius alias for girok redesign."
+        },
+        "card-base": {
+          "$value": "{radius.lg}",
+          "$type": "dimension",
+          "$description": "12px default card and pill radius alias for girok redesign."
+        },
+        "inner-control": {
+          "$value": "{radius.md}",
+          "$type": "dimension",
+          "$description": "8px inner control radius alias for girok redesign."
+        },
+        "small-chip": {
+          "$value": "6px",
+          "$type": "dimension",
+          "$description": "6px small chip radius from the React mockup token SSOT."
+        },
+        "xs": {
+          "$value": "{radius.sm}",
+          "$type": "dimension",
+          "$description": "4px extra-small radius alias for girok redesign."
+        },
+        "round": {
+          "$value": "{radius.full}",
+          "$type": "dimension",
+          "$description": "Full pill radius alias for girok redesign."
+        }
+      },
+      "font-family": {
+        "display": {
+          "$value": "'Plus Jakarta Sans', system-ui, -apple-system, 'Apple SD Gothic Neo', 'Segoe UI', Roboto, sans-serif",
+          "$type": "fontFamily",
+          "$description": "Heavy/black-weight display sans-serif for girok wordmark and hero numerals. Falls back to system stack for Korean and other scripts."
+        }
+      },
+      "font-size": {
+        "caption": {
+          "$value": "10px",
+          "$type": "dimension",
+          "$description": "Caption and badge label size."
+        },
+        "micro": {
+          "$value": "11px",
+          "$type": "dimension",
+          "$description": "Button micro label size."
+        },
+        "body-sm": {
+          "$value": "13px",
+          "$type": "dimension",
+          "$description": "Compact list item title size."
+        },
+        "menu": {
+          "$value": "15px",
+          "$type": "dimension",
+          "$description": "Top-level menu item size."
+        }
+      },
+      "shadow": {
+        "glow": {
+          "bottom-nav": {
+            "$value": "0 -5px 15px rgba(0, 0, 0, 0.5)",
+            "$type": "shadow",
+            "$description": "Bottom navigation top-cast shadow on the girok global shell."
+          },
+          "income": {
+            "$value": "0 0 15px rgba(16, 185, 129, 0.4)",
+            "$type": "shadow",
+            "$description": "Income action button green glow."
+          },
+          "modal-soft": {
+            "$value": "{exp.girok.shadow.glow.warning-soft}",
+            "$type": "shadow",
+            "$description": "Modal amber soft glow; semantic alias of existing girok warning-soft glow."
+          },
+          "expense-soft": {
+            "$value": "0 4px 8px rgba(244, 63, 94, 0.2)",
+            "$type": "shadow",
+            "$description": "Buy or expense toggle rose glow."
+          },
+          "info-soft": {
+            "$value": "0 4px 8px rgba(59, 130, 246, 0.2)",
+            "$type": "shadow",
+            "$description": "Sell or info toggle blue glow."
+          },
+          "warning-chart": {
+            "$value": "0 0 10px oklch(76.86% 0.1647 70.08 / 0.3)",
+            "$type": "shadow",
+            "$description": "Current month highlighted amber glow for ledger analysis bars."
+          },
+          "warning-hero": {
+            "$value": "0 0 10px rgba(251, 191, 36, 0.5)",
+            "$type": "shadow",
+            "$description": "Amber glow used on the snowball hero primary progress fill."
+          },
+          "success-hero": {
+            "$value": "0 0 8px rgba(16, 185, 129, 0.4)",
+            "$type": "shadow",
+            "$description": "Emerald glow used on the snowball target progress fill."
+          }
+        }
+      },
+      "pill": {
+        "success-border": {
+          "$value": "rgba(16, 185, 129, 0.2)",
+          "$type": "color",
+          "$description": "Success pill border from the React mockup token SSOT."
+        },
+        "expense-bg": {
+          "$value": "rgba(244, 63, 94, 0.1)",
+          "$type": "color",
+          "$description": "Rose pill background from the React mockup token SSOT."
+        },
+        "expense-border": {
+          "$value": "rgba(244, 63, 94, 0.2)",
+          "$type": "color",
+          "$description": "Expense pill border from the React mockup token SSOT."
+        },
+        "info-bg": {
+          "$value": "rgba(59, 130, 246, 0.1)",
+          "$type": "color",
+          "$description": "Blue pill background from the React mockup token SSOT."
+        },
+        "sell-bg": {
+          "$value": "{exp.girok.pill.info-bg}",
+          "$type": "color",
+          "$description": "Sell pill background alias from the React mockup token SSOT."
+        },
+        "sell-border": {
+          "$value": "rgba(59, 130, 246, 0.2)",
+          "$type": "color",
+          "$description": "Sell pill border from the React mockup token SSOT."
+        },
+        "success-bg": {
+          "$value": "rgba(16, 185, 129, 0.1)",
+          "$type": "color",
+          "$description": "Emerald pill background from the React mockup token SSOT."
+        },
+        "indigo-tile-bg": {
+          "$value": "rgba(99, 102, 241, 0.1)",
+          "$type": "color",
+          "$description": "Indigo tile background for KIS credential icons."
+        }
+      },
+      "selection": {
+        "bg": {
+          "$value": "rgba(245, 158, 11, 0.2)",
+          "$type": "color",
+          "$description": "Selection highlight background from the React mockup token SSOT."
+        }
+      },
+      "transition": {
+        "default": {
+          "$value": "150ms",
+          "$type": "duration",
+          "$description": "Default transition duration from the React mockup token SSOT."
+        },
+        "slow": {
+          "$value": "500ms",
+          "$type": "duration",
+          "$description": "Slow transition duration from the React mockup token SSOT."
+        },
+        "slower": {
+          "$value": "700ms",
+          "$type": "duration",
+          "$description": "Slower transition duration from the React mockup token SSOT."
+        }
+      },
+      "press-scale": {
+        "default": {
+          "$value": 0.95,
+          "$type": "number",
+          "$description": "Default active press scale from the React mockup token SSOT."
+        },
+        "soft": {
+          "$value": 0.98,
+          "$type": "number",
+          "$description": "Soft active press scale from the React mockup token SSOT."
+        }
+      },
+      "progress": {
+        "track-bg": {
+          "$value": "{exp.girok.surface.card-subtle}",
+          "$type": "color",
+          "$description": "Progress track surface for redesign progress bars."
+        },
+        "height-sm": {
+          "$value": "4px",
+          "$type": "dimension",
+          "$description": "Small progress bar height."
+        },
+        "height-md": {
+          "$value": "6px",
+          "$type": "dimension",
+          "$description": "Default progress bar height."
+        },
+        "height-lg": {
+          "$value": "10px",
+          "$type": "dimension",
+          "$description": "Large hero progress bar height."
+        },
+        "hero-fill": {
+          "$value": "linear-gradient(90deg, oklch(50% 0.171 70), oklch(70% 0.153 70))",
+          "$type": "other",
+          "$description": "Amber progress fill for the snowball challenge primary progress bar."
+        },
+        "challenge-bg": {
+          "$value": "linear-gradient(135deg, oklch(15.91% 0.0064 91.69), oklch(12.54% 0.0041 88.85))",
+          "$type": "other",
+          "$description": "Dark warm gradient background for the snowball challenge hero card."
+        },
+        "quick-action-emphasis": {
+          "$value": "linear-gradient(180deg, oklch(24.77% 0.0225 76.95), oklch(16.95% 0.0086 86.09))",
+          "$type": "other",
+          "$description": "Warm emphasis gradient for the scalp calculator quick action."
+        }
+      },
+      "stock": {
+        "up": {
+          "$value": "oklch(73.3% 0.1091 26.53)",
+          "$type": "color",
+          "$description": "Korean stock market up color: rose/red for positive pnl."
+        },
+        "down": {
+          "$value": "oklch(71.37% 0.1434 254.62)",
+          "$type": "color",
+          "$description": "Korean stock market down color: blue for negative pnl."
+        },
+        "flat": {
+          "$value": "{theme.text.dim}",
+          "$type": "color",
+          "$description": "Neutral stock pnl color for flat positions."
+        }
+      },
+      "settings-row": {
+        "icon-tile-size": {
+          "$value": "36px",
+          "$type": "dimension",
+          "$description": "Leading icon tile size for settings action rows."
+        },
+        "icon-tile-bg-indigo": {
+          "$value": "{exp.girok.pill.indigo-tile-bg}",
+          "$type": "color",
+          "$description": "Indigo settings icon tile background."
+        },
+        "icon-tile-fg-indigo": {
+          "$value": "{exp.girok.icon.info-strong}",
+          "$type": "color",
+          "$description": "Indigo settings icon tile foreground."
+        },
+        "icon-tile-bg-emerald": {
+          "$value": "{exp.girok.pill.success-bg}",
+          "$type": "color",
+          "$description": "Emerald settings icon tile background."
+        },
+        "icon-tile-fg-emerald": {
+          "$value": "{theme.status.success}",
+          "$type": "color",
+          "$description": "Emerald settings icon tile foreground."
+        },
+        "icon-tile-bg-amber": {
+          "$value": "{exp.girok.accent.dark}",
+          "$type": "color",
+          "$description": "Amber settings icon tile background."
+        },
+        "icon-tile-fg-amber": {
+          "$value": "{exp.girok.nav.tab-active}",
+          "$type": "color",
+          "$description": "Amber settings icon tile foreground."
+        },
+        "icon-tile-bg-rose": {
+          "$value": "{exp.girok.pill.expense-bg}",
+          "$type": "color",
+          "$description": "Rose settings icon tile background."
+        },
+        "icon-tile-fg-rose": {
+          "$value": "{theme.status.error}",
+          "$type": "color",
+          "$description": "Rose settings icon tile foreground."
+        },
+        "icon-tile-bg-zinc": {
+          "$value": "{exp.girok.surface.control-active}",
+          "$type": "color",
+          "$description": "Neutral settings icon tile background."
+        },
+        "icon-tile-fg-zinc": {
+          "$value": "{theme.text.primary}",
+          "$type": "color",
+          "$description": "Neutral settings icon tile foreground."
+        }
+      },
+      "chart": {
+        "top-rank-fill": {
+          "$value": "oklch(77.29% 0.1535 163.22)",
+          "$type": "color",
+          "$description": "Positive chart fill used for highlighted savings and rank emphasis."
+        },
+        "rank-4-fill": {
+          "$value": "oklch(68.01% 0.1583 276.93)",
+          "$type": "color",
+          "$description": "Fourth-rank progress fill accent in analysis charts."
+        },
+        "rank-5-fill": {
+          "$value": "oklch(72.17% 0.1767 305.5)",
+          "$type": "color",
+          "$description": "Fifth-rank progress fill accent in analysis charts."
+        }
+      },
+      "toggle": {
+        "expense-active": {
+          "$value": "oklch(64.5% 0.2154 16.44)",
+          "$type": "color",
+          "$description": "Expense-side active pill tone for transaction toggles."
+        },
+        "income-active": {
+          "$value": "oklch(69.59% 0.1491 162.48)",
+          "$type": "color",
+          "$description": "Income-side active pill tone for transaction and savings toggles."
+        },
+        "incomeactive": {
+          "$value": "{exp.girok.toggle.income-active}",
+          "$type": "color",
+          "$description": "Deprecated alias for `exp.girok-redesign.toggle.income-active`; remove after 1-week soak."
+        },
+        "active-foreground": {
+          "$value": "oklch(15.91% 0.0064 91.69)",
+          "$type": "color",
+          "$description": "High-contrast foreground for active income and expense toggle pills."
+        },
+        "activeforeground": {
+          "$value": "{exp.girok.toggle.active-foreground}",
+          "$type": "color",
+          "$description": "Deprecated alias for `exp.girok-redesign.toggle.active-foreground`; remove after 1-week soak."
+        },
+        "active-bg": {
+          "$value": "{exp.girok.surface.control-active}",
+          "$type": "color",
+          "$description": "Neutral active toggle (segment, view-switch); semantic alias of girok segmented active surface."
+        }
+      },
+      "bottomsheet": {
+        "height-daily": {
+          "$value": "70%",
+          "$type": "other",
+          "$description": "Daily sheet fixed height, slightly taller to match the redesign reference."
+        },
+        "radius-top": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "Daily sheet top radius."
+        },
+        "handle-color": {
+          "$value": "oklch(37.11% 0.0115 285.95)",
+          "$type": "color",
+          "$description": "Daily sheet handle color aligned with zinc-700."
+        }
+      },
+      "icon": {
+        "info-strong": {
+          "$value": "oklch(68.01% 0.1583 276.93)",
+          "$type": "color",
+          "$description": "Indigo info icon emphasis."
+        }
+      },
+      "spacing": {
+        "xs": {
+          "$value": "0.375rem",
+          "$type": "dimension",
+          "$description": "Girok compact spacing xs."
+        },
+        "sm": {
+          "$value": "0.625rem",
+          "$type": "dimension",
+          "$description": "Girok compact spacing sm."
+        },
+        "md": {
+          "$value": "0.75rem",
+          "$type": "dimension",
+          "$description": "Girok compact spacing md."
+        },
+        "lg": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "Girok compact spacing lg."
+        }
+      }
+    }
+  }
+}

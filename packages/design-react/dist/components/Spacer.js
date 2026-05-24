@@ -1,12 +1,9 @@
-import * as e from "react";
-import { createComponent as r } from "@lit/react";
-import { VdsSpacer as t } from "@verobee/design-elements/components/spacer";
-import "@verobee/design-elements/define/spacer";
-const p = /* @__PURE__ */ r({
-  tagName: "vds-spacer",
-  elementClass: t,
-  react: e
+import { jsx as f } from "react/jsx-runtime";
+import * as l from "react";
+import { spacing as t } from "./_internal.js";
+const m = l.forwardRef(function({ axis: o = "vertical", size: r, grow: i = !1, style: a, ...e }, c) {
+  return /* @__PURE__ */ f("div", { ...e, ref: c, style: { display: "block", flexShrink: 0, flexGrow: i ? 1 : void 0, width: o === "horizontal" && r ? t[r] : void 0, height: o === "vertical" && r ? t[r] : void 0, ...a } });
 });
 export {
-  p as Spacer
+  m as Spacer
 };

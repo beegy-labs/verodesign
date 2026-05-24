@@ -26,18 +26,18 @@ export class VdsText extends VdsElement {
     :host([as="span"]) { display: inline; }
     :host([hidden]) { display: none; }
 
-    :host([size="xs"])    { font-size: var(--vds-font-size-xs); }
-    :host([size="sm"])    { font-size: var(--vds-font-size-sm); }
-    :host([size="base"])  { font-size: var(--vds-font-size-base); }
-    :host([size="lg"])    { font-size: var(--vds-font-size-lg); }
-    :host([size="xl"])    { font-size: var(--vds-font-size-xl); }
+    :host([size="xs"])    { font-size: var(--vds-type-role-caption-size); }
+    :host([size="sm"])    { font-size: var(--vds-type-role-label-size); }
+    :host([size="base"])  { font-size: var(--vds-type-role-body-size); }
+    :host([size="lg"])    { font-size: var(--vds-type-role-title-size); }
+    :host([size="xl"])    { font-size: var(--vds-type-role-metric-size); }
 
     :host([tone="bright"])  { color: var(--vds-theme-text-bright); }
     :host([tone="dim"])     { color: var(--vds-theme-text-secondary); }
     :host([tone="muted"])   { color: var(--vds-theme-text-faint); }
     :host([tone="primary"]) { color: var(--vds-theme-primary); }
-    :host([tone="success"]) { color: var(--vds-theme-success); }
-    :host([tone="warning"]) { color: var(--vds-theme-warning); }
+    :host([tone="success"]) { color: var(--vds-theme-status-success); }
+    :host([tone="warning"]) { color: var(--vds-theme-status-warning); }
     :host([tone="error"])   { color: var(--vds-theme-destructive); }
 
     :host([weight="400"]) { font-weight: var(--vds-font-weight-400); }

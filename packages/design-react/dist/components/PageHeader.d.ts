@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { VdsPageHeader } from '@verobee/design-elements/components/page-header';
-import '@verobee/design-elements/define/page-header';
-export declare const PageHeader: import("@lit/react").ReactWebComponent<VdsPageHeader, {}>;
-export type PageHeaderProps = React.ComponentProps<typeof PageHeader>;
+export interface PageHeaderProps extends React.HTMLAttributes<HTMLElement> {
+    heading?: string;
+    subtitle?: string;
+}
+export declare const PageHeader: React.ForwardRefExoticComponent<PageHeaderProps & React.RefAttributes<HTMLElement>>;

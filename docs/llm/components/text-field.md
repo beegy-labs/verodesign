@@ -1,73 +1,70 @@
 # Text Field
 
-> Tag: `<vds-text-field>` · Import: `@verobee/design-elements/components/text-field` · React: `TextField` from `@verobee/design-react` · Pattern: native textbox + WAI-ARIA hints · Status: v0.2.0-alpha
-
-**Lookup**: input, text input, text field, single-line, email, password, number.
+> Tag: `<vds-text-field>` · React: `TextField` · Status: v0.2.0-alpha · APG pattern: textbox
 
 ## Purpose
-Single-line text input. Form-associated, validation-aware.
+Single-line FACE text input with helper and validation support.
 
-## When to use
-- Email, name, password, search, number, URL.
-- Inline editable label.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Email, password, search, number, and standard short text inputs. |
+| Use | Forms that need a consistent field shell. |
+| Do not use | Multi-line or rich content. |
+| Do not use | Strict value lists that should use Select. |
 
-## When NOT to use
-- Multi-line → use `<vds-text-area>`.
-- Choice from list → use `<vds-select>`.
+## Design rationale
+Text Field centralizes the common single-line field contract, including validation, helper copy, and icon slot composition.
 
-## Props
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `value` | `string` | `""` | Current value |
-| `type` | `"text"` \| `"email"` \| `"password"` \| `"number"` \| `"tel"` \| `"url"` \| `"search"` | `"text"` | Input type |
-| `placeholder` | `string` | — | Hint text |
-| `disabled` | `boolean` | `false` | Disabled state |
-| `readonly` | `boolean` | `false` | Readonly state |
-| `required` | `boolean` | `false` | Required for form |
-| `name` | `string` | — | Form field name |
-| `size` | `"sm"` \| `"md"` \| `"lg"` | `"md"` | Visual size |
+## A11y narrative
+Uses native input semantics, propagates required and invalid state, and keeps helper/error messaging associated with the control.
 
-## Slots
-| Name | Description |
-| ---- | ----------- |
-| `start` | Leading icon / addon |
-| `end` | Trailing icon / addon |
-| `helper` | Helper / error text below input |
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `input` | (native InputEvent) | Fires on every keystroke |
-| `change` | `{ value: string }` | Fires on commit (blur or Enter) |
+<!-- CEM:START -->
+### `<vds-text-field>`
 
-## A11y
-- Internal `<input>` with proper type.
-- `aria-invalid` reflected from validation state.
-- `aria-required` from `required` prop.
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `value` | `value` | `string` | `` |
+| `name` | `name` | `string | undefined` | — |
+| `label` | `label` | `string | undefined` | — |
+| `helper` | `helper` | `string | undefined` | — |
+| `errorMessage` | `errorMessage` | `string | undefined` | — |
+| `placeholder` | `placeholder` | `string | undefined` | — |
+| `type` | `type` | `| 'text' | 'email' | 'password' | 'tel' | 'url' | 'search'     | 'number' | 'date' | 'datetime-local' | 'time' | 'month' | 'week'     | 'color' | 'range' | 'file' | 'hidden'` | `text` |
+| `size` | `size` | `Size` | `md` |
+| `disabled` | `disabled` | `boolean` | `false` |
+| `required` | `required` | `boolean` | `false` |
+| `readonly` | `readonly` | `boolean` | `false` |
+| `autocomplete` | `autocomplete` | `string | undefined` | — |
+| `minlength` | `minlength` | `number | undefined` | — |
+| `maxlength` | `maxlength` | `number | undefined` | — |
+| `pattern` | `pattern` | `string | undefined` | — |
 
-## Tokens consumed
-- `--vds-theme-{bg-card,text-primary,text-faint,border-default,border-focus,destructive}`
-- `--vds-spacing-{2,3}`, `--vds-radius-md`, `--vds-font-{family-sans,size-{sm,base,lg}}`
+#### Slots
+None.
+
+#### Events
+None.
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
 ```html
-<vds-text-field type="email" name="email" placeholder="you@example.com" required>
-  <svg slot="start">...</svg>
-</vds-text-field>
+<vds-text-field type="email" placeholder="you@example.com"></vds-text-field>
 ```
 
 ```tsx
 import { TextField } from '@verobee/design-react';
 
-<TextField
-  type="email"
-  value={email}
-  onInput={(e) => setEmail(e.target.value)}
-  placeholder="you@example.com"
-  required
-/>
+<TextField type="email" />
 ```
 
-## Related
-[`<vds-text-area>`](text-area.md), [`<vds-label>`](label.md)

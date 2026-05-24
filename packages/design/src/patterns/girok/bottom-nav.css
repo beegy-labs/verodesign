@@ -1,0 +1,35 @@
+/* GIROK pattern: bottom-nav */
+@scope (.vds-pattern-girok-bottom-nav) {
+  :scope {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: var(--vds-exp-girok-bottom-nav-padding-1);
+    border-top: 1px solid color-mix(in oklab, var(--vds-theme-border-subtle) 32%, transparent);
+    background: color-mix(in oklab, var(--vds-exp-girok-shell-frame-surface) 92%, black 8%);
+  }
+
+  .vds-pattern-girok-bottom-nav__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--vds-exp-girok-bottom-nav-gap-2);
+    color: color-mix(in oklab, var(--vds-exp-girok-nav-bottom-inactive) 84%, transparent);
+    font-size: var(--vds-exp-girok-bottom-nav-font-size-3);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1;
+  }
+
+  .vds-pattern-girok-bottom-nav__item.is-active {
+    color: color-mix(in oklab, var(--vds-exp-girok-nav-tab-active) 90%, transparent);
+  }
+
+  .vds-pattern-girok-bottom-nav__item > svg {
+    width: var(--vds-exp-girok-bottom-nav-width-4);
+    height: var(--vds-exp-girok-bottom-nav-height-5);
+    stroke: currentColor;
+    stroke-width: 1.9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  }

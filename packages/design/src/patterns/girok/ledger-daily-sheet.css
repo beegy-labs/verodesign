@@ -1,0 +1,159 @@
+/* GIROK pattern: ledger-daily-sheet */
+@scope (.vds-pattern-girok-ledger-daily-sheet) {
+  :scope {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__backdrop {
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__sheet {
+    position: relative;
+    min-block-size: 65%;
+    max-block-size: 65%;
+    padding-bottom: var(--vds-exp-girok-ledger-daily-sheet-padding-bottom-1);
+    box-shadow: var(--vds-exp-girok-ledger-daily-sheet-box-shadow-2);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__handle {
+    inline-size: var(--vds-exp-girok-ledger-daily-sheet-inline-size-3);
+    block-size: var(--vds-exp-girok-ledger-daily-sheet-block-size-4);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__header,
+  .vds-pattern-girok-ledger-daily-sheet__item,
+  .vds-pattern-girok-ledger-daily-sheet__item-copy,
+  .vds-pattern-girok-ledger-daily-sheet__footer-btn {
+    display: flex;
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__header {
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-3);
+    padding-inline: var(--vds-spacing-4);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__title {
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-ledger-daily-sheet-font-size-5);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.555556;
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-spacing-1);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-round);
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--vds-spacing-3);
+    overflow-y: auto;
+    padding: 0 var(--vds-spacing-4) var(--vds-spacing-3);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item {
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-3);
+    padding: var(--vds-exp-girok-ledger-daily-sheet-padding-6);
+    background: var(--vds-exp-girok-surface-segment-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item-main {
+    display: flex;
+    align-items: center;
+    gap: var(--vds-spacing-3);
+    min-width: 0;
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--vds-exp-girok-ledger-daily-sheet-inline-size-7);
+    block-size: var(--vds-exp-girok-ledger-daily-sheet-block-size-8);
+    flex-shrink: 0;
+    background: var(--vds-exp-girok-surface-app-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-neutral-strong);
+    border-radius: var(--vds-exp-girok-radius-round);
+    color: var(--vds-exp-girok-text-light);
+    font-size: var(--vds-exp-girok-ledger-daily-sheet-font-size-9);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.454545;
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: var(--vds-exp-girok-ledger-daily-sheet-gap-10);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item-title {
+    color: var(--vds-exp-girok-text-strong);
+    font-size: var(--vds-exp-girok-ledger-daily-sheet-font-size-11);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.428571;
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item-subtitle {
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-ledger-daily-sheet-font-size-12);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item-amount {
+    flex-shrink: 0;
+    font-size: var(--vds-exp-girok-ledger-daily-sheet-font-size-13);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.428571;
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item-amount--income {
+    color: var(--vds-exp-girok-status-income-light);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__item-amount--expense {
+    color: var(--vds-exp-girok-status-expense-light);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__footer {
+    flex-shrink: 0;
+    padding: var(--vds-spacing-2) var(--vds-spacing-4) 0;
+    border-top: var(--vds-border-width-1) solid var(--vds-exp-girok-border-divider-soft);
+    background: var(--vds-exp-girok-surface-sheet-base);
+  }
+
+  .vds-pattern-girok-ledger-daily-sheet__footer-btn {
+    inline-size: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: var(--vds-spacing-1_5);
+    padding: var(--vds-exp-girok-ledger-daily-sheet-padding-14);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-active);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+    background: var(--vds-exp-girok-surface-control-active);
+    color: var(--vds-exp-girok-accent-light);
+    font-size: var(--vds-exp-girok-ledger-daily-sheet-font-size-15);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.333333;
+    box-shadow: var(--vds-shadow-lg);
+  }
+}

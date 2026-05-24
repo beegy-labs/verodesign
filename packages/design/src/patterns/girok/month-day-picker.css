@@ -1,0 +1,137 @@
+/* GIROK pattern: month-day-picker */
+@scope (.vds-pattern-girok-month-day-picker) {
+  :scope {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--vds-spacing-1_5);
+    padding: var(--vds-exp-girok-month-day-picker-padding-1);
+    background: var(--vds-exp-girok-surface-app-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+    color: var(--vds-exp-girok-text-base);
+    font-size: var(--vds-exp-girok-month-day-picker-font-size-2);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.333333;
+  }
+
+  .vds-pattern-girok-month-day-picker__caret {
+    inline-size: var(--vds-exp-girok-month-day-picker-inline-size-3);
+    block-size: var(--vds-exp-girok-month-day-picker-block-size-4);
+    color: var(--vds-exp-girok-text-muted);
+  }
+
+  .vds-pattern-girok-month-day-picker__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--vds-exp-girok-surface-backdrop-deep);
+  }
+
+  .vds-pattern-girok-month-day-picker__sheet {
+    inline-size: 100%;
+    align-self: stretch;
+    padding: var(--vds-exp-girok-month-day-picker-padding-5);
+    box-shadow: var(--vds-exp-girok-month-day-picker-box-shadow-6);
+  }
+
+  .vds-pattern-girok-month-day-picker__handle {
+    inline-size: var(--vds-exp-girok-month-day-picker-inline-size-7);
+    block-size: var(--vds-exp-girok-month-day-picker-block-size-8);
+  }
+
+  .vds-pattern-girok-month-day-picker__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-3);
+    inline-size: 100%;
+  }
+
+  .vds-pattern-girok-month-day-picker__title {
+    flex: 1;
+    min-width: 0;
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-month-day-picker-font-size-9);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.555556;
+  }
+
+  .vds-pattern-girok-month-day-picker__close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-spacing-1);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-round);
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+  }
+
+  .vds-pattern-girok-month-day-picker__wheel-area {
+    position: relative;
+    inline-size: 100%;
+    block-size: var(--vds-exp-girok-month-day-picker-block-size-10);
+    overflow: hidden;
+  }
+
+  .vds-pattern-girok-month-day-picker__wheel {
+    block-size: 100%;
+    overflow-y: auto;
+    padding-top: var(--vds-exp-girok-month-day-picker-padding-top-11);
+    padding-bottom: var(--vds-exp-girok-month-day-picker-padding-bottom-12);
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+  }
+
+  .vds-pattern-girok-month-day-picker__wheel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vds-pattern-girok-month-day-picker__wheel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    block-size: var(--vds-exp-girok-month-day-picker-block-size-13);
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-month-day-picker-font-size-14);
+    line-height: 1.5;
+    scroll-snap-align: center;
+  }
+
+  .vds-pattern-girok-month-day-picker__wheel-item--selected {
+    color: var(--vds-exp-girok-text-primary);
+    font-weight: var(--vds-font-weight-700);
+  }
+
+  .vds-pattern-girok-month-day-picker__wheel-item--nearby {
+    color: var(--vds-exp-girok-text-light);
+  }
+
+  .vds-pattern-girok-month-day-picker__selection-indicator {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-start: 50%;
+    block-size: var(--vds-exp-girok-month-day-picker-block-size-15);
+    transform: translateY(-50%);
+    background: var(--vds-exp-girok-accent-row-tint);
+    border-top: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-bottom: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    pointer-events: none;
+  }
+
+  .vds-pattern-girok-month-day-picker__apply-btn {
+    inline-size: 100%;
+    padding: var(--vds-exp-girok-month-day-picker-padding-16);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-card-base);
+    background: var(--vds-exp-girok-accent-strong);
+    color: var(--vds-exp-girok-shell-frame-surface);
+    font-size: var(--vds-exp-girok-month-day-picker-font-size-17);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.428571;
+    box-shadow: var(--vds-exp-girok-month-day-picker-box-shadow-18);
+  }
+}

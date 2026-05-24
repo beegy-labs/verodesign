@@ -1,14 +1,25 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { buildThemeTokens, flattenTokens } from './loader.mjs';
-import { resolveTokens } from './resolver.mjs';
+import { resolveTokens, resolveValue } from './resolver.mjs';
 import { tokenPathToCssVar } from './css-vars.mjs';
 import { normalizeOklch } from '../util/color.mjs';
+import { getImplementedTokenPaths, getThemeImplements } from './slot-groups.mjs';
+import { emitOptionalGroupFallbacks } from './optional-group-fallback.mjs';
 
 const DIST = new URL('../../dist/', import.meta.url).pathname;
 
 function isSemanticToken(token) {
-  return token.path[0] === 'theme';
+  return token.path[0] === 'breakpoint' || token.path[0] === 'exp';
+}
+
+function canResolveToken(token, tree) {
+  try {
+    resolveValue(token.value, tree);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function formatColor(value) {
@@ -22,15 +33,51 @@ function emitLine(cssVar, value) {
   return `    ${cssVar}: ${formatColor(value)};`;
 }
 
+function emitGirokDensityBlocks(tree) {
+  const density = tree?.exp?.girok?.density;
+  if (!density) return [];
+  const lines = [];
+  for (const mode of ['compact', 'dense']) {
+    const bucket = density[mode];
+    if (!bucket) continue;
+    lines.push(`  [data-theme="girok"][data-girok-density="${mode}"] {`);
+    for (const key of Object.keys(bucket).sort()) {
+      const component = key.replace(/-scale$/, '');
+      lines.push(`    --vds-exp-girok-${component}-scale: var(--vds-exp-girok-density-${mode}-${key});`);
+    }
+    lines.push('  }');
+    lines.push('');
+  }
+  return lines;
+}
+
 export async function emitThemeCss(theme) {
   const lightTree = await buildThemeTokens(theme, 'light');
   const darkTree = await buildThemeTokens(theme, 'dark');
+  const lightImplements = await getThemeImplements(theme, 'light');
+  const darkImplements = await getThemeImplements(theme, 'dark');
+  const lightImplemented = await getImplementedTokenPaths(theme, 'light');
+  const darkImplemented = await getImplementedTokenPaths(theme, 'dark');
 
-  const lightFlat = resolveTokens(flattenTokens(lightTree), lightTree).filter(isSemanticToken);
-  const darkFlat = resolveTokens(flattenTokens(darkTree), darkTree).filter(isSemanticToken);
+  const lightCandidates = flattenTokens(lightTree).filter((token) => {
+    if (token.path[0] === 'theme') return lightImplemented.has(token.path.join('.'));
+    return isSemanticToken(token) && canResolveToken(token, lightTree);
+  });
+  const darkCandidates = flattenTokens(darkTree).filter((token) => {
+    if (token.path[0] === 'theme') return darkImplemented.has(token.path.join('.'));
+    return isSemanticToken(token) && canResolveToken(token, darkTree);
+  });
+  const lightFlat = resolveTokens(lightCandidates, lightTree);
+  const darkFlat = resolveTokens(darkCandidates, darkTree);
 
   const lightByVar = new Map(lightFlat.map((t) => [tokenPathToCssVar(t.path), t.resolvedValue]));
   const darkByVar = new Map(darkFlat.map((t) => [tokenPathToCssVar(t.path), t.resolvedValue]));
+  for (const { name, value } of emitOptionalGroupFallbacks(lightImplements)) {
+    if (!lightByVar.has(name)) lightByVar.set(name, value);
+  }
+  for (const { name, value } of emitOptionalGroupFallbacks(darkImplements)) {
+    if (!darkByVar.has(name)) darkByVar.set(name, value);
+  }
 
   const allVars = new Set([...lightByVar.keys(), ...darkByVar.keys()]);
 
@@ -66,6 +113,8 @@ export async function emitThemeCss(theme) {
     `  ${darkSelector} {`,
     ...darkLines,
     '  }',
+    '',
+    ...emitGirokDensityBlocks(lightTree),
     '}',
     '',
   ].join('\n');

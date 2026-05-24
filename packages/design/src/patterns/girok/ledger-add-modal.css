@@ -1,0 +1,133 @@
+/* GIROK pattern: ledger-add-modal */
+@scope (.vds-pattern-girok-ledger-add-modal) {
+  :scope {
+    isolation: isolate;
+  }
+
+  .vds-pattern-girok-ledger-add-modal__box {
+    position: relative;
+    display: flex;
+    inline-size: 100%;
+    max-inline-size: var(--vds-exp-girok-ledger-add-modal-max-inline-size-1);
+    flex-direction: column;
+    gap: var(--vds-spacing-3);
+    padding: var(--vds-spacing-4);
+    background: var(--vds-exp-girok-surface-segment-base);
+    box-shadow: var(--vds-exp-girok-ledger-add-modal-box-shadow-2);
+    text-align: left;
+  }
+
+  .vds-pattern-girok-ledger-add-modal__header,
+  .vds-pattern-girok-ledger-add-modal__btn-row {
+    display: flex;
+  }
+
+  .vds-pattern-girok-ledger-add-modal__header {
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-3);
+  }
+
+  .vds-pattern-girok-ledger-add-modal__title {
+    color: var(--vds-exp-girok-text-strong);
+    font-size: var(--vds-exp-girok-ledger-add-modal-font-size-3);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.428571;
+  }
+
+  .vds-pattern-girok-ledger-add-modal__close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-spacing-1);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-round);
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+  }
+
+  .vds-pattern-girok-ledger-add-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-exp-girok-ledger-add-modal-gap-4);
+    padding-top: var(--vds-spacing-2);
+  }
+
+  .vds-pattern-girok-ledger-add-modal__type-toggle {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--vds-spacing-2);
+    padding: var(--vds-spacing-1);
+    background: var(--vds-exp-girok-surface-app-base);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+  }
+
+  .vds-pattern-girok-ledger-add-modal__type-toggle-btn {
+    padding: var(--vds-exp-girok-ledger-add-modal-padding-5);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-ledger-add-modal-font-size-6);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.333333;
+  }
+
+  .vds-pattern-girok-ledger-add-modal__type-toggle-btn--expense.vds-pattern-girok-ledger-add-modal__type-toggle-btn--active {
+    background: var(--vds-exp-girok-status-expense-base);
+    color: var(--vds-exp-girok-text-primary);
+  }
+
+  .vds-pattern-girok-ledger-add-modal__type-toggle-btn--income.vds-pattern-girok-ledger-add-modal__type-toggle-btn--active {
+    background: var(--vds-exp-girok-status-income-base);
+    color: var(--vds-exp-girok-text-primary);
+  }
+
+  .vds-pattern-girok-ledger-add-modal__label {
+    display: block;
+    padding-bottom: var(--vds-spacing-1);
+    color: var(--vds-exp-girok-text-secondary);
+    font-size: var(--vds-exp-girok-ledger-add-modal-font-size-7);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-ledger-add-modal__input {
+    inline-size: 100%;
+    padding: var(--vds-exp-girok-ledger-add-modal-padding-8);
+    background: var(--vds-exp-girok-surface-app-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+    color: var(--vds-exp-girok-text-strong);
+    font-size: var(--vds-exp-girok-ledger-add-modal-font-size-9);
+    line-height: 1.333333;
+  }
+
+  .vds-pattern-girok-ledger-add-modal__btn-row {
+    gap: var(--vds-exp-girok-ledger-add-modal-gap-10);
+    padding-top: var(--vds-spacing-2);
+  }
+
+  .vds-pattern-girok-ledger-add-modal__cancel-btn,
+  .vds-pattern-girok-ledger-add-modal__submit-btn {
+    flex: 1;
+    padding: var(--vds-exp-girok-ledger-add-modal-padding-11);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+    font-size: var(--vds-exp-girok-ledger-add-modal-font-size-12);
+    line-height: 1.333333;
+  }
+
+  .vds-pattern-girok-ledger-add-modal__cancel-btn {
+    border: 0;
+    background: var(--vds-exp-girok-border-neutral-strong);
+    color: var(--vds-exp-girok-text-light);
+    font-weight: var(--vds-font-weight-600);
+  }
+
+  .vds-pattern-girok-ledger-add-modal__submit-btn {
+    border: 0;
+    background: var(--vds-exp-girok-accent-strong);
+    color: var(--vds-exp-girok-shell-frame-surface);
+    font-weight: var(--vds-font-weight-700);
+  }
+}

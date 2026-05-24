@@ -10,7 +10,7 @@ async function readJson(path) {
 
 async function loadDir(subdir) {
   const dir = join(TOKENS_ROOT, subdir);
-  const entries = await readdir(dir);
+  const entries = (await readdir(dir)).sort();
   const out = [];
   for (const entry of entries) {
     if (!entry.endsWith('.json')) continue;
@@ -20,12 +20,44 @@ async function loadDir(subdir) {
   return out;
 }
 
+async function loadDirRecursive(subdir, prefix = '') {
+  const dir = join(TOKENS_ROOT, subdir, prefix);
+  const entries = (await readdir(dir, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name));
+  const out = [];
+  for (const entry of entries) {
+    if (entry.name.startsWith('_')) continue;
+    if (entry.isDirectory()) {
+      out.push(...(await loadDirRecursive(subdir, join(prefix, entry.name))));
+      continue;
+    }
+    if (!entry.name.endsWith('.json')) continue;
+    const rel = join(prefix, entry.name);
+    out.push({ name: rel, json: await readJson(join(TOKENS_ROOT, subdir, rel)) });
+  }
+  return out;
+}
+
+function getModeScopedName(entry) {
+  if (entry.endsWith('-light.json')) return 'light';
+  if (entry.endsWith('-dark.json')) return 'dark';
+  return null;
+}
+
 export async function loadPrimitives() {
   return loadDir('primitive');
 }
 
 export async function loadSemantic() {
   return loadDir('semantic');
+}
+
+export async function loadExperimental(mode) {
+  const entries = await loadDirRecursive('experimental');
+  return entries.filter(({ name }) => {
+    const scopedMode = getModeScopedName(name.split('/').at(-1));
+    if (!scopedMode) return true;
+    return scopedMode === mode;
+  });
 }
 
 export async function loadTheme(theme, mode) {
@@ -72,6 +104,15 @@ export function flattenTokens(tree, prefix = []) {
         extensions: val.$extensions,
       });
     } else if (val && typeof val === 'object' && !Array.isArray(val)) {
+      if (val.$root && typeof val.$root === 'object' && '$value' in val.$root) {
+        result.push({
+          path: [...prefix, key],
+          value: val.$root.$value,
+          type: val.$root.$type,
+          description: val.$root.$description,
+          extensions: val.$root.$extensions,
+        });
+      }
       result.push(...flattenTokens(val, [...prefix, key]));
     }
   }
@@ -81,11 +122,18 @@ export function flattenTokens(tree, prefix = []) {
 export async function buildThemeTokens(theme, mode) {
   const primitives = await loadPrimitives();
   const semantic = await loadSemantic();
+  const experimental = await loadExperimental(mode);
   const themeOverride = await loadTheme(theme, mode);
+  const implementsList = themeOverride?.$extensions?.verobee?.implements ?? ['core', 'web'];
 
   let tree = {};
   for (const { json } of primitives) tree = deepMerge(tree, json);
-  for (const { json } of semantic) tree = deepMerge(tree, json);
+  for (const { json } of semantic) {
+    const slotGroup = json?.$extensions?.verobee?.slotGroup;
+    if (slotGroup && !implementsList.includes(slotGroup)) continue;
+    tree = deepMerge(tree, json);
+  }
+  for (const { json } of experimental) tree = deepMerge(tree, json);
   if (themeOverride) tree = deepMerge(tree, themeOverride);
 
   return tree;

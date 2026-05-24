@@ -93,102 +93,24 @@
   .vds-group:focus-within .vds-group-focus\:text-primary  { color: var(--vds-theme-primary); }
   .vds-group:hover .vds-group-hover\:border-primary  { border-color: var(--vds-theme-primary); }
   .vds-group:focus-within .vds-group-focus\:border-primary  { border-color: var(--vds-theme-primary); }
-  .vds-group:hover .vds-group-hover\:bg-primary-fg  { background-color: var(--vds-theme-primary-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-primary-fg  { background-color: var(--vds-theme-primary-fg); }
-  .vds-group:hover .vds-group-hover\:text-primary-fg  { color: var(--vds-theme-primary-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-primary-fg  { color: var(--vds-theme-primary-fg); }
-  .vds-group:hover .vds-group-hover\:border-primary-fg  { border-color: var(--vds-theme-primary-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-primary-fg  { border-color: var(--vds-theme-primary-fg); }
-  .vds-group:hover .vds-group-hover\:bg-primary-ring  { background-color: var(--vds-theme-primary-ring); }
-  .vds-group:focus-within .vds-group-focus\:bg-primary-ring  { background-color: var(--vds-theme-primary-ring); }
-  .vds-group:hover .vds-group-hover\:text-primary-ring  { color: var(--vds-theme-primary-ring); }
-  .vds-group:focus-within .vds-group-focus\:text-primary-ring  { color: var(--vds-theme-primary-ring); }
-  .vds-group:hover .vds-group-hover\:border-primary-ring  { border-color: var(--vds-theme-primary-ring); }
-  .vds-group:focus-within .vds-group-focus\:border-primary-ring  { border-color: var(--vds-theme-primary-ring); }
+  .vds-group:hover .vds-group-hover\:bg-primary-foreground  { background-color: var(--vds-theme-primary-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-primary-foreground  { background-color: var(--vds-theme-primary-foreground); }
+  .vds-group:hover .vds-group-hover\:text-primary-foreground  { color: var(--vds-theme-primary-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-primary-foreground  { color: var(--vds-theme-primary-foreground); }
+  .vds-group:hover .vds-group-hover\:border-primary-foreground  { border-color: var(--vds-theme-primary-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-primary-foreground  { border-color: var(--vds-theme-primary-foreground); }
   .vds-group:hover .vds-group-hover\:bg-accent  { background-color: var(--vds-theme-accent); }
   .vds-group:focus-within .vds-group-focus\:bg-accent  { background-color: var(--vds-theme-accent); }
   .vds-group:hover .vds-group-hover\:text-accent  { color: var(--vds-theme-accent); }
   .vds-group:focus-within .vds-group-focus\:text-accent  { color: var(--vds-theme-accent); }
   .vds-group:hover .vds-group-hover\:border-accent  { border-color: var(--vds-theme-accent); }
   .vds-group:focus-within .vds-group-focus\:border-accent  { border-color: var(--vds-theme-accent); }
-  .vds-group:hover .vds-group-hover\:bg-accent-fg  { background-color: var(--vds-theme-accent-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-accent-fg  { background-color: var(--vds-theme-accent-fg); }
-  .vds-group:hover .vds-group-hover\:text-accent-fg  { color: var(--vds-theme-accent-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-accent-fg  { color: var(--vds-theme-accent-fg); }
-  .vds-group:hover .vds-group-hover\:border-accent-fg  { border-color: var(--vds-theme-accent-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-accent-fg  { border-color: var(--vds-theme-accent-fg); }
-  .vds-group:hover .vds-group-hover\:bg-destructive  { background-color: var(--vds-theme-destructive); }
-  .vds-group:focus-within .vds-group-focus\:bg-destructive  { background-color: var(--vds-theme-destructive); }
-  .vds-group:hover .vds-group-hover\:text-destructive  { color: var(--vds-theme-destructive); }
-  .vds-group:focus-within .vds-group-focus\:text-destructive  { color: var(--vds-theme-destructive); }
-  .vds-group:hover .vds-group-hover\:border-destructive  { border-color: var(--vds-theme-destructive); }
-  .vds-group:focus-within .vds-group-focus\:border-destructive  { border-color: var(--vds-theme-destructive); }
-  .vds-group:hover .vds-group-hover\:bg-destructive-fg  { background-color: var(--vds-theme-destructive-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-destructive-fg  { background-color: var(--vds-theme-destructive-fg); }
-  .vds-group:hover .vds-group-hover\:text-destructive-fg  { color: var(--vds-theme-destructive-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-destructive-fg  { color: var(--vds-theme-destructive-fg); }
-  .vds-group:hover .vds-group-hover\:border-destructive-fg  { border-color: var(--vds-theme-destructive-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-destructive-fg  { border-color: var(--vds-theme-destructive-fg); }
-  .vds-group:hover .vds-group-hover\:bg-success  { background-color: var(--vds-theme-success); }
-  .vds-group:focus-within .vds-group-focus\:bg-success  { background-color: var(--vds-theme-success); }
-  .vds-group:hover .vds-group-hover\:text-success  { color: var(--vds-theme-success); }
-  .vds-group:focus-within .vds-group-focus\:text-success  { color: var(--vds-theme-success); }
-  .vds-group:hover .vds-group-hover\:border-success  { border-color: var(--vds-theme-success); }
-  .vds-group:focus-within .vds-group-focus\:border-success  { border-color: var(--vds-theme-success); }
-  .vds-group:hover .vds-group-hover\:bg-success-fg  { background-color: var(--vds-theme-success-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-success-fg  { background-color: var(--vds-theme-success-fg); }
-  .vds-group:hover .vds-group-hover\:text-success-fg  { color: var(--vds-theme-success-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-success-fg  { color: var(--vds-theme-success-fg); }
-  .vds-group:hover .vds-group-hover\:border-success-fg  { border-color: var(--vds-theme-success-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-success-fg  { border-color: var(--vds-theme-success-fg); }
-  .vds-group:hover .vds-group-hover\:bg-warning  { background-color: var(--vds-theme-warning); }
-  .vds-group:focus-within .vds-group-focus\:bg-warning  { background-color: var(--vds-theme-warning); }
-  .vds-group:hover .vds-group-hover\:text-warning  { color: var(--vds-theme-warning); }
-  .vds-group:focus-within .vds-group-focus\:text-warning  { color: var(--vds-theme-warning); }
-  .vds-group:hover .vds-group-hover\:border-warning  { border-color: var(--vds-theme-warning); }
-  .vds-group:focus-within .vds-group-focus\:border-warning  { border-color: var(--vds-theme-warning); }
-  .vds-group:hover .vds-group-hover\:bg-warning-fg  { background-color: var(--vds-theme-warning-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-warning-fg  { background-color: var(--vds-theme-warning-fg); }
-  .vds-group:hover .vds-group-hover\:text-warning-fg  { color: var(--vds-theme-warning-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-warning-fg  { color: var(--vds-theme-warning-fg); }
-  .vds-group:hover .vds-group-hover\:border-warning-fg  { border-color: var(--vds-theme-warning-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-warning-fg  { border-color: var(--vds-theme-warning-fg); }
-  .vds-group:hover .vds-group-hover\:bg-error  { background-color: var(--vds-theme-error); }
-  .vds-group:focus-within .vds-group-focus\:bg-error  { background-color: var(--vds-theme-error); }
-  .vds-group:hover .vds-group-hover\:text-error  { color: var(--vds-theme-error); }
-  .vds-group:focus-within .vds-group-focus\:text-error  { color: var(--vds-theme-error); }
-  .vds-group:hover .vds-group-hover\:border-error  { border-color: var(--vds-theme-error); }
-  .vds-group:focus-within .vds-group-focus\:border-error  { border-color: var(--vds-theme-error); }
-  .vds-group:hover .vds-group-hover\:bg-error-fg  { background-color: var(--vds-theme-error-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-error-fg  { background-color: var(--vds-theme-error-fg); }
-  .vds-group:hover .vds-group-hover\:text-error-fg  { color: var(--vds-theme-error-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-error-fg  { color: var(--vds-theme-error-fg); }
-  .vds-group:hover .vds-group-hover\:border-error-fg  { border-color: var(--vds-theme-error-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-error-fg  { border-color: var(--vds-theme-error-fg); }
-  .vds-group:hover .vds-group-hover\:bg-info  { background-color: var(--vds-theme-info); }
-  .vds-group:focus-within .vds-group-focus\:bg-info  { background-color: var(--vds-theme-info); }
-  .vds-group:hover .vds-group-hover\:text-info  { color: var(--vds-theme-info); }
-  .vds-group:focus-within .vds-group-focus\:text-info  { color: var(--vds-theme-info); }
-  .vds-group:hover .vds-group-hover\:border-info  { border-color: var(--vds-theme-info); }
-  .vds-group:focus-within .vds-group-focus\:border-info  { border-color: var(--vds-theme-info); }
-  .vds-group:hover .vds-group-hover\:bg-info-fg  { background-color: var(--vds-theme-info-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-info-fg  { background-color: var(--vds-theme-info-fg); }
-  .vds-group:hover .vds-group-hover\:text-info-fg  { color: var(--vds-theme-info-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-info-fg  { color: var(--vds-theme-info-fg); }
-  .vds-group:hover .vds-group-hover\:border-info-fg  { border-color: var(--vds-theme-info-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-info-fg  { border-color: var(--vds-theme-info-fg); }
-  .vds-group:hover .vds-group-hover\:bg-neutral  { background-color: var(--vds-theme-neutral); }
-  .vds-group:focus-within .vds-group-focus\:bg-neutral  { background-color: var(--vds-theme-neutral); }
-  .vds-group:hover .vds-group-hover\:text-neutral  { color: var(--vds-theme-neutral); }
-  .vds-group:focus-within .vds-group-focus\:text-neutral  { color: var(--vds-theme-neutral); }
-  .vds-group:hover .vds-group-hover\:border-neutral  { border-color: var(--vds-theme-neutral); }
-  .vds-group:focus-within .vds-group-focus\:border-neutral  { border-color: var(--vds-theme-neutral); }
-  .vds-group:hover .vds-group-hover\:bg-neutral-fg  { background-color: var(--vds-theme-neutral-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-neutral-fg  { background-color: var(--vds-theme-neutral-fg); }
-  .vds-group:hover .vds-group-hover\:text-neutral-fg  { color: var(--vds-theme-neutral-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-neutral-fg  { color: var(--vds-theme-neutral-fg); }
-  .vds-group:hover .vds-group-hover\:border-neutral-fg  { border-color: var(--vds-theme-neutral-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-neutral-fg  { border-color: var(--vds-theme-neutral-fg); }
+  .vds-group:hover .vds-group-hover\:bg-accent-foreground  { background-color: var(--vds-theme-accent-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-accent-foreground  { background-color: var(--vds-theme-accent-foreground); }
+  .vds-group:hover .vds-group-hover\:text-accent-foreground  { color: var(--vds-theme-accent-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-accent-foreground  { color: var(--vds-theme-accent-foreground); }
+  .vds-group:hover .vds-group-hover\:border-accent-foreground  { border-color: var(--vds-theme-accent-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-accent-foreground  { border-color: var(--vds-theme-accent-foreground); }
   .vds-group:hover .vds-group-hover\:bg-chart-1  { background-color: var(--vds-theme-chart-1); }
   .vds-group:focus-within .vds-group-focus\:bg-chart-1  { background-color: var(--vds-theme-chart-1); }
   .vds-group:hover .vds-group-hover\:text-chart-1  { color: var(--vds-theme-chart-1); }
@@ -255,34 +177,106 @@
   .vds-group:focus-within .vds-group-focus\:text-cancelled  { color: var(--vds-theme-cancelled); }
   .vds-group:hover .vds-group-hover\:border-cancelled  { border-color: var(--vds-theme-cancelled); }
   .vds-group:focus-within .vds-group-focus\:border-cancelled  { border-color: var(--vds-theme-cancelled); }
-  .vds-group:hover .vds-group-hover\:bg-cancelled-fg  { background-color: var(--vds-theme-cancelled-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-cancelled-fg  { background-color: var(--vds-theme-cancelled-fg); }
-  .vds-group:hover .vds-group-hover\:text-cancelled-fg  { color: var(--vds-theme-cancelled-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-cancelled-fg  { color: var(--vds-theme-cancelled-fg); }
-  .vds-group:hover .vds-group-hover\:border-cancelled-fg  { border-color: var(--vds-theme-cancelled-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-cancelled-fg  { border-color: var(--vds-theme-cancelled-fg); }
+  .vds-group:hover .vds-group-hover\:bg-cancelled-foreground  { background-color: var(--vds-theme-cancelled-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-cancelled-foreground  { background-color: var(--vds-theme-cancelled-foreground); }
+  .vds-group:hover .vds-group-hover\:text-cancelled-foreground  { color: var(--vds-theme-cancelled-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-cancelled-foreground  { color: var(--vds-theme-cancelled-foreground); }
+  .vds-group:hover .vds-group-hover\:border-cancelled-foreground  { border-color: var(--vds-theme-cancelled-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-cancelled-foreground  { border-color: var(--vds-theme-cancelled-foreground); }
   .vds-group:hover .vds-group-hover\:bg-accent-2  { background-color: var(--vds-theme-accent-2); }
   .vds-group:focus-within .vds-group-focus\:bg-accent-2  { background-color: var(--vds-theme-accent-2); }
   .vds-group:hover .vds-group-hover\:text-accent-2  { color: var(--vds-theme-accent-2); }
   .vds-group:focus-within .vds-group-focus\:text-accent-2  { color: var(--vds-theme-accent-2); }
   .vds-group:hover .vds-group-hover\:border-accent-2  { border-color: var(--vds-theme-accent-2); }
   .vds-group:focus-within .vds-group-focus\:border-accent-2  { border-color: var(--vds-theme-accent-2); }
-  .vds-group:hover .vds-group-hover\:bg-accent-2-fg  { background-color: var(--vds-theme-accent-2-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-accent-2-fg  { background-color: var(--vds-theme-accent-2-fg); }
-  .vds-group:hover .vds-group-hover\:text-accent-2-fg  { color: var(--vds-theme-accent-2-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-accent-2-fg  { color: var(--vds-theme-accent-2-fg); }
-  .vds-group:hover .vds-group-hover\:border-accent-2-fg  { border-color: var(--vds-theme-accent-2-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-accent-2-fg  { border-color: var(--vds-theme-accent-2-fg); }
+  .vds-group:hover .vds-group-hover\:bg-accent-2-foreground  { background-color: var(--vds-theme-accent-2-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-accent-2-foreground  { background-color: var(--vds-theme-accent-2-foreground); }
+  .vds-group:hover .vds-group-hover\:text-accent-2-foreground  { color: var(--vds-theme-accent-2-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-accent-2-foreground  { color: var(--vds-theme-accent-2-foreground); }
+  .vds-group:hover .vds-group-hover\:border-accent-2-foreground  { border-color: var(--vds-theme-accent-2-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-accent-2-foreground  { border-color: var(--vds-theme-accent-2-foreground); }
   .vds-group:hover .vds-group-hover\:bg-accent-3  { background-color: var(--vds-theme-accent-3); }
   .vds-group:focus-within .vds-group-focus\:bg-accent-3  { background-color: var(--vds-theme-accent-3); }
   .vds-group:hover .vds-group-hover\:text-accent-3  { color: var(--vds-theme-accent-3); }
   .vds-group:focus-within .vds-group-focus\:text-accent-3  { color: var(--vds-theme-accent-3); }
   .vds-group:hover .vds-group-hover\:border-accent-3  { border-color: var(--vds-theme-accent-3); }
   .vds-group:focus-within .vds-group-focus\:border-accent-3  { border-color: var(--vds-theme-accent-3); }
-  .vds-group:hover .vds-group-hover\:bg-accent-3-fg  { background-color: var(--vds-theme-accent-3-fg); }
-  .vds-group:focus-within .vds-group-focus\:bg-accent-3-fg  { background-color: var(--vds-theme-accent-3-fg); }
-  .vds-group:hover .vds-group-hover\:text-accent-3-fg  { color: var(--vds-theme-accent-3-fg); }
-  .vds-group:focus-within .vds-group-focus\:text-accent-3-fg  { color: var(--vds-theme-accent-3-fg); }
-  .vds-group:hover .vds-group-hover\:border-accent-3-fg  { border-color: var(--vds-theme-accent-3-fg); }
-  .vds-group:focus-within .vds-group-focus\:border-accent-3-fg  { border-color: var(--vds-theme-accent-3-fg); }
+  .vds-group:hover .vds-group-hover\:bg-accent-3-foreground  { background-color: var(--vds-theme-accent-3-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-accent-3-foreground  { background-color: var(--vds-theme-accent-3-foreground); }
+  .vds-group:hover .vds-group-hover\:text-accent-3-foreground  { color: var(--vds-theme-accent-3-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-accent-3-foreground  { color: var(--vds-theme-accent-3-foreground); }
+  .vds-group:hover .vds-group-hover\:border-accent-3-foreground  { border-color: var(--vds-theme-accent-3-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-accent-3-foreground  { border-color: var(--vds-theme-accent-3-foreground); }
+  .vds-group:hover .vds-group-hover\:bg-destructive  { background-color: var(--vds-theme-destructive); }
+  .vds-group:focus-within .vds-group-focus\:bg-destructive  { background-color: var(--vds-theme-destructive); }
+  .vds-group:hover .vds-group-hover\:text-destructive  { color: var(--vds-theme-destructive); }
+  .vds-group:focus-within .vds-group-focus\:text-destructive  { color: var(--vds-theme-destructive); }
+  .vds-group:hover .vds-group-hover\:border-destructive  { border-color: var(--vds-theme-destructive); }
+  .vds-group:focus-within .vds-group-focus\:border-destructive  { border-color: var(--vds-theme-destructive); }
+  .vds-group:hover .vds-group-hover\:bg-destructive-foreground  { background-color: var(--vds-theme-destructive-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-destructive-foreground  { background-color: var(--vds-theme-destructive-foreground); }
+  .vds-group:hover .vds-group-hover\:text-destructive-foreground  { color: var(--vds-theme-destructive-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-destructive-foreground  { color: var(--vds-theme-destructive-foreground); }
+  .vds-group:hover .vds-group-hover\:border-destructive-foreground  { border-color: var(--vds-theme-destructive-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-destructive-foreground  { border-color: var(--vds-theme-destructive-foreground); }
+  .vds-group:hover .vds-group-hover\:bg-success  { background-color: var(--vds-theme-status-success); }
+  .vds-group:focus-within .vds-group-focus\:bg-success  { background-color: var(--vds-theme-status-success); }
+  .vds-group:hover .vds-group-hover\:text-success  { color: var(--vds-theme-status-success); }
+  .vds-group:focus-within .vds-group-focus\:text-success  { color: var(--vds-theme-status-success); }
+  .vds-group:hover .vds-group-hover\:border-success  { border-color: var(--vds-theme-status-success); }
+  .vds-group:focus-within .vds-group-focus\:border-success  { border-color: var(--vds-theme-status-success); }
+  .vds-group:hover .vds-group-hover\:bg-success-foreground  { background-color: var(--vds-theme-status-success-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-success-foreground  { background-color: var(--vds-theme-status-success-foreground); }
+  .vds-group:hover .vds-group-hover\:text-success-foreground  { color: var(--vds-theme-status-success-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-success-foreground  { color: var(--vds-theme-status-success-foreground); }
+  .vds-group:hover .vds-group-hover\:border-success-foreground  { border-color: var(--vds-theme-status-success-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-success-foreground  { border-color: var(--vds-theme-status-success-foreground); }
+  .vds-group:hover .vds-group-hover\:bg-warning  { background-color: var(--vds-theme-status-warning); }
+  .vds-group:focus-within .vds-group-focus\:bg-warning  { background-color: var(--vds-theme-status-warning); }
+  .vds-group:hover .vds-group-hover\:text-warning  { color: var(--vds-theme-status-warning); }
+  .vds-group:focus-within .vds-group-focus\:text-warning  { color: var(--vds-theme-status-warning); }
+  .vds-group:hover .vds-group-hover\:border-warning  { border-color: var(--vds-theme-status-warning); }
+  .vds-group:focus-within .vds-group-focus\:border-warning  { border-color: var(--vds-theme-status-warning); }
+  .vds-group:hover .vds-group-hover\:bg-warning-foreground  { background-color: var(--vds-theme-status-warning-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-warning-foreground  { background-color: var(--vds-theme-status-warning-foreground); }
+  .vds-group:hover .vds-group-hover\:text-warning-foreground  { color: var(--vds-theme-status-warning-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-warning-foreground  { color: var(--vds-theme-status-warning-foreground); }
+  .vds-group:hover .vds-group-hover\:border-warning-foreground  { border-color: var(--vds-theme-status-warning-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-warning-foreground  { border-color: var(--vds-theme-status-warning-foreground); }
+  .vds-group:hover .vds-group-hover\:bg-error  { background-color: var(--vds-theme-status-error); }
+  .vds-group:focus-within .vds-group-focus\:bg-error  { background-color: var(--vds-theme-status-error); }
+  .vds-group:hover .vds-group-hover\:text-error  { color: var(--vds-theme-status-error); }
+  .vds-group:focus-within .vds-group-focus\:text-error  { color: var(--vds-theme-status-error); }
+  .vds-group:hover .vds-group-hover\:border-error  { border-color: var(--vds-theme-status-error); }
+  .vds-group:focus-within .vds-group-focus\:border-error  { border-color: var(--vds-theme-status-error); }
+  .vds-group:hover .vds-group-hover\:bg-error-foreground  { background-color: var(--vds-theme-status-error-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-error-foreground  { background-color: var(--vds-theme-status-error-foreground); }
+  .vds-group:hover .vds-group-hover\:text-error-foreground  { color: var(--vds-theme-status-error-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-error-foreground  { color: var(--vds-theme-status-error-foreground); }
+  .vds-group:hover .vds-group-hover\:border-error-foreground  { border-color: var(--vds-theme-status-error-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-error-foreground  { border-color: var(--vds-theme-status-error-foreground); }
+  .vds-group:hover .vds-group-hover\:bg-info  { background-color: var(--vds-theme-status-info); }
+  .vds-group:focus-within .vds-group-focus\:bg-info  { background-color: var(--vds-theme-status-info); }
+  .vds-group:hover .vds-group-hover\:text-info  { color: var(--vds-theme-status-info); }
+  .vds-group:focus-within .vds-group-focus\:text-info  { color: var(--vds-theme-status-info); }
+  .vds-group:hover .vds-group-hover\:border-info  { border-color: var(--vds-theme-status-info); }
+  .vds-group:focus-within .vds-group-focus\:border-info  { border-color: var(--vds-theme-status-info); }
+  .vds-group:hover .vds-group-hover\:bg-info-foreground  { background-color: var(--vds-theme-status-info-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-info-foreground  { background-color: var(--vds-theme-status-info-foreground); }
+  .vds-group:hover .vds-group-hover\:text-info-foreground  { color: var(--vds-theme-status-info-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-info-foreground  { color: var(--vds-theme-status-info-foreground); }
+  .vds-group:hover .vds-group-hover\:border-info-foreground  { border-color: var(--vds-theme-status-info-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-info-foreground  { border-color: var(--vds-theme-status-info-foreground); }
+  .vds-group:hover .vds-group-hover\:bg-neutral  { background-color: var(--vds-theme-status-neutral); }
+  .vds-group:focus-within .vds-group-focus\:bg-neutral  { background-color: var(--vds-theme-status-neutral); }
+  .vds-group:hover .vds-group-hover\:text-neutral  { color: var(--vds-theme-status-neutral); }
+  .vds-group:focus-within .vds-group-focus\:text-neutral  { color: var(--vds-theme-status-neutral); }
+  .vds-group:hover .vds-group-hover\:border-neutral  { border-color: var(--vds-theme-status-neutral); }
+  .vds-group:focus-within .vds-group-focus\:border-neutral  { border-color: var(--vds-theme-status-neutral); }
+  .vds-group:hover .vds-group-hover\:bg-neutral-foreground  { background-color: var(--vds-theme-status-neutral-foreground); }
+  .vds-group:focus-within .vds-group-focus\:bg-neutral-foreground  { background-color: var(--vds-theme-status-neutral-foreground); }
+  .vds-group:hover .vds-group-hover\:text-neutral-foreground  { color: var(--vds-theme-status-neutral-foreground); }
+  .vds-group:focus-within .vds-group-focus\:text-neutral-foreground  { color: var(--vds-theme-status-neutral-foreground); }
+  .vds-group:hover .vds-group-hover\:border-neutral-foreground  { border-color: var(--vds-theme-status-neutral-foreground); }
+  .vds-group:focus-within .vds-group-focus\:border-neutral-foreground  { border-color: var(--vds-theme-status-neutral-foreground); }
 }

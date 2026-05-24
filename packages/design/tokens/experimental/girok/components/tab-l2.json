@@ -1,0 +1,64 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "tab-l2": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "tab-l2 component density scale."
+        },
+        "font-size": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "dimension",
+          "$description": "Tab L2 font size."
+        },
+        "padding": {
+          "$value": "calc(0.25rem * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "dimension",
+          "$description": "Tab L2 outer padding."
+        },
+        "radius": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "dimension",
+          "$description": "Tab L2 radius."
+        },
+        "cell-radius": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "dimension",
+          "$description": "Tab L2 cell radius."
+        },
+        "cell-padding": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-tab-l2-scale)) calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "other",
+          "$description": "Tab L2 cell padding."
+        },
+        "block-size": {
+          "$value": "calc(var(--vds-exp-girok-spacing-lg) * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "dimension",
+          "$description": "Tab L2 block size."
+        },
+        "cell-padding-inline": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "dimension",
+          "$description": "Tab L2 cell inline padding."
+        },
+        "block-size-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-lg) * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "dimension",
+          "$description": "tab-l2 block-size token."
+        },
+        "font-size-2": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-tab-l2-scale))",
+          "$type": "dimension",
+          "$description": "tab-l2 font-size token."
+        },
+        "weight": {
+          "$value": 700,
+          "$type": "number",
+          "$description": "Tab L2 weight."
+        }
+      }
+    }
+  }
+}

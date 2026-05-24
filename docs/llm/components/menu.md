@@ -1,56 +1,83 @@
 # Menu
 
-> Tag: `<vds-menu>` (with `<vds-menu-item>` children) · Import: `@verobee/design-elements/components/menu` · React: `Menu` + `MenuItem` from `@verobee/design-react` · Pattern: WAI-ARIA AP 1.2 § Menu · Status: v0.2.0-alpha
-
-**Lookup**: menu, dropdown menu, action menu, context menu, popover menu.
+> Tag: `<vds-menu>`, `<vds-menu-item>` · React: `Menu + MenuItem` · Status: v0.2.0-alpha · APG pattern: Menu Button
 
 ## Purpose
-List of actions revealed by a trigger.
+Action menu revealed from a trigger element.
 
-## When to use
-- 3+ secondary actions that don't fit inline.
-- Context menu on a row.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Overflow or row-level secondary actions. |
+| Use | Command groups that do not fit inline. |
+| Do not use | Value selection; use Select. |
+| Do not use | Single critical action; keep it directly visible as a Button. |
 
-## When NOT to use
-- Selection from values → use `<vds-select>`.
-- Single primary action → use `<vds-button>`.
+## Design rationale
+Menu separates trigger composition from item semantics so any trigger can open a consistent action list.
 
-## Slots
+## A11y narrative
+Implements APG menu-button behavior: `aria-haspopup`, `aria-expanded`, menuitem roles, arrow navigation, Home/End, Escape, and type-ahead.
+
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
+
+<!-- CEM:START -->
+### `<vds-menu>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `open` | `open` | `boolean` | `false` |
+| `placement` | `placement` | `'bottom-start' | 'bottom-end'` | `bottom-start` |
+
+#### Slots
+None.
+
+#### Events
 | Name | Description |
 | ---- | ----------- |
-| `trigger` | Element that opens the menu (e.g., a button) |
-| (default) | `<vds-menu-item>` children |
+| `vds-select` | dispatched when an item is activated, detail { value } |
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `select` | `{ value: string }` | Fires when a menu-item is activated |
+#### CSS Variables
+None.
 
-## A11y (WAI-ARIA AP 1.2 § Menu)
-- Trigger: `aria-haspopup="menu"`, `aria-expanded`.
-- Menu: `role="menu"`. Items: `role="menuitem"`.
-- Keyboard: ↑↓ navigate, Enter/Space activate, Esc close, Home/End jump, type-ahead.
+#### CSS Parts
+None.
+
+### `<vds-menu-item>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `value` | `value` | `string` | `` |
+| `disabled` | `disabled` | `boolean` | `false` |
+| `tone` | `data-tone` | `'default' | 'destructive'` | `default` |
+
+#### Slots
+None.
+
+#### Events
+None.
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
 ```html
 <vds-menu>
   <vds-button slot="trigger">Actions</vds-button>
   <vds-menu-item value="rename">Rename</vds-menu-item>
-  <vds-menu-item value="duplicate">Duplicate</vds-menu-item>
-  <vds-menu-item value="delete" tone="destructive">Delete</vds-menu-item>
 </vds-menu>
 ```
 
 ```tsx
-import { Menu, MenuItem, Button } from '@verobee/design-react';
+import { Menu, MenuItem } from '@verobee/design-react';
 
-<Menu onSelect={(e) => handle(e.detail.value)}>
-  <Button slot="trigger">Actions</Button>
-  <MenuItem value="rename">Rename</MenuItem>
-  <MenuItem value="delete" tone="destructive">Delete</MenuItem>
-</Menu>
+<Menu><MenuItem value="rename">Rename</MenuItem></Menu>
 ```
 
-## Related
-[`<vds-select>`](select.md), [`<vds-button>`](button.md), [`<vds-tooltip>`](tooltip.md)

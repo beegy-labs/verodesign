@@ -19,6 +19,7 @@ export declare class VdsDialog extends VdsElement {
     static styles: import("lit").CSSResult;
     open: boolean;
     size: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+    placement: 'center' | 'bottom';
     closeOnBackdrop: boolean;
     closeOnEscape: boolean;
     ariaLabelText: string | null;

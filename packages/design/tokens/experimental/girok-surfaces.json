@@ -1,0 +1,44 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "status": "experimental",
+      "since": "TBD",
+      "source": "app-girok/docs/design/units/invest-snowball-hero.md, app-girok/docs/design/units/debt-summary.md, app-girok/docs/design/units/assets-overview-total.md, app-girok/docs/design/units/household-ledger-records-toolbar.md, app-girok/docs/design/units/tab-household-ledger.md",
+      "implements": [
+        "girok-scoped"
+      ],
+      "brand": "girok"
+    }
+  },
+  "exp": {
+    "girok": {
+      "surface": {
+        "hero": {
+          "start": {
+            "$value": "oklch(21.79% 0.0117 91.77)",
+            "$type": "color",
+            "$description": "exp.girok.surface.hero.start Decorative girok hero surface gradient start."
+          },
+          "end": {
+            "$value": "oklch(18.31% 0.0085 84.57)",
+            "$type": "color",
+            "$description": "exp.girok.surface.hero.end Decorative girok hero surface gradient end."
+          },
+          "border": {
+            "$value": "oklch(32.45% 0.024 82.83)",
+            "$type": "color",
+            "$description": "exp.girok.surface.hero.border Decorative border color for girok dark hero surfaces."
+          }
+        }
+      },
+      "bg": {
+        "segmented-active": {
+          "$value": "oklch(27.96% 0.0226 84.38)",
+          "$type": "color",
+          "$description": "exp.girok.bg.segmented-active Decorative warm selected surface for girok segmented controls."
+        }
+      }
+    }
+  }
+}

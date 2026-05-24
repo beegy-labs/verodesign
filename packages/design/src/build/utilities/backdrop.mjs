@@ -1,8 +1,8 @@
 const BLUR_STEPS = {
   none: '0',
   sm: '4px',
-  md: '8px',
-  lg: '12px',
+  md: '12px',
+  lg: '24px',
   xl: '24px',
   '2xl': '40px',
 };

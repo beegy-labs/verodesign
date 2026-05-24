@@ -3,7 +3,7 @@ import { auditContrast } from '../src/audit/contrast.mjs';
 import { auditParity } from '../src/audit/parity.mjs';
 import { auditNaming } from '../src/audit/naming.mjs';
 
-const THEMES = ['default', 'veronex', 'verobase'];
+const THEMES = ['default', 'veronex', 'verobase', 'girok'];
 
 async function main() {
   console.log('verodesign validate (no emit)');

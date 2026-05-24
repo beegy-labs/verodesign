@@ -1,0 +1,39 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "icon-actions": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "icon-actions component density scale."
+        },
+        "gap-1": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-icon-actions-scale))",
+          "$type": "dimension",
+          "$description": "icon-actions gap token."
+        },
+        "width-2": {
+          "$value": "calc(1.75rem * var(--vds-exp-girok-icon-actions-scale))",
+          "$type": "dimension",
+          "$description": "icon-actions width token."
+        },
+        "height-3": {
+          "$value": "calc(1.75rem * var(--vds-exp-girok-icon-actions-scale))",
+          "$type": "dimension",
+          "$description": "icon-actions height token."
+        },
+        "width-4": {
+          "$value": "calc(1.75rem * var(--vds-exp-girok-icon-actions-scale))",
+          "$type": "dimension",
+          "$description": "icon-actions width token."
+        },
+        "height-5": {
+          "$value": "calc(1.75rem * var(--vds-exp-girok-icon-actions-scale))",
+          "$type": "dimension",
+          "$description": "icon-actions height token."
+        }
+      }
+    }
+  }
+}

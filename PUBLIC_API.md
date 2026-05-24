@@ -83,6 +83,7 @@ Use at your own risk. These exist to evolve patterns before promoting.
 
 | Surface | Notes |
 | ------- | ----- |
+| `@verobee/design/patterns/*` spacing contract | Outer spacing belongs to consumer wrappers; see `docs/llm/patterns/spacing-contract.md` |
 | `--vds-domain-*` (verobase-specific domain colors) | App-level token; will move to a verobase-specific package eventually |
 | `data-experimental-*` HTML attributes | Marked components subject to API churn |
 | Slot-projection (CSS `::slotted()`) selectors not documented in CEM | Internal styling hooks, not for consumer override |

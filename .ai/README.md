@@ -1,51 +1,27 @@
-# Verobee Design System
+# `.ai/` — Tier-1 Index (LLM trigger-phrase lookup)
 
-> CDD Layer 1 — Entry Point | **Last Updated**: 2026-04-30
+> Tier-1 keyword/trigger index. **No SSOT content** — every row resolves to a Tier-2 SSOT in `docs/llm/` or a Tier-1p skill in `.agents/skills/`. Progressive disclosure: read this first, fetch only the SSOT you need. **Last reviewed**: 2026-05-24.
 
-## Project
+## Read order for any new task
 
-Token-driven CSS architecture. W3C DTCG JSON tokens → Style Dictionary build → multi-output (CSS variables, utility classes, TS types). OKLCH-first, Tailwind-independent, multi-theme, multi-framework, multi-environment (web + Tauri).
+1. [AGENTS.md](../AGENTS.md) — Tier-0 Critical Rules (Core Values + SSOT links).
+2. This file — find the matching trigger row below.
+3. The linked Tier-2 SSOT or Tier-1p skill — full reasoning.
 
-## Identity
+## Trigger → SSOT (1-hop)
 
-| Term | Value |
-| ---- | ----- |
-| System | Verobee Design System (VDS) |
-| Repo | beegy-labs/verodesign |
-| Package | @verobee/design |
-| License | MIT |
-| Version | 0.0.1 |
-
-## Navigation
-
-| Goal | Path |
-| ---- | ---- |
-| All locked decisions | `docs/llm/decisions.md` |
-| Core rules (NEVER/ALWAYS) | `.ai/rules.md` |
-| Architecture overview | `.ai/architecture.md` |
-| Git & release flow | `.ai/git-flow.md` |
-| Component pages (per-tag, LLM-friendly) | `docs/llm/components/` |
-| Token architecture (3-tier) | `docs/llm/tokens/architecture.md` |
-| Naming conventions | `docs/llm/tokens/naming.md` |
-| Theme system | `docs/llm/tokens/themes.md` |
-| Cross-platform extensibility | `docs/llm/tokens/platforms.md` |
-| WCAG contrast policy | `docs/llm/tokens/contrast.md` |
-| Build pipeline | `docs/llm/build/style-dictionary.md` |
-| Output spec | `docs/llm/build/outputs.md` |
-| Consumer integration (any framework) | `docs/llm/build/consumer.md` |
-| SemVer policy | `docs/llm/build/versioning.md` |
-| Pattern absorption | `docs/llm/research/README.md` |
-| LLM context indexes | `docs/llm/llm-context/` |
-| Workflow index | `.add/README.md` |
-
-## Themes (v0.1.0 ship)
-
-| Theme | Concept | Modes |
-| ----- | ------- | ----- |
-| default | Neutral universal blue | light, dark |
-| veronex | Verde Nexus (green) | light, dark |
-| verobase | Vero Base (navy) | light, dark |
-
-## Consumer support
-
-Web frameworks (React, Vue, Svelte, Solid, Angular, Astro, Qwik, Lit, Preact, vanilla) and webview environments (Tauri Desktop/Mobile, Electron, Capacitor, PWA) all supported via CSS output.
+| Intent / trigger phrase | Go to |
+|------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| Core values / fail-fast / when to STOP / escalate | [docs/llm/policies/cdd.md](../docs/llm/policies/cdd.md) |
+| Spec / scope / WHAT to build | [docs/llm/policies/sdd.md](../docs/llm/policies/sdd.md) |
+| Execute task / agent-driven workflow | [docs/llm/policies/add.md](../docs/llm/policies/add.md) |
+| LLM tool swap / vendor lock-in / per-tool addendum | [docs/llm/policies/tool-portability.md](../docs/llm/policies/tool-portability.md) |
+| Response style / BLUF / 보고서 형식 | [docs/llm/policies/response-style-policy.md](../docs/llm/policies/response-style-policy.md) |
+| Doc tier / where does this content live | [docs/llm/policies/documentation-tiers.md](../docs/llm/policies/documentation-tiers.md) |
+| Token optimization / cache hygiene / hallucination prevention | [docs/llm/policies/token-optimization.md](../docs/llm/policies/token-optimization.md) |
+| Edit AGENTS.md / sync variants / drift check | [docs/llm/policies/anti-drift-checklist.md](../docs/llm/policies/anti-drift-checklist.md) |
+| Secrets / `.secrets/` / never commit | [docs/llm/policies/secrets-management.md](../docs/llm/policies/secrets-management.md) |
+| Organization standard / Tier-0 SSOT for the org / semver v1.0 | [docs/llm/policies/organization-standard.md](../docs/llm/policies/organization-standard.md) |
+| Distribution / consumer repos / workflow_dispatch | [docs/llm/policies/distribution.md](../docs/llm/policies/distribution.md) |
+| Task complete / commit / CDD sync (run BEFORE every commit) | [.agents/skills/post-task-cdd-sync/](../.agents/skills/post-task-cdd-sync/) |
+| Other skills | [.agents/skills/README.md](../.agents/skills/README.md) (catalog) |

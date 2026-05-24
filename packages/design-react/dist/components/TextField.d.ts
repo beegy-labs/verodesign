@@ -1,15 +1,21 @@
 import * as React from 'react';
-import { type EventName } from '@lit/react';
-import { VdsTextField } from '@verobee/design-elements/components/text-field';
-import '@verobee/design-elements/define/text-field';
 export type TextFieldInputEvent = CustomEvent<{
     value: string;
 }>;
 export type TextFieldChangeEvent = CustomEvent<{
     value: string;
 }>;
-export declare const TextField: import("@lit/react").ReactWebComponent<VdsTextField, {
-    onInput: EventName<TextFieldInputEvent>;
-    onChange: EventName<TextFieldChangeEvent>;
-}>;
-export type TextFieldProps = React.ComponentProps<typeof TextField>;
+type Size = 'sm' | 'md' | 'lg';
+type InputType = 'text' | 'email' | 'password' | 'tel' | 'url' | 'search' | 'number' | 'date' | 'datetime-local' | 'time' | 'month' | 'week' | 'color' | 'range' | 'file' | 'hidden';
+export interface TextFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'onInput' | 'onChange'> {
+    label?: string;
+    helper?: string;
+    errorMessage?: string;
+    type?: InputType;
+    size?: Size;
+    readonly?: boolean;
+    onInput?: ((event: TextFieldInputEvent) => void) | undefined;
+    onChange?: ((event: TextFieldChangeEvent) => void) | undefined;
+}
+export declare const TextField: React.ForwardRefExoticComponent<TextFieldProps & React.RefAttributes<HTMLInputElement>>;
+export {};

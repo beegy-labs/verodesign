@@ -1,0 +1,293 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "density": {
+        "compact": {
+          "tab-l1-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "tab-l1 compact density scale."
+          },
+          "tab-l2-scale": {
+            "$value": 0.88,
+            "$type": "number",
+            "$description": "tab-l2 compact density scale."
+          },
+          "currency-toggle-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "currency-toggle compact density scale."
+          },
+          "register-chip-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "register-chip compact density scale."
+          },
+          "view-toggle-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "view-toggle compact density scale."
+          },
+          "month-pill-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "month-pill compact density scale."
+          },
+          "stats-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "stats compact density scale."
+          },
+          "calendar-scale": {
+            "$value": 0.94,
+            "$type": "number",
+            "$description": "calendar compact density scale."
+          },
+          "page-toolbar-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "page-toolbar compact density scale."
+          },
+          "ledger-swapper-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "ledger-swapper compact density scale."
+          },
+          "position-card-scale": {
+            "$value": 0.93,
+            "$type": "number",
+            "$description": "position-card compact density scale."
+          },
+          "snowball-hero-scale": {
+            "$value": 0.94,
+            "$type": "number",
+            "$description": "snowball-hero compact density scale."
+          },
+          "icon-actions-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "icon-actions compact density scale."
+          },
+          "category-progress-list-scale": {
+            "$value": 0.94,
+            "$type": "number",
+            "$description": "category-progress-list compact density scale."
+          },
+          "ledger-transaction-card-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "ledger-transaction-card compact density scale."
+          },
+          "ledger-date-range-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "ledger-date-range compact density scale."
+          },
+          "ledger-filter-tabs-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "ledger-filter-tabs compact density scale."
+          },
+          "ledger-daily-sheet-scale": {
+            "$value": 0.94,
+            "$type": "number",
+            "$description": "ledger-daily-sheet compact density scale."
+          },
+          "ledger-add-modal-scale": {
+            "$value": 0.94,
+            "$type": "number",
+            "$description": "ledger-add-modal compact density scale."
+          },
+          "ledger-date-picker-sheet-scale": {
+            "$value": 0.94,
+            "$type": "number",
+            "$description": "ledger-date-picker-sheet compact density scale."
+          },
+          "management-fixed-card-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "management-fixed-card compact density scale."
+          },
+          "management-category-form-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "management-category-form compact density scale."
+          },
+          "management-category-chip-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "management-category-chip compact density scale."
+          },
+          "management-emoji-dropdown-scale": {
+            "$value": 0.94,
+            "$type": "number",
+            "$description": "management-emoji-dropdown compact density scale."
+          },
+          "month-day-picker-scale": {
+            "$value": 0.94,
+            "$type": "number",
+            "$description": "month-day-picker compact density scale."
+          },
+          "toast-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "toast compact density scale."
+          },
+          "category-color-swatch-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "category-color-swatch compact density scale."
+          },
+          "wordmark-scale": {
+            "$value": 0.96,
+            "$type": "number",
+            "$description": "wordmark compact density scale."
+          }
+        },
+        "dense": {
+          "tab-l1-scale": {
+            "$value": 0.86,
+            "$type": "number",
+            "$description": "tab-l1 dense density scale."
+          },
+          "tab-l2-scale": {
+            "$value": 0.8,
+            "$type": "number",
+            "$description": "tab-l2 dense density scale."
+          },
+          "currency-toggle-scale": {
+            "$value": 0.84,
+            "$type": "number",
+            "$description": "currency-toggle dense density scale."
+          },
+          "register-chip-scale": {
+            "$value": 0.85,
+            "$type": "number",
+            "$description": "register-chip dense density scale."
+          },
+          "view-toggle-scale": {
+            "$value": 0.86,
+            "$type": "number",
+            "$description": "view-toggle dense density scale."
+          },
+          "month-pill-scale": {
+            "$value": 0.84,
+            "$type": "number",
+            "$description": "month-pill dense density scale."
+          },
+          "stats-scale": {
+            "$value": 0.82,
+            "$type": "number",
+            "$description": "stats dense density scale."
+          },
+          "calendar-scale": {
+            "$value": 0.88,
+            "$type": "number",
+            "$description": "calendar dense density scale."
+          },
+          "page-toolbar-scale": {
+            "$value": 0.86,
+            "$type": "number",
+            "$description": "page-toolbar dense density scale."
+          },
+          "ledger-swapper-scale": {
+            "$value": 0.84,
+            "$type": "number",
+            "$description": "ledger-swapper dense density scale."
+          },
+          "position-card-scale": {
+            "$value": 0.87,
+            "$type": "number",
+            "$description": "position-card dense density scale."
+          },
+          "snowball-hero-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "snowball-hero dense density scale."
+          },
+          "icon-actions-scale": {
+            "$value": 0.86,
+            "$type": "number",
+            "$description": "icon-actions dense density scale."
+          },
+          "category-progress-list-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "category-progress-list dense density scale."
+          },
+          "ledger-transaction-card-scale": {
+            "$value": 0.86,
+            "$type": "number",
+            "$description": "ledger-transaction-card dense density scale."
+          },
+          "ledger-date-range-scale": {
+            "$value": 0.86,
+            "$type": "number",
+            "$description": "ledger-date-range dense density scale."
+          },
+          "ledger-filter-tabs-scale": {
+            "$value": 0.84,
+            "$type": "number",
+            "$description": "ledger-filter-tabs dense density scale."
+          },
+          "ledger-daily-sheet-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "ledger-daily-sheet dense density scale."
+          },
+          "ledger-add-modal-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "ledger-add-modal dense density scale."
+          },
+          "ledger-date-picker-sheet-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "ledger-date-picker-sheet dense density scale."
+          },
+          "management-fixed-card-scale": {
+            "$value": 0.86,
+            "$type": "number",
+            "$description": "management-fixed-card dense density scale."
+          },
+          "management-category-form-scale": {
+            "$value": 0.86,
+            "$type": "number",
+            "$description": "management-category-form dense density scale."
+          },
+          "management-category-chip-scale": {
+            "$value": 0.84,
+            "$type": "number",
+            "$description": "management-category-chip dense density scale."
+          },
+          "management-emoji-dropdown-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "management-emoji-dropdown dense density scale."
+          },
+          "month-day-picker-scale": {
+            "$value": 0.9,
+            "$type": "number",
+            "$description": "month-day-picker dense density scale."
+          },
+          "toast-scale": {
+            "$value": 0.84,
+            "$type": "number",
+            "$description": "toast dense density scale."
+          },
+          "category-color-swatch-scale": {
+            "$value": 0.84,
+            "$type": "number",
+            "$description": "category-color-swatch dense density scale."
+          },
+          "wordmark-scale": {
+            "$value": 0.92,
+            "$type": "number",
+            "$description": "wordmark dense density scale."
+          }
+        }
+      }
+    }
+  }
+}

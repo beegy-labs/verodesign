@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { VdsTh } from '@verobee/design-elements/components/th';
-import '@verobee/design-elements/define/th';
-export declare const Th: import("@lit/react").ReactWebComponent<VdsTh, {}>;
-export type ThProps = React.ComponentProps<typeof Th>;
+type Align = 'left' | 'center' | 'right';
+export interface ThProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
+    align?: Align;
+    compact?: boolean;
+    dim?: boolean;
+    colspan?: number;
+}
+export declare const Th: React.ForwardRefExoticComponent<ThProps & React.RefAttributes<HTMLTableCellElement>>;
+export {};

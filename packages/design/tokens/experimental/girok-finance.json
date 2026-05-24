@@ -1,0 +1,49 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "status": "experimental",
+      "since": "TBD",
+      "source": "app-girok/docs/design/units/invest-positions.md, app-girok/docs/design/units/debt-loans.md, app-girok/docs/design/units/invest-snowball-hero.md",
+      "implements": [
+        "girok-scoped"
+      ],
+      "brand": "girok"
+    }
+  },
+  "exp": {
+    "girok": {
+      "market": {
+        "up": {
+          "$value": "{exp.girok.finance.up}",
+          "$type": "color",
+          "$description": "exp.girok.market.up Girok market gain color following Korean finance convention: red means up."
+        },
+        "down": {
+          "$value": "{exp.girok.finance.down}",
+          "$type": "color",
+          "$description": "exp.girok.market.down Girok market loss color following Korean finance convention: blue means down."
+        }
+      },
+      "loan": {
+        "priority": {
+          "$value": "oklch(64.5% 0.2154 16.44 / 0.2)",
+          "$type": "color",
+          "$description": "exp.girok.loan.priority Decorative pill surface for girok priority-repayment loan labeling."
+        }
+      },
+      "progress": {
+        "goal-fill-start": {
+          "$value": "oklch(76.86% 0.1647 70.08)",
+          "$type": "color",
+          "$description": "exp.girok.progress.goal-fill-start Decorative goal progress gradient start for girok finance hero surfaces."
+        },
+        "goal-fill-end": {
+          "$value": "oklch(69.59% 0.1491 162.48)",
+          "$type": "color",
+          "$description": "exp.girok.progress.goal-fill-end Decorative goal progress gradient end for girok finance hero surfaces."
+        }
+      }
+    }
+  }
+}

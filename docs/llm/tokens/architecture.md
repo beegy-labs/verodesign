@@ -38,6 +38,8 @@ Slot groups partition the semantic tier by domain. Theme declares which groups i
 | Group | Status | Scope |
 | ----- | ------ | ----- |
 | core | active | Cross-platform UI tokens |
+| status | active, optional implements | Status and destructive semantics |
+| finance | active, optional implements | Finance-specific semantics |
 | web | active | Web/webview-only (breakpoints, z-index, cursor, scrollbar) |
 | app-shell | reserved | Tauri/PWA desktop window chrome |
 | mobile-shell | reserved | Tauri/PWA mobile (safe-area, touch-target) |
@@ -89,6 +91,16 @@ All token files use W3C Design Tokens Community Group spec.
 | default | same with `themes/default-*.json` |
 
 Same semantic schema, different binding values per output file.
+
+## Optional group fallback emission
+
+When a brand does not implement an active optional group, the build still emits fallback theme aliases so component contracts stay stable.
+
+| Group | Non-implements emission rule | Purpose |
+| ----- | ---------------------------- | ------- |
+| `status` | `theme.status.{success,error,warning,info}` + `theme.destructive` → `theme.primary`; `theme.status.neutral` → `theme.text.secondary`; matching `*.foreground` → `theme.primary.foreground` or `theme.bg.page` | Preserve `--vds-theme-status-*` / `--vds-theme-destructive*` variables without requiring component-level fallbacks |
+
+Canonical brands that implement the group emit their actual bound values. Non-implementing brands receive alias variables only at theme CSS build time.
 
 ## Output mapping
 

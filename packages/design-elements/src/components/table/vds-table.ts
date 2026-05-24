@@ -19,7 +19,7 @@ export class VdsTable extends VdsElement {
       width: 100%;
       border-collapse: collapse;
       font-family: var(--vds-font-family-sans);
-      font-size: var(--vds-font-size-sm);
+      font-size: var(--vds-type-role-label-size);
       color: var(--vds-theme-text-primary);
       background: var(--vds-theme-bg-card);
     }
@@ -27,8 +27,8 @@ export class VdsTable extends VdsElement {
     .head ::slotted(*) { background: var(--vds-theme-bg-elevated); }
 
     /* style projected table rows via ::part / standard cascade */
-    :host([density="compact"]) table { font-size: var(--vds-font-size-xs); }
-    :host([density="comfortable"]) table { font-size: var(--vds-font-size-base); }
+    :host([density="compact"]) table { font-size: var(--vds-type-role-caption-size); }
+    :host([density="comfortable"]) table { font-size: var(--vds-type-role-body-size); }
   `;
 
   @property({ type: String, reflect: true }) density: Density = 'normal';

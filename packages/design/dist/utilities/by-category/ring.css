@@ -20,6 +20,25 @@
   .vds-ring-offset-inverse { --vds-ring-offset-color: var(--vds-theme-bg-inverse); }
   .vds-ring-offset-code { --vds-ring-offset-color: var(--vds-theme-bg-code); }
   .vds-ring-offset-selected { --vds-ring-offset-color: var(--vds-theme-bg-selected); }
+  .vds-ring-offset-disabled { --vds-ring-offset-color: var(--vds-theme-bg-disabled); }
+  .vds-ring-scrim { --vds-ring-color: var(--vds-theme-scrim); }
+  .vds-ring-offset-scrim { --vds-ring-offset-color: var(--vds-theme-scrim); }
+  .vds-ring-scrim\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 0%, transparent); }
+  .vds-ring-scrim\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 5%, transparent); }
+  .vds-ring-scrim\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 10%, transparent); }
+  .vds-ring-scrim\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 15%, transparent); }
+  .vds-ring-scrim\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 20%, transparent); }
+  .vds-ring-scrim\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 25%, transparent); }
+  .vds-ring-scrim\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 30%, transparent); }
+  .vds-ring-scrim\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 40%, transparent); }
+  .vds-ring-scrim\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 50%, transparent); }
+  .vds-ring-scrim\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 60%, transparent); }
+  .vds-ring-scrim\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 70%, transparent); }
+  .vds-ring-scrim\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 75%, transparent); }
+  .vds-ring-scrim\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 80%, transparent); }
+  .vds-ring-scrim\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 90%, transparent); }
+  .vds-ring-scrim\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-scrim) 95%, transparent); }
+  .vds-ring-scrim\/100 { --vds-ring-color: var(--vds-theme-scrim); }
   .vds-ring-primary { --vds-ring-color: var(--vds-theme-primary); }
   .vds-ring-offset-primary { --vds-ring-offset-color: var(--vds-theme-primary); }
   .vds-ring-primary\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary) 0%, transparent); }
@@ -38,42 +57,24 @@
   .vds-ring-primary\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary) 90%, transparent); }
   .vds-ring-primary\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary) 95%, transparent); }
   .vds-ring-primary\/100 { --vds-ring-color: var(--vds-theme-primary); }
-  .vds-ring-primary-fg { --vds-ring-color: var(--vds-theme-primary-fg); }
-  .vds-ring-offset-primary-fg { --vds-ring-offset-color: var(--vds-theme-primary-fg); }
-  .vds-ring-primary-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 0%, transparent); }
-  .vds-ring-primary-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 5%, transparent); }
-  .vds-ring-primary-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 10%, transparent); }
-  .vds-ring-primary-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 15%, transparent); }
-  .vds-ring-primary-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 20%, transparent); }
-  .vds-ring-primary-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 25%, transparent); }
-  .vds-ring-primary-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 30%, transparent); }
-  .vds-ring-primary-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 40%, transparent); }
-  .vds-ring-primary-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 50%, transparent); }
-  .vds-ring-primary-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 60%, transparent); }
-  .vds-ring-primary-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 70%, transparent); }
-  .vds-ring-primary-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 75%, transparent); }
-  .vds-ring-primary-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 80%, transparent); }
-  .vds-ring-primary-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 90%, transparent); }
-  .vds-ring-primary-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-fg) 95%, transparent); }
-  .vds-ring-primary-fg\/100 { --vds-ring-color: var(--vds-theme-primary-fg); }
-  .vds-ring-primary-ring { --vds-ring-color: var(--vds-theme-primary-ring); }
-  .vds-ring-offset-primary-ring { --vds-ring-offset-color: var(--vds-theme-primary-ring); }
-  .vds-ring-primary-ring\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 0%, transparent); }
-  .vds-ring-primary-ring\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 5%, transparent); }
-  .vds-ring-primary-ring\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 10%, transparent); }
-  .vds-ring-primary-ring\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 15%, transparent); }
-  .vds-ring-primary-ring\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 20%, transparent); }
-  .vds-ring-primary-ring\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 25%, transparent); }
-  .vds-ring-primary-ring\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 30%, transparent); }
-  .vds-ring-primary-ring\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 40%, transparent); }
-  .vds-ring-primary-ring\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 50%, transparent); }
-  .vds-ring-primary-ring\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 60%, transparent); }
-  .vds-ring-primary-ring\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 70%, transparent); }
-  .vds-ring-primary-ring\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 75%, transparent); }
-  .vds-ring-primary-ring\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 80%, transparent); }
-  .vds-ring-primary-ring\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 90%, transparent); }
-  .vds-ring-primary-ring\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-ring) 95%, transparent); }
-  .vds-ring-primary-ring\/100 { --vds-ring-color: var(--vds-theme-primary-ring); }
+  .vds-ring-primary-foreground { --vds-ring-color: var(--vds-theme-primary-foreground); }
+  .vds-ring-offset-primary-foreground { --vds-ring-offset-color: var(--vds-theme-primary-foreground); }
+  .vds-ring-primary-foreground\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 0%, transparent); }
+  .vds-ring-primary-foreground\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 5%, transparent); }
+  .vds-ring-primary-foreground\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 10%, transparent); }
+  .vds-ring-primary-foreground\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 15%, transparent); }
+  .vds-ring-primary-foreground\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 20%, transparent); }
+  .vds-ring-primary-foreground\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 25%, transparent); }
+  .vds-ring-primary-foreground\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 30%, transparent); }
+  .vds-ring-primary-foreground\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 40%, transparent); }
+  .vds-ring-primary-foreground\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 50%, transparent); }
+  .vds-ring-primary-foreground\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 60%, transparent); }
+  .vds-ring-primary-foreground\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 70%, transparent); }
+  .vds-ring-primary-foreground\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 75%, transparent); }
+  .vds-ring-primary-foreground\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 80%, transparent); }
+  .vds-ring-primary-foreground\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 90%, transparent); }
+  .vds-ring-primary-foreground\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-primary-foreground) 95%, transparent); }
+  .vds-ring-primary-foreground\/100 { --vds-ring-color: var(--vds-theme-primary-foreground); }
   .vds-ring-accent { --vds-ring-color: var(--vds-theme-accent); }
   .vds-ring-offset-accent { --vds-ring-offset-color: var(--vds-theme-accent); }
   .vds-ring-accent\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent) 0%, transparent); }
@@ -92,240 +93,24 @@
   .vds-ring-accent\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent) 90%, transparent); }
   .vds-ring-accent\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent) 95%, transparent); }
   .vds-ring-accent\/100 { --vds-ring-color: var(--vds-theme-accent); }
-  .vds-ring-accent-fg { --vds-ring-color: var(--vds-theme-accent-fg); }
-  .vds-ring-offset-accent-fg { --vds-ring-offset-color: var(--vds-theme-accent-fg); }
-  .vds-ring-accent-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 0%, transparent); }
-  .vds-ring-accent-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 5%, transparent); }
-  .vds-ring-accent-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 10%, transparent); }
-  .vds-ring-accent-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 15%, transparent); }
-  .vds-ring-accent-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 20%, transparent); }
-  .vds-ring-accent-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 25%, transparent); }
-  .vds-ring-accent-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 30%, transparent); }
-  .vds-ring-accent-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 40%, transparent); }
-  .vds-ring-accent-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 50%, transparent); }
-  .vds-ring-accent-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 60%, transparent); }
-  .vds-ring-accent-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 70%, transparent); }
-  .vds-ring-accent-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 75%, transparent); }
-  .vds-ring-accent-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 80%, transparent); }
-  .vds-ring-accent-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 90%, transparent); }
-  .vds-ring-accent-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-fg) 95%, transparent); }
-  .vds-ring-accent-fg\/100 { --vds-ring-color: var(--vds-theme-accent-fg); }
-  .vds-ring-destructive { --vds-ring-color: var(--vds-theme-destructive); }
-  .vds-ring-offset-destructive { --vds-ring-offset-color: var(--vds-theme-destructive); }
-  .vds-ring-destructive\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 0%, transparent); }
-  .vds-ring-destructive\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 5%, transparent); }
-  .vds-ring-destructive\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 10%, transparent); }
-  .vds-ring-destructive\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 15%, transparent); }
-  .vds-ring-destructive\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 20%, transparent); }
-  .vds-ring-destructive\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 25%, transparent); }
-  .vds-ring-destructive\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 30%, transparent); }
-  .vds-ring-destructive\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 40%, transparent); }
-  .vds-ring-destructive\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 50%, transparent); }
-  .vds-ring-destructive\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 60%, transparent); }
-  .vds-ring-destructive\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 70%, transparent); }
-  .vds-ring-destructive\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 75%, transparent); }
-  .vds-ring-destructive\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 80%, transparent); }
-  .vds-ring-destructive\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 90%, transparent); }
-  .vds-ring-destructive\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive) 95%, transparent); }
-  .vds-ring-destructive\/100 { --vds-ring-color: var(--vds-theme-destructive); }
-  .vds-ring-destructive-fg { --vds-ring-color: var(--vds-theme-destructive-fg); }
-  .vds-ring-offset-destructive-fg { --vds-ring-offset-color: var(--vds-theme-destructive-fg); }
-  .vds-ring-destructive-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 0%, transparent); }
-  .vds-ring-destructive-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 5%, transparent); }
-  .vds-ring-destructive-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 10%, transparent); }
-  .vds-ring-destructive-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 15%, transparent); }
-  .vds-ring-destructive-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 20%, transparent); }
-  .vds-ring-destructive-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 25%, transparent); }
-  .vds-ring-destructive-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 30%, transparent); }
-  .vds-ring-destructive-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 40%, transparent); }
-  .vds-ring-destructive-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 50%, transparent); }
-  .vds-ring-destructive-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 60%, transparent); }
-  .vds-ring-destructive-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 70%, transparent); }
-  .vds-ring-destructive-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 75%, transparent); }
-  .vds-ring-destructive-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 80%, transparent); }
-  .vds-ring-destructive-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 90%, transparent); }
-  .vds-ring-destructive-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-destructive-fg) 95%, transparent); }
-  .vds-ring-destructive-fg\/100 { --vds-ring-color: var(--vds-theme-destructive-fg); }
-  .vds-ring-success { --vds-ring-color: var(--vds-theme-success); }
-  .vds-ring-offset-success { --vds-ring-offset-color: var(--vds-theme-success); }
-  .vds-ring-success\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 0%, transparent); }
-  .vds-ring-success\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 5%, transparent); }
-  .vds-ring-success\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 10%, transparent); }
-  .vds-ring-success\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 15%, transparent); }
-  .vds-ring-success\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 20%, transparent); }
-  .vds-ring-success\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 25%, transparent); }
-  .vds-ring-success\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 30%, transparent); }
-  .vds-ring-success\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 40%, transparent); }
-  .vds-ring-success\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 50%, transparent); }
-  .vds-ring-success\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 60%, transparent); }
-  .vds-ring-success\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 70%, transparent); }
-  .vds-ring-success\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 75%, transparent); }
-  .vds-ring-success\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 80%, transparent); }
-  .vds-ring-success\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 90%, transparent); }
-  .vds-ring-success\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success) 95%, transparent); }
-  .vds-ring-success\/100 { --vds-ring-color: var(--vds-theme-success); }
-  .vds-ring-success-fg { --vds-ring-color: var(--vds-theme-success-fg); }
-  .vds-ring-offset-success-fg { --vds-ring-offset-color: var(--vds-theme-success-fg); }
-  .vds-ring-success-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 0%, transparent); }
-  .vds-ring-success-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 5%, transparent); }
-  .vds-ring-success-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 10%, transparent); }
-  .vds-ring-success-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 15%, transparent); }
-  .vds-ring-success-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 20%, transparent); }
-  .vds-ring-success-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 25%, transparent); }
-  .vds-ring-success-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 30%, transparent); }
-  .vds-ring-success-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 40%, transparent); }
-  .vds-ring-success-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 50%, transparent); }
-  .vds-ring-success-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 60%, transparent); }
-  .vds-ring-success-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 70%, transparent); }
-  .vds-ring-success-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 75%, transparent); }
-  .vds-ring-success-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 80%, transparent); }
-  .vds-ring-success-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 90%, transparent); }
-  .vds-ring-success-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-fg) 95%, transparent); }
-  .vds-ring-success-fg\/100 { --vds-ring-color: var(--vds-theme-success-fg); }
-  .vds-ring-warning { --vds-ring-color: var(--vds-theme-warning); }
-  .vds-ring-offset-warning { --vds-ring-offset-color: var(--vds-theme-warning); }
-  .vds-ring-warning\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 0%, transparent); }
-  .vds-ring-warning\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 5%, transparent); }
-  .vds-ring-warning\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 10%, transparent); }
-  .vds-ring-warning\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 15%, transparent); }
-  .vds-ring-warning\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 20%, transparent); }
-  .vds-ring-warning\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 25%, transparent); }
-  .vds-ring-warning\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 30%, transparent); }
-  .vds-ring-warning\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 40%, transparent); }
-  .vds-ring-warning\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 50%, transparent); }
-  .vds-ring-warning\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 60%, transparent); }
-  .vds-ring-warning\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 70%, transparent); }
-  .vds-ring-warning\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 75%, transparent); }
-  .vds-ring-warning\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 80%, transparent); }
-  .vds-ring-warning\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 90%, transparent); }
-  .vds-ring-warning\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning) 95%, transparent); }
-  .vds-ring-warning\/100 { --vds-ring-color: var(--vds-theme-warning); }
-  .vds-ring-warning-fg { --vds-ring-color: var(--vds-theme-warning-fg); }
-  .vds-ring-offset-warning-fg { --vds-ring-offset-color: var(--vds-theme-warning-fg); }
-  .vds-ring-warning-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 0%, transparent); }
-  .vds-ring-warning-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 5%, transparent); }
-  .vds-ring-warning-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 10%, transparent); }
-  .vds-ring-warning-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 15%, transparent); }
-  .vds-ring-warning-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 20%, transparent); }
-  .vds-ring-warning-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 25%, transparent); }
-  .vds-ring-warning-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 30%, transparent); }
-  .vds-ring-warning-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 40%, transparent); }
-  .vds-ring-warning-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 50%, transparent); }
-  .vds-ring-warning-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 60%, transparent); }
-  .vds-ring-warning-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 70%, transparent); }
-  .vds-ring-warning-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 75%, transparent); }
-  .vds-ring-warning-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 80%, transparent); }
-  .vds-ring-warning-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 90%, transparent); }
-  .vds-ring-warning-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-warning-fg) 95%, transparent); }
-  .vds-ring-warning-fg\/100 { --vds-ring-color: var(--vds-theme-warning-fg); }
-  .vds-ring-error { --vds-ring-color: var(--vds-theme-error); }
-  .vds-ring-offset-error { --vds-ring-offset-color: var(--vds-theme-error); }
-  .vds-ring-error\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 0%, transparent); }
-  .vds-ring-error\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 5%, transparent); }
-  .vds-ring-error\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 10%, transparent); }
-  .vds-ring-error\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 15%, transparent); }
-  .vds-ring-error\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 20%, transparent); }
-  .vds-ring-error\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 25%, transparent); }
-  .vds-ring-error\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 30%, transparent); }
-  .vds-ring-error\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 40%, transparent); }
-  .vds-ring-error\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 50%, transparent); }
-  .vds-ring-error\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 60%, transparent); }
-  .vds-ring-error\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 70%, transparent); }
-  .vds-ring-error\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 75%, transparent); }
-  .vds-ring-error\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 80%, transparent); }
-  .vds-ring-error\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 90%, transparent); }
-  .vds-ring-error\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error) 95%, transparent); }
-  .vds-ring-error\/100 { --vds-ring-color: var(--vds-theme-error); }
-  .vds-ring-error-fg { --vds-ring-color: var(--vds-theme-error-fg); }
-  .vds-ring-offset-error-fg { --vds-ring-offset-color: var(--vds-theme-error-fg); }
-  .vds-ring-error-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 0%, transparent); }
-  .vds-ring-error-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 5%, transparent); }
-  .vds-ring-error-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 10%, transparent); }
-  .vds-ring-error-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 15%, transparent); }
-  .vds-ring-error-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 20%, transparent); }
-  .vds-ring-error-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 25%, transparent); }
-  .vds-ring-error-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 30%, transparent); }
-  .vds-ring-error-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 40%, transparent); }
-  .vds-ring-error-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 50%, transparent); }
-  .vds-ring-error-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 60%, transparent); }
-  .vds-ring-error-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 70%, transparent); }
-  .vds-ring-error-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 75%, transparent); }
-  .vds-ring-error-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 80%, transparent); }
-  .vds-ring-error-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 90%, transparent); }
-  .vds-ring-error-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-error-fg) 95%, transparent); }
-  .vds-ring-error-fg\/100 { --vds-ring-color: var(--vds-theme-error-fg); }
-  .vds-ring-info { --vds-ring-color: var(--vds-theme-info); }
-  .vds-ring-offset-info { --vds-ring-offset-color: var(--vds-theme-info); }
-  .vds-ring-info\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 0%, transparent); }
-  .vds-ring-info\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 5%, transparent); }
-  .vds-ring-info\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 10%, transparent); }
-  .vds-ring-info\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 15%, transparent); }
-  .vds-ring-info\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 20%, transparent); }
-  .vds-ring-info\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 25%, transparent); }
-  .vds-ring-info\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 30%, transparent); }
-  .vds-ring-info\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 40%, transparent); }
-  .vds-ring-info\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 50%, transparent); }
-  .vds-ring-info\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 60%, transparent); }
-  .vds-ring-info\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 70%, transparent); }
-  .vds-ring-info\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 75%, transparent); }
-  .vds-ring-info\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 80%, transparent); }
-  .vds-ring-info\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 90%, transparent); }
-  .vds-ring-info\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info) 95%, transparent); }
-  .vds-ring-info\/100 { --vds-ring-color: var(--vds-theme-info); }
-  .vds-ring-info-fg { --vds-ring-color: var(--vds-theme-info-fg); }
-  .vds-ring-offset-info-fg { --vds-ring-offset-color: var(--vds-theme-info-fg); }
-  .vds-ring-info-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 0%, transparent); }
-  .vds-ring-info-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 5%, transparent); }
-  .vds-ring-info-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 10%, transparent); }
-  .vds-ring-info-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 15%, transparent); }
-  .vds-ring-info-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 20%, transparent); }
-  .vds-ring-info-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 25%, transparent); }
-  .vds-ring-info-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 30%, transparent); }
-  .vds-ring-info-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 40%, transparent); }
-  .vds-ring-info-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 50%, transparent); }
-  .vds-ring-info-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 60%, transparent); }
-  .vds-ring-info-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 70%, transparent); }
-  .vds-ring-info-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 75%, transparent); }
-  .vds-ring-info-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 80%, transparent); }
-  .vds-ring-info-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 90%, transparent); }
-  .vds-ring-info-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-info-fg) 95%, transparent); }
-  .vds-ring-info-fg\/100 { --vds-ring-color: var(--vds-theme-info-fg); }
-  .vds-ring-neutral { --vds-ring-color: var(--vds-theme-neutral); }
-  .vds-ring-offset-neutral { --vds-ring-offset-color: var(--vds-theme-neutral); }
-  .vds-ring-neutral\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 0%, transparent); }
-  .vds-ring-neutral\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 5%, transparent); }
-  .vds-ring-neutral\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 10%, transparent); }
-  .vds-ring-neutral\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 15%, transparent); }
-  .vds-ring-neutral\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 20%, transparent); }
-  .vds-ring-neutral\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 25%, transparent); }
-  .vds-ring-neutral\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 30%, transparent); }
-  .vds-ring-neutral\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 40%, transparent); }
-  .vds-ring-neutral\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 50%, transparent); }
-  .vds-ring-neutral\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 60%, transparent); }
-  .vds-ring-neutral\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 70%, transparent); }
-  .vds-ring-neutral\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 75%, transparent); }
-  .vds-ring-neutral\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 80%, transparent); }
-  .vds-ring-neutral\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 90%, transparent); }
-  .vds-ring-neutral\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral) 95%, transparent); }
-  .vds-ring-neutral\/100 { --vds-ring-color: var(--vds-theme-neutral); }
-  .vds-ring-neutral-fg { --vds-ring-color: var(--vds-theme-neutral-fg); }
-  .vds-ring-offset-neutral-fg { --vds-ring-offset-color: var(--vds-theme-neutral-fg); }
-  .vds-ring-neutral-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 0%, transparent); }
-  .vds-ring-neutral-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 5%, transparent); }
-  .vds-ring-neutral-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 10%, transparent); }
-  .vds-ring-neutral-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 15%, transparent); }
-  .vds-ring-neutral-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 20%, transparent); }
-  .vds-ring-neutral-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 25%, transparent); }
-  .vds-ring-neutral-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 30%, transparent); }
-  .vds-ring-neutral-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 40%, transparent); }
-  .vds-ring-neutral-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 50%, transparent); }
-  .vds-ring-neutral-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 60%, transparent); }
-  .vds-ring-neutral-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 70%, transparent); }
-  .vds-ring-neutral-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 75%, transparent); }
-  .vds-ring-neutral-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 80%, transparent); }
-  .vds-ring-neutral-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 90%, transparent); }
-  .vds-ring-neutral-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-neutral-fg) 95%, transparent); }
-  .vds-ring-neutral-fg\/100 { --vds-ring-color: var(--vds-theme-neutral-fg); }
+  .vds-ring-accent-foreground { --vds-ring-color: var(--vds-theme-accent-foreground); }
+  .vds-ring-offset-accent-foreground { --vds-ring-offset-color: var(--vds-theme-accent-foreground); }
+  .vds-ring-accent-foreground\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 0%, transparent); }
+  .vds-ring-accent-foreground\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 5%, transparent); }
+  .vds-ring-accent-foreground\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 10%, transparent); }
+  .vds-ring-accent-foreground\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 15%, transparent); }
+  .vds-ring-accent-foreground\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 20%, transparent); }
+  .vds-ring-accent-foreground\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 25%, transparent); }
+  .vds-ring-accent-foreground\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 30%, transparent); }
+  .vds-ring-accent-foreground\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 40%, transparent); }
+  .vds-ring-accent-foreground\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 50%, transparent); }
+  .vds-ring-accent-foreground\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 60%, transparent); }
+  .vds-ring-accent-foreground\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 70%, transparent); }
+  .vds-ring-accent-foreground\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 75%, transparent); }
+  .vds-ring-accent-foreground\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 80%, transparent); }
+  .vds-ring-accent-foreground\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 90%, transparent); }
+  .vds-ring-accent-foreground\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-foreground) 95%, transparent); }
+  .vds-ring-accent-foreground\/100 { --vds-ring-color: var(--vds-theme-accent-foreground); }
   .vds-ring-success-bg { --vds-ring-color: var(--vds-theme-success-bg); }
   .vds-ring-offset-success-bg { --vds-ring-offset-color: var(--vds-theme-success-bg); }
   .vds-ring-success-bg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-success-bg) 0%, transparent); }
@@ -434,24 +219,24 @@
   .vds-ring-cancelled\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled) 90%, transparent); }
   .vds-ring-cancelled\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled) 95%, transparent); }
   .vds-ring-cancelled\/100 { --vds-ring-color: var(--vds-theme-cancelled); }
-  .vds-ring-cancelled-fg { --vds-ring-color: var(--vds-theme-cancelled-fg); }
-  .vds-ring-offset-cancelled-fg { --vds-ring-offset-color: var(--vds-theme-cancelled-fg); }
-  .vds-ring-cancelled-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 0%, transparent); }
-  .vds-ring-cancelled-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 5%, transparent); }
-  .vds-ring-cancelled-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 10%, transparent); }
-  .vds-ring-cancelled-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 15%, transparent); }
-  .vds-ring-cancelled-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 20%, transparent); }
-  .vds-ring-cancelled-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 25%, transparent); }
-  .vds-ring-cancelled-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 30%, transparent); }
-  .vds-ring-cancelled-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 40%, transparent); }
-  .vds-ring-cancelled-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 50%, transparent); }
-  .vds-ring-cancelled-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 60%, transparent); }
-  .vds-ring-cancelled-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 70%, transparent); }
-  .vds-ring-cancelled-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 75%, transparent); }
-  .vds-ring-cancelled-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 80%, transparent); }
-  .vds-ring-cancelled-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 90%, transparent); }
-  .vds-ring-cancelled-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-fg) 95%, transparent); }
-  .vds-ring-cancelled-fg\/100 { --vds-ring-color: var(--vds-theme-cancelled-fg); }
+  .vds-ring-cancelled-foreground { --vds-ring-color: var(--vds-theme-cancelled-foreground); }
+  .vds-ring-offset-cancelled-foreground { --vds-ring-offset-color: var(--vds-theme-cancelled-foreground); }
+  .vds-ring-cancelled-foreground\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 0%, transparent); }
+  .vds-ring-cancelled-foreground\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 5%, transparent); }
+  .vds-ring-cancelled-foreground\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 10%, transparent); }
+  .vds-ring-cancelled-foreground\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 15%, transparent); }
+  .vds-ring-cancelled-foreground\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 20%, transparent); }
+  .vds-ring-cancelled-foreground\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 25%, transparent); }
+  .vds-ring-cancelled-foreground\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 30%, transparent); }
+  .vds-ring-cancelled-foreground\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 40%, transparent); }
+  .vds-ring-cancelled-foreground\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 50%, transparent); }
+  .vds-ring-cancelled-foreground\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 60%, transparent); }
+  .vds-ring-cancelled-foreground\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 70%, transparent); }
+  .vds-ring-cancelled-foreground\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 75%, transparent); }
+  .vds-ring-cancelled-foreground\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 80%, transparent); }
+  .vds-ring-cancelled-foreground\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 90%, transparent); }
+  .vds-ring-cancelled-foreground\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-cancelled-foreground) 95%, transparent); }
+  .vds-ring-cancelled-foreground\/100 { --vds-ring-color: var(--vds-theme-cancelled-foreground); }
   .vds-ring-accent-2 { --vds-ring-color: var(--vds-theme-accent-2); }
   .vds-ring-offset-accent-2 { --vds-ring-offset-color: var(--vds-theme-accent-2); }
   .vds-ring-accent-2\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2) 0%, transparent); }
@@ -470,24 +255,24 @@
   .vds-ring-accent-2\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2) 90%, transparent); }
   .vds-ring-accent-2\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2) 95%, transparent); }
   .vds-ring-accent-2\/100 { --vds-ring-color: var(--vds-theme-accent-2); }
-  .vds-ring-accent-2-fg { --vds-ring-color: var(--vds-theme-accent-2-fg); }
-  .vds-ring-offset-accent-2-fg { --vds-ring-offset-color: var(--vds-theme-accent-2-fg); }
-  .vds-ring-accent-2-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 0%, transparent); }
-  .vds-ring-accent-2-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 5%, transparent); }
-  .vds-ring-accent-2-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 10%, transparent); }
-  .vds-ring-accent-2-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 15%, transparent); }
-  .vds-ring-accent-2-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 20%, transparent); }
-  .vds-ring-accent-2-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 25%, transparent); }
-  .vds-ring-accent-2-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 30%, transparent); }
-  .vds-ring-accent-2-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 40%, transparent); }
-  .vds-ring-accent-2-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 50%, transparent); }
-  .vds-ring-accent-2-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 60%, transparent); }
-  .vds-ring-accent-2-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 70%, transparent); }
-  .vds-ring-accent-2-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 75%, transparent); }
-  .vds-ring-accent-2-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 80%, transparent); }
-  .vds-ring-accent-2-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 90%, transparent); }
-  .vds-ring-accent-2-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-fg) 95%, transparent); }
-  .vds-ring-accent-2-fg\/100 { --vds-ring-color: var(--vds-theme-accent-2-fg); }
+  .vds-ring-accent-2-foreground { --vds-ring-color: var(--vds-theme-accent-2-foreground); }
+  .vds-ring-offset-accent-2-foreground { --vds-ring-offset-color: var(--vds-theme-accent-2-foreground); }
+  .vds-ring-accent-2-foreground\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 0%, transparent); }
+  .vds-ring-accent-2-foreground\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 5%, transparent); }
+  .vds-ring-accent-2-foreground\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 10%, transparent); }
+  .vds-ring-accent-2-foreground\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 15%, transparent); }
+  .vds-ring-accent-2-foreground\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 20%, transparent); }
+  .vds-ring-accent-2-foreground\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 25%, transparent); }
+  .vds-ring-accent-2-foreground\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 30%, transparent); }
+  .vds-ring-accent-2-foreground\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 40%, transparent); }
+  .vds-ring-accent-2-foreground\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 50%, transparent); }
+  .vds-ring-accent-2-foreground\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 60%, transparent); }
+  .vds-ring-accent-2-foreground\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 70%, transparent); }
+  .vds-ring-accent-2-foreground\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 75%, transparent); }
+  .vds-ring-accent-2-foreground\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 80%, transparent); }
+  .vds-ring-accent-2-foreground\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 90%, transparent); }
+  .vds-ring-accent-2-foreground\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-2-foreground) 95%, transparent); }
+  .vds-ring-accent-2-foreground\/100 { --vds-ring-color: var(--vds-theme-accent-2-foreground); }
   .vds-ring-accent-3 { --vds-ring-color: var(--vds-theme-accent-3); }
   .vds-ring-offset-accent-3 { --vds-ring-offset-color: var(--vds-theme-accent-3); }
   .vds-ring-accent-3\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3) 0%, transparent); }
@@ -506,22 +291,22 @@
   .vds-ring-accent-3\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3) 90%, transparent); }
   .vds-ring-accent-3\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3) 95%, transparent); }
   .vds-ring-accent-3\/100 { --vds-ring-color: var(--vds-theme-accent-3); }
-  .vds-ring-accent-3-fg { --vds-ring-color: var(--vds-theme-accent-3-fg); }
-  .vds-ring-offset-accent-3-fg { --vds-ring-offset-color: var(--vds-theme-accent-3-fg); }
-  .vds-ring-accent-3-fg\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 0%, transparent); }
-  .vds-ring-accent-3-fg\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 5%, transparent); }
-  .vds-ring-accent-3-fg\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 10%, transparent); }
-  .vds-ring-accent-3-fg\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 15%, transparent); }
-  .vds-ring-accent-3-fg\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 20%, transparent); }
-  .vds-ring-accent-3-fg\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 25%, transparent); }
-  .vds-ring-accent-3-fg\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 30%, transparent); }
-  .vds-ring-accent-3-fg\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 40%, transparent); }
-  .vds-ring-accent-3-fg\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 50%, transparent); }
-  .vds-ring-accent-3-fg\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 60%, transparent); }
-  .vds-ring-accent-3-fg\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 70%, transparent); }
-  .vds-ring-accent-3-fg\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 75%, transparent); }
-  .vds-ring-accent-3-fg\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 80%, transparent); }
-  .vds-ring-accent-3-fg\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 90%, transparent); }
-  .vds-ring-accent-3-fg\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-fg) 95%, transparent); }
-  .vds-ring-accent-3-fg\/100 { --vds-ring-color: var(--vds-theme-accent-3-fg); }
+  .vds-ring-accent-3-foreground { --vds-ring-color: var(--vds-theme-accent-3-foreground); }
+  .vds-ring-offset-accent-3-foreground { --vds-ring-offset-color: var(--vds-theme-accent-3-foreground); }
+  .vds-ring-accent-3-foreground\/0 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 0%, transparent); }
+  .vds-ring-accent-3-foreground\/5 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 5%, transparent); }
+  .vds-ring-accent-3-foreground\/10 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 10%, transparent); }
+  .vds-ring-accent-3-foreground\/15 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 15%, transparent); }
+  .vds-ring-accent-3-foreground\/20 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 20%, transparent); }
+  .vds-ring-accent-3-foreground\/25 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 25%, transparent); }
+  .vds-ring-accent-3-foreground\/30 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 30%, transparent); }
+  .vds-ring-accent-3-foreground\/40 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 40%, transparent); }
+  .vds-ring-accent-3-foreground\/50 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 50%, transparent); }
+  .vds-ring-accent-3-foreground\/60 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 60%, transparent); }
+  .vds-ring-accent-3-foreground\/70 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 70%, transparent); }
+  .vds-ring-accent-3-foreground\/75 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 75%, transparent); }
+  .vds-ring-accent-3-foreground\/80 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 80%, transparent); }
+  .vds-ring-accent-3-foreground\/90 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 90%, transparent); }
+  .vds-ring-accent-3-foreground\/95 { --vds-ring-color: color-mix(in oklab, var(--vds-theme-accent-3-foreground) 95%, transparent); }
+  .vds-ring-accent-3-foreground\/100 { --vds-ring-color: var(--vds-theme-accent-3-foreground); }
 }

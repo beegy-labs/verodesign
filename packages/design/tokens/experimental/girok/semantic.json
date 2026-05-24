@@ -1,0 +1,257 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "surface": {
+        "screen-base": {
+          "$value": "{exp.girok.shell.frame-surface}",
+          "$type": "color",
+          "$description": "Top-level screen background from the React mockup token SSOT."
+        },
+        "app-base": {
+          "$value": "{exp.girok.shell.content-surface}",
+          "$type": "color",
+          "$description": "Primary app interior background from the React mockup token SSOT."
+        },
+        "invest-header": {
+          "$value": "#0D0C0A",
+          "$type": "color",
+          "$description": "Sticky investment header surface from the React mockup token SSOT."
+        },
+        "card": {
+          "$value": "oklch(21.79% 0.0117 91.77)",
+          "$type": "color",
+          "$description": "Default redesign card and modal surface."
+        },
+        "card-base": {
+          "$value": "{exp.girok.surface.card}",
+          "$type": "color",
+          "$description": "Alias for the default redesign card surface from the React mockup token SSOT."
+        },
+        "sheet-base": {
+          "$value": "#161410",
+          "$type": "color",
+          "$description": "Bottom-sheet surface from the React mockup token SSOT."
+        },
+        "segment-base": {
+          "$value": "#1C1A14",
+          "$type": "color",
+          "$description": "Segment rail and form card surface from the React mockup token SSOT."
+        },
+        "control-subtle": {
+          "$value": "{exp.girok.surface.card-subtle}",
+          "$type": "color",
+          "$description": "Subtle control surface alias from the React mockup token SSOT."
+        },
+        "control-active": {
+          "$value": "#2E281C",
+          "$type": "color",
+          "$description": "Selected control surface from the React mockup token SSOT."
+        },
+        "row-hover-soft": {
+          "$value": "rgba(39, 39, 42, 0.5)",
+          "$type": "color",
+          "$description": "Soft neutral hover row tint for ledger date range and compact management controls."
+        },
+        "backdrop-medium": {
+          "$value": "rgba(0, 0, 0, 0.8)",
+          "$type": "color",
+          "$description": "Medium dark overlay scrim for centered girok modals."
+        },
+        "backdrop-deep": {
+          "$value": "rgba(0, 0, 0, 0.85)",
+          "$type": "color",
+          "$description": "Deep dark overlay scrim for bottom sheets and wheel pickers."
+        },
+        "backdrop-blur": {
+          "$value": "rgba(0, 0, 0, 0.6)",
+          "$type": "color",
+          "$description": "Blurred overlay scrim used by the daily transaction bottom sheet backdrop."
+        },
+        "toolbar": {
+          "$value": "oklch(20.95% 0.01 88.8)",
+          "$type": "color",
+          "$description": "Toolbar and compact control rail surface."
+        },
+        "card-subtle": {
+          "$value": "oklch(18.31% 0.0085 84.57)",
+          "$type": "color",
+          "$description": "Subtle inner card surface used in stats and list rows."
+        },
+        "scrim-40": {
+          "$value": "oklch(0% 0 0 / 0.4)",
+          "$type": "color",
+          "$description": "Black 40 percent scrim used behind compact ledger management segmented toggles."
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "{exp.girok.border.control}",
+          "$type": "color",
+          "$description": "Default border alias from the React mockup token SSOT."
+        },
+        "card-subtle": {
+          "$value": "oklch(24.41% 0.0152 89.92)",
+          "$type": "color",
+          "$description": "Subtle low-emphasis card border."
+        },
+        "card-emphasis": {
+          "$value": "{exp.girok.border.modal-strong}",
+          "$type": "color",
+          "$description": "Higher-emphasis card border alias from the React mockup token SSOT."
+        },
+        "control": {
+          "$value": "oklch(27.41% 0.017 86.87)",
+          "$type": "color",
+          "$description": "Default control border for dark girok redesign surfaces."
+        },
+        "modal-strong": {
+          "$value": "oklch(32.45% 0.024 82.83)",
+          "$type": "color",
+          "$description": "Higher-emphasis modal and sheet border."
+        },
+        "active": {
+          "$value": "oklch(36.9% 0.0321 81.99)",
+          "$type": "color",
+          "$description": "Active chip, pill, and selected control border."
+        },
+        "control-alpha-80": {
+          "$value": "oklch(27.41% 0.017 86.87 / 0.8)",
+          "$type": "color",
+          "$description": "Ledger list filter and analysis card border at 80 percent control opacity."
+        },
+        "control-alpha-60": {
+          "$value": "oklch(27.41% 0.017 86.87 / 0.6)",
+          "$type": "color",
+          "$description": "Softer ledger divider border at 60 percent control opacity."
+        },
+        "neutral-strong": {
+          "$value": "#27272a",
+          "$type": "color",
+          "$description": "Zinc-800 neutral border tone from the React mockup token SSOT."
+        },
+        "neutral-stronger": {
+          "$value": "#3f3f46",
+          "$type": "color",
+          "$description": "Zinc-700 neutral border tone from the React mockup token SSOT."
+        },
+        "neutral-soft": {
+          "$value": "rgba(39, 39, 42, 0.8)",
+          "$type": "color",
+          "$description": "Soft neutral border tint for fixed payment cards."
+        },
+        "divider-soft": {
+          "$value": "rgba(39, 39, 42, 0.4)",
+          "$type": "color",
+          "$description": "Low-emphasis divider border for sheet footers and compact separators."
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$description": "White primary text from the React mockup token SSOT."
+        },
+        "strong": {
+          "$value": "#f4f4f5",
+          "$type": "color",
+          "$description": "Zinc-100 strong text from the React mockup token SSOT."
+        },
+        "base": {
+          "$value": "#e4e4e7",
+          "$type": "color",
+          "$description": "Zinc-200 base text from the React mockup token SSOT."
+        },
+        "light": {
+          "$value": "#d4d4d8",
+          "$type": "color",
+          "$description": "Zinc-300 light text from the React mockup token SSOT."
+        },
+        "secondary": {
+          "$value": "#a1a1aa",
+          "$type": "color",
+          "$description": "Zinc-400 secondary text from the React mockup token SSOT."
+        },
+        "muted": {
+          "$value": "#71717a",
+          "$type": "color",
+          "$description": "Zinc-500 muted text from the React mockup token SSOT."
+        },
+        "disabled": {
+          "$value": "#52525b",
+          "$type": "color",
+          "$description": "Zinc-600 disabled text from the React mockup token SSOT."
+        }
+      },
+      "accent": {
+        "strong": {
+          "$value": "#f59e0b",
+          "$type": "color",
+          "$description": "Amber-500 primary accent from the React mockup token SSOT."
+        },
+        "light": {
+          "$value": "{exp.girok.nav.tab-active}",
+          "$type": "color",
+          "$description": "Amber-400 light accent alias from the React mockup token SSOT."
+        },
+        "dark": {
+          "$value": "#d97706",
+          "$type": "color",
+          "$description": "Amber-600 dark accent from the React mockup token SSOT."
+        },
+        "border-soft": {
+          "$value": "rgba(245, 158, 11, 0.5)",
+          "$type": "color",
+          "$description": "Soft amber border tint for selected date fields and wheel controls."
+        },
+        "row-tint": {
+          "$value": "rgba(245, 158, 11, 0.05)",
+          "$type": "color",
+          "$description": "Very light amber row tint for wheel picker selection indicators."
+        },
+        "glow-soft": {
+          "$value": "rgba(245, 158, 11, 0.25)",
+          "$type": "color",
+          "$description": "Soft amber glow color for CTA shadows in picker sheets."
+        }
+      },
+      "status": {
+        "income-light": {
+          "$value": "#34d399",
+          "$type": "color",
+          "$description": "Income light tone from the React mockup token SSOT."
+        },
+        "income-base": {
+          "$value": "#10b981",
+          "$type": "color",
+          "$description": "Income base tone from the React mockup token SSOT."
+        },
+        "expense-light": {
+          "$value": "#fb7185",
+          "$type": "color",
+          "$description": "Expense light tone from the React mockup token SSOT."
+        },
+        "expense-base": {
+          "$value": "#f43f5e",
+          "$type": "color",
+          "$description": "Expense base tone from the React mockup token SSOT."
+        },
+        "sell-light": {
+          "$value": "#60a5fa",
+          "$type": "color",
+          "$description": "Sell light tone from the React mockup token SSOT."
+        },
+        "sell-base": {
+          "$value": "#3b82f6",
+          "$type": "color",
+          "$description": "Sell base tone from the React mockup token SSOT."
+        },
+        "sell-deep": {
+          "$value": "#2563eb",
+          "$type": "color",
+          "$description": "Sell deep tone from the React mockup token SSOT."
+        }
+      }
+    }
+  }
+}

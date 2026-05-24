@@ -1,0 +1,115 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "semantic",
+      "slotGroup": "aaa-strict",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "implements": [
+        "aaa-strict"
+      ],
+      "rationale": "Optional AAA-only strong emphasis group. Brands implement this group only when they need dedicated 7:1 strong variants."
+    }
+  },
+  "theme": {
+    "text": {
+      "primary-strong": {
+        "$value": "{theme.text.primary}",
+        "$type": "color",
+        "$description": "AAA-strict primary text for brands that opt into strong emphasis"
+      },
+      "secondary-strong": {
+        "$value": "{theme.text.secondary}",
+        "$type": "color",
+        "$description": "AAA-strict secondary text for brands that opt into strong emphasis"
+      }
+    },
+    "primary-strong": {
+      "$root": {
+        "$value": "{theme.primary}",
+        "$type": "color",
+        "$description": "AAA-strict primary surface for brands that opt into strong emphasis"
+      },
+      "foreground": {
+        "$value": "{theme.primary.foreground}",
+        "$type": "color",
+        "$description": "Foreground on AAA-strict primary surface"
+      }
+    },
+    "status": {
+      "success-strong": {
+        "$root": {
+          "$value": "{theme.status.success}",
+          "$type": "color",
+          "$description": "AAA-strict success status for brands that opt into strong emphasis"
+        },
+        "foreground": {
+          "$value": "{theme.status.success.foreground}",
+          "$type": "color",
+          "$description": "Foreground on AAA-strict success status"
+        }
+      },
+      "error-strong": {
+        "$root": {
+          "$value": "{theme.status.error}",
+          "$type": "color",
+          "$description": "AAA-strict error status for brands that opt into strong emphasis"
+        },
+        "foreground": {
+          "$value": "{theme.status.error.foreground}",
+          "$type": "color",
+          "$description": "Foreground on AAA-strict error status"
+        }
+      },
+      "warning-strong": {
+        "$root": {
+          "$value": "{theme.status.warning}",
+          "$type": "color",
+          "$description": "AAA-strict warning status for brands that opt into strong emphasis"
+        },
+        "foreground": {
+          "$value": "{theme.status.warning.foreground}",
+          "$type": "color",
+          "$description": "Foreground on AAA-strict warning status"
+        }
+      },
+      "info-strong": {
+        "$root": {
+          "$value": "{theme.status.info}",
+          "$type": "color",
+          "$description": "AAA-strict info status for brands that opt into strong emphasis"
+        },
+        "foreground": {
+          "$value": "{theme.status.info.foreground}",
+          "$type": "color",
+          "$description": "Foreground on AAA-strict info status"
+        }
+      },
+      "neutral-strong": {
+        "$root": {
+          "$value": "{theme.status.neutral}",
+          "$type": "color",
+          "$description": "AAA-strict neutral status for brands that opt into strong emphasis"
+        },
+        "foreground": {
+          "$value": "{theme.status.neutral.foreground}",
+          "$type": "color",
+          "$description": "Foreground on AAA-strict neutral status"
+        }
+      }
+    },
+    "destructive-strong": {
+      "$root": {
+        "$value": "{theme.destructive}",
+        "$type": "color",
+        "$description": "AAA-strict destructive surface for brands that opt into strong emphasis"
+      },
+      "foreground": {
+        "$value": "{theme.destructive.foreground}",
+        "$type": "color",
+        "$description": "Foreground on AAA-strict destructive surface"
+      }
+    }
+  }
+}

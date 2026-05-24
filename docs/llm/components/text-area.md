@@ -1,63 +1,69 @@
 # Text Area
 
-> Tag: `<vds-text-area>` · Import: `@verobee/design-elements/components/text-area` · React: `TextArea` from `@verobee/design-react` · Pattern: native textarea + WAI-ARIA hints · Status: v0.2.0-alpha
-
-**Lookup**: textarea, multi-line, text area, comments, paragraph input.
+> Tag: `<vds-text-area>` · React: `TextArea` · Status: v0.2.0-alpha · APG pattern: native textarea
 
 ## Purpose
-Multi-line text input. Form-associated.
+Multi-line FACE text input with helper and validation support.
 
-## When to use
-- Comments, descriptions, free-form notes.
-- Bio, address (multi-line).
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Comments, descriptions, notes, and other free-form text. |
+| Use | Forms that need token-consistent multi-line fields. |
+| Do not use | Single-line data; use Text Field. |
+| Do not use | Rich text editing. |
 
-## When NOT to use
-- Single-line → `<vds-text-field>`.
-- Rich text (bold, links) → use a rich editor (out of vds scope).
+## Design rationale
+Text Area keeps the native textarea mental model while aligning chrome and validation signaling with the rest of the field system.
 
-## Props
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `value` | `string` | `""` | Current value |
-| `placeholder` | `string` | — | Hint |
-| `disabled` | `boolean` | `false` | Disabled |
-| `readonly` | `boolean` | `false` | Readonly |
-| `required` | `boolean` | `false` | Form required |
-| `rows` | `number` | `4` | Initial rows |
-| `auto-resize` | `boolean` | `false` | Grow with content |
-| `name` | `string` | — | Form field name |
-| `size` | `"sm"` \| `"md"` \| `"lg"` | `"md"` | Visual size |
+## A11y narrative
+Relies on the underlying textarea semantics, required state, and helper/error associations.
 
-## Slots
-| Name | Description |
-| ---- | ----------- |
-| `helper` | Helper / error text below |
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `input` | (native) | Fires on every keystroke |
-| `change` | `{ value: string }` | Fires on blur |
+<!-- CEM:START -->
+### `<vds-text-area>`
 
-## A11y
-- Internal `<textarea>`.
-- Standard textbox semantics.
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `value` | `value` | `string` | `` |
+| `name` | `name` | `string | undefined` | — |
+| `label` | `label` | `string | undefined` | — |
+| `helper` | `helper` | `string | undefined` | — |
+| `errorMessage` | `errorMessage` | `string | undefined` | — |
+| `placeholder` | `placeholder` | `string | undefined` | — |
+| `disabled` | `disabled` | `boolean` | `false` |
+| `required` | `required` | `boolean` | `false` |
+| `readonly` | `readonly` | `boolean` | `false` |
+| `minlength` | `minlength` | `number | undefined` | — |
+| `maxlength` | `maxlength` | `number | undefined` | — |
+| `rows` | `rows` | `number` | `4` |
+| `resize` | `data-resize` | `Resize` | `vertical` |
+| `showCount` | `show-count` | `boolean` | `false` |
+
+#### Slots
+None.
+
+#### Events
+None.
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
 ```html
-<vds-text-area name="comment" rows="6" placeholder="Your message…"></vds-text-area>
+<vds-text-area rows="6" placeholder="Your message"></vds-text-area>
 ```
 
 ```tsx
 import { TextArea } from '@verobee/design-react';
 
-<TextArea
-  rows={6}
-  value={comment}
-  onInput={(e) => setComment(e.target.value)}
-/>
+<TextArea rows={6} />
 ```
 
-## Related
-[`<vds-text-field>`](text-field.md), [`<vds-label>`](label.md)

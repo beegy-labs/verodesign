@@ -1,0 +1,69 @@
+/* GIROK pattern: fx-summary-card */
+@scope (.vds-pattern-girok-fx-summary-card) {
+  :scope {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--vds-exp-girok-surface-card);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-control);
+    border-radius: var(--vds-radius-2xl);
+  }
+
+  .vds-pattern-girok-fx-summary-card__head,
+  .vds-pattern-girok-fx-summary-card__balance-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-3);
+    padding-block: var(--vds-spacing-4);
+    padding-inline: var(--vds-spacing-4);
+  }
+
+  .vds-pattern-girok-fx-summary-card__head {
+    background: color-mix(in oklab, var(--vds-exp-girok-surface-card) 88%, black);
+  }
+
+  .vds-pattern-girok-fx-summary-card__balance-row.is-bordered {
+    border-block: var(--vds-border-width-1) solid color-mix(in oklab, var(--vds-color-slate-8) 50%, transparent);
+  }
+
+  .vds-pattern-girok-fx-summary-card__live-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--vds-spacing-1_5);
+    color: var(--vds-theme-text-dim);
+    font-size: var(--vds-exp-girok-fx-summary-card-font-size-1);
+    font-weight: var(--vds-font-weight-800);
+  }
+
+  .vds-pattern-girok-fx-summary-card__live-rate {
+    color: var(--vds-theme-text-bright);
+    font-size: var(--vds-font-size-xs);
+    font-weight: var(--vds-font-weight-900);
+  }
+
+  .vds-pattern-girok-fx-summary-card__balance-label {
+    color: var(--vds-theme-text-secondary);
+    font-size: var(--vds-font-size-xs);
+    font-weight: var(--vds-font-weight-700);
+  }
+
+  .vds-pattern-girok-fx-summary-card__balance-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--vds-spacing-0_5);
+    text-align: right;
+  }
+
+  .vds-pattern-girok-fx-summary-card__balance-amount {
+    color: var(--vds-theme-text-secondary);
+    font-size: var(--vds-font-size-sm);
+    font-weight: var(--vds-font-weight-900);
+  }
+
+  .vds-pattern-girok-fx-summary-card__balance-meta {
+    color: var(--vds-theme-text-dim);
+    font-size: var(--vds-exp-girok-fx-summary-card-font-size-2);
+  }
+  }

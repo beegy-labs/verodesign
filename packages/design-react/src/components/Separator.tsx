@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { createComponent } from '@lit/react';
-import { VdsSeparator } from '@verobee/design-elements/components/separator';
-import '@verobee/design-elements/define/separator';
+type Orientation = 'horizontal' | 'vertical';
 
-export const Separator = /*#__PURE__*/ createComponent({
-  tagName: 'vds-separator',
-  elementClass: VdsSeparator,
-  react: React,
+export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {
+  orientation?: Orientation;
+  decorative?: boolean;
+}
+
+export const Separator = React.forwardRef<HTMLDivElement, SeparatorProps>(function Separator(
+  { orientation = 'horizontal', decorative = true, style, ...rest },
+  ref,
+) {
+  return <div {...rest} ref={ref} role={decorative ? 'presentation' : 'separator'} aria-orientation={decorative ? undefined : orientation} style={{ display: 'block', flexShrink: 0, background: 'var(--vds-theme-border-subtle)', width: orientation === 'horizontal' ? '100%' : 'var(--vds-border-width-1)', height: orientation === 'horizontal' ? 'var(--vds-border-width-1)' : 'auto', alignSelf: orientation === 'vertical' ? 'stretch' : undefined, ...style }} />;
 });
-
-export type SeparatorProps = React.ComponentProps<typeof Separator>;

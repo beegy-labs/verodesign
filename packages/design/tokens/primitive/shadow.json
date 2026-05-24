@@ -5,7 +5,11 @@
       "tier": "primitive",
       "status": "canonical",
       "since": "v0.1.0",
-      "platform": ["web", "ios", "android"],
+      "platform": [
+        "web",
+        "ios",
+        "android"
+      ],
       "rationale": "Material elevation system, light source consistent (top-down). Opacity grows with elevation; blur scales geometrically."
     }
   },

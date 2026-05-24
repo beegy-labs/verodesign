@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { VdsLabel } from '@verobee/design-elements/components/label';
-import '@verobee/design-elements/define/label';
-export declare const Label: import("@lit/react").ReactWebComponent<VdsLabel, {}>;
-export type LabelProps = React.ComponentProps<typeof Label>;
+type LabelSize = 'sm' | 'md' | 'lg';
+export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
+    required?: boolean;
+    size?: LabelSize;
+}
+export declare const Label: React.ForwardRefExoticComponent<LabelProps & React.RefAttributes<HTMLLabelElement>>;
+export {};

@@ -50,8 +50,8 @@ export function generateEffect(flat) {
     if (!numericTokenExists) continue;
     rules.push(`.vds-shadow-${alias} { box-shadow: var(--vds-shadow-${num}); }`);
   }
-  rules.push(`.vds-shadow-none { box-shadow: 0 0 #0000; }`);
-  rules.push(`.vds-shadow-inner { box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05); }`);
+  rules.push(`.vds-shadow-none { box-shadow: none; }`);
+  rules.push(`.vds-shadow-inner { box-shadow: inset 0 var(--vds-border-width-2) var(--vds-spacing-1) 0 color-mix(in oklab, var(--vds-color-black) 5%, transparent); }`);
 
   rules.push(`.vds-border-solid { border-style: solid; }`);
   rules.push(`.vds-border-dashed { border-style: dashed; }`);
@@ -101,7 +101,7 @@ export function generateEffect(flat) {
     ['bl', ['border-bottom-left-radius']],
   ]) {
     for (const step of ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', 'full']) {
-      const v = step === 'none' ? '0' : step === 'full' ? '9999px' : `var(--vds-radius-${step})`;
+      const v = step === 'none' ? '0' : step === 'full' ? 'var(--vds-radius-full)' : `var(--vds-radius-${step})`;
       const decls = props.map((p) => `${p}: ${v}`).join('; ');
       rules.push(`.vds-rounded-${name}-${step} { ${decls}; }`);
     }

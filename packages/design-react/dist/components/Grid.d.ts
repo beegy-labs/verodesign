@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { VdsGrid } from '@verobee/design-elements/components/grid';
-import '@verobee/design-elements/define/grid';
-export declare const Grid: import("@lit/react").ReactWebComponent<VdsGrid, {}>;
-export type GridProps = React.ComponentProps<typeof Grid>;
+type Cols = '1' | '2' | '3' | '4' | '5' | '6' | '12';
+type Gap = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '8';
+export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
+    cols?: Cols;
+    gap?: Gap;
+}
+export declare const Grid: React.ForwardRefExoticComponent<GridProps & React.RefAttributes<HTMLDivElement>>;
+export {};

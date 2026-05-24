@@ -4,7 +4,9 @@
   "description": "Verobee Design System — DTCG schema. Defines semantic slot names; supplies no values. Themes peer-depend on this package.",
   "license": "MIT",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com"

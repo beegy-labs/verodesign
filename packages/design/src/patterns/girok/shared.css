@@ -1,0 +1,100 @@
+/* GIROK pattern: shared */
+@keyframes girok-modal-fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+@keyframes vds-pattern-bottomsheet-slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.vds-pattern-bottomsheet__backdrop,
+:where(.vds-pattern-girok-shared-backdrop),
+:where(.vds-pattern-girok-ledger-daily-sheet__backdrop) {
+    position: absolute;
+    inset: 0;
+    animation: girok-modal-fade-in var(--vds-motion-duration-fast) var(--vds-motion-easing-standard);
+  }
+
+:where(.vds-pattern-girok-shared-backdrop),
+:where(.vds-pattern-girok-ledger-daily-sheet__backdrop) {
+    background: var(--vds-exp-girok-surface-backdrop-blur);
+    /* Keep blur on the first backdrop layer only to avoid stacked GPU passes. */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+:where(.vds-pattern-girok-ledger-add-modal),
+:where(.vds-pattern-girok-shared-modal) {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-spacing-4);
+    background: var(--vds-exp-girok-surface-backdrop-medium);
+  }
+
+:where(.vds-pattern-girok-shared-modal-shell),
+:where(.vds-pattern-girok-ledger-add-modal__box) {
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-card-emphasis);
+    border-radius: var(--vds-exp-girok-radius-modal);
+  }
+
+:where(.vds-pattern-girok-management-emoji-dropdown) {
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-card-emphasis);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+  }
+
+:where(.vds-pattern-girok-shared-sheet),
+:where(.vds-pattern-girok-ledger-daily-sheet__sheet),
+:where(.vds-pattern-girok-ledger-date-picker-sheet__sheet),
+:where(.vds-pattern-girok-month-day-picker__sheet) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-spacing-3);
+    padding-top: var(--vds-spacing-2);
+    background: var(--vds-exp-girok-surface-sheet-base);
+    border-top: var(--vds-border-width-1) solid var(--vds-exp-girok-border-card-emphasis);
+    border-radius: var(--vds-exp-girok-radius-sheet) var(--vds-exp-girok-radius-sheet) 0 0;
+  }
+
+:where(.vds-pattern-girok-shared-sheet-handle),
+:where(.vds-pattern-girok-ledger-daily-sheet__handle),
+:where(.vds-pattern-girok-ledger-date-picker-sheet__handle),
+:where(.vds-pattern-girok-month-day-picker__handle) {
+    align-self: center;
+    background: var(--vds-exp-girok-border-neutral-stronger);
+    border-radius: var(--vds-exp-girok-radius-round);
+  }
+
+:where(.vds-pattern-girok-shared-card),
+:where(.vds-pattern-girok-position-card),
+:where(.vds-pattern-girok-ledger-transaction-card) {
+    background: var(--vds-exp-girok-surface-card-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-card-subtle);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+    transition:
+      background-color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard),
+      border-color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+:where(.vds-pattern-girok-shared-card:hover),
+:where(.vds-pattern-girok-position-card:hover),
+:where(.vds-pattern-girok-ledger-transaction-card:hover) {
+    background: var(--vds-exp-girok-surface-control-subtle);
+  }

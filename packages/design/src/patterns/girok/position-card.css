@@ -1,0 +1,127 @@
+/* GIROK pattern: position-card */
+@scope (.vds-pattern-girok-position-card) {
+  :scope {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-3);
+    container-type: inline-size;
+    container-name: girok-position-card;
+    padding: var(--vds-exp-girok-position-card-padding-1);
+    transition: transform var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  .vds-pattern-girok-position-card__leading {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: var(--vds-spacing-2);
+    min-width: 0;
+  }
+
+  .vds-pattern-girok-position-card__avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--vds-spacing-10);
+    block-size: var(--vds-spacing-10);
+    background: var(--vds-exp-girok-surface-segment-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-round);
+    color: var(--vds-exp-girok-text-light);
+    font-size: var(--vds-exp-girok-position-card-font-size-2);
+    font-weight: var(--vds-font-weight-800);
+    line-height: 1.333333;
+    flex-shrink: 0;
+  }
+
+  .vds-pattern-girok-position-card__avatar.is-usd {
+    color: var(--vds-exp-girok-status-sell-light);
+  }
+
+  .vds-pattern-girok-position-card__avatar.is-krw {
+    color: var(--vds-exp-girok-status-expense-light);
+  }
+
+  .vds-pattern-girok-position-card__copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-spacing-1);
+    min-width: 0;
+  }
+
+  .vds-pattern-girok-position-card__ticker {
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-position-card-font-size-3);
+    font-weight: var(--vds-font-weight-800);
+    line-height: 1.428571;
+  }
+
+  .vds-pattern-girok-position-card__meta,
+  .vds-pattern-girok-position-card__price {
+    color: var(--vds-exp-girok-text-secondary);
+    font-size: var(--vds-exp-girok-position-card-font-size-4);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-position-card__meta {
+    white-space: nowrap;
+  }
+
+  .vds-pattern-girok-position-card__trailing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--vds-spacing-0_5);
+    text-align: right;
+  }
+
+  .vds-pattern-girok-position-card__value {
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-position-card-font-size-5);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.384615;
+  }
+
+  .vds-pattern-girok-position-card__rate {
+    font-size: var(--vds-exp-girok-position-card-font-size-6);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-position-card__rate.is-up {
+    color: var(--vds-exp-girok-status-expense-base);
+  }
+
+  .vds-pattern-girok-position-card__rate.is-down {
+    color: var(--vds-exp-girok-status-sell-base);
+  }
+
+  .vds-pattern-girok-position-card__rate.is-flat {
+    color: var(--vds-exp-girok-text-muted);
+  }
+
+  .vds-pattern-girok-position-card__sell-chip {
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-pill-sell-border);
+    border-radius: var(--vds-exp-girok-radius-xs);
+    background: var(--vds-exp-girok-pill-sell-bg);
+    color: var(--vds-exp-girok-status-sell-light);
+    font-size: var(--vds-exp-girok-position-card-font-size-7);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.4;
+    padding: var(--vds-exp-girok-position-card-padding-8);
+  }
+
+  @container girok-position-card (max-width: 320px) {
+    :scope {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .vds-pattern-girok-position-card__trailing {
+      align-items: flex-start;
+      inline-size: 100%;
+      text-align: left;
+    }
+  }
+}

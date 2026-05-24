@@ -1,0 +1,89 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "ledger-daily-sheet": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "ledger-daily-sheet component density scale."
+        },
+        "padding-bottom-1": {
+          "$value": "calc(34px * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet padding-bottom token."
+        },
+        "box-shadow-2": {
+          "$value": "0 calc(-10px * var(--vds-exp-girok-ledger-daily-sheet-scale)) calc(40px * var(--vds-exp-girok-ledger-daily-sheet-scale)) var(--vds-exp-girok-redesign-surface-backdrop-medium)",
+          "$type": "other",
+          "$description": "ledger-daily-sheet box-shadow token."
+        },
+        "inline-size-3": {
+          "$value": "calc(3rem * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet inline-size token."
+        },
+        "block-size-4": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet block-size token."
+        },
+        "font-size-5": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet font-size token."
+        },
+        "padding-6": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet padding token."
+        },
+        "inline-size-7": {
+          "$value": "calc(2.5rem * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet inline-size token."
+        },
+        "block-size-8": {
+          "$value": "calc(2.5rem * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet block-size token."
+        },
+        "font-size-9": {
+          "$value": "calc(0.6875rem * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet font-size token."
+        },
+        "gap-10": {
+          "$value": "calc(2px * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet gap token."
+        },
+        "font-size-11": {
+          "$value": "calc(0.8125rem * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet font-size token."
+        },
+        "font-size-12": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet font-size token."
+        },
+        "font-size-13": {
+          "$value": "calc(0.8125rem * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet font-size token."
+        },
+        "padding-14": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet padding token."
+        },
+        "font-size-15": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-daily-sheet-scale))",
+          "$type": "dimension",
+          "$description": "ledger-daily-sheet font-size token."
+        }
+      }
+    }
+  }
+}

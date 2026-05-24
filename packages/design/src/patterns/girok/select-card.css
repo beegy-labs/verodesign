@@ -1,0 +1,37 @@
+/* GIROK pattern: select-card */
+@scope (.vds-pattern-girok-select-card) {
+  :scope {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-spacing-2);
+    background: var(--vds-exp-girok-surface-card-subtle);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-control-alpha-80);
+    border-radius: var(--vds-radius-2xl);
+    box-shadow: var(--vds-shadow-sm);
+    padding-block: var(--vds-spacing-4);
+    padding-inline: var(--vds-spacing-4);
+  }
+
+  .vds-pattern-girok-select-card__label {
+    color: var(--vds-theme-text-secondary);
+    font-size: var(--vds-font-size-sm);
+    font-weight: var(--vds-font-weight-700);
+  }
+
+  .vds-pattern-girok-select-card__select {
+    inline-size: 100%;
+    background: var(--vds-exp-girok-shell-content-surface);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-control-alpha-80);
+    border-radius: var(--vds-radius-lg);
+    color: var(--vds-theme-text-bright);
+    font-size: var(--vds-font-size-sm);
+    font-weight: var(--vds-font-weight-700);
+    padding-block: var(--vds-spacing-3);
+    padding-inline: var(--vds-spacing-3);
+  }
+
+  .vds-pattern-girok-select-card__select:focus {
+    outline: none;
+    border-color: var(--vds-exp-girok-nav-tab-active);
+  }
+  }

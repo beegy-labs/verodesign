@@ -10,19 +10,22 @@
     "registry": "https://npm.pkg.github.com"
   },
   "bin": {
+    "codemods": "./dist/cli.js",
     "verobee-codemod": "./dist/cli.js"
   },
   "files": [
     "dist/**",
-    "transforms/**/*.{js,ts,mjs}",
     "README.md",
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "test": "node --test transforms/**/*.test.mjs"
+    "build": "../../node_modules/.pnpm/node_modules/.bin/tsc -p tsconfig.json",
+    "test": "pnpm build && node --test tests/**/*.test.mjs"
   },
   "dependencies": {
     "jscodeshift": "^17.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
   }
 }

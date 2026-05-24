@@ -150,7 +150,7 @@
 
 ```html
 <!-- Same as utility classes -->
-<button class="vds-bg-primary vds-text-primary-fg vds-py-3 vds-px-4 vds-rounded-md vds-text-sm vds-font-medium">
+<button class="vds-bg-primary vds-text-primary-foreground vds-py-3 vds-px-4 vds-rounded-md vds-text-sm vds-font-medium">
   Click
 </button>
 ```

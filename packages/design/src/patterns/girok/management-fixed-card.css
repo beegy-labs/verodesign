@@ -1,0 +1,155 @@
+/* GIROK pattern: management-fixed-card */
+@scope (.vds-pattern-girok-management-fixed-card) {
+  :scope {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-2);
+    padding: var(--vds-exp-girok-management-fixed-card-padding-1);
+    background: var(--vds-exp-girok-surface-card-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-neutral-soft);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+  }
+
+  .vds-pattern-girok-management-fixed-card__left,
+  .vds-pattern-girok-management-fixed-card__title-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .vds-pattern-girok-management-fixed-card__type-toggle {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--vds-exp-girok-management-fixed-card-gap-2);
+    padding: var(--vds-exp-girok-management-fixed-card-padding-3);
+    background: var(--vds-exp-girok-surface-scrim-40);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+  }
+
+  .vds-pattern-girok-management-fixed-card__type-toggle-btn {
+    padding: var(--vds-exp-girok-management-fixed-card-padding-4);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-xs);
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-management-fixed-card-font-size-5);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-management-fixed-card__type-toggle-btn--expense.vds-pattern-girok-management-fixed-card__type-toggle-btn--active {
+    background: var(--vds-exp-girok-status-expense-base);
+    color: var(--vds-exp-girok-text-primary);
+  }
+
+  .vds-pattern-girok-management-fixed-card__type-toggle-btn--income.vds-pattern-girok-management-fixed-card__type-toggle-btn--active {
+    background: var(--vds-exp-girok-status-income-base);
+    color: var(--vds-exp-girok-text-primary);
+  }
+
+  .vds-pattern-girok-management-fixed-card__left {
+    flex: 1;
+    gap: var(--vds-spacing-2);
+    min-width: 0;
+  }
+
+  .vds-pattern-girok-management-fixed-card__toggle-icon {
+    inline-size: var(--vds-exp-girok-management-fixed-card-inline-size-6);
+    block-size: var(--vds-exp-girok-management-fixed-card-block-size-7);
+    flex-shrink: 0;
+  }
+
+  .vds-pattern-girok-management-fixed-card__toggle-icon--on {
+    color: var(--vds-exp-girok-accent-strong);
+  }
+
+  .vds-pattern-girok-management-fixed-card__toggle-icon--off {
+    color: var(--vds-exp-girok-text-disabled);
+  }
+
+  .vds-pattern-girok-management-fixed-card__copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-exp-girok-management-fixed-card-gap-8);
+    min-width: 0;
+  }
+
+  .vds-pattern-girok-management-fixed-card__title-row {
+    gap: var(--vds-exp-girok-management-fixed-card-gap-9);
+  }
+
+  .vds-pattern-girok-management-fixed-card__title {
+    font-size: var(--vds-exp-girok-management-fixed-card-font-size-10);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.333333;
+  }
+
+  .vds-pattern-girok-management-fixed-card__title--on {
+    color: var(--vds-exp-girok-text-strong);
+  }
+
+  .vds-pattern-girok-management-fixed-card__title--off {
+    color: var(--vds-exp-girok-text-muted);
+  }
+
+  .vds-pattern-girok-management-fixed-card__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--vds-exp-girok-management-fixed-card-padding-11);
+    background: var(--vds-exp-girok-surface-segment-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-neutral-strong);
+    border-radius: var(--vds-exp-girok-radius-xs);
+    color: var(--vds-exp-girok-text-secondary);
+    font-size: var(--vds-exp-girok-management-fixed-card-font-size-12);
+    line-height: 1.333333;
+  }
+
+  .vds-pattern-girok-management-fixed-card__amount {
+    font-size: var(--vds-exp-girok-management-fixed-card-font-size-13);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-management-fixed-card__amount--income {
+    color: var(--vds-exp-girok-status-income-light);
+  }
+
+  .vds-pattern-girok-management-fixed-card__amount--expense {
+    color: var(--vds-exp-girok-status-expense-light);
+  }
+
+  .vds-pattern-girok-management-fixed-card__amount--off {
+    color: var(--vds-exp-girok-text-disabled);
+  }
+
+  .vds-pattern-girok-management-fixed-card__delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-exp-girok-management-fixed-card-padding-14);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-xs);
+    background: transparent;
+    color: var(--vds-exp-girok-text-disabled);
+  }
+
+  .vds-pattern-girok-management-fixed-card__register-btn,
+  .vds-pattern-girok-management-fixed-card__add-btn {
+    inline-size: 100%;
+    padding: var(--vds-exp-girok-management-fixed-card-padding-15);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-active);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+    background: transparent;
+    color: var(--vds-exp-girok-accent-light);
+    font-size: var(--vds-exp-girok-management-fixed-card-font-size-16);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.333333;
+    text-align: center;
+    transform: var(--vds-exp-girok-management-fixed-card-transform-17);
+  }
+
+  .vds-pattern-girok-management-fixed-card__register-btn:hover,
+  .vds-pattern-girok-management-fixed-card__add-btn:hover {
+    background: var(--vds-exp-girok-surface-control-active);
+  }
+}

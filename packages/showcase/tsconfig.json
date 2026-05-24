@@ -7,5 +7,5 @@
     "target": "ES2022",
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "astro.config.mjs"]
+  "include": ["src/**/*", "stories/**/*", ".storybook/**/*", "astro.config.mjs"]
 }

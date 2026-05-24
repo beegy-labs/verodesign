@@ -5,7 +5,11 @@
       "tier": "theme",
       "theme": "veronex",
       "mode": "dark",
-      "implements": ["core", "web"],
+      "implements": [
+        "core",
+        "web",
+        "status"
+      ],
       "since": "v0.1.0",
       "concept": "Verde Nexus — bio-emerald vibrancy",
       "primary": "OKLCH(72% 0.16 165) Bio-Emerald",
@@ -14,81 +18,292 @@
   },
   "theme": {
     "bg": {
-      "page": { "$value": "{color.slate.12}", "$type": "color" },
-      "card": { "$value": "{color.slate.11}", "$type": "color" },
-      "elevated": { "$value": "{color.slate.10}", "$type": "color" },
-      "hover": { "$value": "{color.slate.10}", "$type": "color" },
-      "muted": { "$value": "{color.slate.9}", "$type": "color" },
-      "inverse": { "$value": "{color.slate.1}", "$type": "color" },
-      "code": { "$value": "{color.slate.10}", "$type": "color" },
-      "selected": { "$value": "{color.slate.8}", "$type": "color" }
+      "page": {
+        "$value": "{color.slate.12}",
+        "$type": "color"
+      },
+      "card": {
+        "$value": "{color.slate.11}",
+        "$type": "color"
+      },
+      "elevated": {
+        "$value": "{color.slate.10}",
+        "$type": "color"
+      },
+      "hover": {
+        "$value": "{color.slate.10}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{color.slate.9}",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.slate.1}",
+        "$type": "color"
+      },
+      "code": {
+        "$value": "{color.slate.10}",
+        "$type": "color"
+      },
+      "selected": {
+        "$value": "{color.slate.8}",
+        "$type": "color"
+      }
     },
     "text": {
-      "primary": { "$value": "{color.slate.1}", "$type": "color" },
-      "secondary": { "$value": "{color.slate.3}", "$type": "color" },
-      "dim": { "$value": "{color.slate.5}", "$type": "color" },
+      "primary": {
+        "$value": "{color.slate.1}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.slate.3}",
+        "$type": "color"
+      },
+      "dim": {
+        "$value": "{color.slate.5}",
+        "$type": "color"
+      },
       "faint": {
         "$value": "{color.slate.7}",
         "$type": "color",
-        "$extensions": { "verobee": { "contrast": { "allow": "AA-large", "rationale": "Hint text only" } } }
+        "$extensions": {
+          "verobee": {
+            "contrast": {
+              "allow": "AA-large",
+              "rationale": "Hint text only"
+            }
+          }
+        }
       },
-      "bright": { "$value": "{color.white}", "$type": "color" },
-      "inverse": { "$value": "{color.slate.11}", "$type": "color" }
+      "bright": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.slate.11}",
+        "$type": "color"
+      }
     },
     "border": {
-      "subtle": { "$value": "{color.slate.10}", "$type": "color" },
-      "default": { "$value": "{color.slate.9}", "$type": "color" },
-      "strong": { "$value": "{color.slate.6}", "$type": "color" },
-      "focus": { "$value": "oklch(72% 0.16 165)", "$type": "color" }
+      "subtle": {
+        "$value": "{color.slate.10}",
+        "$type": "color"
+      },
+      "default": {
+        "$value": "{color.slate.9}",
+        "$type": "color"
+      },
+      "strong": {
+        "$value": "{color.slate.6}",
+        "$type": "color"
+      },
+      "focus": {
+        "$value": "oklch(72% 0.16 165)",
+        "$type": "color"
+      }
     },
-    "primary": { "$value": "oklch(72% 0.16 165)", "$type": "color" },
-    "primary-fg": { "$value": "oklch(15% 0.04 150)", "$type": "color" },
-    "primary-ring": { "$value": "oklch(82% 0.12 165)", "$type": "color" },
-    "accent": { "$value": "{color.teal.5}", "$type": "color" },
-    "accent-fg": { "$value": "{color.slate.12}", "$type": "color" },
-    "destructive": { "$value": "{color.red.7}", "$type": "color" },
-    "destructive-fg": { "$value": "{color.white}", "$type": "color" },
-    "success": { "$value": "{color.green.7}", "$type": "color" },
-    "success-fg": { "$value": "{color.white}", "$type": "color" },
-    "warning": { "$value": "{color.amber.5}", "$type": "color" },
-    "warning-fg": { "$value": "{color.slate.12}", "$type": "color" },
-    "error": { "$value": "{color.red.7}", "$type": "color" },
-    "error-fg": { "$value": "{color.white}", "$type": "color" },
-    "info": { "$value": "oklch(72% 0.16 165)", "$type": "color" },
-    "info-fg": { "$value": "oklch(15% 0.04 150)", "$type": "color" },
-    "neutral": { "$value": "{color.slate.6}", "$type": "color" },
-    "neutral-fg": { "$value": "{color.white}", "$type": "color" },
+    "primary": {
+      "$root": {
+        "$value": "oklch(72% 0.16 165)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "oklch(15% 0.04 150)",
+        "$type": "color"
+      },
+      "ring": {
+        "$value": "oklch(82% 0.12 165)",
+        "$type": "color"
+      }
+    },
+    "accent": {
+      "$root": {
+        "$value": "{color.teal.5}",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.slate.12}",
+        "$type": "color"
+      }
+    },
+    "destructive": {
+      "$root": {
+        "$value": "{color.red.7}",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.white}",
+        "$type": "color"
+      }
+    },
+    "status": {
+      "success": {
+        "$root": {
+          "$value": "{color.green.5}",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color"
+        }
+      },
+      "warning": {
+        "$root": {
+          "$value": "{color.amber.4}",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "{color.slate.12}",
+          "$type": "color"
+        }
+      },
+      "error": {
+        "$root": {
+          "$value": "{color.red.5}",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color"
+        }
+      },
+      "info": {
+        "$root": {
+          "$value": "oklch(72% 0.16 165)",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "oklch(15% 0.04 150)",
+          "$type": "color"
+        }
+      },
+      "neutral": {
+        "$root": {
+          "$value": "{color.slate.4}",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "{color.slate.12}",
+          "$type": "color"
+        }
+      }
+    },
     "chart": {
-      "1": { "$value": "oklch(72% 0.16 165)", "$type": "color" },
-      "2": { "$value": "{color.teal.5}", "$type": "color" },
-      "3": { "$value": "{color.lime.5}", "$type": "color" },
-      "4": { "$value": "{color.amber.5}", "$type": "color" },
-      "5": { "$value": "{color.indigo.5}", "$type": "color" }
+      "1": {
+        "$value": "oklch(72% 0.16 165)",
+        "$type": "color"
+      },
+      "2": {
+        "$value": "{color.teal.5}",
+        "$type": "color"
+      },
+      "3": {
+        "$value": "{color.lime.5}",
+        "$type": "color"
+      },
+      "4": {
+        "$value": "{color.amber.5}",
+        "$type": "color"
+      },
+      "5": {
+        "$value": "{color.indigo.5}",
+        "$type": "color"
+      }
     },
     "map": {
-      "ocean": { "$value": "oklch(9% 0.016 165)", "$type": "color" },
-      "sphere": { "$value": "oklch(13% 0.03 165)", "$type": "color" },
-      "land": { "$value": "oklch(23% 0.035 165)", "$type": "color" },
-      "border": { "$value": "oklch(34% 0.045 165)", "$type": "color" },
-      "active": { "$value": "oklch(62% 0.14 165)", "$type": "color" },
-      "active-strong": { "$value": "oklch(74% 0.16 165)", "$type": "color" },
-      "glow": { "$value": "oklch(72% 0.16 165)", "$type": "color" }
+      "ocean": {
+        "$value": "oklch(9% 0.016 165)",
+        "$type": "color"
+      },
+      "sphere": {
+        "$value": "oklch(13% 0.03 165)",
+        "$type": "color"
+      },
+      "land": {
+        "$value": "oklch(23% 0.035 165)",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "oklch(34% 0.045 165)",
+        "$type": "color"
+      },
+      "active": {
+        "$value": "oklch(62% 0.14 165)",
+        "$type": "color"
+      },
+      "active-strong": {
+        "$value": "oklch(74% 0.16 165)",
+        "$type": "color"
+      },
+      "glow": {
+        "$value": "oklch(72% 0.16 165)",
+        "$type": "color"
+      }
     },
-    "success-bg": { "$value": "{color.green.10}", "$type": "color" },
-    "error-bg": { "$value": "{color.red.10}", "$type": "color" },
-    "warning-bg": { "$value": "{color.amber.10}", "$type": "color" },
-    "info-bg": { "$value": "oklch(20% 0.05 165)", "$type": "color" },
-    "neutral-bg": { "$value": "{color.slate.10}", "$type": "color" },
-    "cancelled": { "$value": "{color.slate.8}", "$type": "color" },
-    "cancelled-fg": { "$value": "{color.slate.1}", "$type": "color" },
-    "accent-2": { "$value": "oklch(65% 0.16 60)", "$type": "color" },
-    "accent-2-fg": { "$value": "{color.slate.12}", "$type": "color" },
-    "accent-3": { "$value": "oklch(70% 0.14 195)", "$type": "color" },
-    "accent-3-fg": { "$value": "{color.slate.12}", "$type": "color" },
+    "success-bg": {
+      "$value": "{color.green.10}",
+      "$type": "color"
+    },
+    "error-bg": {
+      "$value": "{color.red.10}",
+      "$type": "color"
+    },
+    "warning-bg": {
+      "$value": "{color.amber.10}",
+      "$type": "color"
+    },
+    "info-bg": {
+      "$value": "oklch(20% 0.05 165)",
+      "$type": "color"
+    },
+    "neutral-bg": {
+      "$value": "{color.slate.10}",
+      "$type": "color"
+    },
+    "cancelled": {
+      "$root": {
+        "$value": "{color.slate.8}",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.slate.1}",
+        "$type": "color"
+      }
+    },
+    "accent-2": {
+      "$root": {
+        "$value": "oklch(65% 0.16 60)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.slate.12}",
+        "$type": "color"
+      }
+    },
+    "accent-3": {
+      "$root": {
+        "$value": "oklch(70% 0.14 195)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.slate.12}",
+        "$type": "color"
+      }
+    },
     "logo": {
-      "start": { "$value": "oklch(72% 0.16 165)", "$type": "color" },
-      "end": { "$value": "{color.teal.5}", "$type": "color" },
-      "inner": { "$value": "{color.slate.12}", "$type": "color" }
+      "start": {
+        "$value": "oklch(72% 0.16 165)",
+        "$type": "color"
+      },
+      "end": {
+        "$value": "{color.teal.5}",
+        "$type": "color"
+      },
+      "inner": {
+        "$value": "{color.slate.12}",
+        "$type": "color"
+      }
     }
   }
 }

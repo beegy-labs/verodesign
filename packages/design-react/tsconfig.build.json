@@ -6,5 +6,10 @@
     "emitDeclarationOnly": true,
     "outDir": "dist",
     "rootDir": "src"
-  }
+  },
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/__tests__/**"
+  ]
 }
