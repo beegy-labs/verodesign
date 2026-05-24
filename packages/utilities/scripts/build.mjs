@@ -20,6 +20,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const DIST_DIR = join(ROOT, 'dist');
 const DESIGN_DIST = join(ROOT, '..', 'design', 'dist', 'utilities');
+const SCROLLBAR_SRC = join(ROOT, 'src', 'scrollbar.css');
 
 async function main() {
   console.log('@verobee/utilities — build');
@@ -41,6 +42,14 @@ async function main() {
     try {
       await copyFile(join(DESIGN_DIST, f), join(DIST_DIR, 'css', f));
       copied++;
+    } catch {}
+  }
+  const scrollbarCss = await readFile(SCROLLBAR_SRC, 'utf8');
+  await writeFile(join(DIST_DIR, 'css', 'scrollbar.css'), scrollbarCss, 'utf8');
+  for (const target of ['full.css', 'full.min.css']) {
+    try {
+      const content = await readFile(join(DIST_DIR, 'css', target), 'utf8');
+      await writeFile(join(DIST_DIR, 'css', target), `${content}\n${scrollbarCss}\n`, 'utf8');
     } catch {}
   }
   console.log(`  bridged ${copied} files from @verobee/design/dist/utilities`);

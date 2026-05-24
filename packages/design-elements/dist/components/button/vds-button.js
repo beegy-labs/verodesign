@@ -1,5 +1,5 @@
 import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
-import { html as n } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { html as n } from "../../node_modules/.pnpm/lit-html@3.3.3/node_modules/lit-html/lit-html.js";
 import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
 import { property as e } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
 import { setAriaProperty as v, setRole as u } from "../../utils/attribute-mirror.js";
@@ -73,7 +73,7 @@ class a extends g {
         font-size: var(--vds-type-role-body-size);
         min-height: calc(var(--vds-spacing-10));
         background: var(--vds-theme-primary);
-        color: var(--vds-theme-primary-fg);
+        color: var(--vds-theme-primary-foreground);
       }
 
       @media (pointer: coarse) {
@@ -112,7 +112,7 @@ class a extends g {
 
       :host([tone="primary"][variant="solid"]) .button {
         background: var(--vds-theme-primary);
-        color: var(--vds-theme-primary-fg);
+        color: var(--vds-theme-primary-foreground);
       }
       :host([tone="primary"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-primary) 90%, black);
@@ -135,7 +135,7 @@ class a extends g {
 
       :host([tone="accent"][variant="solid"]) .button {
         background: var(--vds-theme-accent);
-        color: var(--vds-theme-accent-fg);
+        color: var(--vds-theme-accent-foreground);
       }
       :host([tone="accent"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-accent) 90%, black);
@@ -153,8 +153,8 @@ class a extends g {
       }
 
       :host([tone="neutral"][variant="solid"]) .button {
-        background: var(--vds-theme-neutral);
-        color: var(--vds-theme-neutral-fg);
+        background: var(--vds-theme-status-neutral);
+        color: var(--vds-theme-status-neutral-foreground);
       }
       :host([tone="neutral"][variant="soft"]) .button {
         background: var(--vds-theme-bg-muted);
@@ -174,7 +174,7 @@ class a extends g {
 
       :host([tone="destructive"][variant="solid"]) .button {
         background: var(--vds-theme-destructive);
-        color: var(--vds-theme-destructive-fg);
+        color: var(--vds-theme-destructive-foreground);
       }
       :host([tone="destructive"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-destructive) 90%, black);

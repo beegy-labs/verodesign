@@ -1,79 +1,71 @@
 # Dialog
 
-> Tag: `<vds-dialog>` · Import: `@verobee/design-elements/components/dialog` · React: `Dialog` from `@verobee/design-react` · Pattern: WAI-ARIA AP 1.2 § Dialog (Modal) · Status: v0.2.0-alpha
-
-**Lookup**: dialog, modal, popup, overlay, alert dialog.
+> Tag: `<vds-dialog>` · React: `Dialog` · Status: v0.2.0-alpha · APG pattern: Dialog (Modal)
 
 ## Purpose
-Modal dialog with focus trap, scroll lock, and backdrop dismiss.
+Modal dialog with focus trap, dismiss controls, and slot composition.
 
-## When to use
-- Confirm destructive action.
-- Form that interrupts the current flow.
-- Critical info that demands attention.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Interruptive confirmation or short-form editing. |
+| Use | Flows that must temporarily block background interaction. |
+| Do not use | Passive guidance or hover help. |
+| Do not use | Long, page-scale tasks that deserve their own route. |
 
-## When NOT to use
-- Non-modal info → use `<vds-toast>` or inline alert.
-- Brief description → use `<vds-tooltip>`.
+## Design rationale
+Dialog owns the tricky platform behavior: trap, restore, and dismissal reasons. Content structure remains slot-driven so consumers do not fork modal chrome for every workflow.
 
-## Props
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `open` | `boolean` | `false` | Visibility |
-| `title` | `string` | — | Programmatic title (also via `header` slot) |
-| `dismissible` | `boolean` | `true` | Backdrop click + Escape close |
-| `size` | `"sm"` \| `"md"` \| `"lg"` | `"md"` | Width |
+## A11y narrative
+Implements the APG modal dialog contract with `aria-modal`, focus containment, Escape dismissal when allowed, and trigger focus restoration.
 
-## Slots
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
+
+<!-- CEM:START -->
+### `<vds-dialog>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `open` | `open` | `boolean` | `false` |
+| `size` | `size` | `'sm' | 'md' | 'lg' | 'xl' | '2xl'` | `md` |
+| `placement` | `placement` | `'center' | 'bottom'` | `center` |
+| `closeOnBackdrop` | `close-on-backdrop` | `boolean` | `true` |
+| `closeOnEscape` | `close-on-escape` | `boolean` | `true` |
+| `ariaLabelText` | `aria-label` | `string | null` | `null` |
+
+#### Slots
 | Name | Description |
 | ---- | ----------- |
-| `header` | Dialog title row |
-| (default) | Body |
-| `footer` | Action row |
+| `title` | dialog heading |
+| (default) | main content |
+| `footer` | footer (typically buttons) |
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `open` | — | Fires on opening |
-| `close` | `{ reason: "backdrop"\|"escape"\|"programmatic" }` | Fires on close |
+#### Events
+| Name | Description |
+| ---- | ----------- |
+| `vds-open` | dispatched when opened |
+| `vds-close` | dispatched when closed |
 
-## A11y (WAI-ARIA AP 1.2 § Dialog)
-- `role="dialog"`, `aria-modal="true"`.
-- Focus trap (Tab/Shift+Tab cycle inside).
-- Initial focus on first focusable element.
-- Returns focus to trigger on close.
-- Esc dismisses (when `dismissible`).
+#### CSS Variables
+None.
 
-## Tokens consumed
-- `--vds-theme-{bg-card,bg-page,border-subtle,text-primary}`
-- `--vds-shadow-5`, `--vds-radius-lg`, `--vds-zindex-modal`
-- `--vds-spacing-{3,4,6}`
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
 ```html
 <vds-dialog open>
-  <h3 slot="header">Confirm delete?</h3>
+  <h3 slot="header">Confirm delete</h3>
   <p>This cannot be undone.</p>
-  <div slot="footer">
-    <vds-button variant="outline">Cancel</vds-button>
-    <vds-button tone="destructive">Delete</vds-button>
-  </div>
 </vds-dialog>
 ```
 
 ```tsx
-import { Dialog, Button } from '@verobee/design-react';
+import { Dialog } from '@verobee/design-react';
 
-<Dialog open={open} onClose={() => setOpen(false)}>
-  <h3 slot="header">Confirm</h3>
-  <p>Body</p>
-  <div slot="footer">
-    <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
-    <Button tone="destructive" onClick={confirm}>Delete</Button>
-  </div>
-</Dialog>
+<Dialog open={open}>...</Dialog>
 ```
 
-## Related
-[`<vds-toast>`](toast.md), [`<vds-button>`](button.md)

@@ -120,96 +120,67 @@
       "$description": "Modal/backdrop scrim. Dims background content without changing overlay surface tokens."
     },
     "primary": {
-      "$value": "{color.blue.7}",
-      "$type": "color",
-      "$description": "Primary action color"
-    },
-    "primary-fg": {
-      "$value": "{color.white}",
-      "$type": "color",
-      "$description": "Foreground on primary (AA 4.5:1)"
-    },
-    "primary-ring": {
-      "$value": "{color.blue.5}",
-      "$type": "color",
-      "$description": "Focus ring on primary"
+      "$root": {
+        "$value": "{color.blue.7}",
+        "$type": "color",
+        "$description": "Primary action color"
+      },
+      "foreground": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Foreground on primary (AA 4.5:1)"
+      },
+      "ring": {
+        "$value": "{color.blue.5}",
+        "$type": "color",
+        "$description": "Focus ring on primary"
+      }
     },
     "accent": {
-      "$value": "{color.cyan.7}",
-      "$type": "color",
-      "$description": "Accent action color (secondary brand)"
-    },
-    "accent-fg": {
-      "$value": "{color.white}",
-      "$type": "color",
-      "$description": "Foreground on accent (AA 4.5:1)"
+      "$root": {
+        "$value": "{color.cyan.7}",
+        "$type": "color",
+        "$description": "Accent action color (secondary brand)"
+      },
+      "foreground": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Foreground on accent (AA 4.5:1)"
+      }
     },
     "destructive": {
-      "$value": "{color.red.7}",
-      "$type": "color",
-      "$description": "Destructive action (delete, irreversible)"
-    },
-    "destructive-fg": {
-      "$value": "{color.white}",
-      "$type": "color",
-      "$description": "Foreground on destructive"
-    },
-    "success": {
-      "$value": "{color.green.7}",
-      "$type": "color",
-      "$description": "Success status"
-    },
-    "success-fg": {
-      "$value": "{color.white}",
-      "$type": "color",
-      "$description": "Foreground on success"
-    },
-    "warning": {
-      "$value": "{color.amber.6}",
-      "$type": "color",
-      "$description": "Warning status"
-    },
-    "warning-fg": {
-      "$value": "{color.slate.12}",
-      "$type": "color",
-      "$description": "Foreground on warning (dark text on amber)"
-    },
-    "error": {
-      "$value": "{color.red.7}",
-      "$type": "color",
-      "$description": "Error status"
-    },
-    "error-fg": {
-      "$value": "{color.white}",
-      "$type": "color",
-      "$description": "Foreground on error"
-    },
-    "info": {
-      "$value": "{color.blue.7}",
-      "$type": "color",
-      "$description": "Info status"
-    },
-    "info-fg": {
-      "$value": "{color.white}",
-      "$type": "color",
-      "$description": "Foreground on info"
-    },
-    "neutral": {
-      "$value": "{color.slate.7}",
-      "$type": "color",
-      "$description": "Neutral status"
-    },
-    "neutral-fg": {
-      "$value": "{color.white}",
-      "$type": "color",
-      "$description": "Foreground on neutral"
+      "$root": {
+        "$value": "{color.red.7}",
+        "$type": "color",
+        "$description": "Destructive action (delete, irreversible)"
+      },
+      "foreground": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Foreground on destructive"
+      }
     },
     "chart": {
-      "1": { "$value": "{color.blue.6}", "$type": "color" },
-      "2": { "$value": "{color.green.6}", "$type": "color" },
-      "3": { "$value": "{color.amber.6}", "$type": "color" },
-      "4": { "$value": "{color.violet.6}", "$type": "color" },
-      "5": { "$value": "{color.pink.6}", "$type": "color" }
+      "1": {
+        "$value": "{color.blue.6}",
+        "$type": "color"
+      },
+      "2": {
+        "$value": "{color.green.6}",
+        "$type": "color"
+      },
+      "3": {
+        "$value": "{color.amber.6}",
+        "$type": "color"
+      },
+      "4": {
+        "$value": "{color.violet.6}",
+        "$type": "color"
+      },
+      "5": {
+        "$value": "{color.pink.6}",
+        "$type": "color"
+      }
     },
     "map": {
       "ocean": {
@@ -274,14 +245,16 @@
       "$description": "Soft tinted background for neutral surfaces"
     },
     "cancelled": {
-      "$value": "{color.slate.7}",
-      "$type": "color",
-      "$description": "Cancelled / disabled status (verobase pattern)"
-    },
-    "cancelled-fg": {
-      "$value": "{color.white}",
-      "$type": "color",
-      "$description": "Foreground on cancelled"
+      "$root": {
+        "$value": "{color.slate.7}",
+        "$type": "color",
+        "$description": "Cancelled / disabled status (verobase pattern)"
+      },
+      "foreground": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Foreground on cancelled"
+      }
     },
     "accent-2": {
       "$value": "{color.amber.7}",
@@ -318,6 +291,68 @@
         "$value": "{color.white}",
         "$type": "color",
         "$description": "Logo inner accent (optional)"
+      }
+    },
+    "status": {
+      "success": {
+        "$root": {
+          "$value": "{color.green.7}",
+          "$type": "color",
+          "$description": "Success status"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Foreground on success"
+        }
+      },
+      "warning": {
+        "$root": {
+          "$value": "{color.amber.6}",
+          "$type": "color",
+          "$description": "Warning status"
+        },
+        "foreground": {
+          "$value": "{color.slate.12}",
+          "$type": "color",
+          "$description": "Foreground on warning (dark text on amber)"
+        }
+      },
+      "error": {
+        "$root": {
+          "$value": "{color.red.7}",
+          "$type": "color",
+          "$description": "Error status"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Foreground on error"
+        }
+      },
+      "info": {
+        "$root": {
+          "$value": "{color.blue.7}",
+          "$type": "color",
+          "$description": "Info status"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Foreground on info"
+        }
+      },
+      "neutral": {
+        "$root": {
+          "$value": "{color.slate.7}",
+          "$type": "color",
+          "$description": "Neutral status"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Foreground on neutral"
+        }
       }
     }
   }

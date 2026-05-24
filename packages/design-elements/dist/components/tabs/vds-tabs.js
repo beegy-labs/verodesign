@@ -1,18 +1,18 @@
 import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
-import { html as h } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { html as v } from "../../node_modules/.pnpm/lit-html@3.3.3/node_modules/lit-html/lit-html.js";
 import { LitElement as u } from "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
-import { property as i } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
-import { setRole as v, setAriaProperty as b } from "../../utils/attribute-mirror.js";
+import { property as r } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
+import { setRole as h, setAriaProperty as b } from "../../utils/attribute-mirror.js";
 import { VdsElement as y } from "../../base/vds-element.js";
 import { css as c } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
-var k = Object.defineProperty, o = (n, t, a, e) => {
-  for (var s = void 0, r = n.length - 1, l; r >= 0; r--)
-    (l = n[r]) && (s = l(t, a, s) || s);
-  return s && k(t, a, s), s;
+var x = Object.defineProperty, o = (n, t, a, e) => {
+  for (var i = void 0, s = n.length - 1, d; s >= 0; s--)
+    (d = n[s]) && (i = d(t, a, i) || i);
+  return i && x(t, a, i), i;
 };
-class d extends y {
+class l extends y {
   constructor() {
-    super(), this.value = "", this.orientation = "horizontal", this.activation = "auto", this.variant = "underline", this.tabsCache = [], this.panelsCache = [], this.refreshChildren = () => {
+    super(), this.value = "", this.orientation = "horizontal", this.activation = "auto", this.variant = "underline", this.indicator = "none", this.tabsCache = [], this.panelsCache = [], this.refreshChildren = () => {
       this.tabsCache = Array.from(this.querySelectorAll("vds-tab")), this.panelsCache = Array.from(this.querySelectorAll("vds-tab-panel")), this.syncActive();
     }, this.handleClick = (t) => {
       const a = t.target.closest("vds-tab");
@@ -20,20 +20,20 @@ class d extends y {
     }, this.handleKeydown = (t) => {
       const a = t.target.closest("vds-tab");
       if (!a) return;
-      const e = this.tabs.filter((m) => !m.disabled), s = e.indexOf(a);
-      if (s < 0) return;
-      let r;
-      const l = this.orientation === "horizontal", f = l ? "ArrowLeft" : "ArrowUp", g = l ? "ArrowRight" : "ArrowDown";
-      if (t.key === f) r = e[(s - 1 + e.length) % e.length];
-      else if (t.key === g) r = e[(s + 1) % e.length];
-      else if (t.key === "Home") r = e[0];
-      else if (t.key === "End") r = e[e.length - 1];
+      const e = this.tabs.filter((m) => !m.disabled), i = e.indexOf(a);
+      if (i < 0) return;
+      let s;
+      const d = this.orientation === "horizontal", g = d ? "ArrowLeft" : "ArrowUp", f = d ? "ArrowRight" : "ArrowDown";
+      if (t.key === g) s = e[(i - 1 + e.length) % e.length];
+      else if (t.key === f) s = e[(i + 1) % e.length];
+      else if (t.key === "Home") s = e[0];
+      else if (t.key === "End") s = e[e.length - 1];
       else if (t.key === "Enter" || t.key === " ") {
         t.preventDefault(), this.setActive(a);
         return;
       }
-      r && (t.preventDefault(), this.activation === "auto" ? this.setActive(r) : r.focus());
-    }, this.internals = this.attachInternals(), v(this, this.internals, "presentation");
+      s && (t.preventDefault(), this.activation === "auto" ? this.setActive(s) : s.focus());
+    }, this.internals = this.attachInternals(), h(this, this.internals, "presentation");
   }
   static {
     this.styles = c`
@@ -43,6 +43,7 @@ class d extends y {
       color: var(--vds-theme-text-primary);
     }
     .tablist {
+      position: relative;
       display: flex;
       gap: var(--vds-spacing-1);
       padding: 0;
@@ -58,6 +59,25 @@ class d extends y {
       border-radius: var(--vds-radius-lg);
       background: var(--vds-theme-bg-subtle);
     }
+    .indicator {
+      position: absolute;
+      inset-block: var(--vds-spacing-1);
+      inset-inline-start: var(--vds-spacing-1);
+      inline-size: var(--vds-tabs-indicator-width, 0px);
+      border-radius: var(--vds-radius-md);
+      background: var(--vds-exp-girok-redesign-toggle-active-bg);
+      border: var(--vds-border-width-1) solid var(--vds-exp-girok-redesign-border-active);
+      box-sizing: border-box;
+      transform: translateX(var(--vds-tabs-indicator-x, 0px));
+      transition: transform var(--vds-duration-medium) var(--vds-easing-ease-out),
+        inline-size var(--vds-duration-medium) var(--vds-easing-ease-out);
+      pointer-events: none;
+      z-index: 0;
+    }
+    :host([indicator="slide"]) vds-tab {
+      position: relative;
+      z-index: 1;
+    }
     :host([data-orientation="vertical"]) {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -72,6 +92,11 @@ class d extends y {
     :host([data-orientation="vertical"][variant="segmented"]) .tablist {
       border-right: none;
     }
+    @media (prefers-reduced-motion: reduce) {
+      .indicator {
+        transition: none;
+      }
+    }
   `;
   }
   connectedCallback() {
@@ -81,7 +106,7 @@ class d extends y {
     super.disconnectedCallback(), this.removeEventListener("keydown", this.handleKeydown), this.removeEventListener("click", this.handleClick);
   }
   updated(t) {
-    (t.has("value") || t.has("orientation") || t.has("variant")) && this.syncActive(), t.has("orientation") && b(this, this.internals, "ariaOrientation", this.orientation);
+    (t.has("value") || t.has("orientation") || t.has("variant") || t.has("indicator")) && this.syncActive(), t.has("orientation") && b(this, this.internals, "ariaOrientation", this.orientation);
   }
   get tabs() {
     return this.tabsCache;
@@ -95,13 +120,26 @@ class d extends y {
     let a = t.find((e) => e.value === this.value);
     a || (a = t[0], this.value = a.value);
     for (const e of t) {
-      const s = e === a;
-      e.setAttribute("data-variant", this.variant), e.toggleAttribute("data-active", s), e.tabIndex = s ? 0 : -1, e.setAttribute("aria-selected", String(s));
+      const i = e === a;
+      e.setAttribute("data-variant", this.variant), e.setAttribute("data-indicator", this.indicator), e.toggleAttribute("data-active", i), e.tabIndex = i ? 0 : -1, e.setAttribute("aria-selected", String(i));
     }
     for (const e of this.panels) {
-      const s = e.value === this.value;
-      e.toggleAttribute("hidden", !s), e.setAttribute("aria-hidden", String(!s));
+      const i = e.value === this.value;
+      e.toggleAttribute("hidden", !i), e.setAttribute("aria-hidden", String(!i));
     }
+    this.updateSlideIndicator(a);
+  }
+  updateSlideIndicator(t) {
+    if (this.indicator !== "slide" || this.variant !== "segmented" || this.orientation !== "horizontal") {
+      this.style.removeProperty("--vds-tabs-indicator-width"), this.style.removeProperty("--vds-tabs-indicator-x");
+      return;
+    }
+    requestAnimationFrame(() => {
+      const a = this.renderRoot.querySelector(".tablist");
+      if (!a) return;
+      const e = t.getBoundingClientRect(), i = a.getBoundingClientRect();
+      this.style.setProperty("--vds-tabs-indicator-width", `${e.width}px`), this.style.setProperty("--vds-tabs-indicator-x", `${e.left - i.left}px`);
+    });
   }
   setActive(t) {
     if (!(!t || t.disabled)) {
@@ -113,8 +151,9 @@ class d extends y {
     }
   }
   render() {
-    return h`
+    return v`
       <div class="tablist" role="tablist" aria-orientation=${this.orientation}>
+        ${this.variant === "segmented" && this.indicator === "slide" && this.orientation === "horizontal" ? v`<div class="indicator" aria-hidden="true"></div>` : null}
         <slot name="tab" @slotchange=${this.refreshChildren}></slot>
       </div>
       <div class="panels">
@@ -124,20 +163,23 @@ class d extends y {
   }
 }
 o([
-  i({ type: String })
-], d.prototype, "value");
+  r({ type: String })
+], l.prototype, "value");
 o([
-  i({ type: String, reflect: !0, attribute: "data-orientation" })
-], d.prototype, "orientation");
+  r({ type: String, reflect: !0, attribute: "data-orientation" })
+], l.prototype, "orientation");
 o([
-  i({ type: String })
-], d.prototype, "activation");
+  r({ type: String })
+], l.prototype, "activation");
 o([
-  i({ type: String, reflect: !0 })
-], d.prototype, "variant");
+  r({ type: String, reflect: !0 })
+], l.prototype, "variant");
+o([
+  r({ type: String, reflect: !0 })
+], l.prototype, "indicator");
 class p extends u {
   constructor() {
-    super(), this.value = "", this.disabled = !1, this.internals = this.attachInternals(), v(this, this.internals, "tab");
+    super(), this.value = "", this.disabled = !1, this.internals = this.attachInternals(), h(this, this.internals, "tab");
   }
   static {
     this.styles = c`
@@ -175,6 +217,14 @@ class p extends u {
       background: var(--vds-theme-bg-elevated);
       color: var(--vds-theme-text-primary);
     }
+    :host([data-variant="segmented"][data-indicator="slide"]) {
+      transition:
+        color var(--vds-duration-fast) var(--vds-easing-ease-out),
+        background-color var(--vds-duration-fast) var(--vds-easing-ease-out);
+    }
+    :host([data-variant="segmented"][data-indicator="slide"][data-active]) {
+      background: transparent;
+    }
     :host([disabled]) { opacity: 0.5; cursor: not-allowed; }
     :host(:focus-visible) {
       outline: var(--vds-border-width-2) solid var(--vds-theme-border-focus);
@@ -189,18 +239,18 @@ class p extends u {
     t.has("disabled") && b(this, this.internals, "ariaDisabled", this.disabled);
   }
   render() {
-    return h`<slot></slot>`;
+    return v`<slot></slot>`;
   }
 }
 o([
-  i({ type: String })
+  r({ type: String })
 ], p.prototype, "value");
 o([
-  i({ type: Boolean, reflect: !0 })
+  r({ type: Boolean, reflect: !0 })
 ], p.prototype, "disabled");
-class A extends u {
+class k extends u {
   constructor() {
-    super(), this.value = "", this.internals = this.attachInternals(), v(this, this.internals, "tabpanel"), this.tabIndex = 0;
+    super(), this.value = "", this.internals = this.attachInternals(), h(this, this.internals, "tabpanel"), this.tabIndex = 0;
   }
   static {
     this.styles = c`
@@ -209,14 +259,14 @@ class A extends u {
   `;
   }
   render() {
-    return h`<slot></slot>`;
+    return v`<slot></slot>`;
   }
 }
 o([
-  i({ type: String })
-], A.prototype, "value");
+  r({ type: String })
+], k.prototype, "value");
 export {
   p as VdsTab,
-  A as VdsTabPanel,
-  d as VdsTabs
+  k as VdsTabPanel,
+  l as VdsTabs
 };

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "management-category-form": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "management-category-form component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form padding token."
+        },
+        "gap-2": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form gap token."
+        },
+        "gap-3": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form gap token."
+        },
+        "padding-4": {
+          "$value": "calc(0.125rem * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form padding token."
+        },
+        "padding-5": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form padding token."
+        },
+        "font-size-6": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form font-size token."
+        },
+        "gap-7": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form gap token."
+        },
+        "gap-8": {
+          "$value": "calc(0.25rem * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form gap token."
+        },
+        "min-inline-size-9": {
+          "$value": "calc(3rem * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form min-inline-size token."
+        },
+        "padding-10": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form padding token."
+        },
+        "font-size-11": {
+          "$value": "calc(1.125rem * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form font-size token."
+        },
+        "padding-12": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form padding token."
+        },
+        "font-size-13": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form font-size token."
+        },
+        "padding-top-14": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form padding-top token."
+        },
+        "padding-bottom-15": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form padding-bottom token."
+        },
+        "font-size-16": {
+          "$value": "calc(0.6875rem * var(--vds-exp-girok-management-category-form-scale))",
+          "$type": "dimension",
+          "$description": "management-category-form font-size token."
+        }
+      }
+    }
+  }
+}

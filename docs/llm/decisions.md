@@ -21,14 +21,22 @@ All architectural and policy decisions for verodesign. Every other doc reference
 | -------- | ----- |
 | Methodology | Token-Driven CSS Architecture |
 | Tier model | 3-tier (primitive / semantic / component) |
+| Experimental token split | Girok SSOT uses split files under `tokens/experimental/girok/{primitives,semantic,components,density}.json`; source patterns consume only `--vds-exp-girok-*` |
+| Experimental component tier | Active for Girok patterns — component CSS consumes `--vds-exp-girok-<component>-*` tokens directly |
+| Density mode | Active for Girok via `[data-girok-density="compact|dense"]` → per-component `--*-scale` assignments |
 | Component tier | `@verobee/design-elements` (Lit 3 web components) — v0.2.0-alpha |
 | Theme model | Orthogonal binding layer (not a tier) |
-| Slot groups | core (cross-platform) + web (web-only) + future (code, chat, app-shell, mobile-shell) |
+| Slot groups | core (cross-platform) + status (optional implements) + finance (optional implements) + web (web-only) + future (code, chat, app-shell, mobile-shell) |
+| Optional group fallback emission | Non-implementing brands still emit build-time alias CSS vars for active optional groups so component contracts remain stable without per-component CSS fallbacks |
 | Output layers | CSS variables + Utility classes + TypeScript types (3-Layer) |
 | Cascade | CSS `@layer reset, base, vds-tokens, vds-utilities, components, overrides` |
 | Format standard | W3C DTCG (Design Tokens Community Group) |
 | Build tool | Style Dictionary 4.x |
 | Module format | ESM only |
+| Pattern spacing contract | Patterns own internal padding only; consumers own margin and outer padding; pattern CSS ships inside `@scope` blocks |
+| Pattern fallback policy | Girok pattern CSS forbids `var(--token, fallback)`; missing values must be solved in token build, not at consumption site |
+| Legacy namespace policy | `--vds-exp-girok-redesign-*` is compatibility-only in emitted theme CSS and forbidden in `src/patterns/girok` |
+| Pattern literal policy | Girok pattern CSS forbids raw `px` / `rem` / `em` outside the audited allowlist |
 | Distribution | **GitHub Package Registry (GHPR)** for npm packages, **GHCR** for container images (showcase site). Per-package independent semver via Changesets. SDD: `.specs/verodesign/2026-05-06-greenfield-architecture.md`. |
 | Repo layout | monorepo (pnpm workspaces + Turborepo) — **7-layer split**: `packages/{spec, primitive, theme-verobase, theme-veronex, theme-default, utilities, design-elements, design-react, codemods, cli, showcase}` |
 | Brand isolation | Each brand theme is its own npm package (`@verobee/theme-{name}`). Consumer apps pin exact versions; `workspace:*` is forbidden in production `package.json`. |
@@ -55,6 +63,8 @@ All architectural and policy decisions for verodesign. Every other doc reference
 | Build per-package | Vite library mode + per-component preserve-modules | Tree-shake friendly per-component import paths. |
 | Test toolchain | Web Test Runner + `@open-wc/testing` + Playwright launcher (Chromium + Firefox + WebKit) |
 | Custom Elements Manifest | Auto-generated `dist/custom-elements.json` (CEM analyzer with Lit plugin) | IDE intellisense + downstream tooling consumption. |
+| Canonical component docs | Lit custom elements use prose markdown + CEM-backed API markers in `docs/llm/components/*.md`; React-only composite guides stay prose + hand-written API tables | Drift-resistant element docs while preserving a consistent canonical format for composite guides that have no CEM declaration. |
+| Storybook docs integration | Optional Storybook 9 MDX layer on top of canonical docs | Useful for showcase parity, but not required for the canonical documentation contract. |
 
 ## Utility layer (`[Unreleased]`)
 
@@ -473,6 +483,8 @@ Frameworks supported automatically (CSS layer): React, Vue, Svelte, Solid, Angul
 | Group | Status | Purpose |
 | ----- | ------ | ------- |
 | core | active | Cross-platform UI tokens (color, spacing, radius, typography, shadow, animation, opacity, border) |
+| status | active, optional implements | Status and destructive semantics (`theme.status.*`, `theme.destructive*`) |
+| finance | active, optional implements | Finance semantics (`theme.finance.market.*`, `theme.finance.loan.*`) |
 | web | active | Web/webview-only (breakpoints, z-index, cursor, scrollbar) |
 | app-shell | reserved | Future: Tauri/PWA desktop (titlebar, window-controls) |
 | mobile-shell | reserved | Future: Tauri/PWA mobile (safe-area, touch-target) |

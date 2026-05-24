@@ -3,11 +3,13 @@ import * as React from 'react';
 type TabsOrientation = 'horizontal' | 'vertical';
 type TabsActivation = 'auto' | 'manual';
 type TabsVariant = 'underline' | 'segmented';
+type TabsIndicator = 'none' | 'underline' | 'slide';
 
 type TabsContextValue = {
   value: string;
   orientation: TabsOrientation;
   variant: TabsVariant;
+  indicator: TabsIndicator;
   setActive: (value: string, focus?: boolean) => void;
   activation: TabsActivation;
   registerTab: (value: string, ref: HTMLButtonElement | null, disabled: boolean) => void;
@@ -23,6 +25,7 @@ export interface TabsProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'o
   activation?: TabsActivation;
   orientation?: TabsOrientation;
   variant?: TabsVariant;
+  indicator?: TabsIndicator;
   onChange?: ((event: CustomEvent<{ value: string }>) => void) | undefined;
 }
 
@@ -41,6 +44,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
     activation = 'auto',
     orientation = 'horizontal',
     variant = 'underline',
+    indicator = 'none',
     onChange,
     className,
     children,
@@ -81,6 +85,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
       value: currentValue,
       orientation,
       variant,
+      indicator,
       setActive,
       activation,
       registerTab,
@@ -88,7 +93,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
       tabId: (tabValue) => `${generatedId}-tab-${tabValue}`,
       panelId: (tabValue) => `${generatedId}-panel-${tabValue}`,
     }),
-    [activation, activeIndex, currentValue, generatedId, orientation, registerTab, setActive, variant],
+    [activation, activeIndex, currentValue, generatedId, indicator, orientation, registerTab, setActive, variant],
   );
 
   const tabs: React.ReactNode[] = [];
@@ -110,6 +115,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
         className={['vds-block', className].filter(Boolean).join(' ')}
         data-orientation={orientation}
         data-variant={variant}
+        data-indicator={indicator}
         style={{
           display: orientation === 'vertical' ? 'grid' : 'block',
           gridTemplateColumns: orientation === 'vertical' ? 'auto 1fr' : undefined,
@@ -138,10 +144,21 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
                   : undefined,
               borderRadius: variant === 'segmented' ? 'var(--vds-radius-lg)' : '0',
               background: variant === 'segmented' ? 'var(--vds-theme-bg-subtle)' : 'transparent',
+              position: 'relative',
               overflowX: orientation === 'horizontal' ? 'auto' : 'visible',
               scrollbarWidth: 'thin',
             }}
         >
+          {variant === 'segmented' && indicator === 'slide' && orientation === 'horizontal' ? (
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                insetBlock: 'var(--vds-spacing-1)',
+                insetInlineStart: 'calc(var(--vds-spacing-1) + (100% / Math.max(1, 1)))',
+              }}
+            />
+          ) : null}
           {tabs}
         </div>
         <div className="vds-tabs-panels">{panels}</div>
@@ -218,7 +235,9 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>(function Tab(
         background:
           tabsContext.variant === 'segmented'
             ? isActive
-              ? 'var(--vds-theme-bg-elevated)'
+              ? tabsContext.indicator === 'slide'
+                ? 'transparent'
+                : 'var(--vds-theme-bg-elevated)'
               : 'transparent'
             : 'transparent',
         fontSize: 'var(--vds-type-role-label-size)',

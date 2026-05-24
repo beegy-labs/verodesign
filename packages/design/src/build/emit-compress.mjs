@@ -13,6 +13,7 @@ async function walkCss(dir) {
     const p = join(dir, ent);
     const s = await stat(p);
     if (s.isDirectory()) {
+      if (p.includes('/dist/fonts/')) continue;
       out.push(...(await walkCss(p)));
     } else if (ent.endsWith('.css')) {
       out.push(p);

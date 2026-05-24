@@ -1,0 +1,99 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "management-fixed-card": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "management-fixed-card component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card padding token."
+        },
+        "gap-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card gap token."
+        },
+        "padding-3": {
+          "$value": "calc(0.125rem * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card padding token."
+        },
+        "padding-4": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card padding token."
+        },
+        "font-size-5": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card font-size token."
+        },
+        "inline-size-6": {
+          "$value": "calc(var(--vds-exp-girok-spacing-lg) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card inline-size token."
+        },
+        "block-size-7": {
+          "$value": "calc(var(--vds-exp-girok-spacing-lg) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card block-size token."
+        },
+        "gap-8": {
+          "$value": "calc(2px * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card gap token."
+        },
+        "gap-9": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card gap token."
+        },
+        "font-size-10": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card font-size token."
+        },
+        "padding-11": {
+          "$value": "calc(0.125rem * var(--vds-exp-girok-management-fixed-card-scale)) calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "other",
+          "$description": "management-fixed-card padding token."
+        },
+        "font-size-12": {
+          "$value": "calc(0.5625rem * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card font-size token."
+        },
+        "font-size-13": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card font-size token."
+        },
+        "padding-14": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card padding token."
+        },
+        "padding-15": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card padding token."
+        },
+        "font-size-16": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-management-fixed-card-scale))",
+          "$type": "dimension",
+          "$description": "management-fixed-card font-size token."
+        },
+        "transform-17": {
+          "$value": "translateY(calc(0.25rem * var(--vds-exp-girok-management-fixed-card-scale)))",
+          "$type": "other",
+          "$description": "management-fixed-card transform token."
+        }
+      }
+    }
+  }
+}

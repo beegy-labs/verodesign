@@ -7,5 +7,10 @@ export interface CompactRowProps {
     onClick?: () => void;
     selected?: boolean;
     className?: string;
+    as?: 'button' | 'link' | 'div';
+    href?: string;
+    tone?: 'neutral' | 'info' | 'success' | 'warning' | 'danger';
+    disabled?: boolean;
+    showChevron?: boolean;
 }
-export declare function CompactRow({ leading, label, meta, trailing, onClick, selected, className, }: CompactRowProps): import("react/jsx-runtime").JSX.Element;
+export declare const CompactRow: React.ForwardRefExoticComponent<CompactRowProps & React.RefAttributes<HTMLElement>>;

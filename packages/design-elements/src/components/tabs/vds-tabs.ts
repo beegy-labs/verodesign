@@ -19,6 +19,7 @@ export class VdsTabs extends VdsElement {
       color: var(--vds-theme-text-primary);
     }
     .tablist {
+      position: relative;
       display: flex;
       gap: var(--vds-spacing-1);
       padding: 0;
@@ -34,6 +35,25 @@ export class VdsTabs extends VdsElement {
       border-radius: var(--vds-radius-lg);
       background: var(--vds-theme-bg-subtle);
     }
+    .indicator {
+      position: absolute;
+      inset-block: var(--vds-spacing-1);
+      inset-inline-start: var(--vds-spacing-1);
+      inline-size: var(--vds-tabs-indicator-width, 0px);
+      border-radius: var(--vds-radius-md);
+      background: var(--vds-exp-girok-redesign-toggle-active-bg);
+      border: var(--vds-border-width-1) solid var(--vds-exp-girok-redesign-border-active);
+      box-sizing: border-box;
+      transform: translateX(var(--vds-tabs-indicator-x, 0px));
+      transition: transform var(--vds-duration-medium) var(--vds-easing-ease-out),
+        inline-size var(--vds-duration-medium) var(--vds-easing-ease-out);
+      pointer-events: none;
+      z-index: 0;
+    }
+    :host([indicator="slide"]) vds-tab {
+      position: relative;
+      z-index: 1;
+    }
     :host([data-orientation="vertical"]) {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -48,12 +68,18 @@ export class VdsTabs extends VdsElement {
     :host([data-orientation="vertical"][variant="segmented"]) .tablist {
       border-right: none;
     }
+    @media (prefers-reduced-motion: reduce) {
+      .indicator {
+        transition: none;
+      }
+    }
   `;
 
   @property({ type: String }) value = '';
   @property({ type: String, reflect: true, attribute: 'data-orientation' }) orientation: 'horizontal' | 'vertical' = 'horizontal';
   @property({ type: String }) activation: 'auto' | 'manual' = 'auto';
   @property({ type: String, reflect: true }) variant: 'underline' | 'segmented' = 'underline';
+  @property({ type: String, reflect: true }) indicator: 'none' | 'underline' | 'slide' = 'none';
 
   private internals: ElementInternals;
   private tabsCache: VdsTab[] = [];
@@ -79,7 +105,7 @@ export class VdsTabs extends VdsElement {
   }
 
   protected updated(changed: PropertyValues): void {
-    if (changed.has('value') || changed.has('orientation') || changed.has('variant')) {
+    if (changed.has('value') || changed.has('orientation') || changed.has('variant') || changed.has('indicator')) {
       this.syncActive();
     }
     if (changed.has('orientation')) {
@@ -112,6 +138,7 @@ export class VdsTabs extends VdsElement {
     for (const tab of tabs) {
       const isActive = tab === active;
       tab.setAttribute('data-variant', this.variant);
+      tab.setAttribute('data-indicator', this.indicator);
       tab.toggleAttribute('data-active', isActive);
       tab.tabIndex = isActive ? 0 : -1;
       tab.setAttribute('aria-selected', String(isActive));
@@ -121,6 +148,23 @@ export class VdsTabs extends VdsElement {
       panel.toggleAttribute('hidden', !isActive);
       panel.setAttribute('aria-hidden', String(!isActive));
     }
+    this.updateSlideIndicator(active);
+  }
+
+  private updateSlideIndicator(active: VdsTab): void {
+    if (this.indicator !== 'slide' || this.variant !== 'segmented' || this.orientation !== 'horizontal') {
+      this.style.removeProperty('--vds-tabs-indicator-width');
+      this.style.removeProperty('--vds-tabs-indicator-x');
+      return;
+    }
+    requestAnimationFrame(() => {
+      const tablist = this.renderRoot.querySelector<HTMLElement>('.tablist');
+      if (!tablist) return;
+      const tabRect = active.getBoundingClientRect();
+      const listRect = tablist.getBoundingClientRect();
+      this.style.setProperty('--vds-tabs-indicator-width', `${tabRect.width}px`);
+      this.style.setProperty('--vds-tabs-indicator-x', `${tabRect.left - listRect.left}px`);
+    });
   }
 
   private setActive(tab: VdsTab): void {
@@ -172,6 +216,9 @@ export class VdsTabs extends VdsElement {
   render() {
     return html`
       <div class="tablist" role="tablist" aria-orientation=${this.orientation}>
+        ${this.variant === 'segmented' && this.indicator === 'slide' && this.orientation === 'horizontal'
+          ? html`<div class="indicator" aria-hidden="true"></div>`
+          : null}
         <slot name="tab" @slotchange=${this.refreshChildren}></slot>
       </div>
       <div class="panels">
@@ -216,6 +263,14 @@ export class VdsTab extends LitElement {
     :host([data-variant="segmented"][data-active]) {
       background: var(--vds-theme-bg-elevated);
       color: var(--vds-theme-text-primary);
+    }
+    :host([data-variant="segmented"][data-indicator="slide"]) {
+      transition:
+        color var(--vds-duration-fast) var(--vds-easing-ease-out),
+        background-color var(--vds-duration-fast) var(--vds-easing-ease-out);
+    }
+    :host([data-variant="segmented"][data-indicator="slide"][data-active]) {
+      background: transparent;
     }
     :host([disabled]) { opacity: 0.5; cursor: not-allowed; }
     :host(:focus-visible) {

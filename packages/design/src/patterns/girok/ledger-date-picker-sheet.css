@@ -1,0 +1,108 @@
+/* GIROK pattern: ledger-date-picker-sheet */
+@scope (.vds-pattern-girok-ledger-date-picker-sheet) {
+  :scope {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--vds-exp-girok-surface-backdrop-deep);
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__sheet {
+    padding-bottom: var(--vds-exp-girok-ledger-date-picker-sheet-padding-bottom-1);
+    box-shadow: var(--vds-exp-girok-ledger-date-picker-sheet-box-shadow-2);
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__handle {
+    inline-size: var(--vds-exp-girok-ledger-date-picker-sheet-inline-size-3);
+    block-size: var(--vds-exp-girok-ledger-date-picker-sheet-block-size-4);
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-3);
+    padding-inline: var(--vds-spacing-4);
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__title {
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-ledger-date-picker-sheet-font-size-5);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.555556;
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-spacing-1);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-round);
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-spacing-3);
+    padding: 0 var(--vds-spacing-4);
+    padding-bottom: var(--vds-spacing-4);
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__date-box-row {
+    display: flex;
+    align-items: center;
+    gap: var(--vds-spacing-4);
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__date-box {
+    flex: 1;
+    padding: var(--vds-exp-girok-ledger-date-picker-sheet-padding-6);
+    background: var(--vds-exp-girok-surface-app-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-ledger-date-picker-sheet-font-size-7);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.428571;
+    text-align: center;
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__date-box--selected {
+    border-color: var(--vds-exp-girok-accent-border-soft);
+    background: color-mix(in oklab, var(--vds-exp-girok-accent-glow-soft) 20%, transparent);
+    color: var(--vds-exp-girok-accent-strong);
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__separator {
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-ledger-date-picker-sheet-font-size-8);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.428571;
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__help-text {
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-ledger-date-picker-sheet-font-size-9);
+    line-height: 1.454545;
+    text-align: center;
+  }
+
+  .vds-pattern-girok-ledger-date-picker-sheet__apply-btn {
+    inline-size: 100%;
+    padding: var(--vds-exp-girok-ledger-date-picker-sheet-padding-10);
+    border: 0;
+    border-radius: var(--vds-exp-girok-radius-card-base);
+    background: var(--vds-exp-girok-accent-strong);
+    color: var(--vds-exp-girok-shell-frame-surface);
+    font-size: var(--vds-exp-girok-ledger-date-picker-sheet-font-size-11);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.428571;
+    box-shadow: var(--vds-exp-girok-ledger-date-picker-sheet-box-shadow-12);
+  }
+}

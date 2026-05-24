@@ -32,7 +32,7 @@ Best for: rapid prototyping, marketing sites, projects coming from Tailwind.
 ```html
 <link rel="stylesheet" href="@verobee/design/utilities/full.css">
 
-<button class="vds-bg-primary vds-text-primary-fg vds-p-3 vds-rounded-md">
+<button class="vds-bg-primary vds-text-primary-foreground vds-p-3 vds-rounded-md">
   Click
 </button>
 ```

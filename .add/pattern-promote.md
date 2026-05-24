@@ -31,6 +31,7 @@ Promote an experimental token to canonical (move from `tokens/experimental/` int
 | WCAG contrast still passes (re-validate against current policy) | Yes |
 | Not superseded by other canonical token | Yes |
 | Manual approval (user) | Yes |
+| Spacing contract audit passes | Yes |
 
 If any gate fails, promotion blocked.
 

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "bottom-nav": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "bottom-nav component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-bottom-nav-scale)) 0 calc(calc(1rem * var(--vds-exp-girok-bottom-nav-scale)) + env(safe-area-inset-bottom, calc(0px * var(--vds-exp-girok-bottom-nav-scale))))",
+          "$type": "other",
+          "$description": "bottom-nav padding token."
+        },
+        "gap-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-bottom-nav-scale))",
+          "$type": "dimension",
+          "$description": "bottom-nav gap token."
+        },
+        "font-size-3": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-bottom-nav-scale))",
+          "$type": "dimension",
+          "$description": "bottom-nav font-size token."
+        },
+        "width-4": {
+          "$value": "calc(1.6875rem * var(--vds-exp-girok-bottom-nav-scale))",
+          "$type": "dimension",
+          "$description": "bottom-nav width token."
+        },
+        "height-5": {
+          "$value": "calc(1.6875rem * var(--vds-exp-girok-bottom-nav-scale))",
+          "$type": "dimension",
+          "$description": "bottom-nav height token."
+        }
+      }
+    }
+  }
+}

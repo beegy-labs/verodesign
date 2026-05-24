@@ -1,0 +1,37 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "status": "experimental",
+      "since": "TBD",
+      "source": "app-girok/docs/design/units/global-depth-tabs.md, app-girok/docs/design/units/settings-data-log.md, app-girok/docs/design/units/modal-scalp-calculator.md",
+      "implements": [
+        "girok-scoped"
+      ],
+      "brand": "girok"
+    }
+  },
+  "exp": {
+    "girok": {
+      "shadow": {
+        "glow": {
+          "accent": {
+            "$value": "0 -2px 8px 0 oklch(83.69% 0.1644 84.43 / 0.5)",
+            "$type": "shadow",
+            "$description": "exp.girok.shadow.glow.accent Decorative glow for active girok tab underlines and emphasis rails."
+          },
+          "warning": {
+            "$value": "0 0 18px 0 oklch(76.86% 0.1647 70.08 / 0.2)",
+            "$type": "shadow",
+            "$description": "exp.girok.shadow.glow.warning Decorative warm glow for girok warning-accented CTA buttons."
+          },
+          "warning-soft": {
+            "$value": "0 0 30px 0 oklch(76.86% 0.1647 70.08 / 0.15)",
+            "$type": "shadow",
+            "$description": "exp.girok.shadow.glow.warning-soft Decorative soft warm glow for girok dialogs and calculators."
+          }
+        }
+      }
+    }
+  }
+}

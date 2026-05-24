@@ -1,0 +1,74 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "snowball-hero": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "snowball-hero component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(1rem * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero padding token."
+        },
+        "font-size-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero font-size token."
+        },
+        "letter-spacing-3": {
+          "$value": "calc(0.025em * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero letter-spacing token."
+        },
+        "letter-spacing-4": {
+          "$value": "calc(-0.025em * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero letter-spacing token."
+        },
+        "font-size-5": {
+          "$value": "calc(0.6875rem * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero font-size token."
+        },
+        "font-size-6": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero font-size token."
+        },
+        "padding-7": {
+          "$value": "calc(0.125rem * var(--vds-exp-girok-snowball-hero-scale)) calc(0.5rem * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "other",
+          "$description": "snowball-hero padding token."
+        },
+        "font-size-8": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero font-size token."
+        },
+        "font-size-9": {
+          "$value": "calc(0.6875rem * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero font-size token."
+        },
+        "font-size-10": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero font-size token."
+        },
+        "font-size-11": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero font-size token."
+        },
+        "font-size-12": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-snowball-hero-scale))",
+          "$type": "dimension",
+          "$description": "snowball-hero font-size token."
+        }
+      }
+    }
+  }
+}

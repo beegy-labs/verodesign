@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
@@ -208,6 +209,65 @@ help();
 process.exit(1);
 `;
 
+const GIROK_PATTERN_SOURCE_DIR = new URL('../patterns/girok/', import.meta.url);
+
+export const GIROK_PATTERN_SOURCE_FILES = [
+  'shared.css',
+  'wordmark.css',
+  'tab-l1.css',
+  'tab-l2.css',
+  'stats.css',
+  'calendar.css',
+  'icon-actions.css',
+  'toolbar.css',
+  'month-pill.css',
+  'register-chip.css',
+  'view-toggle.css',
+  'bottom-nav.css',
+  'page-toolbar.css',
+  'currency-toggle.css',
+  'snowball-hero.css',
+  'position-card.css',
+  'fx-summary-card.css',
+  'fx-history-card.css',
+  'category-progress-list.css',
+  'category-color-swatch.css',
+  'select-card.css',
+  'ledger-swapper.css',
+  'bottomsheet.css',
+  'ledger-daily-sheet.css',
+  'ledger-add-modal.css',
+  'ledger-filter-tabs.css',
+  'ledger-transaction-card.css',
+  'ledger-date-range.css',
+  'ledger-date-picker-sheet.css',
+  'management-fixed-card.css',
+  'management-category-form.css',
+  'management-category-chip.css',
+  'management-emoji-dropdown.css',
+  'month-day-picker.css',
+  'toast.css',
+];
+
+function readGirokPatternSource(file) {
+  return readFileSync(new URL(file, GIROK_PATTERN_SOURCE_DIR), 'utf8').trimEnd();
+}
+
+export function readGirokPatternSources() {
+  return GIROK_PATTERN_SOURCE_FILES.map((file) => ({
+    file,
+    css: readGirokPatternSource(file),
+  }));
+}
+
+export const GIROK_APP_PATTERNS_CSS = [
+  '/* @verobee/design - patterns/girok-app.css */',
+  '@layer components {',
+  ...readGirokPatternSources().map(({ css }) => css),
+  '}',
+  '',
+].join('\n');
+
 export async function emitStatic() {
   await mkdir(DIST, { recursive: true });
   await writeFile(join(DIST, 'theme-init.js'), THEME_INIT, 'utf8');
@@ -215,7 +275,10 @@ export async function emitStatic() {
   await mkdir(join(DIST, 'css'), { recursive: true });
   await writeFile(join(DIST, 'css', 'reset.css'), RESET_CSS, 'utf8');
 
+  await mkdir(join(DIST, 'patterns'), { recursive: true });
+  await writeFile(join(DIST, 'patterns', 'girok-app.css'), GIROK_APP_PATTERNS_CSS, 'utf8');
+
   await mkdir(join(DIST, 'cli'), { recursive: true });
   await writeFile(join(DIST, 'cli', 'vds.js'), CLI, 'utf8');
-  return { count: 3 };
+  return { count: 4 };
 }

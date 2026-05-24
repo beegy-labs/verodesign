@@ -1,0 +1,106 @@
+/* GIROK pattern: calendar */
+@scope (.vds-pattern-girok-calendar) {
+  .vds-pattern-girok-calendar__weekdays-wrap {
+    display: flex;
+    align-items: flex-end;
+    min-height: var(--vds-exp-girok-calendar-min-height-1);
+    padding: 0 var(--vds-spacing-6) var(--vds-spacing-1);
+    border-bottom: var(--vds-border-width-1) solid var(--vds-exp-girok-border-neutral-strong);
+  }
+
+  .vds-pattern-girok-calendar__weekdays,
+  .vds-pattern-girok-calendar__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .vds-pattern-girok-calendar__weekdays {
+    inline-size: 100%;
+  }
+
+  .vds-pattern-girok-calendar__weekday {
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-calendar-font-size-2);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.454545;
+    text-align: center;
+  }
+
+  .vds-pattern-girok-calendar__weekday.is-saturday {
+    color: var(--vds-exp-girok-status-sell-light);
+  }
+
+  .vds-pattern-girok-calendar__weekday.is-sunday {
+    color: var(--vds-exp-girok-status-expense-light);
+  }
+
+  .vds-pattern-girok-calendar__grid {
+    row-gap: var(--vds-exp-girok-calendar-row-gap);
+  }
+
+  .vds-pattern-girok-calendar__cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--vds-exp-girok-calendar-dot-gap);
+    min-height: var(--vds-exp-girok-calendar-min-height-3);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+    padding-top: var(--vds-exp-girok-calendar-padding-top-4);
+    transition:
+      background-color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard),
+      color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  .vds-pattern-girok-calendar__cell.is-day {
+    cursor: pointer;
+  }
+
+  .vds-pattern-girok-calendar__cell.is-day:hover {
+    background: color-mix(in oklab, var(--vds-exp-girok-border-neutral-strong) 30%, transparent);
+  }
+
+  .vds-pattern-girok-calendar__date {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--vds-exp-girok-calendar-cell-size);
+    height: var(--vds-exp-girok-calendar-cell-size);
+    color: var(--vds-exp-girok-text-light);
+    font-size: var(--vds-exp-girok-calendar-font-size-5);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.428571;
+    border: var(--vds-border-width-1) solid transparent;
+    border-radius: var(--vds-exp-girok-radius-round);
+    transition:
+      background-color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard),
+      border-color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard),
+      color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard),
+      box-shadow var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  .vds-pattern-girok-calendar__cell.has-data > .vds-pattern-girok-calendar__date,
+  .vds-pattern-girok-calendar__date.has-data {
+    background: var(--vds-exp-girok-surface-control-active);
+    color: var(--vds-exp-girok-accent-strong);
+    border-color: var(--vds-exp-girok-border-active);
+  }
+
+  .vds-pattern-girok-calendar__cell.is-today > .vds-pattern-girok-calendar__date,
+  .vds-pattern-girok-calendar__date.is-today,
+  .vds-pattern-girok-calendar__cell.is-selected > .vds-pattern-girok-calendar__date,
+  .vds-pattern-girok-calendar__date.is-selected {
+    background: var(--vds-exp-girok-accent-strong);
+    color: var(--vds-exp-girok-shell-frame-surface);
+    border-color: var(--vds-exp-girok-accent-strong);
+    box-shadow: var(--vds-exp-girok-shadow-glow-warning-hero);
+    font-weight: var(--vds-font-weight-800);
+  }
+
+  .vds-pattern-girok-calendar__dot {
+    width: var(--vds-exp-girok-calendar-dot-size);
+    height: var(--vds-exp-girok-calendar-dot-size);
+    background: var(--vds-exp-girok-accent-light);
+    border-radius: var(--vds-exp-girok-radius-round);
+  }
+}

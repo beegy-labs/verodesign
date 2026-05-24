@@ -12,10 +12,10 @@ function M() {
 }
 function C(r, t) {
   const a = {
-    primary: ["var(--vds-theme-primary)", "var(--vds-theme-primary-fg)"],
-    accent: ["var(--vds-theme-accent)", "var(--vds-theme-accent-fg)"],
-    neutral: ["var(--vds-theme-neutral)", "var(--vds-theme-neutral-fg)"],
-    destructive: ["var(--vds-theme-destructive)", "var(--vds-theme-destructive-fg)"]
+    primary: ["var(--vds-theme-primary)", "var(--vds-theme-primary-foreground)"],
+    accent: ["var(--vds-theme-accent)", "var(--vds-theme-accent-foreground)"],
+    neutral: ["var(--vds-theme-status-neutral)", "var(--vds-theme-status-neutral-foreground)"],
+    destructive: ["var(--vds-theme-destructive)", "var(--vds-theme-destructive-foreground)"]
   }, e = {
     primary: "var(--vds-theme-primary)",
     accent: "var(--vds-theme-accent)",
@@ -50,8 +50,8 @@ const j = i.forwardRef(function({
   disabled: s = !1,
   loading: d = !1,
   name: c,
-  value: m,
-  ariaLabelText: u = null,
+  value: u,
+  ariaLabelText: m = null,
   fullWidth: h,
   "full-width": p,
   className: f,
@@ -84,9 +84,9 @@ const j = i.forwardRef(function({
       ref: x,
       type: n,
       name: c,
-      value: m,
+      value: u,
       disabled: s || d,
-      "aria-label": u ?? v["aria-label"],
+      "aria-label": m ?? v["aria-label"],
       className: ["vds-inline-flex vds-items-center vds-justify-center", f].filter(Boolean).join(" "),
       "data-variant": t,
       "data-visual-variant": o,

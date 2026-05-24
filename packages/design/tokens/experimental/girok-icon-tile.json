@@ -1,0 +1,40 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "status": "experimental",
+      "since": "TBD",
+      "source": "app-girok/docs/design/units/settings-system-links.md, app-girok/docs/design/units/settings-data-log.md, app-girok/docs/design/units/invest-quick-actions.md",
+      "implements": [
+        "girok-scoped"
+      ],
+      "brand": "girok"
+    }
+  },
+  "exp": {
+    "girok": {
+      "icon-tile": {
+        "info": {
+          "$value": "oklch(58.54% 0.2041 277.12 / 0.1)",
+          "$type": "color",
+          "$description": "exp.girok.icon-tile.info Decorative info-tinted icon tile surface for girok settings and quick actions."
+        },
+        "success": {
+          "$value": "oklch(69.59% 0.1491 162.48 / 0.1)",
+          "$type": "color",
+          "$description": "exp.girok.icon-tile.success Decorative success-tinted icon tile surface for girok settings and quick actions."
+        },
+        "warning": {
+          "$value": "oklch(76.86% 0.1647 70.08 / 0.1)",
+          "$type": "color",
+          "$description": "exp.girok.icon-tile.warning Decorative warning-tinted icon tile surface for girok settings and quick actions."
+        },
+        "danger": {
+          "$value": "oklch(64.5% 0.2154 16.44 / 0.1)",
+          "$type": "color",
+          "$description": "exp.girok.icon-tile.danger Decorative danger-tinted icon tile surface for girok settings and quick actions."
+        }
+      }
+    }
+  }
+}

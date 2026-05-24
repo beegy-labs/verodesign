@@ -1,0 +1,43 @@
+/* GIROK pattern: currency-toggle */
+@scope (.vds-pattern-girok-currency-toggle) {
+  :scope {
+    display: inline-flex;
+    flex: none;
+    padding: var(--vds-spacing-1);
+    background: var(--vds-exp-girok-surface-control-subtle);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-neutral-strong);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+  }
+
+  .vds-pattern-girok-currency-toggle__group {
+    display: inline-flex;
+    gap: 0;
+  }
+
+  .vds-pattern-girok-currency-toggle__pill {
+    border: 0;
+    border-radius: var(--vds-exp-girok-currency-toggle-border-radius-1);
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-currency-toggle-font-size-2);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.4;
+    text-align: center;
+    padding: var(--vds-exp-girok-currency-toggle-padding-3);
+    white-space: nowrap;
+  }
+
+  .vds-pattern-girok-currency-toggle__pill.is-active {
+    color: var(--vds-exp-girok-text-primary);
+  }
+
+  .vds-pattern-girok-currency-toggle__pill.is-active[data-currency="KRW"],
+  .vds-pattern-girok-currency-toggle__pill.is-active.is-krw {
+    background: var(--vds-exp-girok-border-neutral-stronger);
+  }
+
+  .vds-pattern-girok-currency-toggle__pill.is-active[data-currency="USD"],
+  .vds-pattern-girok-currency-toggle__pill.is-active.is-usd {
+    background: var(--vds-exp-girok-status-sell-deep);
+  }
+}

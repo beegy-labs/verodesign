@@ -1,0 +1,19 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "ledger-filter-tabs": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "ledger-filter-tabs component density scale."
+        },
+        "font-size-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-filter-tabs-scale))",
+          "$type": "dimension",
+          "$description": "ledger-filter-tabs font-size token."
+        }
+      }
+    }
+  }
+}

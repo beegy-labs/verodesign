@@ -1,0 +1,74 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "ledger-add-modal": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "ledger-add-modal component density scale."
+        },
+        "max-inline-size-1": {
+          "$value": "calc(24rem * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal max-inline-size token."
+        },
+        "box-shadow-2": {
+          "$value": "0 calc(25px * var(--vds-exp-girok-ledger-add-modal-scale)) calc(50px * var(--vds-exp-girok-ledger-add-modal-scale)) calc(-12px * var(--vds-exp-girok-ledger-add-modal-scale)) var(--vds-exp-girok-redesign-accent-glow-soft)",
+          "$type": "other",
+          "$description": "ledger-add-modal box-shadow token."
+        },
+        "font-size-3": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal font-size token."
+        },
+        "gap-4": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal gap token."
+        },
+        "padding-5": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal padding token."
+        },
+        "font-size-6": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal font-size token."
+        },
+        "font-size-7": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal font-size token."
+        },
+        "padding-8": {
+          "$value": "calc(0.5rem * var(--vds-exp-girok-ledger-add-modal-scale)) calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "other",
+          "$description": "ledger-add-modal padding token."
+        },
+        "font-size-9": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal font-size token."
+        },
+        "gap-10": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal gap token."
+        },
+        "padding-11": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal padding token."
+        },
+        "font-size-12": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal font-size token."
+        }
+      }
+    }
+  }
+}

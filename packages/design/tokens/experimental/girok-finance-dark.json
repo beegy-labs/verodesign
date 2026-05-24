@@ -1,0 +1,36 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "status": "experimental",
+      "since": "TBD",
+      "source": "app-girok/docs/design/units/invest-positions.md, app-girok/docs/design/units/debt-loans.md, app-girok/docs/design/units/invest-snowball-hero.md",
+      "implements": [
+        "girok-scoped"
+      ],
+      "brand": "girok",
+      "mode": "dark"
+    }
+  },
+  "exp": {
+    "girok": {
+      "finance": {
+        "up": {
+          "$value": "oklch(70% 0.17 28)",
+          "$type": "color",
+          "$description": "exp.girok.finance.up Dark-mode support token for girok market gain color."
+        },
+        "down": {
+          "$value": "oklch(73% 0.11 255)",
+          "$type": "color",
+          "$description": "exp.girok.finance.down Dark-mode support token for girok market loss color."
+        },
+        "flat": {
+          "$value": "oklch(67% 0.018 84)",
+          "$type": "color",
+          "$description": "exp.girok.finance.flat Dark-mode support token for girok unchanged market state."
+        }
+      }
+    }
+  }
+}

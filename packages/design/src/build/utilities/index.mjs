@@ -38,6 +38,7 @@ export async function emitUtilities() {
   const backdrop = generateBackdrop();
   const animUtils = generateAnimationUtilities();
   const breakpoints = generateBreakpoints(flat);
+  const safeArea = ['.vds-pb-safe { padding-bottom: env(safe-area-inset-bottom); }'];
 
   // State variants: SEMANTIC slots only — primitive ramps (slate-1, blue-50,
   // black, white) don't typically need hover/focus/active variants. This caps
@@ -51,11 +52,11 @@ export async function emitUtilities() {
     // border slots
     'subtle', 'default', 'strong', 'focus',
     // role slots (× -fg, -bg, -ring)
-    'primary-fg', 'primary-ring', 'accent', 'accent-fg', 'accent-2', 'accent-2-fg', 'accent-3', 'accent-3-fg',
-    'destructive', 'destructive-fg', 'success', 'success-bg', 'success-fg',
-    'warning', 'warning-bg', 'warning-fg', 'error', 'error-bg', 'error-fg',
-    'info', 'info-bg', 'info-fg', 'neutral', 'neutral-bg', 'neutral-fg',
-    'cancelled', 'cancelled-fg',
+    'primary-foreground', 'primary-ring', 'accent', 'accent-foreground', 'accent-2', 'accent-2-foreground', 'accent-3', 'accent-3-foreground',
+    'destructive', 'destructive-foreground', 'success', 'success-bg', 'success-foreground',
+    'warning', 'warning-bg', 'warning-foreground', 'error', 'error-bg', 'error-foreground',
+    'info', 'info-bg', 'info-foreground', 'neutral', 'neutral-bg', 'neutral-foreground',
+    'cancelled', 'cancelled-foreground',
     // foreground text (theme.text.primary slot — 'fg' alias to avoid collision with role primary)
     'fg',
     // text-prefixed (`bg-text-dim` etc.)
@@ -115,7 +116,7 @@ export async function emitUtilities() {
     ['by-category/transform.css', wrapLayer('utilities/transform', transform)],
     ['by-category/ring.css', wrapLayer('utilities/ring', ring)],
     ['by-category/decoration.css', wrapLayer('utilities/decoration', decoration)],
-    ['by-category/backdrop.css', wrapLayer('utilities/backdrop', backdrop)],
+    ['by-category/backdrop.css', wrapLayer('utilities/backdrop', [...backdrop, ...safeArea])],
   ];
   for (const [path, content] of writes) {
     await writeFile(join(DIST, 'utilities', path), content, 'utf8');
@@ -161,6 +162,7 @@ export async function emitUtilities() {
     ...ring.map((l) => '  ' + l),
     ...decoration.map((l) => '  ' + l),
     ...backdrop.map((l) => '  ' + l),
+    ...safeArea.map((l) => '  ' + l),
     ...animUtils.map((l) => '  ' + l),
     ...stateRules.map((l) => '  ' + l),
     ...groupRules.map((l) => '  ' + l),

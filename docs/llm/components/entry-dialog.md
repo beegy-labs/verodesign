@@ -1,5 +1,7 @@
 # EntryDialog
 
+> Docs format: prose-only (React composite — no Custom Element Manifest).
+
 > React: `EntryDialog` from `@verobee/design-react` · Wraps: `<vds-dialog>` · Status: 2026-05-13 canonical
 
 ## Purpose
@@ -37,4 +39,3 @@ import { EntryDialog, TextField } from '@verobee/design-react';
   <TextField value={name} onInput={(e) => setName(e.currentTarget.value)} />
 </EntryDialog>
 ```
-

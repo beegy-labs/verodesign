@@ -5,8 +5,8 @@ import { describe, expect, it, vi } from 'vitest';
 import {
   Badge,
   Checkbox,
+  DropdownMenu,
   Dialog,
-  Menu,
   MenuItem,
   Select,
   Option,
@@ -61,10 +61,10 @@ describe('hand-written primitives', () => {
           Body
           <button slot="footer" type="button">Close</button>
         </Dialog>
-        <Menu onSelect={onSelect}>
+        <DropdownMenu onSelect={onSelect}>
           <button slot="trigger" type="button">Open menu</button>
           <MenuItem value="alpha">Alpha</MenuItem>
-        </Menu>
+        </DropdownMenu>
         <Select value="" onChange={onChange} placeholder="Pick one">
           <Option value="a">Alpha</Option>
         </Select>

@@ -1,0 +1,69 @@
+/* GIROK pattern: ledger-swapper */
+@scope (.vds-pattern-girok-ledger-swapper) {
+  :scope {
+    min-block-size: var(--vds-spacing-10);
+    display: flex;
+    align-items: end;
+  }
+
+  .vds-pattern-girok-ledger-swapper__weekday-row {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    inline-size: 100%;
+    align-items: end;
+    padding-block-end: var(--vds-spacing-2);
+    padding-inline: var(--vds-spacing-6);
+  }
+
+  .vds-pattern-girok-ledger-swapper__weekday {
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-ledger-swapper-font-size-1);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.454545;
+    text-align: center;
+  }
+
+  .vds-pattern-girok-ledger-swapper__weekday.is-saturday {
+    color: var(--vds-exp-girok-status-sell-light);
+  }
+
+  .vds-pattern-girok-ledger-swapper__weekday.is-sunday {
+    color: var(--vds-exp-girok-status-expense-light);
+  }
+
+  .vds-pattern-girok-ledger-swapper__filter-row {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--vds-spacing-5);
+    inline-size: 100%;
+    min-block-size: 100%;
+    padding-block-end: var(--vds-spacing-2);
+    padding-inline: var(--vds-spacing-6);
+  }
+
+  .vds-pattern-girok-ledger-swapper__filter {
+    position: relative;
+    border: 0;
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-ledger-swapper-font-size-2);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.333333;
+    padding-block-end: var(--vds-spacing-2);
+    transition: color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  .vds-pattern-girok-ledger-swapper__filter.is-active {
+    color: var(--vds-exp-girok-accent-light);
+  }
+
+  .vds-pattern-girok-ledger-swapper__filter.is-active::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+    block-size: var(--vds-exp-girok-tab-l1-underline-height);
+    border-radius: var(--vds-radius-full) var(--vds-radius-full) 0 0;
+    background: var(--vds-exp-girok-accent-light);
+  }
+}

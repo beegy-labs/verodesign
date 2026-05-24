@@ -1,0 +1,32 @@
+/* GIROK pattern: toast */
+@scope (.vds-pattern-girok-toast) {
+  :scope {
+    position: fixed;
+    inset-block-start: var(--vds-exp-girok-toast-inset-block-start-1);
+    inset-inline-start: 50%;
+    z-index: var(--vds-zindex-toast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--vds-exp-girok-toast-gap-2);
+    padding: var(--vds-exp-girok-toast-padding-3);
+    transform: translateX(-50%);
+    background: var(--vds-exp-girok-accent-strong);
+    border-radius: var(--vds-exp-girok-radius-round);
+    box-shadow: var(--vds-shadow-lg);
+    color: var(--vds-exp-girok-surface-screen-base);
+    font-size: var(--vds-exp-girok-toast-font-size-4);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-toast__icon {
+    inline-size: var(--vds-exp-girok-toast-inline-size-5);
+    block-size: var(--vds-exp-girok-toast-block-size-6);
+    flex-shrink: 0;
+  }
+
+  .vds-pattern-girok-toast__text {
+    color: inherit;
+    font: inherit;
+  }
+}

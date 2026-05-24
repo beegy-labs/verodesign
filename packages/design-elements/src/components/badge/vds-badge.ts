@@ -44,33 +44,33 @@ export class VdsBadge extends VdsElement {
       min-height: calc(var(--vds-spacing-6));
     }
 
-    :host([tone="primary"][variant="solid"]) .badge { background: var(--vds-theme-primary); color: var(--vds-theme-primary-fg); }
+    :host([tone="primary"][variant="solid"]) .badge { background: var(--vds-theme-primary); color: var(--vds-theme-primary-foreground); }
     :host([tone="primary"][variant="soft"]) .badge { background: color-mix(in oklab, var(--vds-theme-primary) 15%, transparent); color: var(--vds-theme-primary); }
     :host([tone="primary"][variant="outline"]) .badge { border-color: var(--vds-theme-primary); color: var(--vds-theme-primary); }
 
-    :host([tone="accent"][variant="solid"]) .badge { background: var(--vds-theme-accent); color: var(--vds-theme-accent-fg); }
+    :host([tone="accent"][variant="solid"]) .badge { background: var(--vds-theme-accent); color: var(--vds-theme-accent-foreground); }
     :host([tone="accent"][variant="soft"]) .badge { background: color-mix(in oklab, var(--vds-theme-accent) 15%, transparent); color: var(--vds-theme-accent); }
     :host([tone="accent"][variant="outline"]) .badge { border-color: var(--vds-theme-accent); color: var(--vds-theme-accent); }
 
-    :host([tone="neutral"][variant="solid"]) .badge { background: var(--vds-theme-neutral); color: var(--vds-theme-neutral-fg); }
+    :host([tone="neutral"][variant="solid"]) .badge { background: var(--vds-theme-status-neutral); color: var(--vds-theme-status-neutral-foreground); }
     :host([tone="neutral"][variant="soft"]) .badge { background: var(--vds-theme-bg-muted); color: var(--vds-theme-text-primary); }
     :host([tone="neutral"][variant="outline"]) .badge { border-color: var(--vds-theme-border-default); color: var(--vds-theme-text-primary); }
 
-    :host([tone="destructive"][variant="solid"]) .badge { background: var(--vds-theme-destructive); color: var(--vds-theme-destructive-fg); }
+    :host([tone="destructive"][variant="solid"]) .badge { background: var(--vds-theme-destructive); color: var(--vds-theme-destructive-foreground); }
     :host([tone="destructive"][variant="soft"]) .badge { background: var(--vds-theme-error-bg); color: var(--vds-theme-destructive); }
     :host([tone="destructive"][variant="outline"]) .badge { border-color: var(--vds-theme-destructive); color: var(--vds-theme-destructive); }
 
-    :host([tone="success"][variant="solid"]) .badge { background: var(--vds-theme-success); color: var(--vds-theme-success-fg); }
-    :host([tone="success"][variant="soft"]) .badge { background: var(--vds-theme-success-bg); color: var(--vds-theme-success); }
-    :host([tone="success"][variant="outline"]) .badge { border-color: var(--vds-theme-success); color: var(--vds-theme-success); }
+    :host([tone="success"][variant="solid"]) .badge { background: var(--vds-theme-status-success); color: var(--vds-theme-status-success-foreground); }
+    :host([tone="success"][variant="soft"]) .badge { background: var(--vds-theme-success-bg); color: var(--vds-theme-status-success); }
+    :host([tone="success"][variant="outline"]) .badge { border-color: var(--vds-theme-status-success); color: var(--vds-theme-status-success); }
 
-    :host([tone="warning"][variant="solid"]) .badge { background: var(--vds-theme-warning); color: var(--vds-theme-warning-fg); }
-    :host([tone="warning"][variant="soft"]) .badge { background: var(--vds-theme-warning-bg); color: var(--vds-theme-warning); }
-    :host([tone="warning"][variant="outline"]) .badge { border-color: var(--vds-theme-warning); color: var(--vds-theme-warning); }
+    :host([tone="warning"][variant="solid"]) .badge { background: var(--vds-theme-status-warning); color: var(--vds-theme-status-warning-foreground); }
+    :host([tone="warning"][variant="soft"]) .badge { background: var(--vds-theme-warning-bg); color: var(--vds-theme-status-warning); }
+    :host([tone="warning"][variant="outline"]) .badge { border-color: var(--vds-theme-status-warning); color: var(--vds-theme-status-warning); }
 
-    :host([tone="info"][variant="solid"]) .badge { background: var(--vds-theme-info); color: var(--vds-theme-info-fg); }
-    :host([tone="info"][variant="soft"]) .badge { background: var(--vds-theme-info-bg); color: var(--vds-theme-info); }
-    :host([tone="info"][variant="outline"]) .badge { border-color: var(--vds-theme-info); color: var(--vds-theme-info); }
+    :host([tone="info"][variant="solid"]) .badge { background: var(--vds-theme-status-info); color: var(--vds-theme-status-info-foreground); }
+    :host([tone="info"][variant="soft"]) .badge { background: var(--vds-theme-info-bg); color: var(--vds-theme-status-info); }
+    :host([tone="info"][variant="outline"]) .badge { border-color: var(--vds-theme-status-info); color: var(--vds-theme-status-info); }
   `;
 
   @property({ type: String, reflect: true }) variant: Variant = 'soft';

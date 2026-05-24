@@ -1,0 +1,79 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "stats": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "stats component density scale."
+        },
+        "label-size": {
+          "$value": "calc(0.59375rem * var(--vds-exp-girok-stats-scale))",
+          "$type": "dimension",
+          "$description": "Stats label size."
+        },
+        "value-size": {
+          "$value": "calc(0.71875rem * var(--vds-exp-girok-stats-scale))",
+          "$type": "dimension",
+          "$description": "Stats value size."
+        },
+        "radius": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-stats-scale))",
+          "$type": "dimension",
+          "$description": "Stats radius."
+        },
+        "cell-padding": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-stats-scale))",
+          "$type": "dimension",
+          "$description": "Stats cell padding."
+        },
+        "value-margin-top": {
+          "$value": "calc(0.25rem * var(--vds-exp-girok-stats-scale))",
+          "$type": "dimension",
+          "$description": "Stats value margin top."
+        },
+        "grid-gap": {
+          "$value": "calc(1px * var(--vds-exp-girok-stats-scale))",
+          "$type": "dimension",
+          "$description": "Stats divider gap."
+        },
+        "font-size-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-stats-scale))",
+          "$type": "dimension",
+          "$description": "stats font-size token."
+        },
+        "font-size-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-stats-scale))",
+          "$type": "dimension",
+          "$description": "stats font-size token."
+        },
+        "cell-bg": {
+          "$value": "{exp.girok.surface.card-subtle}",
+          "$type": "color",
+          "$description": "Stats cell background."
+        },
+        "divider-color": {
+          "$value": "oklch(27.39% 0.0055 286.03)",
+          "$type": "color",
+          "$description": "Stats divider color."
+        },
+        "value-weight": {
+          "$value": 600,
+          "$type": "number",
+          "$description": "Stats value weight."
+        },
+        "income-text": {
+          "$value": "oklch(69.59% 0.1491 162.48)",
+          "$type": "color",
+          "$description": "Stats income text."
+        },
+        "expense-text": {
+          "$value": "oklch(71.92% 0.169 13.43)",
+          "$type": "color",
+          "$description": "Stats expense text."
+        }
+      }
+    }
+  }
+}

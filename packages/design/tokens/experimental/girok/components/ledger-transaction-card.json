@@ -1,0 +1,59 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "ledger-transaction-card": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "ledger-transaction-card component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card padding token."
+        },
+        "gap-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card gap token."
+        },
+        "inline-size-3": {
+          "$value": "calc(2.25rem * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card inline-size token."
+        },
+        "block-size-4": {
+          "$value": "calc(2.25rem * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card block-size token."
+        },
+        "font-size-5": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card font-size token."
+        },
+        "gap-6": {
+          "$value": "calc(2px * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card gap token."
+        },
+        "font-size-7": {
+          "$value": "calc(0.8125rem * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card font-size token."
+        },
+        "font-size-8": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card font-size token."
+        },
+        "font-size-9": {
+          "$value": "calc(0.8125rem * var(--vds-exp-girok-ledger-transaction-card-scale))",
+          "$type": "dimension",
+          "$description": "ledger-transaction-card font-size token."
+        }
+      }
+    }
+  }
+}

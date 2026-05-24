@@ -39,10 +39,10 @@ function useReducedMotion() {
 
 function pickToneStyles(tone: ButtonTone, variant: 'solid' | 'tonal' | 'ghost'): React.CSSProperties {
   const solidMap = {
-    primary: ['var(--vds-theme-primary)', 'var(--vds-theme-primary-fg)'],
-    accent: ['var(--vds-theme-accent)', 'var(--vds-theme-accent-fg)'],
-    neutral: ['var(--vds-theme-neutral)', 'var(--vds-theme-neutral-fg)'],
-    destructive: ['var(--vds-theme-destructive)', 'var(--vds-theme-destructive-fg)'],
+    primary: ['var(--vds-theme-primary)', 'var(--vds-theme-primary-foreground)'],
+    accent: ['var(--vds-theme-accent)', 'var(--vds-theme-accent-foreground)'],
+    neutral: ['var(--vds-theme-status-neutral)', 'var(--vds-theme-status-neutral-foreground)'],
+    destructive: ['var(--vds-theme-destructive)', 'var(--vds-theme-destructive-foreground)'],
   } as const;
 
   const surfaceMap = {

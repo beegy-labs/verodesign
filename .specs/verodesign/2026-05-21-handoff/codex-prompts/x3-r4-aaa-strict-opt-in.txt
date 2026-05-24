@@ -1,0 +1,108 @@
+# Task: X3 Round 4-B — aaa-strict 시범 opt-in (girok brand)
+
+X4 final audit G5 의 마지막 잔여: `aaa-strict` tier 시범 opt-in 0 brand. SDD X2-3 의 aaa-strict optional 정책을 **시연**하기 위해 `girok-{light,dark}` 1 brand 를 시범 opt-in.
+
+## Pre-reads
+
+- SDD: `.specs/verodesign/2026-05-21-contrast-policy-v2/spec.md` (aaa-strict tier 정의)
+- semantic source: `packages/design/tokens/semantic/aaa-strict.json` (slot 정의 — text/primary/status `*-strong` + `.foreground`)
+- girok-light/dark theme: `packages/design/tokens/themes/girok-{light,dark}.json`
+- validator: `packages/design/src/audit/contrast.mjs`
+- contrast policy: `docs/llm/tokens/contrast.md` ("AAA-strict opt-in 0 brand = valid" line)
+
+## 작업
+
+### 1. girok-{light,dark} 의 `$extensions.verobee.implements` 에 `"aaa-strict"` 추가
+
+```diff
+   "implements": [
+     "core",
+     "web",
+-    "status"
++    "status",
++    "aaa-strict"
+   ],
+```
+
+### 2. `*-strong` slot binding 평가 + 필요시 overrides 추가
+
+aaa-strict.json 의 `*-strong` slot 은 default 가 `{theme.X}` 별칭 → AA baseline 값 그대로. AAA 7:1 통과는 brand 별 실제 색상에 따라 다름.
+
+girok 의 다음 slot 들이 AAA 7:1 통과하는지 build/audit 로 확인 후 통과하지 않는 것만 override:
+- `theme.text.primary-strong` (vs `theme.bg.page` / `theme.bg.card`)
+- `theme.text.secondary-strong` (vs `theme.bg.card`)
+- `theme.primary-strong` (background slot; foreground 와 7:1)
+- `theme.status.{success,error,warning,info,neutral}-strong` (각각 foreground 와 7:1)
+
+approach:
+1. 먼저 `aaa-strict` 추가만 하고 빌드 → audit 가 어느 slot 이 fail 인지 보고
+2. fail 한 slot 만 girok-light/dark 의 theme 파일에서 `theme.X-strong` 또는 그 foreground 를 AAA 색상으로 override
+
+override 예시 (girok-light 의 walnut text 기반):
+```json
+"text": {
+  "primary-strong": {
+    "$value": "oklch(15% 0.02 80)",  // 더 어둡게
+    "$type": "color"
+  }
+}
+```
+
+target 7:1 미달 slot 만 최소 override. 통과하는 slot 은 alias 그대로.
+
+### 3. WCAG audit 통과 + report 산출 확인
+
+```sh
+pnpm --filter @verobee/design build
+
+# contrast-report 안 girok 의 aaa-strict tier pair 존재 확인
+node -e "
+const r = require('./packages/design/dist/data/contrast-report.json');
+const girok = r.girok;
+let aaaCount = 0;
+for (const mode of ['light','dark']) {
+  for (const [pair, info] of Object.entries(girok[mode] ?? {})) {
+    if (info.required === 'AAA-strict' || info.required === 'AAA' || info.tier === 'aaa-strict' || pair.includes('strong')) {
+      aaaCount++;
+    }
+  }
+}
+console.log('girok AAA-strict pairs:', aaaCount);
+"
+```
+
+aaaCount > 0 = PASS.
+
+### 4. CSS variable 산출 확인
+
+```sh
+# girok-light + girok-dark 에 *-strong 변수 산출
+rg -- "--vds-theme-(primary-strong|.*-strong)" packages/design/dist/css/themes/girok.css | head -20
+```
+
+### 5. brand guide 갱신
+
+`docs/llm/brands/girok.md` 에 한 문장 추가: girok 이 aaa-strict opt-in (시범 brand) + 어떤 *-strong slot 이 override 되었는지 명시.
+
+### 6. CHANGELOG 한 줄
+
+`docs/llm/tokens/CHANGELOG.md` 에 girok aaa-strict opt-in.
+
+## 절대 금지
+
+- 다른 brand 의 implements 변경
+- 다른 SDD 영역 (token naming / experimental / component docs / workflow) 수정
+- AI/LLM/Codex/Claude 멘션
+- 자가 PASS 선언
+
+## 검증 + 출력
+
+- 1.~6. 단계 각각 결과
+- override 한 slot list + 이유 (어떤 base 가 7:1 미달이었는지)
+- build stdout 인용
+- contrast-report 산출 (girok AAA-strict pair count + minimum ratio)
+- CSS variable grep 결과
+
+## 보고 길이
+
+≤ 200 줄.

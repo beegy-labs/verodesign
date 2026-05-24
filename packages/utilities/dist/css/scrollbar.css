@@ -1,0 +1,10 @@
+@layer vds-utilities {
+  .vds-scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .vds-scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

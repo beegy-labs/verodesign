@@ -50,8 +50,8 @@ export class VdsCheckbox extends VdsElement {
       background: var(--vds-theme-primary);
       border-color: var(--vds-theme-primary);
     }
-    :host([checked]) .check { color: var(--vds-theme-primary-fg); }
-    :host([indeterminate]) .dash { color: var(--vds-theme-primary-fg); }
+    :host([checked]) .check { color: var(--vds-theme-primary-foreground); }
+    :host([indeterminate]) .dash { color: var(--vds-theme-primary-foreground); }
 
     :host(:focus-visible) .box {
       outline: 2px solid var(--vds-theme-border-focus);

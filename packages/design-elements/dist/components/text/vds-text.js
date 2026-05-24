@@ -1,5 +1,5 @@
 import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
-import { html as p } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { html as p } from "../../node_modules/.pnpm/lit-html@3.3.3/node_modules/lit-html/lit-html.js";
 import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
 import { property as t } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
 import { VdsElement as h } from "../../base/vds-element.js";
@@ -34,8 +34,8 @@ class o extends h {
     :host([tone="dim"])     { color: var(--vds-theme-text-secondary); }
     :host([tone="muted"])   { color: var(--vds-theme-text-faint); }
     :host([tone="primary"]) { color: var(--vds-theme-primary); }
-    :host([tone="success"]) { color: var(--vds-theme-success); }
-    :host([tone="warning"]) { color: var(--vds-theme-warning); }
+    :host([tone="success"]) { color: var(--vds-theme-status-success); }
+    :host([tone="warning"]) { color: var(--vds-theme-status-warning); }
     :host([tone="error"])   { color: var(--vds-theme-destructive); }
 
     :host([weight="400"]) { font-weight: var(--vds-font-weight-400); }

@@ -856,6 +856,26 @@
   inherits: false;
   initial-value: oklch(0% 0 0 / 0);
 }
+@property --vds-icon-size-sm {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 16px;
+}
+@property --vds-icon-size-md {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 20px;
+}
+@property --vds-icon-size-lg {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 32px;
+}
+@property --vds-icon-stroke-width {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 2;
+}
 @property --vds-opacity-0 {
   syntax: "<number>";
   inherits: false;
@@ -1200,32 +1220,32 @@
 @property --vds-font-size-3xl {
   syntax: "<length-percentage>";
   inherits: false;
-  initial-value: 2.375rem;
+  initial-value: 2rem;
 }
 @property --vds-font-size-4xl {
   syntax: "<length-percentage>";
   inherits: false;
-  initial-value: 3.1875rem;
+  initial-value: 2.375rem;
 }
 @property --vds-font-size-5xl {
   syntax: "<length-percentage>";
   inherits: false;
-  initial-value: 4.1875rem;
+  initial-value: 2.75rem;
 }
 @property --vds-font-size-6xl {
   syntax: "<length-percentage>";
   inherits: false;
-  initial-value: 5.625rem;
+  initial-value: 3.25rem;
 }
 @property --vds-font-size-numeric-display-sm {
   syntax: "<length-percentage>";
   inherits: false;
-  initial-value: 2.75rem;
+  initial-value: 2.25rem;
 }
 @property --vds-font-size-numeric-display-lg {
   syntax: "<length-percentage>";
   inherits: false;
-  initial-value: 3.5rem;
+  initial-value: 2.75rem;
 }
 @property --vds-font-weight-400 {
   syntax: "<number>";
@@ -1302,6 +1322,166 @@
   inherits: false;
   initial-value: 0.05em;
 }
+@property --vds-theme-text-primary-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(12% 0.012 240);
+}
+@property --vds-theme-text-secondary-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(30% 0.018 240);
+}
+@property --vds-theme-text-primary {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(12% 0.012 240);
+}
+@property --vds-theme-text-secondary {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(30% 0.018 240);
+}
+@property --vds-theme-text-dim {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.02 240);
+}
+@property --vds-theme-text-faint {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(60% 0.018 240);
+}
+@property --vds-theme-text-bright {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(5% 0.005 240);
+}
+@property --vds-theme-text-inverse {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(98% 0.003 240);
+}
+@property --vds-theme-primary-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.19 250);
+}
+@property --vds-theme-primary-strong-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-status-success-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.171 145);
+}
+@property --vds-theme-status-success-strong-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-status-error-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.2 25);
+}
+@property --vds-theme-status-error-strong-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-status-warning-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(60% 0.18 70);
+}
+@property --vds-theme-status-warning-strong-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(5% 0.005 240);
+}
+@property --vds-theme-status-info-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.19 250);
+}
+@property --vds-theme-status-info-strong-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-status-neutral-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.02 240);
+}
+@property --vds-theme-status-neutral-strong-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-status-success {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.171 145);
+}
+@property --vds-theme-status-success-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-status-error {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.2 25);
+}
+@property --vds-theme-status-error-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-status-warning {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(60% 0.18 70);
+}
+@property --vds-theme-status-warning-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(5% 0.005 240);
+}
+@property --vds-theme-status-info {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.19 250);
+}
+@property --vds-theme-status-info-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-status-neutral {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.02 240);
+}
+@property --vds-theme-status-neutral-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-destructive-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.2 25);
+}
+@property --vds-theme-destructive-strong-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
 @property --vds-theme-bg-page {
   syntax: "<color>";
   inherits: true;
@@ -1347,36 +1527,6 @@
   inherits: true;
   initial-value: oklch(90% 0.008 240);
 }
-@property --vds-theme-text-primary {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(12% 0.012 240);
-}
-@property --vds-theme-text-secondary {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(30% 0.018 240);
-}
-@property --vds-theme-text-dim {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(50% 0.02 240);
-}
-@property --vds-theme-text-faint {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(70% 0.015 240);
-}
-@property --vds-theme-text-bright {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(5% 0.005 240);
-}
-@property --vds-theme-text-inverse {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(98% 0.003 240);
-}
 @property --vds-theme-border-subtle {
   syntax: "<color>";
   inherits: true;
@@ -1417,12 +1567,17 @@
   inherits: true;
   initial-value: oklch(90% 0.008 240);
 }
+@property --vds-theme-scrim {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(0% 0 0 / 0.5);
+}
 @property --vds-theme-primary {
   syntax: "<color>";
   inherits: true;
   initial-value: oklch(50% 0.19 250);
 }
-@property --vds-theme-primary-fg {
+@property --vds-theme-primary-foreground {
   syntax: "<color>";
   inherits: true;
   initial-value: oklch(100% 0 0);
@@ -1437,67 +1592,7 @@
   inherits: true;
   initial-value: oklch(50% 0.152 215);
 }
-@property --vds-theme-accent-fg {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(100% 0 0);
-}
-@property --vds-theme-destructive {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(50% 0.2 25);
-}
-@property --vds-theme-destructive-fg {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(100% 0 0);
-}
-@property --vds-theme-success {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(50% 0.171 145);
-}
-@property --vds-theme-success-fg {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(100% 0 0);
-}
-@property --vds-theme-warning {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(60% 0.18 70);
-}
-@property --vds-theme-warning-fg {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(5% 0.005 240);
-}
-@property --vds-theme-error {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(50% 0.2 25);
-}
-@property --vds-theme-error-fg {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(100% 0 0);
-}
-@property --vds-theme-info {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(50% 0.19 250);
-}
-@property --vds-theme-info-fg {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(100% 0 0);
-}
-@property --vds-theme-neutral {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: oklch(50% 0.02 240);
-}
-@property --vds-theme-neutral-fg {
+@property --vds-theme-accent-foreground {
   syntax: "<color>";
   inherits: true;
   initial-value: oklch(100% 0 0);
@@ -1592,7 +1687,7 @@
   inherits: true;
   initial-value: oklch(50% 0.02 240);
 }
-@property --vds-theme-cancelled-fg {
+@property --vds-theme-cancelled-foreground {
   syntax: "<color>";
   inherits: true;
   initial-value: oklch(100% 0 0);
@@ -1602,7 +1697,7 @@
   inherits: true;
   initial-value: oklch(50% 0.171 70);
 }
-@property --vds-theme-accent-2-fg {
+@property --vds-theme-accent-2-foreground {
   syntax: "<color>";
   inherits: true;
   initial-value: oklch(100% 0 0);
@@ -1612,7 +1707,7 @@
   inherits: true;
   initial-value: oklch(50% 0.152 215);
 }
-@property --vds-theme-accent-3-fg {
+@property --vds-theme-accent-3-foreground {
   syntax: "<color>";
   inherits: true;
   initial-value: oklch(100% 0 0);
@@ -1628,6 +1723,46 @@
   initial-value: oklch(60% 0.16 215);
 }
 @property --vds-theme-logo-inner {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-finance-market-up {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.171 145);
+}
+@property --vds-theme-finance-market-up-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-finance-market-down {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.2 25);
+}
+@property --vds-theme-finance-market-down-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --vds-theme-finance-loan-priority {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(60% 0.18 70);
+}
+@property --vds-theme-finance-loan-priority-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(5% 0.005 240);
+}
+@property --vds-theme-destructive {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(50% 0.2 25);
+}
+@property --vds-theme-destructive-foreground {
   syntax: "<color>";
   inherits: true;
   initial-value: oklch(100% 0 0);
@@ -1699,7 +1834,7 @@
 @property --vds-type-role-display-size {
   syntax: "<length>";
   inherits: false;
-  initial-value: 3.5rem;
+  initial-value: 2.75rem;
 }
 @property --vds-type-role-display-lineheight {
   syntax: "<number>";
@@ -1714,7 +1849,7 @@
 @property --vds-type-role-metric-size {
   syntax: "<length>";
   inherits: false;
-  initial-value: 2.75rem;
+  initial-value: 2.25rem;
 }
 @property --vds-type-role-metric-lineheight {
   syntax: "<number>";
@@ -1885,4 +2020,3152 @@
   syntax: "<length>";
   inherits: false;
   initial-value: 4rem;
+}
+@property --vds-exp-girok-bottom-nav-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-bottom-nav-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottom-nav-gap-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottom-nav-font-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottom-nav-width-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottom-nav-height-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottomsheet-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-bottomsheet-width-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottomsheet-width-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottomsheet-height-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottomsheet-font-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottomsheet-height-daily {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-bottomsheet-radius-top {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1.5rem;
+}
+@property --vds-exp-girok-bottomsheet-handle-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(37.11% 0.0115 285.95);
+}
+@property --vds-exp-girok-calendar-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-calendar-cell-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-cell-min-height {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-weekday-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-number-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-dot-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-dot-gap {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-row-gap {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-weekdays-wrap-min-height {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-cell-padding-top {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-min-height-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-min-height-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-padding-top-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-font-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-weekday-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 700;
+}
+@property --vds-exp-girok-calendar-number-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 700;
+}
+@property --vds-exp-girok-calendar-dot-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-calendar-weekday-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.02 240);
+}
+@property --vds-exp-girok-calendar-weekdays-margin-top {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-weekdays-margin-bottom {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-calendar-weekend-sat {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.37% 0.1434 254.62);
+}
+@property --vds-exp-girok-calendar-weekend-sun {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.92% 0.169 13.43);
+}
+@property --vds-exp-girok-calendar-selected-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2E281C;
+}
+@property --vds-exp-girok-calendar-selected-fg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-calendar-selected-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(36.9% 0.0321 81.99);
+}
+@property --vds-exp-girok-calendar-today-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(26.9% 0.026 76);
+}
+@property --vds-exp-girok-calendar-today-fg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-calendar-today-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(37.5% 0.04 77);
+}
+@property --vds-exp-girok-category-color-swatch-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-category-color-swatch-inline-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-category-color-swatch-block-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-category-color-swatch-box-shadow-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-category-progress-list-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-category-progress-list-inline-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-category-progress-list-block-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-category-progress-list-block-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-currency-toggle-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-currency-toggle-border-radius-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-currency-toggle-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-currency-toggle-padding-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-fx-history-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-fx-history-card-font-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-fx-history-card-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-fx-summary-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-fx-summary-card-font-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-fx-summary-card-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-icon-actions-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-icon-actions-gap-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-icon-actions-width-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-icon-actions-height-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-icon-actions-width-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-icon-actions-height-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-ledger-add-modal-max-inline-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-box-shadow-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-font-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-gap-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-padding-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-font-size-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-font-size-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-padding-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-font-size-9 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-gap-10 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-padding-11 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-add-modal-font-size-12 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-ledger-daily-sheet-padding-bottom-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-box-shadow-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-inline-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-block-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-font-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-padding-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-inline-size-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-block-size-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-font-size-9 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-gap-10 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-font-size-11 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-font-size-12 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-font-size-13 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-padding-14 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-daily-sheet-font-size-15 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-padding-bottom-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-box-shadow-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-inline-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-block-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-font-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-padding-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-font-size-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-font-size-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-font-size-9 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-padding-10 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-font-size-11 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-picker-sheet-box-shadow-12 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-range-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-ledger-date-range-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-range-box-shadow-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-range-padding-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-range-inline-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-range-block-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-date-range-font-size-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-filter-tabs-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-ledger-filter-tabs-font-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-swapper-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-ledger-swapper-font-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-swapper-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-ledger-transaction-card-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-gap-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-inline-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-block-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-font-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-gap-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-font-size-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-font-size-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-ledger-transaction-card-font-size-9 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-chip-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-management-category-chip-font-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-chip-gap-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-chip-padding-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-chip-font-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-management-category-form-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-gap-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-gap-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-padding-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-padding-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-font-size-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-gap-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-gap-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-min-inline-size-9 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-padding-10 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-font-size-11 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-padding-12 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-font-size-13 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-padding-top-14 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-padding-bottom-15 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-category-form-font-size-16 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-emoji-dropdown-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-management-emoji-dropdown-min-inline-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-emoji-dropdown-max-block-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-emoji-dropdown-padding-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-emoji-dropdown-box-shadow-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-emoji-dropdown-padding-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-emoji-dropdown-font-size-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-emoji-dropdown-font-size-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-management-fixed-card-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-gap-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-padding-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-padding-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-font-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-inline-size-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-block-size-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-gap-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-gap-9 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-font-size-10 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-padding-11 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-font-size-12 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-font-size-13 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-padding-14 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-padding-15 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-font-size-16 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-management-fixed-card-transform-17 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-month-day-picker-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-inline-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-block-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-padding-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-box-shadow-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-inline-size-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-block-size-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-font-size-9 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-block-size-10 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-padding-top-11 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-padding-bottom-12 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-block-size-13 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-font-size-14 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-block-size-15 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-padding-16 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-font-size-17 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-day-picker-box-shadow-18 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-pill-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-month-pill-min-height-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-pill-padding-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-pill-inline-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-pill-font-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-month-pill-font-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-page-toolbar-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-page-toolbar-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-position-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-position-card-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-position-card-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-position-card-font-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-position-card-font-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-position-card-font-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-position-card-font-size-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-position-card-font-size-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-position-card-padding-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-register-chip-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-register-chip-min-height-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-register-chip-padding-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-register-chip-font-size-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-select-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-snowball-hero-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-snowball-hero-padding-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-letter-spacing-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-letter-spacing-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-font-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-font-size-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-padding-7 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-font-size-8 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-font-size-9 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-font-size-10 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-font-size-11 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-snowball-hero-font-size-12 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-stats-label-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-value-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-radius {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-cell-padding {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-value-margin-top {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-grid-gap {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-font-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-stats-cell-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-stats-divider-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.39% 0.0055 286.03);
+}
+@property --vds-exp-girok-stats-value-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 600;
+}
+@property --vds-exp-girok-stats-income-text {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(69.59% 0.1491 162.48);
+}
+@property --vds-exp-girok-stats-expense-text {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.92% 0.169 13.43);
+}
+@property --vds-exp-girok-tab-l1-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-tab-l1-font-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l1-padding-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l1-padding-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l1-min-width {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l1-scroll-padding-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l1-underline-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l1-underline-height {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l1-weight-active {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 600;
+}
+@property --vds-exp-girok-tab-l1-weight-inactive {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 600;
+}
+@property --vds-exp-girok-tab-l1-underline-glow {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-tab-l2-font-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-padding {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-radius {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-cell-radius {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-cell-padding {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-block-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-cell-padding-inline {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-block-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-font-size-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-tab-l2-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 700;
+}
+@property --vds-exp-girok-toast-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-toast-inset-block-start-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-toast-gap-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-toast-padding-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-toast-font-size-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-toast-inline-size-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-toast-block-size-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-toolbar-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-toolbar-gap-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-view-toggle-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-view-toggle-min-height-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-view-toggle-width-2 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-view-toggle-height-3 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-view-toggle-border-radius-4 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-view-toggle-width-5 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-view-toggle-height-6 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-wordmark-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --vds-exp-girok-wordmark-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-wordmark-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 800;
+}
+@property --vds-exp-girok-wordmark-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-wordmark-font-size-1 {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-density-compact-tab-l1-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-tab-l2-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.88;
+}
+@property --vds-exp-girok-density-compact-currency-toggle-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-compact-register-chip-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-view-toggle-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-month-pill-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-compact-stats-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-compact-calendar-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.94;
+}
+@property --vds-exp-girok-density-compact-page-toolbar-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-ledger-swapper-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-compact-position-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.93;
+}
+@property --vds-exp-girok-density-compact-snowball-hero-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.94;
+}
+@property --vds-exp-girok-density-compact-icon-actions-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-category-progress-list-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.94;
+}
+@property --vds-exp-girok-density-compact-ledger-transaction-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-ledger-date-range-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-ledger-filter-tabs-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-compact-ledger-daily-sheet-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.94;
+}
+@property --vds-exp-girok-density-compact-ledger-add-modal-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.94;
+}
+@property --vds-exp-girok-density-compact-ledger-date-picker-sheet-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.94;
+}
+@property --vds-exp-girok-density-compact-management-fixed-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-management-category-form-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-density-compact-management-category-chip-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-compact-management-emoji-dropdown-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.94;
+}
+@property --vds-exp-girok-density-compact-month-day-picker-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.94;
+}
+@property --vds-exp-girok-density-compact-toast-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-compact-category-color-swatch-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-compact-wordmark-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.96;
+}
+@property --vds-exp-girok-density-dense-tab-l1-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.86;
+}
+@property --vds-exp-girok-density-dense-tab-l2-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.8;
+}
+@property --vds-exp-girok-density-dense-currency-toggle-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.84;
+}
+@property --vds-exp-girok-density-dense-register-chip-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.85;
+}
+@property --vds-exp-girok-density-dense-view-toggle-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.86;
+}
+@property --vds-exp-girok-density-dense-month-pill-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.84;
+}
+@property --vds-exp-girok-density-dense-stats-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.82;
+}
+@property --vds-exp-girok-density-dense-calendar-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.88;
+}
+@property --vds-exp-girok-density-dense-page-toolbar-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.86;
+}
+@property --vds-exp-girok-density-dense-ledger-swapper-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.84;
+}
+@property --vds-exp-girok-density-dense-position-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.87;
+}
+@property --vds-exp-girok-density-dense-snowball-hero-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-dense-icon-actions-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.86;
+}
+@property --vds-exp-girok-density-dense-category-progress-list-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-dense-ledger-transaction-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.86;
+}
+@property --vds-exp-girok-density-dense-ledger-date-range-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.86;
+}
+@property --vds-exp-girok-density-dense-ledger-filter-tabs-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.84;
+}
+@property --vds-exp-girok-density-dense-ledger-daily-sheet-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-dense-ledger-add-modal-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-dense-ledger-date-picker-sheet-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-dense-management-fixed-card-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.86;
+}
+@property --vds-exp-girok-density-dense-management-category-form-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.86;
+}
+@property --vds-exp-girok-density-dense-management-category-chip-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.84;
+}
+@property --vds-exp-girok-density-dense-management-emoji-dropdown-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-dense-month-day-picker-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.9;
+}
+@property --vds-exp-girok-density-dense-toast-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.84;
+}
+@property --vds-exp-girok-density-dense-category-color-swatch-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.84;
+}
+@property --vds-exp-girok-density-dense-wordmark-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.92;
+}
+@property --vds-exp-girok-shell-frame-surface {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.91% 0.0064 91.69);
+}
+@property --vds-exp-girok-shell-content-surface {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.47% 0.0045 84.57);
+}
+@property --vds-exp-girok-category-palette-rose {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #fb7185;
+}
+@property --vds-exp-girok-category-palette-amber {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f59e0b;
+}
+@property --vds-exp-girok-category-palette-emerald {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #34d399;
+}
+@property --vds-exp-girok-category-palette-blue {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #60a5fa;
+}
+@property --vds-exp-girok-category-palette-purple {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.4% 0.137 304.8);
+}
+@property --vds-exp-girok-category-palette-teal {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(79.6% 0.116 190.8);
+}
+@property --vds-exp-girok-category-palette-pink {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(75.5% 0.166 353.2);
+}
+@property --vds-exp-girok-category-palette-slate {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(72.3% 0.033 250.1);
+}
+@property --vds-exp-girok-nav-tab-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-nav-bottom-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(76.86% 0.1647 70.08);
+}
+@property --vds-exp-girok-nav-bottom-inactive {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.18% 0.0129 286.07);
+}
+@property --vds-exp-girok-nav-tab-underline-glow {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-nav-tabunderlineglow {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-radius-device-frame {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 55px;
+}
+@property --vds-exp-girok-radius-sheet {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 32px;
+}
+@property --vds-exp-girok-radius-modal {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 28px;
+}
+@property --vds-exp-girok-radius-large-card {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1.5rem;
+}
+@property --vds-exp-girok-radius-medium-card {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1rem;
+}
+@property --vds-exp-girok-radius-card-base {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.75rem;
+}
+@property --vds-exp-girok-radius-inner-control {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.5rem;
+}
+@property --vds-exp-girok-radius-small-chip {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 6px;
+}
+@property --vds-exp-girok-radius-xs {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.25rem;
+}
+@property --vds-exp-girok-radius-round {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 9999px;
+}
+@property --vds-exp-girok-font-family-display {
+  syntax: "*";
+  inherits: true;
+}
+@property --vds-exp-girok-font-size-caption {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 10px;
+}
+@property --vds-exp-girok-font-size-micro {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 11px;
+}
+@property --vds-exp-girok-font-size-body-sm {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 13px;
+}
+@property --vds-exp-girok-font-size-menu {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 15px;
+}
+@property --vds-exp-girok-shadow-glow-bottom-nav {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-income {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-modal-soft {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-expense-soft {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-info-soft {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-warning-chart {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-warning-hero {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-success-hero {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-accent {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-warning {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-shadow-glow-warning-soft {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-pill-success-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(16, 185, 129, 0.2);
+}
+@property --vds-exp-girok-pill-expense-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(244, 63, 94, 0.1);
+}
+@property --vds-exp-girok-pill-expense-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(244, 63, 94, 0.2);
+}
+@property --vds-exp-girok-pill-info-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(59, 130, 246, 0.1);
+}
+@property --vds-exp-girok-pill-sell-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(59, 130, 246, 0.1);
+}
+@property --vds-exp-girok-pill-sell-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(59, 130, 246, 0.2);
+}
+@property --vds-exp-girok-pill-success-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(16, 185, 129, 0.1);
+}
+@property --vds-exp-girok-pill-indigo-tile-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(99, 102, 241, 0.1);
+}
+@property --vds-exp-girok-selection-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(245, 158, 11, 0.2);
+}
+@property --vds-exp-girok-transition-default {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 150ms;
+}
+@property --vds-exp-girok-transition-slow {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 500ms;
+}
+@property --vds-exp-girok-transition-slower {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 700ms;
+}
+@property --vds-exp-girok-press-scale-default {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.95;
+}
+@property --vds-exp-girok-press-scale-soft {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.98;
+}
+@property --vds-exp-girok-progress-track-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-progress-height-sm {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 4px;
+}
+@property --vds-exp-girok-progress-height-md {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 6px;
+}
+@property --vds-exp-girok-progress-height-lg {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 10px;
+}
+@property --vds-exp-girok-progress-hero-fill {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-progress-challenge-bg {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-progress-quick-action-emphasis {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-progress-goal-fill-start {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(76.86% 0.1647 70.08);
+}
+@property --vds-exp-girok-progress-goal-fill-end {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(69.59% 0.1491 162.48);
+}
+@property --vds-exp-girok-stock-up {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(73.3% 0.1091 26.53);
+}
+@property --vds-exp-girok-stock-down {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.37% 0.1434 254.62);
+}
+@property --vds-exp-girok-stock-flat {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.02 240);
+}
+@property --vds-exp-girok-settings-row-icon-tile-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 36px;
+}
+@property --vds-exp-girok-settings-row-icon-tile-bg-indigo {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(99, 102, 241, 0.1);
+}
+@property --vds-exp-girok-settings-row-icon-tile-fg-indigo {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(68.01% 0.1583 276.93);
+}
+@property --vds-exp-girok-settings-row-icon-tile-bg-emerald {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(16, 185, 129, 0.1);
+}
+@property --vds-exp-girok-settings-row-icon-tile-fg-emerald {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.171 145);
+}
+@property --vds-exp-girok-settings-row-icon-tile-bg-amber {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d97706;
+}
+@property --vds-exp-girok-settings-row-icon-tile-fg-amber {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-settings-row-icon-tile-bg-rose {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(244, 63, 94, 0.1);
+}
+@property --vds-exp-girok-settings-row-icon-tile-fg-rose {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.2 25);
+}
+@property --vds-exp-girok-settings-row-icon-tile-bg-zinc {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2E281C;
+}
+@property --vds-exp-girok-settings-row-icon-tile-fg-zinc {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(12% 0.012 240);
+}
+@property --vds-exp-girok-chart-top-rank-fill {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(77.29% 0.1535 163.22);
+}
+@property --vds-exp-girok-chart-rank-4-fill {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(68.01% 0.1583 276.93);
+}
+@property --vds-exp-girok-chart-rank-5-fill {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(72.17% 0.1767 305.5);
+}
+@property --vds-exp-girok-toggle-expense-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(64.5% 0.2154 16.44);
+}
+@property --vds-exp-girok-toggle-income-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(69.59% 0.1491 162.48);
+}
+@property --vds-exp-girok-toggle-incomeactive {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(69.59% 0.1491 162.48);
+}
+@property --vds-exp-girok-toggle-active-foreground {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.91% 0.0064 91.69);
+}
+@property --vds-exp-girok-toggle-activeforeground {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.91% 0.0064 91.69);
+}
+@property --vds-exp-girok-toggle-active-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2E281C;
+}
+@property --vds-exp-girok-icon-info-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(68.01% 0.1583 276.93);
+}
+@property --vds-exp-girok-spacing-xs {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.375rem;
+}
+@property --vds-exp-girok-spacing-sm {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.625rem;
+}
+@property --vds-exp-girok-spacing-md {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.75rem;
+}
+@property --vds-exp-girok-spacing-lg {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1.5rem;
+}
+@property --vds-exp-girok-surface-screen-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.91% 0.0064 91.69);
+}
+@property --vds-exp-girok-surface-app-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.47% 0.0045 84.57);
+}
+@property --vds-exp-girok-surface-invest-header {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0D0C0A;
+}
+@property --vds-exp-girok-surface-card {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(21.79% 0.0117 91.77);
+}
+@property --vds-exp-girok-surface-card-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(21.79% 0.0117 91.77);
+}
+@property --vds-exp-girok-surface-sheet-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #161410;
+}
+@property --vds-exp-girok-surface-segment-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #1C1A14;
+}
+@property --vds-exp-girok-surface-control-subtle {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-surface-control-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2E281C;
+}
+@property --vds-exp-girok-surface-row-hover-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(39, 39, 42, 0.5);
+}
+@property --vds-exp-girok-surface-backdrop-medium {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(0, 0, 0, 0.8);
+}
+@property --vds-exp-girok-surface-backdrop-deep {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(0, 0, 0, 0.85);
+}
+@property --vds-exp-girok-surface-backdrop-blur {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(0, 0, 0, 0.6);
+}
+@property --vds-exp-girok-surface-toolbar {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(20.95% 0.01 88.8);
+}
+@property --vds-exp-girok-surface-card-subtle {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-surface-scrim-40 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(0% 0 0 / 0.4);
+}
+@property --vds-exp-girok-surface-hero-start {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(21.79% 0.0117 91.77);
+}
+@property --vds-exp-girok-surface-hero-end {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-surface-hero-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(32.45% 0.024 82.83);
+}
+@property --vds-exp-girok-border-default {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.41% 0.017 86.87);
+}
+@property --vds-exp-girok-border-card-subtle {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(24.41% 0.0152 89.92);
+}
+@property --vds-exp-girok-border-card-emphasis {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(32.45% 0.024 82.83);
+}
+@property --vds-exp-girok-border-control {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.41% 0.017 86.87);
+}
+@property --vds-exp-girok-border-modal-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(32.45% 0.024 82.83);
+}
+@property --vds-exp-girok-border-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(36.9% 0.0321 81.99);
+}
+@property --vds-exp-girok-border-control-alpha-80 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.41% 0.017 86.87 / 0.8);
+}
+@property --vds-exp-girok-border-control-alpha-60 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.41% 0.017 86.87 / 0.6);
+}
+@property --vds-exp-girok-border-neutral-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #27272a;
+}
+@property --vds-exp-girok-border-neutral-stronger {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3f3f46;
+}
+@property --vds-exp-girok-border-neutral-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(39, 39, 42, 0.8);
+}
+@property --vds-exp-girok-border-divider-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(39, 39, 42, 0.4);
+}
+@property --vds-exp-girok-text-primary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ffffff;
+}
+@property --vds-exp-girok-text-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f4f4f5;
+}
+@property --vds-exp-girok-text-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #e4e4e7;
+}
+@property --vds-exp-girok-text-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d4d4d8;
+}
+@property --vds-exp-girok-text-secondary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #a1a1aa;
+}
+@property --vds-exp-girok-text-muted {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #71717a;
+}
+@property --vds-exp-girok-text-disabled {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #52525b;
+}
+@property --vds-exp-girok-accent-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f59e0b;
+}
+@property --vds-exp-girok-accent-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-accent-dark {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d97706;
+}
+@property --vds-exp-girok-accent-border-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(245, 158, 11, 0.5);
+}
+@property --vds-exp-girok-accent-row-tint {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(245, 158, 11, 0.05);
+}
+@property --vds-exp-girok-accent-glow-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(245, 158, 11, 0.25);
+}
+@property --vds-exp-girok-status-income-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #34d399;
+}
+@property --vds-exp-girok-status-income-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #10b981;
+}
+@property --vds-exp-girok-status-expense-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #fb7185;
+}
+@property --vds-exp-girok-status-expense-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f43f5e;
+}
+@property --vds-exp-girok-status-sell-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #60a5fa;
+}
+@property --vds-exp-girok-status-sell-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3b82f6;
+}
+@property --vds-exp-girok-status-sell-deep {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2563eb;
+}
+@property --vds-exp-girok-finance-up {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.17 28);
+}
+@property --vds-exp-girok-finance-down {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(47% 0.11 255);
+}
+@property --vds-exp-girok-finance-flat {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(44% 0.015 82);
+}
+@property --vds-exp-girok-market-up {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.17 28);
+}
+@property --vds-exp-girok-market-down {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(47% 0.11 255);
+}
+@property --vds-exp-girok-loan-priority {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(64.5% 0.2154 16.44 / 0.2);
+}
+@property --vds-exp-girok-icon-tile-info {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(58.54% 0.2041 277.12 / 0.1);
+}
+@property --vds-exp-girok-icon-tile-success {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(69.59% 0.1491 162.48 / 0.1);
+}
+@property --vds-exp-girok-icon-tile-warning {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(76.86% 0.1647 70.08 / 0.1);
+}
+@property --vds-exp-girok-icon-tile-danger {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(64.5% 0.2154 16.44 / 0.1);
+}
+@property --vds-exp-girok-bg-segmented-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.96% 0.0226 84.38);
+}
+@property --vds-exp-girok-redesign-shell-frame-surface {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.91% 0.0064 91.69);
+}
+@property --vds-exp-girok-redesign-shell-content-surface {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.47% 0.0045 84.57);
+}
+@property --vds-exp-girok-redesign-surface-screen-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.91% 0.0064 91.69);
+}
+@property --vds-exp-girok-redesign-surface-app-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.47% 0.0045 84.57);
+}
+@property --vds-exp-girok-redesign-surface-invest-header {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0D0C0A;
+}
+@property --vds-exp-girok-redesign-surface-card {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(21.79% 0.0117 91.77);
+}
+@property --vds-exp-girok-redesign-surface-card-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(21.79% 0.0117 91.77);
+}
+@property --vds-exp-girok-redesign-surface-sheet-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #161410;
+}
+@property --vds-exp-girok-redesign-surface-segment-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #1C1A14;
+}
+@property --vds-exp-girok-redesign-surface-control-subtle {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-redesign-surface-control-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2E281C;
+}
+@property --vds-exp-girok-redesign-surface-row-hover-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(39, 39, 42, 0.5);
+}
+@property --vds-exp-girok-redesign-surface-backdrop-medium {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(0, 0, 0, 0.8);
+}
+@property --vds-exp-girok-redesign-surface-backdrop-deep {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(0, 0, 0, 0.85);
+}
+@property --vds-exp-girok-redesign-surface-backdrop-blur {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(0, 0, 0, 0.6);
+}
+@property --vds-exp-girok-redesign-surface-toolbar {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(20.95% 0.01 88.8);
+}
+@property --vds-exp-girok-redesign-surface-card-subtle {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-redesign-surface-scrim-40 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(0% 0 0 / 0.4);
+}
+@property --vds-exp-girok-redesign-border-default {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.41% 0.017 86.87);
+}
+@property --vds-exp-girok-redesign-border-card-subtle {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(24.41% 0.0152 89.92);
+}
+@property --vds-exp-girok-redesign-border-card-emphasis {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(32.45% 0.024 82.83);
+}
+@property --vds-exp-girok-redesign-border-control {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.41% 0.017 86.87);
+}
+@property --vds-exp-girok-redesign-border-modal-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(32.45% 0.024 82.83);
+}
+@property --vds-exp-girok-redesign-border-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(36.9% 0.0321 81.99);
+}
+@property --vds-exp-girok-redesign-border-control-alpha-80 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.41% 0.017 86.87 / 0.8);
+}
+@property --vds-exp-girok-redesign-border-control-alpha-60 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.41% 0.017 86.87 / 0.6);
+}
+@property --vds-exp-girok-redesign-border-neutral-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #27272a;
+}
+@property --vds-exp-girok-redesign-border-neutral-stronger {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3f3f46;
+}
+@property --vds-exp-girok-redesign-border-neutral-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(39, 39, 42, 0.8);
+}
+@property --vds-exp-girok-redesign-border-divider-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(39, 39, 42, 0.4);
+}
+@property --vds-exp-girok-redesign-text-primary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ffffff;
+}
+@property --vds-exp-girok-redesign-text-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f4f4f5;
+}
+@property --vds-exp-girok-redesign-text-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #e4e4e7;
+}
+@property --vds-exp-girok-redesign-text-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d4d4d8;
+}
+@property --vds-exp-girok-redesign-text-secondary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #a1a1aa;
+}
+@property --vds-exp-girok-redesign-text-muted {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #71717a;
+}
+@property --vds-exp-girok-redesign-text-disabled {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #52525b;
+}
+@property --vds-exp-girok-redesign-accent-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f59e0b;
+}
+@property --vds-exp-girok-redesign-accent-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-redesign-accent-dark {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d97706;
+}
+@property --vds-exp-girok-redesign-accent-border-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(245, 158, 11, 0.5);
+}
+@property --vds-exp-girok-redesign-accent-row-tint {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(245, 158, 11, 0.05);
+}
+@property --vds-exp-girok-redesign-accent-glow-soft {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(245, 158, 11, 0.25);
+}
+@property --vds-exp-girok-redesign-status-income-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #34d399;
+}
+@property --vds-exp-girok-redesign-status-income-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #10b981;
+}
+@property --vds-exp-girok-redesign-status-expense-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #fb7185;
+}
+@property --vds-exp-girok-redesign-status-expense-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f43f5e;
+}
+@property --vds-exp-girok-redesign-status-sell-light {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #60a5fa;
+}
+@property --vds-exp-girok-redesign-status-sell-base {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3b82f6;
+}
+@property --vds-exp-girok-redesign-status-sell-deep {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2563eb;
+}
+@property --vds-exp-girok-redesign-category-palette-rose {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #fb7185;
+}
+@property --vds-exp-girok-redesign-category-palette-amber {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f59e0b;
+}
+@property --vds-exp-girok-redesign-category-palette-emerald {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #34d399;
+}
+@property --vds-exp-girok-redesign-category-palette-blue {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #60a5fa;
+}
+@property --vds-exp-girok-redesign-category-palette-purple {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.4% 0.137 304.8);
+}
+@property --vds-exp-girok-redesign-category-palette-teal {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(79.6% 0.116 190.8);
+}
+@property --vds-exp-girok-redesign-category-palette-pink {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(75.5% 0.166 353.2);
+}
+@property --vds-exp-girok-redesign-category-palette-slate {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(72.3% 0.033 250.1);
+}
+@property --vds-exp-girok-redesign-nav-tab-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-redesign-nav-bottom-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(76.86% 0.1647 70.08);
+}
+@property --vds-exp-girok-redesign-nav-bottom-inactive {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.18% 0.0129 286.07);
+}
+@property --vds-exp-girok-redesign-nav-tab-underline-glow {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-nav-tabunderlineglow {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-wordmark-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-wordmark-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 800;
+}
+@property --vds-exp-girok-redesign-wordmark-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l1-font-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l1-padding-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l1-padding-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l1-min-width {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l1-scroll-padding-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l1-underline-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l1-weight-active {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 600;
+}
+@property --vds-exp-girok-redesign-tab-l1-weight-inactive {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 600;
+}
+@property --vds-exp-girok-redesign-tab-l1-underline-height {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l1-underline-glow {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l2-font-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l2-padding {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l2-radius {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l2-cell-radius {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-tab-l2-cell-padding {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-stats-cell-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-redesign-stats-divider-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(27.39% 0.0055 286.03);
+}
+@property --vds-exp-girok-redesign-stats-label-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-stats-value-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-stats-value-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 600;
+}
+@property --vds-exp-girok-redesign-stats-radius {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-stats-cell-padding {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-stats-value-margin-top {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-stats-income-text {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(69.59% 0.1491 162.48);
+}
+@property --vds-exp-girok-redesign-stats-expense-text {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.92% 0.169 13.43);
+}
+@property --vds-exp-girok-redesign-chart-top-rank-fill {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(77.29% 0.1535 163.22);
+}
+@property --vds-exp-girok-redesign-chart-rank-4-fill {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(68.01% 0.1583 276.93);
+}
+@property --vds-exp-girok-redesign-chart-rank-5-fill {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(72.17% 0.1767 305.5);
+}
+@property --vds-exp-girok-redesign-toggle-expense-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(64.5% 0.2154 16.44);
+}
+@property --vds-exp-girok-redesign-toggle-income-active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(69.59% 0.1491 162.48);
+}
+@property --vds-exp-girok-redesign-toggle-incomeactive {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(69.59% 0.1491 162.48);
+}
+@property --vds-exp-girok-redesign-toggle-active-foreground {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.91% 0.0064 91.69);
+}
+@property --vds-exp-girok-redesign-toggle-activeforeground {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(15.91% 0.0064 91.69);
+}
+@property --vds-exp-girok-redesign-toggle-active-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2E281C;
+}
+@property --vds-exp-girok-redesign-calendar-cell-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-calendar-cell-min-height {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-calendar-weekday-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-calendar-weekday-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 700;
+}
+@property --vds-exp-girok-redesign-calendar-number-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-calendar-number-weight {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 700;
+}
+@property --vds-exp-girok-redesign-calendar-dot-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-calendar-dot-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-redesign-calendar-dot-gap {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-calendar-weekday-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.02 240);
+}
+@property --vds-exp-girok-redesign-calendar-weekdays-margin-top {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-calendar-weekdays-margin-bottom {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-calendar-weekend-sat {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.37% 0.1434 254.62);
+}
+@property --vds-exp-girok-redesign-calendar-weekend-sun {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.92% 0.169 13.43);
+}
+@property --vds-exp-girok-redesign-calendar-selected-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2E281C;
+}
+@property --vds-exp-girok-redesign-calendar-selected-fg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-redesign-calendar-selected-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(36.9% 0.0321 81.99);
+}
+@property --vds-exp-girok-redesign-calendar-today-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(26.9% 0.026 76);
+}
+@property --vds-exp-girok-redesign-calendar-today-fg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-redesign-calendar-today-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(37.5% 0.04 77);
+}
+@property --vds-exp-girok-redesign-calendar-row-gap {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-bottomsheet-height-daily {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-bottomsheet-radius-top {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1.5rem;
+}
+@property --vds-exp-girok-redesign-bottomsheet-handle-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(37.11% 0.0115 285.95);
+}
+@property --vds-exp-girok-redesign-icon-info-strong {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(68.01% 0.1583 276.93);
+}
+@property --vds-exp-girok-redesign-radius-device-frame {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 55px;
+}
+@property --vds-exp-girok-redesign-radius-sheet {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 32px;
+}
+@property --vds-exp-girok-redesign-radius-modal {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 28px;
+}
+@property --vds-exp-girok-redesign-radius-large-card {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1.5rem;
+}
+@property --vds-exp-girok-redesign-radius-medium-card {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1rem;
+}
+@property --vds-exp-girok-redesign-radius-card-base {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.75rem;
+}
+@property --vds-exp-girok-redesign-radius-inner-control {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.5rem;
+}
+@property --vds-exp-girok-redesign-radius-small-chip {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 6px;
+}
+@property --vds-exp-girok-redesign-radius-xs {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.25rem;
+}
+@property --vds-exp-girok-redesign-radius-round {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 9999px;
+}
+@property --vds-exp-girok-redesign-font-family-display {
+  syntax: "*";
+  inherits: true;
+}
+@property --vds-exp-girok-redesign-font-size-caption {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 10px;
+}
+@property --vds-exp-girok-redesign-font-size-micro {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 11px;
+}
+@property --vds-exp-girok-redesign-font-size-body-sm {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 13px;
+}
+@property --vds-exp-girok-redesign-font-size-menu {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 15px;
+}
+@property --vds-exp-girok-redesign-shadow-glow-bottom-nav {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-shadow-glow-income {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-shadow-glow-modal-soft {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-shadow-glow-expense-soft {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-shadow-glow-info-soft {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-shadow-glow-warning-chart {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-shadow-glow-warning-hero {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-shadow-glow-success-hero {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-pill-success-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(16, 185, 129, 0.2);
+}
+@property --vds-exp-girok-redesign-pill-expense-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(244, 63, 94, 0.1);
+}
+@property --vds-exp-girok-redesign-pill-expense-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(244, 63, 94, 0.2);
+}
+@property --vds-exp-girok-redesign-pill-info-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(59, 130, 246, 0.1);
+}
+@property --vds-exp-girok-redesign-pill-sell-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(59, 130, 246, 0.1);
+}
+@property --vds-exp-girok-redesign-pill-sell-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(59, 130, 246, 0.2);
+}
+@property --vds-exp-girok-redesign-pill-success-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(16, 185, 129, 0.1);
+}
+@property --vds-exp-girok-redesign-pill-indigo-tile-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(99, 102, 241, 0.1);
+}
+@property --vds-exp-girok-redesign-selection-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(245, 158, 11, 0.2);
+}
+@property --vds-exp-girok-redesign-transition-default {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 150ms;
+}
+@property --vds-exp-girok-redesign-transition-slow {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 500ms;
+}
+@property --vds-exp-girok-redesign-transition-slower {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 700ms;
+}
+@property --vds-exp-girok-redesign-press-scale-default {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.95;
+}
+@property --vds-exp-girok-redesign-press-scale-soft {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.98;
+}
+@property --vds-exp-girok-redesign-progress-track-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(18.31% 0.0085 84.57);
+}
+@property --vds-exp-girok-redesign-progress-height-sm {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 4px;
+}
+@property --vds-exp-girok-redesign-progress-height-md {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 6px;
+}
+@property --vds-exp-girok-redesign-progress-height-lg {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 10px;
+}
+@property --vds-exp-girok-redesign-progress-hero-fill {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-progress-challenge-bg {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-progress-quick-action-emphasis {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-girok-redesign-stock-up {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(73.3% 0.1091 26.53);
+}
+@property --vds-exp-girok-redesign-stock-down {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(71.37% 0.1434 254.62);
+}
+@property --vds-exp-girok-redesign-stock-flat {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.02 240);
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 36px;
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-bg-indigo {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(99, 102, 241, 0.1);
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-fg-indigo {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(68.01% 0.1583 276.93);
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-bg-emerald {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(16, 185, 129, 0.1);
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-fg-emerald {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.171 145);
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-bg-amber {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d97706;
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-fg-amber {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(83.69% 0.1644 84.43);
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-bg-rose {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(244, 63, 94, 0.1);
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-fg-rose {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(50% 0.2 25);
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-bg-zinc {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2E281C;
+}
+@property --vds-exp-girok-redesign-settings-row-icon-tile-fg-zinc {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(12% 0.012 240);
+}
+@property --vds-exp-glass-blur-md {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 6px;
+}
+@property --vds-exp-glass-elevation-floating {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-motion-duration-fast {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 100ms;
+}
+@property --vds-exp-motion-duration-base {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 200ms;
+}
+@property --vds-exp-motion-easing-standard {
+  syntax: "*";
+  inherits: false;
+}
+@property --vds-exp-motion-easing-decelerate {
+  syntax: "*";
+  inherits: false;
 }

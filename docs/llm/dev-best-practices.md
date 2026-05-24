@@ -46,6 +46,14 @@ reference so refactors don't re-derive standards each time.
 - **Dead code**: Knip (production mode) baseline =
   `.add/refactor-2026-baseline.md`; remove unused file/export/dep;
   document survivors with reason.
+- **Canonical component docs**: prose lives in `docs/llm/components/*.md`,
+  API tables and Capability Matrix are CEM-backed and regenerated from
+  `packages/design-elements/dist/custom-elements.json`. Do not hand-edit
+  marker regions. Lit custom elements use prose + CEM-backed API tables;
+  React-only composite pages use prose-only + hand-written API tables
+  because no CEM declaration exists.
+- **Storybook MDX**: Storybook 9 MDX integration is optional. Canonical
+  docs policy does not depend on Storybook presence.
 
 ## Invariant (every refactor batch)
 

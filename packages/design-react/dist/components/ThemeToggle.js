@@ -1,12 +1,12 @@
 import { jsx as o, jsxs as m } from "react/jsx-runtime";
 import * as f from "react";
-const a = ["auto", "light", "dark"], y = { auto: "Auto", light: "Light", dark: "Dark" }, b = { auto: "◐", light: "☀", dark: "☾" };
-function k(n, s) {
-  const t = (a.indexOf(n) + s + a.length) % a.length;
-  return a[t] ?? "auto";
+const n = ["auto", "light", "dark"], y = { auto: "Auto", light: "Light", dark: "Dark" }, b = { auto: "◐", light: "☀", dark: "☾" };
+function k(a, s) {
+  const t = (n.indexOf(a) + s + n.length) % n.length;
+  return n[t] ?? "auto";
 }
 function w({
-  value: n,
+  value: a,
   onChange: s,
   compact: i = !1,
   size: t = "md",
@@ -33,7 +33,7 @@ function w({
   function p(r) {
     if (r.key !== "ArrowLeft" && r.key !== "ArrowRight") return;
     r.preventDefault();
-    const e = r.key === "ArrowLeft" ? -1 : 1, d = k(n, e);
+    const e = r.key === "ArrowLeft" ? -1 : 1, d = k(a, e);
     s(d), queueMicrotask(() => l.current[d]?.focus());
   }
   return /* @__PURE__ */ o(
@@ -52,8 +52,8 @@ function w({
         background: "var(--vds-theme-bg-card)",
         border: "var(--vds-border-width-sm, thin) solid var(--vds-theme-border-default)"
       },
-      children: a.map((r) => {
-        const e = n === r;
+      children: n.map((r) => {
+        const e = a === r;
         return /* @__PURE__ */ m(
           "button",
           {
@@ -68,7 +68,7 @@ function w({
             style: {
               ...h,
               background: e ? "var(--vds-theme-primary)" : "transparent",
-              color: e ? "var(--vds-theme-primary-fg)" : "var(--vds-theme-text-primary)",
+              color: e ? "var(--vds-theme-primary-foreground)" : "var(--vds-theme-text-primary)",
               borderColor: e ? "var(--vds-theme-primary)" : "var(--vds-theme-border-default)"
             },
             children: [

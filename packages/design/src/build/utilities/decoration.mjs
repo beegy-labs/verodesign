@@ -39,6 +39,18 @@ export function generateDecoration(flat) {
       const slot = t.path[2];
       rules.push(`.vds-divide-${slot} > * + * { border-color: var(${tokenPathToCssVar(t.path)}); }`);
     }
+    if (t.path[1] === 'status' && t.path.length === 3) {
+      const slot = t.path[2];
+      rules.push(`.vds-divide-${slot} > * + * { border-color: var(${tokenPathToCssVar(t.path)}); }`);
+    }
+    if (t.path[1] === 'status' && t.path.length === 4 && t.path[3] === 'foreground') {
+      const slot = `${t.path[2]}-fg`;
+      rules.push(`.vds-divide-${slot} > * + * { border-color: var(${tokenPathToCssVar(t.path)}); }`);
+    }
+    if ((t.path[1] === 'primary' || t.path[1] === 'accent' || t.path[1] === 'destructive' || t.path[1] === 'cancelled') && t.path.length === 3 && t.path[2] === 'foreground') {
+      const slot = `${t.path[1]}-fg`;
+      rules.push(`.vds-divide-${slot} > * + * { border-color: var(${tokenPathToCssVar(t.path)}); }`);
+    }
     if (t.path.length === 2) {
       const slot = t.path[1];
       rules.push(`.vds-divide-${slot} > * + * { border-color: var(${tokenPathToCssVar(t.path)}); }`);

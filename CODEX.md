@@ -1,134 +1,130 @@
 # CODEX.md
 
-> Codex entry point — derived from [AGENTS.md](AGENTS.md) | **Last Updated**: 2026-05-10
+> Manually synced from [AGENTS.md](AGENTS.md) — DO NOT diverge body. Edit AGENTS.md, then re-sync. Future: CI automation. **Last reviewed**: 2026-05-24.
 
-## Role
+<!-- ────────────────────────────────────────────────────────────── -->
+<!-- BEGIN AGENTS.md body (verbatim sync)                            -->
 
-**Implementer.** Codex executes the token/theme/pattern change plan that Claude has already approved and written. Codex does not author scopes, decide naming, debate pattern graduation, or update `.ai/` / `docs/llm/`. See [AGENTS.md#agent-role-split](AGENTS.md#agent-role-split).
+## Project
 
-| Codex Does | Codex Does NOT |
-| ---------- | -------------- |
-| Read `.specs/verodesign/{scope}.md` | Expand scope beyond what spec lists |
-| Edit DTCG JSON in `tokens/`, `themes/` | Author or rewrite `.specs/verodesign/*` |
-| Run `pnpm build` (Style Dictionary) + contrast checks | Edit `.ai/` or `docs/llm/` (Claude only) |
-| Retry up to 3× on build / contrast failure | Pick semantic names on its own |
-| Return compressed summary (≤400 tokens, no CSS/diffs) | Decide pattern graduation (experimental → canonical) |
-| Flag scope deviations explicitly | Silently expand into adjacent token files |
+**verodesign** — Verobee Design System (VDS). W3C DTCG JSON tokens + Style Dictionary 4.x pipeline producing CSS variables, utility classes, and TypeScript types for vero* product family. Consumer of the platform-gitops organization standard.
 
-## Start
+## Core Values (non-negotiable — every decision must respect both)
 
-Always read in this order before touching tokens:
-
-1. `.specs/verodesign/{scope}.md` — change boundary (approved by human)
-2. `.add/<workflow>.md` — workflow Claude pointed to (token-add, theme-add, pattern-intake, etc.)
-3. `.add/codex-delegate.md` — response format / review pipeline contract
-4. `docs/llm/decisions.md` — master architectural decisions
-5. `.ai/README.md` — entry overview
-6. (For pattern work) `docs/llm/research/llm-knowledge-gaps.md` — when to defer to web search
-
-If `.specs/verodesign/{scope}.md` does not exist, **stop and return** `scope unclear`. Do not improvise naming.
-
-## Frameworks
-
-| Directory | Framework | Codex's Job |
-| --------- | --------- | ----------- |
-| `.ai/` + `docs/llm/` | CDD | **Read-only**. Treat as constraints. Never edit. |
-| `.specs/` | SDD | Read scope; mark task progress only |
-| `.add/` | ADD | Read the workflow Claude pointed to |
-| `tokens/`, `themes/` | Implementation surface | Editable per scope |
-
-## Verodesign Context
-
-| Layer | Tech |
-| ----- | ---- |
-| Token format | W3C DTCG JSON |
-| Build pipeline | Style Dictionary 4.x |
-| Color space | OKLCH primary, sRGB hex fallback |
-| Tier model | 3-tier (primitive / semantic / component-deferred) |
-| Theme | Orthogonal binding layer (`tokens/themes/{name}.json`) |
-| Cascade | `@layer reset, base, vds-tokens, vds-utilities, components, overrides` |
-| Module | ESM only |
-
-| Consumer | Theme | Import |
-| -------- | ----- | ------ |
-| veronex/web | veronex | `@verobee/design/css/themes/veronex.css` |
-| verobase/web/* | verobase | `@verobee/design/css/themes/verobase.css` |
-| dreamstock | (default + experimental) | `@verobee/utilities/css/full.css` + `vds-exp-dreamstock-*` |
+- **Token optimization** — hallucination prevention + consistency + re-work prevention + minimum-hop retrieval + cost reduction. SSOT: [docs/llm/policies/cdd.md § Core Values](docs/llm/policies/cdd.md).
+- **LLM-tool-neutrality** — any underlying coding agent must be swappable AND able to run concurrently. Body of this file is tool-neutral; per-tool behavior lives in each variant's addendum only. SSOT: [docs/llm/policies/tool-portability.md](docs/llm/policies/tool-portability.md).
+- **Fail-Fast / STOP / Escalate** — enforceable hard caps (max attempts, max wall-clock, mandatory escalation for destructive actions or unverified preconditions). SSOT: [docs/llm/policies/cdd.md § Fail-Fast](docs/llm/policies/cdd.md).
 
 ## Critical Rules
 
-| Rule | Detail |
-| ---- | ------ |
-| Spec-first | No token / theme edits without an active `.specs/verodesign/{scope}.md` |
-| Stay in scope | Edit only what spec lists; flag deviations |
-| CDD read-only | Never modify `.ai/`, `docs/llm/`, `docs/en/`, `docs/kr/` |
-| Token tier | Strict 3-tier; never skip; component tier deferred to `@verobee/design-react` |
-| Naming policy | Semantic uses purpose not appearance; platform-agnostic. **Naming itself is Claude's call** — Codex implements the name spec gives |
-| Hardcoding | Forbidden in tokens — every value either OKLCH (primitive) or `{path}` reference |
-| Contrast | AA 4.5:1 mandatory for all text; AAA 7:1 mandatory for primary tier. Build aborts on violation |
-| Multi-theme | Brand-specific changes go in `tokens/themes/{name}.json` only; semantic schema stays uniform |
-| SemVer | Token rename = major; value change = minor; addition = patch |
-| Prefix | CSS `--vds-*`, utility classes `vds-*` |
-| No AI/LLM mention in commits or PR text | Project policy |
+- **Response style** — every non-code answer follows BLUF + 3-section briefing (`목적 / 변경범위 / 이펙트`). Elaborate only when asked. SSOT: [docs/llm/policies/response-style-policy.md](docs/llm/policies/response-style-policy.md).
+- **Image source** — never pin direct upstream URLs as the final pulled image. Use upstream form, let the in-cluster mirror + Kyverno rewrite do their job. SSOT: [docs/llm/policies/image-source-policy.md](docs/llm/policies/image-source-policy.md).
+- **Workload placement** — follow the hub-spoke decision tree. L2 operators on home-KR workers. L1/control-plane on masters. DB on the dedicated DB node. SSOT: [docs/llm/policies/workload-placement.md](docs/llm/policies/workload-placement.md).
+- **Deployment flow** — strictly L0 (Ansible) → L1 (Terraform) → L2 (ArgoCD). No reverse deps. L2 must never affect L1/L0. SSOT: [docs/llm/policies/deployment-flow.md](docs/llm/policies/deployment-flow.md).
+- **Host-netns precondition** — home-KR workers need `k8s-domain-pin` `/etc/hosts` entries before L2 image pulls work. SSOT: [docs/llm/policies/host-netns-precondition.md](docs/llm/policies/host-netns-precondition.md).
+- **Secrets** — never commit to git. OpenBao (L1) + ansible-vault (L0) + ExternalSecrets (L2) only. Local operator working copy: `.secrets/` (gitignored). SSOT: [docs/llm/policies/secrets-management.md](docs/llm/policies/secrets-management.md).
+- **GitOps** — git is truth. Never `kubectl apply` for ArgoCD-managed resources.
+- **Language** — code, docs, commits in English. (Conversation may be Korean.)
+- **Commits** — no AI attribution lines, no "Generated with", no Co-Authored-By bots.
 
-## QA Gate (run before returning summary)
+## Quick Start (read in order)
 
-```bash
-pnpm build              # Style Dictionary pipeline; aborts on contrast violation
-pnpm test               # token + naming + tier consistency tests
-# Pattern work: also run pattern-related lint / catalog check
+1. [.ai/README.md](.ai/README.md) — Tier-1 keyword index (policies + skills)
+2. [.agents/skills/README.md](.agents/skills/README.md) — Tier-1p skill catalog (book-style TOC)
+3. [docs/llm/policies/documentation-tiers.md](docs/llm/policies/documentation-tiers.md) — what every doc tier means
+
+## Methodology — CDD / SDD / ADD
+
+| Policy | Purpose | SSOT |
+|--------|-----------------------------------------------|------------------------------------------------------|
+| CDD | Context-Driven Development (HOW patterns) | [docs/llm/policies/cdd.md](docs/llm/policies/cdd.md) |
+| SDD | Spec-Driven Development (WHAT to build) | [docs/llm/policies/sdd.md](docs/llm/policies/sdd.md) |
+| ADD | Agent-Driven Development (DO the work) | [docs/llm/policies/add.md](docs/llm/policies/add.md) |
+
+Flow: Human approves SDD scope → LLM generates SDD tasks → LLM executes ADD reading CDD patterns → LLM updates CDD after completion.
+
+## Documentation Tiers
+
+| Tier | Path | Audience | Role | Limit | Editable |
+|------|---------------------|----------------|-------------------------------|-------------|-----------------|
+| 0 | `AGENTS.md` (root) | All LLM tools | Router → Tier-1 | ≤150 lines | Yes (SSOT) |
+| 1 | `.ai/` | LLM | Keyword index / TOC | ≤50/file | Yes |
+| 1p | `.agents/skills/` | LLM | Skills (agentskills.io spec) | ≤200/file | Yes |
+| 2 | `docs/llm/` | LLM | Deep SSOT | (split >300) | Yes |
+| 3 | `docs/en/` | Human (en) | Generated site | — | No (generated) |
+| 4 | `docs/kr/` | Human (ko) | Translated site | — | No (generated) |
+
+Definitions: [docs/llm/policies/documentation-tiers.md](docs/llm/policies/documentation-tiers.md).
+
+## Directory Layout
+
+| Directory | Purpose |
+|--------------------------|--------------------------------------------------------------------------------------|
+| `packages/` | pnpm workspaces — `@verobee/design` tokens, `@verobee/design-react`, `@verobee/utilities`, theme packages |
+| `docs/` | Tier-2 LLM SSOT (`docs/llm/`), policies, decisions, build pipeline notes |
+| `.ai/` | Tier-1 LLM keyword index |
+| `.agents/skills/` | Tier-1p skill canonical (agentskills.io spec) — per-tool symlinks in `.claude/skills/` / `.codex/skills/` / `.gemini/skills/` / `.cursor/skills/` |
+| `.specs/` | SDD 3-layer specs |
+| `.add/` | ADD workflow prompts |
+| `scripts/` | Build / sync / portability scripts |
+
+## Commit Format
+
+```
+type(scope): short imperative description
+
+Types: feat, fix, chore, docs, refactor, test
 ```
 
-Retry up to 3 cycles on failure. If contrast still fails after 3 retries, return `FIX_REQUIRED` with offending pairs (≤5 pairs).
+## Sync Protocol — tool variants
 
-## Response Format (back to Claude)
+Currently **manual sync** (future scope: CI generation). When this file changes:
 
-Hard cap **≤400 tokens**. Return only:
+1. Copy AGENTS.md body verbatim into each per-tool variant above its `## <Tool> Addendum` block.
+2. Each variant's addendum carries ONLY that tool's specifics (per-tool slash commands, native skill names, vendor-specific tool integrations).
+3. Verify body is tool-neutral and run the anti-drift checklist: [docs/llm/policies/anti-drift-checklist.md](docs/llm/policies/anti-drift-checklist.md) — it specifies the exact grep pattern, kept out of this file to avoid self-match.
 
-- `changed files`: one line each → `path — one-sentence intent`
-- `token delta`: `added: N / modified: N / deprecated: N` (counts only, names if ≤5)
-- `contrast result per theme`: `theme-name: pass` or `theme-name: fail (5 pairs max)`
-- `consumer impact`: which downstreams need a bump (verobase / veronex / dreamstock)
-- `scope deviations`: any spec item not implementable as written
-- `verdict` (if you ran a fresh-eyes review): `APPROVE` or `FIX_REQUIRED`
+## Critical SSOT links (the policy core)
 
-Forbidden: CSS blocks, full token JSON, diffs, build logs.
+- [cdd.md](docs/llm/policies/cdd.md) — Core Values + Fail-Fast (the source mandate)
+- [sdd.md](docs/llm/policies/sdd.md) — Spec-Driven Development (WHAT)
+- [add.md](docs/llm/policies/add.md) — Agent-Driven Development (DO)
+- [tool-portability.md](docs/llm/policies/tool-portability.md) — LLM-tool-neutrality + anti-patterns + swap-test
+- [organization-standard.md](docs/llm/policies/organization-standard.md) — platform-gitops as Tier-0 SSOT for the organization (v1.0.0)
+- [distribution.md](docs/llm/policies/distribution.md) — manual workflow_dispatch + semver release to `agentic-dev-protocol`
+- [response-style-policy.md](docs/llm/policies/response-style-policy.md) — answer brevity
+- [token-optimization.md](docs/llm/policies/token-optimization.md) — cache hygiene + retrieval discipline
+- [documentation-tiers.md](docs/llm/policies/documentation-tiers.md) — doc tier roles
+- [anti-drift-checklist.md](docs/llm/policies/anti-drift-checklist.md) — edit-time verification
+- [secrets-management.md](docs/llm/policies/secrets-management.md) — `.secrets/` operator inbox + canonical stores
 
-## Self-Review Checklist (before returning)
+Recent decisions: [docs/llm/decisions/](docs/llm/decisions/). Skills: [.agents/skills/README.md](.agents/skills/README.md).
+<!-- END AGENTS.md body                                              -->
+<!-- ────────────────────────────────────────────────────────────── -->
 
-| Check | Required |
-| ----- | -------- |
-| All spec items closed or flagged | ✓ |
-| `pnpm build` zero contrast violations | ✓ |
-| Tier respected (primitive / semantic / component-deferred) | ✓ |
-| Theme variants symmetric (added in light + dark, etc.) | ✓ |
-| No hardcoded hex outside primitives | ✓ |
-| No emoji or decorative unicode in token docs | ✓ |
-| Consumer impact noted if export surface changed | ✓ |
-| No AI/LLM mention in commit message | ✓ |
+## Codex Addendum
 
-## Escalation
+OpenAI-Codex-CLI-specific behavior on top of the shared AGENTS.md policy.
 
-Return to Claude (do not improvise) when:
+### Response style (reinforces AGENTS body)
 
-- `.specs/verodesign/{scope}.md` is missing or contradicts itself
-- A naming choice is ambiguous (semantic role unclear)
-- Contrast cannot be satisfied without trade-off across themes
-- Pattern graduation is implied but not explicit
-- 3 retries still fail on the same gate
-- New primitive needed (token policy decision)
+- BLUF + 3-section briefing (`목적 / 변경범위 / 이펙트`) is the default for non-code responses, per [response-style-policy.md](docs/llm/policies/response-style-policy.md).
+- Avoid lengthy preamble. State result first, evidence on request.
 
-## Compaction & Internal Subagents (2026)
+### Tool conventions
 
-| Tactic | When |
-| ------ | ---- |
-| `/compact` | Long thread before a major step — preserves intent, drops verbose history |
-| Internal Codex subagent | Bounded exploration, running test suites, triage — keeps verbose output out of the main thread |
-| Plan mode (`/plan`) | Complex tasks — produces an execution plan you can review without modifying code |
-| One thread per coherent unit | Fork only when work truly branches; do not multiplex |
+- Codex CLI shell commands run in the current working directory; prefer absolute paths in scripts to avoid surprises across sessions.
+- When invoking other CLI tools (`kubectl`, `helm`, `terraform`, `git`), batch related read-only checks into a single command with `&&` or `;` to reduce round-trips.
 
-Subagents are NOT automatically cheaper — heavy multi-agent flows can use 4–7× more tokens than a single thread. Only spawn one when isolating verbose output beats the spawn overhead.
+### Plan / multi-step work
 
-## Reference
+- Surface a 3-5 line plan before any multi-file edit. State files to change, in order.
+- Confirm before destructive git operations (`reset --hard`, force push, branch delete).
 
-Full delegation contract: [.add/codex-delegate.md](.add/codex-delegate.md).
+### Memory
+
+- Codex CLI does not have a persistent memory store akin to other tools — rely on `AGENTS.md`, `.ai/`, `.agents/skills/` for cross-session context. Record durable lessons as ADRs in `docs/llm/decisions/`.
+
+### Edits
+
+- Modify existing files in place. Avoid creating parallel `*.new.yaml` files; replace the original and let git track the diff.

@@ -52,3 +52,37 @@ jobs:
               exit 1
             fi
           fi
+
+  design-patterns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Audit DTCG tokens
+        run: pnpm --filter @verobee/design audit:tokens-dtcg
+
+      - name: Build design package
+        run: pnpm --filter @verobee/design build
+
+      - name: Audit pattern spacing
+        run: pnpm --filter @verobee/design audit:pattern-spacing
+
+      - name: Audit girok pattern files
+        run: pnpm --filter @verobee/design audit:pattern-files
+
+      - name: Verify girok pattern bundle outputs
+        run: |
+          test -f packages/design/dist/patterns/girok-app.css
+          test -f packages/design/dist/patterns/girok-app.min.css

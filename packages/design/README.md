@@ -8,9 +8,31 @@ Part of the [verodesign monorepo](../../README.md). For master decisions, see [`
 
 ```bash
 pnpm build       # generate dist/
+pnpm dev         # watch patterns/tokens and rebuild on change
 pnpm validate    # gates only (naming, slot parity, WCAG contrast)
+pnpm audit:tokens-dtcg # DTCG shape/reference audit
 pnpm rebuild     # clean + build
 ```
+
+## Token Writing Rules
+
+`tokens/{primitive,semantic,experimental,themes}/*.json` must stay DTCG-compliant: every leaf token uses `$value` + `$type`, `$type` must be a standard DTCG token type, `{path.to.token}` references must resolve without cycles, and `$description` is strongly recommended. Run `pnpm audit:tokens-dtcg` before commit when editing token JSON.
+
+`pnpm dev` watches `src/patterns/girok/**/*.css` and `tokens/**/*.json` with a 200ms debounce. Set `VERODESIGN_AUTO_SYNC_TARGETS=/abs/path/app-girok[:/abs/path/another-app]` to run `pnpm install --prefer-offline` in each target after a successful rebuild.
+
+## Girok Pattern CSS Rules
+
+`src/patterns/girok/*.css` is concatenated by `src/build/emit-static.mjs` inside one outer `@layer components { ... }`. Source files must stay layer-free.
+
+| Rule | Detail |
+| ---- | ------ |
+| Top-level at-rules | `@layer`, `@import`, `@charset`, `@namespace` forbidden |
+| Standard file shape | First top-level rule must be exactly 1 `@scope (...) { ... }` block |
+| Scope prefix | Use `@scope (.vds-pattern-girok-*)`; file-specific exceptions are linted explicitly |
+| Shared exceptions | `shared.css` may start with shared top-level rules such as `@keyframes` and shared selectors |
+| Noise | No top-level selectors or stray rules outside the allowed wrapper/exception set |
+
+Run `pnpm --filter @verobee/design audit:pattern-files` before commit when editing girok pattern CSS.
 
 ## Outputs (dist/)
 

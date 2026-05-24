@@ -1,71 +1,63 @@
 # Switch
 
-> Tag: `<vds-switch>` · Import: `@verobee/design-elements/components/switch` · React: `Switch` from `@verobee/design-react` · Pattern: WAI-ARIA AP 1.2 § Switch · Status: v0.2.0-alpha
-
-**Lookup**: switch, toggle, on/off, immediate.
+> Tag: `<vds-switch>` · React: `Switch` · Status: v0.2.0-alpha · APG pattern: Switch
 
 ## Purpose
-Two-state toggle with immediate effect (unlike checkbox which usually applies on submit).
+Immediate on/off control for settings and preferences.
 
-## When to use
-- Setting that takes effect immediately (e.g., "Dark mode", "Email notifications").
-- Boolean preference.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | A state change that takes effect immediately. |
+| Use | Binary preferences where “on/off” wording is clearer than checked/unchecked. |
+| Do not use | Multi-select forms submitted later; use Checkbox. |
+| Do not use | Mutually exclusive choices; use radio-group patterns. |
 
-## When NOT to use
-- Boolean form value submitted later → use `<vds-checkbox>`.
-- Tri-state → use `<vds-checkbox>` (supports `indeterminate`).
+## Design rationale
+Switch separates immediate-setting semantics from checkbox form semantics while still preserving FACE and validation support.
 
-## Anatomy
-```
-[ ●○ ]  label-slot
-  ↑
- track + thumb
-```
+## A11y narrative
+Implements APG switch behavior with `aria-checked`, keyboard toggling, and form-associated value submission.
 
-## Props
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `checked` | `boolean` | `false` | On/off state |
-| `disabled` | `boolean` | `false` | Disabled state |
-| `required` | `boolean` | `false` | Form validation |
-| `name` | `string` | — | Form name |
-| `value` | `string` | `"on"` | Form value when on |
-| `size` | `"sm"` \| `"md"` \| `"lg"` | `"md"` | Visual size |
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `change` | `{ checked: boolean }` | Fires on Space, Enter, click |
+<!-- CEM:START -->
+### `<vds-switch>`
 
-## A11y (WAI-ARIA AP 1.2 § Switch)
-- `role="switch"`.
-- `aria-checked` reflects `checked`.
-- Keyboard: Space and Enter both toggle.
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `checked` | `checked` | `boolean` | `false` |
+| `disabled` | `disabled` | `boolean` | `false` |
+| `required` | `required` | `boolean` | `false` |
+| `name` | `name` | `string | undefined` | — |
+| `value` | `value` | `string` | `on` |
+| `size` | `size` | `Size` | `md` |
 
-## Tokens consumed
-- `--vds-theme-{primary,border-default,bg-card,border-focus,text-primary}`
-- `--vds-spacing-2`, `--vds-font-{family-sans,size-{sm,base,lg}}`
-- `--vds-duration-fast`
+#### Slots
+None.
+
+#### Events
+| Name | Description |
+| ---- | ----------- |
+| `change` | { detail: { checked: boolean } } |
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
-### HTML
 ```html
-<vds-switch>Email notifications</vds-switch>
-<vds-switch checked size="lg">Dark mode</vds-switch>
+<vds-switch checked>Dark mode</vds-switch>
 ```
 
-### React
 ```tsx
 import { Switch } from '@verobee/design-react';
 
-<Switch
-  checked={dark}
-  onChange={(e) => setDark(e.detail.checked)}
->
-  Dark mode
-</Switch>
+<Switch checked={dark}>Dark mode</Switch>
 ```
 
-## Related
-[`<vds-checkbox>`](checkbox.md), [`<vds-label>`](label.md)

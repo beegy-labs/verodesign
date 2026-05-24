@@ -1,0 +1,54 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "position-card": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "position-card component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-position-card-scale))",
+          "$type": "dimension",
+          "$description": "position-card padding token."
+        },
+        "font-size-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-position-card-scale))",
+          "$type": "dimension",
+          "$description": "position-card font-size token."
+        },
+        "font-size-3": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-position-card-scale))",
+          "$type": "dimension",
+          "$description": "position-card font-size token."
+        },
+        "font-size-4": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-position-card-scale))",
+          "$type": "dimension",
+          "$description": "position-card font-size token."
+        },
+        "font-size-5": {
+          "$value": "calc(0.8125rem * var(--vds-exp-girok-position-card-scale))",
+          "$type": "dimension",
+          "$description": "position-card font-size token."
+        },
+        "font-size-6": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-position-card-scale))",
+          "$type": "dimension",
+          "$description": "position-card font-size token."
+        },
+        "font-size-7": {
+          "$value": "calc(10px * var(--vds-exp-girok-position-card-scale))",
+          "$type": "dimension",
+          "$description": "position-card font-size token."
+        },
+        "padding-8": {
+          "$value": "calc(0.125rem * var(--vds-exp-girok-position-card-scale)) calc(0.5rem * var(--vds-exp-girok-position-card-scale))",
+          "$type": "other",
+          "$description": "position-card padding token."
+        }
+      }
+    }
+  }
+}

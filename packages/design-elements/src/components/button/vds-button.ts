@@ -70,7 +70,7 @@ export class VdsButton extends VdsElement {
         font-size: var(--vds-type-role-body-size);
         min-height: calc(var(--vds-spacing-10));
         background: var(--vds-theme-primary);
-        color: var(--vds-theme-primary-fg);
+        color: var(--vds-theme-primary-foreground);
       }
 
       @media (pointer: coarse) {
@@ -109,7 +109,7 @@ export class VdsButton extends VdsElement {
 
       :host([tone="primary"][variant="solid"]) .button {
         background: var(--vds-theme-primary);
-        color: var(--vds-theme-primary-fg);
+        color: var(--vds-theme-primary-foreground);
       }
       :host([tone="primary"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-primary) 90%, black);
@@ -132,7 +132,7 @@ export class VdsButton extends VdsElement {
 
       :host([tone="accent"][variant="solid"]) .button {
         background: var(--vds-theme-accent);
-        color: var(--vds-theme-accent-fg);
+        color: var(--vds-theme-accent-foreground);
       }
       :host([tone="accent"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-accent) 90%, black);
@@ -150,8 +150,8 @@ export class VdsButton extends VdsElement {
       }
 
       :host([tone="neutral"][variant="solid"]) .button {
-        background: var(--vds-theme-neutral);
-        color: var(--vds-theme-neutral-fg);
+        background: var(--vds-theme-status-neutral);
+        color: var(--vds-theme-status-neutral-foreground);
       }
       :host([tone="neutral"][variant="soft"]) .button {
         background: var(--vds-theme-bg-muted);
@@ -171,7 +171,7 @@ export class VdsButton extends VdsElement {
 
       :host([tone="destructive"][variant="solid"]) .button {
         background: var(--vds-theme-destructive);
-        color: var(--vds-theme-destructive-fg);
+        color: var(--vds-theme-destructive-foreground);
       }
       :host([tone="destructive"][variant="solid"]:hover) .button {
         background: color-mix(in oklch, var(--vds-theme-destructive) 90%, black);

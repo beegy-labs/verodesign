@@ -1,15 +1,15 @@
 import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
-import { html as d } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { html as d } from "../../node_modules/.pnpm/lit-html@3.3.3/node_modules/lit-html/lit-html.js";
 import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
 import { property as t } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
 import { VdsElement as v } from "../../base/vds-element.js";
 import { css as p } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
-var c = Object.defineProperty, a = (r, i, n, h) => {
+var c = Object.defineProperty, s = (r, i, n, h) => {
   for (var e = void 0, o = r.length - 1, l; o >= 0; o--)
     (l = r[o]) && (e = l(i, n, e) || e);
   return e && c(i, n, e), e;
 };
-class s extends v {
+class a extends v {
   constructor() {
     super(...arguments), this.label = "", this.value = "", this.deltaTone = "neutral", this.tone = "default";
   }
@@ -46,8 +46,8 @@ class s extends v {
       line-height: var(--vds-type-role-metric-lineheight);
       font-variant-numeric: tabular-nums;
     }
-    :host([tone="success"]) .value { color: var(--vds-theme-success); }
-    :host([tone="warning"]) .value { color: var(--vds-theme-warning); }
+    :host([tone="success"]) .value { color: var(--vds-theme-status-success); }
+    :host([tone="warning"]) .value { color: var(--vds-theme-status-warning); }
     :host([tone="error"])   .value { color: var(--vds-theme-destructive); }
 
     .meta {
@@ -60,7 +60,7 @@ class s extends v {
       font-size: var(--vds-type-role-caption-size);
       font-weight: var(--vds-type-role-label-weight);
     }
-    :host([delta-tone="positive"]) .delta { color: var(--vds-theme-success); }
+    :host([delta-tone="positive"]) .delta { color: var(--vds-theme-status-success); }
     :host([delta-tone="negative"]) .delta { color: var(--vds-theme-destructive); }
     :host([delta-tone="neutral"])  .delta { color: var(--vds-theme-text-secondary); }
     .delta:empty { display: none; }
@@ -87,24 +87,24 @@ class s extends v {
     `;
   }
 }
-a([
+s([
   t({ type: String })
-], s.prototype, "label");
-a([
+], a.prototype, "label");
+s([
   t({ type: String })
-], s.prototype, "value");
-a([
+], a.prototype, "value");
+s([
   t({ type: String })
-], s.prototype, "delta");
-a([
+], a.prototype, "delta");
+s([
   t({ type: String })
-], s.prototype, "hint");
-a([
+], a.prototype, "hint");
+s([
   t({ type: String, reflect: !0, attribute: "delta-tone" })
-], s.prototype, "deltaTone");
-a([
+], a.prototype, "deltaTone");
+s([
   t({ type: String, reflect: !0 })
-], s.prototype, "tone");
+], a.prototype, "tone");
 export {
-  s as VdsStatTile
+  a as VdsStatTile
 };

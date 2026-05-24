@@ -1,0 +1,34 @@
+/* GIROK pattern: ledger-filter-tabs */
+@scope (.vds-pattern-girok-ledger-filter-tabs) {
+  :scope {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--vds-spacing-5);
+  }
+
+  .vds-pattern-girok-ledger-filter-tabs__btn {
+    position: relative;
+    padding-bottom: var(--vds-spacing-2);
+    border: 0;
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-ledger-filter-tabs-font-size-1);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.333333;
+    transition: color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  .vds-pattern-girok-ledger-filter-tabs__btn--active {
+    color: var(--vds-exp-girok-accent-light);
+  }
+
+  .vds-pattern-girok-ledger-filter-tabs__btn--active::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+    block-size: 3px;
+    background: var(--vds-exp-girok-accent-light);
+    border-radius: var(--vds-exp-girok-radius-round) var(--vds-exp-girok-radius-round) 0 0;
+  }
+}

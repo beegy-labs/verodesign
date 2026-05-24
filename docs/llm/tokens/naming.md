@@ -32,7 +32,7 @@ Format: `theme.<domain>.<role>[.<variant>]` — describes purpose, NEVER appeara
 | border | subtle, default, strong, focus |
 | primary | (root), foreground, ring |
 | destructive | (root), foreground |
-| status | success, error, warning, info, neutral (each with optional `-fg`) |
+| status | success, error, warning, info, neutral (each with optional `foreground`) |
 | accent | (project-specific within theme) |
 | chart | 1, 2, 3, 4, 5 |
 
@@ -54,6 +54,8 @@ Format: `theme.<domain>.<role>[.<variant>]` — describes purpose, NEVER appeara
 | Lowercase, dot-separated | DTCG convention; transforms cleanly to CSS variable |
 | One token per concept | Avoid `bg.page-light` and `bg.page-dark` — use mode switching |
 | Modes in file location, not name | Light/dark live in `themes/{name}-light.json` and `themes/{name}-dark.json`; semantic name unchanged |
+| Experimental tokens MUST live under `tokens/experimental/` | Never embed `exp.*` inside `tokens/themes/<brand>-<mode>.json` |
+| Experimental mode override = file split or `$extensions.verobee.modeOverride` | Prefer `tokens/experimental/<scope>-<mode>.json`; keep mode out of token name |
 
 ## Forbidden patterns
 
@@ -72,7 +74,8 @@ Format: `theme.<domain>.<role>[.<variant>]` — describes purpose, NEVER appeara
 | ---- | ------------ |
 | `theme.bg.page` | `--vds-theme-bg-page` |
 | `theme.text.primary` | `--vds-theme-text-primary` |
-| `theme.status.success.fg` | `--vds-theme-status-success-fg` |
+| `theme.status.success.foreground` | `--vds-theme-status-success-foreground` |
+| `theme.primary.foreground` | `--vds-theme-primary-foreground` |
 | `radius.md` | `--vds-radius-md` |
 | `color.slate.7` | `--vds-color-slate-7` (only emitted if `tailwind-plugin` consumer) |
 | `spacing.4` | `--vds-spacing-4` |

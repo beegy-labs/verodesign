@@ -57,6 +57,7 @@ Theme is orthogonal to tier (binding layer, not a tier).
 | Reference Claude/GPT/Copilot/AI/LLM in commits, PRs | Per AGENTS.md commit rule |
 | Use AAA-only or AA-only — neither alone is correct | Body=AA mandatory, primary=AAA mandatory |
 | Skip OKLCH source value | Source values stored as OKLCH (hex fallback at output) |
+| Pattern emits margin or outer padding | Internal padding only; consumer wrap owns outer spacing |
 
 ## ALWAYS
 
@@ -72,6 +73,7 @@ Theme is orthogonal to tier (binding layer, not a tier).
 | Use `[data-theme]` for theme switching | HTML attribute standard |
 | Snapshot `dist/contrast-report.json` per release | Audit trail |
 | Apply `@layer reset, base, vds-tokens, vds-utilities, components, overrides` | Cascade isolation |
+| Wrap pattern CSS in `@scope` | Prevent consumer wrapper selectors from leaking into pattern internals |
 
 ## Multi-brand / multi-theme
 

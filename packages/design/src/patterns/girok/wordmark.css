@@ -1,0 +1,18 @@
+/* GIROK pattern: wordmark */
+@scope (.vds-pattern-girok-wordmark) {
+    :scope {
+      display: inline-flex;
+      align-items: baseline;
+      color: var(--vds-theme-text-bright);
+      font-family: var(--vds-exp-girok-font-family-display);
+      font-size: var(--vds-exp-girok-wordmark-size);
+      line-height: 1;
+      font-weight: var(--vds-exp-girok-wordmark-weight);
+      letter-spacing: var(--vds-exp-girok-wordmark-tracking);
+    }
+
+    .vds-pattern-girok-wordmark > .vds-pattern-girok-wordmark__dot {
+      color: var(--vds-exp-girok-nav-tab-active);
+      font-size: var(--vds-exp-girok-wordmark-font-size-1);
+    }
+  }

@@ -11,6 +11,7 @@
   "sideEffects": [
     "**/*.css",
     "./dist/components/**/define.js",
+    "./dist/components/icon/icons/*.js",
     "./dist/index.js"
   ],
   "publishConfig": {
@@ -35,6 +36,10 @@
       "types": "./dist/components/*/index.d.ts",
       "import": "./dist/components/*/index.js"
     },
+    "./icon-registry/*": {
+      "types": "./dist/components/icon/icons/*.d.ts",
+      "import": "./dist/components/icon/icons/*.js"
+    },
     "./define/*": {
       "import": "./dist/components/*/define.js"
     },
@@ -44,7 +49,8 @@
     "./custom-elements.json": "./dist/custom-elements.json"
   },
   "scripts": {
-    "build": "rm -rf dist && vite build && tsc -p tsconfig.build.json && cem analyze --litelement --globs 'src/**/*.ts' --outdir dist",
+    "build": "rm -rf dist && vite build && tsc -p tsconfig.build.json && cem analyze --litelement --globs 'src/**/*.ts' --outdir dist && node ./scripts/generate-component-api.mjs",
+    "docs:generate": "node ./scripts/generate-component-api.mjs",
     "test": "wtr",
     "test:watch": "wtr --watch",
     "test:ssr": "node test/ssr-smoke.mjs",

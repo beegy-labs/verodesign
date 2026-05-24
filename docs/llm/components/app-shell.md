@@ -1,5 +1,7 @@
 # App Shell
 
+> Docs format: prose-only (React composite — no Custom Element Manifest).
+
 Fixed-region mobile app shell for document-scroll layouts.
 
 ## Structure

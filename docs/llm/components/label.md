@@ -1,57 +1,61 @@
 # Label
 
-> Tag: `<vds-label>` · Import: `@verobee/design-elements/components/label` · React: `Label` from `@verobee/design-react` · Pattern: HTML `<label>` semantics · Status: v0.2.0-alpha
-
-**Lookup**: label, form label, field label.
+> Tag: `<vds-label>` · React: `Label` · Status: v0.2.0-alpha · APG pattern: label/for
 
 ## Purpose
-Accessible form-field label. Mirrors HTML `<label for="">` behavior — clicks focus / activate the bound control.
+Accessible form-field label with required marker support.
 
-## When to use
-- Every visible form input (text-field, text-area, checkbox, switch, select).
-- Required-field marker (`required` attribute renders red asterisk).
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Visible labels for text fields, text areas, selects, switches, and checkboxes. |
+| Use | Cases where click-to-focus binding should stay explicit. |
+| Do not use | Decorative captions or helper copy. |
+| Do not use | Button text or heading content. |
 
-## When NOT to use
-- Decorative caption → use `<p>` or heading.
-- Inside a button (button has its own label slot).
+## Design rationale
+Label keeps the standard HTML association model rather than inventing a custom field wrapper API.
 
-## Props
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `for` | `string` | — | ID of the form control to bind to |
-| `required` | `boolean` | `false` | Append visual `*` |
-| `size` | `"sm"` \| `"md"` \| `"lg"` | `"md"` | Visual size |
+## A11y narrative
+Preserves label-to-control focus activation. Required asterisk stays visual-only while the control itself owns semantic required state.
 
-## Slots
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
+
+<!-- CEM:START -->
+### `<vds-label>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `for` | `for` | `string | undefined` | — |
+| `required` | `required` | `boolean` | `false` |
+| `size` | `size` | `Size` | `md` |
+
+#### Slots
 | Name | Description |
 | ---- | ----------- |
-| (default) | Label text |
+| (default) | label text |
 
-## A11y
-- Click on label → focuses bound control. For checkbox/radio, also toggles.
-- The required `*` is `aria-hidden="true"`; convey "required" semantically via `aria-required` on the input.
+#### Events
+None.
 
-## Tokens consumed
-- `--vds-theme-text-primary`, `--vds-theme-destructive`
-- `--vds-spacing-1`, `--vds-font-{family-sans,size-{sm,base,lg},weight-500}`
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
-### HTML
 ```html
 <vds-label for="email" required>Email</vds-label>
-<vds-text-field id="email" type="email" required></vds-text-field>
+<vds-text-field id="email"></vds-text-field>
 ```
 
-### React
 ```tsx
-import { Label, TextField } from '@verobee/design-react';
+import { Label } from '@verobee/design-react';
 
-<Label htmlFor="email" required>Email</Label>
-<TextField id="email" type="email" required />
+<Label htmlFor="email">Email</Label>
 ```
 
-> Note: in React JSX, use `for` attribute via `htmlFor` per React convention. Lit uses native `for=""`.
-
-## Related
-[`<vds-text-field>`](text-field.md), [`<vds-checkbox>`](checkbox.md), [`<vds-switch>`](switch.md)

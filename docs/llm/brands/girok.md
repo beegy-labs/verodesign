@@ -15,7 +15,7 @@
 권장 사용:
 - 배경/표면: `theme.bg.page`, `theme.bg.card`, `theme.bg.elevated`
 - 본문: `theme.text.primary` (기본), 보조: `theme.text.secondary`, 약한 보조: `theme.text.dim`
-- 액션: `theme.primary` / `theme.primary-fg`, 보조 액션: `theme.accent` / `theme.accent-fg`
+- 액션: `theme.primary` / `theme.primary.foreground`, 보조 액션: `theme.accent` / `theme.accent.foreground`
 - 경계: `theme.border.default` (필요 시 subtle은 존재하는 슬롯만 사용)
 
 ### Canonical token snapshot (값 + 대비)
@@ -28,13 +28,13 @@
 | Light | `bg.card` | `oklch(98.1% 0.006 88)` | — |
 | Light | `text.primary` | `oklch(22.2% 0.012 80)` | on `bg.card` = **16.29:1** |
 | Light | `text.secondary` | `oklch(39.2% 0.018 80)` | on `bg.page` = **7.69:1** |
-| Light | `primary` | `oklch(46% 0.08 56)` | `primary-fg` on `primary` = **6.95:1** |
+| Light | `primary` | `oklch(46% 0.08 56)` | `primary.foreground` on `primary` = **6.95:1** |
 | Dark | `bg.page` | `oklch(18.2% 0.006 70)` | — |
 | Dark | `bg.card` | `oklch(23.4% 0.008 72)` | — |
 | Dark | `bg.elevated` | `oklch(28.6% 0.01 74)` | — |
 | Dark | `text.primary` | `oklch(93.6% 0.02 86)` | on `bg.card` = **13.88:1** |
 | Dark | `text.secondary` | `oklch(82.5% 0.028 86)` | on `bg.page` = **10.91:1** |
-| Dark | `primary` | `oklch(72% 0.09 66)` | `primary-fg` on `primary` = **7.38:1** |
+| Dark | `primary` | `oklch(72% 0.09 66)` | `primary.foreground` on `primary` = **7.38:1** |
 
 ### Light 핵심(요약)
 
@@ -54,8 +54,10 @@
 
 girok theme는 빌드 시 WCAG contrast audit를 통과해야 한다.
 최소 요구:
-- `theme.text.primary` on `theme.bg.card`: WCAG 2.1 **AA 최소** (법규 기준). 그 이상은 선택.
-- `theme.primary-fg` on `theme.primary`: AA 이상
+- `theme.text.primary` on `theme.bg.card`: WCAG 2.2 **AA 4.5:1 최소** (법규 기준)
+- `theme.primary.foreground` on `theme.primary`: AA 4.5:1 이상
+- AAA 7:1 은 기본 강제가 아니라 optional 이며, 필요 시 `aaa-strict` implements + `*-strong` slot(`theme.text.primary-strong`, `theme.primary-strong.foreground` 등)로 분리한다
+- girok 는 시범 `aaa-strict` opt-in brand 이며, strong override 는 `theme.primary-strong`, `theme.status.success-strong`, `theme.status.warning-strong`, `theme.status.info-strong`, `theme.status.neutral-strong`(light)와 `theme.status.success-strong`, `theme.status.error-strong`, `theme.status.info-strong`, `theme.status.neutral-strong`, `theme.destructive-strong`, `theme.destructive-strong.foreground`(dark)만 별도 바인딩한다.
 
 ## Logotype (텍스트 규칙)
 

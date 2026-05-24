@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { buildThemeTokens, flattenTokens } from './loader.mjs';
+import { buildThemeTokens, flattenTokens, loadPrimitives, loadSemantic, deepMerge } from './loader.mjs';
 import { resolveTokens } from './resolver.mjs';
 import { tokenPathToCssVar } from './css-vars.mjs';
 import { normalizeOklch } from '../util/color.mjs';
@@ -13,6 +13,11 @@ const DIST = new URL('../../dist/', import.meta.url).pathname;
 function descriptorFor(token) {
   const { type, path } = token;
   const pathStr = path.join('.');
+  const resolvedValue = String(token.resolvedValue ?? '');
+
+  if (resolvedValue.includes('var(')) {
+    return { syntax: '"*"', inherits: 'false', composite: true };
+  }
 
   // Composite types — must use "*" syntax (initial-value optional)
   if (type === 'shadow') return { syntax: '"*"', inherits: 'false', composite: true };
@@ -79,7 +84,13 @@ function initialValueFor(token) {
 // name; the default-light value is the initial-value used until any
 // @layer-scoped override resolves at runtime.
 async function loadCanonicalTokens() {
-  const tree = await buildThemeTokens('default', 'light');
+  const primitives = await loadPrimitives();
+  const semantic = await loadSemantic();
+  const defaultTree = await buildThemeTokens('default', 'light');
+  let tree = {};
+  for (const { json } of primitives) tree = deepMerge(tree, json);
+  for (const { json } of semantic) tree = deepMerge(tree, json);
+  tree = deepMerge(tree, defaultTree);
   const flat = flattenTokens(tree);
   const resolved = resolveTokens(flat, tree);
 

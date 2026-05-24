@@ -5,18 +5,25 @@
       "status": "experimental",
       "since": "v0.2.0",
       "source": "internal:verodesign/.specs/verodesign/2026-05-16-girok-modern-expression.md",
-      "implements": ["core"]
+      "implements": [
+        "core"
+      ]
     }
   },
   "exp": {
     "glass": {
       "blur": {
-        "md": { "$value": "{blur.md}", "$type": "dimension" }
+        "md": {
+          "$value": "{blur.md}",
+          "$type": "dimension"
+        }
       },
       "elevation": {
-        "floating": { "$value": "{elevation.3}", "$type": "shadow" }
+        "floating": {
+          "$value": "{elevation.3}",
+          "$type": "shadow"
+        }
       }
     }
   }
 }
-

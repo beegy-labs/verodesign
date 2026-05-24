@@ -1,5 +1,7 @@
 # Glass Surface
 
+> Docs format: prose-only (React composite — no Custom Element Manifest).
+
 Status: experimental (component exists; canonization pending soak).
 
 ## Purpose

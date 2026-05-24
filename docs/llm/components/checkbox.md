@@ -1,80 +1,66 @@
 # Checkbox
 
-> Tag: `<vds-checkbox>` · Import: `@verobee/design-elements/components/checkbox` · React: `Checkbox` from `@verobee/design-react` · Pattern: WAI-ARIA AP 1.2 § Checkbox · Status: v0.2.0-alpha
-
-**Lookup**: checkbox, check box, tickbox, tri-state, indeterminate.
+> Tag: `<vds-checkbox>` · React: `Checkbox` · Status: v0.2.0-alpha · APG pattern: Checkbox
 
 ## Purpose
-Tri-state form-associated checkbox (true / false / mixed).
+Tri-state checkbox with FACE integration.
 
-## When to use
-- Boolean opt-in / opt-out.
-- "Select all" parent that reflects mixed state of children.
-- Multi-select rows / lists.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Boolean opt-in or list-row selection. |
+| Use | Parent selection that needs an indeterminate state. |
+| Do not use | Immediate settings toggles; use Switch. |
+| Do not use | Mutually exclusive choices; use radio-group patterns. |
 
-## When NOT to use
-- Mutually-exclusive choice → use radio (todo) or `<vds-select>`.
-- Toggle setting → use `<vds-switch>` (immediate effect).
+## Design rationale
+Checkbox keeps form semantics central. The component owns true/false/mixed signaling and validation while keeping visual customization limited to token-backed size and tone.
 
-## Anatomy
-```
-[ □/✓/− ]  label-slot
-   ↑
-  18px box
-```
+## A11y narrative
+Uses APG checkbox semantics with `aria-checked` including `mixed`, Space activation, and form-associated value submission.
 
-## Props (attributes)
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `checked` | `boolean` | `false` | Boolean state |
-| `indeterminate` | `boolean` | `false` | Mixed state (overrides display until toggle) |
-| `disabled` | `boolean` | `false` | Disabled state |
-| `required` | `boolean` | `false` | Form validation |
-| `name` | `string` | — | Form field name |
-| `value` | `string` | `"on"` | Form value when checked |
-| `size` | `"sm"` \| `"md"` \| `"lg"` | `"md"` | Visual size |
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
 
-## Slots
+<!-- CEM:START -->
+### `<vds-checkbox>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `checked` | `checked` | `boolean` | `false` |
+| `indeterminate` | `indeterminate` | `boolean` | `false` |
+| `disabled` | `disabled` | `boolean` | `false` |
+| `required` | `required` | `boolean` | `false` |
+| `name` | `name` | `string | undefined` | — |
+| `value` | `value` | `string` | `on` |
+| `size` | `size` | `Size` | `md` |
+
+#### Slots
 | Name | Description |
 | ---- | ----------- |
-| (default) | Label text |
+| (default) | label text (rendered after the checkbox) |
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `change` | `{ checked: boolean }` | Fires on Space or click |
+#### Events
+| Name | Description |
+| ---- | ----------- |
+| `change` | { detail: { checked: boolean } } |
 
-## A11y (WAI-ARIA AP 1.2 § Checkbox)
-- `role="checkbox"`.
-- `aria-checked`: `"true"` / `"false"` / `"mixed"`.
-- Keyboard: Space toggles. Enter ignored (per spec).
-- Indeterminate→toggle resolves to `checked=true`.
+#### CSS Variables
+None.
 
-## Tokens consumed
-- `--vds-theme-{primary,primary-fg,bg-card,border-default,border-focus,text-primary}`
-- `--vds-radius-sm`, `--vds-border-width-1`
-- `--vds-font-size-{sm,base,lg}`, `--vds-duration-fast`
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
-### HTML
 ```html
-<vds-checkbox name="newsletter" required>Subscribe to newsletter</vds-checkbox>
-<vds-checkbox checked>Accepted</vds-checkbox>
-<vds-checkbox indeterminate>Some items selected</vds-checkbox>
+<vds-checkbox indeterminate>Select all</vds-checkbox>
 ```
 
-### React
 ```tsx
 import { Checkbox } from '@verobee/design-react';
 
-<Checkbox
-  checked={value}
-  onChange={(e) => setValue(e.detail.checked)}
->
-  Subscribe
-</Checkbox>
+<Checkbox checked={value}>Subscribe</Checkbox>
 ```
 
-## Related
-[`<vds-switch>`](switch.md), [`<vds-label>`](label.md), [`<vds-text-field>`](text-field.md)

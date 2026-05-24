@@ -1,5 +1,7 @@
 # Bento Grid
 
+> Docs format: prose-only (React composite — no Custom Element Manifest).
+
 Status: experimental (component exists; canonization pending soak).
 
 ## Purpose
@@ -45,4 +47,3 @@ Status: experimental (component exists; canonization pending soak).
   <BentoItem colSpan={2}>Shelf</BentoItem>
 </BentoGrid>
 ```
-

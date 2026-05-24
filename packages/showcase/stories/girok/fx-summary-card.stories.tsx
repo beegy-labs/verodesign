@@ -1,0 +1,6 @@
+import type { StoryObj } from "@storybook/react-vite";
+import { Shell, sectionMeta } from "./storybook-helpers";
+const meta = sectionMeta("fx-summary-card");
+export default meta;
+type Story = StoryObj<typeof meta>;
+export const Default: Story = { render: () => <Shell phone><article className="vds-pattern-girok-fx-summary-card"><div className="vds-pattern-girok-fx-summary-card__head"><span className="vds-pattern-girok-fx-summary-card__live-label">실시간 환율</span><strong className="vds-pattern-girok-fx-summary-card__live-rate">1,374.20</strong></div><div className="vds-pattern-girok-fx-summary-card__balance-row is-bordered"><span className="vds-pattern-girok-fx-summary-card__balance-label">달러 잔고</span><div className="vds-pattern-girok-fx-summary-card__balance-copy"><strong className="vds-pattern-girok-fx-summary-card__balance-amount">$4,260.22</strong><span className="vds-pattern-girok-fx-summary-card__balance-meta">원화 환산 5,854,214원</span></div></div><div className="vds-pattern-girok-fx-summary-card__balance-row"><span className="vds-pattern-girok-fx-summary-card__balance-label">평가 손익</span><div className="vds-pattern-girok-fx-summary-card__balance-copy"><strong className="vds-pattern-girok-fx-summary-card__balance-amount">+182,200원</strong><span className="vds-pattern-girok-fx-summary-card__balance-meta">이번 주 +3.1%</span></div></div></article></Shell> };

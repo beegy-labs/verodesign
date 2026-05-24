@@ -74,4 +74,24 @@ describe('vds-tabs', () => {
     expect(panels[0].hasAttribute('hidden')).to.equal(true);
     expect(panels[1].hasAttribute('hidden')).to.equal(false);
   });
+
+  it('renders a slide indicator only when explicitly requested', async () => {
+    const el = await fixture<any>(html`
+      <vds-tabs variant="segmented" indicator="slide" value="analysis">
+        <vds-tab value="ledger">Ledger</vds-tab>
+        <vds-tab value="analysis">Analysis</vds-tab>
+        <vds-tab value="manage">Manage</vds-tab>
+        <vds-tab-panel value="ledger">Ledger panel</vds-tab-panel>
+        <vds-tab-panel value="analysis">Analysis panel</vds-tab-panel>
+        <vds-tab-panel value="manage">Manage panel</vds-tab-panel>
+      </vds-tabs>
+    `);
+
+    await el.updateComplete;
+
+    const indicator = el.shadowRoot?.querySelector('.indicator');
+    expect(indicator).to.exist;
+    expect(el.getAttribute('indicator')).to.equal('slide');
+    expect(el.querySelector('vds-tab[data-active]')?.getAttribute('data-indicator')).to.equal('slide');
+  });
 });

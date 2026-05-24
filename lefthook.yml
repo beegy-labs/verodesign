@@ -1,0 +1,46 @@
+# Lefthook — git hooks manager (https://github.com/evilmartians/lefthook)
+#
+# Install: `lefthook install` (once per clone)
+# Bypass: `git commit --no-verify` (discouraged; flagged in CI later)
+#
+# Mode: warning-now / hard-block-later. Start permissive, tighten once stable.
+# CI runs the same checks server-side as the authoritative gate.
+
+pre-commit:
+  parallel: true
+  commands:
+
+    # 1. Agent portability + .add/.ai/policy drift checks.
+    # Hard-fails on: AGENTS.md size + neutrality, CLAUDE/CODEX/GEMINI body
+    # byte-equal, .agents/skills/* SKILL.md frontmatter + description, AGENTS.md
+    # SSOT references, Core Values section, dangling symlinks.
+    agent-portability:
+      run: ./scripts/docs/check-agent-portability.sh
+
+    # 2. Skill symlink consistency — re-derive per-tool skill symlinks from
+    # the canonical `.agents/skills/` and bail if any symlink target diverged.
+    skill-symlinks:
+      run: ./scripts/docs/sync-skill-symlinks.sh --check
+
+    # 3. CDD-sync gate (warning-now, hard-block-later).
+    # If staged changes touch code/config domains but NOT a CDD location,
+    # surface a warning. Operator should either update CDD or `--no-verify`
+    # with a justification recorded in the commit message.
+    cdd-sync-gate:
+      run: |
+        set -euo pipefail
+        staged=$(git diff --cached --name-only)
+        code_changed=$(echo "$staged" | grep -E '^(platform/|infrastructure/|apps/|bootstrap/|metal/ansible/|clusters/)' || true)
+        cdd_changed=$(echo "$staged" | grep -E '^(docs/llm/|\.ai/|\.agents/skills/|AGENTS\.md|CLAUDE\.md|CODEX\.md|GEMINI\.md)' || true)
+        if [ -n "$code_changed" ] && [ -z "$cdd_changed" ]; then
+          echo "WARN: code/config changes without CDD update."
+          echo "  Code-touched paths:"
+          echo "$code_changed" | sed 's/^/    /'
+          echo "  Hint: run the post-task-cdd-sync skill, OR confirm with --no-verify (commit will be audited)."
+          # Soft fail: exit 0 for now. Flip to `exit 1` to hard-block later.
+          exit 0
+        fi
+
+# Server-side authoritative gate runs in CI (future scope). See:
+#   docs/llm/policies/anti-drift-checklist.md
+#   scripts/docs/check-agent-portability.sh

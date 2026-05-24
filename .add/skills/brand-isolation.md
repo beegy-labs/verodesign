@@ -19,9 +19,11 @@ dist/빌드 산출물(`**/dist/**`)은 검출 대상에서 항상 제외.
 
 브랜드/도메인 특수 값은 **해당 brand theme 또는 brand-scoped/experimental
 슬롯**에만. 코어 semantic·primitive·컴포넌트·유틸은 **브랜드 무관**
-(`var(--vds-theme-*)` 만). 코어 semantic 슬롯 추가는 parity 검증기가
-**전 브랜드 theme 에 정의를 강제** → 단일 브랜드 작업이 타 브랜드 파일에
-diff 를 내면 격리 위반.
+(`var(--vds-theme-*)` 만). parity 검증기는 **slot group 단위**로 동작하며,
+brand 가 `implements` 한 group 에만 모든 slot binding 을 강제한다. active
+group 이더라도 brand 가 implements 하지 않으면 그 group 은 brand 시각 없이
+제외된다. 단, component contract 유지를 위해 build 는 non-implements group 에
+대해 fallback alias CSS variable 을 emit 할 수 있다.
 
 ## 입력 (필수 — 절차 시작 전 선언)
 
@@ -45,11 +47,13 @@ git diff --name-only HEAD -- 'packages/design/tokens/themes/*.json'
 결과의 각 `<brand>-(light|dark).json` 에서 `<brand>` 가 `작업대상_브랜드`
 집합 밖이면 위반. (소스 json 만 — dist 제외.)
 
-**검출 2 — 코어 semantic 슬롯 추가(전 브랜드 parity 강제)**
+**검출 2 — semantic 슬롯 추가(group-aware parity 영향)**
 ```sh
 git diff HEAD -- packages/design/tokens/semantic/
 ```
-신규 슬롯 키가 보이면 → 아래 cross-brand 입증 형식 없으면 위반.
+신규 슬롯 키가 보이면 → 아래 cross-brand 입증 형식 없으면 위반. 단,
+optional group(`status`, `finance`) 은 그 group 을 implements 한 brand 에만
+parity 가 강제된다.
 
 **검출 3 — 컴포넌트/유틸에 raw 색 리터럴**
 ```sh
@@ -64,6 +68,13 @@ rg -n -- '--vds-(verobase|veronex|girok|default)-' \
   packages/design-elements/src packages/design-react/src
 ```
 브랜드 프리픽스 직접 참조가 잡히면 위반(무매치=정상, exit 코드 무시).
+
+**검출 5 — canonical theme JSON 안 exp.* namespace**
+```sh
+rg '"exp"' packages/design/tokens/themes/*.json
+```
+결과 > 0 이면 BLOCKER. Experimental 토큰은 `packages/design/tokens/experimental/`
+에만 존재해야 하며, canonical theme 파일에 섞이면 안 된다.
 
 ## cross-brand 입증 형식 (검출 2 면제 조건)
 
@@ -80,15 +91,20 @@ cross-brand: <slot> — 대상 {brand목록=전체}. 각 브랜드가 이 의미
    또는 ② brand-scoped/experimental 슬롯 `--vds-exp-girok-*`
    (구 `dreamstock`→`girok`; 잔존 `dreamstock` 표기는 girok 로 교정) /
    decisions 의 `future` 슬롯그룹(app-shell 등)으로 이동.
-2. 진짜 cross-brand 만 코어 유지 — 위 입증 형식 + 비준 필수.
-3. 컴포넌트/유틸 색·치수 → semantic `var(--vds-theme-*)`/`--vds-spacing-*`/
+2. brand 가 active group 시각이 필요하면 해당 theme `implements` 에 group 을
+   추가하고, 그 group 의 모든 slot binding 의무를 수용한다.
+3. 진짜 cross-brand 만 코어 유지 — 위 입증 형식 + 비준 필수.
+4. 컴포넌트/유틸 색·치수 → semantic `var(--vds-theme-*)`/`--vds-spacing-*`/
    `--vds-radius-*` 만. 브랜드 프리픽스 직접 참조 제거.
-4. 작업대상 밖 브랜드 theme 에 들어간 diff → VCS 로 그 변경만 원복
+5. 작업대상 밖 브랜드 theme 에 들어간 diff → VCS 로 그 변경만 원복
    (수단 무관: 해당 파일을 직전 커밋 상태로 되돌림) 후 parity 재확인.
+6. mode-aware experimental 토큰은 `packages/design/tokens/experimental/<scope>-<mode>.json`
+   file split 을 우선 사용한다. 대안으로만 `$extensions.verobee.modeOverride`
+   허용. canonical theme 파일에 mode-specific experimental override 를 넣지 않는다.
 
 ## 검증
 
-- 검출 1·3·4 잔존 0. 검출 2 는 입증·비준 없으면 0.
+- 검출 1·3·4·5 잔존 0. 검출 2 는 입증·비준 없으면 0.
 - 변경 파일 목록에 `작업대상_브랜드` 밖 theme 소스 0(또는 입증된 cross-brand).
 - `pnpm --filter "@verobee/*" build` pass + slot parity validator pass +
   contrast audit pass.

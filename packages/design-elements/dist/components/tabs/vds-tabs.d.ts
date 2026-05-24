@@ -14,6 +14,7 @@ export declare class VdsTabs extends VdsElement {
     orientation: 'horizontal' | 'vertical';
     activation: 'auto' | 'manual';
     variant: 'underline' | 'segmented';
+    indicator: 'none' | 'underline' | 'slide';
     private internals;
     private tabsCache;
     private panelsCache;
@@ -25,6 +26,7 @@ export declare class VdsTabs extends VdsElement {
     private get panels();
     private refreshChildren;
     private syncActive;
+    private updateSlideIndicator;
     private setActive;
     private handleClick;
     private handleKeydown;

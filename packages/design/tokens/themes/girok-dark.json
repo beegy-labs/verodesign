@@ -6,7 +6,12 @@
       "theme": "girok",
       "mode": "dark",
       "status": "canonical",
-      "implements": ["core", "web"],
+      "implements": [
+        "core",
+        "web",
+        "status",
+        "aaa-strict"
+      ],
       "since": "v0.0.0",
       "concept": "Girok Dark — deep walnut shadows + parchment text + warm cognac accents (night library)",
       "primary": "OKLCH(71.55% 0.0851 63.98) Warm Cognac",
@@ -15,69 +20,289 @@
   },
   "theme": {
     "bg": {
-      "page":     { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
-      "card":     { "$value": "oklch(21.8% 0.007 72)", "$type": "color" },
-      "elevated": { "$value": "oklch(24.8% 0.009 74)", "$type": "color" },
-      "hover":    { "$value": "oklch(26.8% 0.01 74)", "$type": "color" },
-      "muted":    { "$value": "oklch(20.2% 0.007 72)", "$type": "color" },
-      "code":     { "$value": "oklch(24.8% 0.009 74)", "$type": "color" },
-      "selected": { "$value": "oklch(28.8% 0.012 76)", "$type": "color" }
+      "page": {
+        "$value": "oklch(18.2% 0.006 70)",
+        "$type": "color"
+      },
+      "card": {
+        "$value": "oklch(21.8% 0.007 72)",
+        "$type": "color"
+      },
+      "elevated": {
+        "$value": "oklch(24.8% 0.009 74)",
+        "$type": "color"
+      },
+      "hover": {
+        "$value": "oklch(26.8% 0.01 74)",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "oklch(20.2% 0.007 72)",
+        "$type": "color"
+      },
+      "code": {
+        "$value": "oklch(24.8% 0.009 74)",
+        "$type": "color"
+      },
+      "selected": {
+        "$value": "oklch(28.8% 0.012 76)",
+        "$type": "color"
+      }
     },
     "text": {
-      "primary":   { "$value": "oklch(93.6% 0.02 86)", "$type": "color" },
-      "secondary": { "$value": "oklch(82.5% 0.028 86)", "$type": "color" },
-      "dim":       { "$value": "oklch(66% 0.02 84)", "$type": "color" },
-      "faint":     { "$value": "oklch(52% 0.012 82)", "$type": "color" },
-      "bright":    { "$value": "oklch(97.8% 0.01 88)", "$type": "color" }
+      "primary": {
+        "$value": "oklch(93.6% 0.02 86)",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "oklch(82.5% 0.028 86)",
+        "$type": "color"
+      },
+      "dim": {
+        "$value": "oklch(66% 0.02 84)",
+        "$type": "color"
+      },
+      "faint": {
+        "$value": "oklch(52% 0.012 82)",
+        "$type": "color"
+      },
+      "bright": {
+        "$value": "oklch(97.8% 0.01 88)",
+        "$type": "color"
+      },
+      "primary-strong": {
+        "$value": "{theme.text.primary}",
+        "$type": "color"
+      },
+      "secondary-strong": {
+        "$value": "{theme.text.secondary}",
+        "$type": "color"
+      }
     },
     "border": {
-      "subtle":  { "$value": "oklch(27.2% 0.007 74)", "$type": "color" },
-      "default": { "$value": "oklch(33.2% 0.01 78)", "$type": "color" },
-      "strong":  { "$value": "oklch(47% 0.012 82)", "$type": "color" },
-      "focus":   { "$value": "oklch(72% 0.09 66)", "$type": "color" }
+      "subtle": {
+        "$value": "oklch(27.2% 0.007 74)",
+        "$type": "color"
+      },
+      "default": {
+        "$value": "oklch(33.2% 0.01 78)",
+        "$type": "color"
+      },
+      "strong": {
+        "$value": "oklch(47% 0.012 82)",
+        "$type": "color"
+      },
+      "focus": {
+        "$value": "oklch(72% 0.09 66)",
+        "$type": "color"
+      }
     },
-    "scrim":        { "$value": "oklch(12% 0.012 74 / 0.72)", "$type": "color" },
-    "primary":      { "$value": "oklch(72% 0.09 66)", "$type": "color" },
-    "primary-fg":   { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
-    "primary-ring": { "$value": "oklch(80% 0.08 66)", "$type": "color" },
-    "accent":       { "$value": "oklch(76% 0.1 74)", "$type": "color" },
-    "accent-fg":    { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
-    "info":    { "$value": "oklch(72% 0.09 66)", "$type": "color" },
-    "info-fg": { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
+    "scrim": {
+      "$value": "oklch(12% 0.012 74 / 0.72)",
+      "$type": "color"
+    },
+    "primary": {
+      "$root": {
+        "$value": "oklch(72% 0.09 66)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "oklch(18.2% 0.006 70)",
+        "$type": "color"
+      },
+      "ring": {
+        "$value": "oklch(80% 0.08 66)",
+        "$type": "color"
+      }
+    },
+    "accent": {
+      "$root": {
+        "$value": "oklch(76% 0.1 74)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "oklch(18.2% 0.006 70)",
+        "$type": "color"
+      }
+    },
+    "destructive": {
+      "$root": {
+        "$value": "oklch(69.71% 0.1091 26.53)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "oklch(32% 0.005 70)",
+        "$type": "color"
+      }
+    },
+    "status": {
+      "success": {
+        "$root": {
+          "$value": "oklch(70.82% 0.093 142.27)",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "oklch(32% 0.005 70)",
+          "$type": "color"
+        }
+      },
+      "warning": {
+        "$root": {
+          "$value": "oklch(74.11% 0.1171 75.25)",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "oklch(18.2% 0.006 70)",
+          "$type": "color"
+        }
+      },
+      "error": {
+        "$root": {
+          "$value": "oklch(69.71% 0.1091 26.53)",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "oklch(32% 0.005 70)",
+          "$type": "color"
+        }
+      },
+      "info": {
+        "$root": {
+          "$value": "oklch(72% 0.09 66)",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "oklch(18.2% 0.006 70)",
+          "$type": "color"
+        }
+      },
+      "neutral": {
+        "$root": {
+          "$value": "oklch(66% 0.02 84)",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "oklch(93.6% 0.02 86)",
+          "$type": "color"
+        }
+      },
+      "success-strong": {
+        "$root": {
+          "$value": "oklch(71.1% 0.093 142.27)",
+          "$type": "color"
+        }
+      },
+      "error-strong": {
+        "$root": {
+          "$value": "oklch(73.3% 0.1091 26.53)",
+          "$type": "color"
+        }
+      },
+      "info-strong": {
+        "$root": {
+          "$value": "oklch(72.4% 0.09 66)",
+          "$type": "color"
+        }
+      },
+      "neutral-strong": {
+        "$root": {
+          "$value": "oklch(72% 0.02 84)",
+          "$type": "color"
+        }
+      }
+    },
+    "destructive-strong": {
+      "$root": {
+        "$value": "oklch(72% 0.1091 26.53)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "oklch(18% 0.005 70)",
+        "$type": "color"
+      }
+    },
     "chart": {
-      "1": { "$value": "oklch(72% 0.09 66)", "$type": "color" },
-      "2": { "$value": "oklch(70% 0.08 145)", "$type": "color" },
-      "3": { "$value": "oklch(76% 0.1 74)", "$type": "color" },
-      "4": { "$value": "oklch(70% 0.08 28)", "$type": "color" },
-      "5": { "$value": "oklch(78% 0.07 255)", "$type": "color" }
+      "1": {
+        "$value": "oklch(72% 0.09 66)",
+        "$type": "color"
+      },
+      "2": {
+        "$value": "oklch(70% 0.08 145)",
+        "$type": "color"
+      },
+      "3": {
+        "$value": "oklch(76% 0.1 74)",
+        "$type": "color"
+      },
+      "4": {
+        "$value": "oklch(70% 0.08 28)",
+        "$type": "color"
+      },
+      "5": {
+        "$value": "oklch(78% 0.07 255)",
+        "$type": "color"
+      }
     },
     "map": {
-      "ocean":         { "$value": "oklch(18.2% 0.006 70)", "$type": "color" },
-      "sphere":        { "$value": "oklch(23.4% 0.008 72)", "$type": "color" },
-      "land":          { "$value": "oklch(33.5% 0.014 76)", "$type": "color" },
-      "border":        { "$value": "oklch(52% 0.012 82)", "$type": "color" },
-      "active":        { "$value": "oklch(72% 0.09 66)", "$type": "color" },
-      "active-strong": { "$value": "oklch(76% 0.1 74)", "$type": "color" },
-      "glow":          { "$value": "oklch(80% 0.08 66)", "$type": "color" }
+      "ocean": {
+        "$value": "oklch(18.2% 0.006 70)",
+        "$type": "color"
+      },
+      "sphere": {
+        "$value": "oklch(23.4% 0.008 72)",
+        "$type": "color"
+      },
+      "land": {
+        "$value": "oklch(33.5% 0.014 76)",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "oklch(52% 0.012 82)",
+        "$type": "color"
+      },
+      "active": {
+        "$value": "oklch(72% 0.09 66)",
+        "$type": "color"
+      },
+      "active-strong": {
+        "$value": "oklch(76% 0.1 74)",
+        "$type": "color"
+      },
+      "glow": {
+        "$value": "oklch(80% 0.08 66)",
+        "$type": "color"
+      }
     },
     "logo": {
-      "start": { "$value": "oklch(72% 0.09 66)", "$type": "color" },
-      "end":   { "$value": "oklch(76% 0.1 74)", "$type": "color" },
-      "inner": { "$value": "oklch(93.6% 0.02 86)", "$type": "color" }
+      "start": {
+        "$value": "oklch(72% 0.09 66)",
+        "$type": "color"
+      },
+      "end": {
+        "$value": "oklch(76% 0.1 74)",
+        "$type": "color"
+      },
+      "inner": {
+        "$value": "oklch(93.6% 0.02 86)",
+        "$type": "color"
+      }
     },
     "state": {
-      "hover":    { "$value": "{theme.bg.hover}", "$type": "color" },
-      "press":    { "$value": "{theme.bg.selected}", "$type": "color" },
-      "selected": { "$value": "{theme.bg.selected}", "$type": "color" },
-      "disabled": { "$value": "{theme.bg.muted}", "$type": "color" }
-    }
-  },
-  "exp": {
-    "girok": {
-      "finance": {
-        "up":   { "$value": "oklch(70% 0.17 28)", "$type": "color" },
-        "down": { "$value": "oklch(73% 0.11 255)", "$type": "color" },
-        "flat": { "$value": "oklch(67% 0.018 84)", "$type": "color" }
+      "hover": {
+        "$value": "{theme.bg.hover}",
+        "$type": "color"
+      },
+      "press": {
+        "$value": "{theme.bg.selected}",
+        "$type": "color"
+      },
+      "selected": {
+        "$value": "{theme.bg.selected}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{theme.bg.muted}",
+        "$type": "color"
       }
     }
   }

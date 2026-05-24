@@ -1,0 +1,24 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "fx-summary-card": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "fx-summary-card component density scale."
+        },
+        "font-size-1": {
+          "$value": "calc(10px * var(--vds-exp-girok-fx-summary-card-scale))",
+          "$type": "dimension",
+          "$description": "fx-summary-card font-size token."
+        },
+        "font-size-2": {
+          "$value": "calc(10px * var(--vds-exp-girok-fx-summary-card-scale))",
+          "$type": "dimension",
+          "$description": "fx-summary-card font-size token."
+        }
+      }
+    }
+  }
+}

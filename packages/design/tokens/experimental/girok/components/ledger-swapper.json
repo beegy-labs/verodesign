@@ -1,0 +1,24 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "ledger-swapper": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "ledger-swapper component density scale."
+        },
+        "font-size-1": {
+          "$value": "calc(0.6875rem * var(--vds-exp-girok-ledger-swapper-scale))",
+          "$type": "dimension",
+          "$description": "ledger-swapper font-size token."
+        },
+        "font-size-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-swapper-scale))",
+          "$type": "dimension",
+          "$description": "ledger-swapper font-size token."
+        }
+      }
+    }
+  }
+}

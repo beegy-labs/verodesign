@@ -93,7 +93,7 @@ export function ThemeToggle({
             style={{
               ...baseButtonStyle,
               background: active ? 'var(--vds-theme-primary)' : 'transparent',
-              color: active ? 'var(--vds-theme-primary-fg)' : 'var(--vds-theme-text-primary)',
+              color: active ? 'var(--vds-theme-primary-foreground)' : 'var(--vds-theme-text-primary)',
               borderColor: active ? 'var(--vds-theme-primary)' : 'var(--vds-theme-border-default)',
             }}
           >

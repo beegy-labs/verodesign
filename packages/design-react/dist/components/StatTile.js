@@ -20,14 +20,14 @@ const N = d.forwardRef(function({
   tone: r = "default",
   className: p,
   children: m,
-  style: h,
-  ...u
+  style: u,
+  ...h
 }, f) {
-  const { icon: v, rest: c } = x(m), g = r === "success" ? "var(--vds-theme-success)" : r === "warning" ? "var(--vds-theme-warning)" : r === "error" ? "var(--vds-theme-destructive)" : "var(--vds-theme-text-bright)", y = i === "positive" ? "var(--vds-theme-success)" : i === "negative" ? "var(--vds-theme-destructive)" : "var(--vds-theme-text-secondary)";
+  const { icon: v, rest: c } = x(m), g = r === "success" ? "var(--vds-theme-status-success)" : r === "warning" ? "var(--vds-theme-status-warning)" : r === "error" ? "var(--vds-theme-destructive)" : "var(--vds-theme-text-bright)", y = i === "positive" ? "var(--vds-theme-status-success)" : i === "negative" ? "var(--vds-theme-destructive)" : "var(--vds-theme-text-secondary)";
   return /* @__PURE__ */ n(
     "section",
     {
-      ...u,
+      ...h,
       ref: f,
       className: ["vds-flex vds-flex-col", p].filter(Boolean).join(" "),
       "data-tone": r,
@@ -40,7 +40,7 @@ const N = d.forwardRef(function({
         background: "var(--vds-theme-bg-card)",
         border: "var(--vds-border-width-1) solid var(--vds-theme-border-default)",
         borderRadius: "var(--vds-radius-lg)",
-        ...h
+        ...u
       },
       children: [
         /* @__PURE__ */ n(

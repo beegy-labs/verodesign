@@ -1,71 +1,64 @@
 # Table
 
-> Tag: `<vds-table>` · Import: `@verobee/design-elements/components/table` · React: `Table` from `@verobee/design-react` · Pattern: native `<table>` semantics · Status: v0.2.0-alpha
-
-**Lookup**: table, data table, grid (data), tabular.
+> Tag: `<vds-table>` · React: `Table` · Status: v0.2.0-alpha · APG pattern: native table wrapper
 
 ## Purpose
-Themed wrapper around native `<table>`. Provides token-driven styling and density modes; defers semantics to standard HTML elements.
+Semantic table wrapper that standardizes table chrome.
 
-## When to use
-- Tabular data (rows × columns).
-- Comparison views.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Real row/column relationships that benefit from native table semantics. |
+| Use | System tables that need token-consistent surface styling. |
+| Do not use | Responsive card lists or key-value layouts. |
+| Do not use | Interactive data grids with spreadsheet-like behavior. |
 
-## When NOT to use
-- Layout (use grid utilities instead).
-- Card lists (use grid + `<vds-card>`).
+## Design rationale
+Table keeps the native HTML table model and limits system opinion to spacing, borders, and framing.
 
-## Props
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `density` | `"compact"` \| `"normal"` \| `"comfortable"` | `"normal"` | Vertical rhythm |
+## A11y narrative
+Uses actual table semantics. Header associations, captions, and sortable behavior still depend on the authored table content.
 
-## Slots
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
+
+<!-- CEM:START -->
+### `<vds-table>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `density` | `density` | `Density` | `normal` |
+
+#### Slots
 | Name | Description |
 | ---- | ----------- |
-| `caption` | `<caption>` element (table caption) |
-| (default) | `<thead>`, `<tbody>`, `<tfoot>`, `<colgroup>` etc. |
+| `caption` | <caption> |
+| (default) | table contents (thead/tbody/tfoot) |
 
-## A11y
-- Inherits standard `<table>` semantics — use proper `<th scope="col|row">`.
-- For complex tables, set `aria-describedby` to a caption.
+#### Events
+None.
 
-## Tokens consumed
-- `--vds-theme-{bg-card,bg-elevated,text-primary,border-subtle}`
-- `--vds-font-{family-sans,size-{xs,sm,base}}`
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
-### HTML
 ```html
-<vds-table density="compact">
-  <caption slot="caption">Q1 metrics</caption>
-  <thead>
-    <tr>
-      <th scope="col">Metric</th>
-      <th scope="col">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>DAU</td><td>12,830</td></tr>
-    <tr><td>Conversion</td><td>4.2%</td></tr>
-  </tbody>
+<vds-table>
+  <table>
+    <thead><tr><th>Name</th></tr></thead>
+    <tbody><tr><td>Alpha</td></tr></tbody>
+  </table>
 </vds-table>
 ```
 
-### React
 ```tsx
 import { Table } from '@verobee/design-react';
 
-<Table density="compact">
-  <thead>
-    <tr><th scope="col">Metric</th><th scope="col">Value</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>DAU</td><td>12,830</td></tr>
-  </tbody>
-</Table>
+<Table>...</Table>
 ```
 
-## Related
-[`<vds-card>`](card.md)

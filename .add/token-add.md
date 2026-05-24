@@ -28,6 +28,11 @@ Add a new token (primitive or semantic) to verodesign.
 | `$description` | Recommended |
 | Reason for addition | Yes (rationale for SDD spec) |
 
+Experimental additions:
+- Write experimental tokens only under `packages/design/tokens/experimental/`
+- Never place `exp.*` inside `packages/design/tokens/themes/<brand>-<mode>.json`
+- If an experimental token is mode-aware, prefer `tokens/experimental/<scope>-light.json` and `tokens/experimental/<scope>-dark.json`
+
 ## Steps
 
 | # | Action | Output |
@@ -53,6 +58,7 @@ Add a new token (primitive or semantic) to verodesign.
 | WCAG contrast | Yes |
 | Token name pattern | Yes |
 | CHANGELOG updated | Yes |
+| `rg '"exp"' packages/design/tokens/themes/*.json` returns 0 matches after the change | Yes |
 
 ## Failure modes
 

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "currency-toggle": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "currency-toggle component density scale."
+        },
+        "border-radius-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-currency-toggle-scale))",
+          "$type": "dimension",
+          "$description": "currency-toggle border-radius token."
+        },
+        "font-size-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-currency-toggle-scale))",
+          "$type": "dimension",
+          "$description": "currency-toggle font-size token."
+        },
+        "padding-3": {
+          "$value": "calc(0.25rem * var(--vds-exp-girok-currency-toggle-scale)) calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-currency-toggle-scale))",
+          "$type": "other",
+          "$description": "currency-toggle padding token."
+        }
+      }
+    }
+  }
+}

@@ -1,50 +1,64 @@
 # Card
 
-> Tag: `<vds-card>` · Import: `@verobee/design-elements/components/card` · React: `Card` from `@verobee/design-react` · Pattern: none (decorative container) · Status: v0.2.0-alpha
-
-**Lookup**: card, panel, surface, container.
+> Tag: `<vds-card>` · React: `Card` · Status: v0.2.0-alpha · APG pattern: none (surface container)
 
 ## Purpose
-Surface container with optional header / body / footer. Theme tokens drive bg / border / shadow.
+Surface container with structured header, body, and footer slots.
 
-## When to use
-- Content groupings on a page (e.g., dashboard tiles).
-- Articles / list items with structured chrome.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Grouped content that needs consistent chrome. |
+| Use | Dashboard modules or list items with optional actions. |
+| Do not use | A modal interruption; use Dialog. |
+| Do not use | Tabular relationships that need real table semantics. |
 
-## When NOT to use
-- Tabular data → use `<vds-table>`.
-- Modal flow → use `<vds-dialog>`.
+## Design rationale
+Card is intentionally composition-first. The system exposes stable regions instead of opinionated internal subcomponents so consumers can structure content without forking chrome.
 
-## Slots
+## A11y narrative
+Card does not impose a role. Heading hierarchy, links, and actions must be authored by the consumer inside the slots.
+
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
+
+<!-- CEM:START -->
+### `<vds-card>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `variant` | `variant` | `Variant` | `surface` |
+| `elevation` | `elevation` | `Elevation` | `1` |
+
+#### Slots
 | Name | Description |
 | ---- | ----------- |
-| `header` | Title / actions row |
-| (default) | Body content |
-| `footer` | Action / metadata row |
+| (default) | main body content |
+| `header` | top header content |
+| `footer` | bottom footer content |
 
-## Tokens consumed
-- `--vds-theme-{bg-card,border-subtle,text-primary}`
-- `--vds-spacing-{3,4}`, `--vds-radius-lg`, `--vds-shadow-1`
+#### Events
+None.
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
 ```html
 <vds-card>
   <h3 slot="header">Title</h3>
   <p>Body</p>
-  <div slot="footer"><vds-button>Action</vds-button></div>
 </vds-card>
 ```
 
 ```tsx
-import { Card, Button } from '@verobee/design-react';
+import { Card } from '@verobee/design-react';
 
-<Card>
-  <h3 slot="header">Title</h3>
-  <p>Body</p>
-  <div slot="footer"><Button>Action</Button></div>
-</Card>
+<Card><p>Body</p></Card>
 ```
 
-## Related
-[`<vds-dialog>`](dialog.md), [`<vds-separator>`](separator.md)

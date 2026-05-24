@@ -5,20 +5,33 @@
       "status": "experimental",
       "since": "v0.2.0",
       "source": "internal:verodesign/.specs/verodesign/2026-05-16-girok-modern-expression.md",
-      "implements": ["core"]
+      "implements": [
+        "core"
+      ]
     }
   },
   "exp": {
     "motion": {
       "duration": {
-        "fast": { "$value": "{motion.duration.fast}", "$type": "duration" },
-        "base": { "$value": "{motion.duration.base}", "$type": "duration" }
+        "fast": {
+          "$value": "{motion.duration.fast}",
+          "$type": "duration"
+        },
+        "base": {
+          "$value": "{motion.duration.base}",
+          "$type": "duration"
+        }
       },
       "easing": {
-        "standard": { "$value": "{motion.easing.standard}", "$type": "cubicBezier" },
-        "decelerate": { "$value": "{motion.easing.decelerate}", "$type": "cubicBezier" }
+        "standard": {
+          "$value": "{motion.easing.standard}",
+          "$type": "cubicBezier"
+        },
+        "decelerate": {
+          "$value": "{motion.easing.decelerate}",
+          "$type": "cubicBezier"
+        }
       }
     }
   }
 }
-

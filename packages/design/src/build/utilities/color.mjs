@@ -4,6 +4,10 @@ const OPACITY_STEPS = [0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95]
 
 const SEMANTIC_ROLES = ['primary', 'accent', 'accent-2', 'accent-3', 'destructive', 'success', 'warning', 'error', 'info', 'neutral', 'cancelled'];
 
+function emitThemeAliasSlot(rules, slot, path) {
+  emitColorSlot(rules, slot, tokenPathToCssVar(path));
+}
+
 function alphaRule(className, prop, cssVar, alpha) {
   const escaped = className.replace('/', '\\/');
   return `.${escaped} { ${prop}: color-mix(in oklab, var(${cssVar}) ${alpha}%, transparent); }`;
@@ -136,6 +140,24 @@ export function generateColor(flat) {
       seenSlots.add(slot);
       continue;
     }
+    if (t.path[1] === 'status' && t.path.length === 3) {
+      const slot = t.path[2];
+      emitThemeAliasSlot(rules, slot, t.path);
+      seenSlots.add(slot);
+      continue;
+    }
+    if (t.path[1] === 'status' && t.path.length === 4 && t.path[3] === 'foreground') {
+      const slot = `${t.path[2]}-foreground`;
+      emitThemeAliasSlot(rules, slot, t.path);
+      seenSlots.add(slot);
+      continue;
+    }
+    if ((t.path[1] === 'primary' || t.path[1] === 'accent' || t.path[1] === 'accent-2' || t.path[1] === 'accent-3' || t.path[1] === 'destructive' || t.path[1] === 'cancelled') && t.path.length === 3 && t.path[2] === 'foreground') {
+      const slot = `${t.path[1]}-foreground`;
+      emitThemeAliasSlot(rules, slot, t.path);
+      seenSlots.add(slot);
+      continue;
+    }
     if (t.path.length === 2) {
       const slot = t.path[1];
       emitColorSlot(rules, slot, cssVar);
@@ -146,12 +168,16 @@ export function generateColor(flat) {
 
   for (const role of SEMANTIC_ROLES) {
     if (!seenSlots.has(role)) {
-      const cssVar = `--vds-theme-${role}`;
+      const cssVar = ['success', 'warning', 'error', 'info', 'neutral'].includes(role)
+        ? `--vds-theme-status-${role}`
+        : `--vds-theme-${role}`;
       emitColorSlot(rules, role, cssVar);
     }
-    const fgRole = `${role}-fg`;
+    const fgRole = `${role}-foreground`;
     if (!seenSlots.has(fgRole)) {
-      const cssVar = `--vds-theme-${role}-fg`;
+      const cssVar = role === 'primary' || role === 'accent' || role === 'accent-2' || role === 'accent-3' || role === 'destructive' || role === 'cancelled'
+        ? `--vds-theme-${role}-foreground`
+        : `--vds-theme-status-${role}-foreground`;
       emitColorSlot(rules, fgRole, cssVar);
     }
   }

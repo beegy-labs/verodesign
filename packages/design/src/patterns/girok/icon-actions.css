@@ -1,0 +1,36 @@
+/* GIROK pattern: icon-actions */
+@scope (.vds-pattern-girok-icon-actions) {
+  :scope {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--vds-exp-girok-icon-actions-gap-1);
+  }
+
+  .vds-pattern-girok-icon-button {
+    width: var(--vds-exp-girok-icon-actions-width-2);
+    height: var(--vds-exp-girok-icon-actions-height-3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    appearance: none;
+    color: var(--vds-exp-girok-text-secondary);
+    transition: color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  .vds-pattern-girok-icon-button:hover {
+    color: var(--vds-exp-girok-text-primary);
+  }
+
+  .vds-pattern-girok-icon-button > svg {
+    width: var(--vds-exp-girok-icon-actions-width-4);
+    height: var(--vds-exp-girok-icon-actions-height-5);
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}

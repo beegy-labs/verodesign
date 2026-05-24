@@ -1,0 +1,91 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$extensions": {
+    "verobee": {
+      "tier": "semantic",
+      "slotGroup": "status",
+      "status": "canonical",
+      "since": "v0.1.0",
+      "implements": [
+        "status"
+      ],
+      "rationale": "Optional status slot group. Brands implement this group only when they need status and destructive semantics."
+    }
+  },
+  "theme": {
+    "status": {
+      "success": {
+        "$root": {
+          "$value": "{color.green.7}",
+          "$type": "color",
+          "$description": "Success status"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Foreground on success"
+        }
+      },
+      "error": {
+        "$root": {
+          "$value": "{color.red.7}",
+          "$type": "color",
+          "$description": "Error status"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Foreground on error"
+        }
+      },
+      "warning": {
+        "$root": {
+          "$value": "{color.amber.6}",
+          "$type": "color",
+          "$description": "Warning status"
+        },
+        "foreground": {
+          "$value": "{color.slate.12}",
+          "$type": "color",
+          "$description": "Foreground on warning"
+        }
+      },
+      "info": {
+        "$root": {
+          "$value": "{color.blue.7}",
+          "$type": "color",
+          "$description": "Info status"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Foreground on info"
+        }
+      },
+      "neutral": {
+        "$root": {
+          "$value": "{color.slate.7}",
+          "$type": "color",
+          "$description": "Neutral status"
+        },
+        "foreground": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Foreground on neutral"
+        }
+      }
+    },
+    "destructive": {
+      "$root": {
+        "$value": "{color.red.7}",
+        "$type": "color",
+        "$description": "Destructive action (delete, irreversible)"
+      },
+      "foreground": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Foreground on destructive"
+      }
+    }
+  }
+}

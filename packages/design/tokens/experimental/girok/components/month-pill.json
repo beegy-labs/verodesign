@@ -1,0 +1,39 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "month-pill": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "month-pill component density scale."
+        },
+        "min-height-1": {
+          "$value": "calc(2.75rem * var(--vds-exp-girok-month-pill-scale))",
+          "$type": "dimension",
+          "$description": "month-pill min-height token."
+        },
+        "padding-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-month-pill-scale)) calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-month-pill-scale))",
+          "$type": "other",
+          "$description": "month-pill padding token."
+        },
+        "inline-size-3": {
+          "$value": "calc(7.5rem * var(--vds-exp-girok-month-pill-scale))",
+          "$type": "dimension",
+          "$description": "month-pill inline-size token."
+        },
+        "font-size-4": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-month-pill-scale))",
+          "$type": "dimension",
+          "$description": "month-pill font-size token."
+        },
+        "font-size-5": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-month-pill-scale))",
+          "$type": "dimension",
+          "$description": "month-pill font-size token."
+        }
+      }
+    }
+  }
+}

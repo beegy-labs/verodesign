@@ -1,36 +1,63 @@
-# CompactRow
+# Compact Row
 
-> React: `CompactRow` from `@verobee/design-react` · Status: 2026-05-13 canonical
+> Tag: `<vds-compact-row>` · React: `CompactRow` · Status: v0.2.0-alpha · APG pattern: list row / action row
 
 ## Purpose
-Compact, single-row list item for entity rows: leading / label+meta / trailing actions.
+Single-row entity item that can render as button or anchor.
 
-## Props
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `leading` | `ReactNode` | — | Left icon/badge |
-| `label` | `ReactNode` | — | Primary text |
-| `meta` | `ReactNode` | — | Secondary text |
-| `trailing` | `ReactNode` | — | Right-aligned actions |
-| `onClick` | `() => void` | — | Row click handler (becomes a button) |
-| `selected` | `boolean` | `false` | Selected styling |
-| `className` | `string` | — | Optional class |
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Dense lists where leading, body, and trailing affordances must align. |
+| Use | Clickable rows that still need a bounded token contract. |
+| Do not use | Large editorial cards with multi-line layout. |
+| Do not use | Tabular data where column semantics matter. |
 
-## A11y
-- If `onClick` is provided, renders as `<button type="button">`.
+## Design rationale
+Phase E2 promoted CompactRow into Lit so the canonical contract now lives at the custom-element layer. `as`, `href`, `tone`, and `show-chevron` cover the main navigation-row variants without splintering into app-specific row components.
 
-## Tokens consumed
-- `--vds-theme-{bg-card,border-default,text-primary,text-secondary}`
-- `--vds-spacing-*`, `--vds-radius-lg`, `--vds-border-width-sm`
+## A11y narrative
+The row keeps native button or anchor semantics depending on `as`. Disabled state and selected state remain host-level signals instead of custom roles.
+
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
+
+<!-- CEM:START -->
+### `<vds-compact-row>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `as` | `as` | `RowAs` | `button` |
+| `href` | `href` | `string | null` | `null` |
+| `tone` | `tone` | `Tone` | `neutral` |
+| `selected` | `selected` | `boolean` | `false` |
+| `disabled` | `disabled` | `boolean` | `false` |
+| `showChevron` | `show-chevron` | `boolean` | `false` |
+
+#### Slots
+None.
+
+#### Events
+None.
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-```tsx
-import { CompactRow, IconButton } from '@verobee/design-react';
+```html
+<vds-compact-row as="a" href="/accounts/1" show-chevron>
+  Account summary
+</vds-compact-row>
+```
 
-<CompactRow
-  label="삼성전자"
-  meta="10주 · ₩72,500"
-  trailing={<IconButton aria-label="delete">✕</IconButton>}
-/>;
+```tsx
+import { CompactRow } from '@verobee/design-react';
+
+<CompactRow as="button" selected tone="primary">Portfolio</CompactRow>
 ```
 

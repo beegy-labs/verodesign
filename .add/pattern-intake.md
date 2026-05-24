@@ -52,6 +52,11 @@ External authority needed: yes — fetching source.
 | 12 | Append entry to `docs/llm/research/pattern-catalog.md` (status: experimental) |
 | 13 | Commit: `feat(experimental): intake pattern {slug}` |
 
+Mode-aware experimental handling:
+- Prefer file split: `tokens/experimental/{slug}-light.json` + `tokens/experimental/{slug}-dark.json`
+- Alternative: `$extensions.verobee.modeOverride`
+- Never place `exp.*` inside `tokens/themes/<brand>-<mode>.json`
+
 ## Token file structure
 
 ```json
@@ -118,12 +123,15 @@ Note prefix `exp.*` keeps experimental tokens namespaced even within DTCG dot pa
 | Gate | Required |
 | ---- | -------- |
 | `tokens/experimental/{slug}.json` exists with proper extension fields | Yes |
+| Mode-aware experimental values use file split or `$extensions.verobee.modeOverride` | Yes |
 | `source` URL recorded | Yes |
 | WCAG contrast pass (or explicit override) | Yes |
 | SDD spec exists | Yes |
 | Catalog entry added | Yes |
 | `--vds-exp-*` prefix in output | Yes |
 | No canonical token modified | Yes |
+| `rg '"exp"' packages/design/tokens/themes/*.json` returns 0 matches | Yes |
+| Pattern CSS contains 0 margin properties and 0 outer padding shorthand | Yes |
 
 ## Failure modes
 

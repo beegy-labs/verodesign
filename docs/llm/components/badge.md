@@ -1,69 +1,63 @@
 # Badge
 
-> Tag: `<vds-badge>` · Import: `@verobee/design-elements/components/badge` · React: `Badge` from `@verobee/design-react` · Pattern: none (decorative) · Status: v0.2.0-alpha
-
-**Lookup**: badge, chip, pill, tag, label, status indicator, count indicator.
+> Tag: `<vds-badge>` · React: `Badge` · Status: v0.2.0-alpha · APG pattern: none (decorative)
 
 ## Purpose
-Inline non-interactive status / count indicator.
+Inline non-interactive status or count indicator.
 
-## When to use
-- Show label / count next to text (e.g., `Inbox (3)`).
-- Show entity status (e.g., `Active`, `Pending`).
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Short state labels, counts, and categorical markers. |
+| Use | A compact inline signal next to text or metadata. |
+| Do not use | Primary actions or navigation. |
+| Do not use | Long-form status explanation that needs more than a chip. |
 
-## When NOT to use
-- Need interaction → use `<vds-button>` or anchor.
-- Long content → use `<vds-card>` or status banner.
+## Design rationale
+Badge stays intentionally narrow: semantic tone, small size range, and slot-based icon support cover the common system cases without turning it into a generic pill button.
 
-## Anatomy
-```
-[ start-icon  label  end-icon ]
-```
+## A11y narrative
+The host is decorative by default. If the badge conveys live status, the containing region should own the announcement contract with `role="status"` or `aria-live`.
 
-## Props (attributes)
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `variant` | `"solid"` \| `"soft"` \| `"outline"` | `"soft"` | Fill style |
-| `tone` | `"primary"` \| `"accent"` \| `"neutral"` \| `"destructive"` \| `"success"` \| `"warning"` \| `"info"` | `"neutral"` | Color role |
-| `size` | `"sm"` \| `"md"` | `"md"` | Visual size |
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
 
-## Slots
+<!-- CEM:START -->
+### `<vds-badge>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `variant` | `variant` | `Variant` | `soft` |
+| `tone` | `tone` | `Tone` | `neutral` |
+| `size` | `size` | `Size` | `md` |
+
+#### Slots
 | Name | Description |
 | ---- | ----------- |
-| (default) | Badge label |
-| `start` | Leading icon (optional) |
-| `end` | Trailing icon (optional) |
+| (default) | badge label |
+| `start` | leading icon |
+| `end` | trailing icon |
 
-## Events
+#### Events
 None.
 
-## A11y (WAI-ARIA AP 1.2)
-- No interactive role (decorative). Renders as inline element.
-- For status announcements, the parent / container should set `role="status"` or `aria-live`.
+#### CSS Variables
+None.
 
-## Tokens consumed
-- `--vds-theme-{primary,accent,neutral,destructive,success,warning,info}` (and `-fg`)
-- `--vds-theme-{success,error,warning,info}-bg` (soft variant)
-- `--vds-theme-bg-muted`, `--vds-theme-text-primary`, `--vds-theme-border-default`
-- `--vds-spacing-{1,2_5}`, `--vds-radius-full`, `--vds-font-{family-sans,size-{xs,sm},weight-500}`
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
-### HTML
 ```html
 <vds-badge tone="success">Active</vds-badge>
-<vds-badge variant="solid" tone="destructive">Failed</vds-badge>
 <vds-badge variant="outline" tone="primary">Beta</vds-badge>
 ```
 
-### React
 ```tsx
 import { Badge } from '@verobee/design-react';
 
 <Badge tone="success">Active</Badge>
-<Badge variant="solid" tone="destructive">Failed</Badge>
-<Badge variant="outline" tone="primary">Beta</Badge>
 ```
 
-## Related
-[`<vds-button>`](button.md), [`<vds-toast>`](toast.md)

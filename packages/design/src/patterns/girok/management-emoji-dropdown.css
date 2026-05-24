@@ -1,0 +1,36 @@
+/* GIROK pattern: management-emoji-dropdown */
+@scope (.vds-pattern-girok-management-emoji-dropdown) {
+  :scope {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    inline-size: auto;
+    min-inline-size: var(--vds-exp-girok-management-emoji-dropdown-min-inline-size-1);
+    max-block-size: var(--vds-exp-girok-management-emoji-dropdown-max-block-size-2);
+    overflow-y: auto;
+    padding: var(--vds-exp-girok-management-emoji-dropdown-padding-3);
+    background: var(--vds-exp-girok-surface-segment-base);
+    box-shadow: var(--vds-exp-girok-management-emoji-dropdown-box-shadow-4);
+  }
+
+  .vds-pattern-girok-management-emoji-dropdown__option {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-exp-girok-management-emoji-dropdown-padding-5);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+    color: var(--vds-exp-girok-text-primary);
+    font-size: var(--vds-exp-girok-management-emoji-dropdown-font-size-6);
+    line-height: 1;
+  }
+
+  .vds-pattern-girok-management-emoji-dropdown__option--selected {
+    background: var(--vds-exp-girok-surface-control-active);
+  }
+
+  .vds-pattern-girok-management-emoji-dropdown__check {
+    display: none;
+    color: var(--vds-exp-girok-accent-strong);
+    font-size: var(--vds-exp-girok-management-emoji-dropdown-font-size-7);
+    line-height: 1.333333;
+  }
+}

@@ -1,0 +1,30 @@
+/* GIROK pattern: month-pill */
+@scope (.vds-pattern-girok-month-pill) {
+  :scope {
+    min-height: var(--vds-exp-girok-month-pill-min-height-1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-1);
+    padding: var(--vds-exp-girok-month-pill-padding-2);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-round);
+    background: var(--vds-exp-girok-surface-control-subtle);
+    color: var(--vds-exp-girok-text-strong);
+  }
+
+  .vds-pattern-girok-month-pill__label {
+    inline-size: var(--vds-exp-girok-month-pill-inline-size-3);
+    font-size: var(--vds-exp-girok-month-pill-font-size-4);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.333333;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .vds-pattern-girok-month-pill__chevron {
+    color: var(--vds-exp-girok-text-secondary);
+    font-size: var(--vds-exp-girok-month-pill-font-size-5);
+    line-height: 1;
+  }
+}

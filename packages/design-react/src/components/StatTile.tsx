@@ -46,16 +46,16 @@ export const StatTile = React.forwardRef<HTMLElement, StatTileProps>(function St
 
   const valueColor =
     tone === 'success'
-      ? 'var(--vds-theme-success)'
+      ? 'var(--vds-theme-status-success)'
       : tone === 'warning'
-        ? 'var(--vds-theme-warning)'
+        ? 'var(--vds-theme-status-warning)'
         : tone === 'error'
           ? 'var(--vds-theme-destructive)'
           : 'var(--vds-theme-text-bright)';
 
   const deltaColor =
     deltaTone === 'positive'
-      ? 'var(--vds-theme-success)'
+      ? 'var(--vds-theme-status-success)'
       : deltaTone === 'negative'
         ? 'var(--vds-theme-destructive)'
         : 'var(--vds-theme-text-secondary)';

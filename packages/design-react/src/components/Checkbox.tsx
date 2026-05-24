@@ -71,7 +71,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(functi
           background: checked || indeterminate ? 'var(--vds-theme-primary)' : 'var(--vds-theme-bg-card)',
         }}
       >
-        {indeterminate ? <span style={{ width: '80%', height: '2px', background: 'var(--vds-theme-primary-fg)' }} /> : checked ? <span style={{ color: 'var(--vds-theme-primary-fg)', fontSize: '0.9em', lineHeight: 1 }}>✓</span> : null}
+        {indeterminate ? <span style={{ width: '80%', height: '2px', background: 'var(--vds-theme-primary-foreground)' }} /> : checked ? <span style={{ color: 'var(--vds-theme-primary-foreground)', fontSize: '0.9em', lineHeight: 1 }}>✓</span> : null}
       </span>
       {children}
     </label>

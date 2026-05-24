@@ -5,20 +5,35 @@
       "tier": "theme",
       "theme": "TEMPLATE",
       "mode": "light",
-      "implements": ["core", "web"],
+      "implements": [
+        "core",
+        "web"
+      ],
       "since": "v0.X.Y",
       "concept": "Replace with brand concept (1 line)",
       "primary": "OKLCH(L% C H) BrandName"
     }
   },
   "theme": {
-    "primary": { "$value": "oklch(50% 0.18 240)", "$type": "color" },
-    "primary-fg": { "$value": "{color.white}", "$type": "color" },
-    "primary-ring": { "$value": "oklch(60% 0.16 240)", "$type": "color" },
-    "border": {
-      "focus": { "$value": "oklch(60% 0.16 240)", "$type": "color" }
+    "primary": {
+      "$root": {
+        "$value": "oklch(50% 0.18 240)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "ring": {
+        "$value": "oklch(60% 0.16 240)",
+        "$type": "color"
+      }
     },
-    "info": { "$value": "oklch(50% 0.18 240)", "$type": "color" },
-    "info-fg": { "$value": "{color.white}", "$type": "color" }
+    "border": {
+      "focus": {
+        "$value": "oklch(60% 0.16 240)",
+        "$type": "color"
+      }
+    }
   }
 }

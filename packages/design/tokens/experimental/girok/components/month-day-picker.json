@@ -1,0 +1,104 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "month-day-picker": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "month-day-picker component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-month-day-picker-scale)) calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "other",
+          "$description": "month-day-picker padding token."
+        },
+        "font-size-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker font-size token."
+        },
+        "inline-size-3": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker inline-size token."
+        },
+        "block-size-4": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker block-size token."
+        },
+        "padding-5": {
+          "$value": "var(--vds-spacing-2) var(--vds-spacing-4) calc(34px * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "other",
+          "$description": "month-day-picker padding token."
+        },
+        "box-shadow-6": {
+          "$value": "0 calc(-10px * var(--vds-exp-girok-month-day-picker-scale)) calc(40px * var(--vds-exp-girok-month-day-picker-scale)) var(--vds-exp-girok-redesign-surface-backdrop-medium)",
+          "$type": "other",
+          "$description": "month-day-picker box-shadow token."
+        },
+        "inline-size-7": {
+          "$value": "calc(3rem * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker inline-size token."
+        },
+        "block-size-8": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker block-size token."
+        },
+        "font-size-9": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker font-size token."
+        },
+        "block-size-10": {
+          "$value": "calc(15rem * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker block-size token."
+        },
+        "padding-top-11": {
+          "$value": "calc(6rem * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker padding-top token."
+        },
+        "padding-bottom-12": {
+          "$value": "calc(6rem * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker padding-bottom token."
+        },
+        "block-size-13": {
+          "$value": "calc(3rem * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker block-size token."
+        },
+        "font-size-14": {
+          "$value": "calc(1rem * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker font-size token."
+        },
+        "block-size-15": {
+          "$value": "calc(3rem * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker block-size token."
+        },
+        "padding-16": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker padding token."
+        },
+        "font-size-17": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-month-day-picker-scale))",
+          "$type": "dimension",
+          "$description": "month-day-picker font-size token."
+        },
+        "box-shadow-18": {
+          "$value": "0 calc(4px * var(--vds-exp-girok-month-day-picker-scale)) calc(14px * var(--vds-exp-girok-month-day-picker-scale)) var(--vds-exp-girok-redesign-accent-glow-soft)",
+          "$type": "other",
+          "$description": "month-day-picker box-shadow token."
+        }
+      }
+    }
+  }
+}

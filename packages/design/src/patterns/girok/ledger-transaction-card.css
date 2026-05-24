@@ -1,0 +1,83 @@
+/* GIROK pattern: ledger-transaction-card */
+@scope (.vds-pattern-girok-ledger-transaction-card) {
+  :scope {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    container-type: inline-size;
+    container-name: girok-ledger-transaction-card;
+    gap: var(--vds-spacing-3);
+    padding: var(--vds-exp-girok-ledger-transaction-card-padding-1);
+  }
+
+  .vds-pattern-girok-ledger-transaction-card__left {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: var(--vds-exp-girok-ledger-transaction-card-gap-2);
+    min-width: 0;
+  }
+
+  .vds-pattern-girok-ledger-transaction-card__avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--vds-exp-girok-ledger-transaction-card-inline-size-3);
+    block-size: var(--vds-exp-girok-ledger-transaction-card-block-size-4);
+    flex-shrink: 0;
+    background: var(--vds-exp-girok-surface-segment-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-round);
+    color: var(--vds-exp-girok-text-light);
+    font-size: var(--vds-exp-girok-ledger-transaction-card-font-size-5);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-ledger-transaction-card__copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-exp-girok-ledger-transaction-card-gap-6);
+    min-width: 0;
+  }
+
+  .vds-pattern-girok-ledger-transaction-card__title {
+    color: var(--vds-exp-girok-text-strong);
+    font-size: var(--vds-exp-girok-ledger-transaction-card-font-size-7);
+    font-weight: var(--vds-font-weight-600);
+    line-height: 1.384615;
+  }
+
+  .vds-pattern-girok-ledger-transaction-card__date {
+    color: var(--vds-exp-girok-text-muted);
+    font-size: var(--vds-exp-girok-ledger-transaction-card-font-size-8);
+    line-height: 1.4;
+  }
+
+  .vds-pattern-girok-ledger-transaction-card__amount {
+    flex-shrink: 0;
+    font-size: var(--vds-exp-girok-ledger-transaction-card-font-size-9);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1.384615;
+  }
+
+  .vds-pattern-girok-ledger-transaction-card__amount--income {
+    color: var(--vds-exp-girok-status-income-light);
+  }
+
+  .vds-pattern-girok-ledger-transaction-card__amount--expense {
+    color: var(--vds-exp-girok-status-expense-light);
+  }
+
+  @container girok-ledger-transaction-card (max-width: 320px) {
+    :scope {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .vds-pattern-girok-ledger-transaction-card__amount {
+      inline-size: 100%;
+      text-align: left;
+    }
+  }
+}

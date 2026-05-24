@@ -1,65 +1,84 @@
 # Toast
 
-> Tags: `<vds-toast>`, `<vds-toast-group>` · Import: `@verobee/design-elements/components/toast` · React: `Toast` + `ToastGroup` from `@verobee/design-react` · Pattern: WAI-ARIA Alert · Status: v0.2.0-alpha
-
-**Lookup**: toast, snackbar, notification, banner, alert (transient).
+> Tag: `<vds-toast>`, `<vds-toast-group>` · React: `Toast + ToastGroup` · Status: v0.2.0-alpha · APG pattern: Alert / Status
 
 ## Purpose
-Transient notification anchored to a region (usually corner). Auto-dismisses.
+Transient notification system with grouped live-region delivery.
 
-## When to use
-- Brief feedback after async action ("Saved", "Failed").
-- Non-blocking system notice.
+## When to use / not to use
+| Decision | Guidance |
+| -------- | -------- |
+| Use | Non-blocking success, warning, info, or error feedback. |
+| Use | Queued notifications anchored to a predictable viewport region. |
+| Do not use | Blocking confirmation or destructive review. |
+| Do not use | Persistent form validation that should stay inline. |
 
-## When NOT to use
-- Blocking confirmation → use `<vds-dialog>`.
-- Persistent inline error → use form helper text.
+## Design rationale
+Toast keeps notification chrome and queue behavior centralized. The group owns placement while individual toasts own tone and dismissal behavior.
 
-## Props (vds-toast)
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `tone` | `"success"` \| `"warning"` \| `"error"` \| `"info"` \| `"neutral"` | `"info"` | Color role |
-| `duration` | `number` | `5000` | ms before auto-dismiss (0 = persistent) |
-| `dismissible` | `boolean` | `true` | Show close button |
+## A11y narrative
+ToastGroup establishes the live region. Error tone escalates to alert semantics while other tones remain polite status messages.
 
-## Slots
+## API
+> Auto-generated from `packages/design-elements/dist/custom-elements.json`.
+
+<!-- CEM:START -->
+### `<vds-toast>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `toastTitle` | `toastTitle` | `string | undefined` | — |
+| `message` | `message` | `string | undefined` | — |
+| `tone` | `data-tone` | `Tone` | `neutral` |
+| `duration` | `duration` | `number` | `5000` |
+| `dismissible` | `dismissible` | `boolean` | `true` |
+
+#### Slots
+None.
+
+#### Events
 | Name | Description |
 | ---- | ----------- |
-| `title` | Toast title |
-| (default) | Body text |
-| `actions` | Action buttons row |
+| `vds-dismiss` | dispatched when toast is dismissed |
 
-## Events
-| Name | detail | Description |
-| ---- | ------ | ----------- |
-| `close` | `{ reason: "auto"\|"dismiss" }` | Fires when toast removed |
+#### CSS Variables
+None.
 
-## A11y
-- `<vds-toast-group>` has `role="region"` + `aria-live="polite"`.
-- Error tone uses `aria-live="assertive"`.
-- Each toast has `role="status"` (or `role="alert"` for error).
+#### CSS Parts
+None.
+
+### `<vds-toast-group>`
+
+#### Props
+| Prop | Attribute | Type | Default |
+| ---- | --------- | ---- | ------- |
+| `placement` | `data-placement` | `| 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center'` | `bottom-right` |
+| `max` | `max` | `number` | `5` |
+
+#### Slots
+None.
+
+#### Events
+None.
+
+#### CSS Variables
+None.
+
+#### CSS Parts
+None.
+<!-- CEM:END -->
 
 ## Examples
-
 ```html
 <vds-toast-group>
-  <vds-toast tone="success">
-    <div slot="title">Saved</div>
-    Your changes have been saved.
-  </vds-toast>
+  <vds-toast tone="success">Saved</vds-toast>
 </vds-toast-group>
 ```
 
 ```tsx
 import { Toast, ToastGroup } from '@verobee/design-react';
 
-<ToastGroup>
-  <Toast tone="success">
-    <div slot="title">Saved</div>
-    Your changes have been saved.
-  </Toast>
-</ToastGroup>
+<ToastGroup><Toast tone="success">Saved</Toast></ToastGroup>
 ```
 
-## Related
-[`<vds-dialog>`](dialog.md), [`<vds-badge>`](badge.md)

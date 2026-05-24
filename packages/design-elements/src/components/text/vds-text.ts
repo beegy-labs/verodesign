@@ -36,8 +36,8 @@ export class VdsText extends VdsElement {
     :host([tone="dim"])     { color: var(--vds-theme-text-secondary); }
     :host([tone="muted"])   { color: var(--vds-theme-text-faint); }
     :host([tone="primary"]) { color: var(--vds-theme-primary); }
-    :host([tone="success"]) { color: var(--vds-theme-success); }
-    :host([tone="warning"]) { color: var(--vds-theme-warning); }
+    :host([tone="success"]) { color: var(--vds-theme-status-success); }
+    :host([tone="warning"]) { color: var(--vds-theme-status-warning); }
     :host([tone="error"])   { color: var(--vds-theme-destructive); }
 
     :host([weight="400"]) { font-weight: var(--vds-font-weight-400); }

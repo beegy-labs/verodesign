@@ -1,0 +1,29 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "register-chip": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "register-chip component density scale."
+        },
+        "min-height-1": {
+          "$value": "calc(2.75rem * var(--vds-exp-girok-register-chip-scale))",
+          "$type": "dimension",
+          "$description": "register-chip min-height token."
+        },
+        "padding-2": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-register-chip-scale)) calc(0.875rem * var(--vds-exp-girok-register-chip-scale))",
+          "$type": "other",
+          "$description": "register-chip padding token."
+        },
+        "font-size-3": {
+          "$value": "calc(0.6875rem * var(--vds-exp-girok-register-chip-scale))",
+          "$type": "dimension",
+          "$description": "register-chip font-size token."
+        }
+      }
+    }
+  }
+}

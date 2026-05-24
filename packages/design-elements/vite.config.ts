@@ -9,6 +9,16 @@ for (const name of readdirSync(componentsDir)) {
   if (!statSync(dir).isDirectory()) continue;
   componentEntries[`components/${name}/index`] = resolve(dir, 'index.ts');
   componentEntries[`components/${name}/define`] = resolve(dir, 'define.ts');
+  const iconsDir = resolve(dir, 'icons');
+  if (!statSync(dir).isDirectory()) continue;
+  try {
+    for (const file of readdirSync(iconsDir)) {
+      if (!file.endsWith('.ts')) continue;
+      componentEntries[`components/${name}/icons/${file.replace(/\.ts$/, '')}`] = resolve(iconsDir, file);
+    }
+  } catch {
+    // component has no nested registry modules
+  }
 }
 
 export default defineConfig({

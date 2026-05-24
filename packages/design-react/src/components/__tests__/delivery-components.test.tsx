@@ -30,7 +30,7 @@ describe('design-react delivery components', () => {
       </AppShell>,
     );
 
-    expect(screen.getByText('Header').parentElement).toHaveAttribute('data-vds-app-shell', 'header');
+    expect(screen.getAllByText('Header')[0].parentElement).toHaveAttribute('data-vds-app-shell', 'header');
     expect(screen.getByText('Bottom').parentElement).toHaveAttribute('data-vds-app-shell', 'bottom-nav');
     expect(screen.getByText('Content').parentElement).toHaveAttribute('data-vds-app-shell', 'content');
     expect(screen.getByText('Content').parentElement?.style.overflow).toBe('');
@@ -56,7 +56,7 @@ describe('design-react delivery components', () => {
       </Card>,
     );
 
-    expect(screen.getByText('Header')).toBeTruthy();
+    expect(screen.getAllByText('Header').length).toBeGreaterThan(0);
     expect(screen.getByText('Body')).toBeTruthy();
     expect(screen.getByText('Footer')).toBeTruthy();
   });

@@ -1,0 +1,164 @@
+# Task: X3 Round 3 Layer-3 audit (read-only)
+
+X2-5 (redo 후) + X2-6 완료. 독립 read-only 검증.
+
+## 입력 (read-only)
+
+- SDD: `.specs/verodesign/2026-05-21-cem-backed-docs/spec.md`
+- SDD: `.specs/verodesign/2026-05-21-experimental-isolation-fix/spec.md`
+- 산출:
+  - `docs/llm/components/*.md` (24+ 페이지)
+  - `docs/llm/components/README.md` (Capability Matrix)
+  - `packages/design-elements/scripts/generate-component-api.mjs`
+  - `packages/design-elements/dist/custom-elements.json`
+  - `packages/design/tokens/experimental/girok-finance{,-light,-dark}.json`
+  - `packages/design/tokens/themes/girok-{light,dark}.json` (exp.* 잔존 0 검증)
+  - `.add/skills/brand-isolation.md`, `docs/llm/tokens/naming.md`
+  - `docs/llm/tokens/CHANGELOG.md`
+  - `docs/llm/dev-best-practices.md`, `docs/llm/decisions.md`
+
+수정 금지. 보고만.
+
+## 검수 기준 (10관문)
+
+### G1. CEM-backed docs — 신설 페이지
+
+- `docs/llm/components/binary-pill-toggle.md` 존재 + prose + CEM marker
+- 누락 페이지 신설 확인: heading / stack / cluster / grid / spacer / surface / page-header / skeleton / stat-tile / box / empty-state / th 등
+
+### G2. CEM marker 적용 범위 (예외 정책 포함)
+
+```sh
+rg -l "<!-- CEM:START -->" docs/llm/components/*.md | wc -l
+# 예외 (prose-only React composite): app-shell, bento-grid, entry-dialog, glass-surface, theme-toggle
+rg -L "<!-- CEM:START -->" docs/llm/components/*.md
+```
+
+정책: Lit custom element 페이지 = CEM marker 필수. React-only composite 5 페이지 (`app-shell / bento-grid / entry-dialog / glass-surface / theme-toggle`) = marker 면제 + prose-only notice (`> Docs format: prose-only (React composite — no Custom Element Manifest).`) 명시 필수.
+
+PASS 조건:
+- CEM marker 적용 = Lit element 페이지 전체
+- marker 미적용 5 페이지에 prose-only notice 명시 (`rg "Docs format: prose-only" docs/llm/components/*.md` = 5)
+- 그 외 marker 미적용 페이지 0
+
+### G3. Capability Matrix auto-gen
+
+```sh
+rg "<!-- CAPABILITY:START -->" docs/llm/components/README.md
+```
+marker 존재 + 그 안에 자동 산출된 Matrix.
+
+### G4. API generator script
+
+`packages/design-elements/scripts/generate-component-api.mjs`:
+- CEM JSON parse 코드
+- markdown table 생성 로직
+- build-time integration (package.json scripts)
+
+### G5. dev-best-practices + decisions 정책 명시
+
+- "Component canonical docs: prose + CEM-backed API" 정책 grep
+
+### G6. design-elements src 변경 정합
+
+`packages/design-elements/src/components/{badge,button,checkbox,stat-tile,text,toast}/vds-*.ts` 변경 검토:
+- X2-2 토큰 마이그레이션 정합 변경(`*-fg` → `*-foreground`, `theme.X` → `theme.status.X`) 이면 PASS
+- 의도 외 mutation 이면 FAIL (revert 권고)
+
+특별 검증 — badge `*-bg` ref:
+```sh
+# badge src 가 실제 발행되는 토큰 변수만 참조 (status 네임스페이스 잔존 0)
+grep -nE 'var\(--vds-theme-status-(error|success|warning|info|neutral)-bg\)' \
+  packages/design-elements/src/components/badge/vds-badge.ts
+# 결과 0 라인 = PASS
+grep -nE 'var\(--vds-theme-(error|success|warning|info|neutral)-bg\)' \
+  packages/design-elements/src/components/badge/vds-badge.ts
+# 결과 라인이 발행 토큰(`packages/design/dist/css/core.css` 의 `--vds-theme-{error,success,warning,info}-bg`) 과 일치 = PASS
+```
+
+### G7. X2-6 — exp.* 잔존 0 재확인
+
+```sh
+rg '"exp"' packages/design/tokens/themes/*.json
+```
+0 = PASS.
+
+### G8. X2-6 — mode split file 존재 + 정합
+
+```sh
+ls packages/design/tokens/experimental/girok-finance{,-light,-dark}.json
+```
+
+### G9. brand-isolation + naming.md 갱신
+
+- brand-isolation skill 에 experimental isolation 검출 패턴 추가
+- naming.md "Experimental MUST live under tokens/experimental/" 규칙 추가
+
+### G10. build 통과 + visual outcome 보존
+
+```sh
+pnpm --filter @verobee/design build
+pnpm --filter @verobee/design-elements build
+
+# experimental 변수 산출 정합 (tokens.property.css 등)
+rg '\-\-vds\-exp\-girok\-finance\-(up|down|flat)' packages/design/dist/css/
+```
+
+## 출력 보고 (≤ 400줄)
+
+```markdown
+# Phase X3 Round 3 Audit
+
+## Verdict
+PASS / FAIL / PASS-WITH-NOTES
+
+## G1. CEM-backed docs 신설 페이지
+| 페이지 | 존재 | prose | CEM marker | 결과 |
+
+## G2. CEM marker 적용
+- line count
+- 결론
+
+## G3. Capability Matrix auto-gen
+- marker 존재 + 산출 인용
+- 결론
+
+## G4. API generator script
+- 코드 grep
+- 결론
+
+## G5. dev-best-practices + decisions 정책
+- 인용
+- 결론
+
+## G6. src 변경 정합
+- 의도 검토 + 결과
+- 결론
+
+## G7. exp.* 잔존
+- grep 결과
+- 결론
+
+## G8. mode split file
+- ls 결과
+- 결론
+
+## G9. brand-isolation + naming.md
+- 검출 패턴 / 규칙 인용
+- 결론
+
+## G10. build + visual outcome
+- 빌드 결과
+- experimental 변수 산출 정합
+- 결론
+
+## Recommendation
+- X4 (final audit) 진입 가능 = YES/NO
+- 차단 항목:
+```
+
+## 절대 금지
+
+- 파일 수정
+- AI/LLM/Codex/Claude 멘션
+- 자가 PASS 선언

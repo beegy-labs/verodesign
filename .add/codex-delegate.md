@@ -32,9 +32,15 @@ Token-economical split: Claude owns scope, contrast policy, pattern lifecycle de
 | Run `contrast-audit.md` (WCAG validation across themes) | ✓ | ✗ |
 | Pattern intake via `pattern-intake.md` | ✓ | ✗ |
 | Pattern promote / deprecate per `pattern-promote.md` / `pattern-deprecate.md` | ✓ | ✗ |
+| Add component via `component-add.md` | ✓ | ✗ |
+| Modify component via `component-modify.md` | ✓ | ✗ |
+| Deprecate component via `component-deprecate.md` | ✓ | ✗ |
 | Consumer update — bump in verobase / veronex / dreamstock | ✓ | ✗ |
 | Doc sync via `doc-sync.md` | ✓ | ✗ |
 | `optimize-2026.md` execution (`@property`, `light-dark()`, `color-mix()`, `@scope`) | ✓ | ✗ |
+| Decide component API (props/variants/slots) | ✗ | ✓ |
+| Decide a11y pattern (APG 선택) | ✗ | ✓ |
+| Form-association (FACE) 결정 | ✗ | ✓ |
 | Naming a new semantic role (`text-warning-strong` vs `feedback-warn`) | ✗ | ✓ |
 | Decide if a pattern graduates from experimental to canonical | ✗ | ✓ |
 | Contrast trade-off between themes | ✗ | ✓ |
@@ -51,6 +57,26 @@ Token-economical split: Claude owns scope, contrast policy, pattern lifecycle de
 | 5 | Codex | Return compressed summary |
 | 6 | Claude | Verify against scope; trigger `doc-sync.md` if needed |
 
+## Workflow Reference
+
+| Workflow | Use |
+| -------- | --- |
+| `token-add.md` | token 추가 |
+| `theme-add.md` | theme 추가 |
+| `deprecate.md` | token deprecated / removed |
+| `contrast-audit.md` | contrast 재검증 |
+| `pattern-research.md` | pattern 조사 |
+| `pattern-intake.md` | pattern intake |
+| `pattern-promote.md` | experimental → canonical promote |
+| `pattern-deprecate.md` | experimental pattern retire |
+| `component-add.md` | 신설 컴포넌트 추가 |
+| `component-modify.md` | additive component 변경 |
+| `component-deprecate.md` | component deprecation / removal prep |
+| `consumer-update.md` | consumer 버전 갱신 |
+| `doc-sync.md` | 문서 동기화 |
+| `release.md` | 릴리스 |
+| `optimize-2026.md` | 최적화 실행 |
+
 ## Prompt Template
 
 ```
@@ -66,6 +92,7 @@ Follow .add/<workflow>.md exactly. Respect:
 - Light/dark variants for every semantic token
 
 Run: pnpm build, pnpm test, contrast checks. Retry up to 3 times on failure.
+Verify spacing contract before returning.
 
 Return ONLY:
 - changed files (path — one-sentence intent)

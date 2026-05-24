@@ -1,5 +1,7 @@
 # ThemeToggle
 
+> Docs format: prose-only (React composite — no Custom Element Manifest).
+
 > React: `ThemeToggle` from `@verobee/design-react` · Status: 2026-05-13 canonical
 
 ## Purpose
@@ -15,7 +17,7 @@ User-facing theme mode control: `auto` (system) / `light` / `dark`.
 | `className` | `string` | — | Optional class |
 
 ## States
-- Active: uses `--vds-theme-primary` + `--vds-theme-primary-fg`.
+- Active: uses `--vds-theme-primary` + `--vds-theme-primary-foreground`.
 - Inactive: transparent background, `--vds-theme-text-primary`.
 
 ## A11y
@@ -23,7 +25,7 @@ User-facing theme mode control: `auto` (system) / `light` / `dark`.
 - ArrowLeft / ArrowRight changes selection.
 
 ## Tokens consumed
-- `--vds-theme-{bg-card,border-default,primary,primary-fg,text-primary}`
+- `--vds-theme-{bg-card,border-default,primary,primary-foreground,text-primary}`
 - `--vds-spacing-*`, `--vds-radius-full`, `--vds-border-width-sm`
 
 ## Examples
@@ -33,4 +35,3 @@ import { ThemeToggle } from '@verobee/design-react';
 <ThemeToggle value="auto" onChange={(m) => setThemeMode(m)} />;
 <ThemeToggle compact value="dark" onChange={(m) => setThemeMode(m)} />;
 ```
-

@@ -1,68 +1,38 @@
-import { jsxs as i, jsx as r } from "react/jsx-runtime";
-function p({
+import * as e from "react";
+const w = e.forwardRef(function({
   leading: t,
-  label: d,
-  meta: l,
-  trailing: s,
-  onClick: e,
-  selected: a = !1,
-  className: n
-}) {
-  return /* @__PURE__ */ i(
-    e ? "button" : "div",
+  label: r,
+  meta: o,
+  trailing: l,
+  onClick: s,
+  selected: d = !1,
+  className: i,
+  as: m,
+  href: a,
+  tone: v = "neutral",
+  disabled: n = !1,
+  showChevron: p = !1
+}, u) {
+  const c = m ?? (a ? "link" : s ? "button" : "div");
+  return e.createElement(
+    "vds-compact-row",
     {
-      type: e ? "button" : void 0,
-      className: n,
-      onClick: e,
-      style: {
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        gap: "var(--vds-spacing-3)",
-        padding: "var(--vds-spacing-3)",
-        borderRadius: "var(--vds-radius-lg)",
-        border: "var(--vds-border-width-sm, thin) solid var(--vds-theme-border-default)",
-        background: a ? "var(--vds-theme-bg-selected, var(--vds-theme-bg-card))" : "var(--vds-theme-bg-card)",
-        color: "var(--vds-theme-text-primary)",
-        cursor: e ? "pointer" : "default",
-        textAlign: "left"
-      },
-      children: [
-        t ? /* @__PURE__ */ r("span", { style: { display: "inline-flex", flexShrink: 0 }, children: t }) : null,
-        /* @__PURE__ */ i("span", { style: { minWidth: 0, display: "flex", flexDirection: "column", gap: "var(--vds-spacing-1)", flex: 1 }, children: [
-          /* @__PURE__ */ r(
-            "span",
-            {
-              style: {
-                minWidth: 0,
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-                fontWeight: "var(--vds-type-role-title-weight)"
-              },
-              children: d
-            }
-          ),
-          l ? /* @__PURE__ */ r(
-            "span",
-            {
-              style: {
-                minWidth: 0,
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-                fontSize: "var(--vds-type-role-label-size)",
-                color: "var(--vds-theme-text-secondary)"
-              },
-              children: l
-            }
-          ) : null
-        ] }),
-        s ? /* @__PURE__ */ r("span", { style: { display: "inline-flex", alignItems: "center", gap: "var(--vds-spacing-2)", flexShrink: 0 }, children: s }) : null
-      ]
-    }
+      ref: u,
+      as: c,
+      href: a,
+      tone: v,
+      disabled: n || void 0,
+      selected: d || void 0,
+      "show-chevron": p || void 0,
+      class: i,
+      onClick: n || c === "div" ? void 0 : s
+    },
+    t ? e.createElement("span", { slot: "leading" }, t) : null,
+    r,
+    o ? e.createElement("span", { slot: "meta" }, o) : null,
+    l ? e.createElement("span", { slot: "trailing" }, l) : null
   );
-}
+});
 export {
-  p as CompactRow
+  w as CompactRow
 };

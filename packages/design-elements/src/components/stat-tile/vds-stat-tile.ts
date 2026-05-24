@@ -44,8 +44,8 @@ export class VdsStatTile extends VdsElement {
       line-height: var(--vds-type-role-metric-lineheight);
       font-variant-numeric: tabular-nums;
     }
-    :host([tone="success"]) .value { color: var(--vds-theme-success); }
-    :host([tone="warning"]) .value { color: var(--vds-theme-warning); }
+    :host([tone="success"]) .value { color: var(--vds-theme-status-success); }
+    :host([tone="warning"]) .value { color: var(--vds-theme-status-warning); }
     :host([tone="error"])   .value { color: var(--vds-theme-destructive); }
 
     .meta {
@@ -58,7 +58,7 @@ export class VdsStatTile extends VdsElement {
       font-size: var(--vds-type-role-caption-size);
       font-weight: var(--vds-type-role-label-weight);
     }
-    :host([delta-tone="positive"]) .delta { color: var(--vds-theme-success); }
+    :host([delta-tone="positive"]) .delta { color: var(--vds-theme-status-success); }
     :host([delta-tone="negative"]) .delta { color: var(--vds-theme-destructive); }
     :host([delta-tone="neutral"])  .delta { color: var(--vds-theme-text-secondary); }
     .delta:empty { display: none; }

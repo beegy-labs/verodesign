@@ -1,4 +1,20 @@
 const REF = /^\{([^}]+)\}$/;
+const LEGACY_REF_ALIASES = new Map([
+  ['theme.success', 'theme.status.success'],
+  ['theme.success-fg', 'theme.status.success.foreground'],
+  ['theme.warning', 'theme.status.warning'],
+  ['theme.warning-fg', 'theme.status.warning.foreground'],
+  ['theme.error', 'theme.status.error'],
+  ['theme.error-fg', 'theme.status.error.foreground'],
+  ['theme.info', 'theme.status.info'],
+  ['theme.info-fg', 'theme.status.info.foreground'],
+  ['theme.neutral', 'theme.status.neutral'],
+  ['theme.neutral-fg', 'theme.status.neutral.foreground'],
+  ['theme.primary-fg', 'theme.primary.foreground'],
+  ['theme.accent-fg', 'theme.accent.foreground'],
+  ['theme.destructive-fg', 'theme.destructive.foreground'],
+  ['theme.cancelled-fg', 'theme.cancelled.foreground'],
+]);
 
 function getByPath(tree, path) {
   let node = tree;
@@ -15,17 +31,19 @@ export function resolveValue(rawValue, tree, seen = new Set()) {
   if (!match) return rawValue;
 
   const ref = match[1];
-  if (seen.has(ref)) {
-    throw new Error(`Reference cycle detected at "${ref}"`);
+  const canonicalRef = LEGACY_REF_ALIASES.get(ref) ?? ref;
+  if (seen.has(canonicalRef)) {
+    throw new Error(`Reference cycle detected at "${canonicalRef}"`);
   }
-  seen.add(ref);
+  seen.add(canonicalRef);
 
-  const path = ref.split('.');
+  const path = canonicalRef.split('.');
   const target = getByPath(tree, path);
-  if (target == null || !('$value' in target)) {
-    throw new Error(`Reference not found: {${ref}}`);
+  const token = target && typeof target === 'object' && '$root' in target ? target.$root : target;
+  if (token == null || !('$value' in token)) {
+    throw new Error(`Reference not found: {${canonicalRef}}`);
   }
-  return resolveValue(target.$value, tree, seen);
+  return resolveValue(token.$value, tree, seen);
 }
 
 export function resolveTokens(flatTokens, tree) {

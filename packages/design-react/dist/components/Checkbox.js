@@ -1,7 +1,7 @@
 import { jsxs as y, jsx as a } from "react/jsx-runtime";
 import * as o from "react";
 import { focusRing as b } from "./_internal.js";
-const k = o.forwardRef(function({ checked: r = !1, indeterminate: e = !1, disabled: t = !1, required: c = !1, name: v, value: d = "on", size: s = "md", onChange: i, children: p, style: f, ...m }, u) {
+const k = o.forwardRef(function({ checked: r = !1, indeterminate: e = !1, disabled: t = !1, required: c = !1, name: v, value: d = "on", size: s = "md", onChange: i, children: p, style: f, ...u }, m) {
   const n = o.useRef(null);
   o.useEffect(() => {
     n.current && (n.current.indeterminate = e);
@@ -10,8 +10,8 @@ const k = o.forwardRef(function({ checked: r = !1, indeterminate: e = !1, disabl
   return /* @__PURE__ */ y(
     "label",
     {
-      ...m,
-      ref: u,
+      ...u,
+      ref: m,
       style: {
         display: "inline-flex",
         alignItems: "center",
@@ -60,7 +60,7 @@ const k = o.forwardRef(function({ checked: r = !1, indeterminate: e = !1, disabl
               borderRadius: "var(--vds-radius-sm)",
               background: r || e ? "var(--vds-theme-primary)" : "var(--vds-theme-bg-card)"
             },
-            children: e ? /* @__PURE__ */ a("span", { style: { width: "80%", height: "2px", background: "var(--vds-theme-primary-fg)" } }) : r ? /* @__PURE__ */ a("span", { style: { color: "var(--vds-theme-primary-fg)", fontSize: "0.9em", lineHeight: 1 }, children: "✓" }) : null
+            children: e ? /* @__PURE__ */ a("span", { style: { width: "80%", height: "2px", background: "var(--vds-theme-primary-foreground)" } }) : r ? /* @__PURE__ */ a("span", { style: { color: "var(--vds-theme-primary-foreground)", fontSize: "0.9em", lineHeight: 1 }, children: "✓" }) : null
           }
         ),
         p

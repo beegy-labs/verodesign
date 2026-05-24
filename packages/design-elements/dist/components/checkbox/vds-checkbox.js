@@ -1,14 +1,14 @@
 import "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/reactive-element.js";
-import { html as h } from "../../node_modules/.pnpm/lit-html@3.3.2/node_modules/lit-html/lit-html.js";
+import { html as h } from "../../node_modules/.pnpm/lit-html@3.3.3/node_modules/lit-html/lit-html.js";
 import "../../node_modules/.pnpm/lit-element@4.2.2/node_modules/lit-element/lit-element.js";
 import { property as t } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/decorators/property.js";
 import { setRole as c, setAriaProperty as d } from "../../utils/attribute-mirror.js";
 import { VdsElement as p } from "../../base/vds-element.js";
 import { css as v } from "../../node_modules/.pnpm/@lit_reactive-element@2.1.2/node_modules/@lit/reactive-element/css-tag.js";
-var m = Object.defineProperty, s = (a, e, n, u) => {
+var u = Object.defineProperty, s = (a, e, n, m) => {
   for (var r = void 0, o = a.length - 1, l; o >= 0; o--)
     (l = a[o]) && (r = l(e, n, r) || r);
-  return r && m(e, n, r), r;
+  return r && u(e, n, r), r;
 };
 class i extends p {
   constructor() {
@@ -60,8 +60,8 @@ class i extends p {
       background: var(--vds-theme-primary);
       border-color: var(--vds-theme-primary);
     }
-    :host([checked]) .check { color: var(--vds-theme-primary-fg); }
-    :host([indeterminate]) .dash { color: var(--vds-theme-primary-fg); }
+    :host([checked]) .check { color: var(--vds-theme-primary-foreground); }
+    :host([indeterminate]) .dash { color: var(--vds-theme-primary-foreground); }
 
     :host(:focus-visible) .box {
       outline: 2px solid var(--vds-theme-border-focus);

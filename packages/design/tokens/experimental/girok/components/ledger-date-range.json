@@ -1,0 +1,44 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "exp": {
+    "girok": {
+      "ledger-date-range": {
+        "scale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "ledger-date-range component density scale."
+        },
+        "padding-1": {
+          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-date-range-scale))",
+          "$type": "dimension",
+          "$description": "ledger-date-range padding token."
+        },
+        "box-shadow-2": {
+          "$value": "inset 0 calc(2px * var(--vds-exp-girok-ledger-date-range-scale)) calc(4px * var(--vds-exp-girok-ledger-date-range-scale)) oklch(0% 0 0 / 0.05)",
+          "$type": "other",
+          "$description": "ledger-date-range box-shadow token."
+        },
+        "padding-3": {
+          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-ledger-date-range-scale))",
+          "$type": "dimension",
+          "$description": "ledger-date-range padding token."
+        },
+        "inline-size-4": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-ledger-date-range-scale))",
+          "$type": "dimension",
+          "$description": "ledger-date-range inline-size token."
+        },
+        "block-size-5": {
+          "$value": "calc(0.875rem * var(--vds-exp-girok-ledger-date-range-scale))",
+          "$type": "dimension",
+          "$description": "ledger-date-range block-size token."
+        },
+        "font-size-6": {
+          "$value": "calc(0.6875rem * var(--vds-exp-girok-ledger-date-range-scale))",
+          "$type": "dimension",
+          "$description": "ledger-date-range font-size token."
+        }
+      }
+    }
+  }
+}

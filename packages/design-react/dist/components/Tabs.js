@@ -1,120 +1,137 @@
-import { jsx as I, jsxs as z } from "react/jsx-runtime";
-import * as s from "react";
-const A = s.createContext(null), N = s.forwardRef(function({
+import { jsx as x, jsxs as R } from "react/jsx-runtime";
+import * as r from "react";
+const A = r.createContext(null), N = r.forwardRef(function({
   value: t = "",
   activation: i = "auto",
-  orientation: o = "horizontal",
+  orientation: n = "horizontal",
   variant: l = "underline",
-  onChange: p,
+  indicator: b = "none",
+  onChange: g,
   className: h,
-  children: b,
-  style: c,
-  ...u
-}, g) {
-  const e = s.useId(), y = s.useRef(/* @__PURE__ */ new Map()), [f, x] = s.useState(t), a = t || f, v = s.Children.toArray(b).filter((r) => s.isValidElement(r) && r.type === C).map((r) => r.props.value ?? "");
-  s.useEffect(() => {
-    t && x(t);
+  children: c,
+  style: u,
+  ...y
+}, e) {
+  const p = r.useId(), v = r.useRef(/* @__PURE__ */ new Map()), [I, a] = r.useState(t), f = t || I, m = r.Children.toArray(c).filter((s) => r.isValidElement(s) && s.type === B).map((s) => s.props.value ?? "");
+  r.useEffect(() => {
+    t && a(t);
   }, [t]);
-  const m = s.useCallback((r, k, B) => {
-    y.current.set(r, { ref: k, disabled: B });
-  }, []), n = s.useCallback((r) => v.indexOf(r), [v]), d = s.useCallback(
-    (r, k = !0) => {
-      x(r), p?.(new CustomEvent("vds-change", { detail: { value: r } })), k && queueMicrotask(() => y.current.get(r)?.ref?.focus());
+  const o = r.useCallback((s, k, D) => {
+    v.current.set(s, { ref: k, disabled: D });
+  }, []), d = r.useCallback((s) => m.indexOf(s), [m]), E = r.useCallback(
+    (s, k = !0) => {
+      a(s), g?.(new CustomEvent("vds-change", { detail: { value: s } })), k && queueMicrotask(() => v.current.get(s)?.ref?.focus());
     },
-    [p]
-  ), R = s.useMemo(
+    [g]
+  ), z = r.useMemo(
     () => ({
-      value: a,
-      orientation: o,
+      value: f,
+      orientation: n,
       variant: l,
-      setActive: d,
+      indicator: b,
+      setActive: E,
       activation: i,
-      registerTab: m,
-      activeIndex: n,
-      tabId: (r) => `${e}-tab-${r}`,
-      panelId: (r) => `${e}-panel-${r}`
+      registerTab: o,
+      activeIndex: d,
+      tabId: (s) => `${p}-tab-${s}`,
+      panelId: (s) => `${p}-panel-${s}`
     }),
-    [i, n, a, e, o, m, d, l]
-  ), E = [], w = [];
-  return s.Children.forEach(b, (r) => {
-    if (!s.isValidElement(r)) {
-      w.push(r);
+    [i, d, f, p, b, n, o, E, l]
+  ), C = [], w = [];
+  return r.Children.forEach(c, (s) => {
+    if (!r.isValidElement(s)) {
+      w.push(s);
       return;
     }
-    r.type === C ? E.push(r) : w.push(r);
-  }), /* @__PURE__ */ I(A.Provider, { value: R, children: /* @__PURE__ */ z(
+    s.type === B ? C.push(s) : w.push(s);
+  }), /* @__PURE__ */ x(A.Provider, { value: z, children: /* @__PURE__ */ R(
     "div",
     {
-      ...u,
-      ref: g,
+      ...y,
+      ref: e,
       className: ["vds-block", h].filter(Boolean).join(" "),
-      "data-orientation": o,
+      "data-orientation": n,
       "data-variant": l,
+      "data-indicator": b,
       style: {
-        display: o === "vertical" ? "grid" : "block",
-        gridTemplateColumns: o === "vertical" ? "auto 1fr" : void 0,
-        gap: o === "vertical" ? "var(--vds-spacing-4)" : void 0,
+        display: n === "vertical" ? "grid" : "block",
+        gridTemplateColumns: n === "vertical" ? "auto 1fr" : void 0,
+        gap: n === "vertical" ? "var(--vds-spacing-4)" : void 0,
         fontFamily: "var(--vds-font-family-sans)",
         color: "var(--vds-theme-text-primary)",
-        ...c
+        ...u
       },
       children: [
-        /* @__PURE__ */ I(
+        /* @__PURE__ */ R(
           "div",
           {
             role: "tablist",
-            "aria-orientation": o,
+            "aria-orientation": n,
             className: "vds-tabs-list",
             style: {
               display: "flex",
-              flexDirection: o === "vertical" ? "column" : "row",
+              flexDirection: n === "vertical" ? "column" : "row",
               gap: "var(--vds-spacing-1)",
               padding: l === "segmented" ? "var(--vds-spacing-1)" : "0",
-              borderBottom: o === "horizontal" && l === "underline" ? "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)" : void 0,
-              borderRight: o === "vertical" && l === "underline" ? "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)" : void 0,
+              borderBottom: n === "horizontal" && l === "underline" ? "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)" : void 0,
+              borderRight: n === "vertical" && l === "underline" ? "var(--vds-border-width-1) solid var(--vds-theme-border-subtle)" : void 0,
               borderRadius: l === "segmented" ? "var(--vds-radius-lg)" : "0",
               background: l === "segmented" ? "var(--vds-theme-bg-subtle)" : "transparent",
-              overflowX: o === "horizontal" ? "auto" : "visible",
+              position: "relative",
+              overflowX: n === "horizontal" ? "auto" : "visible",
               scrollbarWidth: "thin"
             },
-            children: E
+            children: [
+              l === "segmented" && b === "slide" && n === "horizontal" ? /* @__PURE__ */ x(
+                "div",
+                {
+                  "aria-hidden": "true",
+                  style: {
+                    position: "absolute",
+                    insetBlock: "var(--vds-spacing-1)",
+                    insetInlineStart: "calc(var(--vds-spacing-1) + (100% / Math.max(1, 1)))"
+                  }
+                }
+              ) : null,
+              C
+            ]
           }
         ),
-        /* @__PURE__ */ I("div", { className: "vds-tabs-panels", children: w })
+        /* @__PURE__ */ x("div", { className: "vds-tabs-panels", children: w })
       ]
     }
   ) });
-}), C = s.forwardRef(function({ value: t = "", disabled: i = !1, className: o, children: l, onClick: p, onKeyDown: h, style: b, ...c }, u) {
-  const g = s.useContext(A);
-  if (!g) throw new Error("Tab must be used within Tabs");
-  const e = g, y = s.useRef(null);
-  s.useImperativeHandle(u, () => y.current, []), s.useEffect(() => {
-    e.registerTab(t, y.current, i);
+}), B = r.forwardRef(function({ value: t = "", disabled: i = !1, className: n, children: l, onClick: b, onKeyDown: g, style: h, ...c }, u) {
+  const y = r.useContext(A);
+  if (!y) throw new Error("Tab must be used within Tabs");
+  const e = y, p = r.useRef(null);
+  r.useImperativeHandle(u, () => p.current, []), r.useEffect(() => {
+    e.registerTab(t, p.current, i);
   }, [i, e, t]);
-  const f = e.value === t || !e.value && e.activeIndex(t) === 0;
-  function x(a) {
-    const v = Array.from(document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]') ?? []).filter((d) => d instanceof HTMLButtonElement && d.getAttribute("aria-disabled") !== "true"), m = v.findIndex((d) => d.id === e.tabId(t));
+  const v = e.value === t || !e.value && e.activeIndex(t) === 0;
+  function I(a) {
+    const f = Array.from(document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]') ?? []).filter((d) => d instanceof HTMLButtonElement && d.getAttribute("aria-disabled") !== "true"), m = f.findIndex((d) => d.id === e.tabId(t));
     if (m < 0) return;
-    const n = v[(m + a + v.length) % v.length];
-    n && (e.activation === "auto" && n.dataset.value ? e.setActive(n.dataset.value, !0) : n.focus());
+    const o = f[(m + a + f.length) % f.length];
+    o && (e.activation === "auto" && o.dataset.value ? e.setActive(o.dataset.value, !0) : o.focus());
   }
-  return /* @__PURE__ */ I(
+  return /* @__PURE__ */ x(
     "button",
     {
       ...c,
       ref: (a) => {
-        y.current = a, typeof u == "function" && u(a);
+        p.current = a, typeof u == "function" && u(a);
       },
       id: e.tabId(t),
       type: "button",
       role: "tab",
       "data-value": t,
-      "aria-selected": f,
+      "aria-selected": v,
       "aria-controls": e.panelId(t),
       "aria-disabled": i || void 0,
-      tabIndex: f ? 0 : -1,
+      tabIndex: v ? 0 : -1,
       disabled: i,
-      className: ["vds-inline-flex vds-items-center", o].filter(Boolean).join(" "),
+      className: ["vds-inline-flex vds-items-center", n].filter(Boolean).join(" "),
       style: {
         display: "inline-flex",
         alignItems: "center",
@@ -122,49 +139,49 @@ const A = s.createContext(null), N = s.forwardRef(function({
         padding: "var(--vds-spacing-2) var(--vds-spacing-4)",
         cursor: i ? "not-allowed" : "pointer",
         userSelect: "none",
-        color: e.variant === "segmented" ? f ? "var(--vds-theme-text-primary)" : "var(--vds-theme-text-dim)" : f ? "var(--vds-theme-primary)" : "var(--vds-theme-text-dim)",
+        color: e.variant === "segmented" ? v ? "var(--vds-theme-text-primary)" : "var(--vds-theme-text-dim)" : v ? "var(--vds-theme-primary)" : "var(--vds-theme-text-dim)",
         border: "none",
-        borderBottom: g.orientation === "horizontal" && e.variant !== "segmented" ? `2px solid ${f ? "var(--vds-theme-primary)" : "transparent"}` : "none",
+        borderBottom: y.orientation === "horizontal" && e.variant !== "segmented" ? `2px solid ${v ? "var(--vds-theme-primary)" : "transparent"}` : "none",
         borderRadius: e.variant === "segmented" ? "var(--vds-radius-md)" : "0",
-        background: e.variant === "segmented" && f ? "var(--vds-theme-bg-elevated)" : "transparent",
+        background: e.variant === "segmented" && v ? e.indicator === "slide" ? "transparent" : "var(--vds-theme-bg-elevated)" : "transparent",
         fontSize: "var(--vds-type-role-label-size)",
         fontWeight: "var(--vds-type-role-label-weight)",
         opacity: i ? 0.5 : 1,
         transition: "color var(--vds-duration-fast) var(--vds-easing-ease-out), border-color var(--vds-duration-fast) var(--vds-easing-ease-out), background-color var(--vds-duration-fast) var(--vds-easing-ease-out)",
-        ...b
+        ...h
       },
       onClick: (a) => {
-        i || g.setActive(t), p?.(a);
+        i || y.setActive(t), b?.(a);
       },
       onKeyDown: (a) => {
-        const v = e.orientation === "horizontal" ? "ArrowLeft" : "ArrowUp", m = e.orientation === "horizontal" ? "ArrowRight" : "ArrowDown";
-        if (a.key === v)
-          a.preventDefault(), x(-1);
+        const f = e.orientation === "horizontal" ? "ArrowLeft" : "ArrowUp", m = e.orientation === "horizontal" ? "ArrowRight" : "ArrowDown";
+        if (a.key === f)
+          a.preventDefault(), I(-1);
         else if (a.key === m)
-          a.preventDefault(), x(1);
+          a.preventDefault(), I(1);
         else if (a.key === "Home") {
           a.preventDefault();
-          const n = document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelector('[role="tab"]');
-          n?.focus(), e.activation === "auto" && n?.dataset.value && e.setActive(n.dataset.value, !1);
+          const o = document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelector('[role="tab"]');
+          o?.focus(), e.activation === "auto" && o?.dataset.value && e.setActive(o.dataset.value, !1);
         } else if (a.key === "End") {
           a.preventDefault();
-          const n = document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]'), d = n?.[n.length - 1];
+          const o = document.getElementById(e.tabId(t))?.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]'), d = o?.[o.length - 1];
           d?.focus(), e.activation === "auto" && d?.dataset.value && e.setActive(d.dataset.value, !1);
         } else (a.key === "Enter" || a.key === " ") && (a.preventDefault(), i || e.setActive(t));
-        h?.(a);
+        g?.(a);
       },
       children: l
     }
   );
-}), S = s.forwardRef(function({ value: t = "", className: i, children: o, style: l, ...p }, h) {
-  const b = s.useContext(A);
-  if (!b) throw new Error("TabPanel must be used within Tabs");
-  const c = b, u = c.value === t || !c.value && c.activeIndex(t) === 0;
-  return /* @__PURE__ */ I(
+}), j = r.forwardRef(function({ value: t = "", className: i, children: n, style: l, ...b }, g) {
+  const h = r.useContext(A);
+  if (!h) throw new Error("TabPanel must be used within Tabs");
+  const c = h, u = c.value === t || !c.value && c.activeIndex(t) === 0;
+  return /* @__PURE__ */ x(
     "div",
     {
-      ...p,
-      ref: h,
+      ...b,
+      ref: g,
       id: c.panelId(t),
       role: "tabpanel",
       "aria-labelledby": c.tabId(t),
@@ -177,12 +194,12 @@ const A = s.createContext(null), N = s.forwardRef(function({
         padding: "var(--vds-spacing-4) 0",
         ...l
       },
-      children: o
+      children: n
     }
   );
 });
 export {
-  C as Tab,
-  S as TabPanel,
+  B as Tab,
+  j as TabPanel,
   N as Tabs
 };

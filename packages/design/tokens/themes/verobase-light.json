@@ -5,7 +5,10 @@
       "tier": "theme",
       "theme": "verobase",
       "mode": "light",
-      "implements": ["core", "web"],
+      "implements": [
+        "core",
+        "web"
+      ],
       "since": "v0.1.0",
       "concept": "Verobase Solution Light — verde sage + honey accent (gardener mode)",
       "primary": "OKLCH(45% 0.13 155) Sage Verde",
@@ -14,46 +17,132 @@
   },
   "theme": {
     "bg": {
-      "page":     { "$value": "oklch(99% 0.003 90)",  "$type": "color" },
-      "card":     { "$value": "oklch(98% 0.004 90)",  "$type": "color" },
-      "selected": { "$value": "oklch(96% 0.005 155)", "$type": "color" }
+      "page": {
+        "$value": "oklch(99% 0.003 90)",
+        "$type": "color"
+      },
+      "card": {
+        "$value": "oklch(98% 0.004 90)",
+        "$type": "color"
+      },
+      "selected": {
+        "$value": "oklch(96% 0.005 155)",
+        "$type": "color"
+      }
     },
     "text": {
-      "primary":   { "$value": "oklch(25% 0.020 155)", "$type": "color" },
-      "secondary": { "$value": "oklch(35% 0.018 155)", "$type": "color" },
-      "dim":       { "$value": "oklch(50% 0.015 155)", "$type": "color" },
-      "faint":     { "$value": "oklch(65% 0.012 155)", "$type": "color" }
+      "primary": {
+        "$value": "oklch(25% 0.020 155)",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "oklch(35% 0.018 155)",
+        "$type": "color"
+      },
+      "dim": {
+        "$value": "oklch(50% 0.015 155)",
+        "$type": "color"
+      },
+      "faint": {
+        "$value": "oklch(65% 0.012 155)",
+        "$type": "color"
+      }
     },
-    "primary":      { "$value": "oklch(45% 0.13 155)",  "$type": "color" },
-    "primary-fg":   { "$value": "oklch(99% 0.003 90)",  "$type": "color" },
-    "primary-ring": { "$value": "oklch(60% 0.14 155)",  "$type": "color" },
-    "accent":       { "$value": "oklch(72% 0.14 80)",   "$type": "color" },
-    "accent-fg":    { "$value": "oklch(25% 0.04 80)",   "$type": "color" },
+    "primary": {
+      "$root": {
+        "$value": "oklch(45% 0.13 155)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "oklch(99% 0.003 90)",
+        "$type": "color"
+      },
+      "ring": {
+        "$value": "oklch(60% 0.14 155)",
+        "$type": "color"
+      }
+    },
+    "accent": {
+      "$root": {
+        "$value": "oklch(72% 0.14 80)",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "oklch(25% 0.04 80)",
+        "$type": "color"
+      }
+    },
     "border": {
-      "focus": { "$value": "oklch(60% 0.14 155)", "$type": "color" }
+      "focus": {
+        "$value": "oklch(60% 0.14 155)",
+        "$type": "color"
+      }
     },
-    "info":    { "$value": "oklch(45% 0.13 155)", "$type": "color" },
-    "info-fg": { "$value": "oklch(99% 0.003 90)", "$type": "color" },
     "chart": {
-      "1": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
-      "2": { "$value": "oklch(72% 0.14 80)",  "$type": "color" },
-      "3": { "$value": "oklch(60% 0.10 215)", "$type": "color" },
-      "4": { "$value": "oklch(60% 0.16 305)", "$type": "color" },
-      "5": { "$value": "oklch(55% 0.12 25)",  "$type": "color" }
+      "1": {
+        "$value": "oklch(45% 0.13 155)",
+        "$type": "color"
+      },
+      "2": {
+        "$value": "oklch(72% 0.14 80)",
+        "$type": "color"
+      },
+      "3": {
+        "$value": "oklch(60% 0.10 215)",
+        "$type": "color"
+      },
+      "4": {
+        "$value": "oklch(60% 0.16 305)",
+        "$type": "color"
+      },
+      "5": {
+        "$value": "oklch(55% 0.12 25)",
+        "$type": "color"
+      }
     },
     "map": {
-      "ocean":         { "$value": "oklch(96% 0.012 155)", "$type": "color" },
-      "sphere":        { "$value": "oklch(98% 0.008 155)", "$type": "color" },
-      "land":          { "$value": "oklch(82% 0.020 155)", "$type": "color" },
-      "border":        { "$value": "oklch(68% 0.030 155)", "$type": "color" },
-      "active":        { "$value": "oklch(45% 0.13 155)",  "$type": "color" },
-      "active-strong": { "$value": "oklch(72% 0.14 80)",   "$type": "color" },
-      "glow":          { "$value": "oklch(60% 0.14 155)",  "$type": "color" }
+      "ocean": {
+        "$value": "oklch(96% 0.012 155)",
+        "$type": "color"
+      },
+      "sphere": {
+        "$value": "oklch(98% 0.008 155)",
+        "$type": "color"
+      },
+      "land": {
+        "$value": "oklch(82% 0.020 155)",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "oklch(68% 0.030 155)",
+        "$type": "color"
+      },
+      "active": {
+        "$value": "oklch(45% 0.13 155)",
+        "$type": "color"
+      },
+      "active-strong": {
+        "$value": "oklch(72% 0.14 80)",
+        "$type": "color"
+      },
+      "glow": {
+        "$value": "oklch(60% 0.14 155)",
+        "$type": "color"
+      }
     },
     "logo": {
-      "start": { "$value": "oklch(45% 0.13 155)", "$type": "color" },
-      "end":   { "$value": "oklch(72% 0.14 80)",  "$type": "color" },
-      "inner": { "$value": "oklch(99% 0.003 90)", "$type": "color" }
+      "start": {
+        "$value": "oklch(45% 0.13 155)",
+        "$type": "color"
+      },
+      "end": {
+        "$value": "oklch(72% 0.14 80)",
+        "$type": "color"
+      },
+      "inner": {
+        "$value": "oklch(99% 0.003 90)",
+        "$type": "color"
+      }
     }
   }
 }

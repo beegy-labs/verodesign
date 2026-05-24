@@ -1,6 +1,6 @@
 import { tokenPathToCssVar } from '../css-vars.mjs';
 
-const WEIGHT_ALIAS = { 400: 'normal', 500: 'medium', 600: 'semibold', 700: 'bold' };
+const WEIGHT_ALIAS = { 400: 'normal', 500: 'medium', 600: 'semibold', 700: 'bold', 800: 'extrabold' };
 
 export function generateTypography(flat) {
   const rules = [];

@@ -1,0 +1,50 @@
+/* GIROK pattern: fx-history-card */
+@scope (.vds-pattern-girok-fx-history-card) {
+  :scope {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-spacing-3);
+    background: var(--vds-exp-girok-surface-toolbar);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-control);
+    border-radius: var(--vds-radius-xl);
+    padding-block: var(--vds-spacing-3_5);
+    padding-inline: var(--vds-spacing-3_5);
+  }
+
+  .vds-pattern-girok-fx-history-card__leading,
+  .vds-pattern-girok-fx-history-card__trailing {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vds-spacing-1);
+  }
+
+  .vds-pattern-girok-fx-history-card__title {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--vds-spacing-1_5);
+    color: var(--vds-theme-text-secondary);
+    font-size: var(--vds-font-size-xs);
+    font-weight: var(--vds-font-weight-800);
+  }
+
+  .vds-pattern-girok-fx-history-card__label {
+    color: var(--vds-theme-text-dim);
+    font-size: var(--vds-exp-girok-fx-history-card-font-size-1);
+    font-weight: var(--vds-font-weight-700);
+  }
+
+  .vds-pattern-girok-fx-history-card__amount {
+    color: var(--vds-theme-text-bright);
+    font-size: var(--vds-font-size-xs);
+    font-weight: var(--vds-font-weight-700);
+    text-align: right;
+  }
+
+  .vds-pattern-girok-fx-history-card__profit {
+    color: var(--vds-theme-status-success);
+    font-size: var(--vds-exp-girok-fx-history-card-font-size-2);
+    font-weight: var(--vds-font-weight-700);
+    text-align: right;
+  }
+  }

@@ -1,0 +1,70 @@
+/* GIROK pattern: tab-l2 */
+@scope (.vds-pattern-girok-tab-l2) {
+  :scope {
+    --tab-l2-cells: 3;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    padding: var(--vds-exp-girok-tab-l2-padding);
+    background: var(--vds-exp-girok-surface-segment-base);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
+    border-radius: var(--vds-exp-girok-radius-card-base);
+  }
+
+  :scope.is-full-width {
+    display: grid;
+    grid-template-columns: repeat(var(--tab-l2-cells), minmax(0, 1fr));
+    inline-size: 100%;
+  }
+
+  .vds-pattern-girok-tab-l2__indicator {
+    position: absolute;
+    top: var(--vds-exp-girok-tab-l2-padding);
+    bottom: var(--vds-exp-girok-tab-l2-padding);
+    left: var(--vds-exp-girok-tab-l2-padding);
+    width: calc(100% - (var(--vds-exp-girok-tab-l2-padding) * 2));
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-active);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+    background: var(--vds-exp-girok-surface-control-active);
+    transition: transform var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  :scope.is-full-width .vds-pattern-girok-tab-l2__indicator {
+    width: calc((100% - (var(--vds-exp-girok-tab-l2-padding) * 2)) / var(--tab-l2-cells));
+  }
+
+  .vds-pattern-girok-tab-l2__cell {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-sizing: border-box;
+    flex: none;
+    block-size: var(--vds-exp-girok-tab-l2-block-size-1);
+    padding: 0 var(--vds-exp-girok-tab-l2-cell-padding-inline);
+    border: 0;
+    background: transparent;
+    color: var(--vds-exp-girok-text-muted);
+    font-family: inherit;
+    font-size: var(--vds-exp-girok-tab-l2-font-size-2);
+    font-weight: var(--vds-font-weight-700);
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    transition: color var(--vds-exp-girok-transition-default) var(--vds-motion-easing-standard);
+  }
+
+  :scope.is-full-width .vds-pattern-girok-tab-l2__cell {
+    min-width: 0;
+  }
+
+  .vds-pattern-girok-tab-l2__cell.is-active {
+    background: var(--vds-exp-girok-surface-control-active);
+    border-radius: var(--vds-exp-girok-radius-inner-control);
+    box-shadow: inset 0 0 0 1px var(--vds-exp-girok-border-active);
+    color: var(--vds-exp-girok-accent-light);
+  }
+}
