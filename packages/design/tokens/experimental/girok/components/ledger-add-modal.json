@@ -8,65 +8,290 @@
           "$type": "number",
           "$description": "ledger-add-modal component density scale."
         },
-        "max-inline-size-1": {
-          "$value": "calc(24rem * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "max-width": {
+          "$value": "calc(384px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal max-inline-size token."
+          "$description": "ledger-add-modal container max width token."
         },
-        "box-shadow-2": {
-          "$value": "0 calc(25px * var(--vds-exp-girok-ledger-add-modal-scale)) calc(50px * var(--vds-exp-girok-ledger-add-modal-scale)) calc(-12px * var(--vds-exp-girok-ledger-add-modal-scale)) var(--vds-exp-girok-redesign-accent-glow-soft)",
-          "$type": "other",
-          "$description": "ledger-add-modal box-shadow token."
-        },
-        "font-size-3": {
-          "$value": "calc(0.875rem * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "padding-top": {
+          "$value": "calc(16px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal font-size token."
+          "$description": "ledger-add-modal container top padding token."
         },
-        "gap-4": {
-          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "padding-inline": {
+          "$value": "calc(16px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal gap token."
+          "$description": "ledger-add-modal container inline padding token."
         },
-        "padding-5": {
-          "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "padding-bottom": {
+          "$value": "calc(16px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal padding token."
+          "$description": "ledger-add-modal container bottom padding token."
         },
-        "font-size-6": {
-          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "box-gap": {
+          "$value": "calc(12px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal font-size token."
+          "$description": "ledger-add-modal container gap token."
         },
-        "font-size-7": {
-          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "border-color": {
+          "$value": "{exp.girok.border.card-emphasis}",
+          "$type": "color",
+          "$description": "ledger-add-modal container border color token."
+        },
+        "header-gap": {
+          "$value": "calc(12px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal font-size token."
+          "$description": "ledger-add-modal header gap token."
         },
-        "padding-8": {
-          "$value": "calc(0.5rem * var(--vds-exp-girok-ledger-add-modal-scale)) calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
-          "$type": "other",
-          "$description": "ledger-add-modal padding token."
-        },
-        "font-size-9": {
-          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "header-padding-bottom": {
+          "$value": "calc(4px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal font-size token."
+          "$description": "ledger-add-modal header bottom padding token."
         },
-        "gap-10": {
-          "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "title-size": {
+          "$value": "calc(14px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal gap token."
+          "$description": "ledger-add-modal title font-size token."
         },
-        "padding-11": {
-          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
-          "$type": "dimension",
-          "$description": "ledger-add-modal padding token."
+        "title-weight": {
+          "$value": 700,
+          "$type": "number",
+          "$description": "ledger-add-modal title font-weight token."
         },
-        "font-size-12": {
-          "$value": "calc(var(--vds-exp-girok-spacing-md) * var(--vds-exp-girok-ledger-add-modal-scale))",
+        "title-line-height": {
+          "$value": 1.428571,
+          "$type": "number",
+          "$description": "ledger-add-modal title line-height token."
+        },
+        "title-color": {
+          "$value": "{exp.girok.text.primary}",
+          "$type": "color",
+          "$description": "ledger-add-modal title color token."
+        },
+        "form-gap": {
+          "$value": "calc(12px * var(--vds-exp-girok-ledger-add-modal-scale))",
           "$type": "dimension",
-          "$description": "ledger-add-modal font-size token."
+          "$description": "ledger-add-modal form gap token."
+        },
+        "label-size": {
+          "$value": "calc(11px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal label font-size token."
+        },
+        "label-weight": {
+          "$value": 800,
+          "$type": "number",
+          "$description": "ledger-add-modal label font-weight token."
+        },
+        "label-line-height": {
+          "$value": 1.454545,
+          "$type": "number",
+          "$description": "ledger-add-modal label line-height token."
+        },
+        "label-color": {
+          "$value": "{exp.girok.text.muted}",
+          "$type": "color",
+          "$description": "ledger-add-modal label color token."
+        },
+        "label-padding-bottom": {
+          "$value": "calc(4px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal label bottom padding token."
+        },
+        "field-min-height": {
+          "$value": "calc(44px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal accessible minimum field height token."
+        },
+        "input-padding-inline": {
+          "$value": "calc(10px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal input inline padding token."
+        },
+        "input-padding-block": {
+          "$value": "calc(10px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal input block padding token."
+        },
+        "input-size": {
+          "$value": "calc(12px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal input font-size token."
+        },
+        "input-line-height": {
+          "$value": 1.333333,
+          "$type": "number",
+          "$description": "ledger-add-modal input line-height token."
+        },
+        "input-text-color": {
+          "$value": "{exp.girok.text.base}",
+          "$type": "color",
+          "$description": "ledger-add-modal input text color token."
+        },
+        "input-surface": {
+          "$value": "{exp.girok.shell.content-surface}",
+          "$type": "color",
+          "$description": "ledger-add-modal input background token."
+        },
+        "input-border-color": {
+          "$value": "{exp.girok.border.neutral-strong}",
+          "$type": "color",
+          "$description": "ledger-add-modal input border color token."
+        },
+        "input-radius": {
+          "$value": "{exp.girok.radius.inner-control}",
+          "$type": "borderRadius",
+          "$description": "ledger-add-modal input radius token."
+        },
+        "type-toggle-gap": {
+          "$value": "calc(6px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal type-toggle gap token."
+        },
+        "type-toggle-padding": {
+          "$value": "calc(2px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal type-toggle shell padding token."
+        },
+        "type-toggle-surface": {
+          "$value": "{exp.girok.surface.scrim-40}",
+          "$type": "color",
+          "$description": "ledger-add-modal type-toggle shell background token."
+        },
+        "type-toggle-radius": {
+          "$value": "{exp.girok.radius.inner-control}",
+          "$type": "borderRadius",
+          "$description": "ledger-add-modal type-toggle shell radius token."
+        },
+        "type-toggle-option-padding": {
+          "$value": "calc(8px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal type-toggle option padding token."
+        },
+        "type-toggle-option-radius": {
+          "$value": "{exp.girok.radius.xs}",
+          "$type": "borderRadius",
+          "$description": "ledger-add-modal type-toggle option radius token."
+        },
+        "type-toggle-option-size": {
+          "$value": "calc(11px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal type-toggle option font-size token."
+        },
+        "type-toggle-option-weight": {
+          "$value": 800,
+          "$type": "number",
+          "$description": "ledger-add-modal type-toggle option font-weight token."
+        },
+        "type-toggle-option-line-height": {
+          "$value": 1.454545,
+          "$type": "number",
+          "$description": "ledger-add-modal type-toggle option line-height token."
+        },
+        "type-toggle-option-text": {
+          "$value": "{exp.girok.text.muted}",
+          "$type": "color",
+          "$description": "ledger-add-modal type-toggle option text color token."
+        },
+        "type-toggle-expense-surface": {
+          "$value": "{exp.girok.status.expense-base}",
+          "$type": "color",
+          "$description": "ledger-add-modal expense active surface token."
+        },
+        "type-toggle-income-surface": {
+          "$value": "{exp.girok.status.income-base}",
+          "$type": "color",
+          "$description": "ledger-add-modal income active surface token."
+        },
+        "type-toggle-active-text": {
+          "$value": "{exp.girok.surface.app-base}",
+          "$type": "color",
+          "$description": "ledger-add-modal active type-toggle text color token."
+        },
+        "btn-row-gap": {
+          "$value": "calc(8px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal button row gap token."
+        },
+        "button-padding-inline": {
+          "$value": "calc(10px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal button inline padding token."
+        },
+        "button-padding-block": {
+          "$value": "calc(8px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal button block padding token."
+        },
+        "button-size": {
+          "$value": "calc(11px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal button font-size token."
+        },
+        "button-weight": {
+          "$value": 800,
+          "$type": "number",
+          "$description": "ledger-add-modal button font-weight token."
+        },
+        "button-line-height": {
+          "$value": 1.454545,
+          "$type": "number",
+          "$description": "ledger-add-modal button line-height token."
+        },
+        "button-radius": {
+          "$value": "{exp.girok.radius.inner-control}",
+          "$type": "borderRadius",
+          "$description": "ledger-add-modal button radius token."
+        },
+        "cancel-btn-border-color": {
+          "$value": "{exp.girok.border.neutral-strong}",
+          "$type": "color",
+          "$description": "ledger-add-modal cancel button border color token."
+        },
+        "cancel-btn-surface": {
+          "$value": "{exp.girok.shell.content-surface}",
+          "$type": "color",
+          "$description": "ledger-add-modal cancel button background token."
+        },
+        "cancel-btn-text": {
+          "$value": "{exp.girok.text.base}",
+          "$type": "color",
+          "$description": "ledger-add-modal cancel button text color token."
+        },
+        "submit-btn-border-color": {
+          "$value": "{exp.girok.border.active}",
+          "$type": "color",
+          "$description": "ledger-add-modal submit button border color token."
+        },
+        "submit-btn-surface": {
+          "$value": "{exp.girok.accent.light}",
+          "$type": "color",
+          "$description": "ledger-add-modal submit button background token."
+        },
+        "submit-btn-text": {
+          "$value": "{exp.girok.surface.app-base}",
+          "$type": "color",
+          "$description": "ledger-add-modal submit button text color token."
+        },
+        "close-btn-size": {
+          "$value": "calc(20px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal close icon size token."
+        },
+        "close-btn-padding": {
+          "$value": "calc(12px * var(--vds-exp-girok-ledger-add-modal-scale))",
+          "$type": "dimension",
+          "$description": "ledger-add-modal close button padding token."
+        },
+        "close-btn-radius": {
+          "$value": "{exp.girok.radius.round}",
+          "$type": "borderRadius",
+          "$description": "ledger-add-modal close button radius token."
+        },
+        "close-btn-color": {
+          "$value": "{exp.girok.text.muted}",
+          "$type": "color",
+          "$description": "ledger-add-modal close button color token."
         }
       }
     }
