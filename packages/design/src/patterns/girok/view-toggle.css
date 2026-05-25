@@ -1,42 +1,35 @@
 /* GIROK pattern: view-toggle */
 @scope (.vds-pattern-girok-view-toggle) {
   :scope {
-    min-height: var(--vds-exp-girok-view-toggle-min-height-1);
     display: inline-flex;
-    align-items: center;
-    gap: 0;
-    padding: var(--vds-spacing-1);
-    border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-default);
-    border-radius: var(--vds-exp-girok-radius-inner-control);
-    background: var(--vds-exp-girok-surface-control-subtle);
+    gap: var(--vds-exp-girok-view-toggle-gap);
+    padding: var(--vds-exp-girok-view-toggle-padding);
+    background: var(--vds-exp-girok-view-toggle-surface);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-view-toggle-border-color);
+    border-radius: var(--vds-exp-girok-view-toggle-radius);
   }
 
   .vds-pattern-girok-view-toggle__item {
-    width: var(--vds-exp-girok-view-toggle-width-2);
-    height: var(--vds-exp-girok-view-toggle-height-3);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    inline-size: var(--vds-exp-girok-view-toggle-item-size);
+    block-size: var(--vds-exp-girok-view-toggle-item-size);
+    min-inline-size: var(--vds-exp-girok-view-toggle-item-min-size);
+    min-block-size: var(--vds-exp-girok-view-toggle-item-min-size);
     border: 0;
+    border-radius: var(--vds-exp-girok-view-toggle-item-radius);
     background: transparent;
-    appearance: none;
-    border-radius: var(--vds-exp-girok-view-toggle-border-radius-4);
     color: var(--vds-exp-girok-text-muted);
   }
 
   .vds-pattern-girok-view-toggle__item.is-active {
-    background: var(--vds-exp-girok-surface-control-active);
+    background: var(--vds-exp-girok-tab-l2-active-bg);
     color: var(--vds-exp-girok-accent-light);
   }
 
   .vds-pattern-girok-view-toggle__item > svg {
-    width: var(--vds-exp-girok-view-toggle-width-5);
-    height: var(--vds-exp-girok-view-toggle-height-6);
-    stroke: currentColor;
-    stroke-width: 1.9;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    inline-size: var(--vds-exp-girok-view-toggle-icon-size);
+    block-size: var(--vds-exp-girok-view-toggle-icon-size);
   }
 }

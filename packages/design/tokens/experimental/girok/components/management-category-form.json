@@ -33,6 +33,21 @@
           "$type": "dimension",
           "$description": "management-category-form padding token."
         },
+        "toggle-line-height": {
+          "$value": 1.4,
+          "$type": "number",
+          "$description": "management-category-form toggle line-height token."
+        },
+        "expense-active-text": {
+          "$value": "{exp.girok.surface.app-base}",
+          "$type": "color",
+          "$description": "management-category-form active expense text color token."
+        },
+        "income-active-text": {
+          "$value": "{exp.girok.surface.app-base}",
+          "$type": "color",
+          "$description": "management-category-form active income text color token."
+        },
         "font-size-6": {
           "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-management-category-form-scale))",
           "$type": "dimension",

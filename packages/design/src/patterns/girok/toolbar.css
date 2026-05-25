@@ -3,6 +3,9 @@
   :scope {
     display: flex;
     align-items: center;
-    gap: var(--vds-exp-girok-toolbar-gap-1);
+    justify-content: space-between;
+    min-block-size: var(--vds-exp-girok-toolbar-min-height);
+    gap: var(--vds-exp-girok-toolbar-gap);
+    padding: var(--vds-exp-girok-toolbar-padding-block) var(--vds-exp-girok-toolbar-padding-inline);
   }
-  }
+}

@@ -7,8 +7,8 @@
   }
 
   .vds-pattern-girok-icon-button {
-    width: var(--vds-exp-girok-icon-actions-width-2);
-    height: var(--vds-exp-girok-icon-actions-height-3);
+    width: var(--vds-exp-girok-icon-actions-hit-target);
+    height: var(--vds-exp-girok-icon-actions-hit-target);
     display: inline-flex;
     align-items: center;
     justify-content: center;

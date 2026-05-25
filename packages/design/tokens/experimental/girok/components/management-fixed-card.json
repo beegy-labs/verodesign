@@ -58,6 +58,11 @@
           "$type": "dimension",
           "$description": "management-fixed-card font-size token."
         },
+        "title-line-height": {
+          "$value": 1.4,
+          "$type": "number",
+          "$description": "management-fixed-card title line-height token."
+        },
         "padding-11": {
           "$value": "calc(0.125rem * var(--vds-exp-girok-management-fixed-card-scale)) calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-fixed-card-scale))",
           "$type": "other",
@@ -72,6 +77,11 @@
           "$value": "calc(var(--vds-exp-girok-spacing-sm) * var(--vds-exp-girok-management-fixed-card-scale))",
           "$type": "dimension",
           "$description": "management-fixed-card font-size token."
+        },
+        "amount-line-height": {
+          "$value": 1.4,
+          "$type": "number",
+          "$description": "management-fixed-card amount line-height token."
         },
         "padding-14": {
           "$value": "calc(var(--vds-exp-girok-spacing-xs) * var(--vds-exp-girok-management-fixed-card-scale))",

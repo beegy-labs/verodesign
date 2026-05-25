@@ -32,8 +32,8 @@
     border-radius: var(--vds-exp-girok-radius-xs);
     background: transparent;
     color: var(--vds-exp-girok-text-muted);
-    font-size: var(--vds-exp-girok-management-fixed-card-font-size-5);
-    font-weight: var(--vds-font-weight-700);
+    font-size: var(--vds-exp-girok-typography-tab-l1-font-size);
+    font-weight: var(--vds-exp-girok-typography-tab-l1-font-weight);
     line-height: 1.4;
   }
 
@@ -79,9 +79,9 @@
   }
 
   .vds-pattern-girok-management-fixed-card__title {
-    font-size: var(--vds-exp-girok-management-fixed-card-font-size-10);
-    font-weight: var(--vds-font-weight-600);
-    line-height: 1.333333;
+    font-size: var(--vds-exp-girok-typography-list-title-font-size);
+    font-weight: var(--vds-exp-girok-typography-list-title-font-weight);
+    line-height: var(--vds-exp-girok-management-fixed-card-title-line-height);
   }
 
   .vds-pattern-girok-management-fixed-card__title--on {
@@ -100,14 +100,15 @@
     border: var(--vds-border-width-1) solid var(--vds-exp-girok-border-neutral-strong);
     border-radius: var(--vds-exp-girok-radius-xs);
     color: var(--vds-exp-girok-text-secondary);
-    font-size: var(--vds-exp-girok-management-fixed-card-font-size-12);
+    font-size: var(--vds-exp-girok-typography-badge-font-size);
+    font-weight: var(--vds-exp-girok-typography-badge-font-weight);
     line-height: 1.333333;
   }
 
   .vds-pattern-girok-management-fixed-card__amount {
-    font-size: var(--vds-exp-girok-management-fixed-card-font-size-13);
-    font-weight: var(--vds-font-weight-600);
-    line-height: 1.4;
+    font-size: var(--vds-exp-girok-typography-list-amount-font-size);
+    font-weight: var(--vds-exp-girok-typography-list-amount-font-weight);
+    line-height: var(--vds-exp-girok-management-fixed-card-amount-line-height);
   }
 
   .vds-pattern-girok-management-fixed-card__amount--income {
@@ -141,8 +142,8 @@
     border-radius: var(--vds-exp-girok-radius-inner-control);
     background: transparent;
     color: var(--vds-exp-girok-accent-light);
-    font-size: var(--vds-exp-girok-management-fixed-card-font-size-16);
-    font-weight: var(--vds-font-weight-700);
+    font-size: var(--vds-exp-girok-typography-tab-l2-font-size);
+    font-weight: var(--vds-exp-girok-typography-tab-l2-font-weight);
     line-height: 1.333333;
     text-align: center;
     transform: var(--vds-exp-girok-management-fixed-card-transform-17);

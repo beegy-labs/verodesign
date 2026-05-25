@@ -30,19 +30,19 @@
     border-radius: var(--vds-exp-girok-radius-xs);
     background: transparent;
     color: var(--vds-exp-girok-text-muted);
-    font-size: var(--vds-exp-girok-management-category-form-font-size-6);
-    font-weight: var(--vds-font-weight-600);
-    line-height: 1.4;
+    font-size: var(--vds-exp-girok-typography-tab-l1-font-size);
+    font-weight: var(--vds-exp-girok-typography-tab-l1-font-weight);
+    line-height: var(--vds-exp-girok-management-category-form-toggle-line-height);
   }
 
   .vds-pattern-girok-management-category-form__type-toggle-btn--expense.vds-pattern-girok-management-category-form__type-toggle-btn--active {
     background: var(--vds-exp-girok-status-expense-base);
-    color: var(--vds-exp-girok-text-primary);
+    color: var(--vds-exp-girok-management-category-form-expense-active-text);
   }
 
   .vds-pattern-girok-management-category-form__type-toggle-btn--income.vds-pattern-girok-management-category-form__type-toggle-btn--active {
     background: var(--vds-exp-girok-status-income-base);
-    color: var(--vds-exp-girok-text-primary);
+    color: var(--vds-exp-girok-management-category-form-income-active-text);
   }
 
   .vds-pattern-girok-management-category-form__emoji-row {
@@ -67,7 +67,8 @@
     min-inline-size: var(--vds-exp-girok-management-category-form-min-inline-size-9);
     padding: var(--vds-exp-girok-management-category-form-padding-10);
     color: var(--vds-exp-girok-text-primary);
-    font-size: var(--vds-exp-girok-management-category-form-font-size-11);
+    font-size: var(--vds-exp-girok-typography-list-title-font-size);
+    font-weight: var(--vds-exp-girok-typography-list-title-font-weight);
     line-height: 1.111111;
   }
 
@@ -76,7 +77,8 @@
     min-width: 0;
     padding: var(--vds-exp-girok-management-category-form-padding-12);
     color: var(--vds-exp-girok-text-base);
-    font-size: var(--vds-exp-girok-management-category-form-font-size-13);
+    font-size: var(--vds-exp-girok-typography-list-title-font-size);
+    font-weight: var(--vds-exp-girok-typography-list-title-font-weight);
     line-height: 1.333333;
   }
 
@@ -88,8 +90,8 @@
     border-radius: var(--vds-exp-girok-radius-inner-control);
     background: var(--vds-exp-girok-border-neutral-strong);
     color: var(--vds-exp-girok-text-primary);
-    font-size: var(--vds-exp-girok-management-category-form-font-size-16);
-    font-weight: var(--vds-font-weight-700);
+    font-size: var(--vds-exp-girok-typography-tab-l2-font-size);
+    font-weight: var(--vds-exp-girok-typography-tab-l2-font-weight);
     line-height: 1.454545;
   }
 }

@@ -13,6 +13,11 @@
           "$type": "dimension",
           "$description": "icon-actions gap token."
         },
+        "hit-target": {
+          "$value": "calc(44px * var(--vds-exp-girok-icon-actions-scale))",
+          "$type": "dimension",
+          "$description": "icon-actions hit target token."
+        },
         "width-2": {
           "$value": "calc(1.75rem * var(--vds-exp-girok-icon-actions-scale))",
           "$type": "dimension",
