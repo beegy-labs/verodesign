@@ -1,0 +1,20 @@
+/* GIROK pattern: ledger-list-chip */
+@scope (.vds-pattern-girok-ledger-list-chip) {
+  :scope {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--vds-exp-girok-ledger-list-chip-gap);
+    min-block-size: var(--vds-exp-girok-ledger-list-chip-min-height);
+    padding: var(--vds-exp-girok-ledger-list-chip-padding-block) var(--vds-exp-girok-ledger-list-chip-padding-inline);
+    background: var(--vds-exp-girok-ledger-list-chip-surface);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-ledger-list-chip-border-color);
+    border-radius: var(--vds-exp-girok-ledger-list-chip-radius);
+    color: var(--vds-exp-girok-ledger-list-chip-text-color);
+    font-size: var(--vds-exp-girok-ledger-list-chip-font-size);
+    font-weight: var(--vds-exp-girok-ledger-list-chip-font-weight);
+    line-height: var(--vds-exp-girok-ledger-list-chip-line-height);
+    white-space: nowrap;
+  }
+}

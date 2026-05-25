@@ -1,0 +1,90 @@
+/* GIROK pattern: search-field */
+@scope (.vds-pattern-girok-search-field) {
+  :scope {
+    position: relative;
+    inline-size: var(--vds-exp-girok-search-field-collapsed-width);
+    block-size: var(--vds-exp-girok-search-field-control-size);
+    transition: inline-size var(--vds-exp-girok-search-field-transition-duration) ease;
+  }
+
+  :scope:has(.vds-pattern-girok-search-field__panel.is-open) {
+    inline-size: var(--vds-exp-girok-search-field-expanded-width);
+  }
+
+  .vds-pattern-girok-search-field__toggle {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--vds-exp-girok-search-field-control-size);
+    block-size: var(--vds-exp-girok-search-field-control-size);
+    border: 0;
+    border-radius: var(--vds-exp-girok-search-field-radius);
+    background: transparent;
+    color: var(--vds-exp-girok-search-field-icon-color);
+  }
+
+  .vds-pattern-girok-search-field__toggle::after {
+    content: "";
+    position: absolute;
+    inset: var(--vds-exp-girok-search-field-control-hit-inset);
+  }
+
+  .vds-pattern-girok-search-field__panel {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--vds-exp-girok-search-field-panel-gap);
+    padding-inline: var(--vds-exp-girok-search-field-panel-padding-inline);
+    background: var(--vds-exp-girok-search-field-surface);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-search-field-border-color);
+    border-radius: var(--vds-exp-girok-search-field-radius);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity var(--vds-exp-girok-search-field-transition-duration) ease,
+      inline-size var(--vds-exp-girok-search-field-transition-duration) ease;
+  }
+
+  .vds-pattern-girok-search-field__panel.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .vds-pattern-girok-search-field__input {
+    min-inline-size: 0;
+    flex: 1 1 auto;
+    border: 0;
+    background: transparent;
+    color: var(--vds-exp-girok-search-field-text-color);
+    font-size: var(--vds-exp-girok-search-field-font-size);
+    font-weight: var(--vds-exp-girok-search-field-font-weight);
+    line-height: var(--vds-exp-girok-search-field-line-height);
+  }
+
+  .vds-pattern-girok-search-field__input:focus {
+    outline: 0;
+  }
+
+  .vds-pattern-girok-search-field__close {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--vds-exp-girok-search-field-close-size);
+    block-size: var(--vds-exp-girok-search-field-close-size);
+    border: 0;
+    background: transparent;
+    color: var(--vds-exp-girok-search-field-icon-color);
+    flex: 0 0 auto;
+  }
+
+  .vds-pattern-girok-search-field__close::before {
+    content: "";
+    position: absolute;
+    inset: var(--vds-exp-girok-search-field-close-hit-inset);
+  }
+}
