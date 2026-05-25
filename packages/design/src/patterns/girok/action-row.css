@@ -1,0 +1,48 @@
+/* GIROK pattern: action-row */
+@scope (.vds-pattern-girok-action-row) {
+  :scope {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--vds-exp-girok-action-row-gap);
+  }
+
+  .vds-pattern-girok-action-row__secondary,
+  .vds-pattern-girok-action-row__primary {
+    min-inline-size: 0;
+    padding: var(--vds-exp-girok-action-row-padding-block) var(--vds-exp-girok-action-row-padding-inline);
+    border-radius: var(--vds-exp-girok-action-row-radius);
+    font-size: var(--vds-exp-girok-action-row-font-size);
+    line-height: var(--vds-exp-girok-action-row-line-height);
+  }
+
+  .vds-pattern-girok-action-row__secondary {
+    background: var(--vds-exp-girok-action-row-secondary-surface);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-action-row-secondary-border-color);
+    color: var(--vds-exp-girok-action-row-secondary-text-color);
+    font-weight: var(--vds-exp-girok-action-row-font-weight-secondary);
+  }
+
+  .vds-pattern-girok-action-row__primary {
+    border: 0;
+    color: var(--vds-exp-girok-action-row-primary-text-color);
+    font-weight: var(--vds-exp-girok-action-row-font-weight-primary);
+  }
+
+  .vds-pattern-girok-action-row__primary--amber {
+    background: var(--vds-exp-girok-action-row-primary-amber-surface);
+  }
+
+  .vds-pattern-girok-action-row__primary--rose {
+    background: var(--vds-exp-girok-action-row-primary-rose-surface);
+  }
+
+  .vds-pattern-girok-action-row__primary--blue {
+    background: var(--vds-exp-girok-action-row-primary-blue-surface);
+  }
+
+  .vds-pattern-girok-action-row__secondary.is-disabled,
+  .vds-pattern-girok-action-row__primary.is-disabled {
+    opacity: var(--vds-exp-girok-action-row-disabled-opacity);
+    cursor: not-allowed;
+  }
+}

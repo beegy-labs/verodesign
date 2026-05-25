@@ -1,0 +1,37 @@
+/* GIROK pattern: dual-toggle */
+@scope (.vds-pattern-girok-dual-toggle) {
+  :scope {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--vds-exp-girok-dual-toggle-gap);
+    padding: var(--vds-exp-girok-dual-toggle-padding);
+    background: var(--vds-exp-girok-dual-toggle-shell-surface);
+    border-radius: var(--vds-exp-girok-dual-toggle-radius);
+  }
+
+  .vds-pattern-girok-dual-toggle__option {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--vds-exp-girok-dual-toggle-option-padding-block) var(--vds-exp-girok-dual-toggle-option-padding-inline);
+    border: 0;
+    border-radius: var(--vds-exp-girok-dual-toggle-option-radius);
+    background: transparent;
+    color: var(--vds-exp-girok-dual-toggle-inactive-text);
+    font-size: var(--vds-exp-girok-dual-toggle-font-size);
+    font-weight: var(--vds-exp-girok-dual-toggle-font-weight);
+    line-height: var(--vds-exp-girok-dual-toggle-line-height);
+  }
+
+  .vds-pattern-girok-dual-toggle__option--expense.is-active {
+    background: var(--vds-exp-girok-dual-toggle-expense-active-surface);
+    color: var(--vds-exp-girok-dual-toggle-active-text);
+    font-weight: var(--vds-exp-girok-dual-toggle-font-weight-active);
+  }
+
+  .vds-pattern-girok-dual-toggle__option--income.is-active {
+    background: var(--vds-exp-girok-dual-toggle-income-active-surface);
+    color: var(--vds-exp-girok-dual-toggle-active-text);
+    font-weight: var(--vds-exp-girok-dual-toggle-font-weight-active);
+  }
+}

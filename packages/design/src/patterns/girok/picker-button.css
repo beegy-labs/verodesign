@@ -1,0 +1,39 @@
+/* GIROK pattern: picker-button */
+@scope (.vds-pattern-girok-picker-button) {
+  :scope {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--vds-exp-girok-picker-button-gap);
+    min-block-size: var(--vds-exp-girok-picker-button-min-height);
+    padding: var(--vds-exp-girok-picker-button-padding-block) var(--vds-exp-girok-picker-button-padding-inline);
+    background: var(--vds-exp-girok-picker-button-surface);
+    border: var(--vds-border-width-1) solid var(--vds-exp-girok-picker-button-border-color);
+    border-radius: var(--vds-exp-girok-picker-button-radius);
+    color: var(--vds-exp-girok-picker-button-text-color);
+  }
+
+  .vds-pattern-girok-picker-button__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--vds-exp-girok-picker-button-label-gap);
+    min-inline-size: 0;
+    flex: 1 1 auto;
+    font-size: var(--vds-exp-girok-picker-button-font-size);
+    font-weight: var(--vds-exp-girok-picker-button-font-weight);
+    line-height: var(--vds-exp-girok-picker-button-line-height);
+  }
+
+  .vds-pattern-girok-picker-button__caret {
+    inline-size: var(--vds-exp-girok-picker-button-caret-size);
+    block-size: var(--vds-exp-girok-picker-button-caret-size);
+    color: var(--vds-exp-girok-picker-button-caret-color);
+    flex: 0 0 auto;
+    transform: rotate(0deg);
+  }
+
+  .vds-pattern-girok-picker-button__caret.is-down {
+    transform: rotate(180deg);
+  }
+}

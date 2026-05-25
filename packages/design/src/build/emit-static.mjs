@@ -231,6 +231,7 @@ export const GIROK_PATTERN_SOURCE_FILES = [
   'fx-summary-card.css',
   'fx-history-card.css',
   'category-progress-list.css',
+  'trend-bar.css',
   'category-color-swatch.css',
   'select-card.css',
   'ledger-swapper.css',
@@ -246,6 +247,10 @@ export const GIROK_PATTERN_SOURCE_FILES = [
   'management-category-chip.css',
   'management-emoji-dropdown.css',
   'month-day-picker.css',
+  'section-header.css',
+  'picker-button.css',
+  'dual-toggle.css',
+  'action-row.css',
   'toast.css',
 ];
 
