@@ -50,11 +50,14 @@ jobs:
           always-auth=true
           EOF
 
+      # Publish covers only the publishable @verobee packages, so exclude
+      # @verobee/showcase (private, has its own gate) and its heavy unused
+      # storybook/playwright/chromatic devDeps from install + build.
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --filter '!@verobee/showcase'
 
       - name: Build
-        run: pnpm build
+        run: pnpm exec turbo run build --filter='!@verobee/showcase'
 
       - name: Set @dev snapshot version
         run: |

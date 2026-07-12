@@ -33,14 +33,17 @@ jobs:
       # Deps resolve through the in-cluster Verdaccio (npmjs pull-through cache).
       - name: Configure registry
         run: printf 'registry=https://npm.beegy.net/\n@verobee:registry=https://npm.beegy.net/\n' > .npmrc
+      # Exclude @verobee/showcase — it has its own gate (showcase.yml) and its
+      # storybook/playwright/chromatic devDeps are unused here. Installing them
+      # cold-hammers the shared Verdaccio cache for nothing.
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --filter '!@verobee/showcase'
       - name: Typecheck
-        run: pnpm validate
+        run: pnpm exec turbo run validate --filter='!@verobee/showcase'
       - name: Build
-        run: pnpm build
+        run: pnpm exec turbo run build --filter='!@verobee/showcase'
       - name: Test
-        run: pnpm test
+        run: pnpm exec turbo run test --filter='!@verobee/showcase'
 
   design-patterns:
     runs-on: arc-runner-set
@@ -55,8 +58,10 @@ jobs:
           node-version: 20
       - name: Configure registry
         run: printf 'registry=https://npm.beegy.net/\n@verobee:registry=https://npm.beegy.net/\n' > .npmrc
+      # Only @verobee/design + its deps are exercised below — install just that
+      # subtree (keeps the storybook/playwright/showcase tree off the cache).
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --filter '@verobee/design...'
       - name: Audit DTCG tokens
         run: pnpm --filter @verobee/design audit:tokens-dtcg
       - name: Build design package

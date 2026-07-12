@@ -45,6 +45,17 @@ publishing was added to it rather than running a second registry.
 | `sync-to-gitea.yaml` | push/tags | Mirror GitHub → L2 Gitea (`gitea.beegy.net/beegy-labs/verodesign`). |
 | `chromatic.yml` | `workflow_dispatch` | DISABLED during re-setup (external SaaS + token). Re-enable later. |
 
+**Install scope — keep the cache cold-burst small.** `@verobee/showcase` carries a
+heavy Storybook/Playwright/Chromatic devDep tree that NO active job builds
+(showcase's gate is `astro build`; Storybook/Chromatic are dormant). Installing it
+everywhere made three CI jobs cold-pull that tree concurrently through the single
+shared Verdaccio and OOMKilled it (502s). So the core jobs scope their install:
+`ci.yml` build-and-test → `--filter '!@verobee/showcase'`, design-patterns →
+`--filter '@verobee/design...'`, `release.yml` → `--filter '!@verobee/showcase'`
+(build via `turbo … --filter`). Only `showcase.yml` pulls the Astro tree, and it's
+a single job. Verdaccio itself was also fixed (Guaranteed QoS, 768Mi) in
+platform-gitops `platform/build-cache/verdaccio`.
+
 ## Consumers
 
 - Dev now: `"@verobee/design": "dev"` (dist-tag) + `.npmrc`
