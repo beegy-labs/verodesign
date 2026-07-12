@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { globSync } from 'node:fs';
+import { globSync } from './_glob.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
