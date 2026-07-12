@@ -2,7 +2,8 @@ import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
   stories: ["../stories/**/*.stories.@(ts|tsx)"],
-  addons: ["@storybook/addon-essentials", "@chromatic-com/storybook"],
+  // Storybook 9 folded the "essentials" addons into core — no addon-essentials package.
+  addons: ["@chromatic-com/storybook"],
   framework: {
     name: "@storybook/react-vite",
     options: {},
