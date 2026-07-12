@@ -42,8 +42,13 @@ jobs:
         run: pnpm exec turbo run validate --filter='!@verobee/showcase'
       - name: Build
         run: pnpm exec turbo run build --filter='!@verobee/showcase'
+      # Exclude @verobee/design-elements from the test run: its `wtr` suite runs
+      # in real browsers (playwright chromium/firefox/webkit) that the shared
+      # common-runner image does not ship, and provisioning them per-run on the
+      # edge runners is not worth it. build + validate above still cover the
+      # package; the browser suite is run out-of-band when needed.
       - name: Test
-        run: pnpm exec turbo run test --filter='!@verobee/showcase'
+        run: pnpm exec turbo run test --filter='!@verobee/showcase' --filter='!@verobee/design-elements'
 
   design-patterns:
     runs-on: arc-runner-set
