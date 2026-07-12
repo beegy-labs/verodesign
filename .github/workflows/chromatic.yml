@@ -1,21 +1,17 @@
 name: Chromatic
 
+# Disabled during the infra re-setup (visual-regression is a nicety; the priority
+# is package publish). Chromatic uploads to the external chromatic.com SaaS and
+# needs CHROMATIC_PROJECT_TOKEN — re-enable the pull_request trigger when wanted.
 on:
-  pull_request:
-    paths:
-      - "packages/showcase/**"
-      - "packages/design/**"
-      - ".github/workflows/chromatic.yml"
-      - "package.json"
-      - "pnpm-lock.yaml"
-      - "pnpm-workspace.yaml"
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   chromatic:
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-set
     steps:
       - uses: actions/checkout@v4
 

@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Verobee Design System — token-driven CSS architecture, OKLCH-first, Tailwind-independent.",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "engines": {
     "node": ">=20"

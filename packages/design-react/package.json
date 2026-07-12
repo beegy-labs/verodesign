@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Verobee Design System — React 19+ primitives backed by VDS custom elements.",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "engines": {
     "node": ">=20"
@@ -47,6 +46,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@verobee/design-elements": "workspace:*",
     "@types/react": "^19.0.0",
     "react": "19.2.5",
     "react-dom": "19.2.5",

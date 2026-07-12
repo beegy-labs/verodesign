@@ -1,28 +1,31 @@
 name: Release (verodesign)
 
-# Triggered only by changes inside packages/. Builds, runs WCAG/typecheck
-# gates, then either opens a "Version Packages" PR (gathering pending
-# Changesets) or publishes already-versioned packages to GHPR.
+# Dev-stage auto-publish. Every push to main publishes ALL publishable @verobee
+# packages as a @dev snapshot (version 0.0.0-dev.<sha>) to the in-cluster npm
+# registry (Verdaccio @ npm.beegy.net). Consumers use @verobee/<pkg>@dev to
+# always resolve the latest. No git tags / version PRs yet.
+#
+# Stable semver releases (@latest, cut by a git tag on main) are a LATER phase.
+# verodesign is a LIBRARY → main→tag with dist-tag channels (dev/latest), not the
+# app develop→stage→prod model. SSOT: docs/llm/platform/ci-cd-strategy.md.
 
 on:
   push:
     branches: [main]
     paths:
       - 'packages/**'
-      - '.changeset/**'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
 
 concurrency:
   group: release-verodesign
   cancel-in-progress: false
 
-permissions:
-  contents: write       # changesets needs to push the version PR
-  pull-requests: write  # changesets opens the PR
-  packages: write       # publish to GHPR
-
 jobs:
-  release:
-    runs-on: ubuntu-latest
+  publish-dev:
+    name: Publish @dev snapshot
+    runs-on: arc-runner-set
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,32 +34,47 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 9.15.0
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://npm.pkg.github.com
-          scope: '@verobee'
 
+      # @verobee/* + public deps both resolve through the in-cluster Verdaccio
+      # (hosts @verobee, pull-through caches npmjs). Basic auth (htpasswd user
+      # seeded in OpenBao) gates publish; reads are public.
+      - name: Configure registry (Verdaccio)
+        run: |
+          cat > .npmrc <<EOF
+          registry=https://npm.beegy.net/
+          @verobee:registry=https://npm.beegy.net/
+          //npm.beegy.net/:_auth=${{ secrets.NPM_AUTH_B64 }}
+          always-auth=true
+          EOF
+
+      # Publish covers only the publishable @verobee packages, so exclude
+      # @verobee/showcase (private, has its own gate) and its heavy unused
+      # storybook/playwright/chromatic devDeps from install + build.
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --filter '!@verobee/showcase'
 
-      - name: Build all packages
-        run: pnpm build
+      - name: Build
+        run: pnpm exec turbo run build --filter='!@verobee/showcase'
 
-      - name: Validate (WCAG, schema, types)
-        run: pnpm validate
+      - name: Set @dev snapshot version
+        run: |
+          VER="0.0.0-dev.$(git rev-parse --short=8 HEAD)"
+          echo "snapshot version = $VER"
+          node -e '
+            const fs = require("fs");
+            const ver = process.argv[1];
+            for (const d of fs.readdirSync("packages")) {
+              const f = `packages/${d}/package.json`;
+              if (!fs.existsSync(f)) continue;
+              const p = JSON.parse(fs.readFileSync(f));
+              if (p.private) continue;          // skip non-publishable (e.g. showcase)
+              p.version = ver;                  // pnpm rewrites workspace:* to this on publish
+              fs.writeFileSync(f, JSON.stringify(p, null, 2) + "\n");
+            }
+          ' "$VER"
 
-      - name: Test
-        run: pnpm test
-
-      - name: Create Release PR or Publish
-        uses: changesets/action@v1
-        with:
-          publish: pnpm release
-          version: pnpm version-packages
-          commit: 'chore(release): version packages'
-          title: 'chore(release): version packages'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish @dev
+        run: pnpm -r publish --tag dev --no-git-checks --report-summary

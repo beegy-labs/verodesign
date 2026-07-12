@@ -31,7 +31,12 @@ describe('design-react delivery components', () => {
     );
 
     expect(screen.getAllByText('Header')[0].parentElement).toHaveAttribute('data-vds-app-shell', 'header');
-    expect(screen.getByText('Bottom').parentElement).toHaveAttribute('data-vds-app-shell', 'bottom-nav');
+    // bottomNav is wrapped in an inner layout div, so the region marker sits on
+    // an ancestor rather than the direct parent — assert against the nearest one.
+    expect(screen.getByText('Bottom').closest('[data-vds-app-shell]')).toHaveAttribute(
+      'data-vds-app-shell',
+      'bottom-nav',
+    );
     expect(screen.getByText('Content').parentElement).toHaveAttribute('data-vds-app-shell', 'content');
     expect(screen.getByText('Content').parentElement?.style.overflow).toBe('');
   });

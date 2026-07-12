@@ -1,8 +1,10 @@
-name: Showcase (build + image)
+name: Showcase (build gate)
 
-# Builds the Astro showcase site and pushes a container image to GHCR.
-# K8s deployment is handled separately via platform-gitops + ArgoCD on the
-# user's K8s workstation (see SDD §7).
+# Build GATE only for the Astro showcase site (arc-runner-set, no DinD). The
+# container image build + K8s deploy are DEFERRED: they will run as an
+# ARC-independent kaniko app in platform-gitops (never docker buildx on the
+# runner), then deploy via ArgoCD — same pattern as collector-image-build.
+# SSOT: docs/llm/platform/ci-cd-strategy.md.
 
 on:
   push:
@@ -14,69 +16,33 @@ on:
       - 'packages/theme-*/**'
       - 'packages/utilities/**'
       - 'packages/design-elements/**'
+      - '.github/workflows/showcase.yml'
   pull_request:
     paths:
       - 'packages/showcase/**'
+      - '.github/workflows/showcase.yml'
 
 permissions:
   contents: read
-  packages: write
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: beegy-labs/verodesign-showcase
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Build showcase
+    runs-on: arc-runner-set
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-
       - uses: pnpm/action-setup@v4
         with:
           version: 9.15.0
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
-
+      - name: Configure registry
+        run: printf 'registry=https://npm.beegy.net/\n@verobee:registry=https://npm.beegy.net/\n' > .npmrc
       - name: Install
         run: pnpm install --frozen-lockfile
-
       - name: Build dependent packages
         run: pnpm --filter '@verobee/showcase^...' build
-
       - name: Build showcase
         run: pnpm --filter @verobee/showcase build
-
-      - name: Log in to GHCR
-        if: github.event_name == 'push'
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Extract metadata
-        if: github.event_name == 'push'
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=sha
-            type=ref,event=branch
-            type=semver,pattern={{version}}
-            type=raw,value=latest
-
-      - name: Build + push image
-        if: github.event_name == 'push'
-        uses: docker/build-push-action@v6
-        with:
-          context: packages/showcase
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max

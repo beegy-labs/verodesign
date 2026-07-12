@@ -8,8 +8,7 @@
     "node": ">=20"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "bin": {
     "vds": "./dist/cli.js",
