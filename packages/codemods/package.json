@@ -4,10 +4,11 @@
   "description": "Verobee Design System — jscodeshift transforms for migrating between verodesign versions.",
   "license": "MIT",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "bin": {
     "codemods": "./dist/cli.js",
@@ -20,12 +21,13 @@
   ],
   "scripts": {
     "build": "../../node_modules/.pnpm/node_modules/.bin/tsc -p tsconfig.json",
-    "test": "pnpm build && node --test tests/**/*.test.mjs"
+    "test": "pnpm build && node --test tests/*.test.mjs"
   },
   "dependencies": {
     "jscodeshift": "^17.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20",
     "typescript": "^5.6.0"
   }
 }

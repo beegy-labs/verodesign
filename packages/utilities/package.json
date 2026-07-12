@@ -8,8 +8,7 @@
     "node": ">=20"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "peerDependencies": {
     "@verobee/spec": "^1.0.0"
